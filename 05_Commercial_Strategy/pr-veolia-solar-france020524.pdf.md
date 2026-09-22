@@ -1,7 +1,8 @@
 ---
-title: Local decarbonizing energy: Veolia transforms its landfills into solar power plants, providing 300 MW of renewable energy in France
+title: 'Local decarbonizing energy: Veolia transforms its landfills into solar power
+  plants, providing 300 MW of renewable energy in France'
 source_url: https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/02/pr-veolia-solar-france020524.pdf
-date_consulted: 2026-09-22
+date_consulted: '2026-09-22'
 publisher: Veolia Environnement SA
 doc_type: issuer_release
 target: Veolia

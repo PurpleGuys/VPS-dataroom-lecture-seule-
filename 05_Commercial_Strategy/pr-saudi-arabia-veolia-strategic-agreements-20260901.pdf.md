@@ -1,7 +1,8 @@
 ---
-title: Saudi Arabia: Veolia signs three strategic agreements to accelerate the Kingdom's environmental security
+title: 'Saudi Arabia: Veolia signs three strategic agreements to accelerate the Kingdom''s
+  environmental security'
 source_url: https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/09/pr-saudi-arabia-veolia-strategic-agreements-20260901.pdf
-date_consulted: 2026-09-22
+date_consulted: '2026-09-22'
 publisher: Veolia Environnement SA
 doc_type: issuer_release
 target: Veolia

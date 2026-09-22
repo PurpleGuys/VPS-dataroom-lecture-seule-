@@ -1,7 +1,8 @@
 ---
-title: Pickleball Goes Green: Veolia Joins Forces with Professional Pickleball Association as Official Partner and Sustainability Provider
+title: 'Pickleball Goes Green: Veolia Joins Forces with Professional Pickleball Association
+  as Official Partner and Sustainability Provider'
 source_url: https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/02/pr-veolia-pickleball-020724.pdf
-date_consulted: 2026-09-22
+date_consulted: '2026-09-22'
 publisher: Veolia Environnement SA
 doc_type: issuer_release
 target: Veolia

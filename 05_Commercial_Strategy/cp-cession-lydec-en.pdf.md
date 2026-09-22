@@ -1,7 +1,7 @@
 ---
-title: Morocco: Veolia signs an agreement to divest its stake in Lydec
+title: 'Morocco: Veolia signs an agreement to divest its stake in Lydec'
 source_url: https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/07/cp-cession-lydec-en.pdf
-date_consulted: 2026-09-22
+date_consulted: '2026-09-22'
 publisher: Veolia Environnement SA
 doc_type: issuer_release
 target: Veolia

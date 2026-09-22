@@ -1,7 +1,8 @@
 ---
-title: Enhancing Power System Resilience : Veolia passes the 2 GW of flexible power milestone in Europe
+title: 'Enhancing Power System Resilience : Veolia passes the 2 GW of flexible power
+  milestone in Europe'
 source_url: https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/01/pr-flexible-power-veolia-202401.pdf
-date_consulted: 2026-09-22
+date_consulted: '2026-09-22'
 publisher: Veolia Environnement SA
 doc_type: issuer_release
 target: Veolia
