@@ -14,5 +14,6 @@ it matters, and what we used instead. Keep one `##` section per target so
   notices and published tariffs where they exist.
 - **Environmental liability provisions per site** — only the aggregate provision is
   published. Per-site exposure is inferred from permit conditions and incident records.
+- **Tonnages traités par site** — non publiés site par site ; on utilise les capacités autorisées des arrêtés préfectoraux *(signalé par dataroom-bearer)*
 
 ## (add a section per target)
