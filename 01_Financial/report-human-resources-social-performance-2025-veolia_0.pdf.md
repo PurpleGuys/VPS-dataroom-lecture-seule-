@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/report-human-resources-social-performance-2025-veolia_0.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2026-03-25.

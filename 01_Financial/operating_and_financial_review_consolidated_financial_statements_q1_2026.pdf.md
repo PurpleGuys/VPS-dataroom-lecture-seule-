@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/operating_and_financial_review_consolidated_financial_statements_q1_2026.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2026-05-06.

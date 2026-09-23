@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/cp-post-ag-ve-2026-gb.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2026-04-23.

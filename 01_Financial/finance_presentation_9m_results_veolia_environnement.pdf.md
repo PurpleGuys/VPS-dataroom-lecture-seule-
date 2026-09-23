@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/finance_presentation_9m_results_veolia_environnement.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-11-07.

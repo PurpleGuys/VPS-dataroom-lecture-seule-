@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/finance_annual_results_2023_presentation.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-02-29.

@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/cp-lapouyade-181125.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2025-11-18.

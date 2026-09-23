@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/en_master_greenup_strategy-day_v270324.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-02-29.

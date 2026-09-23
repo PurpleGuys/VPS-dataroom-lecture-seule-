@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-bpifrane-veolia-031725.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2025-03-17.

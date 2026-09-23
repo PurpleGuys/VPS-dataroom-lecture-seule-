@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/press-release-hassyan-05132024.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-05-14.

@@ -11,6 +11,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-multifaceted-performance-310325.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2025-03-31.

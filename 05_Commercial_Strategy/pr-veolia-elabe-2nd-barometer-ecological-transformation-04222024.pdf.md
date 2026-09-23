@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-veolia-elabe-2nd-barometer-ecological-transformation-04222024.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-04-22.

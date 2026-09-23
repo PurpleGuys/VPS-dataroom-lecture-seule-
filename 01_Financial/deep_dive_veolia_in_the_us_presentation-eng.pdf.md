@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/deep_dive_veolia_in_the_us_presentation-eng.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-05-29.

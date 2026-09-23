@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/veolia_finance_amendment_urd_2025.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2026-07-30.

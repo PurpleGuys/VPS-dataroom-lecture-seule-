@@ -12,10 +12,11 @@ reader can walk from the thesis to the sources.
 
 (What exactly is in scope: entities, geographies, waste streams.)
 
-## Key documents
+## Rubriques
 
-- [[veolia-2024-urd.pdf]] — financials, segment reporting
-- (add as they arrive)
+Chaque rubrique (Financier, Deals, Contentieux…) est une note générée qui renvoie ici et
+liste ses documents. Il n'y a rien à maintenir à la main : la carte se reconstruit à
+chaque synchronisation.
 
 ## Open questions
 

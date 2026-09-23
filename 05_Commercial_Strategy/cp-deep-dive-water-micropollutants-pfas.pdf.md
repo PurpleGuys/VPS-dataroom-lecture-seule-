@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/cp-deep-dive-water-micropollutants-pfas.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-10-17.

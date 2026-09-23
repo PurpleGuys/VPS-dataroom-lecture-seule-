@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-veolia-results-q3-11072024.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-11-07.

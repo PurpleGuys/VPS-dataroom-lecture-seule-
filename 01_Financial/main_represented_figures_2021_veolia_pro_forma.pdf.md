@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/main_represented_figures_2021_veolia_pro_forma.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2023-01-11.

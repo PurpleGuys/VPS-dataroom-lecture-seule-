@@ -11,6 +11,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-veolia-barometer-eu-05282024.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-05-28.

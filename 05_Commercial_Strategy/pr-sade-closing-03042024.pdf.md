@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-sade-closing-03042024.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-03-04.

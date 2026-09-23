@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-sequoia-03062024-launch-of-the-offer-en.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-06-03.

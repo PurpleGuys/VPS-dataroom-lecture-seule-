@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-totalenergies-veolia-100625.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2025-10-06.

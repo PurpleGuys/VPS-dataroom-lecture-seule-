@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/veolia-contract-water-cucuta-colombia-073026.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2026-07-30.

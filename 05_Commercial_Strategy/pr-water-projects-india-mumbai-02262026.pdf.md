@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-water-projects-india-mumbai-02262026.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2026-02-26.

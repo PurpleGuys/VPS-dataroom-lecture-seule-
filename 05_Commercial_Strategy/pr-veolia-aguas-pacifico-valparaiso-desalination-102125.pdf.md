@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-veolia-aguas-pacifico-valparaiso-desalination-102125.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2025-10-21.

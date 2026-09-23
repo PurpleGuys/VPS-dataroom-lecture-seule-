@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/finance_amendment_to_the_2023_universal_resgistration_document_08-01-24.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-08-01.

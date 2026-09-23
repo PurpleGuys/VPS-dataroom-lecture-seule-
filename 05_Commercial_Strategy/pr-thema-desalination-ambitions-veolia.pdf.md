@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-thema-desalination-ambitions-veolia.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2025-04-08.

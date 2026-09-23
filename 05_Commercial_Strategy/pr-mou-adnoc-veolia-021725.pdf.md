@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-mou-adnoc-veolia-021725.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2025-02-17.

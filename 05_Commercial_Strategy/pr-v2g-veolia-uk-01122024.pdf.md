@@ -11,6 +11,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-v2g-veolia-uk-01122024.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-01-12.

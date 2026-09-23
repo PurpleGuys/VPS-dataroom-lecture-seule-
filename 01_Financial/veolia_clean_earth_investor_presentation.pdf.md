@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/veolia_clean_earth_investor_presentation.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2025-11-21.

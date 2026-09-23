@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/veolia_finance_presentation_h1_2026_results.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2026-07-30.

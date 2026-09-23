@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-veolia-sequoia2024-09162024.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-09-16.

@@ -12,6 +12,6 @@ title: Operating and financial review - Consolidated financial statements as of 
   31st 2025
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/finance_veolia_operating_and_financing_review_q1_2025.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2025-05-07.

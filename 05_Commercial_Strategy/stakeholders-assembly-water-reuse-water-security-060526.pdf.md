@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/stakeholders-assembly-water-reuse-water-security-060526.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2026-06-05.

@@ -11,6 +11,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-saudi-arabia-veolia-strategic-agreements-20260901.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2026-09-01.

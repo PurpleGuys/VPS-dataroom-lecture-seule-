@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/finance_veolia_operating_and_financial_review_2025.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2026-02-26.

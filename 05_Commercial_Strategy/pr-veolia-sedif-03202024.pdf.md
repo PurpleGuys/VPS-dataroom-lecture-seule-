@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-veolia-sedif-03202024.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-03-20.

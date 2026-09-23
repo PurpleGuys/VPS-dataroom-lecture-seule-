@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/finance_veolia_consolidated_financial_statements_31-12-25.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2026-02-26.

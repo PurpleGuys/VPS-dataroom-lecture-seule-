@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-pfas-france-04112024.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-04-11.

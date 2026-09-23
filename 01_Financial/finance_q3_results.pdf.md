@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/finance_q3_results.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2023-11-09.

@@ -11,6 +11,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-veolia-pickleball-020724.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-02-07.

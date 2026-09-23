@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-ambition-chip-production-data-centers-041426.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2026-04-14.

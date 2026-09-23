@@ -11,6 +11,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-veolia-barometer-ecological-transformation-united-states.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-06-05.

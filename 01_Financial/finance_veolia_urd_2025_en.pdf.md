@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/finance_veolia_urd_2025_en.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2026-03-27.

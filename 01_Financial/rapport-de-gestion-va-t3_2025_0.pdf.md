@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/rapport-de-gestion-va-t3_2025_0.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2025-11-06.

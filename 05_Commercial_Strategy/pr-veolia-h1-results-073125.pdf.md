@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-veolia-h1-results-073125.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2025-07-31.

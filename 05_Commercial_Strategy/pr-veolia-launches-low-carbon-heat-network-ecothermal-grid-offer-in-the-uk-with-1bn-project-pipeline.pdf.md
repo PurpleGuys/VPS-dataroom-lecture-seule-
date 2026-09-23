@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-veolia-launches-low-carbon-heat-network-ecothermal-grid-offer-in-the-uk-with-1bn-project-pipeline.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2025-11-25.

@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/finance_ve_operating_and_financial_review_q12023.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2023-05-04.

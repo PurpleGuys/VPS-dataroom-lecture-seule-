@@ -10,4 +10,4 @@ language: en
 added_by: dataroom-bearer
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/veolia-cp-approbation-suez-2021.pdf]]

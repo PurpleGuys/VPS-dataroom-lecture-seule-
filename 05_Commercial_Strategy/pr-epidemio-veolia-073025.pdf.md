@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-epidemio-veolia-073025.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2025-07-30.

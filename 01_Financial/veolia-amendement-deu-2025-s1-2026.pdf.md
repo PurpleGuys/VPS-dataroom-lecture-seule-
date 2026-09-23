@@ -10,6 +10,6 @@ language: fr
 added_by: dataroom-bearer
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/veolia-amendement-deu-2025-s1-2026.pdf]]
 
 Déposé auprès de l'AMF le 30 juillet 2026 sous le numéro D.26-0118-A01. Couvre le premier semestre 2026 : variations de périmètre et programme de cessions.

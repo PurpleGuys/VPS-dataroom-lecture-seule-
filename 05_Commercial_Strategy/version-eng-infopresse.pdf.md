@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/version-eng-infopresse.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2026-04-23.

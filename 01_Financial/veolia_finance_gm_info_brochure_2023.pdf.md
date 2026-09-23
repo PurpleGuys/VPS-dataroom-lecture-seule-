@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/veolia_finance_gm_info_brochure_2023.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2023-03-29.

@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-veolia-water-successes-australia-111225.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2025-11-12.

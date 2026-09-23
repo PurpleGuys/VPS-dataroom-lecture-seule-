@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-issues-bond-market-260826.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2026-08-26.

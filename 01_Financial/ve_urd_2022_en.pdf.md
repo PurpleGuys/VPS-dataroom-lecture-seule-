@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/ve_urd_2022_en.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2023-03-22.

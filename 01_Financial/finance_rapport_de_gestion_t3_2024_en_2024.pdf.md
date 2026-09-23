@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/finance_rapport_de_gestion_t3_2024_en_2024.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-11-07.

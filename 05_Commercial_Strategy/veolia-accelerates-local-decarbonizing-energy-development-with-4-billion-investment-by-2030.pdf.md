@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/veolia-accelerates-local-decarbonizing-energy-development-with-4-billion-investment-by-2030.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-01-11.

@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/ve_notice_and_information_brochure_for_2024_combined_general_meeting.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-04-04.

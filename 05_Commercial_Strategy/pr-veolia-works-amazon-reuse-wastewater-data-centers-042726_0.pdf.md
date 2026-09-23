@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-veolia-works-amazon-reuse-wastewater-data-centers-042726_0.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2026-04-27.

@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[01_Financial/results_comments_q1_2024.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-05-14.

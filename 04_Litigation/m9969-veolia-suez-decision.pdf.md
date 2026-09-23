@@ -10,6 +10,6 @@ language: fr
 added_by: dataroom-bearer
 ---
 
-Cible : [[Targets/Veolia]]
+![[04_Litigation/m9969-veolia-suez-decision.pdf]]
 
 Décision au titre du règlement (CE) 139/2004 sur les concentrations.

@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-veolia-large-scale-water-reuse-brazil-072925.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2025-07-29.

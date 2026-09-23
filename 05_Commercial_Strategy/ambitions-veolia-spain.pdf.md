@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/ambitions-veolia-spain.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-11-25.

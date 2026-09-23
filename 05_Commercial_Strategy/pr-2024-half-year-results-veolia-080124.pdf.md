@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-2024-half-year-results-veolia-080124.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2024-08-01.

@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-veolia-china-120525.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2025-12-05.

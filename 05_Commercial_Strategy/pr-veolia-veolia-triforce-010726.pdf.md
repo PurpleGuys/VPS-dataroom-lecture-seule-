@@ -10,6 +10,6 @@ language: en
 added_by: harvest
 ---
 
-Cible : [[Targets/Veolia]]
+![[05_Commercial_Strategy/pr-veolia-veolia-triforce-010726.pdf]]
 
 Moissonné depuis l'archive de l'éditeur, publié le 2026-01-07.
