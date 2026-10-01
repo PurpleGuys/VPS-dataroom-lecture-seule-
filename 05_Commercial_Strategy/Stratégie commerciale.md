@@ -7,7 +7,7 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 95 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 96 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/ambitions-veolia-spain.pdf.md|In Spain, Veolia displays strong ambitions to support ecological transformation by putting expertise and innovation at the service of territories]]
@@ -54,6 +54,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/pr-v2g-veolia-uk-01122024.pdf.md|Veolia successfully completes pioneering V2G trial in the UK: Waste collection trucks become a flexible energy source to boost energy security]]
 - [[05_Commercial_Strategy/pr-veolia-9months-11062025.pdf.md|Key Figures at 30 September 2025]]
 - [[05_Commercial_Strategy/pr-veolia-aguas-pacifico-valparaiso-desalination-102125.pdf.md|Veolia will manage the first municipal and industrial desalination plant of Chile in Valparaíso]]
+- [[05_Commercial_Strategy/pr-veolia-amb-barcelona-20260930.pdf.md|Veolia wins major €1 billion, 25-year drinking water services contract in Spain]]
 - [[05_Commercial_Strategy/pr-veolia-barometer-ecological-transformation-united-states.pdf.md|Global climate survey: Most Americans feel exposed and vulnerable to a deterioration in their quality of life due to worsening climate conditions, and demand action]]
 - [[05_Commercial_Strategy/pr-veolia-barometer-eu-05282024.pdf.md|The 2nd edition of the global barometer of ecological transformation : Europeans place health as top priority and call for action]]
 - [[05_Commercial_Strategy/pr-veolia-board-of-directors-110525.pdf.md|The Board of Directors of Veolia Propose the Renewal of Antoine Frérot and Estelle Brachlianoff as Directors]]
