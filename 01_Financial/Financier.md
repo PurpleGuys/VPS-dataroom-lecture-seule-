@@ -7,9 +7,12 @@ generated: true
 
 # Financier
 
-Rubrique de [[Targets/Veolia|Veolia]] — 45 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 49 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
+- [[01_Financial/26-02_bn-25-en.pdf.md|Séché Environnement — Full-Year 2025 Consolidated Results, information meeting (10 March 2026)]]
+- [[01_Financial/26-02_cp-bn-25_en.pdf.md|Séché Environnement — Full-year 2025 results press release (9 March 2026)]]
+- [[01_Financial/26-06_cp-bn-s1-26-eng.pdf.md|Séché Environnement — First-half 2026 results press release (9 September 2026)]]
 - [[01_Financial/deep_dive_veolia_in_the_us_presentation-eng.pdf.md|Deep Dive Energy Veolia in the USA]]
 - [[01_Financial/en_master_greenup_strategy-day_v270324.pdf.md|Strategy Day - Green Up Presentation]]
 - [[01_Financial/finance_2024_full_year_results_presentation.pdf.md|2024 Full year results - Presentation]]
@@ -43,6 +46,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[01_Financial/rapport-de-gestion-va-t3_2025_0.pdf.md|Operating and financial review - Consolidated financial statements at September 30th, 2025]]
 - [[01_Financial/report-human-resources-social-performance-2025-veolia_0.pdf.md|Human resources and social performance 2025 report]]
 - [[01_Financial/results_comments_q1_2024.pdf.md|Operating &amp; Financial Review - Consolidated Financial Statements at March 31, 2024]]
+- [[01_Financial/seche_environnement_deu_2025_fr.pdf.md|Séché Environnement — Document d'enregistrement universel 2025]]
 - [[01_Financial/slidesq12024_def_0.pdf.md|Q1 2024 Results - Presentation]]
 - [[01_Financial/ve_notice_and_information_brochure_for_2024_combined_general_meeting.pdf.md|Notice and information brochure for the 2024 Combined General Meeting]]
 - [[01_Financial/ve_urd_2022_en.pdf.md|URD 2022 - Veolia Environment]]
