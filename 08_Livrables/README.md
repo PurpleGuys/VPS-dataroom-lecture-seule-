@@ -6,4 +6,4 @@ Ce dossier contient le travail d'analyse du groupe, pas des sources : rien ici n
 - `dossiers-sujet-2.html` — un dossier par rôle : réponse, raisonnement, chiffres sourcés, questions du jury. Généré depuis le registre et le classeur recalculé.
 - `scripts/` — les générateurs (`build_model.py`, puis recalcul LibreOffice, puis `build_dossiers.py`).
 
-Lien public : https://dataroom.is42.fr/documents/08_Livrables/
+Lien public : https://dataroom.is42.fr:8443/documents/08_Livrables/modele-greenup-2027.xlsx et …/dossiers-sujet-2.html
