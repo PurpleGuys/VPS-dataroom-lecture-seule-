@@ -7,7 +7,7 @@ generated: true
 
 # Financier
 
-Rubrique de [[Targets/Veolia|Veolia]] — 57 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 58 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[01_Financial/26-02_bn-25-en.pdf.md|Séché Environnement — Full-Year 2025 Consolidated Results, information meeting (10 March 2026)]]
@@ -19,6 +19,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[01_Financial/credit_opinion_veolia-environnement-2dec2025.pdf.md|Moody's Credit Opinion - Veolia Environnement SA - December 2025]]
 - [[01_Financial/deep_dive_veolia_in_the_us_presentation-eng.pdf.md|Deep Dive Energy Veolia in the USA]]
 - [[01_Financial/en_master_greenup_strategy-day_v270324.pdf.md|Strategy Day - Green Up Presentation]]
+- [[01_Financial/enviri-10-k-2025.pdf.md|Enviri Corporation — Form 10-K, fiscal year ended December 31, 2025]]
 - [[01_Financial/finance_2024_full_year_results_presentation.pdf.md|2024 Full year results - Presentation]]
 - [[01_Financial/finance_amendment_to_the_2023_universal_resgistration_document_08-01-24.pdf.md|Amendment of the 2023 URD including the half-yearly financial review as of June 30th 2024]]
 - [[01_Financial/finance_annual_results_2023_presentation.pdf.md|2023 annual results - Presentation]]
