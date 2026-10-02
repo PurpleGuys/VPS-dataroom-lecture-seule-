@@ -7,12 +7,16 @@ generated: true
 
 # Financier
 
-Rubrique de [[Targets/Veolia|Veolia]] — 49 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 57 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[01_Financial/26-02_bn-25-en.pdf.md|Séché Environnement — Full-Year 2025 Consolidated Results, information meeting (10 March 2026)]]
 - [[01_Financial/26-02_cp-bn-25_en.pdf.md|Séché Environnement — Full-year 2025 results press release (9 March 2026)]]
 - [[01_Financial/26-06_cp-bn-s1-26-eng.pdf.md|Séché Environnement — First-half 2026 results press release (9 September 2026)]]
+- [[01_Financial/clean-harbors-10-k-2025.pdf.md|Clean Harbors, Inc. — Form 10-K, fiscal year ended December 31, 2025]]
+- [[01_Financial/credit_opinion-veolia-environnement-sa-04may2026.pdf.md|Moody's Credit Opinion - Veolia Environnement SA - May 2026]]
+- [[01_Financial/credit_opinion_moodys_veolia-environnement-sa_22apr2025.pdf.md|Moody's Credit Opinion - Veolia Environnement SA - April 2025]]
+- [[01_Financial/credit_opinion_veolia-environnement-2dec2025.pdf.md|Moody's Credit Opinion - Veolia Environnement SA - December 2025]]
 - [[01_Financial/deep_dive_veolia_in_the_us_presentation-eng.pdf.md|Deep Dive Energy Veolia in the USA]]
 - [[01_Financial/en_master_greenup_strategy-day_v270324.pdf.md|Strategy Day - Green Up Presentation]]
 - [[01_Financial/finance_2024_full_year_results_presentation.pdf.md|2024 Full year results - Presentation]]
@@ -26,6 +30,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[01_Financial/finance_q3_results.pdf.md|Presentation of Q3 results as of September 30th 2023]]
 - [[01_Financial/finance_rapport_de_gestion_t3_2024_en_2024.pdf.md|Operating &amp; Financial Review consolidated financial statements at September 30, 2024]]
 - [[01_Financial/finance_slideshow_half-year-results_2024.pdf.md|2024 half-year results - Presentation]]
+- [[01_Financial/finance_standard_-_poors_ratings_direct_veolia_environnement_sa_mars_2025_03-04-25.pdf.md|Standard & Poor's: Ratings Direct Veolia Environnement SA - March 2025]]
 - [[01_Financial/finance_ve_hy_results_2023.pdf.md|Half-year results 2023 - Presentation]]
 - [[01_Financial/finance_ve_investorday_en.pdf.md|Investor day 2023]]
 - [[01_Financial/finance_ve_operating_and_financial_review_q12023.pdf.md|Operating and financial review Q1 2023]]
@@ -44,6 +49,8 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[01_Financial/main_represented_figures_2021_veolia_pro_forma.pdf.md|Main represented figures for the 12 months-ended December 31, 2021]]
 - [[01_Financial/operating_and_financial_review_consolidated_financial_statements_q1_2026.pdf.md|Operating and financial review - Consolidated financial statements as of March 31st 2026]]
 - [[01_Financial/rapport-de-gestion-va-t3_2025_0.pdf.md|Operating and financial review - Consolidated financial statements at September 30th, 2025]]
+- [[01_Financial/ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf.md|Standard & Poor's Ratings Direct - Veolia Environnement SA - April 2026]]
+- [[01_Financial/ratingsdirect_update_veoliaenvironnements.a._3485780_nov-25-2025.pdf.md|Standard & Poor's Ratings Direct - Veolia Environnement SA - November 2025]]
 - [[01_Financial/report-human-resources-social-performance-2025-veolia_0.pdf.md|Human resources and social performance 2025 report]]
 - [[01_Financial/results_comments_q1_2024.pdf.md|Operating &amp; Financial Review - Consolidated Financial Statements at March 31, 2024]]
 - [[01_Financial/seche_environnement_deu_2025_fr.pdf.md|Séché Environnement — Document d'enregistrement universel 2025]]
@@ -58,4 +65,5 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[01_Financial/veolia_finance_gm_info_brochure_2023.pdf.md|Notice and information brochure for the 2023 General meeting]]
 - [[01_Financial/veolia_finance_presentation_h1_2026_results.pdf.md|2026 half-year results - Presentation]]
 - [[01_Financial/veolia_finance_q1_results_2023.pdf.md|Presentation of Q1 results as of March 31st 2023]]
+- [[01_Financial/veolia_moodys_spo_march_2025.pdf.md|Moody's Second Party Opinion, March 2025]]
 - [[01_Financial/veoliaslides_9m_2025_0.pdf.md|9M 2025 Key figures presentation]]
