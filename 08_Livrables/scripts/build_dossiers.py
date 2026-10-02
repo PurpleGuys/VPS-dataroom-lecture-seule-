@@ -275,7 +275,23 @@ f = dict(
     motrig=R("Moody's : seuil de dégradation", "2026-2027"), moup=R("Moody's : condition de relèvement", "2026-2027"),
     sptrig=R("S&P : seuil de dégradation", "2026-2028"), splo=R("S&P : FFO / dette ajustés attendu, bas", "2026-2028"),
     sphi=R("S&P : FFO / dette ajustés attendu, haut", "2026-2028"), molev=R("Moody's : levier net selon la définition de Veolia", "FY2025"),
+    wt_g=R("Croissance organique de l'EBITDA Water Technologies", "FY2025"), am_g=R("Croissance organique de l'EBITDA Amériques", "FY2025"),
+    eu_g=R("Croissance organique de l'EBITDA Europe", "FY2025"), wt_eb=R("EBITDA Water Technologies", "FY2025"),
+    boost_rev=R("Boosters : chiffre d'affaires", "FY2025"), boost_eb=R("Boosters : EBITDA", "FY2025"),
+    boost_g=R("Boosters : croissance organique de l'EBITDA", "FY2025"), bfee_rev=R("Bioénergie, flexibilité, efficacité énergétique : chiffre d'affaires", "FY2025"),
+    clh_rev=R("Clean Harbors : chiffre d'affaires direct total", "FY2025"), clh_eb=R("Clean Harbors : EBITDA ajusté total", "FY2025"),
+    clh_m=R("Clean Harbors : marge d'EBITDA ajusté", "FY2025"), clh_env=R("Clean Harbors : passifs environnementaux totaux", "31/12/2025"),
+    en_rev=R("Enviri : chiffre d'affaires du segment Clean Earth", "FY2025"), en_oi=R("Enviri : résultat opérationnel du segment Clean Earth", "FY2025"),
+    en_dep=R("Enviri : dépréciation du segment Clean Earth", "FY2025"), en_am=R("Enviri : amortissement du segment Clean Earth", "FY2025"),
+    en_cur=R("Enviri : passifs environnementaux, part courante", "31/12/2025"), en_lt=R("Enviri : passifs environnementaux, part non courante", "31/12/2025"),
+    eff398=R("Gains d'efficacité (et non synergies)", "FY2024"), syn435=R("Synergies Suez cumulées", "FY2024"),
+    syn530=R("Synergies Suez : objectif cumulé relevé", "fin 2025"), syn534=R("Synergies Suez cumulées réalisées", "FY2025"),
+    co25=R("KPI GreenUp : émissions de GES évitées, progression vs 2023", "2025"), co18=R("KPI GreenUp : émissions de GES évitées, objectif", "2027", "Mt CO2e"),
+    w25=R("KPI GreenUp : eau douce économisée", "2025"),
 )
+SEG_EB27 = mv("Segments", "EBITDA 2027 « au rythme", "E"); CE_EBREC = mv("Booster", "EBITDA 2025 recalculé"); CE_EBGAP = mv("Booster", "Écart entre l'EBITDA de Veolia")
+M_REC = mv("Booster", "Multiple sur l'EBITDA 2025 reconstitué"); CE_MREC = mv("Booster", "Marge d'EBITDA 2025 recalculée")
+CLH_ENVPCT = mv("ESG", "Clean Harbors : passifs environnementaux en %"); EN_ENV = mv("ESG", "Enviri (groupe entier)"); CE_ANALOG = mv("ESG", "Ordre de grandeur par analogie")
 SECHE = {}
 for key, pre, per in [("rev", "Séché : chiffre d'affaires contributif", "FY2025"), ("eb", "Séché : EBITDA", "FY2025"),
                       ("m", "Séché : marge d'EBITDA", "FY2025"), ("lev", "Séché : levier financier", "31/12/2025"),
@@ -503,7 +519,11 @@ ROLES.append(role(
     f"En volume, l'objectif est passé de {P(f['hwt0'])} Mt (« déchets dangereux et polluants ») à {P(f['hwt'])} Mt : "
     f"Veolia, à {P(f['hw25'])} kt, tient l'objectif révisé mais reste à {fr(-HW_GAP0, 0)} kt de l'initial. "
     f"En valeur, l'ambition de plus de {P(f['cagr'])} % par an d'EBITDA repose sur Clean Earth : en Europe, le chiffre "
-    f"d'affaires recule de {fr(-N(f['eug']), 1)} % en organique. " + seche_text,
+    f"d'affaires recule de {fr(-N(f['eug']), 1)} % en organique. " + seche_text +
+    f"Côté segments, la croissance vient des Amériques (EBITDA organique +{P(f['am_g'])} %) et de Water Technologies (+{P(f['wt_g'])} %), "
+    f"pas de l'Europe (+{P(f['eu_g'])} %) : au rythme de 2025, l'EBITDA 2027 atteindrait {fr(SEG_EB27 / 1000, 2)} Md€, l'objectif tient. "
+    f"Chez Clean Harbors, le comparable direct, la marge est de {P(f['clh_m'])} % ; chez Clean Earth vu par son vendeur, "
+    f"{pct(CE_MREC)} sur un EBITDA 2025 reconstitué de {fr(CE_EBREC, 0)} M$, un tiers sous les {P(f['ceeb'])} M$ 2026E de Veolia.",
     table([
         row_fig("Déchets dangereux traités", f["hw24"]), row_fig("Déchets dangereux traités", f["hw25"]),
         row_fig("Objectif 2027 actuel", f["hwt"]), row_fig("Objectif 2027 initial", f["hwt0"]),
@@ -515,6 +535,15 @@ ROLES.append(role(
         row_calc("EBITDA Amériques-Asie-Afrique, S1/S1", pct(AM_G), "publié, périmètre courant"),
         row_fig("Clean Earth : chiffre d'affaires", f["cer26"]), row_fig("Clean Earth : EBITDA", f["ceeb"]),
         row_calc("Clean Earth : marge 2026E", pct(CE_MARGIN), "EBITDA / CA"),
+        row_fig("EBITDA organique Water Technologies", f["wt_g"]), row_fig("EBITDA organique Amériques-Asie-Afrique", f["am_g"]),
+        row_fig("EBITDA organique Europe", f["eu_g"]), row_fig("Boosters : chiffre d'affaires", f["boost_rev"]),
+        row_fig("Boosters : EBITDA", f["boost_eb"]), row_fig("Boosters : croissance organique de l'EBITDA", f["boost_g"]),
+        row_calc("EBITDA 2027 si chaque segment garde son rythme de 2025", fr(SEG_EB27, 0, "M EUR"), "onglet Segments §C"),
+        row_fig("Clean Harbors : chiffre d'affaires", f["clh_rev"]), row_fig("Clean Harbors : EBITDA ajusté", f["clh_eb"]),
+        row_fig("Clean Harbors : marge", f["clh_m"]),
+        row_fig("Enviri : CA du segment Clean Earth", f["en_rev"]), row_fig("Enviri : résultat opérationnel Clean Earth", f["en_oi"]),
+        row_calc("Clean Earth : EBITDA 2025 reconstitué (RO + D&A)", fr(CE_EBREC, 0, "M USD"), "Enviri 10-K p.70 + p.284"),
+        row_calc("Clean Earth : marge 2025 reconstituée", pct(CE_MREC), ""),
     ] + seche_rows),
     [
         "Volumes : l'objectif a changé de niveau et de périmètre entre GreenUp (2024) et le DEU 2025. Le dire avant de comparer.",
@@ -522,6 +551,13 @@ ROLES.append(role(
         f"d'EBITDA. À +10 % par an depuis ce pro forma, on viserait environ {fr(HW_ILL, 2)} Md€ en 2027 (illustratif).",
         f"Moteur organique : l'Europe est à {pct(EU_G)} au S1 2026, les Amériques progressent de {pct(AM_G)} en publié. "
         "La croissance du booster est achetée plus que générée.",
+        f"Les segments (question 1 du cours) : Amériques +{P(f['am_g'])} % et Water Technologies +{P(f['wt_g'])} % d'EBITDA organique en 2025, "
+        f"Europe +{P(f['eu_g'])} %, France-DD +6 % publié. Les boosters font {P(f['boost_rev'])} M€ de CA et {P(f['boost_eb'])} M€ d'EBITDA "
+        f"(+{P(f['boost_g'])} % organique). Prolongé deux ans, ce rythme donne {fr(SEG_EB27 / 1000, 2)} Md€ en 2027 : l'objectif tient, "
+        "mais par les Amériques et les technologies de l'eau, pas par l'Europe.",
+        f"Clean Earth vu du vendeur : {P(f['en_rev'])} M$ de chiffre d'affaires et {P(f['en_oi'])} M$ de résultat opérationnel en 2025, "
+        f"soit {fr(CE_EBREC, 0)} M$ d'EBITDA une fois les {fr((N(f['en_dep']) + N(f['en_am'])) / 1000, 1)} M$ de D&A rajoutés. Veolia paie 9,8x "
+        f"un EBITDA 2026E de {P(f['ceeb'])} M$, {pct(CE_EBGAP, 0)} plus haut : sur l'EBITDA du vendeur, le prix ressort à {fr(M_REC, 1)}x.",
         "Comparabilité : même mix (incinération, traitement physico-chimique, centres de stockage spécialisés), même taille, même "
         "géographie, et même définition d'EBITDA et de levier. Séché calcule son levier sur la dette moyenne selon sa documentation "
         "bancaire ; Veolia sur la dette de clôture.",
@@ -553,7 +589,10 @@ ROLES.append(role(
     f"{fr(N(f['cl26']) - N(f['cl25']), 0)} M€ au S1 2026, dont "
     f"+{fr(N(f['am_cl26']) - N(f['am_cl25']), 0)} M€ dans le segment où est entré Clean Earth. "
     f"Mais <strong>{pct(GW_PCT, 0)} du prix de Clean Earth est encore du goodwill</strong> : l'affectation du prix n'est pas faite, "
-    "donc la juste valeur de ses passifs environnementaux n'apparaît pas encore chez Veolia.",
+    "donc la juste valeur de ses passifs environnementaux n'apparaît pas encore chez Veolia. "
+    f"Les comparables donnent l'ordre de grandeur : Clean Harbors porte {pct(CLH_ENVPCT)} de son chiffre d'affaires en passifs "
+    f"environnementaux ; appliqué au chiffre d'affaires de Clean Earth, cela ferait {fr(CE_ANALOG, 0)} M$. Le groupe Enviri entier en porte "
+    f"{fr(EN_ENV, 0)} M$. C'est une analogie, pas une mesure.",
     table([
         row_fig("Provisions de fermeture et post-fermeture", f["cl24"]), row_fig("Provisions de fermeture et post-fermeture", f["cl25"]),
         row_fig("Provisions de fermeture et post-fermeture", f["cl26"]), row_fig("dont réhabilitation de sites", f["site"]),
@@ -563,6 +602,10 @@ ROLES.append(role(
         row_calc("Goodwill en % du prix", pct(GW_PCT), "aucune affectation au 30/06/2026"),
         row_fig("Garanties reçues liées aux acquisitions", f["gar25"]), row_fig("Garanties reçues liées aux acquisitions", f["gar26"]),
         row_calc("Provisions de fermeture comptées en dette, levier 2027", x(DPROV), "avec 50 % des hybrides"),
+        row_fig("Clean Harbors : passifs environnementaux", f["clh_env"]), row_fig("Clean Harbors : chiffre d'affaires", f["clh_rev"]),
+        row_calc("Clean Harbors : passifs environnementaux / CA", pct(CLH_ENVPCT), ""),
+        row_fig("Enviri : passifs environnementaux courants", f["en_cur"]), row_fig("Enviri : passifs environnementaux non courants", f["en_lt"]),
+        row_calc("Ordre de grandeur pour Clean Earth par analogie Clean Harbors", fr(CE_ANALOG, 0, "M USD"), "analogie, pas une mesure"),
     ]),
     [
         f"Le stock : {P(f['cl25'])} M€ fin 2025, surtout de la réhabilitation de sites ; il coûte {P(f['unw'])} M€ par an "
@@ -614,7 +657,8 @@ ROLES.append(role(
         "prix ≤ marge / (1 − 3 / multiple).",
         f"La grille : au multiple de Clean Earth, {fr(grid[8][2] / 1000, 2)} Md€ en central, 0 en défavorable, "
         f"{fr(grid[8][3] / 1000, 2)} Md€ en favorable ; à {fr(grid[10][0], 0)}x, {fr(grid[10][2] / 1000, 2)} Md€ en central.",
-        f"Le calibrage : Clean Earth ne passerait plus. Trois multiples circulent pour lui : {fr(M_PRE, 1)}x avant synergies, "
+        f"Le calibrage : Clean Earth ne passerait plus. Quatre multiples circulent pour lui : {fr(M_REC, 1)}x sur l'EBITDA 2025 publié par "
+        f"le vendeur (reconstitué, onglet Booster §E), {fr(M_PRE, 1)}x sur l'EBITDA 2026E avant synergies, "
         f"{P(f['mult'])}x publié après synergies (non recalculable : {fr(M_POST, 1)}x avec les chiffres publiés), et "
         "18,6x l'EBITDA ajusté des douze derniers mois selon Enviri (document à verser).",
         "Les critères de cible : actifs de traitement (pas de collecte seule), géographie des boosters (États-Unis, Asie), PFAS et nouveaux "
@@ -768,7 +812,9 @@ tr.calc td:first-child {{ font-style: italic; }}
         <li><strong>Écart stratégique</strong> entre la trajectoire et 2027 (EBITDA, croissance, KPI ESG) ; segments et géographies qui sur- ou sous-performent → rôles 2 et 4.</li>
         <li><strong>Benchmark et opportunités</strong> : qui contribue le plus à l'ESG dans chaque booster ; multiples et synergies des deals récents → rôles 4 et 6.</li>
         <li><strong>Allocation du capital restant</strong> : capex organique ou croissance externe, boosters ou strongholds, critère d'impact ESG par euro → rôles 1, 3 et 6. « Tout le reste s'y alimente. »</li>
-        <li><strong>Orientations</strong> : géographies, technologies, synergies (398 M€ en 2024 → objectif 530 M€) → rôle 6.</li>
+        <li><strong>Orientations</strong> : géographies, technologies, synergies (« 398 M€ en 2024 → objectif 530 M€ ») → rôle 6.
+        Piège repéré : les {P(f['eff398'])} M€ de 2024 sont des <em>gains d'efficacité</em> ; les synergies Suez cumulées étaient de
+        {P(f['syn435'])} M€ fin 2024, objectif relevé à {P(f['syn530'])} M€, réalisé {P(f['syn534'])} M€ fin 2025. À dire, pas à corriger en silence.</li>
       </ol></div>
       <div><h3>Les cinq blocs du chantier « capacité »</h3><ol class="steps">
         <li>Reconstituer ce qui a été dépensé, et dire si les 4 Md€ étaient bruts ou nets → rôle 1, Cessions §D.</li>

@@ -118,7 +118,7 @@ ws0 = wb.active
 ws0.title = "Lisez-moi"
 sheets = {}
 for name in ["Entrées", "Hypothèses", "Levier", "Pont de dette", "Cessions", "Trajectoire",
-             "Sensibilité", "Booster", "ESG", "Cibles", "Vérifications"]:
+             "Sensibilité", "Segments", "Booster", "ESG", "Cibles", "Vérifications"]:
     sheets[name] = wb.create_sheet(name)
 
 # ================================================================ Entrées
@@ -792,6 +792,142 @@ widths(ws, {"A": 7, "B": 50, "C": 12, "D": 12, "E": 12, "F": 12, "G": 10, "H": 1
             "M": 13, "N": 13, "O": 12})
 ws.column_dimensions["L"].hidden = True
 
+hw24, i_hw24 = E("Déchets dangereux traités", "2024")
+hw25, i_hw25 = E("Déchets dangereux traités", "2025")
+hwt, i_hwt = E("Objectif : déchets dangereux traités en 2027", "2027")
+pf_rev, i_pfrev = E("Déchets dangereux Veolia + Clean Earth : chiffre d'affaires", "2025E")
+pf_eb, i_pfeb = E("Déchets dangereux Veolia + Clean Earth : EBITDA", "2025E")
+tgt8, i_tgt8 = E("Objectif GreenUp : EBITDA", "2027")
+ce_ev_usd, i_ceev = E("Clean Earth : valeur d'entreprise", "annonce 11/2025", "Md USD")
+
+# ================================================================ Segments
+ws = sheets["Segments"]
+title(ws, "Rôle 4 (question 1 du cours) — D'où viennent les 8 Md€ : segments, boosters, KPI ESG",
+      "Présentation des résultats 2025 (p.7, p.23, p.25, p.41), rapport de gestion 2025 (p.12-13), présentation S1 2026 (p.10, p.19, p.22), DEU 2025 (p.12, p.191).")
+SG = {}
+r = 4
+put(ws, f"A{r}", "A", bold=True); put(ws, f"B{r}", "Les segments : qui livre la croissance", bold=True); r += 1
+header(ws, r, ["", "Segment", "CA 2024", "CA 2025", "EBITDA 2024", "EBITDA 2025", "Marge 2025", "Croiss. EBITDA publiée",
+               "Croiss. organique EBITDA 2025", "CA S1 2026", "EBITDA S1 2026", "Réf."]); r += 1
+def seg_row(label, rev24, rev25, eb24, eb25, g25, revh1, ebh1):
+    """Chaque argument est (préfixe de libellé, période) ou None ; la cellule reste vide si rien n'est au registre."""
+    refs = []
+    put(ws, f"B{r}", label)
+    for col, spec, nf in (("C", rev24, NF_M), ("D", rev25, NF_M), ("E", eb24, NF_M), ("F", eb25, NF_M),
+                          ("I", g25, NF_P), ("J", revh1, NF_M), ("K", ebh1, NF_M)):
+        if spec is None:
+            put(ws, f"{col}{r}", None); continue
+        addr, fid = E(*spec)
+        put(ws, f"{col}{r}", f"={addr}" + ("/100" if nf == NF_P else ""), color=GREEN, nf=nf); refs.append(fid)
+    put(ws, f"G{r}", f'=IF(AND(ISNUMBER(D{r}),ISNUMBER(F{r}),D{r}<>0),F{r}/D{r},"")', nf=NF_P)
+    put(ws, f"H{r}", f'=IF(AND(ISNUMBER(E{r}),ISNUMBER(F{r}),E{r}<>0),F{r}/E{r}-1,"")', nf=NF_P)
+    put(ws, f"L{r}", ", ".join(refs), color=GREY)
+SEG0 = r
+seg_row("Water Technologies", None, ("Chiffre d'affaires Water Technologies", "FY2025"), None,
+        ("EBITDA Water Technologies", "FY2025"), ("Croissance organique de l'EBITDA Water Technologies", "FY2025"),
+        ("Chiffre d'affaires Water Technologies", "S1 2026"), ("EBITDA Water Technologies", "S1 2026")); r += 1
+seg_row("Amériques, Asie-Pacifique, Afrique Moyen-Orient", ("Chiffre d'affaires Amériques", "FY2024"), ("Chiffre d'affaires Amériques", "FY2025"),
+        ("EBITDA Amériques", "FY2024"), ("EBITDA Amériques", "FY2025"), ("Croissance organique de l'EBITDA Amériques", "FY2025"),
+        ("Chiffre d'affaires Amériques", "S1 2026"), ("EBITDA Amériques", "S1 2026")); r += 1
+seg_row("Europe", ("Chiffre d'affaires Europe", "FY2024"), ("Chiffre d'affaires Europe", "FY2025"),
+        ("EBITDA Europe", "FY2024"), ("EBITDA Europe", "FY2025"), ("Croissance organique de l'EBITDA Europe", "FY2025"),
+        ("Chiffre d'affaires Europe", "S1 2026"), None); r += 1
+seg_row("France et Déchets dangereux Europe", ("Chiffre d'affaires France et Déchets dangereux Europe", "FY2024"),
+        ("Chiffre d'affaires France et Déchets dangereux Europe", "FY2025"), ("EBITDA France et Déchets dangereux Europe", "FY2024"),
+        ("EBITDA France et Déchets dangereux Europe", "FY2025"), None, None, ("EBITDA France et Déchets dangereux Europe", "S1 2026")); r += 1
+SEG1 = r - 1
+put(ws, f"B{r}", "Somme des quatre segments", bold=True)
+for col in "CDEF":
+    put(ws, f"{col}{r}", f"=SUM({col}{SEG0}:{col}{SEG1})", nf=NF_M, bold=True)
+SG["sum25"] = f"{q('Segments')}!$F${r}"; r += 1
+put(ws, f"B{r}", "EBITDA du groupe publié"); put(ws, f"E{r}", f"={eb24}", color=GREEN, nf=NF_M); put(ws, f"F{r}", f"={eb25}", color=GREEN, nf=NF_M)
+put(ws, f"L{r}", f"{id_eb24}, {id_eb25}", color=GREY); r += 1
+put(ws, f"B{r}", "Autres (holding, éliminations) = groupe − segments"); put(ws, f"E{r}", "n/d", color=GREY, align="right"); put(ws, f"F{r}", f"=F{r-1}-F{r-2}", nf=NF_M)
+put(ws, f"L{r}", "2024 : l'EBITDA Water Technologies 2024 n'est pas au registre", color=GREY)
+SG["other25"] = f"{q('Segments')}!$F${r}"; r += 2
+
+put(ws, f"A{r}", "B", bold=True); put(ws, f"B{r}", "Les boosters (croissance et marge)", bold=True); r += 1
+header(ws, r, ["", "Booster", "CA 2024", "CA 2025", "EBITDA 2024", "EBITDA 2025", "Marge 2025", "Croiss. organique CA 2025",
+               "Croiss. organique EBITDA 2025", "CA S1 2026", "EBITDA S1 2026", "Réf."]); r += 1
+def booster_row(label, rev24, rev25, eb24_, eb25_, grev, geb, revh1, ebh1):
+    refs = []
+    put(ws, f"B{r}", label)
+    for col, spec, nf in (("C", rev24, NF_M), ("D", rev25, NF_M), ("E", eb24_, NF_M), ("F", eb25_, NF_M), ("H", grev, NF_P),
+                          ("I", geb, NF_P), ("J", revh1, NF_M), ("K", ebh1, NF_M)):
+        if spec is None:
+            put(ws, f"{col}{r}", None); continue
+        addr, fid = E(*spec)
+        put(ws, f"{col}{r}", f"={addr}" + ("/100" if nf == NF_P else ""), color=GREEN, nf=nf); refs.append(fid)
+    put(ws, f"G{r}", f'=IF(AND(ISNUMBER(D{r}),ISNUMBER(F{r}),D{r}<>0),F{r}/D{r},"")', nf=NF_P)
+    put(ws, f"L{r}", ", ".join(refs), color=GREY)
+BR0 = r
+booster_row("Tous les boosters", None, ("Boosters : chiffre d'affaires", "FY2025"), None, ("Boosters : EBITDA", "FY2025"),
+            ("Boosters : croissance organique du chiffre d'affaires", "FY2025"), ("Boosters : croissance organique de l'EBITDA", "FY2025"),
+            ("Boosters : chiffre d'affaires", "S1 2026"), ("Boosters : EBITDA", "S1 2026")); SG["boostMargin"] = f"{q('Segments')}!$G${r}"; r += 1
+booster_row("Bioénergie, flexibilité, efficacité énergétique", ("Bioénergie, flexibilité, efficacité énergétique : chiffre d'affaires", "FY2024"),
+            ("Bioénergie, flexibilité, efficacité énergétique : chiffre d'affaires", "FY2025"),
+            ("Bioénergie, flexibilité, efficacité énergétique : EBITDA", "FY2024"), ("Bioénergie, flexibilité, efficacité énergétique : EBITDA", "FY2025"),
+            None, ("Bioénergie, flexibilité, efficacité énergétique : croissance organique de l'EBITDA", "S1 2026"),
+            ("Bioénergie, flexibilité, efficacité énergétique : chiffre d'affaires", "S1 2026"), None); r += 1
+put(ws, f"B{r}", "Déchets dangereux (pro forma avec Clean Earth, présentation Clean Earth p.9)")
+put(ws, f"D{r}", f"={pf_rev}*1000", color=GREEN, nf=NF_M); put(ws, f"F{r}", f"={pf_eb}*1000", color=GREEN, nf=NF_M)
+put(ws, f"G{r}", f"=F{r}/D{r}", nf=NF_P); put(ws, f"L{r}", f"{i_pfrev}, {i_pfeb} (2025E)", color=GREY); r += 1
+put(ws, f"B{r}", "Marge publiée des boosters 2025 (pour contrôle)"); bm, i_bm = E("Boosters : marge d'EBITDA", "FY2025")
+put(ws, f"G{r}", f"={bm}/100", color=GREEN, nf=NF_P); put(ws, f"L{r}", i_bm, color=GREY); SG["boostMarginPub"] = f"{q('Segments')}!$G${r}"; r += 1
+b23, i_b23 = E("GreenUp : chiffre d'affaires bioénergie, flexibilité, efficacité énergétique (base)", "2023")
+b27, i_b27 = E("GreenUp : ambition de chiffre d'affaires bioénergie", "2027")
+put(ws, f"B{r}", "Ambition GreenUp bioénergie : CA 2023 → 2027 (Md EUR), et rythme annuel requis")
+put(ws, f"C{r}", f"={b23}", color=GREEN, nf=NF_D2); put(ws, f"D{r}", f"={b27}", color=GREEN, nf=NF_D2)
+put(ws, f"H{r}", f"=(D{r}/C{r})^(1/4)-1", nf=NF_P); put(ws, f"L{r}", f"{i_b23}, {i_b27} — rythme requis sur 4 ans", color=GREY); r += 1
+put(ws, f"B{r}", "Rythme constaté 2023 → 2025 (périmètre courant)"); put(ws, f"H{r}", f"=(D{BR0+1}/1000/C{r-1})^(1/2)-1", nf=NF_P)
+put(ws, f"L{r}", "CA 2025 / base 2023, sur deux ans — effets de périmètre compris", color=GREY); r += 2
+
+put(ws, f"A{r}", "C", bold=True); put(ws, f"B{r}", "D'où viennent les 8 Md€ : si chaque segment gardait son rythme organique de 2025", bold=True); r += 1
+header(ws, r, ["", "Segment", "EBITDA 2025", "Rythme organique 2025", "EBITDA 2027 au même rythme", "", "", "", "", "", "", "Note"]); r += 1
+C0 = r
+for i, rr in enumerate(range(SEG0, SEG1 + 1)):
+    put(ws, f"B{r}", f"=B{rr}", color=BLACK)
+    put(ws, f"C{r}", f"=F{rr}", nf=NF_M)
+    put(ws, f"D{r}", f'=IF(ISNUMBER(I{rr}),I{rr},H{rr})', nf=NF_P)
+    put(ws, f"E{r}", f'=IF(AND(ISNUMBER(C{r}),ISNUMBER(D{r})),C{r}*(1+D{r})^2,"")', nf=NF_M)
+    put(ws, f"L{r}", "croissance publiée à défaut d'organique" if i == 3 else "", color=GREY)
+    r += 1
+put(ws, f"B{r}", "Autres (holding), supposés stables"); put(ws, f"C{r}", f"={SG['other25']}", nf=NF_M); put(ws, f"E{r}", f"=C{r}", nf=NF_M); r += 1
+put(ws, f"B{r}", "Clean Earth en année pleine (hypothèse ceEb, convertie)"); put(ws, f"E{r}", f"={HY('ceEb')}/{HY('fx')}", color=GREEN, nf=NF_M); r += 1
+put(ws, f"B{r}", "EBITDA 2027 « au rythme de 2025 »", bold=True); put(ws, f"E{r}", f"=SUM(E{C0}:E{r-1})", nf=NF_M, bold=True)
+SG["eb27seg"] = f"{q('Segments')}!$E${r}"; r += 1
+put(ws, f"B{r}", "Objectif GreenUp ≥"); put(ws, f"E{r}", f"={tgt8}*1000", color=GREEN, nf=NF_M); r += 1
+put(ws, f"B{r}", "EBITDA 2027 du modèle (Trajectoire, central)"); put(ws, f"E{r}", f"={T['EB27']}", color=GREEN, nf=NF_M); r += 1
+put(ws, f"B{r}", "Lecture : les Amériques (+9 %) et Water Technologies (+14 %) portent la croissance ; l'Europe (+2 %) et la France-DD "
+    "(+6 %) non. Prolonger 2025 deux ans mène près de l'objectif, avant cessions : c'est ce qui fonde l'hypothèse g27 du modèle.",
+    color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:L{r}"); ws.row_dimensions[r].height = 30; r += 2
+
+put(ws, f"A{r}", "D", bold=True); put(ws, f"B{r}", "Les KPI environnementaux de GreenUp face à 2027", bold=True); r += 1
+header(ws, r, ["", "KPI", "Base 2023", "2024", "2025", "Objectif 2027", "Écart 2025 → objectif", "", "", "", "", "Réf."]); r += 1
+co23, i_co23 = E("KPI GreenUp : émissions de GES évitées (scope 4), base 2023", "2023")
+co24, i_co24 = E("KPI GreenUp : émissions de GES évitées, progression vs 2023", "2024")
+co25, i_co25 = E("KPI GreenUp : émissions de GES évitées, progression vs 2023", "2025")
+cot, i_cot = E("KPI GreenUp : émissions de GES évitées, objectif vs 2023", "2027")
+co18, i_co18 = E("KPI GreenUp : émissions de GES évitées, objectif", "2027", "Mt CO2e")
+put(ws, f"B{r}", "CO2e évité (scope 4), Mt — reconstitué : base × (1 + progression)")
+put(ws, f"C{r}", f"={co23}", color=GREEN, nf=NF_D2); put(ws, f"D{r}", f"=C{r}*(1+{co24}/100)", nf=NF_D2)
+put(ws, f"E{r}", f"=C{r}*(1+{co25}/100)", nf=NF_D2); put(ws, f"F{r}", f"=C{r}*(1+{cot}/100)", nf=NF_D2)
+put(ws, f"G{r}", f"=F{r}-E{r}", nf=NF_D2); put(ws, f"L{r}", f"{i_co23}, {i_co24}, {i_co25}, {i_cot}", color=GREY)
+SG["co2target"] = f"{q('Segments')}!$F${r}"; r += 1
+put(ws, f"B{r}", "CO2e évité : objectif tel qu'énoncé (18 Mt)"); put(ws, f"F{r}", f"={co18}", color=GREEN, nf=NF_D2)
+put(ws, f"L{r}", f"{i_co18} — 13,45 × 1,30 = 17,5, pas 18 : deux formulations", color=GREY); r += 1
+w24, i_w24 = E("KPI GreenUp : eau douce économisée", "2024"); w25, i_w25 = E("KPI GreenUp : eau douce économisée", "2025")
+wt, i_wt = E("KPI GreenUp : eau douce économisée, objectif", "2027")
+put(ws, f"B{r}", "Eau douce économisée, Md m³"); put(ws, f"D{r}", f"={w24}", color=GREEN, nf='0.000'); put(ws, f"E{r}", f"={w25}", color=GREEN, nf='0.000')
+put(ws, f"F{r}", f"={wt}", color=GREEN, nf='0.000'); put(ws, f"G{r}", f"=F{r}-E{r}", nf='0.000'); put(ws, f"L{r}", f"{i_w24}, {i_w25}, {i_wt} — déjà dépassé", color=GREY); r += 1
+put(ws, f"B{r}", "Déchets dangereux traités, kt"); put(ws, f"D{r}", f"={hw24}", color=GREEN, nf=NF_M); put(ws, f"E{r}", f"={hw25}", color=GREEN, nf=NF_M)
+put(ws, f"F{r}", f"={hwt}*1000", color=GREEN, nf=NF_M); put(ws, f"G{r}", f"=F{r}-E{r}", nf=NF_M); put(ws, f"L{r}", f"{i_hw24}, {i_hw25}, {i_hwt} — déjà atteint", color=GREY); r += 1
+put(ws, f"B{r}", "Lecture : deux KPI sur trois sont déjà atteints ; seul le CO2 évité reste en chemin (16,6 → 17,5-18 Mt). "
+    "Pour le périmètre capacité, la question 1 se réduit à l'EBITDA.", color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:L{r}"); ws.row_dimensions[r].height = 30; r += 1
+widths(ws, {"A": 4, "B": 58, "C": 11, "D": 11, "E": 11, "F": 11, "G": 10, "H": 12, "I": 13, "J": 11, "K": 11, "L": 46})
+
 # ================================================================ Booster
 ws = sheets["Booster"]
 title(ws, "Rôle 4 — Où en est le booster Déchets dangereux face à 2027",
@@ -880,12 +1016,56 @@ for name, ctry, why in peers:
         put(ws, f"I{r}", "01_Financial/26-02_cp-bn-25_en.pdf", color=GREY)
         put(ws, f"J{r}", f"{i_srev} p.1, {i_seb} p.3", color=GREY)
         why += " — 2025, M EUR ; levier 2,3x calculé sur la dette moyenne selon la doc bancaire, pas comme Veolia"
+    elif name.startswith("Clean Harbors"):
+        clh_rev, i_crev = E("Clean Harbors : chiffre d'affaires direct total", "FY2025")
+        clh_eb, i_ceb = E("Clean Harbors : EBITDA ajusté total", "FY2025")
+        put(ws, f"D{r}", "100 % (déchets dangereux et services associés)", color=GREY)
+        put(ws, f"E{r}", f"={clh_rev}", color=GREEN, nf=NF_M1)
+        put(ws, f"F{r}", f"={clh_eb}/1000", color=GREEN, nf=NF_M1)
+        put(ws, f"I{r}", "01_Financial/clean-harbors-10-k-2025.pdf", color=GREY)
+        put(ws, f"J{r}", f"{i_crev} p.33, {i_ceb} p.38", color=GREY)
+        why += " — 2025, M USD ; EBITDA ajusté selon la définition de Clean Harbors"
+    elif name.startswith("Enviri"):
+        en_rev, i_erev = E("Enviri : chiffre d'affaires du segment Clean Earth", "FY2025")
+        en_oi, i_eoi = E("Enviri : résultat opérationnel du segment Clean Earth", "FY2025")
+        en_dep, i_edep = E("Enviri : dépréciation du segment Clean Earth", "FY2025")
+        en_am, i_eam = E("Enviri : amortissement du segment Clean Earth", "FY2025")
+        put(ws, f"D{r}", "segment Clean Earth seul", color=GREY)
+        put(ws, f"E{r}", f"={en_rev}", color=GREEN, nf=NF_M1)
+        put(ws, f"F{r}", f"={en_oi}+({en_dep}+{en_am})/1000", nf=NF_M1)
+        put(ws, f"I{r}", "01_Financial/enviri-10-k-2025.pdf", color=GREY)
+        put(ws, f"J{r}", f"{i_erev} p.69, {i_eoi} p.70, {i_edep}/{i_eam} p.284", color=GREY)
+        why += " — 2025, M USD ; EBITDA = résultat opérationnel + D&A du segment, recalculé ici (Enviri ne publie pas d'EBITDA de segment)"
     put(ws, f"G{r}", f'=IF(AND(ISNUMBER(E{r}),ISNUMBER(F{r}),E{r}<>0),F{r}/E{r},"")', nf=NF_P)
     ws[f"G{r}"].fill = PatternFill()
     put(ws, f"K{r}", why, color=GREY)
     r += 1
 put(ws, f"B{r}", "Pour mémoire : marge d'EBITDA de Séché publiée")
 put(ws, f"G{r}", f"={sec_m}/100", color=BLACK, nf=NF_P); put(ws, f"K{r}", i_sm, color=GREY); r += 1
+clh_m, i_clhm = E("Clean Harbors : marge d'EBITDA ajusté", "FY2025")
+put(ws, f"B{r}", "Pour mémoire : marge d'EBITDA ajusté de Clean Harbors publiée")
+put(ws, f"G{r}", f"={clh_m}/100", color=BLACK, nf=NF_P); put(ws, f"K{r}", i_clhm, color=GREY); B["clhMargin"] = f"{q('Booster')}!$G${r}"; r += 2
+
+put(ws, f"A{r}", "E", bold=True); put(ws, f"B{r}", "Clean Earth vu du vendeur (10-K 2025 d'Enviri) : quel EBITDA paie-t-on ?", bold=True); r += 1
+en_rev24, i_erev24 = E("Enviri : chiffre d'affaires du segment Clean Earth", "FY2024")
+en_oi24, i_eoi24 = E("Enviri : résultat opérationnel du segment Clean Earth", "FY2024")
+line(ws, r, None, "Chiffre d'affaires du segment", f"={en_rev24}", "M USD", f"{i_erev24} (2024)", NF_M1, store=B); r += 1
+line(ws, r, "ceRev25", "Chiffre d'affaires du segment", f"={en_rev}", "M USD", f"{i_erev} (2025)", NF_M1, store=B); r += 1
+line(ws, r, None, "Croissance du chiffre d'affaires 2025", f"=C{r-1}/C{r-2}-1", "%", "", NF_P, store=B); r += 1
+line(ws, r, None, "Résultat opérationnel du segment", f"={en_oi24}", "M USD", f"{i_eoi24} (2024)", NF_M1, store=B); r += 1
+line(ws, r, None, "Résultat opérationnel du segment", f"={en_oi}", "M USD", f"{i_eoi} (2025)", NF_M1, store=B); r += 1
+line(ws, r, None, "Dépréciation + amortissement du segment", f"=({en_dep}+{en_am})/1000", "M USD", f"{i_edep}, {i_eam} (2025)", NF_M1, store=B); r += 1
+line(ws, r, "ceEbRec", "EBITDA 2025 recalculé (résultat opérationnel + D&A)", f"=C{r-2}+C{r-1}", "M USD", "non publié par Enviri : reconstitué", NF_M1, True, store=B); r += 1
+line(ws, r, "ceMargRec", "Marge d'EBITDA 2025 recalculée", f"=C{r-1}/C{r-6}", "%", "", NF_P, store=B); r += 1
+line(ws, r, None, "EBITDA 2026E retenu par Veolia (ajusté, post IFRS 16)", f"={ce_eb}", "M USD", id_ceeb, NF_M1, store=B); r += 1
+line(ws, r, "ceEbGap", "Écart entre l'EBITDA de Veolia et l'EBITDA 2025 reconstitué", f"=C{r-1}/C{r-3}-1", "%", "croissance, IFRS 16, ajustements : à faire expliquer", NF_P, True, store=B); r += 1
+line(ws, r, "mRec", "Multiple sur l'EBITDA 2025 reconstitué (VE / EBITDA)", f"={ce_ev_usd}*1000/C{r-4}", "x", f"{i_ceev} / recalcul", '0.0"x"', True, store=B); r += 1
+line(ws, r, None, "Pour mémoire : multiple publié par Veolia après synergies", f"={ce_mult}", "x", id_cemult, '0.0"x"', store=B); r += 1
+line(ws, r, None, "Actifs totaux du segment", f"={E('Enviri : actifs totaux du segment Clean Earth', '31/12/2025')[0]}/1000", "M USD",
+     E("Enviri : actifs totaux du segment Clean Earth", "31/12/2025")[1], NF_M1, store=B); r += 1
+put(ws, f"B{r}", "Lecture : sur l'EBITDA que le vendeur publie, le prix ressort à près de 20x ; le 9,8x de Veolia repose sur un EBITDA "
+    "2026E un tiers plus haut, plus 120 M$ de synergies. C'est le pont à faire expliquer le 16 octobre.", color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 30; r += 1
 put(ws, f"B{r}", "Cellules jaunes à remplir uniquement depuis un document versé dans la dataroom (fichier + page).",
     color=GREY, italic=True)
 widths(ws, {"A": 4, "B": 60, "C": 13, "D": 12, "E": 40, "F": 11, "G": 9, "H": 11, "I": 20, "J": 7, "K": 60})
@@ -942,7 +1122,18 @@ line(ws, r, None, "Hausse des provisions de fermeture, segment Amériques, au S1
      "compatible avec l'entrée de Clean Earth, non attribuée par Veolia", store=G); r += 1
 line(ws, r, None, "Hausse des garanties reçues liées aux acquisitions", f"={g26}-{g25}", "M EUR", f"{i_g25}, {i_g26}",
      store=G); r += 1
-put(ws, f"B{r}", "Passifs environnementaux propres à Clean Earth (à sourcer : 10-K d'Enviri)", bold=True)
+clh_env, i_cenv = E("Clean Harbors : passifs environnementaux totaux", "31/12/2025")
+clh_rev2, i_crev2 = E("Clean Harbors : chiffre d'affaires direct total", "FY2025")
+en_cur, i_ecur = E("Enviri : passifs environnementaux, part courante", "31/12/2025")
+en_lt, i_elt = E("Enviri : passifs environnementaux, part non courante", "31/12/2025")
+en_rev25b, i_erev25b = E("Enviri : chiffre d'affaires du segment Clean Earth", "FY2025")
+line(ws, r, "clhEnvPct", "Clean Harbors : passifs environnementaux en % du chiffre d'affaires", f"={clh_env}/1000/{clh_rev2}", "%",
+     f"{i_cenv} / {i_crev2} (2025)", NF_P, store=G); r += 1
+line(ws, r, "enEnv", "Enviri (groupe entier) : passifs environnementaux", f"=({en_cur}+{en_lt})/1000", "M USD", f"{i_ecur} + {i_elt}", NF_M1, store=G); r += 1
+line(ws, r, "enEnvPct", "… en % du chiffre d'affaires de Clean Earth (borne haute : le groupe entier)", f"=C{r-1}/{en_rev25b}", "%", i_erev25b, NF_P, store=G); r += 1
+line(ws, r, "ceEnvAnalog", "Ordre de grandeur par analogie Clean Harbors : % × CA Clean Earth (pas une mesure)", f"=C{r-3}*{en_rev25b}", "M USD",
+     "analogie, à remplacer par la juste valeur à l'affectation du prix", NF_M1, store=G); r += 1
+put(ws, f"B{r}", "Passifs environnementaux propres à Clean Earth (à sourcer : 10-Q T1 2026 d'Enviri, Clean Earth en activité abandonnée)", bold=True)
 put(ws, f"C{r}", None, fill=YELLOW, nf=NF_M); put(ws, f"D{r}", "M EUR", color=GREY)
 put(ws, f"E{r}", "cellule à remplir : laisser vide tant qu'aucun document ne le dit", color=GREY)
 G["ceLiab"] = r; r += 1
@@ -971,7 +1162,6 @@ for lab, key in (("Marge de manœuvre fin 2027 sous le levier ≤ 3x (M EUR)", "
     put(ws, f"E{r}", f"={q('Trajectoire')}!${FAV}${ROW[key]}", color=GREEN, nf=NF_M, bold=key == "BIND27")
     put(ws, f"F{r}", "" if key != "BIND27" else "la grille ci-dessous part de cette ligne", color=GREY)
     HR = r; r += 1
-ce_ev_usd, i_ceev = E("Clean Earth : valeur d'entreprise", "annonce 11/2025", "Md USD")
 mults = [(8, "bas de marché supposé"), (f"={ce_mult}", "Clean Earth après synergies"), (12, "hypothèse"),
          (f"={ce_ev_usd}*1000/{ce_eb}", "Clean Earth avant synergies (VE / EBITDA 2026E)")]
 for m, note in mults:
@@ -1036,6 +1226,13 @@ checks = [
      E("Pont de dette 2024 : investissements financiers nets des cessions", "FY2024")[0], 60, NF_M, "Bloquant"),
     ("Dette maximale 2027 à l'objectif 8 Md€ ≈ 24 Md€ (cadrage du cours)", A["maxDebtTgt"], 24000, 1, NF_M, "Bloquant"),
     ("FFO / dette ajustée 2026 du modèle dans l'attente de Moody's (18-19 %, ± 2 pts)", T["RATIO26"], 0.185, 0.02, NF_P, "Bloquant"),
+    ("Marge des boosters 2025 recalculée = publiée (12,6 %)", SG["boostMargin"], SG["boostMarginPub"], 0.002, NF_P, "Bloquant"),
+    ("Clean Harbors : marge d'EBITDA ajusté recalculée = publiée (19,4 %)",
+     f"{E('Clean Harbors : EBITDA ajusté total', 'FY2025')[0]}/1000/{E('Clean Harbors : chiffre d\'affaires direct total', 'FY2025')[0]}",
+     B["clhMargin"], 0.002, NF_P, "Bloquant"),
+    ("Segments 2025 + autres = EBITDA du groupe (autres ≈ 139 M€, note IFRS 8)", SG["other25"], 139, 60, NF_M, "Bloquant"),
+    ("CO2 évité : objectif +30 % vs 2023 (17,5 Mt) face aux 18 Mt énoncés", SG["co2target"], 18, None, NF_D2, "Info"),
+    ("EBITDA 2027 « au rythme de 2025 » face à l'objectif ≥ 8 Md€", SG["eb27seg"], 8000, None, NF_M, "Info"),
     ("Dette ajustée 2026 du modèle face au pic attendu par Moody's (~29 Md€, ± 1,5 Md€)", T["ADJ26"], 29000, 1500, NF_M, "Bloquant"),
     ("EBITDA 2027 central face à l'objectif ≥ 8 Md€", T["EB27"], f"{tgt}*1000", None, NF_M, "Info"),
     ("Marge de FFO 2026 au seuil S&P de 18 % (négatif : le seuil d'agence mord avant le 3x)", A["ffoGap"], 0, None, NF_M, "Info"),
@@ -1089,6 +1286,8 @@ res = [
     ("Marge de FFO en 2026 au seuil S&P (18 % de la dette ajustée au pic), en M EUR", A["ffoGap"], NF_M),
     ("Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR", T["HEADSP27"], NF_M),
     ("Contrainte qui mord en premier fin 2027", T["WHICH27"], None),
+    ("EBITDA 2027 si chaque segment garde son rythme organique de 2025, en M EUR", SG["eb27seg"], NF_M),
+    ("Clean Earth : multiple du prix sur l'EBITDA 2025 publié par le vendeur (reconstitué)", B["mRec"], '0.0"x"'),
     ("Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR", T["MAXACQB"], NF_M),
     ("Contrôles bloquants", VSTAT, None),
 ]
@@ -1119,7 +1318,7 @@ roles = [
     ("1. Périmètre et sources", "Entrées, Cessions §A-B", "L'enveloppe annoncée est nette des cessions ; Clean Earth en sort."),
     ("2. La contrainte", "Levier, Pont de dette", "Définition de Veolia, ratios publiés reproduits, trois lectures du départ au 30/06/2026."),
     ("3. Capacité et sensibilité", "Trajectoire, Sensibilité, Cessions §C", "FCF, calendrier des cessions, ce qui bouge le plus la marge."),
-    ("4. L'écart et les comparables", "Booster", "Volumes face à 9 Mt et à 10 Mt, moteur organique, cadre de comparables."),
+    ("4. L'écart et les comparables", "Segments, Booster", "D'où viennent les 8 Md€ ; volumes face à 9 et 10 Mt ; Clean Harbors et Séché en comparables ; Clean Earth vu du vendeur."),
     ("5. Le coût ESG", "ESG", "Provisions de fermeture ; ce que l'affectation du prix de Clean Earth ne montre pas encore."),
     ("6. Cibles, puis synthèse", "Cibles", "Taille maximale selon le multiple ; univers de cibles à remplir."),
 ]
