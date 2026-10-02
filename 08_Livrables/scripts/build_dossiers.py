@@ -95,20 +95,41 @@ def src(r):
             f'<span class="pg">p.{r["page"]}</span>')
 
 
+class Row(str):
+    """A table row: the HTML, plus the cells the Word report needs."""
+    cells: tuple = ()
+
+
 def row_fig(label, r, shown=None):  # noqa: F811
     value = shown or globals()["shown"](r)
-    return (f'<tr><td>{esc(label)}<span class="per">{esc(r["period"])}</span></td>'
-            f'<td class="num" title="imprimé : {esc(r["value"])}">{value}</td><td class="src">{src(r)}</td></tr>')
+    row = Row(f'<tr><td>{esc(label)}<span class="per">{esc(r["period"])}</span></td>'
+              f'<td class="num" title="imprimé : {esc(r["value"])}">{value}</td><td class="src">{src(r)}</td></tr>')
+    row.cells = (r["id"], label, r["period"], html.unescape(value), f"{Path(r['file']).name}, p. {r['page']}", r.get("checked_by", ""))
+    return row
 
 
 def row_calc(label, value, how):
-    return (f'<tr class="calc"><td>{esc(label)}</td><td class="num">{value}</td>'
-            f'<td class="src">{esc(how)}</td></tr>')
+    row = Row(f'<tr class="calc"><td>{esc(label)}</td><td class="num">{value}</td>'
+              f'<td class="src">{esc(how)}</td></tr>')
+    row.cells = ("calcul", label, "", value, how, "")
+    return row
+
+
+LAST_ROWS: list = []
 
 
 def table(rows):
+    LAST_ROWS[:] = [r.cells for r in rows if getattr(r, "cells", None)]
     return ('<div class="tbl"><table><thead><tr><th>Chiffre</th><th class="num">Valeur</th>'
             '<th>Source</th></tr></thead><tbody>' + "".join(rows) + "</tbody></table></div>")
+
+
+def plain(s):
+    """HTML → text, for the Word report."""
+    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", str(s)))).strip()
+
+
+REPORT_ROLES: list = []
 
 
 def steps(items):
@@ -124,6 +145,11 @@ def jury(pairs):
 
 
 def role(n, name, brief, answer, figures, reasoning, open_items, qa, tabs):
+    REPORT_ROLES.append({
+        "n": n, "name": name, "brief": brief, "answer": plain(answer), "reasoning": [plain(x) for x in reasoning],
+        "open": [plain(x) for x in open_items], "qa": [(plain(q), plain(a)) for q, a in qa], "tabs": tabs,
+        "figures": list(LAST_ROWS),
+    })
     return f"""
 <section class="role" id="role-{n}" aria-labelledby="h-{n}">
   <header class="role-head">
@@ -896,6 +922,30 @@ Toute recommandation d'acquisition se compare à la marge du scénario central e
 défavorable, ou dire explicitement quelle cession ou quelle levée de fonds propres la finance. Les hypothèses sont
 discutables : elles sont en jaune dans le classeur, et la fourchette se régénère en une commande.
 """, encoding="utf-8")
+import json as _json
+_thread = plain(page.split('<h2 id="h-thread">Le fil rouge</h2>', 1)[1].split("<div class=\"tiles\">", 1)[0])
+_qr = [plain(x) for x in re.findall(r"<li>(.*?)</li>", page.split("Les quatre questions de recherche", 1)[1].split("</ol>", 1)[0], re.S)]
+_blocks = [plain(x) for x in re.findall(r"<li>(.*?)</li>", page.split("Les cinq blocs du chantier", 1)[1].split("</ol>", 1)[0], re.S)]
+_todo = [plain(x) for x in re.findall(r"<li>(.*?)</li>", page.split('id="h-todo"', 1)[1].split("</ul>", 1)[0], re.S)]
+_range_rows = []
+for line in OUT_RANGE.read_text(encoding="utf-8").splitlines():
+    if line.startswith("| ") and not line.startswith("|---") and "Défavorable" not in line:
+        _range_rows.append([c.strip() for c in line.strip("|").split("|")])
+OUT.with_name("report-data.json").write_text(_json.dumps({
+    "generated": __import__("datetime").date.today().isoformat(),
+    "checks": str(checks_ok), "n_figures": len(REG),
+    "title": "GreenUp 2027 : combien Veolia peut-elle encore acheter sans dépasser ses engagements de levier ?",
+    "subtitle": "Capstone Innovations in Finance — sujet 2, périmètre « capacité financière »",
+    "thread": _thread,
+    "tiles": [(a, plain(b), c) for a, b, c in tiles],
+    "research_questions": _qr, "capacity_blocks": _blocks,
+    "range_rows": _range_rows,
+    "roles": REPORT_ROLES,
+    "todo": _todo,
+    "register": [[r["id"], r["label"], f"{r['value']} {r['unit']}".strip(), r["period"],
+                  f"{Path(r['file']).name}, p. {r['page']}, {r['source_url']} (consulté le {r['date_consulted']})",
+                  r.get("workstream", ""), r.get("checked_by", "")] for r in REG],
+}, ensure_ascii=False, indent=1), encoding="utf-8")
 OUT_STANDALONE = OUT.with_name("dossiers-sujet-2.standalone.html")
 OUT_STANDALONE.write_text(standalone, encoding="utf-8")
 print("écrit", OUT, len(page) // 1024, "Ko ; version autonome", OUT_STANDALONE.name)
