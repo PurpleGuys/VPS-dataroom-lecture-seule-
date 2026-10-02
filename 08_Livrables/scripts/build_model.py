@@ -243,7 +243,12 @@ hyp(r, "mDisp", "Multiple VE / EBITDA des actifs cédés", 10, 8, 12, "x",
 hyp(r, "tuck", "Tuck-ins payés en 2027", f"={tuck_lo}", 0, f"={tuck_hi}", "Md EUR",
     "Bas de la fourchette GreenUp (0,5 à 1,0 Md€) : Clean Earth a déjà consommé l'enveloppe.",
     f"{id_tlo}, {id_thi}", NF_D2); r += 1
-VARIED = ["g26", "g27", "ceEb", "syn", "fcfH2", "conv", "gDiv", "s26", "s27", "mDisp", "tuck"]
+mo25h, id_mo25h = E("Moody's : FFO / dette nette ajustée", "FY2025")
+mond25h, id_mond25h = E("Moody's : dette nette ajustée", "FY2025")
+hyp(r, "ffo", "FFO (mesure des agences) en % de l'EBITDA", f"={mo25h}/100*{mond25h}*1000/{eb25}", f"=C{r}*0.95", f"=C{r}*1.03", "%",
+    "FFO 2025 implicite chez Moody's (20,3 % × 25,4 Md€ = 5,2 Md€) rapporté à l'EBITDA 2025 publié. Le bas couvre le surcoût d'intérêts de la dette Clean Earth.",
+    f"{id_mo25h}, {id_mond25h}, {id_eb25}", NF_P); r += 1
+VARIED = ["g26", "g27", "ceEb", "syn", "fcfH2", "conv", "gDiv", "s26", "s27", "mDisp", "tuck", "ffo"]
 r += 1
 put(ws, f"A{r}", "Hypothèses fixes (non soumises à la sensibilité)", bold=True); r += 1
 hyp(r, "fx", "Change USD par EUR", f"={ce_usd}/{ce_eur}", None, None, "USD/EUR",
@@ -642,6 +647,19 @@ calc = [
     ("MAXACQ", "Acquisition maximale au multiple des tuck-ins",
      "=IF({c}{mTuck}>{c}{cap},MAX(0,{c}{HEAD27})/(1-{c}{cap}/{c}{mTuck}),0)", "M EUR", NF_M, True),
     ("GAP8", "EBITDA 2027 moins l'objectif ≥ 8 Md€", "={c}{EB27}-{tgt}*1000", "M EUR", NF_M, False),
+    ("SEP2", None, None, None, None, None),
+    ("ADJ26", "Dette nette ajustée par les agences fin 2026 (DFN + écart Moody's 2025)", "={c}{NFD26}+({mond25}*1000-{nfd25})", "M EUR", NF_M, False),
+    ("FFO26", "FFO 2026 (hypothèse ffo × EBITDA 2026)", "={c}{ffo}*{c}{EB26}", "M EUR", NF_M, False),
+    ("RATIO26", "FFO / dette ajustée fin 2026", "={c}{FFO26}/{c}{ADJ26}", "%", NF_P, True),
+    ("HEADSP26", "Marge de dette fin 2026 sous le seuil S&P (FFO / 18 % − dette ajustée)", "={c}{FFO26}/({sptrig}/100)-{c}{ADJ26}", "M EUR", NF_M, True),
+    ("ADJ27", "Dette nette ajustée fin 2027", "={c}{NFD27}+({mond25}*1000-{nfd25})", "M EUR", NF_M, False),
+    ("FFO27", "FFO 2027", "={c}{ffo}*{c}{EB27}", "M EUR", NF_M, False),
+    ("RATIO27", "FFO / dette ajustée fin 2027", "={c}{FFO27}/{c}{ADJ27}", "%", NF_P, True),
+    ("HEADSP27", "Marge de dette fin 2027 sous le seuil S&P 18 %", "={c}{FFO27}/({sptrig}/100)-{c}{ADJ27}", "M EUR", NF_M, True),
+    ("BIND27", "Marge contraignante fin 2027 (la plus petite des deux)", "=MIN({c}{HEAD27},{c}{HEADSP27})", "M EUR", NF_M, True),
+    ("WHICH27", "Contrainte qui mord en premier", '=IF({c}{HEADSP27}<{c}{HEAD27},"agences : FFO / dette ≥ 18 %","Veolia : levier ≤ 3x")', "", None, True),
+    ("MAXACQB", "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple des tuck-ins",
+     "=IF({c}{mTuck}>{c}{cap},MAX(0,{c}{BIND27})/(1-{c}{cap}/{c}{mTuck}),0)", "M EUR", NF_M, True),
 ]
 tgt, i_tgt = E("Objectif GreenUp : EBITDA", "2027")
 syn_rr, i_syn = E("Clean Earth : synergies de coûts", "année 4")
@@ -650,7 +668,8 @@ ROW = {}
 rr = RES0
 for key, *_ in calc:
     ROW[key] = rr; rr += 1
-refs = dict(eb25=eb25, sign26=sign26, nfdh126=nfdh126, prog=prog, closed=closed, divsh26=div_sh26, tgt=tgt, synRR=syn_rr)
+refs = dict(eb25=eb25, sign26=sign26, nfdh126=nfdh126, prog=prog, closed=closed, divsh26=div_sh26, tgt=tgt, synRR=syn_rr,
+            mond25=mond25, nfd25=nfd25, sptrig=sptrig)
 for key, label, formula, unit, nf, bold in calc:
     rr = ROW[key]
     if label is None:
@@ -661,8 +680,10 @@ for key, label, formula, unit, nf, bold in calc:
     for col, *_ in cols:
         fmt = {**refs, "c": col, **{k: v for k, v in IN.items()}, **{k: v for k, v in ROW.items()}}
         put(ws, f"{col}{rr}", formula.format(**fmt), nf=nf, bold=bold)
+        if key == "WHICH27":
+            ws[f"{col}{rr}"].alignment = Alignment(horizontal="right")
         if bold:
-            ws[f"{col}{rr}"].border = TOPLINE if key in ("EB26", "EB27", "NFD27") else Border()
+            ws[f"{col}{rr}"].border = TOPLINE if key in ("EB26", "EB27", "NFD27", "ADJ26") else Border()
 # hypothèses par colonne
 for code in INPUT_ORDER:
     rr = IN[code]
@@ -698,8 +719,9 @@ T = {k: f"{q('Trajectoire')}!$D${v}" for k, v in ROW.items()}
 ws = sheets["Sensibilité"]
 title(ws, "Rôle 3 — Ce qui bouge le plus la réponse",
       "Marge de manœuvre fin 2027 sous le plafond, une hypothèse à la fois entre ses bornes. Trié par amplitude.")
-header(ws, 4, ["Code", "Hypothèse", "Valeur basse", "Valeur haute", "Marge si bas", "Marge si haut",
-               "Δ bas", "Δ haut", "Amplitude", "Levier 2026 bas", "Levier 2026 haut", "clé de tri"])
+header(ws, 4, ["Code", "Hypothèse", "Valeur basse", "Valeur haute", "Marge 3x si bas", "Marge 3x si haut",
+               "Δ bas", "Δ haut", "Amplitude", "Levier 2026 bas", "Levier 2026 haut", "clé de tri",
+               "Marge S&P si bas", "Marge S&P si haut", "Amplitude S&P"])
 S0 = 5
 for k, code in enumerate(VARIED):
     rr = S0 + k
@@ -719,10 +741,14 @@ for k, code in enumerate(VARIED):
     put(ws, f"J{rr}", f"={q('Trajectoire')}!${lo_col}${ROW['LEV26']}", color=GREEN, nf=NF_X)
     put(ws, f"K{rr}", f"={q('Trajectoire')}!${hi_col}${ROW['LEV26']}", color=GREEN, nf=NF_X)
     put(ws, f"L{rr}", f"=I{rr}+ROW()/1000000", color=GREY, nf='0.000000')
+    put(ws, f"M{rr}", f"={q('Trajectoire')}!${lo_col}${ROW['HEADSP27']}", color=GREEN, nf=NF_M)
+    put(ws, f"N{rr}", f"={q('Trajectoire')}!${hi_col}${ROW['HEADSP27']}", color=GREEN, nf=NF_M)
+    put(ws, f"O{rr}", f"=ABS(N{rr}-M{rr})", nf=NF_M, bold=True)
 S1 = S0 + len(VARIED) - 1
 r = S1 + 2
-put(ws, f"B{r}", "Base : marge de manœuvre fin 2027", bold=True)
-put(ws, f"E{r}", f"={T['HEAD27']}", color=GREEN, nf=NF_M, bold=True); BASE_ROW = r; r += 2
+put(ws, f"B{r}", "Base : marge de manœuvre fin 2027 sous 3x · sous le seuil S&P", bold=True)
+put(ws, f"E{r}", f"={T['HEAD27']}", color=GREEN, nf=NF_M, bold=True)
+put(ws, f"M{r}", f"={T['HEADSP27']}", color=GREEN, nf=NF_M, bold=True); BASE_ROW = r; r += 2
 put(ws, f"A{r}", "Classement", bold=True); r += 1
 header(ws, r, ["Rang", "Hypothèse", "Δ bas", "Δ haut", "Amplitude"]); r += 1
 R0 = r
@@ -762,7 +788,8 @@ el = [
 ]
 for lab, f, why in el:
     put(ws, f"B{r}", lab); put(ws, f"C{r}", f, nf=NF_M); put(ws, f"E{r}", why, color=GREY); r += 1
-widths(ws, {"A": 7, "B": 50, "C": 12, "D": 12, "E": 12, "F": 12, "G": 10, "H": 10, "I": 11, "J": 11, "K": 11, "L": 11})
+widths(ws, {"A": 7, "B": 50, "C": 12, "D": 12, "E": 12, "F": 12, "G": 10, "H": 10, "I": 11, "J": 11, "K": 11, "L": 11,
+            "M": 13, "N": 13, "O": 12})
 ws.column_dimensions["L"].hidden = True
 
 # ================================================================ Booster
@@ -935,11 +962,15 @@ K = {}
 r = 4
 put(ws, f"A{r}", "A", bold=True); put(ws, f"B{r}", "Capacité selon le multiple payé et le scénario", bold=True); r += 1
 header(ws, r, ["", "Multiple VE / EBITDA payé", "Défavorable", "Central", "Favorable", "Note"]); r += 1
-put(ws, f"B{r}", "Marge de manœuvre fin 2027 (M EUR)", bold=True)
-put(ws, f"C{r}", f"={q('Trajectoire')}!${UNFAV}${ROW['HEAD27']}", color=GREEN, nf=NF_M, bold=True)
-put(ws, f"D{r}", f"={T['HEAD27']}", color=GREEN, nf=NF_M, bold=True)
-put(ws, f"E{r}", f"={q('Trajectoire')}!${FAV}${ROW['HEAD27']}", color=GREEN, nf=NF_M, bold=True)
-HR = r; r += 1
+for lab, key in (("Marge de manœuvre fin 2027 sous le levier ≤ 3x (M EUR)", "HEAD27"),
+                 ("Marge fin 2027 sous le seuil S&P (FFO / dette ≥ 18 %)", "HEADSP27"),
+                 ("Marge contraignante fin 2027 (la plus petite des deux)", "BIND27")):
+    put(ws, f"B{r}", lab, bold=key == "BIND27")
+    put(ws, f"C{r}", f"={q('Trajectoire')}!${UNFAV}${ROW[key]}", color=GREEN, nf=NF_M, bold=key == "BIND27")
+    put(ws, f"D{r}", f"={T[key]}", color=GREEN, nf=NF_M, bold=key == "BIND27")
+    put(ws, f"E{r}", f"={q('Trajectoire')}!${FAV}${ROW[key]}", color=GREEN, nf=NF_M, bold=key == "BIND27")
+    put(ws, f"F{r}", "" if key != "BIND27" else "la grille ci-dessous part de cette ligne", color=GREY)
+    HR = r; r += 1
 ce_ev_usd, i_ceev = E("Clean Earth : valeur d'entreprise", "annonce 11/2025", "Md USD")
 mults = [(8, "bas de marché supposé"), (f"={ce_mult}", "Clean Earth après synergies"), (12, "hypothèse"),
          (f"={ce_ev_usd}*1000/{ce_eb}", "Clean Earth avant synergies (VE / EBITDA 2026E)")]
@@ -1004,6 +1035,8 @@ checks = [
      f"-{E('Investissements financiers nets 2024', 'FY2024')[0]}*1000",
      E("Pont de dette 2024 : investissements financiers nets des cessions", "FY2024")[0], 60, NF_M, "Bloquant"),
     ("Dette maximale 2027 à l'objectif 8 Md€ ≈ 24 Md€ (cadrage du cours)", A["maxDebtTgt"], 24000, 1, NF_M, "Bloquant"),
+    ("FFO / dette ajustée 2026 du modèle dans l'attente de Moody's (18-19 %, ± 2 pts)", T["RATIO26"], 0.185, 0.02, NF_P, "Bloquant"),
+    ("Dette ajustée 2026 du modèle face au pic attendu par Moody's (~29 Md€, ± 1,5 Md€)", T["ADJ26"], 29000, 1500, NF_M, "Bloquant"),
     ("EBITDA 2027 central face à l'objectif ≥ 8 Md€", T["EB27"], f"{tgt}*1000", None, NF_M, "Info"),
     ("Marge de FFO 2026 au seuil S&P de 18 % (négatif : le seuil d'agence mord avant le 3x)", A["ffoGap"], 0, None, NF_M, "Info"),
     ("Pont 2025 : flux non détaillés dans le communiqué", P["resid25"], 0, None, NF_M, "Info"),
@@ -1054,6 +1087,9 @@ res = [
     ("Levier fin 2027 si 50 % des hybrides comptent en dette", f"{q('Levier')}!$C${A['def_rows'][0] + 1}", NF_X),
     ("Sorties nettes d'acquisitions cumulées depuis 2024, en Md EUR (enveloppe boosters : 4)", C["spentCum"], NF_D2),
     ("Marge de FFO en 2026 au seuil S&P (18 % de la dette ajustée au pic), en M EUR", A["ffoGap"], NF_M),
+    ("Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR", T["HEADSP27"], NF_M),
+    ("Contrainte qui mord en premier fin 2027", T["WHICH27"], None),
+    ("Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR", T["MAXACQB"], NF_M),
     ("Contrôles bloquants", VSTAT, None),
 ]
 for lab, ref, nf in res:

@@ -144,22 +144,44 @@ def role(n, name, brief, answer, figures, reasoning, open_items, qa, tabs):
 
 
 # ------------------------------------------------------------------ valeurs du modèle
-LEV26 = cell("Trajectoire", "D32"); LEV26PF = cell("Trajectoire", "D33")
-EB27 = cell("Trajectoire", "D40"); NFD27 = cell("Trajectoire", "D43"); LEV27 = cell("Trajectoire", "D44")
-HEAD = cell("Trajectoire", "D45"); MAXACQ = cell("Trajectoire", "D46"); GAP8 = cell("Trajectoire", "D47")
-FCF27 = cell("Trajectoire", "D41"); DIV27 = cell("Trajectoire", "D42"); NFD26 = cell("Trajectoire", "D31")
-EB26 = cell("Trajectoire", "D30")
-assert cell("Trajectoire", "B45").startswith("Marge de manœuvre"), cell("Trajectoire", "B45")
+_wt = WB["Trajectoire"]
+def traj(label, col="D", exact=False):
+    for c in _wt["B"]:
+        if isinstance(c.value, str) and (c.value == label if exact else c.value.startswith(label)):
+            return _wt[f"{col}{c.row}"].value
+    raise SystemExit(f"Trajectoire : pas de ligne {label!r}")
+def _colname(i):
+    return chr(ord("A") + i) if i < 26 else chr(ord("A") + i // 26 - 1) + chr(ord("A") + i % 26)
+_cols = [c.value for c in _wt[4]]
+UNFC = _colname(_cols.index("Défavorable combiné")); FAVC = _colname(_cols.index("Favorable combiné"))
+LEV26 = traj("Levier fin 2026", exact=True); LEV26PF = traj("Levier fin 2026, Clean Earth pro forma")
+EB27 = traj("EBITDA 2027", exact=True); NFD27 = traj("Dette financière nette au 31/12/2027", exact=True)
+LEV27 = traj("Levier fin 2027", exact=True); FCF27 = traj("Cash-flow libre net 2027", exact=True)
+DIV27 = traj("Dividendes versés en 2027", exact=True); NFD26 = traj("Dette financière nette au 31/12/2026", exact=True)
+EB26 = traj("EBITDA 2026", exact=True)
+HEAD = traj("Marge de manœuvre fin 2027"); MAXACQ = traj("Acquisition maximale au multiple"); GAP8 = traj("EBITDA 2027 moins")
+HEADSP26 = traj("Marge de dette fin 2026 sous le seuil"); HEADSP27 = traj("Marge de dette fin 2027 sous le seuil")
+HEADSP27_UNF = traj("Marge de dette fin 2027 sous le seuil", UNFC); HEADSP26_UNF = traj("Marge de dette fin 2026 sous le seuil", UNFC)
+RATIO26 = traj("FFO / dette ajustée fin 2026"); RATIO27 = traj("FFO / dette ajustée fin 2027")
+ADJ26 = traj("Dette nette ajustée par les agences fin 2026")
+WHICH27 = traj("Contrainte qui mord"); WHICH27_UNF = traj("Contrainte qui mord", UNFC)
+BIND27 = traj("Marge contraignante"); MAXACQB = traj("Acquisition maximale fin 2027 sous la contrainte")
 UNF = mv("Cibles", "Marge de manœuvre fin 2027", "C"); FAV = mv("Cibles", "Marge de manœuvre fin 2027", "E")
-grid = {}
-for r in range(7, 11):
-    grid[r] = [cell("Cibles", f"{c}{r}") for c in "BCDE"]
+_wc = WB["Cibles"]
+_hr = next(c.row for c in _wc["B"] if isinstance(c.value, str) and c.value.startswith("Marge contraignante"))
+grid = {k: [_wc[f"{c}{r}"].value for c in "BCDE"] for k, r in zip((8, 9, 10, 11), range(_hr + 1, _hr + 5))}
 LTM = mv("Levier", "EBITDA glissant"); LMECH = mv("Levier", "① Levier mécanique")
 LPF = mv("Levier", "② Levier pro forma"); LSEAS = mv("Levier", "③ Levier pro forma")
 HEAD25 = mv("Levier", "Marge sous le plafond au 31/12/2025")
 D50 = mv("Levier", "Hybrides comptés à 50"); D100 = mv("Levier", "Hybrides comptés à 100")
 DPROV = mv("Levier", "Hybrides à 50 % + provisions")
-rank = [(cell("Sensibilité", f"B{r}"), cell("Sensibilité", f"E{r}")) for r in range(21, 32)]
+_ws = WB["Sensibilité"]
+_r0 = next(c.row for c in _ws["A"] if c.value == "Rang") + 1
+rank = []
+for r in range(_r0, _r0 + 40):
+    if not _ws[f"B{r}"].value or not isinstance(_ws[f"E{r}"].value, (int, float)):
+        break
+    rank.append((_ws[f"B{r}"].value, _ws[f"E{r}"].value))
 assert rank[0][1] >= rank[-1][1]
 H1_LOW = cell("Sensibilité", "E13")      # marge si s27 = 0
 _ws = WB["Sensibilité"]
@@ -337,8 +359,11 @@ ROLES.append(role(
     f"dans la guidance, et {x(LEV27)} fin 2027, soit {fr(HEAD / 1000, 2)} Md€ de marge sous 3x. "
     f"<strong>Mais la vraie limite est celle des agences</strong> : S&P abaisse la note si FFO / dette ajustée ne reste pas au-dessus de "
     f"{P(f['sptrig'])} %, Moody's si le ratio passe sous « {esc(f['motrig']['value'])} ». Au pic de dette ajustée de 2026 "
-    f"(~{P(f['mond26'])} Md€), tenir 18 % demande {fr(FFOREQ / 1000, 1)} Md€ de FFO, à peu près le FFO 2025 ({fr(FFO25 / 1000, 1)} Md€) : "
-    "en 2026 la marge est nulle côté agences, et ce seuil mord avant le 3x.",
+    f"(~{P(f['mond26'])} Md€), tenir 18 % demande {fr(FFOREQ / 1000, 1)} Md€ de FFO, soit le FFO 2025 ({fr(FFO25 / 1000, 1)} Md€) : "
+    f"à FFO constant il n'y a pas de marge. Si le FFO suit l'EBITDA, le modèle donne {pct(RATIO26)} fin 2026 (Moody's attend "
+    f"{P(f['mo26lo'])}-{P(f['mo26hi'])} %) et {pct(RATIO27)} fin 2027 : <strong>le seuil des agences mord en 2026, le 3x de Veolia "
+    f"mord en 2027</strong> ({fr(HEADSP27 / 1000, 1)} Md€ de marge sous 18 % contre {fr(HEAD / 1000, 2)} Md€ sous 3x). "
+    f"Dans le scénario défavorable, la marge d'agence 2026 tombe à {fr(HEADSP26_UNF / 1000, 2)} Md€.",
     table([
         row_fig("Dette financière nette", f["nfd24"]), row_fig("EBITDA", f["eb24"]), row_fig("Levier publié", f["lev24"]),
         row_fig("Dette financière nette", f["nfd25"]), row_fig("EBITDA", f["eb25"]), row_fig("Levier publié", f["lev25"]),
@@ -400,9 +425,10 @@ ROLES.append(role(
          f"Parce qu'il rapporte toute la dette de Clean Earth à un seul mois de son EBITDA, et une dette de juin, toujours plus haute, à un "
          f"plafond qui se mesure en décembre. Corrigé des deux, on est à {x(LSEAS)}."),
         ("Quel est le vrai plafond : 3x ou les agences ?",
-         f"Les agences. Veolia s'engage à garder BBB / Baa1, et S&P dit explicitement qu'elle abaisse la note sous 18 % de FFO / dette. "
-         f"Au pic de 2026, ce seuil demande {fr(FFOREQ / 1000, 1)} Md€ de FFO pour {fr(FFO25 / 1000, 1)} Md€ disponibles : il n'y a pas de marge, "
-         "et c'est pour cela que les cessions sont annoncées dans les deux ans."),
+         f"Les deux, à des dates différentes. Veolia s'engage à garder BBB / Baa1, et S&P abaisse la note sous 18 % de FFO / dette. "
+         f"Au pic de dette de 2026, ce seuil demande {fr(FFOREQ / 1000, 1)} Md€ de FFO pour {fr(FFO25 / 1000, 1)} Md€ générés en 2025 : "
+         f"c'est 2026 qui est tendu, et c'est pour cela que les cessions sont annoncées dans les deux ans. Fin 2027, avec un FFO qui suit "
+         f"l'EBITDA, le ratio remonte à {pct(RATIO27)} et c'est le 3x de Veolia qui limite la capacité ({WHICH27.split(' : ')[0]} dans le modèle)."),
         ("Les hybrides sont-ils de la dette ?",
          "Pas pour Veolia ni en IFRS. Mais ils portent un coupon et une date de rappel : un lecteur prudent en compte une partie, "
          f"et le plafond de 2027 n'est alors plus tenu ({x(D50)} à 50 %)."),
@@ -623,7 +649,8 @@ tiles = [
     ("Levier fin 2026", x(LEV26), "guidance : égal ou légèrement au-dessus de 3x"),
     ("Levier fin 2027", x(LEV27), "engagement : au plus 3x"),
     ("Marge sous 3x fin 2027", fr(HEAD / 1000, 2, "Md€"), f"défavorable {fr(UNF / 1000, 2)} · favorable {fr(FAV / 1000, 2)}"),
-    ("Acquisition max. fin 2027", fr(MAXACQ / 1000, 2, "Md€"), "au multiple de Clean Earth"),
+    ("Marge sous 18 % S&P fin 2027", fr(HEADSP27 / 1000, 2, "Md€"), f"FFO / dette ajustée {pct(RATIO26)} en 2026, {pct(RATIO27)} en 2027"),
+    ("Acquisition max. fin 2027", fr(MAXACQB / 1000, 2, "Md€"), f"sous la contrainte qui mord : {esc(WHICH27.split(' : ')[0])}"),
     ("Sorties nettes depuis 2024", fr(SPENT["cum"], 2, "Md€"), f"enveloppe boosters annoncée : {P(f['boost4'])} Md€, nets"),
 ]
 tiles_html = "".join(f'<div class="tile"><p class="t-label">{esc(a)}</p><p class="t-val">{b}</p><p class="t-note">{esc(c)}</p></div>'
@@ -726,6 +753,8 @@ tr.calc td:first-child {{ font-style: italic; }}
     ramène. Si ce programme est encaissé à temps, il reste fin 2027 environ {fr(HEAD / 1000, 1)} Md€ de marge sous 3x, soit une acquisition
     d'environ {fr(MAXACQ / 1000, 1)} Md€ au multiple de Clean Earth. Cette marge dépend d'abord du calendrier des cessions, de la croissance
     organique de 2027 et des tuck-ins. Elle disparaît si tout tourne mal en même temps, ou si l'on compte la moitié des hybrides en dette.
+    Le seuil des agences (FFO / dette ajustée ≥ 18 % chez S&P) est la contrainte de 2026 : {pct(RATIO26)} dans le scénario central, dans
+    l'attente de Moody's ; fin 2027 il laisse {fr(HEADSP27 / 1000, 1)} Md€ et c'est le 3x qui mord.
     Le booster déchets dangereux tient son objectif de volume révisé, pas l'initial, et sa croissance est surtout achetée. Le passif
     environnemental de Clean Earth n'est pas encore visible dans les comptes.</p>
     <div class="tiles">{tiles_html}</div>
@@ -784,6 +813,43 @@ body = body.replace('<span style="font-family:var(--mono)">modele-greenup-2027.x
 standalone = ('<!doctype html>\n<html lang="fr">\n<head>\n<meta charset="utf-8">\n'
               '<meta name="viewport" content="width=device-width, initial-scale=1">\n' + head +
               '<style>body{margin:0}</style>\n</head>\n<body>\n<div class="wrap">' + body + '\n</body>\n</html>\n')
+OUT_RANGE = OUT.with_name("fourchette-capacite.md")
+rank_txt = "\n".join(f"{i + 1}. {n} — amplitude {fr(v, 0)} M€" for i, (n, v) in enumerate(rank[:5]))
+OUT_RANGE.write_text(f"""# Fourchette de capacité d'acquisition — GreenUp 2027
+
+Périmètre « capacité financière », pour les groupes des trois autres périmètres. Généré depuis le classeur
+`modele-greenup-2027.xlsx` (contrôles bloquants : {checks_ok}) le {__import__('datetime').date.today().isoformat()}.
+Chaque chiffre d'entrée vient de `00_Admin/register.csv` ; les hypothèses sont dans l'onglet Hypothèses.
+
+## Le nombre à respecter
+
+| Fin 2027 | Défavorable | Central | Favorable |
+|---|---|---|---|
+| Marge de dette sous le levier ≤ 3x (M EUR) | {fr(UNF, 0)} | {fr(HEAD, 0)} | {fr(FAV, 0)} |
+| Marge de dette sous le seuil S&P 18 % FFO / dette ajustée (M EUR) | {fr(HEADSP27_UNF, 0)} | {fr(HEADSP27, 0)} | {fr(traj("Marge de dette fin 2027 sous le seuil", FAVC), 0)} |
+| Contrainte qui mord en premier | {WHICH27_UNF.split(' : ')[0]} | {WHICH27.split(' : ')[0]} | {traj("Contrainte qui mord", FAVC).split(' : ')[0]} |
+| Acquisition maximale au multiple de Clean Earth ({P(f['mult'])}x), M EUR | {fr(traj("Acquisition maximale fin 2027 sous la contrainte", UNFC), 0)} | {fr(MAXACQB, 0)} | {fr(traj("Acquisition maximale fin 2027 sous la contrainte", FAVC), 0)} |
+
+Lecture : une acquisition ajoute son prix à la dette et seulement prix ÷ multiple à l'EBITDA ; elle tient tant que
+prix ≤ marge ÷ (1 − 3 ÷ multiple). Au multiple de Clean Earth, 1 Md€ de marge vaut environ {fr(1000 / (1 - 3 / N(f['mult'])) / 1000, 2)} Md€ d'acquisition.
+
+## Les repères de départ
+
+- Levier fin 2026 (définition Veolia) : {x(LEV26)} dans le scénario central — guidance « égal ou légèrement supérieur à 3x ».
+- Levier fin 2027 : {x(LEV27)} (engagement ≤ 3x).
+- FFO / dette ajustée (mesure des agences) : {pct(RATIO26)} fin 2026 (Moody's attend {P(f['mo26lo'])}-{P(f['mo26hi'])} %), {pct(RATIO27)} fin 2027 ; S&P abaisse la note sous {P(f['sptrig'])} %.
+- Sorties nettes d'acquisitions depuis 2024 : {fr(SPENT['cum'], 2)} Md€, pour une enveloppe boosters annoncée de {P(f['boost4'])} Md€ nets.
+
+## Ce qui fait bouger la fourchette (une hypothèse à la fois, marge sous 3x)
+
+{rank_txt}
+
+## Ce que les autres périmètres doivent faire de ce nombre
+
+Toute recommandation d'acquisition se compare à la marge du scénario central et doit survivre au scénario
+défavorable, ou dire explicitement quelle cession ou quelle levée de fonds propres la finance. Les hypothèses sont
+discutables : elles sont en jaune dans le classeur, et la fourchette se régénère en une commande.
+""", encoding="utf-8")
 OUT_STANDALONE = OUT.with_name("dossiers-sujet-2.standalone.html")
 OUT_STANDALONE.write_text(standalone, encoding="utf-8")
 print("écrit", OUT, len(page) // 1024, "Ko ; version autonome", OUT_STANDALONE.name)
