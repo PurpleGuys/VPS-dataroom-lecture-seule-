@@ -1527,7 +1527,7 @@ for code in VARIED:
     put(ws, f"C{r}", f"={HY(code, 'C')}", color=GREEN, nf=nf)
     hl, hh = f"{TJ}!{lo_col}{IN[code]}", f"{TJ}!{hi_col}{IN[code]}"
     unit = sheets["Hypothèses"][f"F{hrow}"].value
-    tfmt = {"%": "0.0%", "x": '0.0""x""', "Md EUR": "0.00"}.get(unit, "# ##0")   # guillemets doublés : on est dans une formule
+    tfmt = {"%": "0.0%", "x": '0.0""x""', "Md EUR": "0.00"}.get(unit, "#,##0")   # guillemets doublés : on est dans une formule
     xl, xh = (f"(1/{hl})", f"(1/{hh})") if code in INV else (hl, hh)
     for k, (cid, lab, metric) in enumerate(CONCL):
         col = L(4 + k)
@@ -1536,7 +1536,8 @@ for code in VARIED:
         value = f"1/{star}" if code in INV else star
         num_col = L(11 + k)
         put(ws, f"{num_col}{r}", f'=IF(ABS(({mh})-({ml}))<1E-9,"",{value})', color=GREY, nf='0.0000')
-        shown = f'TEXT({num_col}{r},"{tfmt}")'
+        # à la française : espace fine pour les milliers, virgule décimale, vrai signe moins
+        shown = f'SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(TEXT({num_col}{r},"{tfmt}"),",","\u202f"),".",","),"-","−")'
         put(ws, f"{col}{r}", f'=IF({num_col}{r}="","sans effet",IF(AND(({ml})>=0,({mh})>=0),"tient partout (seuil "&{shown}&")",'
                               f'IF(AND(({ml})<0,({mh})<0),"faux partout (il faudrait "&{shown}&")","bascule à "&{shown})))')
     put(ws, f"I{r}", "inverse du multiple" if code in INV else "", color=GREY)

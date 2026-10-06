@@ -128,8 +128,17 @@ if spec:
             if value is not None:
                 bascules.append({"code": code, "conclusion": cid, "value": value})
     bascule_params = {"size": num(fin[spec["size_cell"]].value), "lev26max": num(fin[spec["lev26max_cell"]].value)}
+    # le tableau tel que le classeur l'écrit (Financement §D) : intitulé de chaque conclusion, verdict par hypothèse
+    head = spec["first_row"] - 1
+    verdict_cols = ["D", "E", "F", "G"]
+    bascule_table = {
+        "conclusions": [{"id": cid, "label": str(fin[f"{c}{head}"].value or cid)} for cid, c in zip(spec["conclusions"], verdict_cols)],
+        "rows": [{"code": fin[f"A{r}"].value, "label": fin[f"B{r}"].value, "base": num(fin[f"C{r}"].value),
+                  "verdicts": [str(fin[f"{c}{r}"].value or "") for c in verdict_cols]}
+                 for r in range(spec["first_row"], spec["last_row"] + 1)],
+    }
 else:
-    bascule_params = {}
+    bascule_params, bascule_table = {}, {}
 
 # ---------------------------------------------------------------- menu de financement (Financement §A-§B) : paramètres et valeurs Excel
 financing = {}
@@ -212,7 +221,7 @@ data = {
     "inputs": inputs, "consts": consts, "columns": columns,
     "distribution": distribution, "probabilities": probabilities, "factor_weight": factor_weight,
     "multiples": multiples, "history": history,
-    "bascules": bascules, "bascule_params": bascule_params, "financing": financing,
+    "bascules": bascules, "bascule_params": bascule_params, "bascule_table": bascule_table, "financing": financing,
     "targets": targets, "target_params": target_params,
 }
 OUT.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")

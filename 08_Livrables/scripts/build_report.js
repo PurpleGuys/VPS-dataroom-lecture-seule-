@@ -18,6 +18,8 @@ const FINAL = process.argv.includes("--final") || DATA.final === true;
 const TEXTS = DATA.texts || {};
 const CONTROLS = DATA.controls || null;
 const TEXT_WIDTH = 9026; // A4, marges de 2,54 cm
+// L'édition web du même rapport (dataroom rapport-web) : chaque chiffre y ouvre sa page source, surlignée.
+const WEB = DATA.web_edition || "https://dataroom.is42.fr:8443/visualisation/rapport.html";
 
 const bodyFont = { font: "Arial", size: 22 };
 const smallFont = { font: "Arial", size: 18 };
@@ -160,6 +162,10 @@ children.push(
     "Chaque chiffre cité renvoie à l'annexe A : fichier, page, URL, date de consultation." +
     (FINAL ? "" : " Les passages surlignés sont à rédiger par l'auteur de la section ; « † » après un identifiant : ligne que personne n'a encore relue."),
     { para: { alignment: AlignmentType.CENTER, spacing: { before: 1200 } }, run: { ...smallFont, color: "555555" } }),
+  new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 240 }, children: [
+    new TextRun({ text: "Édition vérifiable, où chaque chiffre ouvre sa page source : ", ...smallFont, color: "555555" }),
+    new ExternalHyperlink({ link: WEB, children: [new TextRun({ text: WEB, ...smallFont, style: "Hyperlink" })] }),
+  ] }),
   pageBreak(),
   h("Sommaire", HeadingLevel.HEADING_1),
   new TableOfContents("Sommaire", { hyperlink: true, headingStyleRange: "1-2" }),
