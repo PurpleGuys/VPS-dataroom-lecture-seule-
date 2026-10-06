@@ -1,7 +1,7 @@
 {
  "generated": "2026-10-06",
  "checks": "OK",
- "n_figures": 487,
+ "n_figures": 529,
  "title": "GreenUp 2027 : combien Veolia peut-elle encore acheter sans dépasser ses engagements de levier ?",
  "subtitle": "Capstone Innovations in Finance — sujet 2, périmètre « capacité financière »",
  "thread": "Veolia annonce des enveloppes nettes. Clean Earth en est sorti ; le programme de cessions de plus de 2 Md€ d'ici mi-2028 l'y ramène. Si ce programme est encaissé à temps, il reste fin 2027 environ 1,6 Md€ de marge sous 3x, soit une acquisition d'environ 2,3 Md€ au multiple de Clean Earth. Cette marge dépend d'abord du calendrier des cessions, de la croissance organique de 2027 et des tuck-ins. Elle disparaît si tout tourne mal en même temps, ou si l'on compte la moitié des hybrides en dette. Le seuil des agences (FFO / dette ajustée ≥ 18 % chez S&P) est la contrainte de 2026 : 19,3 % dans le scénario central, dans l'attente de Moody's ; fin 2027 il laisse 4,3 Md€ et c'est le 3x qui mord. Le booster déchets dangereux tient son objectif de volume révisé, pas l'initial, et sa croissance est surtout achetée. Le passif environnemental de Clean Earth n'est pas encore visible dans les comptes.",
@@ -1586,6 +1586,10 @@
      "Pas dans la définition de Veolia. Un prêteur prudent en tient compte : elles ajouteraient environ 0,16x au levier de 2027."
     ],
     [
+     "Où vont les euros « verts » de Veolia, et que mesure-t-on par euro ?",
+     "La taxonomie européenne (DEU 2025, p.250) : sur 4,5 Md€ de capex, 2,1 Md€ sont éligibles et alignés, soit 47 % ; l'eau en porte 0,8 Md€, les déchets dangereux 0,3 Md€ — 14 % du capex aligné du groupe, mais la ligne la mieux alignée (75 % de l'éligible). Ce que le DEU ne donne pas : l'impact par euro (tonnes traitées, CO2 évité, m³ économisés par M€ investi), publié au niveau du groupe seulement. C'est la question 3 du cours, et une question pour Veolia le 16 octobre."
+    ],
+    [
      "Pourquoi 81 % de goodwill est-il un sujet ESG ?",
      "Parce que tant que le prix n'est pas affecté, un passif environnemental découvert plus tard viendra réduire l'actif net acquis et gonfler le goodwill, sans que personne l'ait vu à l'achat."
     ]
@@ -1778,7 +1782,7 @@
     ],
     [
      "Que paie Veolia d'habitude, et que paie le secteur ?",
-     "Veolia publie ses multiples après synergies : 7,4x pour treize tuck-ins espagnols, environ 9x pour les tuck-ins 2025, 9,40x en médiane, 11,00x au plus (le rachat des 30 % de WTS). Le secteur, avant synergies : 11,11x à 11,52x (HEPACO par Clean Harbors, Covanta par EQT, US Ecology par Republic quand le communiqué est versé) ; HEPACO ressort à 7,1x après synergies. Clean Earth avant synergies dépasse de 3,48x le plus cher du secteur : les synergies « achètent » 5,20x de multiple. D'où la grille : 8x, 9,8x, 12x."
+     "Veolia publie ses multiples après synergies : 7,4x pour treize tuck-ins espagnols, environ 9x pour les tuck-ins 2025, 9,40x en médiane, 11,00x au plus (le rachat des 30 % de WTS). Le secteur, avant synergies : 11,11x à 14,10x (HEPACO par Clean Harbors, Covanta par EQT, US Ecology par Republic quand le communiqué est versé) ; HEPACO ressort à 7,1x après synergies. Clean Earth avant synergies dépasse de 0,90x le plus cher du secteur : les synergies « achètent » 5,20x de multiple. D'où la grille : 8x, 9,8x, 12x."
     ],
     [
      "Quel multiple retenez-vous ?",
@@ -1960,10 +1964,26 @@
      ""
     ],
     [
+     "F525",
+     "US Ecology : valeur totale",
+     "annonce 02/2022",
+     "2,2 Md$",
+     "bic-us-ecology-republic-2022.html, p. 1",
+     ""
+    ],
+    [
+     "F527",
+     "US Ecology : EBITDA ajusté 12 mois",
+     "au 30/09/2021",
+     "156 M$",
+     "bic-us-ecology-republic-2022.html, p. 1",
+     ""
+    ],
+    [
      "calcul",
      "Secteur, avant synergies",
      "",
-     "11,11x à 11,52x",
+     "11,11x à 14,10x",
      "communiqués des acquéreurs, 05_Commercial_Strategy",
      ""
     ],
@@ -1971,7 +1991,7 @@
      "calcul",
      "Clean Earth avant synergies face au plus cher du secteur",
      "",
-     "3,48x",
+     "0,90x",
      "positif = au-dessus",
      ""
     ]
@@ -1979,7 +1999,7 @@
   }
  ],
  "todo": [
-  "Relire en croisé les 487 chiffres du registre et les 26 deals : aucun n'a encore de relecteur.",
+  "Relire en croisé les 529 chiffres du registre et les 26 deals : aucun n'a encore de relecteur.",
   "Lire les 10-K 2025 d'Enviri et de Clean Harbors, désormais dans la dataroom, et en tirer les chiffres des rôles 4 et 5 (passifs environnementaux de Clean Earth, marges et levier de Clean Harbors). Reste à verser : le 10-Q du T1 2026 d'Enviri et le communiqué de vente du 20 novembre 2025.",
   "Avant le 7 octobre : montrer la dataroom comme « sources chargées et lues », et noter dans gaps.md ce qui manque encore.",
   "Rédiger la page d'annexe sur les outils d'IA : dataroom MCP (recherche, registre, contrôles), Claude pour construire le classeur et ces dossiers, LibreOffice pour le recalcul. Aucun chiffre produit par le modèle de langage.",
@@ -6367,6 +6387,384 @@
    "480 M USD",
    "2021e",
    "eqt-covanta-2021-07-14.html, p. 1, https://www.prnewswire.com/news-releases/eqt-infrastructure-to-acquire-covanta-holding-corporation-a-global-leader-in-waste-to-energy-solutions-for-usd-5-3-billion-301333761.html (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F488",
+   "Taxonomie 2025 : chiffre d'affaires total",
+   "44.4 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F489",
+   "Taxonomie 2025 : chiffre d'affaires éligible",
+   "27.8 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F490",
+   "Taxonomie 2025 : chiffre d'affaires éligible et aligné",
+   "20.3 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F491",
+   "Taxonomie 2025 : capex total",
+   "4.5 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F492",
+   "Taxonomie 2025 : capex éligible",
+   "3.0 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F493",
+   "Taxonomie 2025 : capex éligible et aligné",
+   "2.1 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F494",
+   "Taxonomie 2024 : capex total",
+   "4.1 Md EUR",
+   "FY2024",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F495",
+   "Taxonomie 2024 : capex éligible",
+   "2.6 Md EUR",
+   "FY2024",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F496",
+   "Taxonomie 2024 : capex éligible et aligné",
+   "1.8 Md EUR",
+   "FY2024",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F497",
+   "Taxonomie 2024 : chiffre d'affaires éligible et aligné",
+   "19.7 Md EUR",
+   "FY2024",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F498",
+   "Taxonomie 2025 : part du capex éligible",
+   "65.7 %",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F499",
+   "Taxonomie 2025 : part du capex éligible et aligné",
+   "47.2 %",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F500",
+   "Taxonomie 2025 : part du chiffre d'affaires éligible et aligné",
+   "45.7 %",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F501",
+   "Taxonomie 2025, eau et assainissement : chiffre d'affaires éligible",
+   "11.4 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F502",
+   "Taxonomie 2025, eau et assainissement : chiffre d'affaires éligible et aligné",
+   "6.9 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F503",
+   "Taxonomie 2025, eau et assainissement : capex éligible",
+   "1.4 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F504",
+   "Taxonomie 2025, eau et assainissement : capex éligible et aligné",
+   "0.8 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F505",
+   "Taxonomie 2025, collecte et traitement des déchets pour l'économie circulaire (déchets dangereux compris) : chiffre d'affaires éligible",
+   "4.2 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F506",
+   "Taxonomie 2025, collecte et traitement des déchets pour l'économie circulaire (déchets dangereux compris) : chiffre d'affaires éligible et aligné",
+   "3.6 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F507",
+   "Taxonomie 2025, collecte et traitement des déchets pour l'économie circulaire (déchets dangereux compris) : capex éligible",
+   "0.4 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F508",
+   "Taxonomie 2025, collecte et traitement des déchets pour l'économie circulaire (déchets dangereux compris) : capex éligible et aligné",
+   "0.4 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F509",
+   "Taxonomie 2025, collecte et traitement des déchets dangereux, prévention de la pollution (PPC 2.1, 2.2) : chiffre d'affaires éligible",
+   "2.3 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F510",
+   "Taxonomie 2025, collecte et traitement des déchets dangereux, prévention de la pollution (PPC 2.1, 2.2) : chiffre d'affaires éligible et aligné",
+   "1.5 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F511",
+   "Taxonomie 2025, collecte et traitement des déchets dangereux, prévention de la pollution (PPC 2.1, 2.2) : capex éligible",
+   "0.4 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F512",
+   "Taxonomie 2025, collecte et traitement des déchets dangereux, prévention de la pollution (PPC 2.1, 2.2) : capex éligible et aligné",
+   "0.3 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F513",
+   "Taxonomie 2025, énergie produite et distribuée : chiffre d'affaires éligible",
+   "6.1 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F514",
+   "Taxonomie 2025, énergie produite et distribuée : chiffre d'affaires éligible et aligné",
+   "5.1 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F515",
+   "Taxonomie 2025, énergie produite et distribuée : capex éligible",
+   "0.6 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F516",
+   "Taxonomie 2025, énergie produite et distribuée : capex éligible et aligné",
+   "0.5 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F517",
+   "Taxonomie 2025, services énergétiques aux infrastructures : chiffre d'affaires éligible",
+   "3.5 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F518",
+   "Taxonomie 2025, services énergétiques aux infrastructures : chiffre d'affaires éligible et aligné",
+   "2.8 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F519",
+   "Taxonomie 2025, services énergétiques aux infrastructures : capex éligible",
+   "0.2 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F520",
+   "Taxonomie 2025, services énergétiques aux infrastructures : capex éligible et aligné",
+   "0.1 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F521",
+   "Taxonomie 2025, autres activités éligibles : chiffre d'affaires éligible",
+   "0.4 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F522",
+   "Taxonomie 2025, autres activités éligibles : chiffre d'affaires éligible et aligné",
+   "0.3 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F523",
+   "Taxonomie 2025, autres activités éligibles : capex éligible",
+   "0.1 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F524",
+   "Taxonomie 2025, autres activités éligibles : capex éligible et aligné",
+   "0.0 Md EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 250, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F525",
+   "US Ecology (Republic Services) : valeur totale, dette nette comprise, environ",
+   "2.2 Md USD",
+   "annonce 02/2022",
+   "bic-us-ecology-republic-2022.html, p. 1, https://www.bicmagazine.com/industry/investment-banking/us-ecology-joins-republic-services/ (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F526",
+   "US Ecology (Republic Services) : prix par action",
+   "48 USD",
+   "annonce 02/2022",
+   "bic-us-ecology-republic-2022.html, p. 1, https://www.bicmagazine.com/industry/investment-banking/us-ecology-joins-republic-services/ (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F527",
+   "US Ecology (Republic Services) : EBITDA ajusté 12 mois",
+   "156 M USD",
+   "au 30/09/2021",
+   "bic-us-ecology-republic-2022.html, p. 1, https://www.bicmagazine.com/industry/investment-banking/us-ecology-joins-republic-services/ (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F528",
+   "US Ecology (Republic Services) : chiffre d'affaires 12 mois",
+   "968 M USD",
+   "au 30/09/2021",
+   "bic-us-ecology-republic-2022.html, p. 1, https://www.bicmagazine.com/industry/investment-banking/us-ecology-joins-republic-services/ (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F529",
+   "US Ecology (Republic Services) : synergies attendues",
+   "40 M USD",
+   "à 3 ans",
+   "bic-us-ecology-republic-2022.html, p. 1, https://www.bicmagazine.com/industry/investment-banking/us-ecology-joins-republic-services/ (consulté le 2026-10-06)",
    "6",
    ""
   ]

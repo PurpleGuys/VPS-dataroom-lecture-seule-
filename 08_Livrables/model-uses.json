@@ -198,10 +198,10 @@
   "F267-af42",
   "F268",
   "F269",
-  "F271-543e",
   "F271",
-  "F272",
+  "F271-543e",
   "F272-40a3",
+  "F272",
   "F273",
   "F274",
   "F276-facd",
@@ -319,7 +319,41 @@
   "F479",
   "F483",
   "F484",
-  "F486"
+  "F486",
+  "F489",
+  "F490",
+  "F491",
+  "F492",
+  "F493",
+  "F494",
+  "F496",
+  "F499",
+  "F501",
+  "F502",
+  "F503",
+  "F504",
+  "F505",
+  "F506",
+  "F507",
+  "F508",
+  "F509",
+  "F510",
+  "F511",
+  "F512",
+  "F513",
+  "F514",
+  "F515",
+  "F516",
+  "F517",
+  "F518",
+  "F519",
+  "F520",
+  "F521",
+  "F522",
+  "F523",
+  "F524",
+  "F525",
+  "F527"
  ],
  "lookups": [
   {
@@ -2309,6 +2343,198 @@
    "unit": ""
   },
   {
+   "id": "F501",
+   "prefix": "Taxonomie 2025, eau et assainissement : chiffre d'affaires éligible",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F502",
+   "prefix": "Taxonomie 2025, eau et assainissement : chiffre d'affaires éligible et aligné",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F503",
+   "prefix": "Taxonomie 2025, eau et assainissement : capex éligible",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F504",
+   "prefix": "Taxonomie 2025, eau et assainissement : capex éligible et aligné",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F505",
+   "prefix": "Taxonomie 2025, collecte et traitement des déchets pour l'économie circulaire (déchets dangereux compris) : chiffre d'affaires éligible",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F506",
+   "prefix": "Taxonomie 2025, collecte et traitement des déchets pour l'économie circulaire (déchets dangereux compris) : chiffre d'affaires éligible et aligné",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F507",
+   "prefix": "Taxonomie 2025, collecte et traitement des déchets pour l'économie circulaire (déchets dangereux compris) : capex éligible",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F508",
+   "prefix": "Taxonomie 2025, collecte et traitement des déchets pour l'économie circulaire (déchets dangereux compris) : capex éligible et aligné",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F509",
+   "prefix": "Taxonomie 2025, collecte et traitement des déchets dangereux, prévention de la pollution (PPC 2.1, 2.2) : chiffre d'affaires éligible",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F510",
+   "prefix": "Taxonomie 2025, collecte et traitement des déchets dangereux, prévention de la pollution (PPC 2.1, 2.2) : chiffre d'affaires éligible et aligné",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F511",
+   "prefix": "Taxonomie 2025, collecte et traitement des déchets dangereux, prévention de la pollution (PPC 2.1, 2.2) : capex éligible",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F512",
+   "prefix": "Taxonomie 2025, collecte et traitement des déchets dangereux, prévention de la pollution (PPC 2.1, 2.2) : capex éligible et aligné",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F513",
+   "prefix": "Taxonomie 2025, énergie produite et distribuée : chiffre d'affaires éligible",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F514",
+   "prefix": "Taxonomie 2025, énergie produite et distribuée : chiffre d'affaires éligible et aligné",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F515",
+   "prefix": "Taxonomie 2025, énergie produite et distribuée : capex éligible",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F516",
+   "prefix": "Taxonomie 2025, énergie produite et distribuée : capex éligible et aligné",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F517",
+   "prefix": "Taxonomie 2025, services énergétiques aux infrastructures : chiffre d'affaires éligible",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F518",
+   "prefix": "Taxonomie 2025, services énergétiques aux infrastructures : chiffre d'affaires éligible et aligné",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F519",
+   "prefix": "Taxonomie 2025, services énergétiques aux infrastructures : capex éligible",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F520",
+   "prefix": "Taxonomie 2025, services énergétiques aux infrastructures : capex éligible et aligné",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F521",
+   "prefix": "Taxonomie 2025, autres activités éligibles : chiffre d'affaires éligible",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F522",
+   "prefix": "Taxonomie 2025, autres activités éligibles : chiffre d'affaires éligible et aligné",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F523",
+   "prefix": "Taxonomie 2025, autres activités éligibles : capex éligible",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F524",
+   "prefix": "Taxonomie 2025, autres activités éligibles : capex éligible et aligné",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F489",
+   "prefix": "Taxonomie 2025 : chiffre d'affaires éligible",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F490",
+   "prefix": "Taxonomie 2025 : chiffre d'affaires éligible et aligné",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F492",
+   "prefix": "Taxonomie 2025 : capex éligible",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F493",
+   "prefix": "Taxonomie 2025 : capex éligible et aligné",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F491",
+   "prefix": "Taxonomie 2025 : capex total",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F499",
+   "prefix": "Taxonomie 2025 : part du capex éligible et aligné",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F496",
+   "prefix": "Taxonomie 2024 : capex éligible et aligné",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F494",
+   "prefix": "Taxonomie 2024 : capex total",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
    "id": "F472",
    "prefix": "Tuck-ins 2025 (États-Unis, Brésil, Japon) : multiple",
    "period": "FY2025",
@@ -2354,6 +2580,18 @@
    "id": "F474",
    "prefix": "Stericycle (WM) : valeur d'entreprise",
    "period": "annonce 06/2024",
+   "unit": ""
+  },
+  {
+   "id": "F525",
+   "prefix": "US Ecology (Republic Services) : valeur totale",
+   "period": "annonce 02/2022",
+   "unit": ""
+  },
+  {
+   "id": "F527",
+   "prefix": "US Ecology (Republic Services) : EBITDA ajusté 12 mois",
+   "period": "au 30/09/2021",
    "unit": ""
   },
   {

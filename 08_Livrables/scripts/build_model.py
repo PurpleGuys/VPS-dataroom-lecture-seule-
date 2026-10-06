@@ -1664,6 +1664,70 @@ put(ws, f"B{r}", "Lecture : 81 % du prix est encore du goodwill. Tant que l'affe
 ws.merge_cells(f"B{r}:F{r}"); ws.row_dimensions[r].height = 44; r += 1
 widths(ws, {"A": 4, "B": 62, "C": 12, "D": 12, "E": 12, "F": 40, "G": 11})
 
+# ---------------------------------------------------------------- ESG : la taxonomie (recherche 12, question 3 du cours)
+ws = sheets["ESG"]
+r = ws.max_row + 2
+
+
+def EXACT(label, period):
+    """Comme E(), mais sur le libellé entier : « capex éligible » n'est pas « capex éligible et aligné »."""
+    hits = [x for x in rows if x["label"] == label and x["period"] == period]
+    if len(hits) != 1:
+        raise SystemExit(f"{len(hits)} lignes pour {label!r} / {period!r}")
+    USED.append({"id": hits[0]["id"], "prefix": label, "period": period, "unit": ""})
+    return f"{q('Entrées')}!$C${ENTREE_ROW[hits[0]['id']]}", hits[0]["id"]
+
+
+put(ws, f"A{r}", "T", bold=True); put(ws, f"B{r}", "La taxonomie européenne 2025 : où vont les euros « verts » (DEU 2025, p.250)", bold=True); r += 1
+header(ws, r, ["", "Secteur d'activités éligibles", "CA éligible", "CA éligible et aligné", "Capex éligible", "Capex éligible et aligné",
+               "Capex aligné / éligible", "Part du capex aligné du groupe", "Réf."]); r += 1
+TX = {}
+T0 = r
+for key, lab, pre in (("water", "Eau et assainissement", "eau et assainissement"),
+                      ("waste", "Déchets pour l'économie circulaire (déchets dangereux compris)", "collecte et traitement des déchets pour l'économie circulaire (déchets dangereux compris)"),
+                      ("hw", "Déchets dangereux, prévention de la pollution (PPC 2.1, 2.2)", "collecte et traitement des déchets dangereux, prévention de la pollution (PPC 2.1, 2.2)"),
+                      ("energy", "Énergie produite et distribuée", "énergie produite et distribuée"),
+                      ("eserv", "Services énergétiques aux infrastructures", "services énergétiques aux infrastructures"),
+                      ("other", "Autres activités éligibles", "autres activités éligibles")):
+    refs = []
+    put(ws, f"B{r}", lab)
+    for col, what in (("C", "chiffre d'affaires éligible"), ("D", "chiffre d'affaires éligible et aligné"), ("E", "capex éligible"), ("F", "capex éligible et aligné")):
+        a, i = EXACT(f"Taxonomie 2025, {pre} : {what}", "FY2025")
+        put(ws, f"{col}{r}", f"={a}*1000", color=GREEN, nf=NF_M); refs.append(i)
+    put(ws, f"G{r}", f'=IF(E{r}>0,F{r}/E{r},"")', nf=NF_P)
+    put(ws, f"H{r}", f"=F{r}/$F${T0 + 7}", nf=NF_P)
+    put(ws, f"I{r}", ", ".join(refs), color=GREY)
+    TX[key] = r; r += 1
+T1 = r - 1
+put(ws, f"B{r}", "Somme des secteurs", bold=True)
+for col in "CDEF":
+    put(ws, f"{col}{r}", f"=SUM({col}{T0}:{col}{T1})", nf=NF_M, bold=True)
+TX["sum"] = r; r += 1
+put(ws, f"B{r}", "Total publié par Veolia (éligible ; éligible et aligné)", bold=True)
+for col, what in (("C", "chiffre d'affaires éligible"), ("D", "chiffre d'affaires éligible et aligné"), ("E", "capex éligible"), ("F", "capex éligible et aligné")):
+    a, i = EXACT(f"Taxonomie 2025 : {what}", "FY2025")
+    put(ws, f"{col}{r}", f"={a}*1000", color=GREEN, nf=NF_M, bold=True)
+TX["pub"] = r; r += 1
+for rr in range(T0, T1 + 1):
+    ws[f"H{rr}"] = f"=F{rr}/$F${TX['pub']}"; ws[f"H{rr}"].number_format = NF_P; ws[f"H{rr}"].font = font()
+cx_tot, i_cxtot = EXACT("Taxonomie 2025 : capex total", "FY2025")
+cx_pct, i_cxpct = E("Taxonomie 2025 : part du capex éligible et aligné", "FY2025")
+cx_al24, i_cxal24 = EXACT("Taxonomie 2024 : capex éligible et aligné", "FY2024")
+cx_tot24, i_cxtot24 = EXACT("Taxonomie 2024 : capex total", "FY2024")
+line(ws, r, "cxTot", "Capex total du groupe (base taxonomie)", f"={cx_tot}*1000", "M EUR", i_cxtot, store=TX); r += 1
+line(ws, r, "cxAlignedShare", "Part du capex éligible et aligné, recalculée", f"=F{TX['pub']}/C{r-1}", "%", "aligné / total", NF_P, True, store=TX); r += 1
+line(ws, r, "cxAlignedPub", "… publiée", f"={cx_pct}/100", "%", i_cxpct, NF_P, store=TX); r += 1
+line(ws, r, "cxAligned24", "Capex aligné 2024, pour mémoire (total 2024 : 4,1 Md€)", f"={cx_al24}*1000", "M EUR", f"{i_cxal24}, {i_cxtot24}", store=TX); r += 1
+line(ws, r, "hwShare", "Déchets dangereux (PPC) : part du capex aligné du groupe", f"=F{TX['hw']}/F{TX['pub']}", "%", "", NF_P, True, store=TX); r += 1
+line(ws, r, "hwAlignRate", "Déchets dangereux (PPC) : capex aligné / éligible", f"=G{TX['hw']}", "%", "", NF_P, True, store=TX); r += 1
+line(ws, r, "nonEligible", "Capex non éligible (hors taxonomie)", f"=C{TX['cxTot'].split('$')[-1]}-E{TX['pub']}", "M EUR", "total − éligible", NF_M, store=TX); r += 1
+put(ws, f"B{r}", "Lecture : près de la moitié du capex du groupe est « vert » au sens de la taxonomie, et l'eau en porte la plus grande part. "
+    "Les déchets dangereux sont une petite ligne (0,3 Md€ alignés) mais la mieux alignée de toutes. Ce que la taxonomie ne dit pas, et que la "
+    "question 3 du cours demande : l'impact par euro (tonnes traitées, CO2 évité, m³ économisés par M€ investi). Veolia publie ses KPI au "
+    "niveau du groupe, pas par booster : c'est une question pour le 16 octobre, pas un calcul.", color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:I{r}"); ws.row_dimensions[r].height = 58; r += 1
+widths(ws, {"C": 14, "D": 16, "E": 14, "F": 16, "G": 14, "H": 16, "I": 40})
+
 # ================================================================ Cibles
 ws = sheets["Cibles"]
 title(ws, "Rôle 6 — Calibrer la recommandation sur l'enveloppe",
@@ -1844,6 +1908,8 @@ checks = [
     ("Pont EBITDA : part de l'écart 2023 → 2027 couverte par l'efficacité annoncée (info)", PB["effShare"], 1, None, NF_P, "Info"),
     ("Pont EBITDA : hors efficacité et synergies, croissance organique 2025 de l'EBITDA (négatif = recul)", PB["rest"], 0, None, NF_M, "Info"),
     ("Univers des cessions : somme des pays = chiffre d'affaires du groupe (DEU p.375, arrondis de la page : ± 5)", C["ctrySum"], C["ctryGrp"], 5, NF_M, "Bloquant"),
+    ("Taxonomie 2025 : somme des secteurs = total publié, capex éligible et aligné (arrondis de la page : ± 150)", f"{q('ESG')}!$F${TX['sum']}", f"{q('ESG')}!$F${TX['pub']}", 150, NF_M, "Bloquant"),
+    ("Taxonomie 2025 : part du capex aligné recalculée = publiée (47,2 %, ± 1 pt)", TX["cxAlignedShare"], TX["cxAlignedPub"], 0.01, NF_P, "Bloquant"),
     ("Univers des cessions : programme (au multiple central) en part de l'EBITDA des déchets solides (info)", C["progShareSw"], 0, None, NF_P, "Info"),
     ("FFO 2025 reconstitué depuis le tableau de flux = FFO Moody's (± 5 %)", A["ffoRecGap25"], 0, 0.05, NF_P, "Bloquant"),
     ("FFO 2024 reconstitué depuis le tableau de flux = FFO Moody's (± 5 %)", A["ffoRecGap24"], 0, 0.05, NF_P, "Bloquant"),
@@ -1912,6 +1978,8 @@ res = [
     ("Multiples payés par Veolia, après synergies : du moins cher au plus cher (Cibles §D)", f'=TEXT({K["mMin"]},"0.0")&"x à "&TEXT({K["mMax"]},"0.0")&"x"', None),
     ("Secteur, avant synergies : du moins cher au plus cher (Cibles §E)", f'=TEXT({K["secMin"]},"0.0")&"x à "&TEXT({K["secMax"]},"0.0")&"x"', None),
     ("Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)", K["ceVsSec"], '0.0"x"'),
+    ("Taxonomie 2025 : part du capex du groupe éligible et aligné (DEU p.250)", TX["cxAlignedShare"], NF_P),
+    ("Taxonomie 2025 : déchets dangereux, part du capex aligné du groupe", TX["hwShare"], NF_P),
     ("Programme de cessions au multiple central, en part de l'EBITDA des déchets solides", C["progShareSw"], NF_P),
     ("Années nécessaires pour céder 2 Md EUR au rythme des cessions 2022-2025", C["needYears"], NF_D2),
     ("Liquidités / flux contractuels de dette 2026 (DEU p.421)", MR["cov26"], NF_X),

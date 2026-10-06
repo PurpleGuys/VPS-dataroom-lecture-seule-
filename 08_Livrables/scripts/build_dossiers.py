@@ -251,6 +251,8 @@ M_MIN = mv("Cibles", "Le moins cher payé"); M_MAX = mv("Cibles", "Le plus cher 
 M_SPREAD = mv("Cibles", "Écart avant / après synergies sur Clean Earth")
 M_SEC_MIN = mv("Cibles", "Secteur : multiple avant synergies le plus bas"); M_SEC_MAX = mv("Cibles", "Secteur : multiple avant synergies le plus haut")
 CE_VS_SEC = mv("Cibles", "Clean Earth avant synergies (recalculé) face")
+TAX_ALIGNED = mv("ESG", "Part du capex éligible et aligné, recalculée"); TAX_HW_SHARE = mv("ESG", "Déchets dangereux (PPC) : part du capex aligné")
+TAX_HW_RATE = mv("ESG", "Déchets dangereux (PPC) : capex aligné / éligible"); TAX_NONELIG = mv("ESG", "Capex non éligible")
 EFF_SHARE_Y = mv("Pont EBITDA", "Part de la croissance organique expliquée"); REST = mv("Pont EBITDA", "Reste : volumes")
 ORG_M = mv("Pont EBITDA", "… en M EUR, sur la base publiée"); ORG26 = mv("Pont EBITDA", "+ croissance organique 2026")
 ORG27 = mv("Pont EBITDA", "+ croissance organique 2027"); EFF_IN26 = mv("Pont EBITDA", "Part de l'organique 2026")
@@ -293,6 +295,11 @@ f = dict(
     hep_ev=R("HEPACO (Clean Harbors) : prix d'acquisition", "03/2024"), hep_eb=R("HEPACO (Clean Harbors) : EBITDA ajusté 2023", "FY2023"),
     cov_ev=R("Covanta (EQT) : valeur de la transaction", "annonce 07/2021"), cov_eb=R("Covanta (EQT) : EBITDA ajusté 2021 attendu, bas", "2021e"),
     ste_ev=R("Stericycle (WM) : valeur d'entreprise", "annonce 06/2024"), ste_syn=R("Stericycle (WM) : synergies annuelles", "régime de croisière"),
+    tax_cx=R("Taxonomie 2025 : capex total", "FY2025"), tax_al=R("Taxonomie 2025 : capex éligible et aligné", "FY2025"),
+    tax_pct=R("Taxonomie 2025 : part du capex éligible et aligné", "FY2025"),
+    tax_hw=R("Taxonomie 2025, collecte et traitement des déchets dangereux, prévention de la pollution (PPC 2.1, 2.2) : capex éligible et aligné", "FY2025"),
+    tax_water=R("Taxonomie 2025, eau et assainissement : capex éligible et aligné", "FY2025"),
+    use_ev=R("US Ecology (Republic Services) : valeur totale", "annonce 02/2022"), use_eb=R("US Ecology (Republic Services) : EBITDA ajusté 12 mois", "au 30/09/2021"),
     nfdh1=R("Endettement financier net (groupe), après Clean Earth", "30/06/2026"),
     nfdh125=R("Endettement financier net (groupe)", "30/06/2025"), ebh1=R("EBITDA (groupe)", "S1 2026"),
     ebh125=R("EBITDA (groupe)", "S1 2025"), hyb=R("Dettes hybrides", "30/06/2026"),
@@ -778,6 +785,12 @@ ROLES.append(role(
          "des provisions du segment Amériques, que Veolia n'attribue pas. La réponse est dans les comptes d'Enviri."),
         ("Les provisions sont-elles de la dette ?",
          f"Pas dans la définition de Veolia. Un prêteur prudent en tient compte : elles ajouteraient environ {x(N(f['cl26']) / EB27)} au levier de 2027."),
+        ("Où vont les euros « verts » de Veolia, et que mesure-t-on par euro ?",
+         f"La taxonomie européenne (DEU 2025, p.250) : sur {P(f['tax_cx'])} Md€ de capex, {P(f['tax_al'])} Md€ sont éligibles et alignés, "
+         f"soit {pct(TAX_ALIGNED, 0)} ; l'eau en porte {P(f['tax_water'])} Md€, les déchets dangereux {P(f['tax_hw'])} Md€ — "
+         f"{pct(TAX_HW_SHARE, 0)} du capex aligné du groupe, mais la ligne la mieux alignée ({pct(TAX_HW_RATE, 0)} de l'éligible). "
+         f"Ce que le DEU ne donne pas : l'impact par euro (tonnes traitées, CO2 évité, m³ économisés par M€ investi), publié au niveau "
+         f"du groupe seulement. C'est la question 3 du cours, et une question pour Veolia le 16 octobre."),
         ("Pourquoi 81 % de goodwill est-il un sujet ESG ?",
          "Parce que tant que le prix n'est pas affecté, un passif environnemental découvert plus tard viendra réduire l'actif net acquis "
          "et gonfler le goodwill, sans que personne l'ait vu à l'achat."),
@@ -807,6 +820,7 @@ ROLES.append(role(
         row_fig("HEPACO : prix", f["hep_ev"]), row_fig("HEPACO : EBITDA ajusté 2023", f["hep_eb"]), row_fig("HEPACO : multiple après synergies", f["hep_m"]),
         row_fig("Covanta : valeur de la transaction", f["cov_ev"]), row_fig("Covanta : EBITDA 2021 attendu (bas)", f["cov_eb"]),
         row_fig("Stericycle : valeur d'entreprise", f["ste_ev"]), row_fig("Stericycle : synergies", f["ste_syn"]),
+        row_fig("US Ecology : valeur totale", f["use_ev"]), row_fig("US Ecology : EBITDA ajusté 12 mois", f["use_eb"]),
         row_calc("Secteur, avant synergies", f"{x(M_SEC_MIN)} à {x(M_SEC_MAX)}", "communiqués des acquéreurs, 05_Commercial_Strategy"),
         row_calc("Clean Earth avant synergies face au plus cher du secteur", x(CE_VS_SEC), "positif = au-dessus"),
     ]),
