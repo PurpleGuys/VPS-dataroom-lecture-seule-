@@ -1,0 +1,6 @@
+{
+  "name": "livrables-sujet-2",
+  "private": true,
+  "description": "Générateur du rapport Word (build_report.js) ; lancé par dataroom report.",
+  "dependencies": { "docx": "^9.8.1" }
+}

@@ -3,3 +3,7 @@
 .obsidian/workspace-mobile.json
 .trash/
 .DS_Store
+
+# Dépendances node du générateur de rapport (dataroom report)
+08_Livrables/scripts/node_modules/
+08_Livrables/scripts/package-lock.json
