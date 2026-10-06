@@ -66,9 +66,15 @@ for r in range(1, dist.max_row + 1):
     if key in {o["key"] for o in model["outputs"]}:
         distribution[key] = {name: num(dist[f"{c}{r}"].value) for name, c in
                              (("mean", "C"), ("p5", "D"), ("p10", "E"), ("p50", "F"), ("p90", "G"), ("p95", "H"))}
-    label = dist[f"B{r}"].value
-    if isinstance(label, str) and num(dist[f"C{r}"].value) is not None and dist[f"A{r}"].value is None and r > 15:
-        probabilities[label] = num(dist[f"C{r}"].value)
+# les probabilités : le seul bloc B de Distribution, de son en-tête « Événement » à la première ligne vide
+start = next((r for r in range(1, dist.max_row + 1) if dist[f"B{r}"].value == "Événement"), None)
+if start:
+    for r in range(start + 1, dist.max_row + 1):
+        label = dist[f"B{r}"].value
+        if not isinstance(label, str) or not label.strip():
+            break
+        if num(dist[f"C{r}"].value) is not None:
+            probabilities[label] = num(dist[f"C{r}"].value)
 sim = wb["Simulation"]
 factor_weight = num(sim["C11"].value)
 
