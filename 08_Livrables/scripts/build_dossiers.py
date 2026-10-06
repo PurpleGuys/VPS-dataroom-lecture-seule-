@@ -265,6 +265,21 @@ P_GAP8 = prob("L'EBITDA 2027 atteint l'objectif"); N_NEG = prob("Futurs (sur l'e
 ACQ_P10, ACQ_P50, ACQ_P90 = dist("MAXACQB", "E"), dist("MAXACQB", "F"), dist("MAXACQB", "G")
 BIND_P5, BIND_P50 = dist("BIND27", "D"), dist("BIND27", "F")
 FW = WB["Simulation"]["C11"].value
+# Pari 4 : le menu de financement et les seuils de bascule (onglet Financement)
+_wf = WB["Financement"]
+def fin_row(prefix, col):
+    row = next(c.row for c in _wf["B"] if isinstance(c.value, str) and c.value.startswith(prefix))
+    return _wf[f"{col}{row}"].value
+FIN_S = fin_row("Taille de la cible", "C"); FIN_M = fin_row("Multiple VE / EBITDA payé", "C")
+FIN_GAP3 = fin_row("Ce qui manque sous 3x", "C"); FIN_GAPS = fin_row("Ce qui manque sous le seuil S&P", "C")
+FIN_HYB, FIN_HYB_COST = fin_row("Émission d'hybrides", "E"), fin_row("Émission d'hybrides", "F")
+FIN_DISP, FIN_DISP_COST = fin_row("Cessions accélérées", "E"), fin_row("Cessions accélérées", "F")
+FIN_EQ, FIN_EQ_DIL = fin_row("Augmentation de capital", "E"), fin_row("Augmentation de capital", "F")
+FIN_MIN, FIN_MIN_COST = fin_row("Partenaire minoritaire", "E"), fin_row("Partenaire minoritaire", "F")
+def bascule(code, col):
+    row = next(c.row for c in _wf["A"] if c.value == code)
+    return _wf[f"{col}{row}"].value
+BK_MTUCK_C4 = bascule("mTuck", "N"); BK_G26_C4 = bascule("g26", "N"); BK_FRAGILE = fin_row("Hypothèses qui font basculer", "C")
 TAX_ALIGNED = mv("ESG", "Part du capex éligible et aligné, recalculée"); TAX_HW_SHARE = mv("ESG", "Déchets dangereux (PPC) : part du capex aligné")
 TAX_HW_RATE = mv("ESG", "Déchets dangereux (PPC) : capex aligné / éligible"); TAX_NONELIG = mv("ESG", "Capex non éligible")
 PEER_GAP_SUEZ = mv("Levier", "Écart de FFO / dette nette entre Veolia et Suez"); PEER_GAP_HERA = mv("Levier", "Écart entre Veolia et le mieux noté")
@@ -864,7 +879,11 @@ ROLES.append(role(
     f"(médiane des 1 000 futurs tirés : {fr(ACQ_P50 / 1000, 2)} Md€ ; 80 % entre {fr(ACQ_P10 / 1000, 2)} et {fr(ACQ_P90 / 1000, 2)} Md€ ; "
     f"probabilité de pouvoir acheter 1 Md€ : {pct(P_ACQ1, 0)}, 2 Md€ : {pct(P_ACQ2, 0)}, 3 Md€ : {pct(P_ACQ3, 0)}), "
     f"moins que Clean Earth lui-même ({fr(-N(f['ce_nfd']) / 1000, 1)} Md€). Dans le scénario défavorable, "
-    "rien. Recommandation proposée : pas de nouvelle grande opération avant l'encaissement du programme de cessions ; des tuck-ins "
+    f"rien. Une cible de {fr(FIN_S / 1000, 0)} Md€ à {fr(FIN_M, 1)}x laisserait {fr(FIN_GAP3, 0)} M€ à trouver sous 3x fin 2027 : "
+    f"{fr(FIN_HYB, 0)} M€ d'hybrides ({fr(FIN_HYB_COST, 0)} M€ de coupon par an), ou {fr(FIN_DISP, 0)} M€ de cessions accélérées "
+    f"({fr(FIN_DISP_COST, 0)} M€ d'EBITDA perdu par an), ou une augmentation de capital diluant de {pct(FIN_EQ_DIL, 1)} ; sans financement, "
+    f"elle ne tient que payée moins de {fr(BK_MTUCK_C4, 1)}x. "
+    "Recommandation proposée : pas de nouvelle grande opération avant l'encaissement du programme de cessions ; des tuck-ins "
     "au bas de la fourchette en 2027 ; une cible de 1 à 2 Md€ seulement une fois les cessions encaissées.",
     table([
         row_calc(f"Acquisition max. à {fr(g[0], 1)}x : défavorable / central / favorable",
@@ -916,6 +935,15 @@ ROLES.append(role(
          f"{x(M_SEC_MIN)} à {x(M_SEC_MAX)} (HEPACO par Clean Harbors, Covanta par EQT, US Ecology par Republic quand le communiqué est versé) ; "
          f"HEPACO ressort à {P(f['hep_m'])}x après synergies. Clean Earth avant synergies dépasse de {x(CE_VS_SEC)} le plus cher du secteur : "
          f"les synergies « achètent » {x(M_SPREAD)} de multiple. D'où la grille : 8x, 9,8x, 12x."),
+        ("Et si Veolia veut quand même une cible de 3 Md€ ?",
+         f"Le menu de financement (onglet Financement) le chiffre : il manque {fr(FIN_GAP3, 0)} M€ sous 3x fin 2027, rien sous le seuil S&P. "
+         f"Les hybrides comblent l'écart pour {fr(FIN_HYB_COST, 0)} M€ de coupon par an, mais les agences n'en retiennent que la moitié ; "
+         f"des cessions accélérées demandent {fr(FIN_DISP, 0)} M€ et coûtent {fr(FIN_DISP_COST, 0)} M€ d'EBITDA récurrent ; du capital, "
+         f"{pct(FIN_EQ_DIL, 1)} de dilution. La vraie question est le prix accepté pour la taille."),
+        ("Quelle hypothèse ferait tomber vos conclusions ?",
+         f"Aucune seule, dans ses bornes : {fr(BK_FRAGILE, 0)} hypothèse ne renverse une conclusion sans sortir de sa fourchette (onglet "
+         f"Financement §D, chaque seuil vérifié en le remettant dans le moteur). Pour une cible de 3 Md€, il faudrait une croissance 2026 "
+         f"de {pct(BK_G26_C4, 1)} ou un multiple sous {fr(BK_MTUCK_C4, 1)}x."),
         ("Quel multiple retenez-vous ?",
          "Celui de Clean Earth après synergies, parce que c'est le seul qu'un acheteur comme Veolia ait publié. Plus le multiple monte, "
          f"plus la taille possible baisse : à {fr(grid[10][0], 0)}x, {fr(grid[10][2] / 1000, 2)} Md€."),

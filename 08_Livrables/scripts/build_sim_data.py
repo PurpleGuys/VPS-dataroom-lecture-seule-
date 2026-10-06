@@ -109,12 +109,57 @@ for code, info in inputs.items():
     ids = [x.strip() for x in str(info["refs"]).replace(";", ",").split(",") if x.strip().startswith("F")]
     info["sources"] = [s for s in (source(i.split()[0]) for i in ids) if s]
 
+# ---------------------------------------------------------------- seuils de bascule (Financement §D), pour la vérification indépendante
+bascules = []
+spec = model.get("bascules")
+if spec:
+    fin = wb[spec["sheet"]]
+    for r in range(spec["first_row"], spec["last_row"] + 1):
+        code = fin[f"A{r}"].value
+        for cid, col in zip(spec["conclusions"], spec["value_cols"]):
+            value = num(fin[f"{col}{r}"].value)
+            if value is not None:
+                bascules.append({"code": code, "conclusion": cid, "value": value})
+    bascule_params = {"size": num(fin[spec["size_cell"]].value), "lev26max": num(fin[spec["lev26max_cell"]].value)}
+else:
+    bascule_params = {}
+
+# ---------------------------------------------------------------- menu de financement (Financement §A-§B) : paramètres et valeurs Excel
+financing = {}
+if "Financement" in wb.sheetnames:
+    fin = wb["Financement"]
+    def fin_row(prefix, col):
+        for rr in range(1, fin.max_row + 1):
+            lab = fin[f"B{rr}"].value
+            if isinstance(lab, str) and lab.startswith(prefix):
+                return fin[f"{col}{rr}"].value
+        return None
+    def reg_value(label_prefix):
+        row = next((r for r in register.values() if r["label"].startswith(label_prefix)), None)
+        return (float(row["value"].replace(",", "")) if row else None), (source(row["id"]) if row else None)
+    hyb_pct = next((num(hyp[f"J{rr}"].value) for rr in range(1, hyp.max_row + 1) if hyp[f"A{rr}"].value == "hybPct"), None)
+    price, price_src = reg_value("Cours de clôture de l'action Veolia")
+    shares, shares_src = reg_value("Nombre d'actions composant le capital")
+    treasury, treasury_src = reg_value("Actions autodétenues")
+    coupon, coupon_src = reg_value("Hybride septembre 2025 : coupon")
+    financing = {
+        "size": num(fin_row("Taille de la cible", "C")), "multiple": num(fin_row("Multiple VE / EBITDA payé", "C")),
+        "hyb_pct": hyb_pct, "price": price, "shares": shares, "treasury": treasury, "coupon": coupon,
+        "sources": [s for s in (price_src, shares_src, treasury_src, coupon_src) if s],
+        "excel": {"gap3": num(fin_row("Ce qui manque sous 3x", "C")), "gapS": num(fin_row("Ce qui manque sous le seuil S&P", "C")),
+                  "hyb": num(fin_row("Émission d'hybrides", "E")), "hyb_cost": num(fin_row("Émission d'hybrides", "F")),
+                  "disp": num(fin_row("Cessions accélérées", "E")), "disp_cost": num(fin_row("Cessions accélérées", "F")),
+                  "equity": num(fin_row("Augmentation de capital", "E")), "equity_dil": num(fin_row("Augmentation de capital", "F")),
+                  "minor": num(fin_row("Partenaire minoritaire", "E")), "minor_cost": num(fin_row("Partenaire minoritaire", "F"))},
+    }
+
 data = {
     "generated": datetime.now(ZoneInfo("Europe/Paris")).strftime("%d/%m/%Y %H:%M"),
     "model": BOOK.name,
     "inputs": inputs, "consts": consts, "columns": columns,
     "distribution": distribution, "probabilities": probabilities, "factor_weight": factor_weight,
     "multiples": multiples, "history": history,
+    "bascules": bascules, "bascule_params": bascule_params, "financing": financing,
 }
 OUT.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
 print("écrit", OUT, f"— {len(inputs)} hypothèses, {len(columns)} scénarios, {len(multiples)} multiples")

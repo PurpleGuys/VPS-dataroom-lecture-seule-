@@ -128,7 +128,7 @@ ws0 = wb.active
 ws0.title = "Lisez-moi"
 sheets = {}
 for name in ["Entrées", "Hypothèses", "Levier", "Pont de dette", "Échéancier", "Cessions", "Trajectoire",
-             "Sensibilité", "Distribution", "Segments", "Pont EBITDA", "Booster", "ESG", "Cibles", "Vérifications", "Simulation"]:
+             "Sensibilité", "Distribution", "Segments", "Pont EBITDA", "Booster", "ESG", "Cibles", "Financement", "Vérifications", "Simulation"]:
     sheets[name] = wb.create_sheet(name)
 
 # ================================================================ Entrées
@@ -1409,6 +1409,146 @@ ws.merge_cells(f"B{r}:J{r}"); ws.row_dimensions[r].height = 44
 widths(ws, {"A": 8, "B": 62, "C": 12, "D": 12, "E": 12, "F": 12, "G": 12, "H": 12, "I": 12, "J": 14})
 ws.freeze_panes = "C4"
 
+# ================================================================ Financement (pari 4)
+ws = sheets["Financement"]
+title(ws, "Pari 4 — Comment acheter plus que la capacité : le menu de financement, et les seuils de bascule",
+      "Pour une cible de taille donnée : ce qui manque sous chaque plafond fin 2027, ce que chaque levier rapporte par euro levé, "
+      "ce qu'il coûte. Puis, pour chaque conclusion du rapport, la valeur de chaque hypothèse qui la ferait basculer.")
+FN = {}
+TJ = q("Trajectoire")
+price, i_price = E("Cours de clôture de l'action Veolia", "31/12/2025")
+shares, i_shares = E("Nombre d'actions composant le capital", "31/12/2025")
+treas, i_treas = E("Actions autodétenues", "31/12/2025")
+hyb_cpn, i_hybcpn = E("Hybride septembre 2025 : coupon", "31/12/2025")
+r = 4
+put(ws, f"A{r}", "A", bold=True); put(ws, f"B{r}", "La cible étudiée et ce qu'elle coûte en marge fin 2027", bold=True); r += 1
+header(ws, r, ["", "Libellé", "Valeur", "Unité", "Réf. / calcul"]); r += 1
+put(ws, f"B{r}", "Taille de la cible (valeur d'entreprise payée)", bold=True)
+put(ws, f"C{r}", 3000, color=BLUE, fill=YELLOW, nf=NF_M); put(ws, f"D{r}", "M EUR", color=GREY)
+put(ws, f"E{r}", "cellule jaune : une cible « taille Clean Earth » par défaut", color=GREY); FN["S"] = f"$C${r}"; r += 1
+put(ws, f"B{r}", "Multiple VE / EBITDA payé", bold=True)
+put(ws, f"C{r}", f"={HY('mTuck')}", color=GREEN, fill=YELLOW, nf='0.0"x"'); put(ws, f"D{r}", "x", color=GREY)
+put(ws, f"E{r}", "par défaut, l'hypothèse mTuck active ; remplaçable", color=GREY); FN["m"] = f"$C${r}"; r += 1
+line(ws, r, "ebT", "EBITDA apporté par la cible", f"={FN['S']}/{FN['m']}", "M EUR", "taille / multiple", store=FN); r += 1
+line(ws, r, "h3", "Marge sous 3x fin 2027, avant la cible (scénario actif)", f"={T['HEAD27']}", "M EUR", "Trajectoire", store=FN); r += 1
+line(ws, r, "hS", "Marge sous le seuil S&P fin 2027, avant la cible", f"={T['HEADSP27']}", "M EUR", "Trajectoire", store=FN); r += 1
+line(ws, r, "h3p", "Marge sous 3x après la cible", f"={FN['h3']}-{FN['S']}+{HY('cap')}*{FN['ebT']}", "M EUR",
+     "− dette payée + plafond × EBITDA acquis", NF_M, True, store=FN); r += 1
+line(ws, r, "hSp", "Marge sous le seuil S&P après la cible", f"={FN['hS']}-{FN['S']}+{HY('ffo')}*{FN['ebT']}/({sptrig}/100)", "M EUR",
+     "− dette ajustée + FFO acquis / seuil", NF_M, True, store=FN); r += 1
+line(ws, r, "g3", "Ce qui manque sous 3x", f"=MAX(0,-{FN['h3p']})", "M EUR", "", NF_M, True, store=FN); r += 1
+line(ws, r, "gS", "Ce qui manque sous le seuil S&P", f"=MAX(0,-{FN['hSp']})", "M EUR", "", NF_M, True, store=FN); r += 2
+
+put(ws, f"A{r}", "B", bold=True); put(ws, f"B{r}", "Le menu : ce que chaque levier rapporte, ce qu'il faut lever, ce que cela coûte", bold=True); r += 1
+header(ws, r, ["", "Levier", "Marge 3x par € levé", "Marge S&P par € levé", "Montant nécessaire (M EUR)", "Coût", "Unité du coût", "Ce que dit la dataroom"]); r += 1
+div27 = f"({div_sh26}*(1+{HY('gDiv')}))"
+LEVERS = [
+    ("hyb", "Émission d'hybrides (capitaux propres pour Veolia, 50 % en dette pour les agences)",
+     "1", f"1-{HY('hybPct')}", f"=E{{r}}*{hyb_cpn}/100", "M EUR de coupon par an",
+     f"coupon de la dernière émission ({i_hybcpn}) ; plafond d'equity credit des agences non publié dans la dataroom"),
+    ("disp", "Cessions accélérées (au multiple mDisp)",
+     f"1-{HY('cap')}/{HY('mDisp')}", f"1-{HY('ffo')}/({sptrig}/100)/{HY('mDisp')}", f"=E{{r}}/{HY('mDisp')}", "M EUR d'EBITDA perdu par an",
+     "chaque euro encaissé retire 1/multiple d'EBITDA : il faut céder plus que l'écart"),
+    ("equity", "Augmentation de capital (au cours du 31/12/2025)",
+     "1", "1", f"=E{{r}}*1000000/{price}/({shares}-{treas})", "% du capital (dilution)",
+     f"cours {i_price}, actions {i_shares} moins autodétenues {i_treas}"),
+    ("scrip", "Dividende 2027 payé en actions (au plus le dividende)",
+     "1", "1", f"=IF(E{{r}}>{div27},\"au-delà du dividende\",E{{r}}*1000000/{price}/({shares}-{treas}))", "% du capital (dilution)",
+     "plafonné au dividende 2027 du modèle : un levier d'appoint"),
+    ("minor", "Partenaire minoritaire dans la cible (part cédée au prix payé)",
+     "1", "1", f"=E{{r}}/{FN['m']}", "M EUR d'EBITDA revenant au partenaire",
+     "le précédent : WTS, détenue à 70 % puis rachetée (D14) ; au plus 49 % pour garder le contrôle"),
+]
+L0 = r
+for key, lab, e3, eS, cost, unit, note in LEVERS:
+    put(ws, f"A{r}", key, color=GREY); put(ws, f"B{r}", lab, wrap=True)
+    put(ws, f"C{r}", f"={e3}", nf='0.00'); put(ws, f"D{r}", f"={eS}", nf='0.00')
+    need = f'=IF(OR(C{r}<=0,D{r}<=0),"sans effet",MAX({FN["g3"]}/C{r},{FN["gS"]}/D{r}))'
+    if key == "minor":
+        need = f'=IF(MAX({FN["g3"]}/C{r},{FN["gS"]}/D{r})>0.49*{FN["S"]},"au-delà de 49 %",MAX({FN["g3"]}/C{r},{FN["gS"]}/D{r}))'
+    put(ws, f"E{r}", need, nf=NF_M, bold=True)
+    put(ws, f"F{r}", cost.format(r=r), nf=NF_P if "capital" in unit else NF_M)
+    put(ws, f"G{r}", unit, color=GREY); put(ws, f"H{r}", note, color=GREY, wrap=True)
+    ws.row_dimensions[r].height = 30
+    FN[key] = r; r += 1
+r += 1
+put(ws, f"A{r}", "C", bold=True); put(ws, f"B{r}", "La combinaison du groupe (cellules jaunes) : les deux plafonds tiennent-ils ?", bold=True); r += 1
+header(ws, r, ["", "Levier", "Montant retenu (M EUR)", "Apport marge 3x", "Apport marge S&P", "Coût"]); r += 1
+C0 = r
+for key, lab, *_ in LEVERS:
+    lr = FN[key]
+    put(ws, f"B{r}", f"=B{lr}")
+    put(ws, f"C{r}", 0, color=BLUE, fill=YELLOW, nf=NF_M)
+    put(ws, f"D{r}", f"=C{r}*C{lr}", nf=NF_M); put(ws, f"E{r}", f"=C{r}*D{lr}", nf=NF_M)
+    cost_expr = LEVERS[[k for k, *_ in LEVERS].index(key)][4].replace("E{r}", f"C{r}")
+    put(ws, f"F{r}", cost_expr.format(r=r) if "{r}" in cost_expr else cost_expr, nf=NF_P if "capital" in LEVERS[[k for k, *_ in LEVERS].index(key)][5] else NF_M)
+    r += 1
+C1 = r - 1
+line(ws, r, "mix3", "Marge sous 3x après la cible et la combinaison", f"={FN['h3p']}+SUM(D{C0}:D{C1})", "M EUR", "", NF_M, True, store=FN); r += 1
+line(ws, r, "mixS", "Marge sous le seuil S&P après la cible et la combinaison", f"={FN['hSp']}+SUM(E{C0}:E{C1})", "M EUR", "", NF_M, True, store=FN); r += 1
+put(ws, f"B{r}", "Les deux plafonds tiennent ?", bold=True)
+put(ws, f"C{r}", f'=IF(AND({FN["mix3"]}>=0,{FN["mixS"]}>=0),"oui","non")', bold=True, align="center"); FN["mixOk"] = f"$C${r}"; r += 2
+put(ws, f"B{r}", "Lecture : avec le multiple de Clean Earth, une cible de 3 Md€ fin 2027 manque de marge sous 3x ; la combler par des hybrides coûte un "
+    "coupon de l'ordre de 4 %, par des cessions coûte un EBITDA récurrent, par du capital une dilution. La ligne de partage n'est pas "
+    "technique : c'est le prix que Veolia accepte de payer pour la taille. Les agences, elles, ne retiennent qu'à moitié les hybrides.",
+    color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:H{r}"); ws.row_dimensions[r].height = 44; r += 2
+
+put(ws, f"A{r}", "D", bold=True); put(ws, f"B{r}", "Seuils de bascule : la valeur de chaque hypothèse (seule à bouger) qui renverse chaque conclusion", bold=True); r += 1
+put(ws, f"B{r}", "Calcul exact : chaque marge est affine dans l'hypothèse (ou dans son inverse, pour les deux multiples) ; le seuil se lit "
+    "entre ses valeurs aux bornes basse et haute de Trajectoire. « dans la fourchette » = la conclusion peut basculer sans sortir des bornes.",
+    color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:H{r}"); ws.row_dimensions[r].height = 30; r += 1
+put(ws, f"B{r}", "Levier fin 2026 lu « légèrement supérieur à 3x » au plus à", bold=False)
+put(ws, f"C{r}", 3.1, color=BLUE, fill=YELLOW, nf=NF_X); FN["lev26max"] = f"$C${r}"; r += 1
+CONCL = [
+    ("C1", "Levier 2026 ≤ seuil de lecture", lambda c: f"{FN['lev26max']}*{TJ}!{c}{ROW['EB26']}-{TJ}!{c}{ROW['NFD26']}"),
+    ("C2", "Plafond de 3x tenu fin 2027", lambda c: f"{TJ}!{c}{ROW['HEAD27']}"),
+    ("C3", "Le 3x mord avant les agences", lambda c: f"{TJ}!{c}{ROW['HEADSP27']}-{TJ}!{c}{ROW['HEAD27']}"),
+    ("C4", "Cible de la taille étudiée possible sous 3x (au multiple des tuck-ins)", lambda c: f"{TJ}!{c}{ROW['HEAD27']}-{FN['S']}*(1-{HY('cap')}/{TJ}!{c}{IN['mTuck']})"),
+]
+header(ws, r, ["", "Hypothèse", "Base"] + [f"{k} : {lab}" for k, lab, _ in CONCL] + ["", "Réf."], start=1); r += 1
+INV = {"mDisp", "mTuck"}
+BK0 = r
+for code in VARIED:
+    lo_col = next(c for c, n, d, s in cols if d == code and s == "Bas")
+    hi_col = next(c for c, n, d, s in cols if d == code and s == "Haut")
+    hrow = H[code]
+    nf = sheets["Hypothèses"][f"C{hrow}"].number_format
+    put(ws, f"A{r}", code, color=GREY); put(ws, f"B{r}", f"={q('Hypothèses')}!$B${hrow}", color=GREEN)
+    put(ws, f"C{r}", f"={HY(code, 'C')}", color=GREEN, nf=nf)
+    hl, hh = f"{TJ}!{lo_col}{IN[code]}", f"{TJ}!{hi_col}{IN[code]}"
+    unit = sheets["Hypothèses"][f"F{hrow}"].value
+    tfmt = {"%": "0.0%", "x": '0.0""x""', "Md EUR": "0.00"}.get(unit, "# ##0")   # guillemets doublés : on est dans une formule
+    xl, xh = (f"(1/{hl})", f"(1/{hh})") if code in INV else (hl, hh)
+    for k, (cid, lab, metric) in enumerate(CONCL):
+        col = L(4 + k)
+        ml, mh = metric(lo_col), metric(hi_col)
+        star = f"({xl}+(0-({ml}))*({xh}-{xl})/(({mh})-({ml})))"
+        value = f"1/{star}" if code in INV else star
+        num_col = L(11 + k)
+        put(ws, f"{num_col}{r}", f'=IF(ABS(({mh})-({ml}))<1E-9,"",{value})', color=GREY, nf='0.0000')
+        shown = f'TEXT({num_col}{r},"{tfmt}")'
+        put(ws, f"{col}{r}", f'=IF({num_col}{r}="","sans effet",IF(AND(({ml})>=0,({mh})>=0),"tient partout (seuil "&{shown}&")",'
+                              f'IF(AND(({ml})<0,({mh})<0),"faux partout (il faudrait "&{shown}&")","bascule à "&{shown})))')
+    put(ws, f"I{r}", "inverse du multiple" if code in INV else "", color=GREY)
+    put(ws, f"J{r}", f'=IF(COUNTIF(D{r}:G{r},"bascule*")>0,1,0)', color=GREY, nf=NF_I)
+    r += 1
+BK1 = r - 1
+put(ws, f"B{r}", "Lecture : « bascule à x » = la conclusion change de signe entre les bornes basse et haute de l'hypothèse, au point x ; "
+    "« hors fourchette » = elle tient sur toute la plage, et le seuil (affiché pour mémoire) est en dehors. C'est la liste des hypothèses "
+    "qu'il faut défendre à l'oral, et de nulle autre.", color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:H{r}"); ws.row_dimensions[r].height = 44; r += 1
+put(ws, f"B{r}", "Hypothèses qui font basculer au moins une conclusion dans leurs bornes", bold=True)
+put(ws, f"C{r}", f"=SUM(J{BK0}:J{BK1})", nf=NF_I, bold=True)
+FN["nFragile"] = f"{q('Financement')}!$C${r}"; r += 1
+for k, (cid, lab, _m) in enumerate(CONCL):
+    put(ws, f"{L(11 + k)}{BK0 - 1}", f"{cid} (valeur)", bold=True, fill=HEAD, color=GREY)
+FN["bk0"], FN["bk1"] = BK0, BK1
+widths(ws, {"A": 8, "B": 58, "C": 16, "D": 26, "E": 26, "F": 26, "G": 26, "H": 46, "I": 16, "K": 11, "L": 11, "M": 11, "N": 11})
+ws.freeze_panes = "C4"
+FIN_REF = {k: (f"{q('Financement')}!{v}" if isinstance(v, str) and v.startswith("$") else v) for k, v in FN.items()}
+
 # ================================================================ Segments
 ws = sheets["Segments"]
 title(ws, "Rôle 4 (question 1 du cours) — D'où viennent les 8 Md€ : segments, boosters, KPI ESG",
@@ -2249,6 +2389,9 @@ put(ws, f"B{r}", "Résultats du scénario actif (base partout, sauf choix dans H
 res = [
     ("Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés", DS["pBind"], '0%'),
     ("Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord", DS["pAcq1"], '0%'),
+    ("Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)", f"{q('Financement')}!$E${FN['hyb']}", NF_M),
+    ("… ou cessions accélérées nécessaires, en M EUR", f"{q('Financement')}!$E${FN['disp']}", NF_M),
+    ("Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)", FN["nFragile"], NF_I),
     ("Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026", DS["pSP26"], '0%'),
     ("Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR", f"{q('Distribution')}!$F${DS['MAXACQB']}", NF_M),
     ("Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)", T["LEV26"], NF_X),
@@ -2449,6 +2592,8 @@ OUT.with_name("model-def.json").write_text(_json.dumps({
     "factor": {"weight": MD.FACTOR_WEIGHT, "loadings": {k: MD.FACTOR_LOADINGS.get(k, 0) for k in VARIED},
                "note": "uniforms[i][0] est le tirage du facteur commun, puis une uniforme par hypothèse variée, dans l'ordre de varied"},
     "uniforms": UNIFORMS,
+    "bascules": {"sheet": "Financement", "first_row": FN["bk0"], "last_row": FN["bk1"], "value_cols": [L(11 + k) for k in range(len(CONCL))],
+                 "conclusions": [cid for cid, _l, _m in CONCL], "size_cell": FN["S"].replace("$", ""), "lev26max_cell": FN["lev26max"].replace("$", "")},
     "trajectoire": {"columns": [{"col": col, "name": name, "code": code, "side": side} for col, name, code, side in cols],
                     "input_rows": IN, "calc_rows": {k: v for k, v in ROW.items()}},
 }, ensure_ascii=False), encoding="utf-8")

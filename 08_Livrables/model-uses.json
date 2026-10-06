@@ -200,8 +200,8 @@
   "F268",
   "F269",
   "F270",
-  "F271-543e",
   "F271",
+  "F271-543e",
   "F272",
   "F272-40a3",
   "F273",
@@ -409,7 +409,10 @@
   "F592",
   "F593",
   "F595",
-  "F596"
+  "F596",
+  "F597",
+  "F598",
+  "F600"
  ],
  "lookups": [
   {
@@ -1983,6 +1986,30 @@
    "prefix": "Clean Earth : valeur d'entreprise",
    "period": "annonce 11/2025",
    "unit": "Md USD"
+  },
+  {
+   "id": "F597",
+   "prefix": "Cours de clôture de l'action Veolia",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F598",
+   "prefix": "Nombre d'actions composant le capital",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F600",
+   "prefix": "Actions autodétenues",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F574",
+   "prefix": "Hybride septembre 2025 : coupon",
+   "period": "31/12/2025",
+   "unit": ""
   },
   {
    "id": "F168",

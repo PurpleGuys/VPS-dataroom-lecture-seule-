@@ -1,7 +1,7 @@
 {
  "generated": "2026-10-06",
  "checks": "OK",
- "n_figures": 596,
+ "n_figures": 600,
  "title": "GreenUp 2027 : combien Veolia peut-elle encore acheter sans dépasser ses engagements de levier ?",
  "subtitle": "Capstone Innovations in Finance — sujet 2, périmètre « capacité financière »",
  "thread": "Veolia annonce des enveloppes nettes. Clean Earth en est sorti ; le programme de cessions de plus de 2 Md€ d'ici mi-2028 l'y ramène. Si ce programme est encaissé à temps, il reste fin 2027 environ 1,6 Md€ de marge sous 3x, soit une acquisition d'environ 2,3 Md€ au multiple de Clean Earth. Cette marge dépend d'abord du calendrier des cessions, de la croissance organique de 2027 et des tuck-ins. Elle disparaît si tout tourne mal en même temps, ou si l'on compte la moitié des hybrides en dette. Le seuil des agences (FFO / dette ajustée ≥ 18 % chez S&P) est la contrainte de 2026 : 19,3 % dans le scénario central, dans l'attente de Moody's ; fin 2027 il laisse 4,3 Md€ et c'est le 3x qui mord. Le booster déchets dangereux tient son objectif de volume révisé, pas l'initial, et sa croissance est surtout achetée. Le passif environnemental de Clean Earth n'est pas encore visible dans les comptes.",
@@ -1814,7 +1814,7 @@
    "n": 6,
    "name": "Cibles, puis synthèse",
    "brief": "L'univers de cibles, puis une recommandation calibrée sur l'enveloppe propre.",
-   "answer": "Fin 2027, la marge centrale permet une acquisition d'environ 2,3 Md€ au multiple de Clean Earth (médiane des 1 000 futurs tirés : 2,15 Md€ ; 80 % entre 1,33 et 3,07 Md€ ; probabilité de pouvoir acheter 1 Md€ : 97 %, 2 Md€ : 60 %, 3 Md€ : 12 %), moins que Clean Earth lui-même (2,8 Md€). Dans le scénario défavorable, rien. Recommandation proposée : pas de nouvelle grande opération avant l'encaissement du programme de cessions ; des tuck-ins au bas de la fourchette en 2027 ; une cible de 1 à 2 Md€ seulement une fois les cessions encaissées.",
+   "answer": "Fin 2027, la marge centrale permet une acquisition d'environ 2,3 Md€ au multiple de Clean Earth (médiane des 1 000 futurs tirés : 2,15 Md€ ; 80 % entre 1,33 et 3,07 Md€ ; probabilité de pouvoir acheter 1 Md€ : 97 %, 2 Md€ : 60 %, 3 Md€ : 12 %), moins que Clean Earth lui-même (2,8 Md€). Dans le scénario défavorable, rien. Une cible de 3 Md€ à 9,8x laisserait 511 M€ à trouver sous 3x fin 2027 : 511 M€ d'hybrides (22 M€ de coupon par an), ou 730 M€ de cessions accélérées (73 M€ d'EBITDA perdu par an), ou une augmentation de capital diluant de 2,4 % ; sans financement, elle ne tient que payée moins de 6,7x. Recommandation proposée : pas de nouvelle grande opération avant l'encaissement du programme de cessions ; des tuck-ins au bas de la fourchette en 2027 ; une cible de 1 à 2 Md€ seulement une fois les cessions encaissées.",
    "reasoning": [
     "La formule : une acquisition ajoute son prix à la dette mais seulement prix / multiple à l'EBITDA. Elle tient sous 3x tant que prix ≤ marge / (1 − 3 / multiple).",
     "La grille : au multiple de Clean Earth, 2,51 Md€ en central, 0 en défavorable, 5,59 Md€ en favorable ; à 12x, 2,09 Md€ en central.",
@@ -1835,6 +1835,14 @@
     [
      "Que paie Veolia d'habitude, et que paie le secteur ?",
      "Veolia publie ses multiples après synergies : 7,4x pour treize tuck-ins espagnols, environ 9x pour les tuck-ins 2025, 9,40x en médiane, 11,00x au plus (le rachat des 30 % de WTS). Le secteur, avant synergies : 11,11x à 14,10x (HEPACO par Clean Harbors, Covanta par EQT, US Ecology par Republic quand le communiqué est versé) ; HEPACO ressort à 7,1x après synergies. Clean Earth avant synergies dépasse de 0,90x le plus cher du secteur : les synergies « achètent » 5,20x de multiple. D'où la grille : 8x, 9,8x, 12x."
+    ],
+    [
+     "Et si Veolia veut quand même une cible de 3 Md€ ?",
+     "Le menu de financement (onglet Financement) le chiffre : il manque 511 M€ sous 3x fin 2027, rien sous le seuil S&P. Les hybrides comblent l'écart pour 22 M€ de coupon par an, mais les agences n'en retiennent que la moitié ; des cessions accélérées demandent 730 M€ et coûtent 73 M€ d'EBITDA récurrent ; du capital, 2,4 % de dilution. La vraie question est le prix accepté pour la taille."
+    ],
+    [
+     "Quelle hypothèse ferait tomber vos conclusions ?",
+     "Aucune seule, dans ses bornes : 0 hypothèse ne renverse une conclusion sans sortir de sa fourchette (onglet Financement §D, chaque seuil vérifié en le remettant dans le moteur). Pour une cible de 3 Md€, il faudrait une croissance 2026 de 7,7 % ou un multiple sous 6,7x."
     ],
     [
      "Quel multiple retenez-vous ?",
@@ -2051,7 +2059,7 @@
   }
  ],
  "todo": [
-  "Relire en croisé les 596 chiffres du registre et les 26 deals : aucun n'a encore de relecteur.",
+  "Relire en croisé les 600 chiffres du registre et les 26 deals : aucun n'a encore de relecteur.",
   "Lire les 10-K 2025 d'Enviri et de Clean Harbors, désormais dans la dataroom, et en tirer les chiffres des rôles 4 et 5 (passifs environnementaux de Clean Earth, marges et levier de Clean Harbors). Reste à verser : le 10-Q du T1 2026 d'Enviri et le communiqué de vente du 20 novembre 2025.",
   "Avant le 7 octobre : montrer la dataroom comme « sources chargées et lues », et noter dans gaps.md ce qui manque encore.",
   "Rédiger la page d'annexe sur les outils d'IA : dataroom MCP (recherche, registre, contrôles), Claude pour construire le classeur et ces dossiers, LibreOffice pour le recalcul. Aucun chiffre produit par le modèle de langage.",
@@ -7421,6 +7429,42 @@
    "FY2025",
    "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 21, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
    "3",
+   ""
+  ],
+  [
+   "F597",
+   "Cours de clôture de l'action Veolia",
+   "29.38 EUR",
+   "31/12/2025",
+   "finance_veolia_urd_2025_en.pdf, p. 487, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "6",
+   ""
+  ],
+  [
+   "F598",
+   "Nombre d'actions composant le capital",
+   "741,723,437 actions",
+   "31/12/2025",
+   "finance_veolia_urd_2025_en.pdf, p. 486, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "6",
+   ""
+  ],
+  [
+   "F599",
+   "Capital social",
+   "3,708,617,185 EUR",
+   "31/12/2025",
+   "finance_veolia_urd_2025_en.pdf, p. 486, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "6",
+   ""
+  ],
+  [
+   "F600",
+   "Actions autodétenues",
+   "10,438,730 actions",
+   "31/12/2025",
+   "finance_veolia_urd_2025_en.pdf, p. 487, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "6",
    ""
   ]
  ]

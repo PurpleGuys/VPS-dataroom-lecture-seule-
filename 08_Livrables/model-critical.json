@@ -4,6 +4,9 @@
  "roots": [
   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+  "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+  "… ou cessions accélérées nécessaires, en M EUR",
+  "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
   "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
   "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
@@ -43,6 +46,9 @@
   "F3": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
@@ -61,6 +67,9 @@
   "F5": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -76,6 +85,9 @@
   "F8": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
@@ -88,6 +100,9 @@
   "F11": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
@@ -108,6 +123,9 @@
   "F13": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -125,6 +143,9 @@
   "F17": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -140,6 +161,9 @@
   "F21": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -155,6 +179,9 @@
   "F25": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -172,6 +199,9 @@
   "F29": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
@@ -188,6 +218,9 @@
   "F30": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -203,6 +236,9 @@
   "F31": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
@@ -226,6 +262,9 @@
   "F40": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
@@ -244,6 +283,9 @@
   "F41": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
@@ -266,6 +308,9 @@
   "F48": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -282,6 +327,9 @@
   "F49": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -297,6 +345,9 @@
   "F50": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -311,6 +362,9 @@
   "F51": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
@@ -330,6 +384,9 @@
   "F56": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Marge de manœuvre fin 2027, en M EUR de dette",
    "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
@@ -346,6 +403,9 @@
   "F70": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
@@ -362,6 +422,9 @@
   "F72": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -376,6 +439,9 @@
   "F74": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -393,6 +459,9 @@
   "F87": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
@@ -410,6 +479,9 @@
   "F88": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
@@ -427,6 +499,9 @@
   "F89": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -454,6 +529,9 @@
   "F163": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Marge de FFO en 2026 au seuil S&P (18 % de la dette ajustée au pic), en M EUR",
@@ -500,6 +578,9 @@
   "F256": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
@@ -509,6 +590,9 @@
   "F261": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
@@ -608,6 +692,9 @@
   "F445": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -627,6 +714,9 @@
   "F473": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
    "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Cible de 3 Md€ fin 2027 : hybrides nécessaires pour tenir les deux plafonds, en M EUR (Financement §B)",
+   "… ou cessions accélérées nécessaires, en M EUR",
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
