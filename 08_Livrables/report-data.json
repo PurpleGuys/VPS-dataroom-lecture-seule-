@@ -1,7 +1,7 @@
 {
  "generated": "2026-10-06",
  "checks": "OK",
- "n_figures": 447,
+ "n_figures": 470,
  "title": "GreenUp 2027 : combien Veolia peut-elle encore acheter sans dépasser ses engagements de levier ?",
  "subtitle": "Capstone Innovations in Finance — sujet 2, périmètre « capacité financière »",
  "thread": "Veolia annonce des enveloppes nettes. Clean Earth en est sorti ; le programme de cessions de plus de 2 Md€ d'ici mi-2028 l'y ramène. Si ce programme est encaissé à temps, il reste fin 2027 environ 1,6 Md€ de marge sous 3x, soit une acquisition d'environ 2,3 Md€ au multiple de Clean Earth. Cette marge dépend d'abord du calendrier des cessions, de la croissance organique de 2027 et des tuck-ins. Elle disparaît si tout tourne mal en même temps, ou si l'on compte la moitié des hybrides en dette. Le seuil des agences (FFO / dette ajustée ≥ 18 % chez S&P) est la contrainte de 2026 : 19,3 % dans le scénario central, dans l'attente de Moody's ; fin 2027 il laisse 4,3 Md€ et c'est le 3x qui mord. Le booster déchets dangereux tient son objectif de volume révisé, pas l'initial, et sa croissance est surtout achetée. Le passif environnemental de Clean Earth n'est pas encore visible dans les comptes.",
@@ -914,11 +914,15 @@
     "Les combinaisons : tout défavorable donne −500 M€, tout favorable 3 491 M€. La réponse dépend moins du point central que du calendrier des cessions."
    ],
    "open": [
-    "Aucun multiple de cession n'est publié : on suppose 10x, entre 8x et 12x.",
+    "Aucun multiple de cession n'est publié : on suppose 10x, entre 8x et 12x. Les produits de cession passés (deals.csv) sont des encaissements, pas des valeurs d'entreprise : ils disent le rythme, pas le prix.",
     "Aucun dividende n'est supposé versé au second semestre ; le change n'est pas prolongé.",
     "Le pont de dette 2025 du communiqué laisse 398 M€ de flux non détaillés (dont au moins 244 M€ de dividendes aux minoritaires)."
    ],
    "qa": [
+    [
+     "Que peut vendre Veolia, concrètement ?",
+     "Ce que GreenUp appelle les activités matures (p.64) : construction, facility management, collecte. Le programme de 2 Md€ retire 200 M€ d'EBITDA au multiple central, soit 13 % de l'EBITDA des déchets solides (1 566 M€) et 2,8 % du chiffre d'affaires du groupe, réparti sur 17 pays de plus de 500 M€ (DEU p.375). Les actifs existent ; la question est le rythme : depuis 2022, 14 cessions pour 1 585 M€, 113 M€ en moyenne — 2 Md€ en deux ans, c'est 5,3 années du rythme passé."
+    ],
     [
      "Quelle est l'hypothèse la plus fragile du modèle ?",
      "La croissance organique de l'EBITDA (g26, g27), parce qu'elle est faite d'efficacité : 90 % de l'organique 2026 du modèle (388 M€), c'est le programme de 350 M€ par an de GreenUp. Un programme de coûts se tient ou ne se tient pas ; la sensibilité de Trajectoire (g26 bas, g27 bas) en donne la version douce, l'onglet Pont EBITDA §D la version dure : −529 M€ de marge si rien n'est livré."
@@ -1080,6 +1084,70 @@
      "",
      "1 571 M EUR",
      "défavorable −500 · favorable 3 491",
+     ""
+    ],
+    [
+     "calcul",
+     "EBITDA cédé par le programme au multiple central",
+     "",
+     "200 M EUR",
+     "13 % de l'EBITDA des déchets solides, 4 % des strongholds",
+     ""
+    ],
+    [
+     "F441",
+     "Déchets solides : EBITDA",
+     "FY2025",
+     "1 566 M€",
+     "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 24",
+     ""
+    ],
+    [
+     "F431",
+     "Strongholds : EBITDA",
+     "FY2025",
+     "5 383 M€",
+     "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 24",
+     ""
+    ],
+    [
+     "F450",
+     "Chiffre d'affaires en France",
+     "FY2025",
+     "8 547 M€",
+     "finance_veolia_urd_2025_en.pdf, p. 375",
+     ""
+    ],
+    [
+     "F463",
+     "Chiffre d'affaires au Maroc (après Lydec)",
+     "FY2025",
+     "932 M€",
+     "finance_veolia_urd_2025_en.pdf, p. 375",
+     ""
+    ],
+    [
+     "F470",
+     "Chiffre d'affaires des pays de moins de 500 M€",
+     "FY2025",
+     "7 207 M€",
+     "finance_veolia_urd_2025_en.pdf, p. 375",
+     ""
+    ],
+    [
+     "calcul",
+     "Cessions réalisées 2022 → S1 2026 (deals.csv)",
+     "",
+     "1 585 M EUR",
+     "14 opérations, 113 M€ en moyenne, la plus grande 580",
+     ""
+    ],
+    [
+     "calcul",
+     "Rythme passé de cessions",
+     "",
+     "374 M EUR / an",
+     "2 Md€ demandent 5,3 ans à ce rythme, ou 18 opérations moyennes",
      ""
     ]
    ]
@@ -1803,7 +1871,7 @@
   }
  ],
  "todo": [
-  "Relire en croisé les 447 chiffres du registre et les 26 deals : aucun n'a encore de relecteur.",
+  "Relire en croisé les 470 chiffres du registre et les 26 deals : aucun n'a encore de relecteur.",
   "Lire les 10-K 2025 d'Enviri et de Clean Harbors, désormais dans la dataroom, et en tirer les chiffres des rôles 4 et 5 (passifs environnementaux de Clean Earth, marges et levier de Clean Harbors). Reste à verser : le 10-Q du T1 2026 d'Enviri et le communiqué de vente du 20 novembre 2025.",
   "Avant le 7 octobre : montrer la dataroom comme « sources chargées et lues », et noter dans gaps.md ce qui manque encore.",
   "Rédiger la page d'annexe sur les outils d'IA : dataroom MCP (recherche, registre, contrôles), Claude pour construire le classeur et ces dossiers, LibreOffice pour le recalcul. Aucun chiffre produit par le modèle de langage.",
@@ -5831,6 +5899,213 @@
    "8 %",
    "2026",
    "veolia_finance_presentation_h1_2026_results.pdf, p. 30, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_presentation_H1_2026_results.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F448",
+   "Chiffre d'affaires du groupe (IFRS 8.33)",
+   "44,396 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F449",
+   "Chiffre d'affaires du groupe (IFRS 8.33)",
+   "44,692 M EUR",
+   "FY2024",
+   "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F450",
+   "Chiffre d'affaires par pays : France",
+   "8,547 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F451",
+   "Chiffre d'affaires par pays : États-Unis",
+   "4,683 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F452",
+   "Chiffre d'affaires par pays : Allemagne",
+   "3,097 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F453",
+   "Chiffre d'affaires par pays : Espagne",
+   "3,035 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F454",
+   "Chiffre d'affaires par pays : Pologne",
+   "3,007 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F455",
+   "Chiffre d'affaires par pays : Royaume-Uni",
+   "2,978 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F456",
+   "Chiffre d'affaires par pays : République tchèque",
+   "2,165 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F457",
+   "Chiffre d'affaires par pays : Australie",
+   "2,023 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F458",
+   "Chiffre d'affaires par pays : Italie",
+   "1,160 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F459",
+   "Chiffre d'affaires par pays : Belgique",
+   "1,081 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F460",
+   "Chiffre d'affaires par pays : Belgique",
+   "1,084 M EUR",
+   "FY2024",
+   "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F461",
+   "Chiffre d'affaires par pays : Hongrie",
+   "1,070 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F462",
+   "Chiffre d'affaires par pays : Hongrie",
+   "816 M EUR",
+   "FY2024",
+   "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F463",
+   "Chiffre d'affaires par pays : Maroc",
+   "932 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F464",
+   "Chiffre d'affaires par pays : Maroc",
+   "1,266 M EUR",
+   "FY2024",
+   "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F465",
+   "Chiffre d'affaires par pays : Chine",
+   "908 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F466",
+   "Chiffre d'affaires par pays : Chili",
+   "807 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F467",
+   "Chiffre d'affaires par pays : Japon",
+   "609 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F468",
+   "Chiffre d'affaires par pays : Hong Kong",
+   "581 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F469",
+   "Chiffre d'affaires par pays : Slovaquie",
+   "504 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F470",
+   "Chiffre d'affaires par pays : autres pays (moins de 500 M EUR chacun)",
+   "7,207 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
    "3",
    ""
   ]

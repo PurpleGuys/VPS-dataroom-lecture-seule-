@@ -94,6 +94,9 @@ def parse(value: str) -> float:
 
 
 rows = list(csv.DictReader(REG.open(encoding="utf-8")))
+# Les opérations (00_Admin/deals.csv) : même règle que le registre, chaque ligne a sa source et sa page.
+DEALS_CSV = HERE / "deals.csv"
+DEALS = list(csv.DictReader(DEALS_CSV.open(encoding="utf-8"))) if DEALS_CSV.exists() else []
 ENTREE_ROW = {}          # id -> ligne dans Entrées
 FIRST = 6
 
@@ -839,8 +842,83 @@ line(ws, r, "pctX", "Part des acquisitions hors d'Europe", f"={pctX}/100", "%", 
 put(ws, f"B{r}", "Lecture : la diapositive GreenUp p.44 dit elle-même « net growth investments » : les 4 Md€ sont nets des cessions. "
     "Les sorties nettes cumulées dépassent déjà cette enveloppe au 30 juin 2026 ; c'est le programme de cessions qui doit les y ramener.",
     color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 42; r += 2
+
+put(ws, f"A{r}", "E", bold=True); put(ws, f"B{r}", "L'univers des cessions : ce que Veolia peut vendre, et à quel rythme elle a vendu", bold=True); r += 1
+put(ws, f"B{r}", "GreenUp (p.64) : « réduire les activités matures ou banalisées » — construction, facility management sans efficacité "
+    "énergétique, sélectivité sur la collecte de déchets. Le DEU 2025 (p.375) donne le chiffre d'affaires par pays ; la présentation 2025 "
+    "(p.24) les activités « strongholds » ; deals.csv les cessions passées.", color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 42; r += 1
-widths(ws, {"A": 4, "B": 60, "C": 16, "D": 12, "E": 50})
+header(ws, r, ["", "E1. Chiffre d'affaires par pays (DEU 2025, p.375)", "CA 2025", "Part du groupe", "Réf."]); r += 1
+grp, i_grp = E("Chiffre d'affaires du groupe (IFRS 8.33)", "FY2025")
+E1 = r
+for name in ("France", "États-Unis", "Allemagne", "Espagne", "Pologne", "Royaume-Uni", "République tchèque", "Australie", "Italie",
+             "Belgique", "Hongrie", "Maroc", "Chine", "Chili", "Japon", "Hong Kong", "Slovaquie", "autres pays (moins de 500 M EUR chacun)"):
+    a, i = E(f"Chiffre d'affaires par pays : {name}", "FY2025")
+    put(ws, f"B{r}", name); put(ws, f"C{r}", f"={a}", color=GREEN, nf=NF_M); put(ws, f"D{r}", f"=C{r}/{grp}", nf=NF_P)
+    put(ws, f"E{r}", i, color=GREY); r += 1
+line(ws, r, "ctrySum", "Somme des pays", f"=SUM(C{E1}:C{r-1})", "M EUR", "", NF_M, True, store=C); r += 1
+line(ws, r, "ctryGrp", "Chiffre d'affaires du groupe publié (IFRS 8.33)", f"={grp}", "M EUR", i_grp, store=C); r += 1
+mar_b, i_marb = E("Chiffre d'affaires par pays : Maroc", "FY2024")
+line(ws, r, "morocco24", "Pour mémoire : Maroc 2024, avant la cession de Lydec (2025 : 932)", f"={mar_b}", "M EUR", i_marb, store=C); r += 2
+
+header(ws, r, ["", "E2. Le programme face au périmètre mature", "Valeur", "Unité", "Réf. / calcul"]); r += 1
+marg_b, i_margb = E("Marge d'EBITDA (groupe)", "FY2025")
+sh_b, i_shb = E("Strongholds : EBITDA", "FY2025")
+sw_b, i_swb = E("Déchets solides : EBITDA", "FY2025")
+mw_b, i_mwb = E("Eau municipale : EBITDA", "FY2025")
+dh_b, i_dhb = E("Réseaux de chaleur et de froid : EBITDA", "FY2025")
+line(ws, r, "progM", "Programme de cessions, minimum annoncé", f"={prog}*1000", "M EUR", i_prog, store=C); r += 1
+line(ws, r, "progEb", "EBITDA cédé au multiple central (hypothèse mDisp)", f"={C['progM']}/{HY('mDisp')}", "M EUR", "programme / multiple", NF_M, True, store=C); r += 1
+line(ws, r, "progRev", "Chiffre d'affaires cédé si la marge est celle du groupe", f"={C['progEb']}/({marg_b}/100)", "M EUR", f"EBITDA cédé / {i_margb}", NF_M, store=C); r += 1
+line(ws, r, "progRevPct", "… en part du chiffre d'affaires du groupe", f"={C['progRev']}/{grp}", "%", "", NF_P, True, store=C); r += 1
+line(ws, r, "shEb", "EBITDA des strongholds 2025", f"={sh_b}", "M EUR", i_shb, store=C); r += 1
+line(ws, r, "swEb", "   dont déchets solides", f"={sw_b}", "M EUR", i_swb, store=C); r += 1
+line(ws, r, "mwEb", "   dont eau municipale", f"={mw_b}", "M EUR", i_mwb, store=C); r += 1
+line(ws, r, "dhEb", "   dont réseaux de chaleur et de froid", f"={dh_b}", "M EUR", i_dhb, store=C); r += 1
+line(ws, r, "progShareSh", "EBITDA cédé en part des strongholds", f"={C['progEb']}/{C['shEb']}", "%", "", NF_P, True, store=C); r += 1
+line(ws, r, "progShareSw", "EBITDA cédé en part des seuls déchets solides", f"={C['progEb']}/{C['swEb']}", "%", "", NF_P, True, store=C); r += 2
+
+header(ws, r, ["", "E3. Cessions réalisées par Veolia depuis 2022 (deals.csv, produit de cession publié)", "Produit (M EUR)", "Année", "Opération, source"]); r += 1
+sold = []
+for d in DEALS:
+    if "Veolia" not in d["seller"] or d["currency"] != "EUR":
+        continue
+    try:
+        v = float(d["value"].replace(",", "").replace(" ", ""))
+    except ValueError:
+        continue
+    year = (d["date_closed"] or d["date_announced"])[:4]
+    sold.append((year, v, d))
+sold.sort(key=lambda s: (s[0], s[2]["id"]))
+D0 = r
+for year, v, d in sold:
+    put(ws, f"B{r}", d["target"][:60]); put(ws, f"C{r}", v, color=BLUE, nf=NF_M)
+    put(ws, f"D{r}", int(year) if year.isdigit() else "n/d", align="center", color=BLACK if year.isdigit() else GREY)
+    put(ws, f"E{r}", f"{d['id']} — {(d['file'] or d['source_url']).split('/')[-1][:40]}" + (f", p.{d['page']}" if d.get("page") else ""), color=GREY)
+    r += 1
+D1 = r - 1
+line(ws, r, "soldSum", "Produits de cession cumulés 2022 → S1 2026", f"=SUM(C{D0}:C{D1})", "M EUR", f"{len(sold)} opérations à produit publié", NF_M, True, store=C); r += 1
+line(ws, r, "soldN", "Nombre d'opérations", f"=COUNT(C{D0}:C{D1})", "", "", NF_I, store=C); r += 1
+line(ws, r, "soldAvg", "Taille moyenne", f"=AVERAGE(C{D0}:C{D1})", "M EUR", "", NF_M, store=C); r += 1
+line(ws, r, "soldMax", "La plus grande (régénération d'acide, États-Unis, 2024)", f"=MAX(C{D0}:C{D1})", "M EUR", "", NF_M, store=C); r += 1
+line(ws, r, "soldPerYear", "Rythme passé : produits par an (cumul / 4 ans, 2022-2025)", f"=SUMIFS(C{D0}:C{D1},D{D0}:D{D1},\"<2026\")/4", "M EUR", "hors 2026", NF_M, True, store=C); r += 1
+line(ws, r, "needAvg", "Opérations de taille moyenne nécessaires pour le programme", f"={C['progM']}/{C['soldAvg']}", "", "programme / taille moyenne", NF_D2, True, store=C); r += 1
+line(ws, r, "needMax", "… de la taille de la plus grande", f"={C['progM']}/{C['soldMax']}", "", "", NF_D2, store=C); r += 1
+line(ws, r, "needYears", "Années nécessaires au rythme passé", f"={C['progM']}/{C['soldPerYear']}", "années", "programme / rythme ; Veolia se donne deux ans", NF_D2, True, store=C); r += 2
+
+header(ws, r, ["", "E4. Ce que rapporte 1 Md EUR vendu, selon le multiple", "EBITDA cédé", "Capacité de dette perdue", "Marge nette gagnée"]); r += 1
+for m in (8, 10, 12):
+    put(ws, f"B{r}", f"Cession de 1 000 M EUR à {m}x l'EBITDA")
+    put(ws, f"C{r}", f"=1000/{m}", nf=NF_M); put(ws, f"D{r}", f"={HY('cap')}*C{r}", nf=NF_M); put(ws, f"E{r}", f"=1000-D{r}", nf=NF_M, bold=True)
+    r += 1
+put(ws, f"B{r}", "Lecture : il y a de quoi vendre — au multiple central, le programme retire moins de 4 % de l'EBITDA des strongholds et "
+    "3 % du chiffre d'affaires du groupe, dans un portefeuille de 17 pays à plus de 500 M€. Le risque n'est pas l'existence des actifs "
+    "mais le rythme : depuis 2022, Veolia a cédé une quinzaine d'activités de taille modeste ; 2 Md€ en deux ans, c'est plusieurs fois le "
+    "rythme passé. C'est pour cela que s26 et s27 sont les hypothèses qui comptent, et que la question du calendrier est posée le 16 octobre.",
+    color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 58; r += 1
+widths(ws, {"A": 4, "B": 60, "C": 16, "D": 14, "E": 50})
 
 # ================================================================ Trajectoire
 ws = sheets["Trajectoire"]
@@ -1689,6 +1767,8 @@ checks = [
     ("Pont EBITDA : strongholds + boosters (EBITDA × organique) face à la croissance organique du groupe en M EUR (± 60)", PB["famOrg"], PB["orgM"], None, NF_M, "Info"),
     ("Pont EBITDA : part de l'écart 2023 → 2027 couverte par l'efficacité annoncée (info)", PB["effShare"], 1, None, NF_P, "Info"),
     ("Pont EBITDA : hors efficacité et synergies, croissance organique 2025 de l'EBITDA (négatif = recul)", PB["rest"], 0, None, NF_M, "Info"),
+    ("Univers des cessions : somme des pays = chiffre d'affaires du groupe (DEU p.375, arrondis de la page : ± 5)", C["ctrySum"], C["ctryGrp"], 5, NF_M, "Bloquant"),
+    ("Univers des cessions : programme (au multiple central) en part de l'EBITDA des déchets solides (info)", C["progShareSw"], 0, None, NF_P, "Info"),
     ("FFO 2025 reconstitué depuis le tableau de flux = FFO Moody's (± 5 %)", A["ffoRecGap25"], 0, 0.05, NF_P, "Bloquant"),
     ("FFO 2024 reconstitué depuis le tableau de flux = FFO Moody's (± 5 %)", A["ffoRecGap24"], 0, 0.05, NF_P, "Bloquant"),
     ("Échéancier : somme des trois instruments = passifs financiers bruts publiés, flux 2026", f"{q('Échéancier')}!$C${M['sum']}",
@@ -1753,6 +1833,8 @@ res = [
     ("Part de l'écart GreenUp 2023 → 2027 que couvre la seule efficacité promise (350 M€ par an)", PB["effShare"], NF_P),
     ("Part de la croissance organique 2025 de l'EBITDA expliquée par les gains d'efficacité", PB["effShareY"], NF_P),
     ("Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR", PB["head27k0"], NF_M),
+    ("Programme de cessions au multiple central, en part de l'EBITDA des déchets solides", C["progShareSw"], NF_P),
+    ("Années nécessaires pour céder 2 Md EUR au rythme des cessions 2022-2025", C["needYears"], NF_D2),
     ("Liquidités / flux contractuels de dette 2026 (DEU p.421)", MR["cov26"], NF_X),
     ("Surcoût d'intérêts annuel si les souches 2027-2028 sont refinancées au taux de juin 2025, en M EUR", f"{q('Échéancier')}!$C${M['extraInt']}", NF_M),
     ("FFO 2025 reconstitué depuis le tableau de flux, en M EUR (Moody's publie 5 160)", A["ffoRec25"], NF_M),

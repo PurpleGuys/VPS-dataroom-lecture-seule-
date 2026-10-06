@@ -286,7 +286,30 @@
   "F425",
   "F426",
   "F431",
-  "F432"
+  "F432",
+  "F435",
+  "F438",
+  "F441",
+  "F448",
+  "F450",
+  "F451",
+  "F452",
+  "F453",
+  "F454",
+  "F455",
+  "F456",
+  "F457",
+  "F458",
+  "F459",
+  "F461",
+  "F463",
+  "F464",
+  "F465",
+  "F466",
+  "F467",
+  "F468",
+  "F469",
+  "F470"
  ],
  "lookups": [
   {
@@ -1397,6 +1420,156 @@
    "id": "F135",
    "prefix": "Part des acquisitions GreenUp hors d'Europe",
    "period": "2024-2025e",
+   "unit": ""
+  },
+  {
+   "id": "F448",
+   "prefix": "Chiffre d'affaires du groupe (IFRS 8.33)",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F450",
+   "prefix": "Chiffre d'affaires par pays : France",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F451",
+   "prefix": "Chiffre d'affaires par pays : États-Unis",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F452",
+   "prefix": "Chiffre d'affaires par pays : Allemagne",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F453",
+   "prefix": "Chiffre d'affaires par pays : Espagne",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F454",
+   "prefix": "Chiffre d'affaires par pays : Pologne",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F455",
+   "prefix": "Chiffre d'affaires par pays : Royaume-Uni",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F456",
+   "prefix": "Chiffre d'affaires par pays : République tchèque",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F457",
+   "prefix": "Chiffre d'affaires par pays : Australie",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F458",
+   "prefix": "Chiffre d'affaires par pays : Italie",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F459",
+   "prefix": "Chiffre d'affaires par pays : Belgique",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F461",
+   "prefix": "Chiffre d'affaires par pays : Hongrie",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F463",
+   "prefix": "Chiffre d'affaires par pays : Maroc",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F465",
+   "prefix": "Chiffre d'affaires par pays : Chine",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F466",
+   "prefix": "Chiffre d'affaires par pays : Chili",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F467",
+   "prefix": "Chiffre d'affaires par pays : Japon",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F468",
+   "prefix": "Chiffre d'affaires par pays : Hong Kong",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F469",
+   "prefix": "Chiffre d'affaires par pays : Slovaquie",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F470",
+   "prefix": "Chiffre d'affaires par pays : autres pays (moins de 500 M EUR chacun)",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F464",
+   "prefix": "Chiffre d'affaires par pays : Maroc",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F426",
+   "prefix": "Marge d'EBITDA (groupe)",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F431",
+   "prefix": "Strongholds : EBITDA",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F441",
+   "prefix": "Déchets solides : EBITDA",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F435",
+   "prefix": "Eau municipale : EBITDA",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F438",
+   "prefix": "Réseaux de chaleur et de froid : EBITDA",
+   "period": "FY2025",
    "unit": ""
   },
   {

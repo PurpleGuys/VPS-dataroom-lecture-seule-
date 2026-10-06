@@ -242,6 +242,11 @@ FFO_REC = mv("Levier", "FFO reconstitué (somme"); FFO_GAP_PCT = mv("Levier", "�
 COV26 = mv("Échéancier", "Liquidités / flux contractuels 2026"); COV26X = mv("Échéancier", "Liquidités / flux 2026 hors")
 EXTRA_INT = mv("Échéancier", "Surcoût d'intérêts annuel"); EXTRA_PCT = mv("Échéancier", "en % du FFO 2025")
 EFF_SHARE = mv("Pont EBITDA", "Part de l'écart couverte par la seule efficacité")
+PROG_EB = mv("Cessions", "EBITDA cédé au multiple central"); PROG_SW = mv("Cessions", "EBITDA cédé en part des seuls déchets solides")
+PROG_SH = mv("Cessions", "EBITDA cédé en part des strongholds"); PROG_REVPCT = mv("Cessions", "… en part du chiffre d'affaires du groupe")
+SOLD_SUM = mv("Cessions", "Produits de cession cumulés"); SOLD_N = mv("Cessions", "Nombre d'opérations"); SOLD_AVG = mv("Cessions", "Taille moyenne")
+SOLD_MAX = mv("Cessions", "La plus grande"); SOLD_PY = mv("Cessions", "Rythme passé"); NEED_AVG = mv("Cessions", "Opérations de taille moyenne")
+NEED_YEARS = mv("Cessions", "Années nécessaires au rythme passé")
 EFF_SHARE_Y = mv("Pont EBITDA", "Part de la croissance organique expliquée"); REST = mv("Pont EBITDA", "Reste : volumes")
 ORG_M = mv("Pont EBITDA", "… en M EUR, sur la base publiée"); ORG26 = mv("Pont EBITDA", "+ croissance organique 2026")
 ORG27 = mv("Pont EBITDA", "+ croissance organique 2027"); EFF_IN26 = mv("Pont EBITDA", "Part de l'organique 2026")
@@ -276,6 +281,9 @@ f = dict(
     syn24=R("Synergies Suez cumulées", "FY2024"), sh_g=R("Strongholds : croissance organique de l'EBITDA", "FY2025"),
     es_mult=R("Espagne : multiple moyen des tuck-ins", "2024-2025"), es_n=R("Espagne : nombre de tuck-ins", "2024-2025"),
     es_ev=R("Espagne : valeur d'entreprise totale des tuck-ins", "2024-2025"),
+    sw_eb=R("Déchets solides : EBITDA", "FY2025"), sh_eb=R("Strongholds : EBITDA", "FY2025"),
+    rev_fr=R("Chiffre d'affaires par pays : France", "FY2025"), rev_ma=R("Chiffre d'affaires par pays : Maroc", "FY2025"),
+    rev_other=R("Chiffre d'affaires par pays : autres pays", "FY2025"),
     nfdh1=R("Endettement financier net (groupe), après Clean Earth", "30/06/2026"),
     nfdh125=R("Endettement financier net (groupe)", "30/06/2025"), ebh1=R("EBITDA (groupe)", "S1 2026"),
     ebh125=R("EBITDA (groupe)", "S1 2025"), hyb=R("Dettes hybrides", "30/06/2026"),
@@ -571,6 +579,12 @@ ROLES.append(role(
         row_calc("Cash-flow libre net 2027 (modèle)", fr(FCF27, 0, "M EUR"), "conversion moyenne 2024-2025"),
         row_calc("Dividendes 2027 (modèle)", fr(DIV27, 0, "M EUR"), "+8 %, minoritaires constants"),
         row_calc("Marge centrale fin 2027", fr(HEAD, 0, "M EUR"), f"défavorable {fr(UNF, 0)} · favorable {fr(FAV, 0)}"),
+        row_calc("EBITDA cédé par le programme au multiple central", fr(PROG_EB, 0, "M EUR"), f"{pct(PROG_SW, 0)} de l'EBITDA des déchets solides, {pct(PROG_SH, 0)} des strongholds"),
+        row_fig("Déchets solides : EBITDA", f["sw_eb"]), row_fig("Strongholds : EBITDA", f["sh_eb"]),
+        row_fig("Chiffre d'affaires en France", f["rev_fr"]), row_fig("Chiffre d'affaires au Maroc (après Lydec)", f["rev_ma"]),
+        row_fig("Chiffre d'affaires des pays de moins de 500 M€", f["rev_other"]),
+        row_calc("Cessions réalisées 2022 → S1 2026 (deals.csv)", fr(SOLD_SUM, 0, "M EUR"), f"{fr(SOLD_N, 0)} opérations, {fr(SOLD_AVG, 0)} M€ en moyenne, la plus grande {fr(SOLD_MAX, 0)}"),
+        row_calc("Rythme passé de cessions", fr(SOLD_PY, 0, "M EUR / an"), f"2 Md€ demandent {fr(NEED_YEARS, 1)} ans à ce rythme, ou {fr(NEED_AVG, 0)} opérations moyennes"),
     ]),
     [
         f"La saisonnalité d'abord : le premier semestre consomme du cash (BFR {P(f['wcr'])} M€), le second en rend "
@@ -583,11 +597,18 @@ ROLES.append(role(
         "point central que du calendrier des cessions.",
     ],
     [
-        "Aucun multiple de cession n'est publié : on suppose 10x, entre 8x et 12x.",
+        "Aucun multiple de cession n'est publié : on suppose 10x, entre 8x et 12x. Les produits de cession passés (deals.csv) sont des "
+        "encaissements, pas des valeurs d'entreprise : ils disent le rythme, pas le prix.",
         "Aucun dividende n'est supposé versé au second semestre ; le change n'est pas prolongé.",
         f"Le pont de dette 2025 du communiqué laisse {fr(RESID25, 0)} M€ de flux non détaillés (dont au moins {fr(MINOR25, 0)} M€ de dividendes aux minoritaires).",
     ],
     [
+        ("Que peut vendre Veolia, concrètement ?",
+         f"Ce que GreenUp appelle les activités matures (p.64) : construction, facility management, collecte. Le programme de 2 Md€ "
+         f"retire {fr(PROG_EB, 0)} M€ d'EBITDA au multiple central, soit {pct(PROG_SW, 0)} de l'EBITDA des déchets solides "
+         f"({P(f['sw_eb'])} M€) et {pct(PROG_REVPCT, 1)} du chiffre d'affaires du groupe, réparti sur 17 pays de plus de 500 M€ (DEU p.375). "
+         f"Les actifs existent ; la question est le rythme : depuis 2022, {fr(SOLD_N, 0)} cessions pour {fr(SOLD_SUM, 0)} M€, "
+         f"{fr(SOLD_AVG, 0)} M€ en moyenne — 2 Md€ en deux ans, c'est {fr(NEED_YEARS, 1)} années du rythme passé."),
         ("Quelle est l'hypothèse la plus fragile du modèle ?",
          f"La croissance organique de l'EBITDA (g26, g27), parce qu'elle est faite d'efficacité : {pct(EFF_IN26, 0)} de l'organique 2026 "
          f"du modèle ({fr(ORG26, 0)} M€), c'est le programme de 350 M€ par an de GreenUp. Un programme de coûts se tient ou ne se tient pas ; "
