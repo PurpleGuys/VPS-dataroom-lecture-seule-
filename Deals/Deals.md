@@ -7,7 +7,7 @@ generated: true
 
 # Deals
 
-Rubrique de [[Targets/Veolia|Veolia]] — 29 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 30 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[Deals/D20 New England Disposal Technologies, Bio-Med Innovations, Ingenium, Cham.md|D20 · New England Disposal Technologies, Bio-Med Innovations, Ingenium, Chameleon Industries Group]]
@@ -17,6 +17,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[Deals/D29 Covanta (valorisation énergétique des déchets, États-Unis).md|D29 · Covanta (valorisation énergétique des déchets, États-Unis)]] · 2021-11-30
 - [[Deals/D1 Suez.md|D1 · Suez]] · 2021-12-14
 - [[Deals/D23 Actifs d'Integrated Waste Services (IWS).md|D23 · Actifs d'Integrated Waste Services (IWS)]] · 2022-01-17
+- [[Deals/D30 US Ecology (déchets dangereux, États-Unis).md|D30 · US Ecology (déchets dangereux, États-Unis)]] · 2022-05-02
 - [[Deals/D26 Huancheng Puxi.md|D26 · Huancheng Puxi]] · 2022-06-24
 - [[Deals/D25 Lanzhou Water.md|D25 · Lanzhou Water]] · 2022-08-10
 - [[Deals/D6 Reciclados La Red et Banales III.md|D6 · Reciclados La Red et Banales III]] · 2023-01-10
