@@ -1,7 +1,7 @@
 {
  "generated": "2026-10-06",
  "checks": "OK",
- "n_figures": 417,
+ "n_figures": 447,
  "title": "GreenUp 2027 : combien Veolia peut-elle encore acheter sans dépasser ses engagements de levier ?",
  "subtitle": "Capstone Innovations in Finance — sujet 2, périmètre « capacité financière »",
  "thread": "Veolia annonce des enveloppes nettes. Clean Earth en est sorti ; le programme de cessions de plus de 2 Md€ d'ici mi-2028 l'y ramène. Si ce programme est encaissé à temps, il reste fin 2027 environ 1,6 Md€ de marge sous 3x, soit une acquisition d'environ 2,3 Md€ au multiple de Clean Earth. Cette marge dépend d'abord du calendrier des cessions, de la croissance organique de 2027 et des tuck-ins. Elle disparaît si tout tourne mal en même temps, ou si l'on compte la moitié des hybrides en dette. Le seuil des agences (FFO / dette ajustée ≥ 18 % chez S&P) est la contrainte de 2026 : 19,3 % dans le scénario central, dans l'attente de Moody's ; fin 2027 il laisse 4,3 Md€ et c'est le 3x qui mord. Le booster déchets dangereux tient son objectif de volume révisé, pas l'initial, et sa croissance est surtout achetée. Le passif environnemental de Clean Earth n'est pas encore visible dans les comptes.",
@@ -920,6 +920,10 @@
    ],
    "qa": [
     [
+     "Quelle est l'hypothèse la plus fragile du modèle ?",
+     "La croissance organique de l'EBITDA (g26, g27), parce qu'elle est faite d'efficacité : 90 % de l'organique 2026 du modèle (388 M€), c'est le programme de 350 M€ par an de GreenUp. Un programme de coûts se tient ou ne se tient pas ; la sensibilité de Trajectoire (g26 bas, g27 bas) en donne la version douce, l'onglet Pont EBITDA §D la version dure : −529 M€ de marge si rien n'est livré."
+    ],
+    [
      "Et si les cessions glissent en 2028 ?",
      "Sans rien encaisser du reste du programme en 2027, la marge tombe de 1 571 à 1 092 M€. C'est le premier facteur."
     ],
@@ -932,7 +936,7 @@
      "Chaque euro encaissé réduit la dette d'un euro mais retire 1/multiple d'EBITDA, soit trois fois plus de capacité : à 10x, 100 M€ de cessions ne libèrent que 70 M€ de marge."
     ]
    ],
-   "tabs": "Trajectoire, Sensibilité, Cessions §C, Pont de dette",
+   "tabs": "Trajectoire, Sensibilité, Cessions §C, Pont de dette, Pont EBITDA",
    "figures": [
     [
      "F13",
@@ -1084,7 +1088,7 @@
    "n": 4,
    "name": "L'écart et les comparables",
    "brief": "Où se situe le booster face à 2027, et qui est réellement comparable.",
-   "answer": "En volume, l'objectif est passé de 10 Mt (« déchets dangereux et polluants ») à 9 Mt : Veolia, à 9 181 kt, tient l'objectif révisé mais reste à 819 kt de l'initial. En valeur, l'ambition de plus de 10 % par an d'EBITDA repose sur Clean Earth : en Europe, le chiffre d'affaires recule de 0,2 % en organique. Côté segments, la croissance vient des Amériques (EBITDA organique +9,3 %) et de Water Technologies (+14,1 %), pas de l'Europe (+1,8 %) : au rythme de 2025, l'EBITDA 2027 atteindrait 8,09 Md€, l'objectif tient. Chez Clean Harbors, le comparable direct, la marge est de 19,4 % ; chez Clean Earth vu par son vendeur, 15,9 % sur un EBITDA 2025 reconstitué de 155 M$, un tiers sous les 200 M$ 2026E de Veolia.",
+   "answer": "En volume, l'objectif est passé de 10 Mt (« déchets dangereux et polluants ») à 9 Mt : Veolia, à 9 181 kt, tient l'objectif révisé mais reste à 819 kt de l'initial. En valeur, l'ambition de plus de 10 % par an d'EBITDA repose sur Clean Earth : en Europe, le chiffre d'affaires recule de 0,2 % en organique. Côté segments, la croissance vient des Amériques (EBITDA organique +9,3 %) et de Water Technologies (+14,1 %), pas de l'Europe (+1,8 %) : au rythme de 2025, l'EBITDA 2027 atteindrait 8,09 Md€, l'objectif tient. Chez Clean Harbors, le comparable direct, la marge est de 19,4 % ; chez Clean Earth vu par son vendeur, 15,9 % sur un EBITDA 2025 reconstitué de 155 M$, un tiers sous les 200 M$ 2026E de Veolia. Les 8 Md€ sont d'abord un plan de coûts : l'efficacité promise (350 M€ par an, GreenUp p.58) couvre 93 % de l'écart entre la base 2023 (6,5 Md€) et l'objectif ; en 2025, les 399 M€ de gains d'efficacité expliquent 93 % de la croissance organique de l'EBITDA (+6,3 %, soit ~428 M€), et hors efficacité et synergies Suez l'EBITDA organique recule d'environ 70 M€. Sans efficacité en 2026-2027, la marge sous 3x fin 2027 passe de 1 571 à −529 M€.",
    "reasoning": [
     "Volumes : l'objectif a changé de niveau et de périmètre entre GreenUp (2024) et le DEU 2025. Le dire avant de comparer.",
     "Profil financier : avec Clean Earth, le métier pèse 5,2 Md€ de chiffre d'affaires et 0,9 Md€ d'EBITDA. À +10 % par an depuis ce pro forma, on viserait environ 1,09 Md€ en 2027 (illustratif).",
@@ -1096,10 +1100,20 @@
    ],
    "open": [
     "Les comptes de Clean Harbors et d'Enviri ne se téléchargent pas depuis le serveur (refus 403) : à verser à la main.",
+    "La base organique 2024 (périmètre et change constants) n'est pas publiée : les 428 M€ de croissance organique 2025 sont calculés sur l'EBITDA 2024 publié, à quelques millions près.",
+    "Le multiple des tuck-ins espagnols est imprimé « c.7.4x » (présentation 2025, p.19) : l'audit le signale hors page tant qu'un relecteur ne l'a pas confirmé.",
     "Aucune valeur de marché des pairs (capitalisation, VE) n'est dans la dataroom.",
     "L'EBITDA déchets dangereux de Veolia seul en 2024, base de l'ambition de +10 %, n'est pas publié."
    ],
    "qa": [
+    [
+     "D'où viennent exactement les 8 Md€ ?",
+     "De l'efficacité d'abord. GreenUp promet 350 M€ de gains par an : sur quatre ans, 93 % de l'écart entre 6,5 Md€ (2023) et 8 Md€. 2025 le confirme : 399 M€ d'efficacité pour ~428 M€ de croissance organique de l'EBITDA ; avec les 99 M€ de synergies Suez supplémentaires, les deux programmes dépassent la croissance organique. Le reste (volumes, prix, énergie) ne couvre pas l'inflation des coûts."
+    ],
+    [
+     "Et si l'efficacité n'est pas livrée en 2026-2027 ?",
+     "Chaque euro d'efficacité manquant retire trois euros de capacité d'endettement et aucun cash-flow ne le compense. Sans aucun gain en 2026-2027, l'EBITDA 2027 perd 700 M€, le levier remonte à 3,07x et la marge sous 3x devient −529 M€. C'est la question à poser à Veolia : les 350 M€ par an sont-ils sécurisés, et par quoi ?"
+    ],
     [
      "Le booster est-il en retard ?",
      "En volume, sur l'objectif initial, oui ; sur l'objectif révisé, non. En valeur, il n'est dans les clous que grâce à Clean Earth."
@@ -1113,7 +1127,7 @@
      "Le chiffre baisse et le libellé perd « et polluants ». Le DEU ne l'explique pas : c'est une question à poser, pas à trancher."
     ]
    ],
-   "tabs": "Booster",
+   "tabs": "Segments, Pont EBITDA, Booster",
    "figures": [
     [
      "F33",
@@ -1273,6 +1287,126 @@
      "FY2025",
      "13 191 M€",
      "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 7",
+     ""
+    ],
+    [
+     "F418",
+     "GreenUp : EBITDA de base 2023",
+     "2023",
+     "6,5 Md€",
+     "en_master_greenup_strategy-day_v270324.pdf, p. 58",
+     ""
+    ],
+    [
+     "F420",
+     "GreenUp : efficacité par an",
+     "2024-2027",
+     "350 M€",
+     "en_master_greenup_strategy-day_v270324.pdf, p. 58",
+     ""
+    ],
+    [
+     "calcul",
+     "Part de l'écart 2023 → 2027 couverte par l'efficacité",
+     "",
+     "93 %",
+     "4 × 350 / (8 000 − 6 500)",
+     ""
+    ],
+    [
+     "F205",
+     "Gains d'efficacité",
+     "FY2024",
+     "398 M€",
+     "finance_2024_full_year_results_presentation.pdf, p. 5",
+     ""
+    ],
+    [
+     "F424",
+     "Gains d'efficacité",
+     "FY2025",
+     "399 M€",
+     "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 21",
+     ""
+    ],
+    [
+     "F425",
+     "Croissance organique de l'EBITDA",
+     "FY2025",
+     "6,3 %",
+     "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 21",
+     ""
+    ],
+    [
+     "calcul",
+     "… en M EUR sur la base publiée",
+     "",
+     "428 M EUR",
+     "approximation : base organique non publiée",
+     ""
+    ],
+    [
+     "F206",
+     "Synergies Suez cumulées",
+     "FY2024",
+     "435 M€",
+     "finance_2024_full_year_results_presentation.pdf, p. 5",
+     ""
+    ],
+    [
+     "F208",
+     "Synergies Suez cumulées",
+     "FY2025",
+     "534 M€",
+     "finance_veolia_operating_and_financial_review_2025.pdf, p. 17",
+     ""
+    ],
+    [
+     "calcul",
+     "Reste hors efficacité et synergies, 2025",
+     "",
+     "−70 M EUR",
+     "croissance organique − efficacité − synergies",
+     ""
+    ],
+    [
+     "calcul",
+     "Croissance organique 2026 du modèle",
+     "",
+     "388 M EUR",
+     "l'efficacité promise en représente 90 %",
+     ""
+    ],
+    [
+     "calcul",
+     "Marge sous 3x fin 2027 sans efficacité en 2026-2027",
+     "",
+     "−529 M EUR",
+     "levier 3,07x ; à mi-chemin 521",
+     ""
+    ],
+    [
+     "F443",
+     "Espagne : tuck-ins intégrés en deux ans",
+     "2024-2025",
+     "13 tuck-ins",
+     "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 19",
+     ""
+    ],
+    [
+     "F444",
+     "Espagne : valeur d'entreprise des tuck-ins",
+     "2024-2025",
+     "87 M€",
+     "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 19",
+     ""
+    ],
+    [
+     "F445",
+     "Espagne : multiple moyen des tuck-ins",
+     "2024-2025",
+     "7,4x",
+     "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 19",
      ""
     ],
     [
@@ -1669,7 +1803,7 @@
   }
  ],
  "todo": [
-  "Relire en croisé les 417 chiffres du registre et les 26 deals : aucun n'a encore de relecteur.",
+  "Relire en croisé les 447 chiffres du registre et les 26 deals : aucun n'a encore de relecteur.",
   "Lire les 10-K 2025 d'Enviri et de Clean Harbors, désormais dans la dataroom, et en tirer les chiffres des rôles 4 et 5 (passifs environnementaux de Clean Earth, marges et levier de Clean Harbors). Reste à verser : le 10-Q du T1 2026 d'Enviri et le communiqué de vente du 20 novembre 2025.",
   "Avant le 7 octobre : montrer la dataroom comme « sources chargées et lues », et noter dans gaps.md ce qui manque encore.",
   "Rédiger la page d'annexe sur les outils d'IA : dataroom MCP (recherche, registre, contrôles), Claude pour construire le classeur et ces dossiers, LibreOffice pour le recalcul. Aucun chiffre produit par le modèle de langage.",
@@ -5428,6 +5562,276 @@
    "31/12/2025",
    "finance_veolia_urd_2025_en.pdf, p. 421, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
    "2",
+   ""
+  ],
+  [
+   "F418",
+   "GreenUp : EBITDA de base",
+   "6.5 Md EUR",
+   "2023",
+   "en_master_greenup_strategy-day_v270324.pdf, p. 58, https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/03/EN_Master_GreenUp_Strategy%20day_V270324.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F419",
+   "GreenUp : croissance annuelle moyenne de l'EBITDA 2023-2027, environ",
+   "5 %",
+   "2023-2027",
+   "en_master_greenup_strategy-day_v270324.pdf, p. 58, https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/03/EN_Master_GreenUp_Strategy%20day_V270324.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F420",
+   "GreenUp : gains d'efficacité par an",
+   "350 M EUR",
+   "2024-2027",
+   "en_master_greenup_strategy-day_v270324.pdf, p. 58, https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/03/EN_Master_GreenUp_Strategy%20day_V270324.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F421",
+   "GreenUp : synergies de coûts attendues en 2024-2025, environ",
+   "200 M EUR",
+   "2024-2025",
+   "en_master_greenup_strategy-day_v270324.pdf, p. 58, https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/03/EN_Master_GreenUp_Strategy%20day_V270324.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F422",
+   "GreenUp : synergies Suez cumulées 2022-2025 confirmées",
+   "500 M EUR",
+   "2022-2025",
+   "en_master_greenup_strategy-day_v270324.pdf, p. 58, https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/03/EN_Master_GreenUp_Strategy%20day_V270324.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F423",
+   "GreenUp : croissance annuelle moyenne du résultat net courant 2023-2027, environ",
+   "10 %",
+   "2023-2027",
+   "en_master_greenup_strategy-day_v270324.pdf, p. 69, https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/03/EN_Master_GreenUp_Strategy%20day_V270324.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F424",
+   "Gains d'efficacité annuels",
+   "399 M EUR",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 21, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F425",
+   "Croissance organique de l'EBITDA (groupe)",
+   "+6.3 %",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 21, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F426",
+   "Marge d'EBITDA (groupe)",
+   "15.9 %",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 21, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F427",
+   "Croissance organique du chiffre d'affaires hors prix de l'énergie (groupe)",
+   "+2.8 %",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 21, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F428",
+   "Boosters : croissance du chiffre d'affaires tuck-ins compris",
+   "+8 %",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 21, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F429",
+   "Strongholds : chiffre d'affaires",
+   "31,205 M EUR",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 24, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F430",
+   "Strongholds : croissance organique du chiffre d'affaires hors prix de l'énergie",
+   "+2.2 %",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 24, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F431",
+   "Strongholds : EBITDA",
+   "5,383 M EUR",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 24, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F432",
+   "Strongholds : croissance organique de l'EBITDA",
+   "+4.8 %",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 24, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F433",
+   "Strongholds : marge d'EBITDA",
+   "17.2 %",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 24, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F434",
+   "Eau municipale : chiffre d'affaires",
+   "12,739 M EUR",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 24, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F435",
+   "Eau municipale : EBITDA",
+   "2,729 M EUR",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 24, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F436",
+   "Eau municipale : croissance organique de l'EBITDA",
+   "+6.1 %",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 24, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F437",
+   "Réseaux de chaleur et de froid : chiffre d'affaires",
+   "7,240 M EUR",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 24, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F438",
+   "Réseaux de chaleur et de froid : EBITDA",
+   "1,087 M EUR",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 24, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F439",
+   "Réseaux de chaleur et de froid : croissance organique de l'EBITDA",
+   "-1.5 %",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 24, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F440",
+   "Déchets solides : chiffre d'affaires",
+   "11,226 M EUR",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 24, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F441",
+   "Déchets solides : EBITDA",
+   "1,566 M EUR",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 24, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F442",
+   "Déchets solides : croissance organique de l'EBITDA",
+   "+6.8 %",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 24, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F443",
+   "Espagne : nombre de tuck-ins intégrés en deux ans",
+   "13 tuck-ins",
+   "2024-2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 19, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "6",
+   ""
+  ],
+  [
+   "F444",
+   "Espagne : valeur d'entreprise totale des tuck-ins",
+   "87 M EUR",
+   "2024-2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 19, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "6",
+   ""
+  ],
+  [
+   "F445",
+   "Espagne : multiple moyen des tuck-ins, environ",
+   "7.4 x",
+   "2024-2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 19, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "6",
+   ""
+  ],
+  [
+   "F446",
+   "Espagne : gains d'efficacité et synergies en deux ans",
+   "109 M EUR",
+   "2024-2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 19, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F447",
+   "Guidance 2026 : croissance du résultat net courant Clean Earth inclus, au moins",
+   "8 %",
+   "2026",
+   "veolia_finance_presentation_h1_2026_results.pdf, p. 30, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_presentation_H1_2026_results.pdf (consulté le 2026-09-22)",
+   "3",
    ""
   ]
  ]

@@ -71,3 +71,18 @@ dataroom (fichier, page).
 16. Veolia publie-t-elle un pont entre le FFO des agences et ses propres agrégats ?
 17. Le levier « mécanique » de 3,39x au 30 juin 2026 (24 548 / 7 235) sera-t-il commenté, ou seul le ratio
     de fin d'année fait-il foi ?
+
+## Ajouts du 6 octobre — le pont de l'EBITDA et le mur de dette
+
+18. **GreenUp promet 350 M€ de gains d'efficacité par an (p. 58) : sur 2024-2027, c'est 93 % de l'écart entre
+    6,5 et 8 Md€. En 2025, les 399 M€ livrés (présentation 2025, p. 21) pèsent autant que toute la croissance
+    organique de l'EBITDA. Les 350 M€ de 2026 et de 2027 sont-ils déjà identifiés (programmes, sites, fonctions
+    support) ?** Sans eux, notre marge sous 3x fin 2027 disparaît (onglet Pont EBITDA §D).
+19. **Hors efficacité et synergies Suez, l'EBITDA organique 2025 recule d'environ 70 M€ (notre lecture de la
+    p. 21). Est-ce l'énergie, les volumes en Europe, ou l'inflation des coûts non répercutée ?**
+20. **Les souches 2027-2028 (2,55 puis 2,0 Md€, coupons de 0 à 1,6 % hors la souche à 4,625 %, DEU p. 405) seront
+    refinancées vers 3,3 % : avez-vous une cible de coût moyen de la dette pour 2027 ?** Nous comptons ~75 M€
+    d'intérêts de plus par an, visibles dans le FFO des agences.
+21. **Le FFO de Moody's (5 160 M€) se reconstitue depuis votre tableau de flux à 3 M€ près (CAF avant BFR, moins
+    impôts et intérêts payés, plus remboursements d'actifs IFRIC 12 et dividendes reçus). Est-ce la définition
+    que vous suivez en interne pour piloter FFO / dette ?**

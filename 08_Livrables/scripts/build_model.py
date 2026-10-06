@@ -122,7 +122,7 @@ ws0 = wb.active
 ws0.title = "Lisez-moi"
 sheets = {}
 for name in ["Entrées", "Hypothèses", "Levier", "Pont de dette", "Échéancier", "Cessions", "Trajectoire",
-             "Sensibilité", "Segments", "Booster", "ESG", "Cibles", "Vérifications"]:
+             "Sensibilité", "Segments", "Pont EBITDA", "Booster", "ESG", "Cibles", "Vérifications"]:
     sheets[name] = wb.create_sheet(name)
 
 # ================================================================ Entrées
@@ -195,7 +195,7 @@ def hyp(row, code, label, base, low, high, unit, why, refs, nf):
 
 g_lo, id_glo = E("Guidance 2026 : croissance organique de l'EBITDA, bas", "2026")
 g_hi, id_ghi = E("Guidance 2026 : croissance organique de l'EBITDA, haut", "2026")
-cni, id_cni = E("Guidance 2026 : croissance du résultat net courant", "2026")
+cni, id_cni = E("Guidance 2026 : croissance du résultat net courant, au moins", "2026")
 ce_eb, id_ceeb = E("Clean Earth : EBITDA", "2026E")
 ce_usd, id_ceusd = E("Clean Earth : prix d'acquisition", "01/06/2026", "M USD")
 ce_eur, id_ceeur = E("Clean Earth : prix d'acquisition", "01/06/2026", "M EUR")
@@ -1206,6 +1206,179 @@ put(ws, f"B{r}", "Lecture : deux KPI sur trois sont déjà atteints ; seul le CO
 ws.merge_cells(f"B{r}:L{r}"); ws.row_dimensions[r].height = 30; r += 1
 widths(ws, {"A": 4, "B": 58, "C": 11, "D": 11, "E": 11, "F": 11, "G": 10, "H": 12, "I": 13, "J": 11, "K": 11, "L": 46})
 
+# ================================================================ Pont EBITDA
+ws = sheets["Pont EBITDA"]
+title(ws, "Rôles 3 et 4 (question 1 du cours) — Le pont de l'EBITDA : ce que GreenUp promet, ce que 2025 a livré, ce que le modèle projette",
+      "GreenUp (p.58, p.69), présentation des résultats 2025 (p.21, p.24), Trajectoire. Une marche = une ligne ; chaque marche "
+      "renvoie à une entrée ou à une hypothèse.")
+PB = {}
+r = 4
+put(ws, f"A{r}", "A", bold=True); put(ws, f"B{r}", "Ce que le plan promet (GreenUp 2024-2027)", bold=True); r += 1
+header(ws, r, ["", "Libellé", "Valeur", "Unité", "Réf. / calcul"]); r += 1
+gu_base, i_gubase = E("GreenUp : EBITDA de base", "2023")
+gu_cagr, i_gucagr = E("GreenUp : croissance annuelle moyenne de l'EBITDA", "2023-2027")
+gu_eff, i_gueff = E("GreenUp : gains d'efficacité par an", "2024-2027")
+gu_syn, i_gusyn = E("GreenUp : synergies de coûts attendues", "2024-2025")
+gu_syncum, i_gusyncum = E("GreenUp : synergies Suez cumulées 2022-2025", "2022-2025")
+line(ws, r, "base23", "EBITDA de base 2023 (GreenUp)", f"={gu_base}*1000", "M EUR", i_gubase, store=PB); r += 1
+line(ws, r, "tgt27", "Objectif 2027 : au moins", f"={tgt8}*1000", "M EUR", i_tgt8, store=PB); r += 1
+line(ws, r, "gap", "Écart à combler en quatre ans", f"=C{r-1}-C{r-2}", "M EUR", "objectif − base", NF_M, True, store=PB); r += 1
+line(ws, r, "cagrC", "Croissance annuelle implicite 2023 → 2027", f"=(C{r-2}/C{r-3})^(1/4)-1", "%", "(objectif / base)^(1/4) − 1", NF_P, store=PB); r += 1
+line(ws, r, "cagrP", "Croissance annuelle annoncée, environ", f"={gu_cagr}/100", "%", i_gucagr, NF_P, store=PB); r += 1
+line(ws, r, "eff", "Gains d'efficacité promis, par an", f"={gu_eff}", "M EUR", i_gueff, store=PB); r += 1
+line(ws, r, "eff4", "… sur quatre ans (2024-2027)", f"=4*C{r-1}", "M EUR", "4 × 350", NF_M, True, store=PB); r += 1
+line(ws, r, "effShare", "Part de l'écart couverte par la seule efficacité", f"=C{r-1}/{PB['gap']}", "%", "efficacité × 4 / écart", NF_P, True, store=PB); r += 1
+line(ws, r, "syn2425", "Synergies de coûts Suez attendues en 2024-2025, environ", f"={gu_syn}", "M EUR", i_gusyn, store=PB); r += 1
+line(ws, r, "syncum", "Synergies Suez cumulées 2022-2025 confirmées par le plan", f"={gu_syncum}", "M EUR", f"{i_gusyncum} ; réalisé 2025 : voir §B", store=PB); r += 1
+line(ws, r, "effSynShare", "Efficacité × 4 + synergies 2024-2025, en part de l'écart", f"=({PB['eff4']}+{PB['syn2425']})/{PB['gap']}", "%", "", NF_P, True, store=PB); r += 1
+put(ws, f"B{r}", "Lecture : GreenUp est d'abord un plan de coûts. L'efficacité promise (350 M€ par an) couvre à elle seule l'essentiel des 1,5 Md€ "
+    "entre 2023 et 2027 ; la croissance du chiffre d'affaires et les boosters apportent le reste. Un plan de coûts se vérifie année par année (§B).",
+    color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 44; r += 2
+
+put(ws, f"A{r}", "B", bold=True); put(ws, f"B{r}", "Ce que 2024 et 2025 ont livré (présentations des résultats)", bold=True); r += 1
+header(ws, r, ["", "Libellé", "2025", "2024", "Réf. / calcul"]); r += 1
+eff25, i_eff25 = E("Gains d'efficacité annuels", "FY2025")
+eff24, i_eff24 = E("Gains d'efficacité (et non synergies)", "FY2024")
+org25, i_org25 = E("Croissance organique de l'EBITDA (groupe)", "FY2025")
+syn24, i_syn24 = E("Synergies Suez cumulées", "FY2024")
+syn25, i_syn25 = E("Synergies Suez cumulées réalisées", "FY2025")
+marg25, i_marg25 = E("Marge d'EBITDA (groupe)", "FY2025")
+sh_eb, i_sheb = E("Strongholds : EBITDA", "FY2025")
+sh_g, i_shg = E("Strongholds : croissance organique de l'EBITDA", "FY2025")
+bo_eb, i_boeb = E("Boosters : EBITDA", "FY2025")
+bo_g, i_bog = E("Boosters : croissance organique de l'EBITDA", "FY2025")
+
+
+def two(key, label, f25, f24, ref, nf=NF_M, bold=False):
+    global r
+    put(ws, f"B{r}", label, bold=bold)
+    for col, f in (("C", f25), ("D", f24)):
+        if f is None:
+            put(ws, f"{col}{r}", "n/d", color=GREY, align="right")
+        else:
+            put(ws, f"{col}{r}", f, nf=nf, bold=bold, color=GREEN if (str(f).startswith("=") and "!" in str(f) and re.fullmatch(r"=[^+\-*/()]+(/100)?", str(f))) else BLACK)
+    put(ws, f"E{r}", ref, color=GREY)
+    PB[key] = f"{q('Pont EBITDA')}!$C${r}"; PB[key + "_24"] = f"{q('Pont EBITDA')}!$D${r}"
+    r += 1
+
+
+two("ebY", "EBITDA publié", f"={eb25}", f"={eb24}", f"{id_eb25}, {id_eb24}")
+two("ebY1", "EBITDA de l'année précédente, tel que publié", f"={eb24}", f"={PB['base23']}", f"{id_eb24} ; 2023 : base GreenUp (6,5 Md€, arrondi)")
+two("orgPct", "Croissance organique de l'EBITDA publiée", f"={org25}/100", None, i_org25, NF_P)
+two("orgM", "… en M EUR, sur la base publiée de l'année précédente (approximation : la base organique n'est pas publiée)",
+    f"=C{r-1}*D{r-3}", None, "croissance × EBITDA N−1 publié", NF_M, True)
+two("effY", "Gains d'efficacité de l'année", f"={eff25}", f"={eff24}", f"{i_eff25}, {i_eff24}")
+two("synInc", "Synergies Suez supplémentaires dans l'année (cumul N − cumul N−1)", f"={syn25}-{syn24}", None, f"{i_syn25} − {i_syn24}")
+two("effSynY", "Efficacité + synergies de l'année", f"=C{r-2}+C{r-1}", None, "", NF_M, True)
+two("effShareY", "Part de la croissance organique expliquée par l'efficacité seule", f"=C{r-3}/{PB['orgM']}", None, "efficacité / croissance organique en M EUR", NF_P, True)
+two("rest", "Reste : volumes, prix, énergie, inflation des coûts (croissance organique − efficacité − synergies)",
+    f"={PB['orgM']}-C{r-2}", None, "négatif = hors efficacité et synergies, l'EBITDA organique recule", NF_M, True)
+two("margY", "Marge d'EBITDA publiée", f"={marg25}/100", None, i_marg25, NF_P)
+put(ws, f"B{r}", "Contre-épreuve par les familles d'activités (présentation 2025, p.24 et p.7)", bold=True); r += 1
+two("shOrg", "Strongholds : EBITDA × croissance organique", f"={sh_eb}*{sh_g}/100", None, f"{i_sheb} × {i_shg}")
+two("boOrg", "Boosters : EBITDA × croissance organique", f"={bo_eb}*{bo_g}/100", None, f"{i_boeb} × {i_bog}")
+two("famOrg", "Somme des deux familles (sur les EBITDA 2025, approximation)", f"=C{r-2}+C{r-1}", None, "à comparer à la croissance organique du groupe en M EUR", NF_M, True)
+put(ws, f"B{r}", "Lecture : en 2025, les gains d'efficacité (399 M€) pèsent à peu près autant que toute la croissance organique de l'EBITDA ; "
+    "avec les synergies Suez, ils la dépassent. Hors ces deux programmes, l'EBITDA organique ne progresse pas : volumes, prix et énergie "
+    "absorbent l'inflation des coûts, pas plus. La capacité d'acquisition de 2027 repose donc sur un programme de coûts qui doit être "
+    "livré deux années de plus (§D).", color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 58; r += 2
+
+put(ws, f"A{r}", "C", bold=True); put(ws, f"B{r}", "Le pont du modèle 2025 → 2027, marche par marche (Trajectoire)", bold=True); r += 1
+header(ws, r, ["", "Marche", "Scénario actif", "Défavorable combiné", "Favorable combiné", "Ce qui la porte"]); r += 1
+TJ = q('Trajectoire')
+
+
+def tref(col, key):
+    return f"{TJ}!${col}${ROW[key]}"
+
+
+def href(col, code):
+    return f"{TJ}!${col}${IN[code]}"
+
+
+STEPS = [
+    ("eb25", "EBITDA 2025 publié", lambda c: f"={eb25}", id_eb25, True),
+    ("org26", "+ croissance organique 2026 (hypothèse g26)", lambda c: f"={tref(c, 'A26')}-{eb25}", "A26 − EBITDA 2025", False),
+    ("ce26", "+ Clean Earth 2026 (mois consolidés, converti)", lambda c: f"={tref(c, 'CE26')}", "CE26", False),
+    ("disp26", "− EBITDA cédé en 2026", lambda c: f"={tref(c, 'DE26')}", "DE26", False),
+    ("eb26", "EBITDA 2026 (sous-total)", lambda c: f"={tref(c, 'EB26')}", "EB26", True),
+    ("org27", "+ croissance organique 2027 (hypothèse g27, sur la base 2026 Clean Earth en année pleine)",
+     lambda c: f"={tref(c, 'B27')}-({tref(c, 'A26')}+{tref(c, 'DE26')}+{href(c, 'ceEb')}/{href(c, 'fx')})", "B27 − base", False),
+    ("ce27", "+ complément Clean Earth (12 mois − mois 2026)", lambda c: f"={href(c, 'ceEb')}/{href(c, 'fx')}-{tref(c, 'CE26')}", "ceEb / fx − CE26", False),
+    ("syn27", "+ synergies Clean Earth réalisées en 2027", lambda c: f"={tref(c, 'SYN27')}", "SYN27", False),
+    ("tuck27", "+ EBITDA apporté par les tuck-ins 2027", lambda c: f"={tref(c, 'TE27')}", "TE27", False),
+    ("disp27", "− EBITDA cédé en 2027", lambda c: f"={tref(c, 'DE27')}", "DE27", False),
+    ("eb27", "EBITDA 2027 (somme des marches)", None, "somme", True),
+    ("eb27T", "EBITDA 2027 de Trajectoire (contrôle)", lambda c: f"={tref(c, 'EB27')}", "EB27", False),
+    ("tgt", "Objectif GreenUp : au moins", lambda c: f"={tgt8}*1000", i_tgt8, False),
+    ("gap8", "Écart à l'objectif", lambda c: f"={tref(c, 'GAP8')}", "GAP8", True),
+]
+S0 = r
+for key, label, fn, why, bold in STEPS:
+    put(ws, f"B{r}", label, bold=bold)
+    for col, tcol in (("C", "D"), ("D", UNFAV), ("E", FAV)):
+        if fn is None:
+            put(ws, f"{col}{r}", f"={col}{PB['eb25_row']}+SUM({col}{PB['eb25_row'] + 1}:{col}{PB['eb25_row'] + 3})+SUM({col}{PB['eb25_row'] + 5}:{col}{PB['eb25_row'] + 9})", nf=NF_M, bold=True)
+        else:
+            f = fn(tcol)
+            put(ws, f"{col}{r}", f, nf=NF_M, bold=bold, color=GREEN if re.fullmatch(r"=[^+\-*/()]+", f) else BLACK)
+    put(ws, f"F{r}", why, color=GREY)
+    PB[key] = f"{q('Pont EBITDA')}!$C${r}"
+    if key == "eb25":
+        PB["eb25_row"] = r
+    if key == "eb27":
+        PB["eb27_row"] = r
+    r += 1
+S1 = r - 1
+put(ws, f"B{r}", "Lecture : la colonne « Scénario actif » suit le sélecteur de Hypothèses. Les marches positives sont la croissance organique "
+    "(dont l'efficacité, §D), Clean Earth et ses synergies, les tuck-ins ; les cessions retirent leur EBITDA sur l'année entière (prudent).",
+    color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:F{r}"); ws.row_dimensions[r].height = 30; r += 1
+pch = BarChart(); pch.type = "col"; pch.grouping = "clustered"
+pch.title = "Les marches du pont 2025 → 2027, scénario actif (M EUR)"
+pch.y_axis.title = "M EUR"; pch.y_axis.delete = False; pch.x_axis.delete = False
+pch.add_data(Reference(ws, min_col=3, min_row=S0 + 1, max_row=S0 + 9), titles_from_data=False)
+pch.set_categories(Reference(ws, min_col=2, min_row=S0 + 1, max_row=S0 + 9))
+pch.legend = None
+pch.height, pch.width = 9, 22
+ws.add_chart(pch, f"H{S0}")
+r += 1
+
+put(ws, f"A{r}", "D", bold=True); put(ws, f"B{r}", "L'efficacité porte tout : que vaut la marge 2027 si le programme de coûts n'est pas livré ?", bold=True); r += 1
+header(ws, r, ["", "Libellé", "Valeur", "Unité", "Réf. / calcul"]); r += 1
+line(ws, r, "effPlan", "Efficacité promise par an (GreenUp)", f"={gu_eff}", "M EUR", i_gueff, store=PB); r += 1
+line(ws, r, "org26M", "Croissance organique 2026 du modèle (scénario actif)", f"={PB['org26']}", "M EUR", "§C", store=PB); r += 1
+line(ws, r, "effIn26", "Part de l'organique 2026 que représente l'efficacité promise", f"={PB['effPlan']}/{PB['org26M']}", "%", "350 / organique 2026", NF_P, True, store=PB); r += 1
+line(ws, r, "org27M", "Croissance organique 2027 du modèle (scénario actif)", f"={PB['org27']}", "M EUR", "§C", store=PB); r += 1
+line(ws, r, "effIn27", "Part de l'organique 2027 que représente l'efficacité promise", f"={PB['effPlan']}/{PB['org27M']}", "%", "350 / organique 2027", NF_P, True, store=PB); r += 1
+put(ws, f"B{r}", "Taux de réalisation de l'efficacité en 2026 et 2027 (1 = livrée comme promise)", bold=True)
+put(ws, f"C{r}", 1, color=BLUE, nf=NF_P, fill=YELLOW); put(ws, f"D{r}", "%", color=GREY); put(ws, f"E{r}", "cellule jaune : à faire varier (0 = rien, 0,5 = la moitié)", color=GREY)
+PB["kEff"] = f"{q('Pont EBITDA')}!$C${r}"; KROW = r; r += 1
+line(ws, r, "effLost", "EBITDA 2027 perdu si l'efficacité n'est livrée qu'à ce taux (deux années)", f"=-(1-{PB['kEff']})*2*{PB['effPlan']}", "M EUR", "−(1 − taux) × 2 × 350", NF_M, True, store=PB); r += 1
+line(ws, r, "eb27k", "EBITDA 2027 au taux choisi", f"={T['EB27']}+{PB['effLost']}", "M EUR", "EB27 + perte", NF_M, True, store=PB); r += 1
+line(ws, r, "lev27k", "Levier fin 2027 au taux choisi (dette inchangée)", f"={T['NFD27']}/{PB['eb27k']}", "x", "DFN 2027 / EBITDA 2027 corrigé", NF_X, True, store=PB); r += 1
+line(ws, r, "head27k", "Marge sous 3x fin 2027 au taux choisi", f"={HY('cap')}*{PB['eb27k']}-{T['NFD27']}", "M EUR", "plafond × EBITDA corrigé − DFN", NF_M, True, store=PB); r += 1
+line(ws, r, "head27", "Pour mémoire : marge sous 3x fin 2027, scénario actif", f"={T['HEAD27']}", "M EUR", "Trajectoire", NF_M, store=PB); r += 1
+put(ws, f"B{r}", "Grille : marge sous 3x fin 2027 selon le taux de réalisation de l'efficacité", bold=True); r += 1
+header(ws, r, ["", "Taux de réalisation", "EBITDA 2027", "Levier 2027", "Marge sous 3x (M EUR)"]); r += 1
+G0 = r
+for k in (0, 0.25, 0.5, 0.75, 1):
+    put(ws, f"B{r}", k, color=BLUE, nf=NF_P, align="center")
+    put(ws, f"C{r}", f"={T['EB27']}-(1-B{r})*2*{PB['effPlan']}", nf=NF_M)
+    put(ws, f"D{r}", f"={T['NFD27']}/C{r}", nf=NF_X)
+    put(ws, f"E{r}", f"={HY('cap')}*C{r}-{T['NFD27']}", nf=NF_M, bold=True)
+    if k == 0:
+        PB["head27k0"] = f"{q('Pont EBITDA')}!$E${r}"
+    r += 1
+put(ws, f"B{r}", "Lecture : chaque euro d'efficacité non livré coûte trois euros de capacité d'endettement (plafond × EBITDA) et ne rapporte rien "
+    "en cash-flow en face. Sans efficacité en 2026-2027, la marge sous 3x disparaît : la question à poser à Veolia le 16 octobre est "
+    "moins « combien achèterez-vous ? » que « les 350 M€ d'efficacité par an sont-ils sécurisés ? ».", color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:F{r}"); ws.row_dimensions[r].height = 44; r += 1
+widths(ws, {"A": 4, "B": 76, "C": 15, "D": 15, "E": 15, "F": 30})
+ws.freeze_panes = "C4"
+
 # ================================================================ Booster
 ws = sheets["Booster"]
 title(ws, "Rôle 4 — Où en est le booster Déchets dangereux face à 2027",
@@ -1511,6 +1684,11 @@ checks = [
     ("Pont 2025 : flux non détaillés dans le communiqué", P["resid25"], 0, None, NF_M, "Info"),
     ("Clean Earth : effet sur la dette − prix payé", P["ceGap"], 0, None, NF_M, "Info"),
     ("Multiple Clean Earth recalculé après synergies vs publié", K["mPost"], K["mPub"], None, '0.0"x"', "Info"),
+    ("Pont EBITDA : somme des marches 2025 → 2027 = EBITDA 2027 de Trajectoire", PB["eb27"], PB["eb27T"], 1, NF_M, "Bloquant"),
+    ("Pont EBITDA : croissance annuelle implicite de GreenUp (6,5 → 8) face au « ~5 % » annoncé", PB["cagrC"], PB["cagrP"], 0.01, NF_P, "Bloquant"),
+    ("Pont EBITDA : strongholds + boosters (EBITDA × organique) face à la croissance organique du groupe en M EUR (± 60)", PB["famOrg"], PB["orgM"], None, NF_M, "Info"),
+    ("Pont EBITDA : part de l'écart 2023 → 2027 couverte par l'efficacité annoncée (info)", PB["effShare"], 1, None, NF_P, "Info"),
+    ("Pont EBITDA : hors efficacité et synergies, croissance organique 2025 de l'EBITDA (négatif = recul)", PB["rest"], 0, None, NF_M, "Info"),
     ("FFO 2025 reconstitué depuis le tableau de flux = FFO Moody's (± 5 %)", A["ffoRecGap25"], 0, 0.05, NF_P, "Bloquant"),
     ("FFO 2024 reconstitué depuis le tableau de flux = FFO Moody's (± 5 %)", A["ffoRecGap24"], 0, 0.05, NF_P, "Bloquant"),
     ("Échéancier : somme des trois instruments = passifs financiers bruts publiés, flux 2026", f"{q('Échéancier')}!$C${M['sum']}",
@@ -1572,6 +1750,9 @@ res = [
     ("EBITDA 2027 si chaque segment garde son rythme organique de 2025, en M EUR", SG["eb27seg"], NF_M),
     ("Clean Earth : multiple du prix sur l'EBITDA 2025 publié par le vendeur (reconstitué)", B["mRec"], '0.0"x"'),
     ("Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR", T["MAXACQB"], NF_M),
+    ("Part de l'écart GreenUp 2023 → 2027 que couvre la seule efficacité promise (350 M€ par an)", PB["effShare"], NF_P),
+    ("Part de la croissance organique 2025 de l'EBITDA expliquée par les gains d'efficacité", PB["effShareY"], NF_P),
+    ("Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR", PB["head27k0"], NF_M),
     ("Liquidités / flux contractuels de dette 2026 (DEU p.421)", MR["cov26"], NF_X),
     ("Surcoût d'intérêts annuel si les souches 2027-2028 sont refinancées au taux de juin 2025, en M EUR", f"{q('Échéancier')}!$C${M['extraInt']}", NF_M),
     ("FFO 2025 reconstitué depuis le tableau de flux, en M EUR (Moody's publie 5 160)", A["ffoRec25"], NF_M),
@@ -1607,8 +1788,8 @@ roles = [
     ("1. Périmètre et sources", "Entrées, Cessions §A-B", "L'enveloppe annoncée est nette des cessions ; Clean Earth en sort."),
     ("2. La contrainte", "Levier, Pont de dette, Échéancier", "Définition de Veolia, ratios publiés reproduits, trois lectures du départ au 30/06/2026 ; "
      "seuils des agences, pont du FFO, mur de refinancement."),
-    ("3. Capacité et sensibilité", "Trajectoire, Sensibilité, Cessions §C", "FCF, calendrier des cessions, ce qui bouge le plus la marge."),
-    ("4. L'écart et les comparables", "Segments, Booster", "D'où viennent les 8 Md€ ; volumes face à 9 et 10 Mt ; Clean Harbors en comparable ; Clean Earth vu du vendeur."),
+    ("3. Capacité et sensibilité", "Trajectoire, Sensibilité, Cessions §C, Pont EBITDA", "FCF, calendrier des cessions, ce qui bouge le plus la marge."),
+    ("4. L'écart et les comparables", "Segments, Pont EBITDA, Booster", "D'où viennent les 8 Md€ (un plan d'efficacité) ; volumes face à 9 et 10 Mt ; Clean Harbors en comparable ; Clean Earth vu du vendeur."),
     ("5. Le coût ESG", "ESG", "Provisions de fermeture ; ce que l'affectation du prix de Clean Earth ne montre pas encore."),
     ("6. Cibles, puis synthèse", "Cibles", "Taille maximale selon le multiple ; univers de cibles à remplir."),
 ]

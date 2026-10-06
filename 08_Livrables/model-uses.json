@@ -155,6 +155,9 @@
   "F202",
   "F203",
   "F204",
+  "F205",
+  "F206",
+  "F208",
   "F209",
   "F210",
   "F211",
@@ -195,8 +198,8 @@
   "F267-af42",
   "F268",
   "F269",
-  "F271",
   "F271-543e",
+  "F271",
   "F272-40a3",
   "F272",
   "F273",
@@ -273,7 +276,17 @@
   "F407",
   "F408",
   "F409",
-  "F417"
+  "F417",
+  "F418",
+  "F419",
+  "F420",
+  "F421",
+  "F422",
+  "F424",
+  "F425",
+  "F426",
+  "F431",
+  "F432"
  ],
  "lookups": [
   {
@@ -290,7 +303,7 @@
   },
   {
    "id": "F89",
-   "prefix": "Guidance 2026 : croissance du résultat net courant",
+   "prefix": "Guidance 2026 : croissance du résultat net courant, au moins",
    "period": "2026",
    "unit": ""
   },
@@ -1714,6 +1727,96 @@
    "id": "F203",
    "prefix": "KPI GreenUp : eau douce économisée, objectif",
    "period": "2027",
+   "unit": ""
+  },
+  {
+   "id": "F418",
+   "prefix": "GreenUp : EBITDA de base",
+   "period": "2023",
+   "unit": ""
+  },
+  {
+   "id": "F419",
+   "prefix": "GreenUp : croissance annuelle moyenne de l'EBITDA",
+   "period": "2023-2027",
+   "unit": ""
+  },
+  {
+   "id": "F420",
+   "prefix": "GreenUp : gains d'efficacité par an",
+   "period": "2024-2027",
+   "unit": ""
+  },
+  {
+   "id": "F421",
+   "prefix": "GreenUp : synergies de coûts attendues",
+   "period": "2024-2025",
+   "unit": ""
+  },
+  {
+   "id": "F422",
+   "prefix": "GreenUp : synergies Suez cumulées 2022-2025",
+   "period": "2022-2025",
+   "unit": ""
+  },
+  {
+   "id": "F424",
+   "prefix": "Gains d'efficacité annuels",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F205",
+   "prefix": "Gains d'efficacité (et non synergies)",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F425",
+   "prefix": "Croissance organique de l'EBITDA (groupe)",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F206",
+   "prefix": "Synergies Suez cumulées",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F208",
+   "prefix": "Synergies Suez cumulées réalisées",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F426",
+   "prefix": "Marge d'EBITDA (groupe)",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F431",
+   "prefix": "Strongholds : EBITDA",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F432",
+   "prefix": "Strongholds : croissance organique de l'EBITDA",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F188",
+   "prefix": "Boosters : EBITDA",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F187",
+   "prefix": "Boosters : croissance organique de l'EBITDA",
+   "period": "FY2025",
    "unit": ""
   },
   {

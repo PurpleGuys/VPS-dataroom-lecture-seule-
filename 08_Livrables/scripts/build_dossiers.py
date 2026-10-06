@@ -241,6 +241,14 @@ DEBT18 = mv("Levier", "Dette ajustée maximale au seuil"); ADJGAP = mv("Levier",
 FFO_REC = mv("Levier", "FFO reconstitué (somme"); FFO_GAP_PCT = mv("Levier", "Écart en % du FFO Moody's")
 COV26 = mv("Échéancier", "Liquidités / flux contractuels 2026"); COV26X = mv("Échéancier", "Liquidités / flux 2026 hors")
 EXTRA_INT = mv("Échéancier", "Surcoût d'intérêts annuel"); EXTRA_PCT = mv("Échéancier", "en % du FFO 2025")
+EFF_SHARE = mv("Pont EBITDA", "Part de l'écart couverte par la seule efficacité")
+EFF_SHARE_Y = mv("Pont EBITDA", "Part de la croissance organique expliquée"); REST = mv("Pont EBITDA", "Reste : volumes")
+ORG_M = mv("Pont EBITDA", "… en M EUR, sur la base publiée"); ORG26 = mv("Pont EBITDA", "+ croissance organique 2026")
+ORG27 = mv("Pont EBITDA", "+ croissance organique 2027"); EFF_IN26 = mv("Pont EBITDA", "Part de l'organique 2026")
+_wp = WB["Pont EBITDA"]
+HEAD_K0 = next(_wp[f"E{c.row}"].value for c in _wp["B"] if c.value == 0)
+LEV_K0 = next(_wp[f"D{c.row}"].value for c in _wp["B"] if c.value == 0)
+HEAD_K50 = next(_wp[f"E{c.row}"].value for c in _wp["B"] if c.value == 0.5)
 
 # ------------------------------------------------------------------ registre
 R = lambda *a: fig(*a)
@@ -262,6 +270,12 @@ f = dict(
     synd=R("Ligne de crédit syndiquée non tirée", "31/12/2025"),
     cfo25=R("Tableau de flux : capacité d'autofinancement avant variation du BFR", "FY2025"),
     int25=R("Tableau de flux : intérêts payés", "FY2025"),
+    gu_eff=R("GreenUp : gains d'efficacité par an", "2024-2027"), gu_base=R("GreenUp : EBITDA de base", "2023"),
+    eff25=R("Gains d'efficacité annuels", "FY2025"), eff24=R("Gains d'efficacité (et non synergies)", "FY2024"),
+    org25=R("Croissance organique de l'EBITDA (groupe)", "FY2025"), syn25=R("Synergies Suez cumulées réalisées", "FY2025"),
+    syn24=R("Synergies Suez cumulées", "FY2024"), sh_g=R("Strongholds : croissance organique de l'EBITDA", "FY2025"),
+    es_mult=R("Espagne : multiple moyen des tuck-ins", "2024-2025"), es_n=R("Espagne : nombre de tuck-ins", "2024-2025"),
+    es_ev=R("Espagne : valeur d'entreprise totale des tuck-ins", "2024-2025"),
     nfdh1=R("Endettement financier net (groupe), après Clean Earth", "30/06/2026"),
     nfdh125=R("Endettement financier net (groupe)", "30/06/2025"), ebh1=R("EBITDA (groupe)", "S1 2026"),
     ebh125=R("EBITDA (groupe)", "S1 2025"), hyb=R("Dettes hybrides", "30/06/2026"),
@@ -574,6 +588,11 @@ ROLES.append(role(
         f"Le pont de dette 2025 du communiqué laisse {fr(RESID25, 0)} M€ de flux non détaillés (dont au moins {fr(MINOR25, 0)} M€ de dividendes aux minoritaires).",
     ],
     [
+        ("Quelle est l'hypothèse la plus fragile du modèle ?",
+         f"La croissance organique de l'EBITDA (g26, g27), parce qu'elle est faite d'efficacité : {pct(EFF_IN26, 0)} de l'organique 2026 "
+         f"du modèle ({fr(ORG26, 0)} M€), c'est le programme de 350 M€ par an de GreenUp. Un programme de coûts se tient ou ne se tient pas ; "
+         f"la sensibilité de Trajectoire (g26 bas, g27 bas) en donne la version douce, l'onglet Pont EBITDA §D la version dure : "
+         f"{fr(HEAD_K0, 0)} M€ de marge si rien n'est livré."),
         ("Et si les cessions glissent en 2028 ?",
          f"Sans rien encaisser du reste du programme en 2027, la marge tombe de {fr(HEAD, 0)} à {fr(H1_LOW, 0)} M€. C'est le premier facteur."),
         ("Pourquoi ne pas couper le dividende ?",
@@ -583,7 +602,7 @@ ROLES.append(role(
          "Chaque euro encaissé réduit la dette d'un euro mais retire 1/multiple d'EBITDA, soit trois fois plus de capacité : à 10x, "
          "100 M€ de cessions ne libèrent que 70 M€ de marge."),
     ],
-    "Trajectoire, Sensibilité, Cessions §C, Pont de dette",
+    "Trajectoire, Sensibilité, Cessions §C, Pont de dette, Pont EBITDA",
 ))
 
 seche_rows, seche_text = [], ""
@@ -596,7 +615,12 @@ ROLES.append(role(
     f"Côté segments, la croissance vient des Amériques (EBITDA organique +{P(f['am_g'])} %) et de Water Technologies (+{P(f['wt_g'])} %), "
     f"pas de l'Europe (+{P(f['eu_g'])} %) : au rythme de 2025, l'EBITDA 2027 atteindrait {fr(SEG_EB27 / 1000, 2)} Md€, l'objectif tient. "
     f"Chez Clean Harbors, le comparable direct, la marge est de {P(f['clh_m'])} % ; chez Clean Earth vu par son vendeur, "
-    f"{pct(CE_MREC)} sur un EBITDA 2025 reconstitué de {fr(CE_EBREC, 0)} M$, un tiers sous les {P(f['ceeb'])} M$ 2026E de Veolia.",
+    f"{pct(CE_MREC)} sur un EBITDA 2025 reconstitué de {fr(CE_EBREC, 0)} M$, un tiers sous les {P(f['ceeb'])} M$ 2026E de Veolia. "
+    f"<strong>Les 8 Md€ sont d'abord un plan de coûts</strong> : l'efficacité promise ({P(f['gu_eff'])} M€ par an, GreenUp p.58) couvre "
+    f"{pct(EFF_SHARE, 0)} de l'écart entre la base 2023 ({P(f['gu_base'])} Md€) et l'objectif ; en 2025, les {P(f['eff25'])} M€ de gains "
+    f"d'efficacité expliquent {pct(EFF_SHARE_Y, 0)} de la croissance organique de l'EBITDA (+{P(f['org25'])} %, soit ~{fr(ORG_M, 0)} M€), "
+    f"et hors efficacité et synergies Suez l'EBITDA organique recule d'environ {fr(-REST, 0)} M€. Sans efficacité en 2026-2027, la marge "
+    f"sous 3x fin 2027 passe de {fr(HEAD, 0)} à {fr(HEAD_K0, 0)} M€.",
     table([
         row_fig("Déchets dangereux traités", f["hw24"]), row_fig("Déchets dangereux traités", f["hw25"]),
         row_fig("Objectif 2027 actuel", f["hwt"]), row_fig("Objectif 2027 initial", f["hwt0"]),
@@ -610,6 +634,17 @@ ROLES.append(role(
         row_calc("Clean Earth : marge 2026E", pct(CE_MARGIN), "EBITDA / CA"),
         row_fig("EBITDA organique Water Technologies", f["wt_g"]), row_fig("EBITDA organique Amériques-Asie-Afrique", f["am_g"]),
         row_fig("EBITDA organique Europe", f["eu_g"]), row_fig("Boosters : chiffre d'affaires", f["boost_rev"]),
+        row_fig("GreenUp : EBITDA de base 2023", f["gu_base"]), row_fig("GreenUp : efficacité par an", f["gu_eff"]),
+        row_calc("Part de l'écart 2023 → 2027 couverte par l'efficacité", pct(EFF_SHARE, 0), "4 × 350 / (8 000 − 6 500)"),
+        row_fig("Gains d'efficacité", f["eff24"]), row_fig("Gains d'efficacité", f["eff25"]),
+        row_fig("Croissance organique de l'EBITDA", f["org25"]),
+        row_calc("… en M EUR sur la base publiée", fr(ORG_M, 0, "M EUR"), "approximation : base organique non publiée"),
+        row_fig("Synergies Suez cumulées", f["syn24"]), row_fig("Synergies Suez cumulées", f["syn25"]),
+        row_calc("Reste hors efficacité et synergies, 2025", fr(REST, 0, "M EUR"), "croissance organique − efficacité − synergies"),
+        row_calc("Croissance organique 2026 du modèle", fr(ORG26, 0, "M EUR"), f"l'efficacité promise en représente {pct(EFF_IN26, 0)}"),
+        row_calc("Marge sous 3x fin 2027 sans efficacité en 2026-2027", fr(HEAD_K0, 0, "M EUR"), f"levier {x(LEV_K0)} ; à mi-chemin {fr(HEAD_K50, 0)}"),
+        row_fig("Espagne : tuck-ins intégrés en deux ans", f["es_n"]), row_fig("Espagne : valeur d'entreprise des tuck-ins", f["es_ev"]),
+        row_fig("Espagne : multiple moyen des tuck-ins", f["es_mult"]),
         row_fig("Boosters : EBITDA", f["boost_eb"]), row_fig("Boosters : croissance organique de l'EBITDA", f["boost_g"]),
         row_calc("EBITDA 2027 si chaque segment garde son rythme de 2025", fr(SEG_EB27, 0, "M EUR"), "onglet Segments §C"),
         row_fig("Clean Harbors : chiffre d'affaires", f["clh_rev"]), row_fig("Clean Harbors : EBITDA ajusté", f["clh_eb"]),
@@ -639,10 +674,23 @@ ROLES.append(role(
     ],
     [
         "Les comptes de Clean Harbors et d'Enviri ne se téléchargent pas depuis le serveur (refus 403) : à verser à la main.",
+        "La base organique 2024 (périmètre et change constants) n'est pas publiée : les 428 M€ de croissance organique 2025 sont "
+        "calculés sur l'EBITDA 2024 publié, à quelques millions près.",
+        "Le multiple des tuck-ins espagnols est imprimé « c.7.4x » (présentation 2025, p.19) : l'audit le signale hors page tant "
+        "qu'un relecteur ne l'a pas confirmé.",
         "Aucune valeur de marché des pairs (capitalisation, VE) n'est dans la dataroom.",
         "L'EBITDA déchets dangereux de Veolia seul en 2024, base de l'ambition de +10 %, n'est pas publié.",
     ],
     [
+        ("D'où viennent exactement les 8 Md€ ?",
+         f"De l'efficacité d'abord. GreenUp promet {P(f['gu_eff'])} M€ de gains par an : sur quatre ans, {pct(EFF_SHARE, 0)} de l'écart "
+         f"entre {P(f['gu_base'])} Md€ (2023) et 8 Md€. 2025 le confirme : {P(f['eff25'])} M€ d'efficacité pour ~{fr(ORG_M, 0)} M€ de croissance "
+         f"organique de l'EBITDA ; avec les {fr(N(f['syn25']) - N(f['syn24']), 0)} M€ de synergies Suez supplémentaires, les deux programmes "
+         f"dépassent la croissance organique. Le reste (volumes, prix, énergie) ne couvre pas l'inflation des coûts."),
+        ("Et si l'efficacité n'est pas livrée en 2026-2027 ?",
+         f"Chaque euro d'efficacité manquant retire trois euros de capacité d'endettement et aucun cash-flow ne le compense. Sans aucun gain "
+         f"en 2026-2027, l'EBITDA 2027 perd 700 M€, le levier remonte à {x(LEV_K0)} et la marge sous 3x devient {fr(HEAD_K0, 0)} M€. "
+         f"C'est la question à poser à Veolia : les 350 M€ par an sont-ils sécurisés, et par quoi ?"),
         ("Le booster est-il en retard ?",
          "En volume, sur l'objectif initial, oui ; sur l'objectif révisé, non. En valeur, il n'est dans les clous que grâce à Clean Earth."),
         ("Pourquoi Clean Harbors est-il le bon comparable ?",
@@ -652,7 +700,7 @@ ROLES.append(role(
         ("L'objectif de 9 Mt est-il une révision à la baisse ?",
          "Le chiffre baisse et le libellé perd « et polluants ». Le DEU ne l'explique pas : c'est une question à poser, pas à trancher."),
     ],
-    "Booster",
+    "Segments, Pont EBITDA, Booster",
 ))
 
 ROLES.append(role(
