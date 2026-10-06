@@ -2111,7 +2111,10 @@ res = [
     ("Contrôles bloquants", VSTAT, None),
     ("Scénario", HSTAT, None),
 ]
+ROOTS = []   # (libellé, feuille, cellule) des résultats chiffrés : racines du traçage des chiffres critiques
 for lab, ref, nf in res:
+    if ref not in (VSTAT, HSTAT):
+        ROOTS.append((lab, ws.title, f"C{r}"))
     put(ws, f"B{r}", lab)
     put(ws, f"C{r}", f"={ref}", color=GREEN, nf=nf, bold=True, align="right")
     r += 1
@@ -2187,6 +2190,77 @@ OUT.parent.mkdir(parents=True, exist_ok=True)
 wb.save(OUT)
 import json as _json
 from datetime import date as _date
+
+
+# ---------------------------------------------------------------- chiffres critiques
+# Remonter les formules depuis chaque résultat de Lisez-moi jusqu'aux lignes d'Entrées : les chiffres
+# du registre dont dépend un résultat sont ceux qu'il faut relire d'abord.
+from openpyxl.formula import Tokenizer
+from openpyxl.utils.cell import range_boundaries, coordinate_from_string, column_index_from_string
+
+ROW_TO_ID = {row: fid for fid, row in ENTREE_ROW.items()}
+
+
+def _cells_of(ref: str, here: str):
+    ref = ref.replace("$", "")
+    sheet = here
+    if "!" in ref:
+        sheet, ref = ref.rsplit("!", 1)
+        sheet = sheet.strip("'")
+    if sheet not in wb.sheetnames:
+        return []
+    if ":" in ref:
+        try:
+            c1, r1, c2, r2 = range_boundaries(ref)
+        except ValueError:
+            return []
+        if None in (c1, r1, c2, r2) or (c2 - c1 + 1) * (r2 - r1 + 1) > 5000:
+            return []
+        return [(sheet, f"{L(c)}{rr}") for c in range(c1, c2 + 1) for rr in range(r1, r2 + 1)]
+    try:
+        coordinate_from_string(ref)
+    except ValueError:
+        return []
+    return [(sheet, ref)]
+
+
+def trace(sheet: str, cell: str, seen: set) -> set:
+    """Ids d'Entrées atteints depuis (feuille, cellule), en suivant les références des formules."""
+    found, stack = set(), [(sheet, cell)]
+    while stack:
+        sh, ce = stack.pop()
+        if (sh, ce) in seen:
+            continue
+        seen.add((sh, ce))
+        if sh == "Entrées":
+            col, row = coordinate_from_string(ce)
+            if col == "C" and row in ROW_TO_ID:
+                found.add(ROW_TO_ID[row])
+            continue
+        value = wb[sh][ce].value
+        if not (isinstance(value, str) and value.startswith("=")):
+            continue
+        try:
+            tokens = Tokenizer(value).items
+        except Exception:
+            continue
+        for tok in tokens:
+            if tok.type == "OPERAND" and tok.subtype == "RANGE":
+                stack.extend(_cells_of(tok.value, sh))
+    return found
+
+
+CRITICAL: dict[str, list[str]] = {}
+for lab, sh, ce in ROOTS:
+    for fid in trace(sh, ce, set()):
+        CRITICAL.setdefault(fid, []).append(lab)
+OUT.with_name("model-critical.json").write_text(_json.dumps({
+    "generated": _date.today().isoformat(), "model": OUT.name,
+    "roots": [lab for lab, _, _ in ROOTS],
+    "ids": {fid: CRITICAL[fid] for fid in sorted(CRITICAL, key=lambda s: (s[0], int(s[1:].split("-")[0])))},
+}, ensure_ascii=False, indent=1), encoding="utf-8")
+print("chiffres critiques :", len(CRITICAL), "lignes du registre alimentent", len(ROOTS), "résultats")
+
 OUT.with_name("model-uses.json").write_text(_json.dumps({
     "generated": _date.today().isoformat(), "model": OUT.name,
     "ids": sorted({u["id"] for u in USED}, key=lambda s: (s[0], int(s[1:].split("-")[0]))),

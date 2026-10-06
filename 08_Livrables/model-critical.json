@@ -1,0 +1,618 @@
+{
+ "generated": "2026-10-06",
+ "model": "modele-greenup-2027.xlsx",
+ "roots": [
+  "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
+  "Levier fin 2027 (engagement : ≤ 3x)",
+  "Marge de manœuvre fin 2027, en M EUR de dette",
+  "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+  "EBITDA 2027 moins l'objectif ≥ 8 Md€, en M EUR",
+  "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+  "Levier fin 2027 si 50 % des hybrides comptent en dette",
+  "Sorties nettes d'acquisitions cumulées depuis 2024, en Md EUR (enveloppe boosters : 4)",
+  "Marge de FFO en 2026 au seuil S&P (18 % de la dette ajustée au pic), en M EUR",
+  "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+  "Contrainte qui mord en premier fin 2027",
+  "EBITDA 2027 si chaque segment garde son rythme organique de 2025, en M EUR",
+  "Clean Earth : multiple du prix sur l'EBITDA 2025 publié par le vendeur (reconstitué)",
+  "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+  "Part de l'écart GreenUp 2023 → 2027 que couvre la seule efficacité promise (350 M€ par an)",
+  "Part de la croissance organique 2025 de l'EBITDA expliquée par les gains d'efficacité",
+  "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR",
+  "Multiples payés par Veolia, après synergies : du moins cher au plus cher (Cibles §D)",
+  "Secteur, avant synergies : du moins cher au plus cher (Cibles §E)",
+  "Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)",
+  "Pairs Moody's : FFO / dette nette de Veolia moins celui de Suez (Baa2, perspective négative), en points",
+  "Objectifs financiers annoncés et tenus depuis 2020 (Impact 2023, guidance 2025)",
+  "Hybrides : tranche dont la réinitialisation tombe avant fin 2027 (septembre 2026), en M EUR",
+  "Macro : marge 2027 perdue si 2027 revit l'énergie du S1 2026, en M EUR",
+  "Macro : dette nette en plus si le dollar monte de 10 %, en M EUR",
+  "Taxonomie 2025 : part du capex du groupe éligible et aligné (DEU p.250)",
+  "Taxonomie 2025 : déchets dangereux, part du capex aligné du groupe",
+  "Programme de cessions au multiple central, en part de l'EBITDA des déchets solides",
+  "Années nécessaires pour céder 2 Md EUR au rythme des cessions 2022-2025",
+  "Liquidités / flux contractuels de dette 2026 (DEU p.421)",
+  "Surcoût d'intérêts annuel si les souches 2027-2028 sont refinancées au taux de juin 2025, en M EUR",
+  "FFO 2025 reconstitué depuis le tableau de flux, en M EUR (Moody's publie 5 160)"
+ ],
+ "ids": {
+  "F3": [
+   "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "EBITDA 2027 moins l'objectif ≥ 8 Md€, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "EBITDA 2027 si chaque segment garde son rythme organique de 2025, en M EUR",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
+  ],
+  "F5": [
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "EBITDA 2027 moins l'objectif ≥ 8 Md€, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
+  ],
+  "F8": [
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR"
+  ],
+  "F10": [
+   "Levier fin 2027 si 50 % des hybrides comptent en dette"
+  ],
+  "F11": [
+   "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
+  ],
+  "F12": [
+   "EBITDA 2027 moins l'objectif ≥ 8 Md€, en M EUR",
+   "Part de l'écart GreenUp 2023 → 2027 que couvre la seule efficacité promise (350 M€ par an)"
+  ],
+  "F13": [
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
+  ],
+  "F16": [
+   "Objectifs financiers annoncés et tenus depuis 2020 (Impact 2023, guidance 2025)"
+  ],
+  "F17": [
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Part de la croissance organique 2025 de l'EBITDA expliquée par les gains d'efficacité",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
+  ],
+  "F21": [
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "EBITDA 2027 moins l'objectif ≥ 8 Md€, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
+  ],
+  "F25": [
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "EBITDA 2027 moins l'objectif ≥ 8 Md€, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR",
+   "Programme de cessions au multiple central, en part de l'EBITDA des déchets solides",
+   "Années nécessaires pour céder 2 Md EUR au rythme des cessions 2022-2025"
+  ],
+  "F29": [
+   "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
+  ],
+  "F30": [
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "EBITDA 2027 moins l'objectif ≥ 8 Md€, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
+  ],
+  "F31": [
+   "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "EBITDA 2027 moins l'objectif ≥ 8 Md€, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
+  ],
+  "F37": [
+   "EBITDA 2027 si chaque segment garde son rythme organique de 2025, en M EUR"
+  ],
+  "F38": [
+   "EBITDA 2027 si chaque segment garde son rythme organique de 2025, en M EUR"
+  ],
+  "F40": [
+   "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "EBITDA 2027 moins l'objectif ≥ 8 Md€, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "EBITDA 2027 si chaque segment garde son rythme organique de 2025, en M EUR",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
+  ],
+  "F41": [
+   "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "EBITDA 2027 moins l'objectif ≥ 8 Md€, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "EBITDA 2027 si chaque segment garde son rythme organique de 2025, en M EUR",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
+  ],
+  "F46": [
+   "Clean Earth : multiple du prix sur l'EBITDA 2025 publié par le vendeur (reconstitué)",
+   "Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)"
+  ],
+  "F48": [
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "EBITDA 2027 moins l'objectif ≥ 8 Md€, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR",
+   "Multiples payés par Veolia, après synergies : du moins cher au plus cher (Cibles §D)"
+  ],
+  "F49": [
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "EBITDA 2027 moins l'objectif ≥ 8 Md€, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
+  ],
+  "F50": [
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
+  ],
+  "F51": [
+   "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "EBITDA 2027 moins l'objectif ≥ 8 Md€, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "EBITDA 2027 si chaque segment garde son rythme organique de 2025, en M EUR",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR",
+   "Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)"
+  ],
+  "F56": [
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR",
+   "Objectifs financiers annoncés et tenus depuis 2020 (Impact 2023, guidance 2025)",
+   "Macro : marge 2027 perdue si 2027 revit l'énergie du S1 2026, en M EUR"
+  ],
+  "F64": [
+   "Sorties nettes d'acquisitions cumulées depuis 2024, en Md EUR (enveloppe boosters : 4)"
+  ],
+  "F70": [
+   "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
+  ],
+  "F72": [
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
+  ],
+  "F74": [
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
+  ],
+  "F75": [
+   "Sorties nettes d'acquisitions cumulées depuis 2024, en Md EUR (enveloppe boosters : 4)"
+  ],
+  "F87": [
+   "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "EBITDA 2027 moins l'objectif ≥ 8 Md€, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
+  ],
+  "F88": [
+   "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "EBITDA 2027 moins l'objectif ≥ 8 Md€, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
+  ],
+  "F89": [
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
+  ],
+  "F138": [
+   "Sorties nettes d'acquisitions cumulées depuis 2024, en Md EUR (enveloppe boosters : 4)"
+  ],
+  "F147": [
+   "Marge de FFO en 2026 au seuil S&P (18 % de la dette ajustée au pic), en M EUR",
+   "Pairs Moody's : FFO / dette nette de Veolia moins celui de Suez (Baa2, perspective négative), en points"
+  ],
+  "F150": [
+   "Marge de FFO en 2026 au seuil S&P (18 % de la dette ajustée au pic), en M EUR"
+  ],
+  "F151": [
+   "Marge de FFO en 2026 au seuil S&P (18 % de la dette ajustée au pic), en M EUR"
+  ],
+  "F163": [
+   "Marge de FFO en 2026 au seuil S&P (18 % de la dette ajustée au pic), en M EUR",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR"
+  ],
+  "F170": [
+   "EBITDA 2027 si chaque segment garde son rythme organique de 2025, en M EUR"
+  ],
+  "F171": [
+   "EBITDA 2027 si chaque segment garde son rythme organique de 2025, en M EUR"
+  ],
+  "F174": [
+   "EBITDA 2027 si chaque segment garde son rythme organique de 2025, en M EUR"
+  ],
+  "F175": [
+   "EBITDA 2027 si chaque segment garde son rythme organique de 2025, en M EUR"
+  ],
+  "F177": [
+   "EBITDA 2027 si chaque segment garde son rythme organique de 2025, en M EUR"
+  ],
+  "F178": [
+   "EBITDA 2027 si chaque segment garde son rythme organique de 2025, en M EUR"
+  ],
+  "F183": [
+   "EBITDA 2027 si chaque segment garde son rythme organique de 2025, en M EUR"
+  ],
+  "F184": [
+   "EBITDA 2027 si chaque segment garde son rythme organique de 2025, en M EUR"
+  ],
+  "F208": [
+   "Objectifs financiers annoncés et tenus depuis 2020 (Impact 2023, guidance 2025)"
+  ],
+  "F211": [
+   "Clean Earth : multiple du prix sur l'EBITDA 2025 publié par le vendeur (reconstitué)"
+  ],
+  "F213": [
+   "Clean Earth : multiple du prix sur l'EBITDA 2025 publié par le vendeur (reconstitué)"
+  ],
+  "F214": [
+   "Clean Earth : multiple du prix sur l'EBITDA 2025 publié par le vendeur (reconstitué)"
+  ],
+  "F256": [
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR"
+  ],
+  "F261": [
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR"
+  ],
+  "F276-facd": [
+   "Surcoût d'intérêts annuel si les souches 2027-2028 sont refinancées au taux de juin 2025, en M EUR"
+  ],
+  "F279": [
+   "Surcoût d'intérêts annuel si les souches 2027-2028 sont refinancées au taux de juin 2025, en M EUR"
+  ],
+  "F280": [
+   "Surcoût d'intérêts annuel si les souches 2027-2028 sont refinancées au taux de juin 2025, en M EUR"
+  ],
+  "F281": [
+   "Surcoût d'intérêts annuel si les souches 2027-2028 sont refinancées au taux de juin 2025, en M EUR"
+  ],
+  "F282": [
+   "Surcoût d'intérêts annuel si les souches 2027-2028 sont refinancées au taux de juin 2025, en M EUR"
+  ],
+  "F283": [
+   "Surcoût d'intérêts annuel si les souches 2027-2028 sont refinancées au taux de juin 2025, en M EUR"
+  ],
+  "F284": [
+   "Surcoût d'intérêts annuel si les souches 2027-2028 sont refinancées au taux de juin 2025, en M EUR"
+  ],
+  "F285": [
+   "Surcoût d'intérêts annuel si les souches 2027-2028 sont refinancées au taux de juin 2025, en M EUR"
+  ],
+  "F286": [
+   "Surcoût d'intérêts annuel si les souches 2027-2028 sont refinancées au taux de juin 2025, en M EUR"
+  ],
+  "F287": [
+   "Surcoût d'intérêts annuel si les souches 2027-2028 sont refinancées au taux de juin 2025, en M EUR"
+  ],
+  "F288": [
+   "Surcoût d'intérêts annuel si les souches 2027-2028 sont refinancées au taux de juin 2025, en M EUR"
+  ],
+  "F308": [
+   "FFO 2025 reconstitué depuis le tableau de flux, en M EUR (Moody's publie 5 160)"
+  ],
+  "F314": [
+   "FFO 2025 reconstitué depuis le tableau de flux, en M EUR (Moody's publie 5 160)"
+  ],
+  "F320": [
+   "FFO 2025 reconstitué depuis le tableau de flux, en M EUR (Moody's publie 5 160)"
+  ],
+  "F328": [
+   "FFO 2025 reconstitué depuis le tableau de flux, en M EUR (Moody's publie 5 160)"
+  ],
+  "F330": [
+   "FFO 2025 reconstitué depuis le tableau de flux, en M EUR (Moody's publie 5 160)"
+  ],
+  "F332": [
+   "FFO 2025 reconstitué depuis le tableau de flux, en M EUR (Moody's publie 5 160)"
+  ],
+  "F377": [
+   "Surcoût d'intérêts annuel si les souches 2027-2028 sont refinancées au taux de juin 2025, en M EUR"
+  ],
+  "F378": [
+   "Surcoût d'intérêts annuel si les souches 2027-2028 sont refinancées au taux de juin 2025, en M EUR"
+  ],
+  "F379": [
+   "Surcoût d'intérêts annuel si les souches 2027-2028 sont refinancées au taux de juin 2025, en M EUR"
+  ],
+  "F380": [
+   "Surcoût d'intérêts annuel si les souches 2027-2028 sont refinancées au taux de juin 2025, en M EUR"
+  ],
+  "F396": [
+   "FFO 2025 reconstitué depuis le tableau de flux, en M EUR (Moody's publie 5 160)"
+  ],
+  "F408": [
+   "Liquidités / flux contractuels de dette 2026 (DEU p.421)"
+  ],
+  "F417": [
+   "Liquidités / flux contractuels de dette 2026 (DEU p.421)"
+  ],
+  "F418": [
+   "Part de l'écart GreenUp 2023 → 2027 que couvre la seule efficacité promise (350 M€ par an)"
+  ],
+  "F420": [
+   "Part de l'écart GreenUp 2023 → 2027 que couvre la seule efficacité promise (350 M€ par an)",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
+  ],
+  "F424": [
+   "Part de la croissance organique 2025 de l'EBITDA expliquée par les gains d'efficacité",
+   "Objectifs financiers annoncés et tenus depuis 2020 (Impact 2023, guidance 2025)"
+  ],
+  "F425": [
+   "Part de la croissance organique 2025 de l'EBITDA expliquée par les gains d'efficacité",
+   "Objectifs financiers annoncés et tenus depuis 2020 (Impact 2023, guidance 2025)"
+  ],
+  "F441": [
+   "Programme de cessions au multiple central, en part de l'EBITDA des déchets solides"
+  ],
+  "F445": [
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "EBITDA 2027 moins l'objectif ≥ 8 Md€, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR",
+   "Multiples payés par Veolia, après synergies : du moins cher au plus cher (Cibles §D)"
+  ],
+  "F472": [
+   "Multiples payés par Veolia, après synergies : du moins cher au plus cher (Cibles §D)"
+  ],
+  "F473": [
+   "Levier fin 2027 (engagement : ≤ 3x)",
+   "Marge de manœuvre fin 2027, en M EUR de dette",
+   "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
+   "EBITDA 2027 moins l'objectif ≥ 8 Md€, en M EUR",
+   "Marge 2027 dans le scénario défavorable combiné, en M EUR",
+   "Levier fin 2027 si 50 % des hybrides comptent en dette",
+   "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
+   "Contrainte qui mord en premier fin 2027",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR",
+   "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR",
+   "Multiples payés par Veolia, après synergies : du moins cher au plus cher (Cibles §D)"
+  ],
+  "F478": [
+   "Secteur, avant synergies : du moins cher au plus cher (Cibles §E)",
+   "Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)"
+  ],
+  "F479": [
+   "Secteur, avant synergies : du moins cher au plus cher (Cibles §E)",
+   "Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)"
+  ],
+  "F484": [
+   "Secteur, avant synergies : du moins cher au plus cher (Cibles §E)",
+   "Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)"
+  ],
+  "F486": [
+   "Secteur, avant synergies : du moins cher au plus cher (Cibles §E)",
+   "Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)"
+  ],
+  "F491": [
+   "Taxonomie 2025 : part du capex du groupe éligible et aligné (DEU p.250)"
+  ],
+  "F493": [
+   "Taxonomie 2025 : part du capex du groupe éligible et aligné (DEU p.250)",
+   "Taxonomie 2025 : déchets dangereux, part du capex aligné du groupe"
+  ],
+  "F512": [
+   "Taxonomie 2025 : déchets dangereux, part du capex aligné du groupe"
+  ],
+  "F525": [
+   "Secteur, avant synergies : du moins cher au plus cher (Cibles §E)",
+   "Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)"
+  ],
+  "F527": [
+   "Secteur, avant synergies : du moins cher au plus cher (Cibles §E)",
+   "Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)"
+  ],
+  "F542": [
+   "Pairs Moody's : FFO / dette nette de Veolia moins celui de Suez (Baa2, perspective négative), en points"
+  ],
+  "F557": [
+   "Macro : dette nette en plus si le dollar monte de 10 %, en M EUR"
+  ],
+  "F561": [
+   "Macro : marge 2027 perdue si 2027 revit l'énergie du S1 2026, en M EUR"
+  ],
+  "F565": [
+   "Hybrides : tranche dont la réinitialisation tombe avant fin 2027 (septembre 2026), en M EUR"
+  ],
+  "F576": [
+   "Objectifs financiers annoncés et tenus depuis 2020 (Impact 2023, guidance 2025)"
+  ],
+  "F578": [
+   "Objectifs financiers annoncés et tenus depuis 2020 (Impact 2023, guidance 2025)"
+  ],
+  "F579": [
+   "Objectifs financiers annoncés et tenus depuis 2020 (Impact 2023, guidance 2025)"
+  ],
+  "F580": [
+   "Objectifs financiers annoncés et tenus depuis 2020 (Impact 2023, guidance 2025)"
+  ],
+  "F582": [
+   "Objectifs financiers annoncés et tenus depuis 2020 (Impact 2023, guidance 2025)"
+  ],
+  "F583": [
+   "Objectifs financiers annoncés et tenus depuis 2020 (Impact 2023, guidance 2025)"
+  ],
+  "F590": [
+   "Objectifs financiers annoncés et tenus depuis 2020 (Impact 2023, guidance 2025)"
+  ],
+  "F592": [
+   "Objectifs financiers annoncés et tenus depuis 2020 (Impact 2023, guidance 2025)"
+  ],
+  "F593": [
+   "Objectifs financiers annoncés et tenus depuis 2020 (Impact 2023, guidance 2025)"
+  ],
+  "F595": [
+   "Objectifs financiers annoncés et tenus depuis 2020 (Impact 2023, guidance 2025)"
+  ],
+  "F596": [
+   "Objectifs financiers annoncés et tenus depuis 2020 (Impact 2023, guidance 2025)"
+  ]
+ }
+}

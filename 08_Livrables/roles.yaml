@@ -1,0 +1,16 @@
+# Qui défend quel rôle, et qui relit quoi — à remplir par le groupe, dans l'éditeur web.
+#
+# Un login par rôle (ethan, kevin, noa, benjamin) ; un même login peut tenir deux rôles,
+# puisque le groupe est à quatre pour six rôles.
+roles:
+  1: ""   # Périmètre et sources
+  2: ""   # La contrainte
+  3: ""   # Capacité et sensibilité
+  4: ""   # L'écart et les comparables
+  5: ""   # Le coût ESG
+  6: ""   # Cibles, puis synthèse
+
+# Par défaut, les lignes du rôle N sont relues par le titulaire du rôle N+1 (celles du rôle 6
+# par le titulaire du rôle 1), jamais par leur propre titulaire. Pour une autre répartition,
+# écrire ici « rôle: login », par exemple « 4: kevin ».
+relecture: {}

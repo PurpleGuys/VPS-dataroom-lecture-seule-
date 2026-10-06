@@ -237,12 +237,15 @@ children.push(pageBreak());
 
 // ---- annexe B : outils d'IA
 children.push(h("Annexe B — Outils d'intelligence artificielle utilisés", HeadingLevel.HEADING_1));
-children.push(...bullets([
-  "Dataroom : un serveur MCP privé au groupe, qui indexe les documents publics versés dans le vault et ne sait que chercher, lire une page et citer (fichier, page, URL, date de consultation). Il ne calcule rien, ne résume rien et ne produit aucun chiffre : chaque chiffre du registre a été lu par un membre sur la page citée, puis relu par un autre.",
-  "Claude (Anthropic), via Claude Code : a construit le serveur, le registre, les contrôles automatiques, le générateur du classeur Excel et celui de ce rapport. Le classeur ne contient que des formules ; ses entrées sont les lignes du registre.",
-  "LibreOffice (recalcul sans interface) : recalcule le classeur après chaque génération et signale toute erreur de formule ; aucune valeur calculée n'est saisie à la main.",
-  "Règle tenue : aucun nombre, aucune source et aucune citation n'ont été produits par un modèle de langage. Le modèle construit l'outil qui calcule ; il ne calcule pas.",
-]));
+// Les phrases de l'annexe IA sont comptées depuis les registres par report.py (annex.ai_tools_facts) :
+// elles disent ce qui s'est passé le jour de la génération. Sans elles (squelette lancé à la main), rien
+// n'est affirmé sur la relecture.
+const AI_FACTS = (DATA.ai_facts && DATA.ai_facts.length) ? DATA.ai_facts.filter((f) => !f.startsWith("[[")) : [
+  "Dataroom : un serveur MCP privé au groupe, qui indexe les documents publics versés dans le vault et ne sait que chercher, lire une page et citer (fichier, page, URL, date de consultation). Il ne calcule rien et ne résume rien.",
+  "Claude (Anthropic), via Claude Code : a construit le serveur, le registre, les contrôles automatiques, le générateur du classeur Excel et celui de ce rapport.",
+  "[Provenance et relecture des lignes du registre : générer le rapport par « dataroom report » pour les compter.]",
+];
+children.push(...bullets(AI_FACTS));
 const ia = prose("outils-ia");
 if (ia) children.push(...renderBlocks(ia.blocks, { baseLevel: 1 }));
 else if (!FINAL) children.push(placeholder("[À rédiger] 08_Livrables/texte/outils-ia.md : ce que le groupe a décidé sans l'outil, les cas où l'outil a été contredit après lecture, puis un tableau membre / outil / usage / période."));
