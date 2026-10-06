@@ -412,7 +412,11 @@
   "F596",
   "F597",
   "F598",
-  "F600"
+  "F600",
+  "F601",
+  "F602",
+  "F607",
+  "F615"
  ],
  "lookups": [
   {
@@ -3008,6 +3012,24 @@
    "unit": ""
   },
   {
+   "id": "F601",
+   "prefix": "EnviroServe (Clean Harbors) : prix d'acquisition",
+   "period": "08/2026",
+   "unit": ""
+  },
+  {
+   "id": "F602",
+   "prefix": "EnviroServe (Clean Harbors) : EBITDA ajusté annuel attendu",
+   "period": "2026e",
+   "unit": ""
+  },
+  {
+   "id": "F607",
+   "prefix": "EnviroServe et ES&H (Clean Harbors) : multiple combiné après synergies",
+   "period": "10/2026",
+   "unit": ""
+  },
+  {
    "id": "F478",
    "prefix": "HEPACO (Clean Harbors) : prix d'acquisition",
    "period": "03/2024",
@@ -3053,6 +3075,12 @@
    "id": "F527",
    "prefix": "US Ecology (Republic Services) : EBITDA ajusté 12 mois",
    "period": "au 30/09/2021",
+   "unit": ""
+  },
+  {
+   "id": "F615",
+   "prefix": "Taux de référence BCE : dollars canadiens pour un euro",
+   "period": "06/10/2026",
    "unit": ""
   },
   {

@@ -7,8 +7,8 @@
 | role-3.md | 4 | 39 | 6-9 |
 | role-4.md | 4 | 44 | 6-9 |
 | role-5.md | 2 | 36 | 6-9 |
-| role-6.md | 3 | 29 | 6-9 |
-| total | 92 | 242 | 50-60 |
+| role-6.md | 4 | 29 | 6-9 |
+| total | 93 | 242 | 50-60 |
 
 ## Jetons inconnus (0)
 - aucun

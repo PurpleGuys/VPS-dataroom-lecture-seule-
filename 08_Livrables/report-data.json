@@ -1817,14 +1817,15 @@
    "answer": "Fin 2027, la marge centrale permet une acquisition d'environ 2,3 Md€ au multiple de Clean Earth (médiane des 1 000 futurs tirés : 2,15 Md€ ; 80 % entre 1,33 et 3,07 Md€ ; probabilité de pouvoir acheter 1 Md€ : 97 %, 2 Md€ : 60 %, 3 Md€ : 12 %), moins que Clean Earth lui-même (2,8 Md€). Dans le scénario défavorable, rien. Une cible de 3 Md€ à 9,8x laisserait 511 M€ à trouver sous 3x fin 2027 : 511 M€ d'hybrides (22 M€ de coupon par an), ou 730 M€ de cessions accélérées (73 M€ d'EBITDA perdu par an), ou une augmentation de capital diluant de 2,4 % ; sans financement, elle ne tient que payée moins de 6,7x. Recommandation proposée : pas de nouvelle grande opération avant l'encaissement du programme de cessions ; des tuck-ins au bas de la fourchette en 2027 ; une cible de 1 à 2 Md€ seulement une fois les cessions encaissées.",
    "reasoning": [
     "La formule : une acquisition ajoute son prix à la dette mais seulement prix / multiple à l'EBITDA. Elle tient sous 3x tant que prix ≤ marge / (1 − 3 / multiple).",
-    "La grille : au multiple de Clean Earth, 2,51 Md€ en central, 0 en défavorable, 5,59 Md€ en favorable ; à 12x, 2,09 Md€ en central.",
+    "La grille : au multiple de Clean Earth (9,8x), 2,26 Md€ en central, 0,00 en défavorable, 5,03 Md€ en favorable ; à 8x, 2,51 Md€ ; à 12x, 2,09 Md€ en central.",
     "Le calibrage : Clean Earth ne passerait plus. Quatre multiples circulent pour lui : 19,3x sur l'EBITDA 2025 publié par le vendeur (reconstitué, onglet Booster §E), 15,0x sur l'EBITDA 2026E avant synergies, 9,8x publié après synergies (non recalculable : 9,4x avec les chiffres publiés), et 18,6x l'EBITDA ajusté des douze derniers mois selon Enviri (document à verser).",
     "Les critères de cible : actifs de traitement (pas de collecte seule), géographie des boosters (États-Unis, Asie), PFAS et nouveaux polluants, taille compatible avec la grille, et pas de doublon de concurrence en Europe, où Veolia est déjà numéro un (présentation Clean Earth p.9).",
-    "L'univers reste à construire : aucun document de la dataroom ne nomme une cible disponible ; les candidats viendront de la presse et des rapports de pairs, chacun avec sa valeur publiée ou « non communiqué »."
+    "L'univers : 5 cibles sourcées, toutes détenues par des fonds entrés entre 2023 et 2025 (Cibles §C). 4 ont une valeur publiée ; 3 tiennent dans la marge centrale au multiple retenu (12,81x, médiane du secteur avant synergies). Heritage-Crystal Clean : 1 021 M€ à 12,8x, tient dans 94 % des futurs (oui au central) ; Arcwood Environmental : prix non publié ; Triumvirate Environmental : 1 531 M€ à 12,8x, tient dans 73 % des futurs (oui au central) ; GFL Environmental Services : 4 982 M€ à 12,8x, tient dans 0 % des futurs ; NG Group : 800 M€ à 12,8x, tient dans 97 % des futurs (oui au central).",
+    "La valeur de chaque cible est la dernière publiée (la transaction qui a fait entrer le fonds), pas un prix de vente d'aujourd'hui : un fonds qui sort vend plus cher qu'il n'a acheté. La probabilité est donc un plafond."
    ],
    "open": [
-    "L'univers de cibles reste à construire (onglet Cibles §C) : nom, pays, activité, valeur d'entreprise sourcée, multiple.",
-    "Aucune valeur d'entreprise de cible non cotée n'est dans la dataroom ; une estimation devra le dire.",
+    "La notation qualitative (traitement, géographie, PFAS, concurrence, passifs) est au groupe : cellules jaunes de Cibles §C.",
+    "Arcwood (incinération, PFAS) n'a pas de prix publié : la grille ne peut pas répondre pour elle sans une estimation sourcée.",
     "La recommandation est une proposition du modèle : au groupe de la défendre ou de l'amender."
    ],
    "qa": [
@@ -1834,7 +1835,11 @@
     ],
     [
      "Que paie Veolia d'habitude, et que paie le secteur ?",
-     "Veolia publie ses multiples après synergies : 7,4x pour treize tuck-ins espagnols, environ 9x pour les tuck-ins 2025, 9,40x en médiane, 11,00x au plus (le rachat des 30 % de WTS). Le secteur, avant synergies : 11,11x à 14,10x (HEPACO par Clean Harbors, Covanta par EQT, US Ecology par Republic quand le communiqué est versé) ; HEPACO ressort à 7,1x après synergies. Clean Earth avant synergies dépasse de 0,90x le plus cher du secteur : les synergies « achètent » 5,20x de multiple. D'où la grille : 8x, 9,8x, 12x."
+     "Veolia publie ses multiples après synergies : 7,4x pour treize tuck-ins espagnols, environ 9x pour les tuck-ins 2025, 9,40x en médiane, 11,00x au plus (le rachat des 30 % de WTS). Le secteur, avant synergies : 11,11x à 17,41x (HEPACO et EnviroServe par Clean Harbors, Covanta par EQT, US Ecology par Republic) ; HEPACO ressort à 7,1x après synergies, EnviroServe et ES&H à 8,9x. Clean Earth avant synergies reste 2,41x sous le plus cher du secteur (Clean Harbors → EnviroServe (2026)) : les synergies « achètent » 5,20x de multiple. D'où la grille : 8x, 9,8x, 12x."
+    ],
+    [
+     "Quelles cibles regardez-vous ?",
+     "5 cibles réelles, détenues par des fonds : Heritage-Crystal Clean : 1 021 M€ à 12,8x, tient dans 94 % des futurs (oui au central) ; Arcwood Environmental : prix non publié ; Triumvirate Environmental : 1 531 M€ à 12,8x, tient dans 73 % des futurs (oui au central) ; GFL Environmental Services : 4 982 M€ à 12,8x, tient dans 0 % des futurs ; NG Group : 800 M€ à 12,8x, tient dans 97 % des futurs (oui au central). Au multiple médian du secteur (12,81x), 3 tiennent dans la marge centrale, la plus grande pour 1 531 M€. Les valeurs sont celles de l'entrée du fonds : un vendeur demandera plus."
     ],
     [
      "Et si Veolia veut quand même une cible de 3 Md€ ?",
@@ -1846,7 +1851,7 @@
     ],
     [
      "Quel multiple retenez-vous ?",
-     "Celui de Clean Earth après synergies, parce que c'est le seul qu'un acheteur comme Veolia ait publié. Plus le multiple monte, plus la taille possible baisse : à 12x, 2,09 Md€."
+     "Pour la capacité, celui de Clean Earth après synergies, parce que c'est le seul qu'un acheteur comme Veolia ait publié. Plus le multiple monte, plus la taille possible baisse : à 12x, 2,09 Md€. Pour noter une cible réelle, la médiane du secteur avant synergies (12,81x) : la dette arrive le jour du paiement, les synergies après fin 2027."
     ],
     [
      "Et si le programme de cessions glisse ?",
@@ -2040,30 +2045,110 @@
      ""
     ],
     [
+     "F601",
+     "EnviroServe : prix",
+     "08/2026",
+     "470 M$",
+     "clean-harbors-enviroserve-2026-08-12.html, p. 1",
+     ""
+    ],
+    [
+     "F602",
+     "EnviroServe : EBITDA ajusté annuel attendu",
+     "2026e",
+     "27 M$",
+     "clean-harbors-enviroserve-2026-08-12.html, p. 1",
+     ""
+    ],
+    [
+     "F604",
+     "EnviroServe : synergies attendues",
+     "années 1-2",
+     "25 M$",
+     "clean-harbors-enviroserve-2026-08-12.html, p. 1",
+     ""
+    ],
+    [
+     "F607",
+     "EnviroServe et ES&H : multiple après synergies",
+     "10/2026",
+     "8,9x",
+     "clean-harbors-enviroserve-esh-2026-10-05.html, p. 1",
+     ""
+    ],
+    [
      "calcul",
      "Secteur, avant synergies",
      "",
-     "11,11x à 14,10x",
+     "11,11x à 17,41x",
      "communiqués des acquéreurs, 05_Commercial_Strategy",
+     ""
+    ],
+    [
+     "calcul",
+     "Secteur, médiane avant synergies",
+     "",
+     "12,81x",
+     "multiple payé retenu pour les cibles",
      ""
     ],
     [
      "calcul",
      "Clean Earth avant synergies face au plus cher du secteur",
      "",
-     "0,90x",
+     "−2,41x",
      "positif = au-dessus",
+     ""
+    ],
+    [
+     "calcul",
+     "Cible : Heritage-Crystal Clean",
+     "",
+     "1 021 M€ ; 94 % des futurs",
+     "J.F. Lehman & Company (fonds, depuis le 17/10/2023) ; T2 — crystal-clean-jfl-2023-07-19.html",
+     ""
+    ],
+    [
+     "calcul",
+     "Cible : Arcwood Environmental",
+     "",
+     "prix non publié",
+     "EQT Infrastructure (fonds, depuis janvier 2024) ; T3 — arcwood-rebrand-2025-03-18.html",
+     ""
+    ],
+    [
+     "calcul",
+     "Cible : Triumvirate Environmental",
+     "",
+     "1 531 M€ ; 73 % des futurs",
+     "Berkshire Partners et le fondateur (depuis février 2025) ; T4 — triumvirate-berkshire-2025-02-04.html",
+     ""
+    ],
+    [
+     "calcul",
+     "Cible : GFL Environmental Services",
+     "",
+     "4 982 M€ ; 0 % des futurs",
+     "Apollo et BC Partners (depuis le 03/03/2025), GFL garde 44 % ; T5 — gfl-es-latham-2025-01-07.html",
+     ""
+    ],
+    [
+     "calcul",
+     "Cible : NG Group",
+     "",
+     "800 M€ ; 97 % des futurs",
+     "Summa Equity (fonds, depuis le 29/11/2024) ; T6 — fortum-summa-ng-group-2024-07-18.html",
      ""
     ]
    ]
   }
  ],
  "todo": [
-  "Relire en croisé les 615 chiffres du registre et les 26 deals : aucun n'a encore de relecteur.",
+  "Relire en croisé les 615 chiffres du registre (0 relus) et les 37 opérations (0 relues).",
   "Lire les 10-K 2025 d'Enviri et de Clean Harbors, désormais dans la dataroom, et en tirer les chiffres des rôles 4 et 5 (passifs environnementaux de Clean Earth, marges et levier de Clean Harbors). Reste à verser : le 10-Q du T1 2026 d'Enviri et le communiqué de vente du 20 novembre 2025.",
   "Avant le 7 octobre : montrer la dataroom comme « sources chargées et lues », et noter dans gaps.md ce qui manque encore.",
   "Rédiger la page d'annexe sur les outils d'IA : dataroom MCP (recherche, registre, contrôles), Claude pour construire le classeur et ces dossiers, LibreOffice pour le recalcul. Aucun chiffre produit par le modèle de langage.",
-  "Construire l'univers de cibles (onglet Cibles §C) : une ligne par cible, valeur d'entreprise et multiple sourcés.",
+  "Noter les 5 cibles de l'onglet Cibles §C (cellules jaunes) et chercher une valeur sourcée pour celles qui n'en ont pas.",
   "Chacun ouvre son rôle avec l'outil workstream_status de la dataroom pour voir ses chiffres et ce qui manque."
  ],
  "register": [
