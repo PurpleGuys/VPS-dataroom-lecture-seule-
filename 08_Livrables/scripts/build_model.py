@@ -14,6 +14,9 @@ from openpyxl.comments import Comment
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter as L
 
+sys.path.insert(0, str(Path(__file__).parent))
+import model_def as MD  # noqa: E402 - la définition du modèle, à côté du script
+
 HERE = Path(__file__).parent
 REG = HERE / "register.csv"
 OUT = Path(sys.argv[1] if len(sys.argv) > 1 else "/home/ubuntu/capstone-livrables/modele-greenup-2027.xlsx")
@@ -125,7 +128,7 @@ ws0 = wb.active
 ws0.title = "Lisez-moi"
 sheets = {}
 for name in ["Entrées", "Hypothèses", "Levier", "Pont de dette", "Échéancier", "Cessions", "Trajectoire",
-             "Sensibilité", "Segments", "Pont EBITDA", "Booster", "ESG", "Cibles", "Vérifications"]:
+             "Sensibilité", "Distribution", "Segments", "Pont EBITDA", "Booster", "ESG", "Cibles", "Vérifications", "Simulation"]:
     sheets[name] = wb.create_sheet(name)
 
 # ================================================================ Entrées
@@ -995,7 +998,7 @@ for col, name, code, side in cols:
     put(ws, f"{col}4", name, bold=True, fill=HEAD, wrap=True, align="center")
 ws.row_dimensions[4].height = 30
 put(ws, "B5", "Hypothèses", bold=True)
-INPUT_ORDER = VARIED + ["fx", "minDiv", "mTuck", "tuckH2", "other", "months", "synC", "cap"]
+INPUT_ORDER = VARIED + [c for c in MD.FIXED_INPUTS if c not in VARIED]
 IN = {}
 r = 6
 for code in INPUT_ORDER:
@@ -1008,50 +1011,9 @@ for code in INPUT_ORDER:
     r += 1
 RES0 = r + 1
 # lignes de calcul : clé -> (libellé, formule avec {c} = colonne, {i[code]} = ligne d'hypothèse, unité, format, gras)
-calc = [
-    ("A26", "EBITDA organique 2026 (hors Clean Earth, hors cessions)", "={eb25}*(1+{c}{g26})", "M EUR", NF_M, False),
-    ("CE26", "Clean Earth en 2026 (mois consolidés)", "={c}{ceEb}*{c}{months}/12/{c}{fx}", "M EUR", NF_M, False),
-    ("D26", "Cessions encaissées au S2 2026", "={sign26}*{c}{s26}*1000", "M EUR", NF_M, False),
-    ("DE26", "EBITDA cédé en 2026 (année pleine, prudent)", "=-{c}{D26}/{c}{mDisp}", "M EUR", NF_M, False),
-    ("EB26", "EBITDA 2026", "={c}{A26}+{c}{CE26}+{c}{DE26}", "M EUR", NF_M, True),
-    ("NFD26", "Dette financière nette au 31/12/2026",
-     "={nfdh126}-{c}{fcfH2}+{c}{tuckH2}*1000-{c}{D26}+{c}{other}", "M EUR", NF_M, True),
-    ("LEV26", "Levier fin 2026", "={c}{NFD26}/{c}{EB26}", "x", NF_X, True),
-    ("LEV26PF", "Levier fin 2026, Clean Earth pro forma 12 mois",
-     "={c}{NFD26}/({c}{EB26}+{c}{ceEb}*(12-{c}{months})/12/{c}{fx})", "x", NF_X, False),
-    ("SEP", None, None, None, None, None),
-    ("B27", "EBITDA 2027 avant synergies, tuck-ins et cessions 2027",
-     "=({c}{A26}+{c}{DE26}+{c}{ceEb}/{c}{fx})*(1+{c}{g27})", "M EUR", NF_M, False),
-    ("SYN27", "Synergies Clean Earth réalisées", "={synRR}*{c}{syn}/{c}{fx}", "M EUR", NF_M, False),
-    ("TE27", "EBITDA apporté par les tuck-ins 2027", "={c}{tuck}*1000/{c}{mTuck}", "M EUR", NF_M, False),
-    ("D27", "Cessions encaissées en 2027",
-     "=({sign26}*(1-{c}{s26})+MAX(0,{prog}-{closed}-{sign26})*{c}{s27})*1000", "M EUR", NF_M, False),
-    ("DE27", "EBITDA cédé en 2027 (année pleine, prudent)", "=-{c}{D27}/{c}{mDisp}", "M EUR", NF_M, False),
-    ("EB27", "EBITDA 2027", "={c}{B27}+{c}{SYN27}+{c}{TE27}+{c}{DE27}", "M EUR", NF_M, True),
-    ("FCF27", "Cash-flow libre net 2027", "={c}{conv}*{c}{EB27}-{c}{synC}/{c}{fx}", "M EUR", NF_M, False),
-    ("DIV27", "Dividendes versés en 2027", "={divsh26}*(1+{c}{gDiv})+{c}{minDiv}", "M EUR", NF_M, False),
-    ("NFD27", "Dette financière nette au 31/12/2027",
-     "={c}{NFD26}-{c}{FCF27}+{c}{DIV27}+{c}{tuck}*1000-{c}{D27}+{c}{other}", "M EUR", NF_M, True),
-    ("LEV27", "Levier fin 2027", "={c}{NFD27}/{c}{EB27}", "x", NF_X, True),
-    ("HEAD27", "Marge de manœuvre fin 2027 (plafond × EBITDA − DFN)", "={c}{cap}*{c}{EB27}-{c}{NFD27}", "M EUR", NF_M,
-     True),
-    ("MAXACQ", "Acquisition maximale au multiple des tuck-ins",
-     "=IF({c}{mTuck}>{c}{cap},MAX(0,{c}{HEAD27})/(1-{c}{cap}/{c}{mTuck}),0)", "M EUR", NF_M, True),
-    ("GAP8", "EBITDA 2027 moins l'objectif ≥ 8 Md€", "={c}{EB27}-{tgt}*1000", "M EUR", NF_M, False),
-    ("SEP2", None, None, None, None, None),
-    ("ADJ26", "Dette nette ajustée par les agences fin 2026 (DFN + écart Moody's 2025)", "={c}{NFD26}+({monet}-{nfd25})", "M EUR", NF_M, False),
-    ("FFO26", "FFO 2026 (hypothèse ffo × EBITDA 2026)", "={c}{ffo}*{c}{EB26}", "M EUR", NF_M, False),
-    ("RATIO26", "FFO / dette ajustée fin 2026", "={c}{FFO26}/{c}{ADJ26}", "%", NF_P, True),
-    ("HEADSP26", "Marge de dette fin 2026 sous le seuil S&P (FFO / 18 % − dette ajustée)", "={c}{FFO26}/({sptrig}/100)-{c}{ADJ26}", "M EUR", NF_M, True),
-    ("ADJ27", "Dette nette ajustée fin 2027", "={c}{NFD27}+({monet}-{nfd25})", "M EUR", NF_M, False),
-    ("FFO27", "FFO 2027", "={c}{ffo}*{c}{EB27}", "M EUR", NF_M, False),
-    ("RATIO27", "FFO / dette ajustée fin 2027", "={c}{FFO27}/{c}{ADJ27}", "%", NF_P, True),
-    ("HEADSP27", "Marge de dette fin 2027 sous le seuil S&P 18 %", "={c}{FFO27}/({sptrig}/100)-{c}{ADJ27}", "M EUR", NF_M, True),
-    ("BIND27", "Marge contraignante fin 2027 (la plus petite des deux)", "=MIN({c}{HEAD27},{c}{HEADSP27})", "M EUR", NF_M, True),
-    ("WHICH27", "Contrainte qui mord en premier", '=IF({c}{HEADSP27}<{c}{HEAD27},"agences : FFO / dette ≥ 18 %","Veolia : levier ≤ 3x")', "", None, True),
-    ("MAXACQB", "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple des tuck-ins",
-     "=IF({c}{mTuck}>{c}{cap},MAX(0,{c}{BIND27})/(1-{c}{cap}/{c}{mTuck}),0)", "M EUR", NF_M, True),
-]
+import model_def as MD
+NFK = {"M": NF_M, "x": NF_X, "%": NF_P, None: None}
+calc = [(key, label, tpl, unit, NFK[kind], bold) for key, label, tpl, unit, kind, bold in MD.CALC]
 tgt, i_tgt = E("Objectif GreenUp : EBITDA", "2027")
 syn_rr, i_syn = E("Clean Earth : synergies de coûts", "année 4")
 put(ws, f"B{RES0-1}", "Calcul", bold=True)
@@ -1061,6 +1023,9 @@ for key, *_ in calc:
     ROW[key] = rr; rr += 1
 refs = dict(eb25=eb25, sign26=sign26, nfdh126=nfdh126, prog=prog, closed=closed, divsh26=div_sh26, tgt=tgt, synRR=syn_rr,
             mond25=mond25, nfd25=nfd25, sptrig=sptrig, monet=mo_net)
+CONST_IDS = dict(eb25=id_eb25, sign26=id_sign26, nfdh126=i_nfdh126, prog=i_prog, closed=i_closed, divsh26=id_divsh26, tgt=i_tgt,
+                 synRR=i_syn, mond25=i_mond25, nfd25=i_nfd25, sptrig=i_sptrig, monet=i_monet)
+assert set(CONST_IDS) == set(MD.CONSTS), "model_def.CONSTS et build_model.refs divergent"
 for key, label, formula, unit, nf, bold in calc:
     rr = ROW[key]
     if label is None:
@@ -1069,7 +1034,7 @@ for key, label, formula, unit, nf, bold in calc:
     put(ws, f"B{rr}", label, bold=bold)
     put(ws, f"C{rr}", unit, color=GREY)
     for col, *_ in cols:
-        fmt = {**refs, "c": col, **{k: v for k, v in IN.items()}, **{k: v for k, v in ROW.items()}}
+        fmt = {**refs, **{k: f"{col}{v}" for k, v in IN.items()}, **{k: f"{col}{v}" for k, v in ROW.items()}}
         put(ws, f"{col}{rr}", formula.format(**fmt), nf=nf, bold=bold)
         if key == "WHICH27":
             ws[f"{col}{rr}"].alignment = Alignment(horizontal="right")
@@ -1242,6 +1207,207 @@ pf_rev, i_pfrev = E("Déchets dangereux Veolia + Clean Earth : chiffre d'affaire
 pf_eb, i_pfeb = E("Déchets dangereux Veolia + Clean Earth : EBITDA", "2025E")
 tgt8, i_tgt8 = E("Objectif GreenUp : EBITDA", "2027")
 ce_ev_usd, i_ceev = E("Clean Earth : valeur d'entreprise", "annonce 11/2025", "Md USD")
+
+# ================================================================ Simulation (Monte-Carlo en formules)
+import random as _random
+ws = sheets["Simulation"]
+title(ws, "Pari 1 — Monte-Carlo : la trajectoire rejouée sur 1 000 tirages, en formules",
+      f"Chaque hypothèse variée est tirée dans une loi triangulaire (bas, base, haut de l'onglet Hypothèses). Uniformes fixées "
+      f"par la graine {MD.SEED} : le classeur redonne les mêmes nombres à chaque recalcul. La ligne « base » met chaque hypothèse à sa base.")
+SIM_N = MD.N_DRAWS
+SIM_HEAD = 14
+SIM_BASE = SIM_HEAD + 1
+SIM0, SIM1 = SIM_BASE + 1, SIM_BASE + SIM_N
+UCOL, XCOL = {}, {}
+ci = 4
+for code in VARIED:
+    UCOL[code], XCOL[code] = L(ci), L(ci + 1); ci += 2
+CALC_KEYS = [k for k, lab, tpl, unit, kind, bold in MD.CALC if lab is not None and kind is not None]
+CCOL = {}
+for key in CALC_KEYS:
+    CCOL[key] = L(ci); ci += 1
+# paramètres des lois
+put(ws, "A4", "Lois triangulaires", bold=True)
+for rr, lab in ((5, "bas"), (6, "mode = base"), (7, "haut"), (8, "F(mode)")):
+    put(ws, f"A{rr}", lab, color=GREY)
+for code in VARIED:
+    x = XCOL[code]
+    lo, base, hi = HY(code, "D"), HY(code, "C"), HY(code, "E")
+    put(ws, f"{x}5", f"=MIN({lo},{base},{hi})", nf='0.0000')
+    put(ws, f"{x}6", f"=MEDIAN({lo},{base},{hi})", nf='0.0000')
+    put(ws, f"{x}7", f"=MAX({lo},{base},{hi})", nf='0.0000')
+    put(ws, f"{x}8", f"=IF({x}7={x}5,0.5,({x}6-{x}5)/({x}7-{x}5))", nf='0.000')
+# le facteur « conjoncture » commun (copule gaussienne à un facteur), hypothèse du groupe
+put(ws, "A9", "exposition", color=GREY)
+for code in VARIED:
+    put(ws, f"{XCOL[code]}9", MD.FACTOR_LOADINGS.get(code, 0), color=BLUE, nf='0')
+put(ws, "A10", "Facteur « conjoncture » commun (copule gaussienne à un facteur) — hypothèse du groupe", bold=True)
+put(ws, "A11", "poids du facteur"); put(ws, "C11", MD.FACTOR_WEIGHT, color=BLUE, fill=YELLOW, nf='0.00')
+put(ws, "A12", "Le poids est la corrélation entre deux hypothèses exposées (ligne 9 : 1 = exposée, 0 = indépendante) ; 0 = tirages indépendants.",
+    color=GREY, italic=True)
+FW = "$C$11"
+put(ws, f"{L(6)}11", "Lecture : une ligne = un futur possible. Les colonnes « u » sont des tirages uniformes (nombres fixés) ; "
+    "les colonnes suivantes les transforment en hypothèses, puis la trajectoire est recalculée ligne par ligne avec les formules de "
+    "Trajectoire (même définition, model_def.py).", color=GREY, italic=True)
+# en-têtes
+put(ws, f"A{SIM_HEAD}", "Tirage", bold=True, fill=HEAD)
+put(ws, f"B{SIM_HEAD}", "u conjoncture", bold=True, fill=HEAD, align="center")
+for code in VARIED:
+    put(ws, f"{UCOL[code]}{SIM_HEAD}", f"u {code}", bold=True, fill=HEAD, align="center")
+    put(ws, f"{XCOL[code]}{SIM_HEAD}", code, bold=True, fill=HEAD, align="center")
+for key in CALC_KEYS:
+    put(ws, f"{CCOL[key]}{SIM_HEAD}", key, bold=True, fill=HEAD, align="center")
+
+
+def _x_formula(code, r, base_row=False):
+    x = XCOL[code]
+    if base_row:
+        return f"={x}$6"
+    load = f"{x}$9"
+    u = f"NORMSDIST({load}*SQRT({FW})*NORMSINV($B{r})+SQRT(1-{load}^2*{FW})*NORMSINV({UCOL[code]}{r}))"
+    a_, c_, b_, f_ = f"{x}$5", f"{x}$6", f"{x}$7", f"{x}$8"
+    return f"=IF({b_}={a_},{c_},IF({u}<{f_},{a_}+SQRT({u}*({b_}-{a_})*({c_}-{a_})),{b_}-SQRT((1-{u})*({b_}-{a_})*({b_}-{c_}))))"
+
+
+def _calc_formula(tpl, r):
+    mapping = dict(refs)
+    for code in VARIED:
+        mapping[code] = f"{XCOL[code]}{r}"
+    for code in INPUT_ORDER:
+        if code not in VARIED:
+            mapping[code] = HY(code)
+    for key in CALC_KEYS:
+        mapping[key] = f"{CCOL[key]}{r}"
+    return tpl.format(**mapping)
+
+
+_rng = _random.Random(MD.SEED)
+UNIFORMS = []   # exportés pour le simulateur : mêmes tirages, mêmes nombres
+TPL = {k: tpl for k, lab, tpl, unit, kind, bold in MD.CALC}
+NFK_SIM = {k: NFK[kind] for k, lab, tpl, unit, kind, bold in MD.CALC}
+for i in range(SIM_N + 1):
+    r = SIM_BASE + i
+    base_row = i == 0
+    ws[f"A{r}"] = "base" if base_row else i
+    row_u = []
+    if base_row:
+        ws[f"B{r}"] = None
+    else:
+        um = min(1 - 1e-9, max(1e-9, _rng.random()))
+        row_u.append(round(um, 9))
+        ws[f"B{r}"] = round(um, 9)
+    for code in VARIED:
+        if base_row:
+            ws[f"{UCOL[code]}{r}"] = None
+        else:
+            u = min(1 - 1e-9, max(1e-9, _rng.random()))
+            row_u.append(round(u, 9))
+            ws[f"{UCOL[code]}{r}"] = round(u, 9)
+        ws[f"{XCOL[code]}{r}"] = _x_formula(code, r, base_row)
+    if not base_row:
+        UNIFORMS.append(row_u)
+    for key in CALC_KEYS:
+        ws[f"{CCOL[key]}{r}"] = _calc_formula(TPL[key], r)
+# formats (une seule fois par colonne, sur la ligne base, pour garder le fichier léger)
+for code in VARIED:
+    ws[f"{XCOL[code]}{SIM_BASE}"].number_format = '0.0000'
+for key in CALC_KEYS:
+    ws[f"{CCOL[key]}{SIM_BASE}"].number_format = NFK_SIM[key] or "General"
+    ws[f"{CCOL[key]}{SIM_BASE}"].font = font(bold=True)
+ws.freeze_panes = f"B{SIM_BASE}"
+ws.column_dimensions["A"].width = 10
+SIM = {k: f"{q('Simulation')}!${CCOL[k]}${SIM0}:${CCOL[k]}${SIM1}" for k in CALC_KEYS}
+SIMB = {k: f"{q('Simulation')}!${CCOL[k]}${SIM_BASE}" for k in CALC_KEYS}
+
+# ================================================================ Distribution
+ws = sheets["Distribution"]
+title(ws, "Pari 1 — La capacité en probabilités",
+      f"{SIM_N} futurs tirés (onglet Simulation). Une fourchette dit « entre » ; ces lignes disent « avec quelle chance ». "
+      "Les lois sont triangulaires entre les bornes de l'onglet Hypothèses, la base au sommet.")
+DS = {}
+r = 4
+put(ws, f"A{r}", "A", bold=True); put(ws, f"B{r}", "Ce que valent les résultats sur l'ensemble des tirages", bold=True); r += 1
+header(ws, r, ["", "Résultat", "Moyenne", "p5", "p10", "Médiane", "p90", "p95", "Ligne base", "Trajectoire (actif)"]); r += 1
+for key, lab, kind in MD.OUTPUTS:
+    nf = {"M": NF_M, "x": NF_X, "%": NF_P}[kind]
+    rng = SIM[key]
+    put(ws, f"A{r}", key, color=GREY); put(ws, f"B{r}", lab)
+    put(ws, f"C{r}", f"=AVERAGE({rng})", nf=nf)
+    for col, pc in (("D", 0.05), ("E", 0.10), ("F", 0.50), ("G", 0.90), ("H", 0.95)):
+        put(ws, f"{col}{r}", f"=PERCENTILE({rng},{pc})", nf=nf, bold=col == "F")
+    put(ws, f"I{r}", f"={SIMB[key]}", nf=nf, color=GREEN)
+    put(ws, f"J{r}", f"={T[key]}", nf=nf, color=GREEN)
+    DS[key] = r; r += 1
+r += 1
+put(ws, f"A{r}", "B", bold=True); put(ws, f"B{r}", "Les probabilités qui répondent à la question", bold=True); r += 1
+header(ws, r, ["", "Événement", "Probabilité", "", "Comment c'est compté"]); r += 1
+N_ = f"{SIM_N}"
+PROBS = [
+    ("pBind", "La marge contraignante fin 2027 est positive (3x ET seuil S&P tenus)", f'=COUNTIF({SIM["BIND27"]},">0")/{N_}', "tirages où la plus petite des deux marges > 0"),
+    ("pHead", "Le levier fin 2027 reste sous le plafond (marge 3x > 0)", f'=COUNTIF({SIM["HEAD27"]},">0")/{N_}', ""),
+    ("pSP27", "Le ratio FFO / dette reste au-dessus du seuil S&P fin 2027", f'=COUNTIF({SIM["HEADSP27"]},">0")/{N_}', ""),
+    ("pSP26", "Le ratio FFO / dette passe sous le seuil S&P fin 2026 (risque de dégradation)", f'=COUNTIF({SIM["RATIO26"]},"<"&{sptrig}/100)/{N_}', "seuil S&P du registre"),
+    ("pAgency", "C'est le seuil des agences qui mord en premier fin 2027 (et non le 3x)", f'=SUMPRODUCT(({SIM["HEADSP27"]}<{SIM["HEAD27"]})*1)/{N_}', ""),
+    ("pLev26", "Le levier fin 2026 dépasse 3,1x", f'=COUNTIF({SIM["LEV26"]},">3.1")/{N_}', "« égal ou légèrement supérieur à 3x » : 3,1x comme borne de lecture"),
+    ("pAcq1", "Veolia peut acheter au moins 1 Md€ fin 2027 sans franchir la contrainte qui mord", f'=COUNTIF({SIM["MAXACQB"]},">=1000")/{N_}', "au multiple des tuck-ins tiré"),
+    ("pAcq2", "… au moins 2 Md€", f'=COUNTIF({SIM["MAXACQB"]},">=2000")/{N_}', ""),
+    ("pAcq3", "… au moins 3 Md€", f'=COUNTIF({SIM["MAXACQB"]},">=3000")/{N_}', ""),
+    ("pGap8", "L'EBITDA 2027 atteint l'objectif de 8 Md€", f'=COUNTIF({SIM["GAP8"]},">=0")/{N_}', ""),
+    ("nNeg", "Futurs (sur l'ensemble des tirages) où la marge contraignante devient négative", f'=COUNTIF({SIM["BIND27"]},"<0")', "un nombre de tirages, pas une probabilité"),
+]
+for key, lab, f, how in PROBS:
+    put(ws, f"B{r}", lab, bold=key in ("pBind", "pAcq1"))
+    put(ws, f"C{r}", f, nf=NF_I if key == "nNeg" else '0%', bold=True)
+    put(ws, f"E{r}", how, color=GREY)
+    DS[key] = f"{q('Distribution')}!$C${r}"; r += 1
+r += 1
+put(ws, f"A{r}", "C", bold=True); put(ws, f"B{r}", "Histogramme de la marge contraignante fin 2027 (M EUR)", bold=True); r += 1
+header(ws, r, ["", "Classe (de … à …)", "De", "À", "Tirages"]); r += 1
+rngB = SIM["BIND27"]
+HB0 = r
+NB = 14
+for k in range(NB):
+    lo = f"MIN({rngB})+(MAX({rngB})-MIN({rngB}))*{k}/{NB}"
+    hi = f"MIN({rngB})+(MAX({rngB})-MIN({rngB}))*{k + 1}/{NB}"
+    put(ws, f"C{r}", f"={lo}", nf=NF_M); put(ws, f"D{r}", f"={hi}", nf=NF_M)
+    put(ws, f"B{r}", f'=TEXT(C{r},"# ##0")&" à "&TEXT(D{r},"# ##0")')
+    cond = f'"<="&D{r}' if k == NB - 1 else f'"<"&D{r}'
+    put(ws, f"E{r}", f'=COUNTIFS({rngB},">="&C{r},{rngB},{cond})', nf=NF_I)
+    r += 1
+HB1 = r - 1
+hch = BarChart(); hch.type = "col"; hch.grouping = "clustered"; hch.gapWidth = 10
+hch.title = "Marge contraignante fin 2027 sur les tirages (M EUR)"
+hch.y_axis.title = "tirages"; hch.y_axis.delete = False; hch.x_axis.delete = False
+hch.add_data(Reference(ws, min_col=5, min_row=HB0, max_row=HB1), titles_from_data=False)
+hch.set_categories(Reference(ws, min_col=2, min_row=HB0, max_row=HB1))
+hch.legend = None; hch.height, hch.width = 8, 20
+ws.add_chart(hch, f"G{HB0 - 1}")
+r += 1
+put(ws, f"A{r}", "D", bold=True); put(ws, f"B{r}", "L'éventail du levier 2024 → 2027", bold=True); r += 1
+header(ws, r, ["", "Année", "p10", "Médiane", "p90"]); r += 1
+FA0 = r
+for year, trio in (("2024", (f"={lev24}",) * 3), ("2025", (f"={lev25}",) * 3),
+                   ("2026", tuple(f"=PERCENTILE({SIM['LEV26']},{p})" for p in (0.1, 0.5, 0.9))),
+                   ("2027", tuple(f"=PERCENTILE({SIM['LEV27']},{p})" for p in (0.1, 0.5, 0.9)))):
+    put(ws, f"B{r}", year, align="center")
+    for col, f in zip("CDE", trio):
+        put(ws, f"{col}{r}", f, nf=NF_X, color=GREEN if "Entrées" in f else BLACK)
+    r += 1
+FA1 = r - 1
+from openpyxl.chart import LineChart
+fch = LineChart(); fch.title = "Levier : p10, médiane, p90 des tirages (plafond 3x en 2027)"
+fch.y_axis.title = "× EBITDA"; fch.y_axis.delete = False; fch.x_axis.delete = False
+fch.add_data(Reference(ws, min_col=3, max_col=5, min_row=FA0 - 1, max_row=FA1), titles_from_data=True)
+fch.set_categories(Reference(ws, min_col=2, min_row=FA0, max_row=FA1))
+fch.height, fch.width = 8, 16
+ws.add_chart(fch, f"G{FA0 - 1}")
+r += 1
+put(ws, f"B{r}", "Lecture : la fourchette défavorable / favorable de Trajectoire combine tous les extrêmes à la fois, ce qui n'arrive "
+    "presque jamais ; ici, chaque futur tire chaque hypothèse indépendamment (sauf les deux corrélations déclarées). Les probabilités "
+    "dépendent des bornes choisies dans Hypothèses : elles mesurent notre incertitude, pas celle du marché.", color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:J{r}"); ws.row_dimensions[r].height = 44
+widths(ws, {"A": 8, "B": 62, "C": 12, "D": 12, "E": 12, "F": 12, "G": 12, "H": 12, "I": 12, "J": 14})
+ws.freeze_panes = "C4"
 
 # ================================================================ Segments
 ws = sheets["Segments"]
@@ -2019,6 +2185,11 @@ checks = [
     ("Multiple Clean Earth recalculé après synergies vs publié", K["mPost"], K["mPub"], None, '0.0"x"', "Info"),
     ("Multiples publiés par Veolia : le minimum (Espagne) est bien la borne basse de mTuck", K["mMin"], HY("mTuck", "D"), 0.001, '0.0"x"', "Bloquant"),
     ("Multiples publiés par Veolia : le maximum (WTS) est bien la borne haute de mTuck", K["mMax"], HY("mTuck", "E"), 0.001, '0.0"x"', "Bloquant"),
+    ("Monte-Carlo : la ligne « base » redonne la marge contraignante de Trajectoire (quand toutes les hypothèses sont à la base)",
+     f'IF(COUNTIF({q("Hypothèses")}!$I$5:$I${H_LAST},"Bas")+COUNTIF({q("Hypothèses")}!$I$5:$I${H_LAST},"Haut")=0,{SIMB["BIND27"]}-{T["BIND27"]},0)',
+     0, 0.5, NF_M, "Bloquant"),
+    ("Monte-Carlo : moyenne des uniformes tirées (≈ 0,5 si les tirages sont sains)",
+     "AVERAGE(" + ",".join(f"{q('Simulation')}!${c}${SIM0}:${c}${SIM1}" for c in ["B"] + [UCOL[k] for k in VARIED]) + ")", 0.5, 0.02, '0.000', "Bloquant"),
     ("Pont EBITDA : somme des marches 2025 → 2027 = EBITDA 2027 de Trajectoire", PB["eb27"], PB["eb27T"], 1, NF_M, "Bloquant"),
     ("Pont EBITDA : croissance annuelle implicite de GreenUp (6,5 → 8) face au « ~5 % » annoncé", PB["cagrC"], PB["cagrP"], 0.01, NF_P, "Bloquant"),
     ("Pont EBITDA : strongholds + boosters (EBITDA × organique) face à la croissance organique du groupe en M EUR (± 60)", PB["famOrg"], PB["orgM"], None, NF_M, "Info"),
@@ -2076,6 +2247,10 @@ title(ws, "Modèle GreenUp 2027 — Veolia, sujet 2 du capstone EDHEC",
 r = 4
 put(ws, f"B{r}", "Résultats du scénario actif (base partout, sauf choix dans Hypothèses, colonne Actif)", bold=True, size=12); r += 1
 res = [
+    ("Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés", DS["pBind"], '0%'),
+    ("Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord", DS["pAcq1"], '0%'),
+    ("Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026", DS["pSP26"], '0%'),
+    ("Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR", f"{q('Distribution')}!$F${DS['MAXACQB']}", NF_M),
     ("Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)", T["LEV26"], NF_X),
     ("Levier fin 2027 (engagement : ≤ 3x)", T["LEV27"], NF_X),
     ("Marge de manœuvre fin 2027, en M EUR de dette", T["HEAD27"], NF_M),
@@ -2260,6 +2435,23 @@ OUT.with_name("model-critical.json").write_text(_json.dumps({
     "ids": {fid: CRITICAL[fid] for fid in sorted(CRITICAL, key=lambda s: (s[0], int(s[1:].split("-")[0])))},
 }, ensure_ascii=False, indent=1), encoding="utf-8")
 print("chiffres critiques :", len(CRITICAL), "lignes du registre alimentent", len(ROOTS), "résultats")
+
+OUT.with_name("model-def.json").write_text(_json.dumps({
+    "generated": _date.today().isoformat(), "model": OUT.name, "seed": MD.SEED, "n_draws": SIM_N,
+    "varied": VARIED, "fixed": [c for c in INPUT_ORDER if c not in VARIED],
+    "inputs": {code: {"label": sheets["Hypothèses"][f"B{H[code]}"].value, "unit": sheets["Hypothèses"][f"F{H[code]}"].value,
+                      "row": H[code]} for code in INPUT_ORDER},
+    "consts": {name: {"id": CONST_IDS[name], "label": MD.CONSTS[name],
+                      "value": parse(next(x for x in rows if x["id"] == CONST_IDS[name])["value"])} for name in CONST_IDS},
+    "calc": [{"key": k, "label": lab, "template": tpl, "unit": unit, "kind": kind, "bold": bold}
+             for k, lab, tpl, unit, kind, bold in MD.CALC if lab is not None],
+    "outputs": [{"key": k, "label": lab, "kind": kind} for k, lab, kind in MD.OUTPUTS],
+    "factor": {"weight": MD.FACTOR_WEIGHT, "loadings": {k: MD.FACTOR_LOADINGS.get(k, 0) for k in VARIED},
+               "note": "uniforms[i][0] est le tirage du facteur commun, puis une uniforme par hypothèse variée, dans l'ordre de varied"},
+    "uniforms": UNIFORMS,
+    "trajectoire": {"columns": [{"col": col, "name": name, "code": code, "side": side} for col, name, code, side in cols],
+                    "input_rows": IN, "calc_rows": {k: v for k, v in ROW.items()}},
+}, ensure_ascii=False), encoding="utf-8")
 
 OUT.with_name("model-uses.json").write_text(_json.dumps({
     "generated": _date.today().isoformat(), "model": OUT.name,

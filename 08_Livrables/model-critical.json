@@ -2,6 +2,10 @@
  "generated": "2026-10-06",
  "model": "modele-greenup-2027.xlsx",
  "roots": [
+  "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+  "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+  "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
+  "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
   "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
   "Levier fin 2027 (engagement : ≤ 3x)",
   "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -37,6 +41,10 @@
  ],
  "ids": {
   "F3": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -51,6 +59,9 @@
    "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
   ],
   "F5": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
    "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
@@ -63,6 +74,10 @@
    "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
   ],
   "F8": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
    "Contrainte qui mord en premier fin 2027",
    "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR"
@@ -71,6 +86,10 @@
    "Levier fin 2027 si 50 % des hybrides comptent en dette"
   ],
   "F11": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -87,6 +106,9 @@
    "Part de l'écart GreenUp 2023 → 2027 que couvre la seule efficacité promise (350 M€ par an)"
   ],
   "F13": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
    "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
@@ -101,6 +123,9 @@
    "Objectifs financiers annoncés et tenus depuis 2020 (Impact 2023, guidance 2025)"
   ],
   "F17": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
    "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
@@ -113,6 +138,9 @@
    "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
   ],
   "F21": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
    "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
@@ -125,6 +153,9 @@
    "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
   ],
   "F25": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
    "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
@@ -139,6 +170,10 @@
    "Années nécessaires pour céder 2 Md EUR au rythme des cessions 2022-2025"
   ],
   "F29": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -151,6 +186,9 @@
    "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
   ],
   "F30": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
    "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
@@ -163,6 +201,10 @@
    "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
   ],
   "F31": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -182,6 +224,10 @@
    "EBITDA 2027 si chaque segment garde son rythme organique de 2025, en M EUR"
   ],
   "F40": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -196,6 +242,10 @@
    "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
   ],
   "F41": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -214,6 +264,9 @@
    "Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)"
   ],
   "F48": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
    "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
@@ -227,6 +280,9 @@
    "Multiples payés par Veolia, après synergies : du moins cher au plus cher (Cibles §D)"
   ],
   "F49": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
    "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
@@ -239,6 +295,9 @@
    "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
   ],
   "F50": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
    "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
@@ -250,6 +309,10 @@
    "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
   ],
   "F51": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -265,6 +328,9 @@
    "Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)"
   ],
   "F56": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Marge de manœuvre fin 2027, en M EUR de dette",
    "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
    "Marge 2027 dans le scénario défavorable combiné, en M EUR",
@@ -278,6 +344,10 @@
    "Sorties nettes d'acquisitions cumulées depuis 2024, en Md EUR (enveloppe boosters : 4)"
   ],
   "F70": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -290,6 +360,9 @@
    "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
   ],
   "F72": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
    "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
@@ -301,6 +374,9 @@
    "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
   ],
   "F74": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
    "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
@@ -315,6 +391,10 @@
    "Sorties nettes d'acquisitions cumulées depuis 2024, en Md EUR (enveloppe boosters : 4)"
   ],
   "F87": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -328,6 +408,10 @@
    "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
   ],
   "F88": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
@@ -341,6 +425,9 @@
    "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
   ],
   "F89": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
    "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
@@ -365,6 +452,10 @@
    "Marge de FFO en 2026 au seuil S&P (18 % de la dette ajustée au pic), en M EUR"
   ],
   "F163": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Marge de FFO en 2026 au seuil S&P (18 % de la dette ajustée au pic), en M EUR",
    "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
    "Contrainte qui mord en premier fin 2027",
@@ -407,11 +498,19 @@
    "Clean Earth : multiple du prix sur l'EBITDA 2025 publié par le vendeur (reconstitué)"
   ],
   "F256": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
    "Contrainte qui mord en premier fin 2027",
    "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR"
   ],
   "F261": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Probabilité que le ratio FFO / dette passe sous le seuil S&P fin 2026",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Marge de dette fin 2027 sous le seuil S&P (18 % FFO / dette ajustée), en M EUR",
    "Contrainte qui mord en premier fin 2027",
    "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR"
@@ -507,6 +606,9 @@
    "Programme de cessions au multiple central, en part de l'EBITDA des déchets solides"
   ],
   "F445": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
    "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
@@ -523,6 +625,9 @@
    "Multiples payés par Veolia, après synergies : du moins cher au plus cher (Cibles §D)"
   ],
   "F473": [
+   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
+   "Probabilité de pouvoir acheter au moins 1 Md€ fin 2027 sous la contrainte qui mord",
+   "Acquisition maximale fin 2027 sous la contrainte qui mord : médiane des tirages, en M EUR",
    "Levier fin 2027 (engagement : ≤ 3x)",
    "Marge de manœuvre fin 2027, en M EUR de dette",
    "Acquisition maximale fin 2027 au multiple de Clean Earth, en M EUR",
