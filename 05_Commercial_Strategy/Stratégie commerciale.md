@@ -7,17 +7,19 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 96 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 99 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/ambitions-veolia-spain.pdf.md|In Spain, Veolia displays strong ambitions to support ecological transformation by putting expertise and innovation at the service of territories]]
 - [[05_Commercial_Strategy/annual-resultats-2025.pdf.md|Full year 2025 results]]
+- [[05_Commercial_Strategy/clean-harbors-hepaco-2024-03-25.html.md|Clean Harbors Completes Acquisition of HEPACO (25 March 2024)]]
 - [[05_Commercial_Strategy/cp-cession-lydec-en.pdf.md|Morocco: Veolia signs an agreement to divest its stake in Lydec]]
 - [[05_Commercial_Strategy/cp-deep-dive-water-micropollutants-pfas.pdf.md|Veolia targets 1 B€ in revenue by 2030 in the fight against micropollutants &amp; launches a pioneering PFAS integrated treatment offer]]
 - [[05_Commercial_Strategy/cp-deep-dive-water-water-technologies.pdf.md|Veolia steps up its pace in Water Technologies to grow 3x faster than the market]]
 - [[05_Commercial_Strategy/cp-lapouyade-181125.pdf.md|Veolia deploys for the first time in France an innovative electricity flexibility solution at a waste recovery site]]
 - [[05_Commercial_Strategy/cp-post-ag-ve-2026-gb.pdf.md|Combined Shareholders’ General Meeting, April 23, 2026]]
 - [[05_Commercial_Strategy/cp-veolia-devoile-un-projet-majeur-visant-a-eliminer-progressivement-le-charbon-en-pologne-pour-soutenir-la-decarbonation-europeenne-et-renforcer-la-resilience-energetique-a-poznan_0.pdf.md|Veolia unveils a major project to phase out coal in Poland to support European decarbonization and strengthen energy resilience in Poznań]]
+- [[05_Commercial_Strategy/eqt-covanta-2021-07-14.html.md|EQT Infrastructure to acquire Covanta for USD 5.3 billion (14 July 2021)]]
 - [[05_Commercial_Strategy/inauguration-gln-veoliaxenagas-en.pdf.md|World first: Veolia, Enagás and Barcelona City Council inaugurate the first urban cold recovery network from an LNG terminal]]
 - [[05_Commercial_Strategy/pr-2023-finance-guidance.pdf.md|Long term financial guidances 2024 - 2027]]
 - [[05_Commercial_Strategy/pr-2024-annual-results-veolia.pdf.md|2024 ANNUAL RESULTS]]
@@ -106,3 +108,4 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/veolia-q1-key-figures-05062026.pdf.md|First quarter 2026 Key Figures]]
 - [[05_Commercial_Strategy/veolia-sets-bold-growth-goals-in-the-united-states-boosting-its-ecological-solutions-to-ensure-economic-growth-and-public-health-improvement.pdf.md|Veolia sets bold growth goals in the United States, boosting its ecological solutions to ensure economic growth and public health improvement]]
 - [[05_Commercial_Strategy/version-eng-infopresse.pdf.md|Veolia launches two new and unique dialogue initiatives with stakeholders at the heart of environmental security]]
+- [[05_Commercial_Strategy/wm-stericycle-2024-06-03.html.md|WM to Acquire Stericycle for $7.2 Billion (3 June 2024)]]

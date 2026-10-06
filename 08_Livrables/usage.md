@@ -1,10 +1,10 @@
 # Usage de la dataroom — membre par membre
 
-Relevé le 06/10/2026 13:22 depuis le journal des requêtes du serveur et les registres. 687 appel(s) en tout. Une identité partagée (`dataroom-bearer`) ne désigne personne : c'est le token commun, utilisé avant les tokens personnels.
+Relevé le 06/10/2026 13:24 depuis le journal des requêtes du serveur et les registres. 690 appel(s) en tout. Une identité partagée (`dataroom-bearer`) ne désigne personne : c'est le token commun, utilisé avant les tokens personnels.
 
 | Membre | Appels | Recherches | Pages lues | Écritures | Relectures | Chiffres ajoutés | Lignes relues | Jours actifs | Premier | Dernier |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `dataroom-bearer` (partagé) | 685 | 99 | 46 | 540 | 0 | 500 | 0 | 5 | 2026-09-22 | 2026-10-06 |
+| `dataroom-bearer` (partagé) | 688 | 99 | 46 | 543 | 0 | 500 | 0 | 5 | 2026-09-22 | 2026-10-06 |
 | ethan | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 1 | 2026-10-06 | 2026-10-06 |
 
 ## Par outil
@@ -28,6 +28,7 @@ Relevé le 06/10/2026 13:22 depuis le journal des requêtes du serveur et les re
 | `register_target` | 4 |
 | `list_gaps` | 3 |
 | `find_deal_candidates` | 3 |
+| `submit_url` | 3 |
 | `lookup_figure` | 2 |
 | `search_news` | 1 |
 | `find_figures` | 1 |
