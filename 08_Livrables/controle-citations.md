@@ -3,12 +3,12 @@
 | Section | Pages | Mots | Cible |
 |---|---|---|---|
 | role-1.md | 3 | 36 | 6-9 |
-| role-2.md | 6 | 45 | 6-9 |
+| role-2.md | 7 | 45 | 6-9 |
 | role-3.md | 4 | 39 | 6-9 |
-| role-4.md | 4 | 44 | 6-9 |
-| role-5.md | 2 | 36 | 6-9 |
-| role-6.md | 4 | 29 | 6-9 |
-| total | 93 | 242 | 50-60 |
+| role-4.md | 5 | 44 | 6-9 |
+| role-5.md | 3 | 36 | 6-9 |
+| role-6.md | 5 | 29 | 6-9 |
+| total | 97 | 242 | 50-60 |
 
 ## Jetons inconnus (0)
 - aucun
