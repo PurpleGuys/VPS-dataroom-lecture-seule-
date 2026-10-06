@@ -90,6 +90,57 @@ def q(sheet):
     return f"'{sheet}'"
 
 
+# ---------------------------------------------------------------- lectures calculées
+# Une « Lecture » cite les nombres du classeur ; écrite en formule, elle suit les registres au lieu de
+# vieillir. FIXED sans séparateur de milliers rend le même texte dans un Excel français (virgule
+# décimale) et dans LibreOffice (point, remplacé) ; TEXT, lui, dépend de la langue du tableur.
+class Fx(str):
+    """Un morceau de formule dans une lecture ; tout le reste est du texte."""
+
+
+def t_num(expr, d=1):
+    if d == 0:   # un entier : séparateur de milliers (« , » dans LibreOffice, espace dans un Excel français)
+        return Fx(f'SUBSTITUTE(SUBSTITUTE(FIXED({expr},0,FALSE),",","\u202f"),"-","\u2212")')
+    return Fx(f'SUBSTITUTE(SUBSTITUTE(FIXED({expr},{d},TRUE),".",","),"-","\u2212")')
+
+
+def t_pct(expr, d=1):
+    return Fx(t_num(f"({expr})*100", d) + '&"\u202f%"')
+
+
+def t_x(expr, d=1):
+    return Fx(t_num(expr, d) + '&"x"')
+
+
+def t_md(expr_meur, d=1):
+    return Fx(t_num(f"({expr_meur})/1000", d) + '&"\u202fMd€"')
+
+
+def t_m(expr, d=0, unit="M€"):
+    return Fx(t_num(expr, d) + f'&"\u202f{unit}"')
+
+
+def _t_join(parts):
+    out = []
+    for part in parts:
+        if isinstance(part, Fx):
+            out.append(part)
+        else:
+            text = str(part)   # une constante de formule ne dépasse pas 255 caractères
+            out.extend('"' + text[i:i + 200].replace('"', '""') + '"' for i in range(0, len(text), 200))
+    return "&".join(out) if out else '""'
+
+
+def t_if(cond, yes, no):
+    yes, no = (yes if isinstance(yes, list) else [yes]), (no if isinstance(no, list) else [no])
+    return Fx(f"IF({cond},{_t_join(yes)},{_t_join(no)})")
+
+
+def lecture(*parts):
+    """« Lecture : … » en formule, texte et nombres mêlés."""
+    return "=" + _t_join(parts)
+
+
 # ---------------------------------------------------------------- registre
 def parse(value: str) -> float:
     v = value.replace(" ", "").replace(" ", "").replace(" ", "").strip()
@@ -469,13 +520,18 @@ line(ws, r, "moInt", "Charge d'intérêts ajustée", f"={mo_int}", "M EUR", i_mo
 line(ws, r, "moNdeb", "Dette nette ajustée / EBITDA ajusté selon Moody's", f"={mo_ndeb}", "x", f"{i_mondeb} — contre 2,79x publié par Veolia : même entreprise, deux définitions", NF_X); r += 1
 line(ws, r, "moF26", "Prévision Moody's : FFO / dette nette 2026", f"={mo_f26}/100", "%", i_mof26, NF_P); r += 1
 line(ws, r, "moF27", "Prévision Moody's : FFO / dette nette 2027", f"={mo_f27}/100", "%", i_mof27, NF_P); r += 1
-put(ws, f"B{r}", "Lecture : l'écart de 5,7 Md€ entre la dette des agences et celle de Veolia tient aux hybrides pour un peu plus d'un tiers, "
-    "le reste aux pensions, à la titrisation et aux retraitements de Moody's. Le FFO publié (5 160 M€) redonne le ratio 20,3 % : "
-    "c'est lui que le modèle projette.", color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : l'écart de ", t_md(f"{A['moNetP']}-{nfd25}"), " entre la dette des agences et celle de Veolia tient aux hybrides pour ",
+    t_pct(A['hybShare'], 0), ", le reste aux pensions, à la titrisation et aux retraitements de Moody's. Le FFO publié (", t_m(A['ffo25p']),
+    ") redonne le ratio ", t_pct(A['ffoCheck']), " : c'est lui que le modèle projette."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 44; r += 1
-put(ws, f"B{r}", "Lecture : les agences ne regardent pas le 3x de Veolia mais FFO / dette ajustée. Au pic de dette 2026 (~29 Md€), tenir 18 % "
-    "demande ~5,2 Md€ de FFO, à peu près le FFO 2025 implicite : la marge est nulle en 2026 et ne revient qu'avec les cessions. "
-    "C'est la limite qui mord en premier, avant le plafond de 3x.", color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : les agences ne regardent pas le 3x de Veolia mais FFO / dette ajustée. Au pic de dette 2026 (environ ",
+    t_md(A['mond26'], 0), "), tenir ", t_pct(A['sptrig'], 0), " demande ", t_md(A['ffoReq']), " de FFO, ",
+    t_if(f"ABS({A['ffoGap']})<0.05*{A['ffoReq']}", "à peu près le FFO 2025 implicite : la marge est quasi nulle en 2026",
+         t_if(f"{A['ffoGap']}<0", ["plus que le FFO 2025 implicite (", t_md(A['ffo25']), ") : il manque ", t_m(f"-{A['ffoGap']}"), " en 2026"],
+              ["moins que le FFO 2025 implicite (", t_md(A['ffo25']), ") : la marge est de ", t_m(A['ffoGap']), " en 2026"])),
+    ", et ne se reconstitue qu'avec les cessions. C'est la limite qui mord en premier : le 3x ne vaut qu'à fin 2027, "
+    "les agences regardent chaque année (dans le modèle, le ratio fin 2026 ressort à ", t_pct(f"{q('Trajectoire')}!$D$RATIO26"),
+    ", Trajectoire)."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 44; r += 2
 
 put(ws, f"A{r}", "B5", bold=True); put(ws, f"B{r}", "Le pont du FFO : reconstitué depuis le tableau de flux (DEU 2025 p.362-363) face au FFO de Moody's", bold=True); r += 1
@@ -513,10 +569,11 @@ put(ws, f"E{r}", f"{id_eb25}, {id_eb24}", color=GREY); A["ffoRecEb25"] = f"{q('L
 put(ws, f"B{r}", "FFO reconstitué / dette nette ajustée Moody's (publié : 20,3 % et 21,3 %)")
 put(ws, f"C{r}", f"=C{FFR}/{A['moNetP']}", nf=NF_P); put(ws, f"D{r}", f"=D{FFR}/{mond24b}", nf=NF_P)
 put(ws, f"E{r}", f"{i_monet}, {i_mond24b}", color=GREY); r += 1
-put(ws, f"B{r}", "Lecture : Moody's ne publie pas sa formule. Lue depuis le tableau de flux de Veolia — capacité d'autofinancement avant BFR, "
+put(ws, f"B{r}", lecture("Lecture : Moody's ne publie pas sa formule. Lue depuis le tableau de flux de Veolia — capacité d'autofinancement avant BFR, "
     "moins impôts et intérêts payés (dette, IFRIC 12, IFRS 16), plus les remboursements d'actifs financiers opérationnels et les dividendes "
-    "reçus — la reconstitution retombe sur le FFO de Moody's à moins de 2 % près sur les deux années. C'est la lecture du groupe, contrôlée "
-    "à ± 5 % (Vérifications) ; elle donne un FFO projetable poste par poste, dont les intérêts (Échéancier §B).", color=GREY, italic=True, wrap=True)
+    "reçus — la reconstitution retombe sur le FFO de Moody's à ", t_pct(f"MAX(ABS({A['ffoRecGap25']}),ABS({A['ffoRecGap24']}))"),
+    " près au plus sur les deux années. C'est la lecture du groupe, contrôlée à ± 5 % (Vérifications) ; elle donne un FFO projetable "
+    "poste par poste, dont les intérêts (Échéancier §B)."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 58; r += 2
 
 put(ws, f"A{r}", "B6", bold=True); put(ws, f"B{r}", "Les pairs selon Moody's (Exhibit 12, 12 mois à juin 2025) : où se place Veolia", bold=True); r += 1
@@ -541,10 +598,12 @@ for name in ("Veolia", "ACEA", "Hera", "Suez"):
     PR[name] = r; r += 1
 line(ws, r, "peerGapSuez", "Écart de FFO / dette nette entre Veolia et Suez (même notation à un cran près, perspective négative)", f"=D{PR['Veolia']}-D{PR['Suez']}", "pts", "Veolia − Suez", NF_P, True); r += 1
 line(ws, r, "peerGapHera", "Écart entre Veolia et le mieux noté des pairs comparables (Hera)", f"=D{PR['Veolia']}-D{PR['Hera']}", "pts", "négatif = Veolia en dessous", NF_P, True); r += 1
-put(ws, f"B{r}", "Lecture : à notation égale (Baa1), Veolia est au niveau d'ACEA et sous Hera ; Suez, Baa2 à perspective négative, est à 11 %. "
-    "Le seuil des « high teens » de Moody's n'est pas théorique : c'est la zone où se trouve déjà le concurrent direct. La marge de "
-    "sécurité que gardent les pairs sous leur seuil est de l'ordre de 2 à 5 points ; la nôtre, fin 2026, est de 1 point (Trajectoire).",
-    color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : à notation égale (Baa1), Veolia (", t_pct(f"D{PR['Veolia']}"), ") est au niveau d'ACEA (", t_pct(f"D{PR['ACEA']}"),
+    ") et sous Hera (", t_pct(f"D{PR['Hera']}"), ") ; Suez, Baa2 à perspective négative, est à ", t_pct(f"D{PR['Suez']}", 0),
+    ". Le seuil des « high teens » de Moody's n'est pas théorique : c'est la zone où se trouve déjà le concurrent direct. ACEA et Hera "
+    "gardent ", t_num(f"(D{PR['ACEA']}-{A['sptrig']})*100", 1), " et ", t_num(f"(D{PR['Hera']}-{A['sptrig']})*100", 1),
+    " points au-dessus de ", t_pct(A['sptrig'], 0), " ; Veolia, fin 2026, en garde ", t_num(f"({q('Trajectoire')}!$D$RATIO26-{A['sptrig']})*100", 1),
+    " (Trajectoire)."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:H{r}"); ws.row_dimensions[r].height = 44; r += 2
 
 put(ws, f"A{r}", "B7", bold=True); put(ws, f"B{r}", "Les hybrides : calendrier des premières dates de réinitialisation (DEU 2025 p.429) et ce qu'un rappel change", bold=True); r += 1
@@ -568,10 +627,12 @@ new_cpn, i_newcpn = E("Hybride septembre 2025 : coupon", "31/12/2025")
 line(ws, r, "hybRefiCost", "Si cette tranche est remplacée au coupon de la dernière émission (4,322 %) : coupon annuel en plus", f"=C{HB['09/2026']}*({new_cpn}-{E('Hybride septembre 2019 : coupon', '31/12/2025')[0]})/100", "M EUR", "nominal × écart de coupon", NF_M, True); r += 1
 line(ws, r, "hybRedeemLev", "Si elle est remboursée sans remplacement : levier fin 2027 (définition Veolia) après +500 M€ de dette nette", f"=({q('Trajectoire')}!$D$NFD27+C{HB['09/2026']})/{q('Trajectoire')}!$D$EB27", "x", "DFN + 500 / EBITDA 2027", NF_X, True); r += 1
 line(ws, r, "hybRedeemMoody", "… et dette ajustée Moody's fin 2027 : +500 de dette, −250 d'hybride comptée à 50 %", f"={q('Trajectoire')}!$D$ADJ27+C{HB['09/2026']}*(1-{HY('hybPct')})", "M EUR", "ADJ27 + 500 × (1 − 50 %)", NF_M); r += 1
-put(ws, f"B{r}", "Lecture : 4,1 Md€ d'hybrides en capitaux propres chez Veolia, à moitié en dette chez Moody's. Une seule date tombe dans l'horizon "
-    "(septembre 2026, 500 M€ à 1,625 %) ; la remplacer coûte une quinzaine de millions de coupon par an, ne pas la remplacer ajoute 500 M€ "
-    "à la dette nette et 250 M€ à la dette ajustée. Le levier n'est pas la contrainte : c'est le coût du capital hybride, passé de 1,6 % "
-    "à 4,3 % entre 2019 et 2025. Les grosses échéances (2028-2029 : 2,25 Md€) sont hors horizon mais pas hors question.", color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : ", t_md(A['hybPub']), " d'hybrides en capitaux propres chez Veolia, à moitié en dette chez Moody's. Une seule date "
+    "tombe dans l'horizon (septembre 2026, ", t_m(A['hybBefore28']), " à ", t_pct(f"D{HB['09/2026']}", 3), ") ; la remplacer coûte ",
+    t_m(A['hybRefiCost']), " de coupon par an, ne pas la remplacer ajoute ", t_m(A['hybBefore28']), " à la dette nette et ",
+    t_m(f"{A['hybBefore28']}*(1-{HY('hybPct')})"), " à la dette ajustée. Le levier n'est pas la contrainte : c'est le coût du capital "
+    "hybride, passé de ", t_pct(f"D{HB['09/2026']}", 1), " à ", t_pct(f"D{HB['01/2033']}", 1), " entre 2019 et 2025. Les grosses "
+    "échéances (2028-2029 : ", t_md(f"C{HB['02/2028']}+C{HB['02/2029']}+C{HB['04/2029']}", 2), ") sont hors horizon mais pas hors question."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:G{r}"); ws.row_dimensions[r].height = 58; r += 2
 
 put(ws, f"A{r}", "C", bold=True); put(ws, f"B{r}", "Le plafond selon la définition retenue (scénario actif, fin 2027)", bold=True); r += 1
@@ -762,9 +823,11 @@ put(ws, f"B{r}", "Surcoût d'intérêts annuel, en régime, si les souches 2027 
 put(ws, f"C{r}", f"=F{M['nom2027']}+F{M['nom2028']}", nf=NF_M, bold=True); M["extraInt"] = r; r += 1
 put(ws, f"B{r}", "   en % du FFO 2025 publié par Moody's", color=GREY)
 put(ws, f"C{r}", f"=C{r-1}/{moffo25}", nf=NF_P, color=GREY); put(ws, f"G{r}", id_moffo25, color=GREY); M["extraIntPct"] = r; r += 1
-put(ws, f"B{r}", "Lecture : la dette qui tombe en 2027-2028 porte les coupons des années de taux bas (0 % à 1,6 %, une souche à 4,6 %). "
-    "Refinancée au taux de juin 2025, elle coûte quelques dizaines de millions d'intérêts de plus par an : l'effet passe par le FFO que "
-    "regardent les agences, pas par la dette nette. Le mur lui-même est petit face aux liquidités (§C).", color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : la dette qui tombe en 2027-2028 porte les coupons des années de taux bas (taux facial moyen ",
+    t_pct(f"D{M['nom2027']}", 2), " en 2027, ", t_pct(f"D{M['nom2028']}", 2), " en 2028, contre ", t_pct(f"E{M['nom2027']}", 2),
+    " pour l'émission de juin 2025). Refinancée à ce taux, elle coûte ", t_m(f"C{M['extraInt']}"), " d'intérêts de plus par an (",
+    t_pct(f"C{M['extraIntPct']}", 1), " du FFO 2025) : l'effet passe par le FFO que regardent les agences, pas par la dette nette. "
+    "Le mur lui-même est petit face aux liquidités (§C)."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:L{r}"); ws.row_dimensions[r].height = 44; r += 2
 
 put(ws, f"A{r}", "C", bold=True); put(ws, f"B{r}", "Les liquidités face au mur (note 8.3.2.2, p.421-422)", bold=True); r += 1
@@ -834,9 +897,9 @@ line(ws, r, "netLo", "Rotation nette implicite, bas (tuck-ins bas − cessions)"
 line(ws, r, "netHi", "Rotation nette implicite, haut (tuck-ins haut − cessions)", f"=C{r-3}-C{r-2}", "", "", NF_D2, True,
      store=C); r += 1
 line(ws, r, "netAnn", "Rotation nette annoncée (~)", f"={netrot}", "", i_nr, NF_D2, store=C); r += 1
-put(ws, f"B{r}", "Lecture : les ~0,5 Md€/an annoncés sont la rotation NETTE des cessions ; ils correspondent au haut de "
-    "la fourchette de tuck-ins (1,0 Md€ brut) moins ~0,5 Md€ de cessions. La même convention vaut pour les "
-    "investissements industriels (3,1 Md€ nets).", color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : les ~", t_num(C['netAnn'], 1), "\u202fMd€/an annoncés sont la rotation NETTE des cessions ; ils correspondent au haut "
+    "de la fourchette de tuck-ins (", t_num(C['tHi'], 1), "\u202fMd€ brut) moins ~", t_num(C['dC'], 1), "\u202fMd€ de cessions. La même "
+    "convention vaut pour les investissements industriels (", t_num(C['netcapP'], 1), "\u202fMd€ nets)."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 42; r += 2
 
 put(ws, f"A{r}", "B", bold=True); put(ws, f"B{r}", "Clean Earth face à l'enveloppe", bold=True); r += 1
@@ -855,9 +918,11 @@ line(ws, r, "ceNetYears", "… soit, en années d'enveloppe nette", f"=C{r-1}/{C
      store=C); r += 1
 line(ws, r, "rot8", "Pour mémoire : « plus de 8 Md€ de rotation d'actifs en 4 ans » (brut)", f"={rot8}", "Md EUR", i_rot8,
      NF_D2, store=C); r += 1
-put(ws, f"B{r}", "Lecture : Clean Earth sort de l'enveloppe nette ; c'est le programme de cessions > 2 Md€, lancé en 2026, "
-    "qui le ramène à peu près dedans. Les 8 Md€ sont un chiffre brut (achats + ventes) : à ne pas comparer aux 0,5 Md€ nets.",
-    color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : Clean Earth vaut ", t_num(C['ceYears'], 1), " années d'enveloppe nette : il ",
+    t_if(f"{C['ceYears']}>4", "sort de l'enveloppe sur quatre ans", "tient dans l'enveloppe sur quatre ans"),
+    " ; c'est le programme de cessions de plus de ", t_num(C['prog'], 0), "\u202fMd€, lancé en 2026, qui le ramène à ",
+    t_num(C['ceNetYears'], 1), " années. Les ", t_num(C['rot8'], 0), "\u202fMd€ de rotation sont un chiffre brut (achats + ventes) : "
+    "à ne pas comparer aux ", t_num(C['netAnn'], 1), "\u202fMd€ nets par an."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 42; r += 2
 
 put(ws, f"A{r}", "C", bold=True); put(ws, f"B{r}", "Calendrier du programme (scénario central)", bold=True); r += 1
@@ -906,9 +971,11 @@ line(ws, r, "rot4", "Rotation déjà réalisée selon Veolia (brut, achats + ven
 line(ws, r, "rot85", "Rotation totale prévue avec Clean Earth et le plan de cessions (brut)", f"={rot85}", "", i_r85, NF_D2, store=C); r += 1
 line(ws, r, "pctB", "Part des acquisitions dans les boosters", f"={pctB}/100", "%", i_pb, NF_P, store=C); r += 1
 line(ws, r, "pctX", "Part des acquisitions hors d'Europe", f"={pctX}/100", "%", i_px, NF_P, store=C); r += 1
-put(ws, f"B{r}", "Lecture : la diapositive GreenUp p.44 dit elle-même « net growth investments » : les 4 Md€ sont nets des cessions. "
-    "Les sorties nettes cumulées dépassent déjà cette enveloppe au 30 juin 2026 ; c'est le programme de cessions qui doit les y ramener.",
-    color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : la diapositive GreenUp p.44 dit elle-même « net growth investments » : les ", t_num(C['env4'], 0),
+    "\u202fMd€ sont nets des cessions. Les sorties nettes cumulées (", t_num(C['spentCum'], 2), "\u202fMd€ au 30 juin 2026) ",
+    t_if(f"{C['spentVsEnv']}>0", ["dépassent déjà cette enveloppe de ", t_num(C['spentVsEnv'], 2),
+                                   "\u202fMd€ ; c'est le programme de cessions qui doit les y ramener."],
+         ["restent sous cette enveloppe, de ", t_num(f"-{C['spentVsEnv']}", 2), "\u202fMd€."])), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 42; r += 2
 
 put(ws, f"A{r}", "E", bold=True); put(ws, f"B{r}", "L'univers des cessions : ce que Veolia peut vendre, et à quel rythme elle a vendu", bold=True); r += 1
@@ -979,11 +1046,12 @@ for m in (8, 10, 12):
     put(ws, f"B{r}", f"Cession de 1 000 M EUR à {m}x l'EBITDA")
     put(ws, f"C{r}", f"=1000/{m}", nf=NF_M); put(ws, f"D{r}", f"={HY('cap')}*C{r}", nf=NF_M); put(ws, f"E{r}", f"=1000-D{r}", nf=NF_M, bold=True)
     r += 1
-put(ws, f"B{r}", "Lecture : il y a de quoi vendre — au multiple central, le programme retire moins de 4 % de l'EBITDA des strongholds et "
-    "3 % du chiffre d'affaires du groupe, dans un portefeuille de 17 pays à plus de 500 M€. Le risque n'est pas l'existence des actifs "
-    "mais le rythme : depuis 2022, Veolia a cédé une quinzaine d'activités de taille modeste ; 2 Md€ en deux ans, c'est plusieurs fois le "
-    "rythme passé. C'est pour cela que s26 et s27 sont les hypothèses qui comptent, et que la question du calendrier est posée le 16 octobre.",
-    color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : il y a de quoi vendre — au multiple central, le programme retire ", t_pct(C['progShareSh'], 1),
+    " de l'EBITDA des strongholds et ", t_pct(C['progRevPct'], 1), " du chiffre d'affaires du groupe, dans un portefeuille de ",
+    Fx(f'COUNTIF(C{E1}:C{E1 + 16},">=500")'), " pays à plus de 500 M€. Le risque n'est pas l'existence des actifs mais le rythme : "
+    "depuis 2022, Veolia a cédé ", t_num(C['soldN'], 0), " activités de ", t_m(C['soldAvg']), " en moyenne ; ", t_md(C['progM'], 0),
+    " en deux ans, c'est ", t_num(f"{C['needYears']}/2", 1), " fois le rythme passé. C'est pour cela que s26 et s27 sont les "
+    "hypothèses qui comptent, et que la question du calendrier est posée le 16 octobre."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 58; r += 1
 widths(ws, {"A": 4, "B": 60, "C": 16, "D": 14, "E": 50})
 
@@ -1072,7 +1140,7 @@ for _sh in ("Levier", "Échéancier"):
     for row in sheets[_sh].iter_rows():
         for cell in row:
             if isinstance(cell.value, str) and "$D$" in cell.value:
-                for _key in ("NFD27", "EB27", "FCF27", "ADJ27"):
+                for _key in ("NFD27", "EB27", "FCF27", "ADJ27", "HEADSP26", "RATIO26", "NFD26", "EB26"):
                     cell.value = cell.value.replace(f"$D${_key}", f"$D${ROW[_key]}")
 widths(ws, {"A": 8, "B": 54, "C": 9, **{c: 11 for c, *_ in cols}})
 ws.column_dimensions[UNFAV].width = 13
@@ -1199,9 +1267,10 @@ for key, lab, f_eff, unit, f_marge, how, i in (
         put(ws, f"E{r}", f_marge.replace("{r}", str(r)), nf=NF_M, bold=True)
     put(ws, f"F{r}", f"{how} — {i}", color=GREY)
     MA[key] = f"{q('Sensibilité')}!$E${r}"; r += 1
-put(ws, f"B{r}", "Lecture : aucune de ces entrées ne déplace la marge autant que les cessions ou l'efficacité, mais elles s'additionnent : une "
-    "année d'énergie comme le S1 2026 (−120 M€ d'EBITDA) coûte 360 M€ de marge, un dollar 10 % plus fort 245 M€ de dette. Le DEU ne "
-    "donne pas d'élasticité de l'EBITDA au prix de l'énergie : c'est l'effet réalisé qui sert de borne.", color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : aucune de ces entrées ne déplace la marge autant que les cessions ou l'efficacité, mais elles s'additionnent : "
+    "une année d'énergie comme le S1 2026 (", t_m(f"2*{MA['energyH1'].replace('$E$', '$C$')}"), " d'EBITDA) coûte ",
+    t_m(f"-{MA['energyH1']}"), " de marge, un dollar 10 % plus fort ", t_m(f"-{MA['usd10']}"), " de dette. Le DEU ne donne pas "
+    "d'élasticité de l'EBITDA au prix de l'énergie : c'est l'effet réalisé qui sert de borne."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:F{r}"); ws.row_dimensions[r].height = 44; r += 1
 widths(ws, {"A": 7, "B": 50, "C": 12, "D": 12, "E": 12, "F": 12, "G": 10, "H": 10, "I": 11, "J": 11, "K": 11, "L": 11,
             "M": 13, "N": 13, "O": 12})
@@ -1496,10 +1565,12 @@ line(ws, r, "mix3", "Marge sous 3x après la cible et la combinaison", f"={FN['h
 line(ws, r, "mixS", "Marge sous le seuil S&P après la cible et la combinaison", f"={FN['hSp']}+SUM(E{C0}:E{C1})", "M EUR", "", NF_M, True, store=FN); r += 1
 put(ws, f"B{r}", "Les deux plafonds tiennent ?", bold=True)
 put(ws, f"C{r}", f'=IF(AND({FN["mix3"]}>=0,{FN["mixS"]}>=0),"oui","non")', bold=True, align="center"); FN["mixOk"] = f"$C${r}"; r += 2
-put(ws, f"B{r}", "Lecture : avec le multiple de Clean Earth, une cible de 3 Md€ fin 2027 manque de marge sous 3x ; la combler par des hybrides coûte un "
-    "coupon de l'ordre de 4 %, par des cessions coûte un EBITDA récurrent, par du capital une dilution. La ligne de partage n'est pas "
-    "technique : c'est le prix que Veolia accepte de payer pour la taille. Les agences, elles, ne retiennent qu'à moitié les hybrides.",
-    color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : au multiple de ", t_x(FN['m']), ", une cible de ", t_md(FN['S'], 0), " fin 2027 ",
+    t_if(f"{FN['g3']}>0", ["manque ", t_m(FN['g3']), " de marge sous 3x ; la combler par des hybrides coûte un coupon de ",
+                           t_pct(f"{new_cpn}/100", 1), ", par des cessions un EBITDA récurrent, par du capital une dilution."],
+         "tient sous 3x sans financement."),
+    " La ligne de partage n'est pas technique : c'est le prix que Veolia accepte de payer pour la taille. Les agences, elles, "
+    "ne retiennent qu'à moitié les hybrides."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:H{r}"); ws.row_dimensions[r].height = 44; r += 2
 
 put(ws, f"A{r}", "D", bold=True); put(ws, f"B{r}", "Seuils de bascule : la valeur de chaque hypothèse (seule à bouger) qui renverse chaque conclusion", bold=True); r += 1
@@ -1527,7 +1598,6 @@ for code in VARIED:
     put(ws, f"C{r}", f"={HY(code, 'C')}", color=GREEN, nf=nf)
     hl, hh = f"{TJ}!{lo_col}{IN[code]}", f"{TJ}!{hi_col}{IN[code]}"
     unit = sheets["Hypothèses"][f"F{hrow}"].value
-    tfmt = {"%": "0.0%", "x": '0.0""x""', "Md EUR": "0.00"}.get(unit, "#,##0")   # guillemets doublés : on est dans une formule
     xl, xh = (f"(1/{hl})", f"(1/{hh})") if code in INV else (hl, hh)
     for k, (cid, lab, metric) in enumerate(CONCL):
         col = L(4 + k)
@@ -1536,8 +1606,7 @@ for code in VARIED:
         value = f"1/{star}" if code in INV else star
         num_col = L(11 + k)
         put(ws, f"{num_col}{r}", f'=IF(ABS(({mh})-({ml}))<1E-9,"",{value})', color=GREY, nf='0.0000')
-        # à la française : espace fine pour les milliers, virgule décimale, vrai signe moins
-        shown = f'SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(TEXT({num_col}{r},"{tfmt}"),",","\u202f"),".",","),"-","−")'
+        shown = {"%": t_pct, "x": t_x}.get(unit, lambda e: t_num(e, 2 if unit == "Md EUR" else 0))(f"{num_col}{r}")
         put(ws, f"{col}{r}", f'=IF({num_col}{r}="","sans effet",IF(AND(({ml})>=0,({mh})>=0),"tient partout (seuil "&{shown}&")",'
                               f'IF(AND(({ml})<0,({mh})<0),"faux partout (il faudrait "&{shown}&")","bascule à "&{shown})))')
     put(ws, f"I{r}", "inverse du multiple" if code in INV else "", color=GREY)
@@ -1656,9 +1725,12 @@ put(ws, f"B{r}", "EBITDA 2027 « au rythme de 2025 »", bold=True); put(ws, f"E{
 SG["eb27seg"] = f"{q('Segments')}!$E${r}"; r += 1
 put(ws, f"B{r}", "Objectif GreenUp ≥"); put(ws, f"E{r}", f"={tgt8}*1000", color=GREEN, nf=NF_M); r += 1
 put(ws, f"B{r}", "EBITDA 2027 du modèle (Trajectoire, central)"); put(ws, f"E{r}", f"={T['EB27']}", color=GREEN, nf=NF_M); r += 1
-put(ws, f"B{r}", "Lecture : les Amériques (+9 %) et Water Technologies (+14 %) portent la croissance ; l'Europe (+2 %) et la France-DD "
-    "(+6 %) non. Prolonger 2025 deux ans mène près de l'objectif, avant cessions : c'est ce qui fonde l'hypothèse g27 du modèle.",
-    color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : les Amériques (", t_pct(f"D{C0 + 1}", 0), ") et Water Technologies (", t_pct(f"D{C0}", 0),
+    ") portent la croissance organique ; l'Europe (", t_pct(f"D{C0 + 2}", 0), ") et la France-DD (", t_pct(f"D{C0 + 3}", 0),
+    ", croissance publiée) moins. Prolonger 2025 deux ans mène ",
+    t_if(f"ABS({SG['eb27seg']}/({tgt8}*1000)-1)<0.03", "près de", t_if(f"{SG['eb27seg']}>{tgt8}*1000", "au-delà de", "en deçà de")),
+    " l'objectif (", t_md(SG['eb27seg'], 2), " contre ", t_num(tgt8, 0), "\u202fMd€), avant cessions : c'est ce qui fonde "
+    "l'hypothèse g27 du modèle."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:L{r}"); ws.row_dimensions[r].height = 30; r += 2
 
 put(ws, f"A{r}", "D", bold=True); put(ws, f"B{r}", "Les KPI environnementaux de GreenUp face à 2027", bold=True); r += 1
@@ -1681,8 +1753,10 @@ put(ws, f"B{r}", "Eau douce économisée, Md m³"); put(ws, f"D{r}", f"={w24}", 
 put(ws, f"F{r}", f"={wt}", color=GREEN, nf='0.000'); put(ws, f"G{r}", f"=F{r}-E{r}", nf='0.000'); put(ws, f"L{r}", f"{i_w24}, {i_w25}, {i_wt} — déjà dépassé", color=GREY); r += 1
 put(ws, f"B{r}", "Déchets dangereux traités, kt"); put(ws, f"D{r}", f"={hw24}", color=GREEN, nf=NF_M); put(ws, f"E{r}", f"={hw25}", color=GREEN, nf=NF_M)
 put(ws, f"F{r}", f"={hwt}*1000", color=GREEN, nf=NF_M); put(ws, f"G{r}", f"=F{r}-E{r}", nf=NF_M); put(ws, f"L{r}", f"{i_hw24}, {i_hw25}, {i_hwt} — déjà atteint", color=GREY); r += 1
-put(ws, f"B{r}", "Lecture : deux KPI sur trois sont déjà atteints ; seul le CO2 évité reste en chemin (16,6 → 17,5-18 Mt). "
-    "Pour le périmètre capacité, la question 1 se réduit à l'EBITDA.", color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : ", Fx(f"(G{r - 4}<=0)+(G{r - 2}<=0)+(G{r - 1}<=0)"), " KPI sur trois sont déjà atteints ; ",
+    t_if(f"G{r - 4}>0", ["le CO2 évité reste en chemin (", t_num(f"E{r - 4}", 1), " → ", t_num(f"F{r - 4}", 1), "-",
+                         t_num(f"F{r - 3}", 0), "\u202fMt)."], "le CO2 évité aussi."),
+    " Pour le périmètre capacité, la question 1 se réduit à l'EBITDA."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:L{r}"); ws.row_dimensions[r].height = 30; r += 1
 widths(ws, {"A": 4, "B": 58, "C": 11, "D": 11, "E": 11, "F": 11, "G": 10, "H": 12, "I": 13, "J": 11, "K": 11, "L": 46})
 
@@ -1711,9 +1785,9 @@ line(ws, r, "effShare", "Part de l'écart couverte par la seule efficacité", f"
 line(ws, r, "syn2425", "Synergies de coûts Suez attendues en 2024-2025, environ", f"={gu_syn}", "M EUR", i_gusyn, store=PB); r += 1
 line(ws, r, "syncum", "Synergies Suez cumulées 2022-2025 confirmées par le plan", f"={gu_syncum}", "M EUR", f"{i_gusyncum} ; réalisé 2025 : voir §B", store=PB); r += 1
 line(ws, r, "effSynShare", "Efficacité × 4 + synergies 2024-2025, en part de l'écart", f"=({PB['eff4']}+{PB['syn2425']})/{PB['gap']}", "%", "", NF_P, True, store=PB); r += 1
-put(ws, f"B{r}", "Lecture : GreenUp est d'abord un plan de coûts. L'efficacité promise (350 M€ par an) couvre à elle seule l'essentiel des 1,5 Md€ "
-    "entre 2023 et 2027 ; la croissance du chiffre d'affaires et les boosters apportent le reste. Un plan de coûts se vérifie année par année (§B).",
-    color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : GreenUp est d'abord un plan de coûts. L'efficacité promise (", t_m(PB['eff']), " par an) couvre à elle seule ",
+    t_pct(PB['effShare'], 0), " des ", t_md(PB['gap']), " d'écart entre 2023 et 2027 ; la croissance du chiffre d'affaires et les "
+    "boosters apportent le reste. Un plan de coûts se vérifie année par année (§B)."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 44; r += 2
 
 put(ws, f"A{r}", "B", bold=True); put(ws, f"B{r}", "Ce que 2024 et 2025 ont livré (présentations des résultats)", bold=True); r += 1
@@ -1759,10 +1833,13 @@ put(ws, f"B{r}", "Contre-épreuve par les familles d'activités (présentation 2
 two("shOrg", "Strongholds : EBITDA × croissance organique", f"={sh_eb}*{sh_g}/100", None, f"{i_sheb} × {i_shg}")
 two("boOrg", "Boosters : EBITDA × croissance organique", f"={bo_eb}*{bo_g}/100", None, f"{i_boeb} × {i_bog}")
 two("famOrg", "Somme des deux familles (sur les EBITDA 2025, approximation)", f"=C{r-2}+C{r-1}", None, "à comparer à la croissance organique du groupe en M EUR", NF_M, True)
-put(ws, f"B{r}", "Lecture : en 2025, les gains d'efficacité (399 M€) pèsent à peu près autant que toute la croissance organique de l'EBITDA ; "
-    "avec les synergies Suez, ils la dépassent. Hors ces deux programmes, l'EBITDA organique ne progresse pas : volumes, prix et énergie "
-    "absorbent l'inflation des coûts, pas plus. La capacité d'acquisition de 2027 repose donc sur un programme de coûts qui doit être "
-    "livré deux années de plus (§D).", color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : en 2025, les gains d'efficacité (", t_m(PB['effY']), ") représentent ", t_pct(PB['effShareY'], 0),
+    " de la croissance organique de l'EBITDA ; avec les synergies Suez, ils ",
+    t_if(f"{PB['effSynY']}>{PB['orgM']}", "la dépassent", "n'en couvrent qu'une partie"),
+    ". Hors ces deux programmes, l'EBITDA organique ",
+    t_if(f"{PB['rest']}<0", ["recule d'environ ", t_m(f"-{PB['rest']}")], ["progresse d'environ ", t_m(PB['rest'])]),
+    " : volumes, prix et énergie absorbent l'inflation des coûts. La capacité d'acquisition de 2027 repose donc sur un programme "
+    "de coûts qui doit être livré deux années de plus (§D)."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 58; r += 2
 
 put(ws, f"A{r}", "C", bold=True); put(ws, f"B{r}", "Le pont du modèle 2025 → 2027, marche par marche (Trajectoire)", bold=True); r += 1
@@ -1852,9 +1929,11 @@ for k in (0, 0.25, 0.5, 0.75, 1):
     if k == 0:
         PB["head27k0"] = f"{q('Pont EBITDA')}!$E${r}"
     r += 1
-put(ws, f"B{r}", "Lecture : chaque euro d'efficacité non livré coûte trois euros de capacité d'endettement (plafond × EBITDA) et ne rapporte rien "
-    "en cash-flow en face. Sans efficacité en 2026-2027, la marge sous 3x disparaît : la question à poser à Veolia le 16 octobre est "
-    "moins « combien achèterez-vous ? » que « les 350 M€ d'efficacité par an sont-ils sécurisés ? ».", color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : chaque euro d'efficacité non livré coûte ", t_num(HY('cap'), 0), " euros de capacité d'endettement "
+    "(plafond × EBITDA) et ne rapporte rien en cash-flow en face. Sans efficacité en 2026-2027, la marge sous 3x ",
+    t_if(f"{PB['head27k0']}<0", ["disparaît (", t_m(PB['head27k0']), ")"], ["tombe à ", t_m(PB['head27k0'])]),
+    " : la question à poser à Veolia le 16 octobre est moins « combien achèterez-vous ? » que « les ", t_m(PB['effPlan']),
+    " d'efficacité par an sont-ils sécurisés ? »."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:F{r}"); ws.row_dimensions[r].height = 44; r += 1
 r += 1
 put(ws, f"A{r}", "E", bold=True); put(ws, f"B{r}", "Veolia tient-elle ses plans ? Objectifs annoncés et réalisés (Impact 2023, guidance 2025)", bold=True); r += 1
@@ -1883,10 +1962,10 @@ for lab, v_pre, v_per, r_pre, r_per, kind, scale in (
 C1 = r - 1
 line(ws, r, "credHit", "Objectifs tenus (sur ceux du tableau)", f'=COUNTIF(E{C0}:E{C1},"oui")&" / "&COUNTA(E{C0}:E{C1})', "", "", None, True, store=CR); ws[f"C{r}"].alignment = Alignment(horizontal="right"); r += 1
 line(ws, r, "credFin", "Objectifs financiers tenus", f'=COUNTIF(E{C0}:E{C0+2},"oui")+COUNTIF(E{C0+6}:E{C1},"oui")&" / "&(COUNTA(E{C0}:E{C0+2})+COUNTA(E{C0+6}:E{C1}))', "", "EBITDA, résultat net, CA déchets dangereux, guidance 2025", None, True, store=CR); ws[f"C{r}"].alignment = Alignment(horizontal="right"); r += 1
-put(ws, f"B{r}", "Lecture : sur les objectifs financiers, Veolia a tenu tout ce qu'elle a annoncé depuis 2020 (Impact 2023 dépassé, guidance 2025 dépassée) ; "
-    "les objectifs manqués sont non financiers (plastiques, mixité). Cela fonde le poids du scénario central sur le favorable pour la "
-    "guidance 2026 — et n'enlève rien à la fragilité propre à l'efficacité (§D) : un plan tenu cinq ans de suite n'est pas tenu la sixième par décret.",
-    color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : sur les objectifs financiers annoncés depuis 2020 (Impact 2023, guidance 2025), Veolia en a tenu ",
+    Fx(CR['credFin']), " (", Fx(CR['credHit']), " tous objectifs confondus) ; les objectifs manqués sont non financiers (plastiques, mixité). "
+    "Cela fonde le poids du scénario central sur le favorable pour la guidance 2026 — et n'enlève rien à la fragilité propre à "
+    "l'efficacité (§D) : un plan tenu cinq ans de suite n'est pas tenu la sixième par décret."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:F{r}"); ws.row_dimensions[r].height = 44; r += 1
 widths(ws, {"A": 4, "B": 76, "C": 15, "D": 15, "E": 15, "F": 30})
 ws.freeze_panes = "C4"
@@ -1914,8 +1993,9 @@ line(ws, r, "gap0", "Écart à l'objectif initial", f"=C{r-5}-C{r-2}", "kt", "",
 line(ws, r, None, "Capacité en construction (5 usines)", f"={c430}", "kt", i_430, store=B); r += 1
 line(ws, r, None, "Écart à l'objectif initial, capacité nouvelle comprise", f"=C{r-2}+C{r-1}", "kt", "", NF_M, store=B)
 r += 1
-put(ws, f"B{r}", "Lecture : l'objectif de volume a été ramené de 10 Mt à 9 Mt, et le périmètre a changé (« et polluants » a "
-    "disparu). À expliquer à l'oral avant toute comparaison.", color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : l'objectif de volume a été ", t_if(f"{B['tgt']}<{B['tgt0']}", "ramené", "porté"), " de ",
+    t_num(f"{B['tgt0']}/1000", 0), "\u202fMt à ", t_num(f"{B['tgt']}/1000", 0), "\u202fMt, et le périmètre a changé (« et polluants » "
+    "a disparu). À expliquer à l'oral avant toute comparaison."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 30; r += 2
 
 put(ws, f"A{r}", "B", bold=True); put(ws, f"B{r}", "Profil financier et ambition", bold=True); r += 1
@@ -1953,8 +2033,10 @@ line(ws, r, None, "EBITDA France et DD Europe, S1 2026 / S1 2025 (publié)", f"=
      NF_P, store=B); r += 1
 line(ws, r, None, "EBITDA Amériques-Asie-Afrique, S1 2026 / S1 2025 (publié)", f"={am26}/{am25}-1", "%",
      f"{i_am25}, {i_am26}", NF_P, store=B); r += 1
-put(ws, f"B{r}", "Lecture : en Europe le booster est à l'arrêt en organique (−0,2 %). Les +10 %/an reposent sur Clean Earth "
-    "et les États-Unis : c'est de la croissance achetée.", color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : en Europe le booster est ",
+    t_if(f"ABS({B['euG']})<0.01", "à l'arrêt", t_if(f"{B['euG']}>0", "en croissance", "en recul")), " en organique (",
+    t_pct(B['euG'], 1), "). L'ambition de ", t_pct(B['cagr'], 0), " par an repose sur Clean Earth et les États-Unis : c'est de la "
+    "croissance achetée."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 30; r += 2
 
 put(ws, f"A{r}", "D", bold=True); put(ws, f"B{r}", "Comparables — cadre à remplir (phase D, sources à verser dans la dataroom)",
@@ -2014,8 +2096,9 @@ line(ws, r, "mRec", "Multiple sur l'EBITDA 2025 reconstitué (VE / EBITDA)", f"=
 line(ws, r, None, "Pour mémoire : multiple publié par Veolia après synergies", f"={ce_mult}", "x", id_cemult, '0.0"x"', store=B); r += 1
 line(ws, r, None, "Actifs totaux du segment", f"={E('Enviri : actifs totaux du segment Clean Earth', '31/12/2025')[0]}/1000", "M USD",
      E("Enviri : actifs totaux du segment Clean Earth", "31/12/2025")[1], NF_M1, store=B); r += 1
-put(ws, f"B{r}", "Lecture : sur l'EBITDA que le vendeur publie, le prix ressort à près de 20x ; le 9,8x de Veolia repose sur un EBITDA "
-    "2026E un tiers plus haut, plus 120 M$ de synergies. C'est le pont à faire expliquer le 16 octobre.", color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : sur l'EBITDA que le vendeur publie, le prix ressort à ", t_x(B['mRec']), " ; le ", t_x(ce_mult),
+    " de Veolia repose sur un EBITDA 2026E ", t_pct(B['ceEbGap'], 0), " plus haut, plus ", t_m(syn_rr, 0, "M$"),
+    " de synergies. C'est le pont à faire expliquer le 16 octobre."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 30; r += 1
 put(ws, f"B{r}", "Cellules jaunes à remplir uniquement depuis un document versé dans la dataroom (fichier + page).",
     color=GREY, italic=True)
@@ -2090,9 +2173,9 @@ put(ws, f"E{r}", "cellule à remplir : laisser vide tant qu'aucun document ne le
 G["ceLiab"] = r; r += 1
 line(ws, r, None, "Effet sur le levier 2027 s'ils étaient traités comme de la dette",
      f"=IF(ISNUMBER(C{r-1}),C{r-1}/{T['EB27']},0)", "x", "passifs / EBITDA 2027 central", NF_D2, True, store=G); r += 1
-put(ws, f"B{r}", "Lecture : 81 % du prix est encore du goodwill. Tant que l'affectation n'est pas faite (au plus tard "
-    "aux comptes 2026), la juste valeur des passifs environnementaux de Clean Earth n'est pas visible chez Veolia. "
-    "C'est l'angle mort du rôle 5.", color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : ", t_pct(G['gwPct'], 0), " du prix est encore du goodwill. Tant que l'affectation n'est pas faite "
+    "(au plus tard aux comptes 2026), la juste valeur des passifs environnementaux de Clean Earth n'est pas visible chez Veolia. "
+    "C'est l'angle mort du rôle 5."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:F{r}"); ws.row_dimensions[r].height = 44; r += 1
 widths(ws, {"A": 4, "B": 62, "C": 12, "D": 12, "E": 12, "F": 40, "G": 11})
 
@@ -2153,10 +2236,12 @@ line(ws, r, "cxAligned24", "Capex aligné 2024, pour mémoire (total 2024 : 4,1 
 line(ws, r, "hwShare", "Déchets dangereux (PPC) : part du capex aligné du groupe", f"=F{TX['hw']}/F{TX['pub']}", "%", "", NF_P, True, store=TX); r += 1
 line(ws, r, "hwAlignRate", "Déchets dangereux (PPC) : capex aligné / éligible", f"=G{TX['hw']}", "%", "", NF_P, True, store=TX); r += 1
 line(ws, r, "nonEligible", "Capex non éligible (hors taxonomie)", f"=C{TX['cxTot'].split('$')[-1]}-E{TX['pub']}", "M EUR", "total − éligible", NF_M, store=TX); r += 1
-put(ws, f"B{r}", "Lecture : près de la moitié du capex du groupe est « vert » au sens de la taxonomie, et l'eau en porte la plus grande part. "
-    "Les déchets dangereux sont une petite ligne (0,3 Md€ alignés) mais la mieux alignée de toutes. Ce que la taxonomie ne dit pas, et que la "
-    "question 3 du cours demande : l'impact par euro (tonnes traitées, CO2 évité, m³ économisés par M€ investi). Veolia publie ses KPI au "
-    "niveau du groupe, pas par booster : c'est une question pour le 16 octobre, pas un calcul.", color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : ", t_pct(TX['cxAlignedShare'], 0), " du capex du groupe est « vert » au sens de la taxonomie, et l'eau en "
+    "porte la plus grande part. Les déchets dangereux sont une petite ligne (", t_md(f"F{TX['hw']}", 1), " alignés) mais ",
+    t_if(f"G{TX['hw']}>=MAX(G{T0}:G{T1})", "la mieux alignée de toutes", ["alignée à ", t_pct(f"G{TX['hw']}", 0)]),
+    ". Ce que la taxonomie ne dit pas, et que la question 3 du cours demande : l'impact par euro (tonnes traitées, CO2 évité, m³ "
+    "économisés par M€ investi). Veolia publie ses KPI au niveau du groupe, pas par booster : c'est une question pour le 16 octobre, "
+    "pas un calcul."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:I{r}"); ws.row_dimensions[r].height = 58; r += 1
 widths(ws, {"C": 14, "D": 16, "E": 14, "F": 16, "G": 14, "H": 16, "I": 40})
 
@@ -2218,9 +2303,10 @@ line(ws, r, "mMin", "Le moins cher payé (après synergies, tel que publié)", f
 line(ws, r, "mMed", "Médiane des quatre multiples publiés", f"=MEDIAN(C{M0}:C{M0+3})", "x", "", '0.0"x"', store=K); r += 1
 line(ws, r, "mMax", "Le plus cher payé (après synergies, tel que publié)", f"=MAX(C{M0}:C{M0+3})", "x", "max des quatre", '0.0"x"', True, store=K); r += 1
 line(ws, r, "mSpread", "Écart avant / après synergies sur Clean Earth (recalculé)", f"=C{M0+4}-C{M0+2}", "x", "ce que les synergies « achètent » de multiple", '0.0"x"', store=K); r += 1
-put(ws, f"B{r}", "Lecture : Veolia publie ses multiples après synergies, entre 7x et 11x ; l'hypothèse mTuck (Hypothèses) est bornée par "
-    "ces deux points, Clean Earth au centre. Avant synergies, le même Clean Earth coûte près de deux fois plus : c'est la base qu'il faut "
-    "préciser à chaque comparaison — et la question à poser pour toute cible.", color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : Veolia publie ses multiples après synergies, entre ", t_x(K['mMin']), " et ", t_x(K['mMax']),
+    " ; l'hypothèse mTuck (Hypothèses) est bornée par ces deux points, Clean Earth au centre. Avant synergies, le même Clean Earth "
+    "coûte ", t_num(f"{K['mPre']}/{K['mPub']}", 1), " fois plus : c'est la base qu'il faut préciser à chaque comparaison — et la "
+    "question à poser pour toute cible."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:F{r}"); ws.row_dimensions[r].height = 44; r += 2
 
 put(ws, f"A{r}", "E", bold=True); put(ws, f"B{r}", "Les multiples du secteur (communiqués des acquéreurs, versés dans la dataroom)", bold=True); r += 1
@@ -2272,17 +2358,12 @@ line(ws, r, "secMed", "Secteur : médiane des multiples avant synergies", f"=MED
 line(ws, r, "secPostMin", "Secteur : multiple publié après synergies, le plus bas", f"=MIN(F{S0}:F{S1})", "x", "", '0.0"x"', store=K); r += 1
 line(ws, r, "secPostMax", "Secteur : multiple publié après synergies, le plus haut", f"=MAX(F{S0}:F{S1})", "x", "", '0.0"x"', store=K); r += 1
 line(ws, r, "ceVsSec", "Clean Earth avant synergies (recalculé) face au haut du secteur", f"={K['mPre']}-{K['secMax']}", "x", "positif = Veolia a payé plus que le plus cher du secteur, avant synergies", '0.0"x"', True, store=K); r += 1
-def _x1(ref):
-    return f'SUBSTITUTE(TEXT({ref},"0.0"),".",",")&"x"'
-_k = {k: K[k] for k in ("secMin", "secMax", "secPostMin", "secPostMax", "mPre", "ceVsSec", "mPub")}
-_lect = ('="Lecture : avant synergies, le secteur paie de "&' + _x1(_k["secMin"]) + '&" à "&' + _x1(_k["secMax"])
-         + f'&" (le plus cher : "&INDEX(B{S0}:B{S1},MATCH({_k["secMax"]},E{S0}:E{S1},0))&") ; après synergies, les acquéreurs publient "&'
-         + _x1(_k["secPostMin"]) + '&" à "&' + _x1(_k["secPostMax"]) + '&". Clean Earth, "&' + _x1(_k["mPre"])
-         + '&" avant synergies sur l\'EBITDA 2026E de Veolia, "&'
-         + f'IF({_k["ceVsSec"]}>0,"est au-dessus de tout ce que le secteur a payé","reste sous le plus cher du secteur, de "&' + _x1("-" + _k["ceVsSec"]) + ')'
-         + '&" ; à "&' + _x1(_k["mPub"]) + '&" après synergies, il est dans la norme. Une petite cible se paie cher avant synergies : '
-         'ce sont les synergies qui ramènent le prix sous 10x. Stericycle n\'a pas d\'EBITDA publié dans son communiqué."')
-put(ws, f"B{r}", _lect, color=GREY, italic=True, wrap=True)
+put(ws, f"B{r}", lecture("Lecture : avant synergies, le secteur paie de ", t_x(K['secMin']), " à ", t_x(K['secMax']), " (le plus cher : ",
+    Fx(f"INDEX(B{S0}:B{S1},MATCH({K['secMax']},E{S0}:E{S1},0))"), ") ; après synergies, les acquéreurs publient ", t_x(K['secPostMin']),
+    " à ", t_x(K['secPostMax']), ". Clean Earth, ", t_x(K['mPre']), " avant synergies sur l'EBITDA 2026E de Veolia, ",
+    t_if(f"{K['ceVsSec']}>0", "est au-dessus de tout ce que le secteur a payé", ["reste sous le plus cher du secteur, de ", t_x(f"-{K['ceVsSec']}")]),
+    " ; à ", t_x(K['mPub']), " après synergies, il est dans la norme. Une petite cible se paie cher avant synergies : ce sont les "
+    "synergies qui ramènent le prix sous 10x. Stericycle n'a pas d'EBITDA publié dans son communiqué."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:H{r}"); ws.row_dimensions[r].height = 58; r += 2
 
 put(ws, f"A{r}", "C", bold=True); put(ws, f"B{r}", "L'univers de cibles, noté (00_Admin/targets.csv : une ligne par cible, sourcée)", bold=True); r += 1
