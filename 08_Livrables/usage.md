@@ -1,11 +1,12 @@
 # Usage de la dataroom — membre par membre
 
-Relevé le 06/10/2026 20:05 depuis le journal des requêtes du serveur et les registres. 823 appel(s) en tout. Une identité partagée (`dataroom-bearer`) ne désigne personne : c'est le token commun, utilisé avant les tokens personnels.
+Relevé le 06/10/2026 20:07 depuis le journal des requêtes du serveur et les registres. 824 appel(s) en tout. Une identité partagée (`dataroom-bearer`) ne désigne personne : c'est le token commun, utilisé avant les tokens personnels.
 
 | Membre | Appels | Recherches | Pages lues | Écritures | Relectures | Chiffres ajoutés | Lignes relues | Jours actifs | Premier | Dernier |
 |---|---|---|---|---|---|---|---|---|---|---|
 | `dataroom-bearer` (partagé) | 821 | 99 | 46 | 676 | 0 | 631 | 0 | 5 | 2026-09-22 | 2026-10-06 |
 | ethan | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 1 | 2026-10-06 | 2026-10-06 |
+| promo-eau (autre groupe, lecture) | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 2026-10-06 | 2026-10-06 |
 
 ## Par outil
 
@@ -34,5 +35,6 @@ Relevé le 06/10/2026 20:05 depuis le journal des requêtes du serveur et les re
 | `find_figures` | 1 |
 | `suggest_figures` | 1 |
 | `cite` | 1 |
+| `capacite` | 1 |
 
 « Chiffres ajoutés » et « Lignes relues » viennent des registres (`added_by`, `checked_by`), pas du journal : ce sont les lignes qui ont survécu à l'application de la boîte de réception.

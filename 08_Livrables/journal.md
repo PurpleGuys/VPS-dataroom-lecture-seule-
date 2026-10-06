@@ -1,12 +1,13 @@
 # Journal du groupe
 
-5 jour(s) d'activité, 1 membre(s) identifié(s) ; le compte partagé n'est attribuable à personne.
+5 jour(s) d'activité, 2 membre(s) identifié(s) ; le compte partagé n'est attribuable à personne.
 Généré depuis le journal des requêtes du serveur et les registres ; rien n'est saisi à la main.
 
 ## 2026-10-06
 
 - **compte partagé (dataroom-bearer)** : 374 chiffre(s) ajouté(s) (F244, F245, F246, F247, F248, F249, F250, F251…); 4 deal(s) (D27, D28, D29, D30); 5 document(s) versé(s); 5 recherche(s), 14 page(s) lue(s).
 - **ethan** : 2 recherche(s), 0 page(s) lue(s).
+- **promo-eau** : 1 appel(s).
 
 ## 2026-10-02
 
