@@ -7,9 +7,10 @@ generated: true
 
 # Financier
 
-Rubrique de [[Targets/Veolia|Veolia]] — 54 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 55 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
+- [[01_Financial/bce-taux-eur-cad-2026-10-06.html.md|ECB euro reference exchange rate: Canadian dollar (CAD)]]
 - [[01_Financial/clean-harbors-10-k-2025.pdf.md|Clean Harbors, Inc. — Form 10-K, fiscal year ended December 31, 2025]]
 - [[01_Financial/credit_opinion-veolia-environnement-sa-04may2026.pdf.md|Moody's Credit Opinion - Veolia Environnement SA - May 2026]]
 - [[01_Financial/credit_opinion_moodys_veolia-environnement-sa_22apr2025.pdf.md|Moody's Credit Opinion - Veolia Environnement SA - April 2025]]
