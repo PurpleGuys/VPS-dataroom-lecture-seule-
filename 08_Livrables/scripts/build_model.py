@@ -537,6 +537,33 @@ put(ws, f"B{r}", "Lecture : à notation égale (Baa1), Veolia est au niveau d'AC
     color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:H{r}"); ws.row_dimensions[r].height = 44; r += 2
 
+put(ws, f"A{r}", "B7", bold=True); put(ws, f"B{r}", "Les hybrides : calendrier des premières dates de réinitialisation (DEU 2025 p.429) et ce qu'un rappel change", bold=True); r += 1
+header(ws, r, ["", "Tranche", "Nominal (M EUR)", "Coupon jusqu'à la réinitialisation", "Première réinitialisation", "Coupon annuel (M EUR)", "Réf."]); r += 1
+HB = {}
+H0 = r
+for tranche, reset in (("septembre 2019", "09/2026"), ("novembre 2021", "02/2028"), ("novembre 2023", "02/2029"),
+                       ("octobre 2020, tranche résiduelle", "04/2029"), ("mai 2025 (hybride vert)", "08/2030"), ("septembre 2025", "01/2033")):
+    a, i = E(f"Hybride {tranche} : nominal", "31/12/2025")
+    cp, i_cp = E(f"Hybride {tranche} : coupon", "31/12/2025")
+    put(ws, f"B{r}", f"Hybride {tranche}"); put(ws, f"C{r}", f"={a}", color=GREEN, nf=NF_M); put(ws, f"D{r}", f"={cp}/100", color=GREEN, nf='0.000%')
+    put(ws, f"E{r}", reset, align="center"); put(ws, f"F{r}", f"=C{r}*D{r}", nf=NF_M); put(ws, f"G{r}", f"{i}, {i_cp}", color=GREY)
+    HB[reset] = r; r += 1
+H1 = r - 1
+hyb_tot, i_hybtot = E("Hybrides : encours hors coupons", "31/12/2025")
+line(ws, r, "hybSum", "Somme des tranches", f"=SUM(C{H0}:C{H1})", "M EUR", "", NF_M, True); put(ws, f"F{r}", f"=SUM(F{H0}:F{H1})", nf=NF_M, bold=True); HB["sum"] = r; r += 1
+line(ws, r, "hybPub", "Encours publié hors coupons", f"={hyb_tot}*1000", "M EUR", i_hybtot); HB["pub"] = r; r += 1
+line(ws, r, "hybAvgCpn", "Coupon moyen pondéré", f"=F{HB['sum']}/C{HB['sum']}", "%", "coupons / nominal", '0.00%'); r += 1
+line(ws, r, "hybBefore28", "Tranches dont la première réinitialisation tombe avant fin 2027", f"=C{HB['09/2026']}", "M EUR", "septembre 2026 : 500 M€ à 1,625 %", NF_M, True); r += 1
+new_cpn, i_newcpn = E("Hybride septembre 2025 : coupon", "31/12/2025")
+line(ws, r, "hybRefiCost", "Si cette tranche est remplacée au coupon de la dernière émission (4,322 %) : coupon annuel en plus", f"=C{HB['09/2026']}*({new_cpn}-{E('Hybride septembre 2019 : coupon', '31/12/2025')[0]})/100", "M EUR", "nominal × écart de coupon", NF_M, True); r += 1
+line(ws, r, "hybRedeemLev", "Si elle est remboursée sans remplacement : levier fin 2027 (définition Veolia) après +500 M€ de dette nette", f"=({q('Trajectoire')}!$D$NFD27+C{HB['09/2026']})/{q('Trajectoire')}!$D$EB27", "x", "DFN + 500 / EBITDA 2027", NF_X, True); r += 1
+line(ws, r, "hybRedeemMoody", "… et dette ajustée Moody's fin 2027 : +500 de dette, −250 d'hybride comptée à 50 %", f"={q('Trajectoire')}!$D$ADJ27+C{HB['09/2026']}*(1-{HY('hybPct')})", "M EUR", "ADJ27 + 500 × (1 − 50 %)", NF_M); r += 1
+put(ws, f"B{r}", "Lecture : 4,1 Md€ d'hybrides en capitaux propres chez Veolia, à moitié en dette chez Moody's. Une seule date tombe dans l'horizon "
+    "(septembre 2026, 500 M€ à 1,625 %) ; la remplacer coûte une quinzaine de millions de coupon par an, ne pas la remplacer ajoute 500 M€ "
+    "à la dette nette et 250 M€ à la dette ajustée. Le levier n'est pas la contrainte : c'est le coût du capital hybride, passé de 1,6 % "
+    "à 4,3 % entre 2019 et 2025. Les grosses échéances (2028-2029 : 2,25 Md€) sont hors horizon mais pas hors question.", color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:G{r}"); ws.row_dimensions[r].height = 58; r += 2
+
 put(ws, f"A{r}", "C", bold=True); put(ws, f"B{r}", "Le plafond selon la définition retenue (scénario actif, fin 2027)", bold=True); r += 1
 header(ws, r, ["", "Définition", "Levier 2027", "Marge (M EUR)", "Ce qu'on ajoute à la DFN"]); r += 1
 DEF_START = r
@@ -1073,7 +1100,7 @@ for _sh in ("Levier", "Échéancier"):
     for row in sheets[_sh].iter_rows():
         for cell in row:
             if isinstance(cell.value, str) and "$D$" in cell.value:
-                for _key in ("NFD27", "EB27", "FCF27"):
+                for _key in ("NFD27", "EB27", "FCF27", "ADJ27"):
                     cell.value = cell.value.replace(f"$D${_key}", f"$D${ROW[_key]}")
 widths(ws, {"A": 8, "B": 54, "C": 9, **{c: 11 for c, *_ in cols}})
 ws.column_dimensions[UNFAV].width = 13
@@ -1513,6 +1540,38 @@ for k in (0, 0.25, 0.5, 0.75, 1):
 put(ws, f"B{r}", "Lecture : chaque euro d'efficacité non livré coûte trois euros de capacité d'endettement (plafond × EBITDA) et ne rapporte rien "
     "en cash-flow en face. Sans efficacité en 2026-2027, la marge sous 3x disparaît : la question à poser à Veolia le 16 octobre est "
     "moins « combien achèterez-vous ? » que « les 350 M€ d'efficacité par an sont-ils sécurisés ? ».", color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:F{r}"); ws.row_dimensions[r].height = 44; r += 1
+r += 1
+put(ws, f"A{r}", "E", bold=True); put(ws, f"B{r}", "Veolia tient-elle ses plans ? Objectifs annoncés et réalisés (Impact 2023, guidance 2025)", bold=True); r += 1
+header(ws, r, ["", "Objectif", "Visé", "Réalisé", "Tenu ?", "Réf."]); r += 1
+CR = {}
+C0 = r
+for lab, v_pre, v_per, r_pre, r_per, kind, scale in (
+        ("Impact 2023 : EBITDA 2023 (Md EUR, bas de fourchette)", "Impact 2023 : EBITDA 2023 visé, bas", "2023", "Impact 2023 : EBITDA 2023 réalisé", "FY2023", "min", 1),
+        ("Impact 2023 : résultat net courant 2023 (M EUR)", "Impact 2023 : résultat net courant 2023 visé", "2023", "Impact 2023 : résultat net courant 2023 réalisé", "FY2023", "min", 1000),
+        ("Impact 2023 : CA déchets liquides et dangereux (Md EUR)", "Impact 2023 : chiffre d'affaires déchets liquides et dangereux visé", "2023", "Impact 2023 : chiffre d'affaires déchets liquides et dangereux réalisé", "FY2023", "min", 1),
+        ("Impact 2023 : émissions évitées (Mt CO2eq)", "Impact 2023 : émissions évitées visées", "2023", "Impact 2023 : émissions évitées réalisées", "FY2023", "min", 1),
+        ("Impact 2023 : plastiques transformés (kt)", "Impact 2023 : plastiques transformés visés", "2023", "Impact 2023 : plastiques transformés réalisés", "FY2023", "min", 1),
+        ("Impact 2023 : femmes parmi les 500 cadres dirigeants nommés (%)", "Impact 2023 : part de femmes nommées parmi les 500 cadres dirigeants, visée", "2020-2023", "Impact 2023 : part de femmes nommées parmi les 500 cadres dirigeants, réalisée", "2020-2023", "min", 1),
+        ("Guidance 2025 : croissance organique de l'EBITDA (%, bas de fourchette)", "Guidance 2025 : croissance organique de l'EBITDA, bas", "2025", "Croissance organique de l'EBITDA (groupe)", "FY2025", "min", 1),
+        ("Guidance 2025 : gains d'efficacité (M EUR, plus de)", "Guidance 2025 : gains d'efficacité, plus de", "2025", "Gains d'efficacité annuels", "FY2025", "min", 1),
+        ("Guidance 2025 : synergies cumulées 2022-2025 (M EUR)", "Guidance 2025 : synergies cumulées 2022-2025 visées", "2025", "Synergies Suez cumulées réalisées", "FY2025", "min", 1),
+        ("Guidance 2025 : croissance du résultat net courant (%, environ)", "Guidance 2025 : croissance du résultat net courant", "2025", "Résultat net courant 2025 : croissance réalisée", "FY2025", "min", 1),
+        ("Guidance 2025 : levier < 3x", "Engagement de levier du groupe : ≤", "2027", "Ratio de levier publié", "FY2025", "max", 1)):
+    v, iv = E(v_pre, v_per); rr_, ir = E(r_pre, r_per)
+    put(ws, f"B{r}", lab)
+    put(ws, f"C{r}", f"={v}*{scale}" if scale != 1 else f"={v}", color=GREEN, nf=NF_D2 if scale == 1 else NF_M)
+    put(ws, f"D{r}", f"={rr_}", color=GREEN, nf=NF_D2)
+    put(ws, f"E{r}", f'=IF(D{r}{">=" if kind == "min" else "<="}C{r},"oui","non")', bold=True, align="center")
+    put(ws, f"F{r}", f"{iv}, {ir}", color=GREY)
+    r += 1
+C1 = r - 1
+line(ws, r, "credHit", "Objectifs tenus (sur ceux du tableau)", f'=COUNTIF(E{C0}:E{C1},"oui")&" / "&COUNTA(E{C0}:E{C1})', "", "", None, True, store=CR); ws[f"C{r}"].alignment = Alignment(horizontal="right"); r += 1
+line(ws, r, "credFin", "Objectifs financiers tenus", f'=COUNTIF(E{C0}:E{C0+2},"oui")+COUNTIF(E{C0+6}:E{C1},"oui")&" / "&(COUNTA(E{C0}:E{C0+2})+COUNTA(E{C0+6}:E{C1}))', "", "EBITDA, résultat net, CA déchets dangereux, guidance 2025", None, True, store=CR); ws[f"C{r}"].alignment = Alignment(horizontal="right"); r += 1
+put(ws, f"B{r}", "Lecture : sur les objectifs financiers, Veolia a tenu tout ce qu'elle a annoncé depuis 2020 (Impact 2023 dépassé, guidance 2025 dépassée) ; "
+    "les objectifs manqués sont non financiers (plastiques, mixité). Cela fonde le poids du scénario central sur le favorable pour la "
+    "guidance 2026 — et n'enlève rien à la fragilité propre à l'efficacité (§D) : un plan tenu cinq ans de suite n'est pas tenu la sixième par décret.",
+    color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:F{r}"); ws.row_dimensions[r].height = 44; r += 1
 widths(ws, {"A": 4, "B": 76, "C": 15, "D": 15, "E": 15, "F": 30})
 ws.freeze_panes = "C4"
@@ -1966,6 +2025,7 @@ checks = [
     ("Pont EBITDA : part de l'écart 2023 → 2027 couverte par l'efficacité annoncée (info)", PB["effShare"], 1, None, NF_P, "Info"),
     ("Pont EBITDA : hors efficacité et synergies, croissance organique 2025 de l'EBITDA (négatif = recul)", PB["rest"], 0, None, NF_M, "Info"),
     ("Univers des cessions : somme des pays = chiffre d'affaires du groupe (DEU p.375, arrondis de la page : ± 5)", C["ctrySum"], C["ctryGrp"], 5, NF_M, "Bloquant"),
+    ("Hybrides : somme des tranches = encours publié hors coupons (4,1 Md€)", A["hybSum"], A["hybPub"], 1, NF_M, "Bloquant"),
     ("Taxonomie 2025 : somme des secteurs = total publié, capex éligible et aligné (arrondis de la page : ± 150)", f"{q('ESG')}!$F${TX['sum']}", f"{q('ESG')}!$F${TX['pub']}", 150, NF_M, "Bloquant"),
     ("Taxonomie 2025 : part du capex aligné recalculée = publiée (47,2 %, ± 1 pt)", TX["cxAlignedShare"], TX["cxAlignedPub"], 0.01, NF_P, "Bloquant"),
     ("Univers des cessions : programme (au multiple central) en part de l'EBITDA des déchets solides (info)", C["progShareSw"], 0, None, NF_P, "Info"),
@@ -2037,6 +2097,8 @@ res = [
     ("Secteur, avant synergies : du moins cher au plus cher (Cibles §E)", f'=TEXT({K["secMin"]},"0.0")&"x à "&TEXT({K["secMax"]},"0.0")&"x"', None),
     ("Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)", K["ceVsSec"], '0.0"x"'),
     ("Pairs Moody's : FFO / dette nette de Veolia moins celui de Suez (Baa2, perspective négative), en points", A["peerGapSuez"], NF_P),
+    ("Objectifs financiers annoncés et tenus depuis 2020 (Impact 2023, guidance 2025)", CR["credFin"], None),
+    ("Hybrides : tranche dont la réinitialisation tombe avant fin 2027 (septembre 2026), en M EUR", A["hybBefore28"], NF_M),
     ("Macro : marge 2027 perdue si 2027 revit l'énergie du S1 2026, en M EUR", MA["energyH1"], NF_M),
     ("Macro : dette nette en plus si le dollar monte de 10 %, en M EUR", MA["usd10"], NF_M),
     ("Taxonomie 2025 : part du capex du groupe éligible et aligné (DEU p.250)", TX["cxAlignedShare"], NF_P),

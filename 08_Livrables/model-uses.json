@@ -379,7 +379,37 @@
   "F557",
   "F559",
   "F560",
-  "F561"
+  "F561",
+  "F562",
+  "F563",
+  "F564",
+  "F565",
+  "F566",
+  "F567",
+  "F568",
+  "F569",
+  "F570",
+  "F571",
+  "F572",
+  "F573",
+  "F574",
+  "F576",
+  "F578",
+  "F579",
+  "F580",
+  "F582",
+  "F583",
+  "F584",
+  "F585",
+  "F586",
+  "F587",
+  "F588",
+  "F589",
+  "F590",
+  "F592",
+  "F593",
+  "F595",
+  "F596"
  ],
  "lookups": [
   {
@@ -986,6 +1016,96 @@
    "id": "F541",
    "prefix": "Moody's, pairs : Suez, EBITDA ajusté",
    "period": "LTM 06/2025",
+   "unit": ""
+  },
+  {
+   "id": "F565",
+   "prefix": "Hybride septembre 2019 : nominal",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F566",
+   "prefix": "Hybride septembre 2019 : coupon",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F567",
+   "prefix": "Hybride novembre 2021 : nominal",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F568",
+   "prefix": "Hybride novembre 2021 : coupon",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F569",
+   "prefix": "Hybride novembre 2023 : nominal",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F570",
+   "prefix": "Hybride novembre 2023 : coupon",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F563",
+   "prefix": "Hybride octobre 2020, tranche résiduelle : nominal",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F564",
+   "prefix": "Hybride octobre 2020, tranche résiduelle : coupon",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F571",
+   "prefix": "Hybride mai 2025 (hybride vert) : nominal",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F572",
+   "prefix": "Hybride mai 2025 (hybride vert) : coupon",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F573",
+   "prefix": "Hybride septembre 2025 : nominal",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F574",
+   "prefix": "Hybride septembre 2025 : coupon",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F562",
+   "prefix": "Hybrides : encours hors coupons",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F574",
+   "prefix": "Hybride septembre 2025 : coupon",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F566",
+   "prefix": "Hybride septembre 2019 : coupon",
+   "period": "31/12/2025",
    "unit": ""
   },
   {
@@ -2227,6 +2347,138 @@
   {
    "id": "F187",
    "prefix": "Boosters : croissance organique de l'EBITDA",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F576",
+   "prefix": "Impact 2023 : EBITDA 2023 visé, bas",
+   "period": "2023",
+   "unit": ""
+  },
+  {
+   "id": "F578",
+   "prefix": "Impact 2023 : EBITDA 2023 réalisé",
+   "period": "FY2023",
+   "unit": ""
+  },
+  {
+   "id": "F579",
+   "prefix": "Impact 2023 : résultat net courant 2023 visé",
+   "period": "2023",
+   "unit": ""
+  },
+  {
+   "id": "F580",
+   "prefix": "Impact 2023 : résultat net courant 2023 réalisé",
+   "period": "FY2023",
+   "unit": ""
+  },
+  {
+   "id": "F582",
+   "prefix": "Impact 2023 : chiffre d'affaires déchets liquides et dangereux visé",
+   "period": "2023",
+   "unit": ""
+  },
+  {
+   "id": "F583",
+   "prefix": "Impact 2023 : chiffre d'affaires déchets liquides et dangereux réalisé",
+   "period": "FY2023",
+   "unit": ""
+  },
+  {
+   "id": "F584",
+   "prefix": "Impact 2023 : émissions évitées visées",
+   "period": "2023",
+   "unit": ""
+  },
+  {
+   "id": "F585",
+   "prefix": "Impact 2023 : émissions évitées réalisées",
+   "period": "FY2023",
+   "unit": ""
+  },
+  {
+   "id": "F586",
+   "prefix": "Impact 2023 : plastiques transformés visés",
+   "period": "2023",
+   "unit": ""
+  },
+  {
+   "id": "F587",
+   "prefix": "Impact 2023 : plastiques transformés réalisés",
+   "period": "FY2023",
+   "unit": ""
+  },
+  {
+   "id": "F588",
+   "prefix": "Impact 2023 : part de femmes nommées parmi les 500 cadres dirigeants, visée",
+   "period": "2020-2023",
+   "unit": ""
+  },
+  {
+   "id": "F589",
+   "prefix": "Impact 2023 : part de femmes nommées parmi les 500 cadres dirigeants, réalisée",
+   "period": "2020-2023",
+   "unit": ""
+  },
+  {
+   "id": "F590",
+   "prefix": "Guidance 2025 : croissance organique de l'EBITDA, bas",
+   "period": "2025",
+   "unit": ""
+  },
+  {
+   "id": "F425",
+   "prefix": "Croissance organique de l'EBITDA (groupe)",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F592",
+   "prefix": "Guidance 2025 : gains d'efficacité, plus de",
+   "period": "2025",
+   "unit": ""
+  },
+  {
+   "id": "F424",
+   "prefix": "Gains d'efficacité annuels",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F593",
+   "prefix": "Guidance 2025 : synergies cumulées 2022-2025 visées",
+   "period": "2025",
+   "unit": ""
+  },
+  {
+   "id": "F208",
+   "prefix": "Synergies Suez cumulées réalisées",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F595",
+   "prefix": "Guidance 2025 : croissance du résultat net courant",
+   "period": "2025",
+   "unit": ""
+  },
+  {
+   "id": "F596",
+   "prefix": "Résultat net courant 2025 : croissance réalisée",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F56",
+   "prefix": "Engagement de levier du groupe : ≤",
+   "period": "2027",
+   "unit": ""
+  },
+  {
+   "id": "F16",
+   "prefix": "Ratio de levier publié",
    "period": "FY2025",
    "unit": ""
   },

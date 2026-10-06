@@ -256,6 +256,8 @@ TAX_HW_RATE = mv("ESG", "Déchets dangereux (PPC) : capex aligné / éligible");
 PEER_GAP_SUEZ = mv("Levier", "Écart de FFO / dette nette entre Veolia et Suez"); PEER_GAP_HERA = mv("Levier", "Écart entre Veolia et le mieux noté")
 MA_ENERGY_H1 = mv("Sensibilité", "Énergie et recyclats : effet au S1 2026", "E"); MA_USD10 = mv("Sensibilité", "Dollar : dette en USD, effet", "E")
 MA_RATE1 = mv("Sensibilité", "Taux : position nette à taux variable", "E")
+CRED_FIN = mv("Pont EBITDA", "Objectifs financiers tenus"); CRED_HIT = mv("Pont EBITDA", "Objectifs tenus (sur ceux")
+HYB_AVG = mv("Levier", "Coupon moyen pondéré"); HYB_REFI = mv("Levier", "Si cette tranche est remplacée"); HYB_LEV = mv("Levier", "Si elle est remboursée sans remplacement")
 EFF_SHARE_Y = mv("Pont EBITDA", "Part de la croissance organique expliquée"); REST = mv("Pont EBITDA", "Reste : volumes")
 ORG_M = mv("Pont EBITDA", "… en M EUR, sur la base publiée"); ORG26 = mv("Pont EBITDA", "+ croissance organique 2026")
 ORG27 = mv("Pont EBITDA", "+ croissance organique 2027"); EFF_IN26 = mv("Pont EBITDA", "Part de l'organique 2026")
@@ -308,6 +310,10 @@ f = dict(
     en25=R("Effet des prix des commodités (énergie, recyclats) sur l'EBITDA", "FY2025"), enh1=R("Effet des prix des commodités sur l'EBITDA", "S1 2026"),
     usd_debt=R("Dette libellée en dollars", "31/12/2025"), flt=R("Position nette à taux variable", "31/12/2025"),
     fx_oi=R("Sensibilité au change : résultat opérationnel si les devises se déprécient", "FY2025"),
+    hyb_tot=R("Hybrides : encours hors coupons", "31/12/2025"), hyb26=R("Hybride septembre 2019 : nominal", "31/12/2025"),
+    hyb26_cpn=R("Hybride septembre 2019 : coupon", "31/12/2025"), hyb33_cpn=R("Hybride septembre 2025 : coupon", "31/12/2025"),
+    i23_eb=R("Impact 2023 : EBITDA 2023 réalisé", "FY2023"), i23_pl_t=R("Impact 2023 : plastiques transformés visés", "2023"),
+    i23_pl=R("Impact 2023 : plastiques transformés réalisés", "FY2023"), g25_eb=R("Guidance 2025 : croissance organique de l'EBITDA, haut", "2025"),
     nfdh1=R("Endettement financier net (groupe), après Clean Earth", "30/06/2026"),
     nfdh125=R("Endettement financier net (groupe)", "30/06/2025"), ebh1=R("EBITDA (groupe)", "S1 2026"),
     ebh125=R("EBITDA (groupe)", "S1 2025"), hyb=R("Dettes hybrides", "30/06/2026"),
@@ -573,6 +579,11 @@ ROLES.append(role(
          f"Non. {P(f['flow26'])} M€ de flux contractuels en 2026, dont {P(f['cpap'])} de billets de trésorerie qui se renouvellent, face à "
          f"{P(f['liq'])} M€ de liquidités : couvert {x(COV26)}. Le mur agit sur le FFO, pas sur la dette : environ {fr(EXTRA_INT, 0)} M€ "
          f"d'intérêts de plus par an quand les souches à bas coupon de 2027-2028 se refinancent au taux de 2025."),
+        ("Les hybrides ont-ils une date ?",
+         f"Oui, six (DEU p.429) : {P(f['hyb_tot'])} Md€ en tout, coupon moyen {pct(HYB_AVG, 2)}. Une seule tombe avant fin 2027 : "
+         f"{P(f['hyb26'])} M€ à {P(f['hyb26_cpn'])} % en septembre 2026. La remplacer au coupon de la dernière émission "
+         f"({P(f['hyb33_cpn'])} %) coûte {fr(HYB_REFI, 0)} M€ de coupon par an ; ne pas la remplacer porte le levier fin 2027 à {x(HYB_LEV)}. "
+         f"Le vrai sujet n'est pas le levier mais le prix du capital hybride, qui a presque triplé entre 2019 et 2025."),
         ("Où se place Veolia parmi ses pairs ?",
          f"Dans le tableau de Moody's (Exhibit 12, douze mois à juin 2025) : {P(f['mo25'])} % de FFO / dette nette pour Veolia, "
          f"{P(f['p_acea'])} % pour ACEA, {P(f['p_hera'])} % pour Hera, tous trois Baa1 ; Suez, « {esc(f['p_suez_rt']['value'])} », "
@@ -645,6 +656,11 @@ ROLES.append(role(
          f"du modèle ({fr(ORG26, 0)} M€), c'est le programme de 350 M€ par an de GreenUp. Un programme de coûts se tient ou ne se tient pas ; "
          f"la sensibilité de Trajectoire (g26 bas, g27 bas) en donne la version douce, l'onglet Pont EBITDA §D la version dure : "
          f"{fr(HEAD_K0, 0)} M€ de marge si rien n'est livré."),
+        ("Pourquoi croire la guidance ?",
+         f"Parce que Veolia a tenu ses objectifs financiers depuis 2020 : {CRED_FIN} dans notre tableau (Impact 2023 : {P(f['i23_eb'])} Md€ d'EBITDA "
+         f"pour 4,7 à 4,9 visés ; guidance 2025 : +5 à +{P(f['g25_eb'])} % d'EBITDA organique, réalisé +6,3 %). Les objectifs manqués sont "
+         f"non financiers ({P(f['i23_pl'])} kt de plastiques pour {P(f['i23_pl_t'])} visés, mixité). C'est ce qui donne au scénario central plus de "
+         f"poids qu'au défavorable — sans effacer la dépendance à l'efficacité (Pont EBITDA §D)."),
         ("Et l'énergie, le dollar, les taux ?",
          f"Des entrées externes que le DEU chiffre : l'énergie et les recyclats ont coûté {P(f['en25'])} M€ d'EBITDA en 2025 et "
          f"{P(f['enh1'])} M€ au seul S1 2026 — une année comme ce semestre coûterait {fr(-MA_ENERGY_H1, 0)} M€ de marge sous 3x. "
