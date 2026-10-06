@@ -217,6 +217,7 @@ for r in range(_r0, _r0 + 40):
     if not _ws[f"B{r}"].value or not isinstance(_ws[f"E{r}"].value, (int, float)):
         break
     rank.append((_ws[f"B{r}"].value, _ws[f"E{r}"].value))
+RANK_LH = {_ws[f"B{r}"].value: (_ws[f"C{r}"].value, _ws[f"D{r}"].value) for r in range(_r0, _r0 + len(rank))}
 assert rank[0][1] >= rank[-1][1]
 H1_LOW = cell("Sensibilité", "E13")      # marge si s27 = 0
 _ws = WB["Sensibilité"]
@@ -1229,6 +1230,70 @@ _range_rows = []
 for line in OUT_RANGE.read_text(encoding="utf-8").splitlines():
     if line.startswith("| ") and not line.startswith("|---") and "Défavorable" not in line:
         _range_rows.append([c.strip() for c in line.strip("|").split("|")])
+# ------------------------------------------------------------------ les questions du 16 octobre, classées
+# Ce que chaque réponse de Veolia déplacerait : l'amplitude de la marge sous 3x fin 2027 entre les bornes de
+# l'hypothèse (Sensibilité, classement), et les questions de questions-veolia.md qui la visent. Le lien
+# hypothèse → questions est une lecture du groupe, écrite ici ; les nombres viennent du classeur.
+QUESTIONS_FOR = {
+    "Part du reste du programme encaissée en 2027": [4],
+    "Croissance organique de l'EBITDA en 2027": [18, 19, 11],
+    "Tuck-ins payés en 2027": [14, 15],
+    "Cash-flow libre net du S2 2026": [],
+    "Conversion cash-flow libre net / EBITDA en 2027": [20],
+    "Croissance organique de l'EBITDA en 2026": [18, 11],
+    "Part des synergies réalisée en 2027": [10],
+    "Multiple VE / EBITDA des actifs cédés": [5],
+    "EBITDA de Clean Earth en année pleine": [10],
+    "Croissance du dividende versé en 2027": [6],
+    "Multiple VE / EBITDA des tuck-ins": [14, 15],
+    "Part des signatures 2026 encaissée avant le 31/12/2026": [4],
+    "FFO (mesure des agences) en % de l'EBITDA": [2, 21],
+}
+_fcf_h1_26 = R("Cash-flow libre net avant investissements financiers et dividendes", "S1 2026")
+_fcf_h1_25 = R("Cash-flow libre net avant investissements financiers et dividendes", "S1 2025")
+_fcf_fy25 = R("Cash-flow libre net (net free cash flow)", "FY2025")
+TO_ADD = {
+    "Cash-flow libre net du S2 2026": f"Quel cash-flow libre net attendez-vous au second semestre 2026, après {P(_fcf_h1_26)} M€ au "
+        f"premier ({_fcf_h1_26['id']}) ? En 2025, le second semestre avait apporté {fr(N(_fcf_fy25) - N(_fcf_h1_25), 0)} M€ "
+        f"({_fcf_fy25['id']} − {_fcf_h1_25['id']}) : est-ce la bonne référence avec Clean Earth consolidé ?",
+}
+unknown = [lab for lab, _ in rank if lab not in QUESTIONS_FOR]
+assert not unknown, f"hypothèse sans correspondance de questions : {unknown}"
+_q_rows, _q_order, _seen = [], [], set()
+for i, (lab, amp) in enumerate(rank, 1):
+    lo, hi = RANK_LH[lab]
+    qs = QUESTIONS_FOR[lab]
+    _q_rows.append(f"| {i} | {lab} | {fr(amp, 0)} | {fr(lo, 0)} / {fr(hi, 0)} | "
+                   + (", ".join(f"Q{n}" for n in qs) if qs else "**aucune — à poser**") + " |")
+    for n in qs:
+        if n not in _seen:
+            _seen.add(n); _q_order.append(n)
+_q_add = [f"- **{lab}** ({fr(dict(rank)[lab], 0)} M€ d'amplitude) : {TO_ADD.get(lab, 'question à rédiger.')}"
+          for lab, _ in rank if not QUESTIONS_FOR[lab] and dict(rank)[lab] > 0]
+OUT.with_name("questions-classees.md").write_text(f"""# Questions pour Veolia, classées par ce que la réponse déplacerait
+
+Généré le {__import__('datetime').date.today().strftime('%d/%m/%Y')} depuis le classeur (onglet Sensibilité, classement). **Amplitude** : écart de la marge
+sous 3x fin 2027 entre la borne basse et la borne haute de l'hypothèse, toutes les autres à leur base (M€).
+Les numéros renvoient à `questions-veolia.md`. Une réponse de Veolia vaut ce qu'elle resserre : commencer par le haut.
+
+| Rang | Hypothèse | Amplitude | Δ bas / Δ haut | Questions |
+|---:|---|---:|---:|---|
+""" + "\n".join(_q_rows) + f"""
+
+## Ordre proposé pour la séance du 16 octobre
+
+{" → ".join(f"Q{n}" for n in _q_order)} ; puis les questions de méthode (Q16, Q17) si le temps le permet.
+Les questions de définition et de périmètre ({", ".join(f"Q{n}" for n in range(1, 22) if n not in _seen and n not in (16, 17))}) ne déplacent pas
+une hypothèse du modèle : elles cadrent la lecture des chiffres.
+
+## Hypothèses qu'aucune question ne vise encore
+
+""" + ("\n".join(_q_add) if _q_add else "Aucune : chaque hypothèse qui déplace la marge a sa question.") + """
+
+Le FFO en % de l'EBITDA ne déplace pas la marge sous 3x (amplitude nulle) mais toute la contrainte des agences
+(onglet Levier §B5) : Q2 et Q21 restent prioritaires pour le seuil S&P.
+""", encoding="utf-8")
+
 OUT.with_name("report-data.json").write_text(_json.dumps({
     "generated": __import__("datetime").date.today().isoformat(),
     "checks": str(checks_ok), "n_figures": len(REG),
