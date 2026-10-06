@@ -7,13 +7,14 @@ generated: true
 
 # Deals
 
-Rubrique de [[Targets/Veolia|Veolia]] — 26 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 29 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[Deals/D20 New England Disposal Technologies, Bio-Med Innovations, Ingenium, Cham.md|D20 · New England Disposal Technologies, Bio-Med Innovations, Ingenium, Chameleon Industries Group]]
 - [[Deals/D21 Actifs matures de déchets solides au Mexique.md|D21 · Actifs matures de déchets solides au Mexique]]
 - [[Deals/D22 Activités de recyclage de plastiques en Corée.md|D22 · Activités de recyclage de plastiques en Corée]]
 - [[Deals/D24 Actifs Osis Grand Paris (SARP), 8 sites.md|D24 · Actifs Osis Grand Paris (SARP), 8 sites]]
+- [[Deals/D29 Covanta (valorisation énergétique des déchets, États-Unis).md|D29 · Covanta (valorisation énergétique des déchets, États-Unis)]] · 2021-11-30
 - [[Deals/D1 Suez.md|D1 · Suez]] · 2021-12-14
 - [[Deals/D23 Actifs d'Integrated Waste Services (IWS).md|D23 · Actifs d'Integrated Waste Services (IWS)]] · 2022-01-17
 - [[Deals/D26 Huancheng Puxi.md|D26 · Huancheng Puxi]] · 2022-06-24
@@ -26,9 +27,11 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[Deals/D13 U.S. Industrial Technologies.md|D13 · U.S. Industrial Technologies]] · 2023-10-31
 - [[Deals/D8 SADE.md|D8 · SADE]] · 2024-02-29
 - [[Deals/D12 Activités recyclage et déchets de Friedrich Hofmann GmbH.md|D12 · Activités recyclage et déchets de Friedrich Hofmann GmbH]] · 2024-03-01
+- [[Deals/D28 HEPACO (services environnementaux et intervention d'urgence, États-Uni.md|D28 · HEPACO (services environnementaux et intervention d'urgence, États-Unis)]] · 2024-03-25
 - [[Deals/D9 Concession d'eau de Haikou.md|D9 · Concession d'eau de Haikou]] · 2024-06-26
 - [[Deals/D17 Veolia North America Regeneration Services.md|D17 · Veolia North America Regeneration Services]] · 2024-08-01
 - [[Deals/D16 Lydec.md|D16 · Lydec]] · 2024-09-04
+- [[Deals/D27 Stericycle (déchets médicaux, États-Unis).md|D27 · Stericycle (déchets médicaux, États-Unis)]] · 2024-11-04
 - [[Deals/D11 Danubius.md|D11 · Danubius]] · 2025-01-06
 - [[Deals/D14 30 % de Water Technologies and Solutions (WTS).md|D14 · 30 % de Water Technologies and Solutions (WTS)]] · 2025-05-07
 - [[Deals/D19 Zeeklite Co. LTD.md|D19 · Zeeklite Co. LTD]] · 2025-05-30
