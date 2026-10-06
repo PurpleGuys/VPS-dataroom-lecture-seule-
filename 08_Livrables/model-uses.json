@@ -1,0 +1,1385 @@
+{
+ "generated": "2026-10-06",
+ "model": "modele-greenup-2027.xlsx",
+ "ids": [
+  "F1",
+  "F2",
+  "F3",
+  "F5",
+  "F7",
+  "F8",
+  "F10",
+  "F11",
+  "F12",
+  "F13",
+  "F14",
+  "F16",
+  "F17",
+  "F18",
+  "F19",
+  "F20",
+  "F21",
+  "F23",
+  "F25",
+  "F27",
+  "F28",
+  "F29",
+  "F30",
+  "F31",
+  "F32",
+  "F33",
+  "F34",
+  "F35",
+  "F36",
+  "F37",
+  "F38",
+  "F39",
+  "F40",
+  "F41",
+  "F42",
+  "F43",
+  "F44",
+  "F45",
+  "F46",
+  "F48",
+  "F49",
+  "F50",
+  "F51",
+  "F52",
+  "F54",
+  "F56",
+  "F58",
+  "F59",
+  "F60",
+  "F61",
+  "F62",
+  "F63",
+  "F64",
+  "F65",
+  "F66",
+  "F67",
+  "F68",
+  "F69",
+  "F70",
+  "F71",
+  "F72",
+  "F73",
+  "F74",
+  "F75",
+  "F76",
+  "F77",
+  "F78",
+  "F79",
+  "F80",
+  "F81",
+  "F82",
+  "F83",
+  "F84",
+  "F86",
+  "F87",
+  "F88",
+  "F89",
+  "F90",
+  "F91",
+  "F92",
+  "F93",
+  "F94",
+  "F95",
+  "F96",
+  "F97",
+  "F98",
+  "F99",
+  "F100",
+  "F101",
+  "F102",
+  "F103",
+  "F104",
+  "F105",
+  "F106",
+  "F107",
+  "F108",
+  "F109",
+  "F110",
+  "F111",
+  "F113",
+  "F129",
+  "F130",
+  "F131",
+  "F133",
+  "F134",
+  "F135",
+  "F136",
+  "F137",
+  "F138",
+  "F144",
+  "F145",
+  "F146",
+  "F147",
+  "F148",
+  "F149",
+  "F150",
+  "F151",
+  "F152",
+  "F155",
+  "F163",
+  "F164",
+  "F165",
+  "F168",
+  "F170",
+  "F171",
+  "F172",
+  "F174",
+  "F175",
+  "F176",
+  "F177",
+  "F178",
+  "F179",
+  "F180",
+  "F181",
+  "F182",
+  "F183",
+  "F184",
+  "F185",
+  "F186",
+  "F187",
+  "F188",
+  "F189",
+  "F190",
+  "F191",
+  "F192",
+  "F193",
+  "F194",
+  "F196",
+  "F197",
+  "F198",
+  "F199",
+  "F200",
+  "F201",
+  "F202",
+  "F203",
+  "F204",
+  "F209",
+  "F210",
+  "F211",
+  "F212",
+  "F213",
+  "F214",
+  "F215",
+  "F218",
+  "F219",
+  "F224",
+  "F225",
+  "F226",
+  "F227",
+  "F228",
+  "F229",
+  "F231",
+  "F233",
+  "F234",
+  "F235",
+  "F236",
+  "F239"
+ ],
+ "lookups": [
+  {
+   "id": "F87",
+   "prefix": "Guidance 2026 : croissance organique de l'EBITDA, bas",
+   "period": "2026",
+   "unit": ""
+  },
+  {
+   "id": "F88",
+   "prefix": "Guidance 2026 : croissance organique de l'EBITDA, haut",
+   "period": "2026",
+   "unit": ""
+  },
+  {
+   "id": "F89",
+   "prefix": "Guidance 2026 : croissance du résultat net courant",
+   "period": "2026",
+   "unit": ""
+  },
+  {
+   "id": "F51",
+   "prefix": "Clean Earth : EBITDA",
+   "period": "2026E",
+   "unit": ""
+  },
+  {
+   "id": "F40",
+   "prefix": "Clean Earth : prix d'acquisition",
+   "period": "01/06/2026",
+   "unit": "M USD"
+  },
+  {
+   "id": "F41",
+   "prefix": "Clean Earth : prix d'acquisition",
+   "period": "01/06/2026",
+   "unit": "M EUR"
+  },
+  {
+   "id": "F29",
+   "prefix": "Cash-flow libre net (net free cash flow)",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F13",
+   "prefix": "Cash-flow libre net (net free cash flow)",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F70",
+   "prefix": "Cash-flow libre net avant",
+   "period": "S1 2025",
+   "unit": ""
+  },
+  {
+   "id": "F3",
+   "prefix": "EBITDA (groupe)",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F17",
+   "prefix": "EBITDA (groupe)",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F74",
+   "prefix": "Dividende versé aux actionnaires, approuvé",
+   "period": "2026",
+   "unit": ""
+  },
+  {
+   "id": "F72",
+   "prefix": "Pont de dette S1 2026 : dividendes versés",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F31",
+   "prefix": "Signatures de cessions attendues",
+   "period": "2026",
+   "unit": ""
+  },
+  {
+   "id": "F48",
+   "prefix": "Clean Earth : multiple",
+   "period": "2026e",
+   "unit": ""
+  },
+  {
+   "id": "F5",
+   "prefix": "GreenUp : tuck-ins, bas",
+   "period": "2024-2027",
+   "unit": ""
+  },
+  {
+   "id": "F21",
+   "prefix": "GreenUp : tuck-ins, haut",
+   "period": "2024-2027",
+   "unit": ""
+  },
+  {
+   "id": "F50",
+   "prefix": "Clean Earth : coûts de mise en œuvre",
+   "period": "année 1-4",
+   "unit": ""
+  },
+  {
+   "id": "F56",
+   "prefix": "Engagement de levier du groupe : ≤",
+   "period": "2027",
+   "unit": ""
+  },
+  {
+   "id": "F10",
+   "prefix": "Dettes hybrides",
+   "period": "30/06/2026",
+   "unit": ""
+  },
+  {
+   "id": "F147",
+   "prefix": "Moody's : FFO / dette nette ajustée",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F150",
+   "prefix": "Moody's : dette nette ajustée",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F23",
+   "prefix": "Endettement financier net (groupe)",
+   "period": "31/12/2024",
+   "unit": ""
+  },
+  {
+   "id": "F8",
+   "prefix": "Endettement financier net (groupe)",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F20",
+   "prefix": "Ratio de levier publié",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F16",
+   "prefix": "Ratio de levier publié",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F11",
+   "prefix": "Endettement financier net (groupe), après Clean Earth",
+   "period": "30/06/2026",
+   "unit": ""
+  },
+  {
+   "id": "F71",
+   "prefix": "Endettement financier net (groupe)",
+   "period": "30/06/2025",
+   "unit": ""
+  },
+  {
+   "id": "F19",
+   "prefix": "EBITDA (groupe)",
+   "period": "S1 2025",
+   "unit": ""
+  },
+  {
+   "id": "F1",
+   "prefix": "EBITDA (groupe)",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F14",
+   "prefix": "Ratio de levier publié, hors Clean Earth",
+   "period": "31/03/2026",
+   "unit": ""
+  },
+  {
+   "id": "F44",
+   "prefix": "Provisions de fermeture et post-fermeture (réhabilitation",
+   "period": "30/06/2026",
+   "unit": ""
+  },
+  {
+   "id": "F144",
+   "prefix": "Maturité moyenne de la dette financière nette",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F145",
+   "prefix": "Maturité moyenne de la dette financière nette",
+   "period": "31/12/2024",
+   "unit": ""
+  },
+  {
+   "id": "F146",
+   "prefix": "Part de la dette financière nette à taux fixe",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F12",
+   "prefix": "Objectif GreenUp : EBITDA",
+   "period": "2027",
+   "unit": ""
+  },
+  {
+   "id": "F147",
+   "prefix": "Moody's : FFO / dette nette ajustée",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F155",
+   "prefix": "Moody's : FFO / dette nette ajustée",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F148",
+   "prefix": "Moody's : FFO / dette nette ajustée attendu, bas",
+   "period": "2026F",
+   "unit": ""
+  },
+  {
+   "id": "F149",
+   "prefix": "Moody's : FFO / dette nette ajustée attendu, haut",
+   "period": "2026F",
+   "unit": ""
+  },
+  {
+   "id": "F150",
+   "prefix": "Moody's : dette nette ajustée",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F151",
+   "prefix": "Moody's : dette nette ajustée, pic",
+   "period": "2026F",
+   "unit": ""
+  },
+  {
+   "id": "F152",
+   "prefix": "Moody's : seuil de dégradation",
+   "period": "2026-2027",
+   "unit": ""
+  },
+  {
+   "id": "F163",
+   "prefix": "S&P : seuil de dégradation",
+   "period": "2026-2028",
+   "unit": ""
+  },
+  {
+   "id": "F164",
+   "prefix": "S&P : FFO / dette ajustés attendu, bas",
+   "period": "2026-2028",
+   "unit": ""
+  },
+  {
+   "id": "F165",
+   "prefix": "S&P : FFO / dette ajustés attendu, haut",
+   "period": "2026-2028",
+   "unit": ""
+  },
+  {
+   "id": "F28",
+   "prefix": "Cash-flow libre net avant",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F72",
+   "prefix": "Pont de dette S1 2026 : dividendes versés",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F75",
+   "prefix": "Pont de dette S1 2026 : investissements financiers",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F79",
+   "prefix": "Pont de dette S1 2026 : variation des créances",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F80",
+   "prefix": "Pont de dette S1 2026 : émission d'actions",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F78",
+   "prefix": "Pont de dette S1 2026 : effet de change",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F81",
+   "prefix": "Pont de dette S1 2026 : autres mouvements",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F82",
+   "prefix": "Pont de dette S1 2026 : retraitement",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F76",
+   "prefix": "Clean Earth : effet sur l'endettement",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F77",
+   "prefix": "Enviropacific Services : effet",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F29",
+   "prefix": "Cash-flow libre net (net free cash flow)",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F64",
+   "prefix": "Pont de dette 2025 : investissements financiers",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F65",
+   "prefix": "Pont de dette 2025 : dividendes versés",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F66",
+   "prefix": "Pont de dette 2025 : émission de la première",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F67",
+   "prefix": "Pont de dette 2025 : augmentation de capital",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F68",
+   "prefix": "Pont de dette 2025 : réduction de capital",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F69",
+   "prefix": "Pont de dette 2025 : effet de change",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F73",
+   "prefix": "Pont de dette S1 2025 : dividendes",
+   "period": "S1 2025",
+   "unit": ""
+  },
+  {
+   "id": "F65",
+   "prefix": "Pont de dette 2025 : dividendes versés",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F83",
+   "prefix": "Variation du BFR opérationnel",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F84",
+   "prefix": "Variation du BFR opérationnel",
+   "period": "S1 2025",
+   "unit": ""
+  },
+  {
+   "id": "F90",
+   "prefix": "GreenUp : investissements de maintenance",
+   "period": "2024-2027",
+   "unit": ""
+  },
+  {
+   "id": "F91",
+   "prefix": "GreenUp : croissance sur contrats existants",
+   "period": "2024-2027",
+   "unit": ""
+  },
+  {
+   "id": "F92",
+   "prefix": "GreenUp : cessions industrielles",
+   "period": "2024-2027",
+   "unit": ""
+  },
+  {
+   "id": "F7",
+   "prefix": "GreenUp : investissements nets par an",
+   "period": "2024-2027",
+   "unit": ""
+  },
+  {
+   "id": "F18",
+   "prefix": "GreenUp : cessions continues",
+   "period": "2024-2027",
+   "unit": ""
+  },
+  {
+   "id": "F2",
+   "prefix": "GreenUp : rotation NETTE",
+   "period": "2024-2027",
+   "unit": ""
+  },
+  {
+   "id": "F25",
+   "prefix": "Programme de cessions",
+   "period": "2026-2028",
+   "unit": ""
+  },
+  {
+   "id": "F32",
+   "prefix": "Rotation d'actifs sur 4 ans",
+   "period": "2024-2027",
+   "unit": ""
+  },
+  {
+   "id": "F30",
+   "prefix": "Cessions réalisées",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F129",
+   "prefix": "GreenUp : investissements nets de croissance 2024-2027 dans les boosters",
+   "period": "2024-2027",
+   "unit": ""
+  },
+  {
+   "id": "F130",
+   "prefix": "GreenUp : à investir dans les strongholds",
+   "period": "2024-2027",
+   "unit": ""
+  },
+  {
+   "id": "F131",
+   "prefix": "Rotation d'actifs déjà réalisée",
+   "period": "2024-2025e",
+   "unit": ""
+  },
+  {
+   "id": "F133",
+   "prefix": "Rotation d'actifs totale GreenUp",
+   "period": "2024-2028",
+   "unit": ""
+  },
+  {
+   "id": "F136",
+   "prefix": "Investissements financiers nets 2024",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F137",
+   "prefix": "Investissements financiers nets 2025e",
+   "period": "FY2025e",
+   "unit": ""
+  },
+  {
+   "id": "F138",
+   "prefix": "Pont de dette 2024 : investissements financiers nets des cessions",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F64",
+   "prefix": "Pont de dette 2025 : investissements financiers",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F75",
+   "prefix": "Pont de dette S1 2026 : investissements financiers",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F134",
+   "prefix": "Part des acquisitions GreenUp dans les boosters",
+   "period": "2024-2025e",
+   "unit": ""
+  },
+  {
+   "id": "F135",
+   "prefix": "Part des acquisitions GreenUp hors d'Europe",
+   "period": "2024-2025e",
+   "unit": ""
+  },
+  {
+   "id": "F12",
+   "prefix": "Objectif GreenUp : EBITDA",
+   "period": "2027",
+   "unit": ""
+  },
+  {
+   "id": "F49",
+   "prefix": "Clean Earth : synergies de coûts",
+   "period": "année 4",
+   "unit": ""
+  },
+  {
+   "id": "F33",
+   "prefix": "Déchets dangereux traités",
+   "period": "2024",
+   "unit": ""
+  },
+  {
+   "id": "F34",
+   "prefix": "Déchets dangereux traités",
+   "period": "2025",
+   "unit": ""
+  },
+  {
+   "id": "F35",
+   "prefix": "Objectif : déchets dangereux traités en 2027",
+   "period": "2027",
+   "unit": ""
+  },
+  {
+   "id": "F59",
+   "prefix": "Déchets dangereux Veolia + Clean Earth : chiffre d'affaires",
+   "period": "2025E",
+   "unit": ""
+  },
+  {
+   "id": "F60",
+   "prefix": "Déchets dangereux Veolia + Clean Earth : EBITDA",
+   "period": "2025E",
+   "unit": ""
+  },
+  {
+   "id": "F12",
+   "prefix": "Objectif GreenUp : EBITDA",
+   "period": "2027",
+   "unit": ""
+  },
+  {
+   "id": "F46",
+   "prefix": "Clean Earth : valeur d'entreprise",
+   "period": "annonce 11/2025",
+   "unit": "Md USD"
+  },
+  {
+   "id": "F168",
+   "prefix": "Chiffre d'affaires Water Technologies",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F170",
+   "prefix": "EBITDA Water Technologies",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F171",
+   "prefix": "Croissance organique de l'EBITDA Water Technologies",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F194",
+   "prefix": "Chiffre d'affaires Water Technologies",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F196",
+   "prefix": "EBITDA Water Technologies",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F182",
+   "prefix": "Chiffre d'affaires Amériques",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F172",
+   "prefix": "Chiffre d'affaires Amériques",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F184",
+   "prefix": "EBITDA Amériques",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F174",
+   "prefix": "EBITDA Amériques",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F175",
+   "prefix": "Croissance organique de l'EBITDA Amériques",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F227",
+   "prefix": "Chiffre d'affaires Amériques",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F97",
+   "prefix": "EBITDA Amériques",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F181",
+   "prefix": "Chiffre d'affaires Europe",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F176",
+   "prefix": "Chiffre d'affaires Europe",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F183",
+   "prefix": "EBITDA Europe",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F177",
+   "prefix": "EBITDA Europe",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F178",
+   "prefix": "Croissance organique de l'EBITDA Europe",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F228",
+   "prefix": "Chiffre d'affaires Europe",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F180",
+   "prefix": "Chiffre d'affaires France et Déchets dangereux Europe",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F179",
+   "prefix": "Chiffre d'affaires France et Déchets dangereux Europe",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F37",
+   "prefix": "EBITDA France et Déchets dangereux Europe",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F38",
+   "prefix": "EBITDA France et Déchets dangereux Europe",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F95",
+   "prefix": "EBITDA France et Déchets dangereux Europe",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F185",
+   "prefix": "Boosters : chiffre d'affaires",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F188",
+   "prefix": "Boosters : EBITDA",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F186",
+   "prefix": "Boosters : croissance organique du chiffre d'affaires",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F187",
+   "prefix": "Boosters : croissance organique de l'EBITDA",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F229",
+   "prefix": "Boosters : chiffre d'affaires",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F231",
+   "prefix": "Boosters : EBITDA",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F192",
+   "prefix": "Bioénergie, flexibilité, efficacité énergétique : chiffre d'affaires",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F190",
+   "prefix": "Bioénergie, flexibilité, efficacité énergétique : chiffre d'affaires",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F193",
+   "prefix": "Bioénergie, flexibilité, efficacité énergétique : EBITDA",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F191",
+   "prefix": "Bioénergie, flexibilité, efficacité énergétique : EBITDA",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F234",
+   "prefix": "Bioénergie, flexibilité, efficacité énergétique : croissance organique de l'EBITDA",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F233",
+   "prefix": "Bioénergie, flexibilité, efficacité énergétique : chiffre d'affaires",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F189",
+   "prefix": "Boosters : marge d'EBITDA",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F235",
+   "prefix": "GreenUp : chiffre d'affaires bioénergie, flexibilité, efficacité énergétique (base)",
+   "period": "2023",
+   "unit": ""
+  },
+  {
+   "id": "F236",
+   "prefix": "GreenUp : ambition de chiffre d'affaires bioénergie",
+   "period": "2027",
+   "unit": ""
+  },
+  {
+   "id": "F197",
+   "prefix": "KPI GreenUp : émissions de GES évitées (scope 4), base 2023",
+   "period": "2023",
+   "unit": ""
+  },
+  {
+   "id": "F198",
+   "prefix": "KPI GreenUp : émissions de GES évitées, progression vs 2023",
+   "period": "2024",
+   "unit": ""
+  },
+  {
+   "id": "F199",
+   "prefix": "KPI GreenUp : émissions de GES évitées, progression vs 2023",
+   "period": "2025",
+   "unit": ""
+  },
+  {
+   "id": "F200",
+   "prefix": "KPI GreenUp : émissions de GES évitées, objectif vs 2023",
+   "period": "2027",
+   "unit": ""
+  },
+  {
+   "id": "F204",
+   "prefix": "KPI GreenUp : émissions de GES évitées, objectif",
+   "period": "2027",
+   "unit": "Mt CO2e"
+  },
+  {
+   "id": "F201",
+   "prefix": "KPI GreenUp : eau douce économisée",
+   "period": "2024",
+   "unit": ""
+  },
+  {
+   "id": "F202",
+   "prefix": "KPI GreenUp : eau douce économisée",
+   "period": "2025",
+   "unit": ""
+  },
+  {
+   "id": "F203",
+   "prefix": "KPI GreenUp : eau douce économisée, objectif",
+   "period": "2027",
+   "unit": ""
+  },
+  {
+   "id": "F33",
+   "prefix": "Déchets dangereux traités",
+   "period": "2024",
+   "unit": ""
+  },
+  {
+   "id": "F34",
+   "prefix": "Déchets dangereux traités",
+   "period": "2025",
+   "unit": ""
+  },
+  {
+   "id": "F35",
+   "prefix": "Objectif : déchets dangereux traités en 2027",
+   "period": "2027",
+   "unit": ""
+  },
+  {
+   "id": "F36",
+   "prefix": "Objectif GreenUp initial",
+   "period": "2027",
+   "unit": ""
+  },
+  {
+   "id": "F63",
+   "prefix": "Capacité ajoutée par 5 usines",
+   "period": "en construction",
+   "unit": ""
+  },
+  {
+   "id": "F58",
+   "prefix": "Déchets dangereux Veolia : chiffre d'affaires",
+   "period": "2024",
+   "unit": ""
+  },
+  {
+   "id": "F59",
+   "prefix": "Déchets dangereux Veolia + Clean Earth : chiffre d'affaires",
+   "period": "2025E",
+   "unit": ""
+  },
+  {
+   "id": "F60",
+   "prefix": "Déchets dangereux Veolia + Clean Earth : EBITDA",
+   "period": "2025E",
+   "unit": ""
+  },
+  {
+   "id": "F61",
+   "prefix": "Déchets dangereux Veolia + Clean Earth : marge",
+   "period": "2025E",
+   "unit": ""
+  },
+  {
+   "id": "F62",
+   "prefix": "Ambition GreenUp relevée",
+   "period": "2024-2027",
+   "unit": ""
+  },
+  {
+   "id": "F54",
+   "prefix": "Clean Earth : chiffre d'affaires",
+   "period": "2025E",
+   "unit": ""
+  },
+  {
+   "id": "F52",
+   "prefix": "Clean Earth : chiffre d'affaires",
+   "period": "2026E",
+   "unit": ""
+  },
+  {
+   "id": "F39",
+   "prefix": "Chiffre d'affaires Déchets dangereux Europe",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F93",
+   "prefix": "Déchets dangereux Europe : croissance",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F94",
+   "prefix": "EBITDA France et Déchets dangereux Europe",
+   "period": "S1 2025",
+   "unit": ""
+  },
+  {
+   "id": "F95",
+   "prefix": "EBITDA France et Déchets dangereux Europe",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F96",
+   "prefix": "EBITDA Amériques",
+   "period": "S1 2025",
+   "unit": ""
+  },
+  {
+   "id": "F97",
+   "prefix": "EBITDA Amériques",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F110",
+   "prefix": "Séché : chiffre d'affaires contributif",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F111",
+   "prefix": "Séché : EBITDA",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F113",
+   "prefix": "Séché : marge d'EBITDA",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F224",
+   "prefix": "Clean Harbors : chiffre d'affaires direct total",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F225",
+   "prefix": "Clean Harbors : EBITDA ajusté total",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F209",
+   "prefix": "Enviri : chiffre d'affaires du segment Clean Earth",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F211",
+   "prefix": "Enviri : résultat opérationnel du segment Clean Earth",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F213",
+   "prefix": "Enviri : dépréciation du segment Clean Earth",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F214",
+   "prefix": "Enviri : amortissement du segment Clean Earth",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F226",
+   "prefix": "Clean Harbors : marge d'EBITDA ajusté",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F210",
+   "prefix": "Enviri : chiffre d'affaires du segment Clean Earth",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F212",
+   "prefix": "Enviri : résultat opérationnel du segment Clean Earth",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F215",
+   "prefix": "Enviri : actifs totaux du segment Clean Earth",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F215",
+   "prefix": "Enviri : actifs totaux du segment Clean Earth",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F99",
+   "prefix": "Provisions de fermeture et post-fermeture (total)",
+   "period": "31/12/2024",
+   "unit": ""
+  },
+  {
+   "id": "F100",
+   "prefix": "Provisions de fermeture et post-fermeture (total)",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F101",
+   "prefix": "Provisions de fermeture, dont Amériques",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F102",
+   "prefix": "Provisions de fermeture, dont Amériques",
+   "period": "30/06/2026",
+   "unit": ""
+  },
+  {
+   "id": "F103",
+   "prefix": "Provisions de fermeture, dont France",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F45",
+   "prefix": "dont segment France et Déchets dangereux Europe",
+   "period": "30/06/2026",
+   "unit": ""
+  },
+  {
+   "id": "F104",
+   "prefix": "Provisions de fermeture, dont Europe",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F105",
+   "prefix": "Provisions de fermeture, dont Europe",
+   "period": "30/06/2026",
+   "unit": ""
+  },
+  {
+   "id": "F42",
+   "prefix": "Provisions pour réhabilitation de sites",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F43",
+   "prefix": "Provisions pour risques environnementaux",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F106",
+   "prefix": "Provisions pour démantèlement",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F107",
+   "prefix": "Désactualisation des provisions",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F98",
+   "prefix": "Clean Earth : goodwill préliminaire",
+   "period": "30/06/2026",
+   "unit": ""
+  },
+  {
+   "id": "F108",
+   "prefix": "Engagements reçus liés au périmètre",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F109",
+   "prefix": "Engagements reçus liés au périmètre",
+   "period": "30/06/2026",
+   "unit": ""
+  },
+  {
+   "id": "F239",
+   "prefix": "Clean Harbors : passifs environnementaux totaux",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F224",
+   "prefix": "Clean Harbors : chiffre d'affaires direct total",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F218",
+   "prefix": "Enviri : passifs environnementaux, part courante",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F219",
+   "prefix": "Enviri : passifs environnementaux, part non courante",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F209",
+   "prefix": "Enviri : chiffre d'affaires du segment Clean Earth",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F27",
+   "prefix": "Dividende proposé au titre de 2025",
+   "period": "2025",
+   "unit": ""
+  },
+  {
+   "id": "F86",
+   "prefix": "Nombre moyen pondéré",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F136",
+   "prefix": "Investissements financiers nets 2024",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F138",
+   "prefix": "Pont de dette 2024 : investissements financiers nets des cessions",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F225",
+   "prefix": "Clean Harbors : EBITDA ajusté total",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F224",
+   "prefix": "Clean Harbors : chiffre d'affaires direct total",
+   "period": "FY2025",
+   "unit": ""
+  }
+ ]
+}

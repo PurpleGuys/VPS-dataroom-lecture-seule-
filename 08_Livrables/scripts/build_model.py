@@ -107,9 +107,13 @@ def find(prefix, period, unit=None):
     return hits[0]["id"]
 
 
+USED: list[dict] = []   # chaque chiffre que le classeur lit, pour prioriser leur relecture
+
+
 def E(prefix, period, unit=None):
     """Adresse absolue de la valeur d'une ligne du registre dans Entrées."""
     fid = find(prefix, period, unit)
+    USED.append({"id": fid, "prefix": prefix, "period": period, "unit": unit or ""})
     return f"{q('Entrées')}!$C${ENTREE_ROW[fid]}", fid
 
 
@@ -1359,4 +1363,11 @@ for s in wb.worksheets:
 
 OUT.parent.mkdir(parents=True, exist_ok=True)
 wb.save(OUT)
+import json as _json
+from datetime import date as _date
+OUT.with_name("model-uses.json").write_text(_json.dumps({
+    "generated": _date.today().isoformat(), "model": OUT.name,
+    "ids": sorted({u["id"] for u in USED}, key=lambda s: (s[0], int(s[1:].split("-")[0]))),
+    "lookups": USED,
+}, ensure_ascii=False, indent=1), encoding="utf-8")
 print("écrit", OUT, "—", len(rows), "entrées,", len(cols), "scénarios")
