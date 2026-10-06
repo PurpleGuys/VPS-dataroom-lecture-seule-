@@ -4,6 +4,7 @@ Aucun chiffre n'est tapé ici : chaque valeur vient de register.csv (avec son ID
 fichier et sa page) ou d'une cellule du modèle recalculé.
 """
 import csv
+import os
 import html
 import re
 from pathlib import Path
@@ -11,9 +12,15 @@ from pathlib import Path
 from openpyxl import load_workbook
 
 HERE = Path(__file__).parent
-REG = list(csv.DictReader((HERE / "register.csv").open(encoding="utf-8")))
-WB = load_workbook("/home/ubuntu/capstone-livrables/modele-greenup-2027.xlsx", data_only=True)
-OUT = HERE / "dossiers-sujet-2.html"
+# Où sont les registres et où écrire : la chaîne (dataroom livrables) passe DATAROOM_ADMIN et DATAROOM_LIVRABLES ;
+# à défaut, le vault autour du script (08_Livrables/scripts → ../../00_Admin), puis une copie à côté du script.
+ADMIN = Path(os.environ.get("DATAROOM_ADMIN") or (HERE.parent.parent / "00_Admin"))
+LIV = Path(os.environ.get("DATAROOM_LIVRABLES") or HERE.parent)
+def admin_file(name):
+    return ADMIN / name if (ADMIN / name).exists() else HERE / name
+REG = list(csv.DictReader(admin_file("register.csv").open(encoding="utf-8")))
+WB = load_workbook(os.environ.get("DATAROOM_MODEL") or LIV / "modele-greenup-2027.xlsx", data_only=True)
+OUT = LIV / "dossiers-sujet-2.html"
 NB = " "
 
 
@@ -1114,7 +1121,7 @@ tr.calc td:first-child {{ font-style: italic; }}
       ses chiffres et ce qui manque.</li>
     </ul>
   </section>
-  <p class="foot">Sources : registre de la dataroom (00_Admin/register.csv), {len(REG)} chiffres au 1er octobre 2026, documents publics
+  <p class="foot">Sources : registre de la dataroom (00_Admin/register.csv), {len(REG)} chiffres au {__import__('datetime').date.today().strftime('%d/%m/%Y')}, documents publics
   uniquement. Chaque chiffre vient du registre ou d'une cellule du classeur ; seule exception, le multiple de 18,6x d'Enviri, cité
   d'après sa publication et signalé comme non encore versé. Les hypothèses du groupe sont dans l'onglet Hypothèses du classeur.</p>
 </div>

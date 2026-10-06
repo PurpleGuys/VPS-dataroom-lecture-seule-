@@ -4,6 +4,7 @@ Chaque nombre bleu de l'onglet Entrées est une ligne du registre (fichier, page
 Les cellules jaunes sont les hypothèses du groupe. Tout le reste est formule.
 """
 import csv
+import os
 import re
 import sys
 from pathlib import Path
@@ -18,8 +19,14 @@ sys.path.insert(0, str(Path(__file__).parent))
 import model_def as MD  # noqa: E402 - la définition du modèle, à côté du script
 
 HERE = Path(__file__).parent
-REG = HERE / "register.csv"
-OUT = Path(sys.argv[1] if len(sys.argv) > 1 else "/home/ubuntu/capstone-livrables/modele-greenup-2027.xlsx")
+# Où sont les registres et où écrire : la chaîne (dataroom livrables) passe DATAROOM_ADMIN et DATAROOM_LIVRABLES ;
+# à défaut, le vault autour du script (08_Livrables/scripts → ../../00_Admin), puis une copie à côté du script.
+ADMIN = Path(os.environ.get("DATAROOM_ADMIN") or (HERE.parent.parent / "00_Admin"))
+LIV = Path(os.environ.get("DATAROOM_LIVRABLES") or HERE.parent)
+def admin_file(name):
+    return ADMIN / name if (ADMIN / name).exists() else HERE / name
+REG = admin_file("register.csv")
+OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else LIV / "modele-greenup-2027.xlsx"
 
 # ---------------------------------------------------------------- styles
 F = "Arial"
@@ -98,7 +105,7 @@ def parse(value: str) -> float:
 
 rows = list(csv.DictReader(REG.open(encoding="utf-8")))
 # Les opérations (00_Admin/deals.csv) : même règle que le registre, chaque ligne a sa source et sa page.
-DEALS_CSV = HERE / "deals.csv"
+DEALS_CSV = admin_file("deals.csv")
 DEALS = list(csv.DictReader(DEALS_CSV.open(encoding="utf-8"))) if DEALS_CSV.exists() else []
 ENTREE_ROW = {}          # id -> ligne dans Entrées
 FIRST = 6
@@ -2482,7 +2489,7 @@ rules = [
     "Le levier 2026 « publié » compte 7 mois de Clean Earth ; la ligne pro forma en compte 12. Veolia ne dit pas laquelle elle retient.",
     "Le sélecteur de scénario (Hypothèses, colonne Actif) change tout le classeur ; les colonnes de Trajectoire restent des variations "
     "une à une autour du scénario actif. Les noms h_<code> (ex. h_s27) pointent sur la valeur active de chaque hypothèse.",
-    "Registre : chiffres versés dans dataroom.is42.fr du 1er au 6 octobre 2026. La relecture par un tiers se suit dans Vérifications "
+    f"Registre : {len(rows)} chiffres versés dans dataroom.is42.fr, état au {__import__('datetime').date.today().strftime('%d/%m/%Y')}. La relecture par un tiers se suit dans Vérifications "
     "(dernière ligne) et sur la page Relecture de la dataroom.",
 ]
 for t in rules:

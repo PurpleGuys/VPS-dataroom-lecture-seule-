@@ -10,6 +10,7 @@ Usage : python build_sim_data.py [classeur.xlsx] [model-def.json] [register.csv]
 """
 import csv
 import json
+import os
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -20,7 +21,7 @@ from openpyxl import load_workbook
 HERE = Path(__file__).parent
 BOOK = Path(sys.argv[1]) if len(sys.argv) > 1 else HERE.parent / "modele-greenup-2027.xlsx"
 DEF = Path(sys.argv[2]) if len(sys.argv) > 2 else BOOK.with_name("model-def.json")
-REG = Path(sys.argv[3]) if len(sys.argv) > 3 else HERE / "register.csv"
+REG = Path(sys.argv[3]) if len(sys.argv) > 3 else Path(os.environ.get("DATAROOM_ADMIN") or (HERE.parent.parent / "00_Admin")) / "register.csv"
 OUT = Path(sys.argv[4]) if len(sys.argv) > 4 else BOOK.with_name("simulateur-data.json")
 
 model = json.loads(DEF.read_text(encoding="utf-8"))

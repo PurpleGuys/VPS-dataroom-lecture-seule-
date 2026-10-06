@@ -5,12 +5,14 @@ les chiffres ceux du registre. Usage : python build_fiches.py [report-data.json]
 """
 import html
 import json
+import os
 import sys
 from pathlib import Path
 
 HERE = Path(__file__).parent
-DATA = json.loads(Path(sys.argv[1] if len(sys.argv) > 1 else HERE / "report-data.json").read_text(encoding="utf-8"))
-OUT = Path(sys.argv[2] if len(sys.argv) > 2 else HERE / "fiches-oral.html")
+LIV = Path(os.environ.get("DATAROOM_LIVRABLES") or HERE.parent)
+DATA = json.loads(Path(sys.argv[1] if len(sys.argv) > 1 else LIV / "report-data.json").read_text(encoding="utf-8"))
+OUT = Path(sys.argv[2] if len(sys.argv) > 2 else LIV / "fiches-oral.html")
 esc = html.escape
 
 cards = []
