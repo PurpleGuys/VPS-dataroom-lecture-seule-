@@ -1,7 +1,7 @@
 {
  "generated": "2026-10-06",
  "checks": "OK",
- "n_figures": 600,
+ "n_figures": 615,
  "title": "GreenUp 2027 : combien Veolia peut-elle encore acheter sans dépasser ses engagements de levier ?",
  "subtitle": "Capstone Innovations in Finance — sujet 2, périmètre « capacité financière »",
  "thread": "Veolia annonce des enveloppes nettes. Clean Earth en est sorti ; le programme de cessions de plus de 2 Md€ d'ici mi-2028 l'y ramène. Si ce programme est encaissé à temps, il reste fin 2027 environ 1,6 Md€ de marge sous 3x, soit une acquisition d'environ 2,3 Md€ au multiple de Clean Earth. Cette marge dépend d'abord du calendrier des cessions, de la croissance organique de 2027 et des tuck-ins. Elle disparaît si tout tourne mal en même temps, ou si l'on compte la moitié des hybrides en dette. Le seuil des agences (FFO / dette ajustée ≥ 18 % chez S&P) est la contrainte de 2026 : 19,3 % dans le scénario central, dans l'attente de Moody's ; fin 2027 il laisse 4,3 Md€ et c'est le 3x qui mord. Le booster déchets dangereux tient son objectif de volume révisé, pas l'initial, et sa croissance est surtout achetée. Le passif environnemental de Clean Earth n'est pas encore visible dans les comptes.",
@@ -2059,7 +2059,7 @@
   }
  ],
  "todo": [
-  "Relire en croisé les 600 chiffres du registre et les 26 deals : aucun n'a encore de relecteur.",
+  "Relire en croisé les 615 chiffres du registre et les 26 deals : aucun n'a encore de relecteur.",
   "Lire les 10-K 2025 d'Enviri et de Clean Harbors, désormais dans la dataroom, et en tirer les chiffres des rôles 4 et 5 (passifs environnementaux de Clean Earth, marges et levier de Clean Harbors). Reste à verser : le 10-Q du T1 2026 d'Enviri et le communiqué de vente du 20 novembre 2025.",
   "Avant le 7 octobre : montrer la dataroom comme « sources chargées et lues », et noter dans gaps.md ce qui manque encore.",
   "Rédiger la page d'annexe sur les outils d'IA : dataroom MCP (recherche, registre, contrôles), Claude pour construire le classeur et ces dossiers, LibreOffice pour le recalcul. Aucun chiffre produit par le modèle de langage.",
@@ -7464,6 +7464,141 @@
    "10,438,730 actions",
    "31/12/2025",
    "finance_veolia_urd_2025_en.pdf, p. 487, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "6",
+   ""
+  ],
+  [
+   "F601",
+   "EnviroServe (Clean Harbors) : prix d'acquisition",
+   "470 M USD",
+   "08/2026",
+   "clean-harbors-enviroserve-2026-08-12.html, p. 1, https://www.stocktitan.net/news/CLH/clean-harbors-to-acquire-enviro-serve-for-470-oh17y1jlmzc0.html (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F602",
+   "EnviroServe (Clean Harbors) : EBITDA ajusté annuel attendu, environ",
+   "27 M USD",
+   "2026e",
+   "clean-harbors-enviroserve-2026-08-12.html, p. 1, https://www.stocktitan.net/news/CLH/clean-harbors-to-acquire-enviro-serve-for-470-oh17y1jlmzc0.html (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F603",
+   "EnviroServe (Clean Harbors) : chiffre d'affaires annuel attendu, environ",
+   "250 M USD",
+   "2026e",
+   "clean-harbors-enviroserve-2026-08-12.html, p. 1, https://www.stocktitan.net/news/CLH/clean-harbors-to-acquire-enviro-serve-for-470-oh17y1jlmzc0.html (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F604",
+   "EnviroServe (Clean Harbors) : synergies de coûts attendues, environ",
+   "25 M USD",
+   "années 1-2",
+   "clean-harbors-enviroserve-2026-08-12.html, p. 1, https://www.stocktitan.net/news/CLH/clean-harbors-to-acquire-enviro-serve-for-470-oh17y1jlmzc0.html (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F605",
+   "EnviroServe et ES&H (Clean Harbors) : prix combiné",
+   "775 M USD",
+   "10/2026",
+   "clean-harbors-enviroserve-esh-2026-10-05.html, p. 1, https://www.stocktitan.net/news/CLH/clean-harbors-completes-acquisitions-of-enviro-serve-and-es-exg89lv5k702.html (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F606",
+   "EnviroServe et ES&H (Clean Harbors) : EBITDA ajusté annuel combiné après synergies, environ",
+   "87 M USD",
+   "2026e",
+   "clean-harbors-enviroserve-esh-2026-10-05.html, p. 1, https://www.stocktitan.net/news/CLH/clean-harbors-completes-acquisitions-of-enviro-serve-and-es-exg89lv5k702.html (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F607",
+   "EnviroServe et ES&H (Clean Harbors) : multiple combiné après synergies",
+   "8.9 x",
+   "10/2026",
+   "clean-harbors-enviroserve-esh-2026-10-05.html, p. 1, https://www.stocktitan.net/news/CLH/clean-harbors-completes-acquisitions-of-enviro-serve-and-es-exg89lv5k702.html (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F608",
+   "ES&H (Clean Harbors) : prix d'acquisition",
+   "305 M USD",
+   "07/2026",
+   "clean-harbors-q2-2026-2026-07-29.html, p. 1, https://www.stocktitan.net/news/CLH/clean-harbors-announces-second-quarter-2026-financial-i7hymqt5jls0.html (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F609",
+   "Heritage-Crystal Clean (J.F. Lehman) : valorisation de la transaction, environ",
+   "1.2 Md USD",
+   "07/2023",
+   "crystal-clean-jfl-2023-07-19.html, p. 1, https://www.crystal-clean.com/heritage-crystal-clean-inc-to-be-acquired-by-j-f-lehman-company-for-1-2-billion/ (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F610",
+   "Heritage-Crystal Clean (J.F. Lehman) : prix par action",
+   "45.50 USD",
+   "07/2023",
+   "crystal-clean-jfl-2023-07-19.html, p. 1, https://www.crystal-clean.com/heritage-crystal-clean-inc-to-be-acquired-by-j-f-lehman-company-for-1-2-billion/ (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F611",
+   "Fortum Recycling and Waste (NG Group, Summa Equity) : prix, dette et trésorerie exclues, environ",
+   "800 M EUR",
+   "07/2024",
+   "fortum-summa-ng-group-2024-07-18.html, p. 1, https://news.cision.com/summa-equity/r/summa-equity-through-ng-group-acquires-fortum-recycling-and-waste,c4035069 (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F612",
+   "Triumvirate Environmental (Berkshire Partners) : valorisation après investissement",
+   "1.8 Md USD",
+   "02/2025",
+   "triumvirate-berkshire-2025-02-04.html, p. 1, https://ca.finance.yahoo.com/news/triumvirate-environmental-valued-1-8-132050079.html (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F613",
+   "GFL Environmental Services (Apollo, BC Partners) : valeur d'entreprise",
+   "8.0 Md CAD",
+   "01/2025",
+   "gfl-es-latham-2025-01-07.html, p. 1, https://www.lw.com/en/news/2025/01/latham-watkins-advises-gfl-environmental-inc-on-sale-of-environmental-services-business (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F614",
+   "GFL Environmental Services : participation conservée par GFL",
+   "1.7 Md CAD",
+   "01/2025",
+   "gfl-es-latham-2025-01-07.html, p. 1, https://www.lw.com/en/news/2025/01/latham-watkins-advises-gfl-environmental-inc-on-sale-of-environmental-services-business (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F615",
+   "Taux de référence BCE : dollars canadiens pour un euro",
+   "1.6058 CAD pour 1 EUR",
+   "06/10/2026",
+   "bce-taux-eur-cad-2026-10-06.html, p. 1, https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-cad.en.html (consulté le 2026-10-06)",
    "6",
    ""
   ]

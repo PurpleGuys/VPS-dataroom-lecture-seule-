@@ -5,7 +5,7 @@ Généré depuis le journal des requêtes du serveur et les registres ; rien n'e
 
 ## 2026-10-06
 
-- **compte partagé (dataroom-bearer)** : 374 chiffre(s) ajouté(s) (F244, F245, F246, F247, F248, F249, F250, F251…); 4 deal(s) (D27, D28, D29, D30); 17 document(s) versé(s); 5 recherche(s), 36 page(s) lue(s).
+- **compte partagé (dataroom-bearer)** : 389 chiffre(s) ajouté(s) (F244, F245, F246, F247, F248, F249, F250, F251…); 11 deal(s) (D27, D28, D29, D30, D31, D32, D33, D34, D35, D36, D37); 5 cible(s) (T2, T3, T4, T5, T6); 17 document(s) versé(s); 5 recherche(s), 41 page(s) lue(s).
 - **ethan** : 2 recherche(s), 0 page(s) lue(s).
 - **promo-eau** : 1 appel(s).
 
