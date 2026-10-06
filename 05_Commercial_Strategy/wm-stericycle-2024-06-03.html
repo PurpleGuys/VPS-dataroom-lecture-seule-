@@ -1,0 +1,1187 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<!-- begin spin_special_output(head_start) -->
+<link href="thirdparty/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" wd_script_id="font-awesome.min.css">
+<style type="text/css" wd_script_id="search_form_style" nonce="NjAxMDM1ODgyMDI1OGNjNjdjZDY0ZTYwOTNlZmY4ZWRjNjE1ZjRjYQ==">
+		.wd_search_form .wd_input_datepicker {
+			margin-right: 2px;
+		}
+		.wd_search_type_checkbox {
+			margin-left: 20px;
+		}
+		</style>
+<script type="text/javascript" src="js/jquery-webdriver.js" wd_script_id="jquery-webdriver.js" nonce="NjAxMDM1ODgyMDI1OGNjNjdjZDY0ZTYwOTNlZmY4ZWRjNjE1ZjRjYQ=="></script>
+<script type="text/javascript" src="js/webdriver.js" wd_script_id="webdriver.js" nonce="NjAxMDM1ODgyMDI1OGNjNjdjZDY0ZTYwOTNlZmY4ZWRjNjE1ZjRjYQ=="></script>
+<script type="text/javascript" wd_script_id="search_form_script" nonce="NjAxMDM1ODgyMDI1OGNjNjdjZDY0ZTYwOTNlZmY4ZWRjNjE1ZjRjYQ==">
+			function wd_toggle_search_form(link, advanced) {
+				var $ = webDriver.jQuery;
+				var $container = $(link).closest(".wd_search_form_container");
+				var basic_form = $container.find(".wd_search_form_basic");
+				var basic_query = basic_form.find('input[name="query"]');
+				var advanced_form = $container.find(".wd_search_form_advanced");
+				var advanced_query = advanced_form.find('input[name="query"]');
+
+				if (advanced) {
+					advanced_query.val(basic_query.val());
+					advanced_form.show();
+					basic_form.hide();
+				} else {
+					basic_query.val(advanced_query.val());
+					basic_form.show();
+					advanced_form.hide();
+				}
+
+				var target_form = advanced ? advanced_form : basic_form;
+				var focus_target = target_form.find('input[name="query"]').filter(":visible:not(:disabled)").get(0);
+				if (!focus_target)
+					focus_target = target_form.find(":input").filter(":visible:not(:disabled)").get(0);
+				if (focus_target)
+					setTimeout(function() { focus_target.focus(); }, 0);
+			}
+
+			function wd_toggle_search_type_checkboxes(radio) {
+				var $ = webDriver.jQuery;
+				var $radio = $(radio);
+				var all = $radio.val() == "All" ? $radio.is(":checked") : !$radio.is(":checked");
+				var $checkboxes = $radio.closest(".wd_form_field").find(".wd_search_type_checkbox");
+				$checkboxes.find('input[type="checkbox"]').prop("disabled", all);
+				$checkboxes.toggle(!all);
+			}
+
+			webDriver.jQuery(function ($) {
+				$('.wd_search_type_radio input[type="radio"]').each(function() {wd_toggle_search_type_checkboxes(this);});
+			});
+		</script>
+<script type="text/javascript" src="js/wd_resize.js" wd_script_id="wd_resize.js" nonce="NjAxMDM1ODgyMDI1OGNjNjdjZDY0ZTYwOTNlZmY4ZWRjNjE1ZjRjYQ=="></script>
+<script type="text/javascript" nonce="NjAxMDM1ODgyMDI1OGNjNjdjZDY0ZTYwOTNlZmY4ZWRjNjE1ZjRjYQ==">webDriver.push_jQuery();</script>
+<script type="text/javascript" wd_script_id="view_printable_script" nonce="NjAxMDM1ODgyMDI1OGNjNjdjZDY0ZTYwOTNlZmY4ZWRjNjE1ZjRjYQ==">
+	function view_printable() {
+		var loc = window.location;
+		var sep = (loc.search == "") ? "?" : "&";
+		var url = loc.protocol+"//"+loc.host+loc.pathname+loc.search+sep+"printable"+loc.hash;
+		window.open(url, "_blank", "");
+	}
+</script>
+<script type="text/javascript" wd_script_id="format_news_script" nonce="NjAxMDM1ODgyMDI1OGNjNjdjZDY0ZTYwOTNlZmY4ZWRjNjE1ZjRjYQ==">
+(function($) {
+	webDriver.formatNews = function() {
+		var $news = $(this);
+		var print_url = $news.attr("wd_print_url");
+		$news.find("table").each(function() {
+			var $table = $(this);
+			var $parent = $table.parent();
+			if ($parent.innerWidth() < $table.outerWidth()) {
+				if ($parent.hasClass("wd_news_table")) {
+					$parent.find(".fullscreen-button").show();
+				} else {
+					var $btn = $("<button>View News Release Full Screen</button>")
+						.addClass("fullscreen-button")
+						.on("click", function() {
+							if (print_url)
+								window.open(print_url, "_blank", "");
+							else
+								view_printable();
+						})
+					;
+
+					var $div = $("<div></div>)")
+						.addClass("wd_news_table")
+						.css("overflow-x", "auto")
+						.append($btn)
+					;
+
+					$table.replaceWith($div);
+					$div.append($table);
+				}
+			} else {
+				if ($parent.hasClass("wd_news_table"))
+					$parent.find(".fullscreen-button").hide();
+			}
+		});
+	}
+})(webDriver.jQuery);
+</script>
+<style type="text/css" wd_script_id="template detail:newsfeed_releases:system style" nonce="NjAxMDM1ODgyMDI1OGNjNjdjZDY0ZTYwOTNlZmY4ZWRjNjE1ZjRjYQ==">
+.wd_title {
+	font-size: 1.3em;
+	font-weight: bold;
+}
+.wd_subtitle {
+	font-weight: bold;
+}
+table.wd_extimagetable {
+	border-style: none; 
+	border-spacing:0px;
+	clear: right; 
+	float: right; 
+}
+td.wd_extimagecell {
+	text-align: right; 
+	margin: 0px 0px 5px 5px;
+	padding:0px;
+}
+td.wd_extimagecell img {
+	padding-left:10px;
+	padding-bottom:10px;
+	border-style: none; 
+}
+blockquote.wd_pullquote {
+	font-style: italic;
+	width:200px;
+	margin:0 0 20px 20px;
+	line-height: 1.8em;
+	float: right;
+	clear: right;
+}
+blockquote.wd_pullquote:before {
+	content: "“ ";
+	font-size: xx-large;
+}
+blockquote.wd_pullquote:after {
+	content: " ”";
+	font-size: xx-large;
+	float: right;
+}
+.fullscreen-button {
+	border: 1px solid #d1d1d1;
+	background: #e3e3e3 url(images/webdriver/view_full_screen_button_background.png) no-repeat;
+	padding: 3px 3px 3px 30px;
+	margin: 5px 0px 5px 0px;
+	color: #727272;
+	width: 220px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+.wd_contact {
+	margin: 1em 0;
+}
+.wd_release_data {
+	margin: 1em 0;
+}
+.wd_caption {
+	text-align: center;
+	font-size: 0.72em;
+	font-style: italic;
+	margin: 1em 0 0 0;
+}
+</style>
+<script type="text/javascript" nonce="NjAxMDM1ODgyMDI1OGNjNjdjZDY0ZTYwOTNlZmY4ZWRjNjE1ZjRjYQ==">webDriver.pop_jQuery();</script>
+
+<!-- end spin_special_output(head_start) -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+            <!-- OneTrust Cookies Consent Notice start for mediaroom.wm.com -->
+        <script type="text/javascript" src="https://cdn.cookielaw.org/consent/0191d7b8-7f05-7c6b-b885-0b5a7cee2c63/OtAutoBlock.js" ></script>
+        <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-document-language="true" type="text/javascript" charset="UTF-8" data-domain-script="0191d7b8-7f05-7c6b-b885-0b5a7cee2c63" ></script>
+        <script type="text/javascript">
+        function OptanonWrapper() {
+            const geoData = window.OneTrust?.getGeolocationData();
+            console.log(geoData.country);
+            
+            // Check if the user's country is the United States
+            if (geoData.country === "US") {
+                document.getElementById("onetrust-ca").style.display = "block";
+            }
+        }
+        </script>
+        <!-- OneTrust Cookies Consent Notice end for mediaroom.wm.com -->
+    
+
+
+    <title>WM to Acquire Stericycle, a Leader in Medical Waste Services, for $7.2 Billion</title>
+    
+ <meta name="keywords" content="" />
+ <meta name="description" content="" />
+ <meta name="twitter:card" content="summary" />
+ <meta name="twitter:title" content="WM to Acquire Stericycle, a Leader in Medical Waste Services, for $7.2 Billion" />
+ <meta name="twitter:description" content="Expands WM’s Comprehensive Environmental Solutions in the Growing Healthcare Market While Advancing WM’s Sustainability Commitments Provides a complementary business platform in the healthcare..." />
+ <meta property="og:site_name" content="Media Room | WM" />
+ <meta property="og:url" content="https://mediaroom.wm.com/2024-06-03-WM-to-Acquire-Stericycle,-a-Leader-in-Medical-Waste-Services,-for-7-2-Billion" />
+ <meta property="og:title" content="WM to Acquire Stericycle, a Leader in Medical Waste Services, for $7.2 Billion" />
+ <meta property="og:description" content="Expands WM’s Comprehensive Environmental Solutions in the Growing Healthcare Market While Advancing WM’s Sustainability Commitments Provides a complementary business platform in the healthcare..." />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/wdcontent.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link href="thirdparty/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" wd_script_id="font-awesome.min.css">
+  
+    <link href="css/wdcontent.css" rel="stylesheet">
+<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-38C2D3L46D"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-38C2D3L46D'); </script>
+
+<!-- begin spin_special_output(head_end) -->
+<link rel="canonical" href="https://mediaroom.wm.com/2024-06-03-WM-to-Acquire-Stericycle,-a-Leader-in-Medical-Waste-Services,-for-7-2-Billion" />
+<!-- end spin_special_output(head_end) -->
+</head>
+
+<body class="wd_pageid_20295 wd_item_page wd_item_122462">
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div class="collapse" id="searchBox">
+        <div class="container">
+            <div class="wd_search_form_container"><form name="basic_search" method="get" action="https://mediaroom.wm.com/index.php?s=20322" class="wd_search_form wd_search_form_basic"><input type="hidden" name="s" value="search_results" /><input type="text" name="query" value="" size="32" placeholder="Search" title="Search" /> <a href="#" onclick="webDriver.jQuery(this).closest('form').submit(); return false;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="25px" viewBox="0 0 26 25" version="1.1" class="injected-svg" data-src="https://cdn.wm.com/content/dam/wm/icons/search-icon.svg"><title>Icon</title><g id="MVP" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><g id="1440-WM_2.5-Support-Page-Copy" transform="translate(-1240.000000, -72.000000)" stroke="#065920" stroke-width="2"><g id="div" transform="translate(166.800000, 65.613333)"><g id="feather-search" transform="translate(1073.200000, 5.886667)"><g id="Icon" transform="translate(2.888889, 3.250000)"><g id="Icon-Group" transform="translate(0.088328, 0.085174)"><ellipse id="Icon-Oval" cx="8.71507472" cy="8.40382206" rx="8.71507472" ry="8.40382206"></ellipse><line x1="19.6089181" y1="18.9085996" x2="14.8700962" y2="14.3390214" id="Icon-Path"></line></g></g></g></g></g></g></svg></a></form>
+</div>            <a data-toggle="collapse" href="#searchBox" role="button" aria-expanded="false" aria-controls="searchBox"><i
+                    class="fa fa-times" aria-hidden="true"><span class="sr-only">Search Menu</span></i></a>
+        </div>
+    </div>
+    <div class="wd_header_banner">
+        <div class="container"><a href="https://www.wm.com/">Back to wm.com</a></div>
+    </div>
+    <nav class="navbar navbar-expand-xl navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="https://mediaroom.wm.com/overview"><img src="images/wm-logo-web-header-footer.svg"
+                    alt="Logo Image"></a>
+            <button class="navbar-toggler" type="button" aria-expanded="false" data-target="#mobileNav"
+                aria-label="Toggle navigation" onclick="openNav()">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+            <div class="collapse navbar-collapse navbar-right" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    	<li class="nav-item ">
+		<a href="https://mediaroom.wm.com/overview"  class="nav-link " target="_self">Overview</a>
+			</li>
+	<li class="nav-item active ">
+		<a href="https://mediaroom.wm.com/press-releases"  class="nav-link " target="_self">Press Releases <span class="sr-only">(current)</span></a>
+			</li>
+	<li class="nav-item ">
+		<a href="https://mediaroom.wm.com/stories"  class="nav-link " target="_self">Stories</a>
+			</li>
+	<li class="nav-item ">
+		<a href="https://mediaroom.wm.com/media-coverage"  class="nav-link " target="_self">Media Coverage</a>
+			</li>
+	<li class="nav-item dropdown">
+		<a href="#" id="dropdown20290" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle" target="_self">Media Resources</a>
+		<ul class="dropdown-menu" aria-labelledby="dropdown20290">	<li class="nav-item ">
+		<a href="https://mediaroom.wm.com/fact-sheets"  class="nav-link " target="_self">Fact Sheets</a>
+			</li>
+	<li class="nav-item ">
+		<a href="https://mediaroom.wm.com/photos-and-assets"  class="nav-link " target="_self">Photos & Assets</a>
+			</li>
+	<li class="nav-item ">
+		<a href="https://mediaroom.wm.com/videos"  class="nav-link " target="_self">Videos</a>
+			</li>
+	<li class="nav-item ">
+		<a href="mailto:media@wm.com"  class="nav-link " target="_self">Media Contact</a>
+			</li>
+</ul>	</li>
+                    <!-- <li class="nav-item">
+		<a class="nav-link" data-toggle="collapse" href="#searchBox" role="button" aria-expanded="false" aria-controls="searchBox"><i class="fa fa-search" aria-hidden="true"><span class="sr-only">Search Menu</span></i></a>
+		</li> -->
+                </ul>
+                <div class="navbar-nav mr-right">
+                    <div tabindex="-1"><button aria-haspopup="dialog"
+                            class="MegaNav__search MegaNav__search--main bg-transparent" type="button"
+                            style="padding: 0.25rem 0px;"><span class="sr-only">Search</span><span><svg
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="26px" height="25px" viewBox="0 0 26 25" version="1.1" class="injected-svg"
+                                    data-src="https://cdn.wm.com/content/dam/wm/icons/search-icon.svg">
+                                    <title>Icon</title>
+                                    <g id="MVP" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <g id="1440-WM_2.5-Support-Page-Copy"
+                                            transform="translate(-1240.000000, -72.000000)" stroke="#065920"
+                                            stroke-width="2">
+                                            <g id="div" transform="translate(166.800000, 65.613333)">
+                                                <g id="feather-search" transform="translate(1073.200000, 5.886667)">
+                                                    <g id="Icon" transform="translate(2.888889, 3.250000)">
+                                                        <g id="Icon-Group" transform="translate(0.088328, 0.085174)">
+                                                            <ellipse id="Icon-Oval" cx="8.71507472" cy="8.40382206"
+                                                                rx="8.71507472" ry="8.40382206"></ellipse>
+                                                            <line x1="19.6089181" y1="18.9085996" x2="14.8700962"
+                                                                y2="14.3390214" id="Icon-Path"></line>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <nav class="mobilenav navbar align-content-start">
+        <div class="bg-white wd_mobile-brand">
+            <div class="container">
+                <a class="navbar-brand" href="https://mediaroom.wm.com/overview"><img
+                        src="images/wm-logo-web-header-footer.svg" alt="Logo Image"></a>
+                <button class="navbar-toggler close_nav_button" type="button" aria-expanded="false"
+                    data-target="#mobileNav" aria-label="Toggle navigation" onclick="closeNav()">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="collapse navbar-collapse navbar-right show" id="mobileNav">
+                <ul class="navbar-nav ml-auto">
+                    <div class="wd_search_form_container"><form name="basic_search" method="get" action="https://mediaroom.wm.com/index.php?s=20322" class="wd_search_form wd_search_form_basic"><input type="hidden" name="s" value="search_results" /><input type="text" name="query" value="" size="32" placeholder="Search" title="Search" /> <a href="#" onclick="webDriver.jQuery(this).closest('form').submit(); return false;"><img src="images/search-icon.svg" alt="Submit" /></a></form>
+</div>                    <div class="nav-links overflow-auto">
+  <div class="MenuItem maax-font-weight-bold  top-level">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="menu-item d-flex align-items-center">
+        <a href="https://mediaroom.wm.com/overview"  class="nav-link d-block d-flex bg-transparent w-100 align-items-center a-taggable" target="_self">Overview</a>
+        </a>
+      </div>
+            </div>
+      </div>
+  <div class="MenuItem maax-font-weight-bold  top-level">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="menu-item d-flex align-items-center">
+        <a href="https://mediaroom.wm.com/press-releases"  class="nav-link d-block d-flex bg-transparent w-100 align-items-center a-taggable" target="_self">Press Releases</a>
+        </a>
+      </div>
+            </div>
+      </div>
+  <div class="MenuItem maax-font-weight-bold  top-level">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="menu-item d-flex align-items-center">
+        <a href="https://mediaroom.wm.com/stories"  class="nav-link d-block d-flex bg-transparent w-100 align-items-center a-taggable" target="_self">Stories</a>
+        </a>
+      </div>
+            </div>
+      </div>
+  <div class="MenuItem maax-font-weight-bold  top-level">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="menu-item d-flex align-items-center">
+        <a href="https://mediaroom.wm.com/media-coverage"  class="nav-link d-block d-flex bg-transparent w-100 align-items-center a-taggable" target="_self">Media Coverage</a>
+        </a>
+      </div>
+            </div>
+      </div>
+  <div class="MenuItem maax-font-weight-bold has-children top-level">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="menu-item d-flex align-items-center">
+        <a href="#" id="dropdown20290" aria-haspopup="true" aria-expanded="false" class="nav-link d-block d-flex bg-transparent w-100 align-items-center a-taggable" target="_self">Media Resources</a>
+        </a>
+      </div>
+        <span class="wm-cursor-pointer"></span>    </div>
+    <div class=" wd_mobile-subnav dropdown-menu" aria-labelledby="dropdown20290"><div class="nav-links overflow-auto">
+  <div class="MenuItem maax-font-weight-bold ">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="menu-item d-flex align-items-center">
+        <a href="https://mediaroom.wm.com/fact-sheets"  class="nav-link d-block d-flex bg-transparent w-100 align-items-center a-taggable" target="_self">Fact Sheets</a>
+        </a>
+      </div>
+            </div>
+      </div>
+  <div class="MenuItem maax-font-weight-bold ">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="menu-item d-flex align-items-center">
+        <a href="https://mediaroom.wm.com/photos-and-assets"  class="nav-link d-block d-flex bg-transparent w-100 align-items-center a-taggable" target="_self">Photos & Assets</a>
+        </a>
+      </div>
+            </div>
+      </div>
+  <div class="MenuItem maax-font-weight-bold ">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="menu-item d-flex align-items-center">
+        <a href="https://mediaroom.wm.com/videos"  class="nav-link d-block d-flex bg-transparent w-100 align-items-center a-taggable" target="_self">Videos</a>
+        </a>
+      </div>
+            </div>
+      </div>
+  <div class="MenuItem maax-font-weight-bold ">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="menu-item d-flex align-items-center">
+        <a href="mailto:media@wm.com"  class="nav-link d-block d-flex bg-transparent w-100 align-items-center a-taggable" target="_self">Media Contact</a>
+        </a>
+      </div>
+            </div>
+      </div>
+</div>
+</div>  </div>
+</div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        <main role="main" class="container">
+        <div class="row">
+            <div class="main-content p-3 col-lg-12">
+                <div id="wd_printable_content" class="fr-view">
+<div class="wd_newsfeed_releases-detail">
+<div class="wd_title wd_language_left">WM to Acquire Stericycle, a Leader in Medical Waste Services, for $7.2 Billion</div>
+
+
+
+
+
+			
+		
+
+			
+		
+
+<style type="text/css">
+
+					div.PRN_ImbeddedAssetReference{
+						display: none;
+					}
+					div[id^="prni_dvprne"]{
+						display: none;
+					}
+				</style>
+
+<div class="wd_body wd_news_body fr-view" wd_resize="formatNews" wd_print_url="https://mediaroom.wm.com/2024-06-03-WM-to-Acquire-Stericycle,-a-Leader-in-Medical-Waste-Services,-for-7-2-Billion?printable=1"><p style="text-align: center;"><strong>Expands WM&rsquo;s Comprehensive Environmental Solutions in the Growing Healthcare Market While&nbsp;</strong><strong>Advancing WM&rsquo;s Sustainability Commitments</strong></p>
+
+<ul>
+	<li>Provides a complementary business platform in the healthcare market, a sector with attractive near- and long-term growth dynamics</li>
+	<li>Positions WM to offer customers the opportunity to partner with a single service provider with a comprehensive suite of environmental solutions</li>
+	<li>Builds on WM&rsquo;s sustainability commitments to help communities thrive by offering customers a partner with leading, comprehensive service offerings focused on promoting healthy and safe communities</li>
+	<li>Leverages WM&rsquo;s expertise in logistics and technology-enabled cost optimization, as well as its leading waste disposal network to deliver more than&nbsp;<money>$125 million</money>&nbsp;of projected annual synergies</li>
+	<li>Synergy realization expected to result in a post-synergy transaction multiple well below WM&#39;s current trading multiple</li>
+	<li>Expected to be accretive to WM&rsquo;s earnings and cash flow within one year of close</li>
+	<li>Both WM and&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;remain confident in the strength of their businesses and expect to achieve previously announced full-year guidance, excluding the impacts of any transaction-related costs</li>
+</ul>
+
+<p><location idsrc="xmltag.org" value="LU/us.tx.houstn"></location><strong>HOUSTON &nbsp;&amp;&nbsp; BANNOCKBURN, Ill. --(BUSINESS WIRE)--</strong>Jun. 3, 2024--<org idsrc="xmltag.org" value="WM">Waste Management, Inc.</org>&nbsp;(NYSE: WM) and&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;(NASDAQ: SRCL) announced today that they have entered into a definitive agreement under which WM will acquire all outstanding shares of&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;for&nbsp;<money>$62.00</money>&nbsp;per share in cash, representing a total enterprise value of approximately&nbsp;<money>$7.2 billion</money>&nbsp;when including approximately&nbsp;<money>$1.4 billion</money>&nbsp;of Stericycle&rsquo;s net debt. The per share price represents a premium of 24% to Stericycle&rsquo;s 60-day volume weighted average price as of&nbsp;<chron>May 23, 2024</chron>, which was the last trading day before an article reported that&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;was considering a potential sale.</p>
+
+<p><org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;is a premier provider of regulated medical waste and compliance services as well as secure information destruction services.</p>
+
+<p>&ldquo;At WM, we are committed to maximizing value for all our stakeholders by providing a comprehensive suite of environmental solutions to the market. The acquisition of&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;is a significant step in advancing this commitment because it broadens the scope of our service offerings, bringing together the leader in solid waste and a premier company in regulated medical waste services,&rdquo; said&nbsp;<person value="2748320246">Jim Fish</person>, President and Chief Executive Officer of WM. &ldquo;We have a proven track record of integrating and optimizing acquired businesses that benefit our customers and employees and deliver a strong return on investment for our shareholders. We look forward to working with the&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;team to capture the strategic, customer service, environmental, and financial benefits of this acquisition.&rdquo;</p>
+
+<p>&ldquo;Our sustained focus and commitment to transforming our business over the past five years has uniquely positioned&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;for this transaction, which creates significant value for shareholders, unlocks new opportunities to deliver diversified services to customers, and supports investment in the growth and development of our team members,&rdquo; said&nbsp;<person>Cindy J. Miller</person>, Stericycle&rsquo;s President and Chief Executive Officer. &ldquo;As customers seek to manage a greater volume and variety of materials in a safe, responsible, and sustainable way, Stericycle&rsquo;s knowledge and expertise in regulated medical waste and secure information destruction are compelling additions to WM&rsquo;s broad portfolio of environmental solutions. We are proud of all that we&rsquo;ve accomplished to shape a healthier and safer world and look forward to our future as part of WM.&rdquo;</p>
+
+<p><strong>Compelling Strategic and Financial Benefits</strong></p>
+
+<p>The acquisition advances WM&rsquo;s growth strategy, underscores the importance of executing on its sustainability initiatives, and aligns with the Company&rsquo;s financial goals, including growth in operating EBITDA and cash flow. Specifically, WM expects the addition of&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;to:</p>
+
+<ul>
+	<li><strong>Expand WM&rsquo;s already extensive environmental service offerings.</strong>&nbsp;The acquisition of&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;adds a leading platform of differentiated assets in the attractive medical waste and secure information destruction industries to WM&rsquo;s suite of environmental solutions. Given the growth outlook for healthcare services in&nbsp;<location idsrc="xmltag.org" value="LB/nam">North America</location>, WM expects this business to deliver revenue growth that surpasses the strong fundamentals of its core solid waste business.</li>
+	<li><strong>Continue its commitment to comprehensive, sustainable waste solutions.</strong>&nbsp;This acquisition allows WM to further its unparalleled investment in growing North America&rsquo;s recycling infrastructure and enhance the environmental value of Stericycle&rsquo;s secure information destruction business.</li>
+	<li><strong>Strengthen the foundation for sustainable long-term growth as a comprehensive service provider.</strong>&nbsp;The acquisition will bring together talented and dedicated employees who are passionate about managing the environmental needs of customers and communities with outstanding service and a commitment to safety. Integrating&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;into WM adds a top-tier operator in the healthcare and secure information destruction sectors &ndash; providing customers the option of partnering with a single, trusted provider known for safety, compliance and environmental stewardship to solve their diverse waste management needs.</li>
+	<li><strong>Create significant synergies and grow WM&rsquo;s earnings and cash flows.&nbsp;</strong>WM expects the transaction to generate more than&nbsp;<money>$125 million</money>&nbsp;in annual run-rate synergies. These synergy opportunities are driven by WM&rsquo;s logistics expertise, its track record of using technology to optimize operating and SG&amp;A costs, and its industry-leading disposal asset network. The&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;acquisition is expected to be accretive to WM&rsquo;s earnings and cash flows within one year of close.</li>
+	<li><strong>Support WM&rsquo;s capital allocation priorities.&nbsp;</strong>WM&rsquo;s strong balance sheet and significant cash flow generation position it well to fund the acquisition. In 2024, WM&rsquo;s operating cash flow will continue to be directed to organic growth investments in WM&rsquo;s recycling and renewable energy businesses, capital expenditures to support its base business, dividend payments, and acquisitions. The&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;acquisition will enhance WM&rsquo;s cash flow growth and support its commitment to grow shareholder returns. WM currently expects to achieve targeted leverage and return to normal run-rate share repurchases within 18 months of the acquisition&rsquo;s close.</li>
+</ul>
+
+<p><strong>Financing</strong></p>
+
+<p>The transaction is not subject to a financing condition. WM intends to finance the transaction using a combination of bank debt and senior notes.</p>
+
+<p>In the near term, following completion of the transaction, WM expects a net debt-to-EBITDA ratio of approximately 3.4x. The Company has a long-standing commitment to a strong balance sheet and solid investment grade credit profile and expects its prudent approach to capital allocation, including a temporary suspension of share repurchases, to position it to achieve a leverage ratio within its targeted net debt-to-EBITDA range of 2.75x to 3.0x approximately 18 months after closing the transaction.</p>
+
+<p><strong>Timing and Approvals</strong></p>
+
+<p>The transaction, which was unanimously approved by the boards of directors of both companies, is expected to close as early as the fourth quarter of 2024, subject to the satisfaction of customary closing conditions, including regulatory approvals and approval by a majority of the holders of Stericycle&rsquo;s outstanding common shares.</p>
+
+<p><strong>Advisors</strong></p>
+
+<p><org idsrc="xmltag.org" value="0578630357">Centerview Partners LLC</org>&nbsp;is serving as exclusive financial advisor to WM, and&nbsp;<org idsrc="xmltag.org" value="0597917928">Vinson &amp; Elkins L.L.P.</org>&nbsp;and&nbsp;<org idsrc="xmltag.org" value="0031211059">Baker Botts L.L.P.</org>&nbsp;are serving as WM&rsquo;s legal counsel.&nbsp;<org>BofA Securities</org>&nbsp;is serving as exclusive financial advisor to&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>, and&nbsp;<org idsrc="xmltag.org" value="0939977401">Latham &amp; Watkins LLP</org>&nbsp;is serving as Stericycle&rsquo;s legal counsel.</p>
+
+<p><strong>ABOUT WM</strong><br />
+WM (<a href="https://cts.businesswire.com/ct/CT?id=smartlink&amp;url=http%3A%2F%2Fwww.wm.com%2F&amp;esheet=54026148&amp;newsitemid=20240602670467&amp;lan=en-US&amp;anchor=WM.com&amp;index=1&amp;md5=4cbd67e4cec8937b45121dca0c74cbeb" rel="nofollow" shape="rect">WM.com</a>) is&nbsp;<location idsrc="xmltag.org" value="LB/nam">North America&#39;s</location>&nbsp;leading provider of comprehensive environmental solutions. Previously known as Waste Management and based in&nbsp;<location idsrc="xmltag.org" value="LU/us.tx.houstn">Houston, Texas</location>, WM is driven by commitments to put people first and achieve success with integrity. The company, through its subsidiaries, provides collection, recycling and disposal services to millions of residential, commercial, industrial and municipal customers throughout the&nbsp;<location idsrc="xmltag.org" value="LC/us">U.S.</location>&nbsp;and&nbsp;<location idsrc="xmltag.org" value="LC/ca">Canada</location>. With innovative infrastructure and capabilities in recycling, organics and renewable energy, WM provides environmental solutions to and collaborates with its customers in helping them achieve their sustainability goals. WM has the largest disposal network and collection fleet in&nbsp;<location idsrc="xmltag.org" value="LB/nam">North America</location>, is the largest recycler of post-consumer materials and is the leader in beneficial use of landfill gas, with a growing network of renewable natural gas plants and the most landfill gas-to-electricity plants in&nbsp;<location idsrc="xmltag.org" value="LB/nam">North America</location>. WM&#39;s fleet includes more than 12,000 natural gas trucks &ndash; the largest heavy-duty natural gas truck fleet of its kind in&nbsp;<location idsrc="xmltag.org" value="LB/nam">North America</location>. To learn more about WM and the company&#39;s sustainability progress and solutions, visit&nbsp;<a href="https://cts.businesswire.com/ct/CT?id=smartlink&amp;url=https%3A%2F%2Fsustainability.wm.com%2F&amp;esheet=54026148&amp;newsitemid=20240602670467&amp;lan=en-US&amp;anchor=Sustainability.WM.com&amp;index=2&amp;md5=b05bc2117ac075222db9daad6b7d994b" rel="nofollow" shape="rect">Sustainability.WM.com</a>.</p>
+
+<p><strong>ABOUT&nbsp;<org idsrc="xmltag.org" value="SRCL">STERICYCLE</org></strong><br />
+<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;is a&nbsp;<location idsrc="xmltag.org" value="LC/us">U.S.</location>&nbsp;based business-to-business services company and a leading provider of compliance-based solutions that protect people and brands, promote health and well-being and safeguard the environment.&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;serves customers in&nbsp;<location idsrc="xmltag.org" value="LB/nam">North America</location>&nbsp;and&nbsp;<location idsrc="xmltag.org" value="LR/eur">Europe</location>&nbsp;with solutions for regulated waste and compliance services and secure information destruction. For more information about&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>, please visit&nbsp;<a href="http://stericycle.com/">Stericycle.com</a>.</p>
+
+<p><strong>CAUTIONARY STATEMENT REGARDING FORWARD-LOOKING STATEMENTS</strong><br />
+This press release contains &ldquo;forward-looking statements&rdquo; within the meaning of the&nbsp;<location idsrc="xmltag.org" value="LC/us">U.S.</location>&nbsp;federal securities laws about WM,&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;and the proposed acquisition, including but not limited to all statements about the timing and approvals of the proposed acquisition; ability to consummate and finance the acquisition; method of financing the acquisition; integration of the acquisition; future operations or benefits; future capital allocation; future business and financial performance of WM and&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;and the ability to achieve full year financial guidance; future leverage ratio; future share repurchases; and all outcomes of the proposed acquisition, including synergies, cost savings, and impact on earnings, cash flow growth, return on capital, shareholder returns, and strength of the balance sheet, which are made pursuant to the safe harbor provisions of the Private Securities Litigation Reform Act of 1995. Words such as &ldquo;expect,&rdquo; &ldquo;likely,&rdquo; &ldquo;outlook,&rdquo; &ldquo;forecast,&rdquo; &ldquo;preliminary,&rdquo; &ldquo;would,&rdquo; &ldquo;could,&rdquo; &ldquo;should,&rdquo; &ldquo;can,&rdquo; &ldquo;will,&rdquo; &ldquo;project,&rdquo; &ldquo;intend,&rdquo; &ldquo;plan,&rdquo; &ldquo;goal,&rdquo; &ldquo;guidance,&rdquo; &ldquo;target,&rdquo; &ldquo;continue,&rdquo; &ldquo;sustain, &ldquo; &ldquo;synergy,&rdquo; &ldquo;on track,&rdquo; &ldquo;believe,&rdquo; &ldquo;seek,&rdquo; &ldquo;estimate,&rdquo; &ldquo;anticipate,&rdquo; &ldquo;may,&rdquo; &ldquo;possible,&rdquo; &ldquo;assume,&rdquo; and variations of such words and similar expressions are intended to identify such forward-looking statements. You should view these statements with caution and should not place undue reliance on such statements. They are based on the facts and circumstances known to WM and&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;(as the case may be) as of the date the statements are made. These forward-looking statements are subject to risks and uncertainties that could cause actual results to be materially different from those set forth in such forward-looking statements, including but not limited to, general economic and capital market conditions; global geopolitical conditions, including increased costs, social and commercial disruption, service reductions and other adverse effects on business, financial condition, results of operations and cash flows; the effects that the announcement or pendency of the merger may have on WM,&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>, their respective business and their ability to retain and hire key personnel and maintain relationships with customers, suppliers and others with whom they do business; inability to obtain required regulatory or government approvals or to obtain such approvals on satisfactory conditions; inability to obtain stockholder approval or satisfy other closing conditions; inability to obtain financing; the occurrence of any event, change or other circumstance that could give rise to the termination of the definitive agreement; the effects that any termination of the definitive agreement may have on&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;or its business; legal proceedings that may be instituted related to the proposed acquisition; significant and unexpected costs, charges or expenses related to the proposed acquisition; failure to successfully integrate the acquisition, realize anticipated synergies or obtain the results anticipated; and other risks and uncertainties described in WM&rsquo;s and Stericycle&rsquo;s filings with the&nbsp;<org>SEC</org>, including Part I, Item 1A of each company&rsquo;s most recently filed Annual Report on Form 10-K, and subsequent reports on From 10-Q, which are incorporated herein by reference, and in other documents that WM or&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;file or furnish with the&nbsp;<org>SEC</org>. Except to the extent required by law, neither WM nor&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;assume any obligation to update any forward-looking statement, including financial estimates and forecasts, whether as a result of new information, future events, circumstances or developments or otherwise.</p>
+
+<p><strong>NON-GAAP FINANCIAL MEASURES</strong><br />
+For purposes of the pro forma leverage ratio, all terms used in that calculation, including EBITDA, are defined in WM&rsquo;s Revolving Credit Agreement filed with the&nbsp;<org>SEC</org>&nbsp;on Form 8-K on&nbsp;<chron>May 8, 2024</chron>.</p>
+
+<p><strong>ADDITIONAL INFORMATION AND WHERE TO FIND IT</strong><br />
+This communication does not constitute an offer to sell or the solicitation of an offer to buy any securities or a solicitation of any vote or approval. This communication may be deemed to be solicitation material in respect of the proposed merger between a subsidiary of WM and&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>.&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;intends to file with the&nbsp;<org>SEC</org>&nbsp;a proxy statement and other relevant documents in connection with a special meeting of the&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;stockholders for purposes of obtaining stockholder approval of the proposed transaction. The definitive proxy statement will be sent or given to&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;stockholders and will contain important information about the contemplated transaction. INVESTORS AND STOCKHOLDERS OF Stericycle ARE URGED TO READ THE DEFINITIVE PROXY STATEMENT AND OTHER RELEVANT MATERIALS FILED WITH THE SEC CAREFULLY AND IN THEIR ENTIRETY WHEN THEY BECOME AVAILABLE BECAUSE THEY WILL CONTAIN IMPORTANT INFORMATION ABOUT STERICYCLE AND THE PROPOSED TRANSACTION. Investors and stockholders may obtain a free copy of the proxy statement (when it is available) and other documents filed with the&nbsp;<org>SEC</org>&nbsp;at the SEC&rsquo;s website at&nbsp;<a href="https://cts.businesswire.com/ct/CT?id=smartlink&amp;url=http%3A%2F%2Fwww.sec.gov&amp;esheet=54026148&amp;newsitemid=20240602670467&amp;lan=en-US&amp;anchor=www.sec.gov&amp;index=3&amp;md5=7e67aa14a0e108981249439695d3940a" rel="nofollow" shape="rect">www.sec.gov</a>&nbsp;or from&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;at its website at&nbsp;<a href="http://investors.stericycle.com/">investors.Stericycle.com</a>.</p>
+
+<p><strong>CERTAIN INFORMATION CONCERNING PARTICIPANTS</strong><br />
+<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;and its respective directors, executive officers and other members of management and employees may be deemed to be participants in the solicitation of proxies from&nbsp;<org idsrc="xmltag.org" value="SRCL">Stericycle</org>&nbsp;stockholders in connection with the contemplated transaction. Information regarding the persons who may, under the rules of the&nbsp;<org>SEC</org>, be considered to be participants in the solicitation of Stericycle&rsquo;s stockholders in connection with the proposed transaction will be set forth in Stericycle&rsquo;s definitive proxy statement for its stockholder meeting at which the proposed transaction will be submitted for approval by Stericycle&rsquo;s stockholders. You may also find additional information about Stericycle&rsquo;s directors and executive officers in Stericycle&rsquo;s Annual Report on Form 10-K for the fiscal year ended&nbsp;<chron>December 31, 2023</chron>, which was filed with the&nbsp;<org>SEC</org>&nbsp;on&nbsp;<chron>February 28, 2024</chron>, in Stericycle&rsquo;s proxy statement for its 2024 Annual Meeting of Stockholders, which was filed with the&nbsp;<org>SEC</org>&nbsp;on&nbsp;<chron>April 5, 2024</chron>, and in subsequently filed Current Reports on Form 8-K and Quarterly Reports on Form 10-Q.</p>
+
+<p><strong>WM</strong></p>
+
+<p><strong>Website</strong><br />
+<a href="https://cts.businesswire.com/ct/CT?id=smartlink&amp;url=http%3A%2F%2Fwww.wm.com&amp;esheet=54026148&amp;newsitemid=20240602670467&amp;lan=en-US&amp;anchor=www.wm.com&amp;index=4&amp;md5=42b0940e365066cf176e181caec27d43" rel="nofollow" shape="rect">www.wm.com</a></p>
+
+<p><strong>Analysts</strong><br />
+<person>Ed Egl</person><br />
+713.265.1656<br />
+<a href="mailto:eegl@wm.com" rel="nofollow" shape="rect">eegl@wm.com</a></p>
+
+<p><strong>Media</strong><br />
+<person>Toni Werner</person><br />
+<a href="mailto:media@wm.com" rel="nofollow" shape="rect">media@wm.com</a></p>
+
+<p><strong>Stericycle</strong></p>
+
+<p><strong>Website</strong><br />
+<a href="https://cts.businesswire.com/ct/CT?id=smartlink&amp;url=http%3A%2F%2Finvestors.stericycle.com&amp;esheet=54026148&amp;newsitemid=20240602670467&amp;lan=en-US&amp;anchor=investors.stericycle.com&amp;index=5&amp;md5=a6ba16aa786baaa8d609ff09e0e0e94f" rel="nofollow" shape="rect">investors.stericycle.com</a></p>
+
+<p><strong>Analysts</strong><br />
+847.607.2012<br />
+<a href="mailto:stericycleIR@stericycle.com" rel="nofollow" shape="rect">stericycleIR@stericycle.com</a></p>
+
+<p><strong>Media</strong><br />
+847.964.2288<br />
+<a href="mailto:media@stericycle.com" rel="nofollow" shape="rect">media@stericycle.com</a></p>
+</div>
+
+
+
+
+ 
+				
+			
+
+<!-- ITEMDATE: 2024-06-03 10:42:00 EDT -->
+
+</div>
+</div>            </div>
+                    </div>
+    </main><!-- /.container -->
+        <div data-testid="Footer" id="footerContent" class="Footer home-mobile-footer" tabindex="-1">
+        <footer class="container maax-font-weight-regular"
+            style="color: rgb(118, 118, 118); padding-top: 32px; padding-bottom: 32px;">
+            <div class="desktopFooter">
+                <div
+                    class="wm-footer-logo border-bottom-white pb-3 mb-4 d-flex justify-content-between align-items-center">
+                    <a href="https://www.wm.com/">
+                        <span class="sr-only">Waste Management Home</span>
+                        <img class="footer-logo" src="images/wm-logo-white-and-transparent.svg" alt="" width="107px"
+                            height="44px">
+                    </a>
+                </div>
+                <div class="FooterContent">
+                    <div class="footer-main-wrapper d-flex">
+                    <div class="d-none d-xl-flex w-100 justify-content-between">
+                        <div class="QuickLinks__column">
+                            <div class="flex-grow-1" data-testid="quick-Links">
+                                <div class="QuickLinks__heading">
+                                <h2 class="maax-font-weight-black"> Products &amp; Services  </h2>
+                                </div>
+                                <div class="mt-3">
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-trash-home " target="_self" href="https://www.wm.com/us/en/home/residential-waste-recycling-pickup">Residential Trash Collection &amp; Recycling</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-waste-business" target="_self" href="https://www.wm.com/us/en/business/business-waste-recycling-pickup">Commercial Waste Disposal &amp; Recycling</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-tro" target="_self" href="https://www.wm.com/us/en/dumpster-rental">Roll-Off Dumpster Rental</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-bulky-trash" target="_self" href="https://www.wm.com/us/en/home/bulk-trash-pickup">Bulk Trash Pickup</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-construction-waste" target="_self" href="https://www.wm.com/us/en/business/construction-demolition">Construction Waste Disposal</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-bagster" target="_self" href="https://www.wm.com/us/en/home/bagster">Bagster® - Dumpster in a Bag®</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-ewaste" target="_self" href="https://www.wm.com/us/en/home/bulbs-batteries-electronics">eWaste</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-na" target="_self" href="https://www.wm.com/us/en/business/national-accounts">National Accounts</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-moving" target="_self" href="https://www.wm.com/us/en/cpn/moving">Moving In?</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="QuickLinks__column">
+                            <div class="flex-grow-1" data-testid="quick-Links">
+                                <div class="QuickLinks__heading">
+                                <h2 class="maax-font-weight-black"> Customer Support </h2>
+                                </div>
+                                <div class="mt-3">
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-pay" href="https://www.wm.com/us/en/mywm/my-payment/verify" target="_self">Pay My Bill</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-billing-help" href="https://www.wm.com/us/en/support/faqs/billing" target="_self">Billing &amp; Invoice Help</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-manage-account" href="https://www.wm.com/us/en/user/login?redirect=/us/en/mywm/user/dashboard" target="_self">Manage My Account</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-login" href="https://www.wm.com/us/en/user/login" target="_self">Log In to My WM</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-support" target="_self" href="https://www.wm.com/us/en/support">Customer Support</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-extra-pickup" href="https://www.wm.com/us/en/mywm/user/my-services/extra-pickup" target="_self">Request Extra Pickup</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-missed-pickup" href="https://www.wm.com/us/en/support/faqs/how-do-i-report-a-missed-pickup" target="_self">Missed Pickup</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-faq" href="https://www.wm.com/us/en/support/faqs/frequent-questions" target="_self">Frequently Asked Questions</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-security" target="_self" href="https://www.wm.com/us/en/support/contact-security">WM.com Security</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="QuickLinks__column">
+                            <div class="flex-grow-1" data-testid="quick-Links">
+                                <div class="QuickLinks__heading">
+                                <h2 class="maax-font-weight-black"> Quick Info </h2>
+                                </div>
+                                <div class="mt-3">
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-rec-101" target="_self" href="https://www.wm.com/us/en/recycle-right/recycling-101">Recycling 101</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-service-areas" target="_self" href="https://www.wm.com/us/en/location">Our Service Areas</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-drop-off" target="_self" href="https://www.wm.com/us/en/drop-off-locations">Drop Off Locations</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-notifications" href="https://www.wm.com/us/en/mywm/notifications" target="_self">Service Notifications</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-10yd-dumpster" target="_self" href="https://www.wm.com/us/en/dumpster-rental/10-yard">10 Yard Dumpster</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-20yd-dumpster" target="_self" href="https://www.wm.com/us/en/dumpster-rental/20-yard">20 Yard Dumpster</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-30yd-dumpster" target="_self" href="https://www.wm.com/us/en/dumpster-rental/30-yard">30 Yard Dumpster</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-holiday-schedule" target="_self" href="https://www.wm.com/us/en/holiday-schedule">Holiday Schedule</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="QuickLinks__column">
+                            <div class="flex-grow-1" data-testid="quick-Links">
+                                <div class="QuickLinks__heading">
+                                <h2 class="maax-font-weight-black"> Our Company </h2>
+                                </div>
+                                <div class="mt-3">
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-who-we-are" target="_self" href="https://www.wm.com/us/en/inside-wm/who-we-are">Who We Are</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-why-wm" target="_self" href="https://www.wm.com/us/en/why-wm">Why WM?</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-media" href="https://mediaroom.wm.com/" target="_self">Media Room</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-compliance" target="_self" href="https://www.wm.com/us/en/inside-wm/who-we-are/compliance-ethics">Compliance &amp; Ethics</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-wmpo" target="_self" href="https://www.wm.com/us/en/inside-wm/phoenix-open">WM Phoenix Open</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-sustainability-reporting" href="https://sustainability.wm.com/" target="_self">Sustainability Report</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="QuickLinks__column">
+                            <div class="flex-grow-1" data-testid="quick-Links">
+                                <div class="QuickLinks__heading">
+                                <h2 class="maax-font-weight-black"> Work With Us </h2>
+                                </div>
+                                <div class="mt-3">
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-careers" href="https://www.wm.com/careers" target="_self">Careers</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-investors" href="https://investors.wm.com/" target="_self">Investors</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-suppliers" target="_self" href="https://www.wm.com/us/en/inside-wm/who-we-are/suppliers">Suppliers</a></div>
+                                <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-acq-div" target="_self" href="https://www.wm.com/us/en/inside-wm/who-we-are/acquisitions-divestitures">Acquisitions &amp; Divestitures</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex w-100 d-xl-none justify-content-between">
+                        <div style="width: 36%;">
+                            <div class="QuickLinks__column" style="min-height: 350px;">
+                                <div class="flex-grow-1" data-testid="quick-Links">
+                                <div class="QuickLinks__heading">
+                                    <h2 class="maax-font-weight-black"> Products &amp; Services  </h2>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-trash-home " target="_self" href="https://www.wm.com/us/en/home/residential-waste-recycling-pickup">Residential Trash Collection &amp; Recycling</a></div>
+                                    <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-waste-business" target="_self" href="https://www.wm.com/us/en/business/business-waste-recycling-pickup">Commercial Waste Disposal &amp; Recycling</a></div>
+                                    <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-tro" target="_self" href="https://www.wm.com/us/en/dumpster-rental">Roll-Off Dumpster Rental</a></div>
+                                    <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-bulky-trash" target="_self" href="https://www.wm.com/us/en/home/bulk-trash-pickup">Bulk Trash Pickup</a></div>
+                                    <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-construction-waste" target="_self" href="https://www.wm.com/us/en/business/construction-demolition">Construction Waste Disposal</a></div>
+                                    <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-bagster" target="_self" href="https://www.wm.com/us/en/home/bagster">Bagster® - Dumpster in a Bag®</a></div>
+                                    <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-ewaste" target="_self" href="https://www.wm.com/us/en/home/bulbs-batteries-electronics">eWaste</a></div>
+                                    <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-na" target="_self" href="https://www.wm.com/us/en/business/national-accounts">National Accounts</a></div>
+                                    <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-moving" target="_self" href="https://www.wm.com/us/en/cpn/moving">Moving In?</a></div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="QuickLinks__column">
+                                <div class="flex-grow-1" data-testid="quick-Links">
+                                <div class="QuickLinks__heading">
+                                    <h2 class="maax-font-weight-black"> Our Company </h2>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-who-we-are" target="_self" href="https://www.wm.com/us/en/inside-wm/who-we-are">Who We Are</a></div>
+                                    <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-why-wm" target="_self" href="https://www.wm.com/us/en/why-wm">Why WM?</a></div>
+                                    <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-media" href="https://mediaroom.wm.com/" target="_self">Media Room</a></div>
+                                    <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-compliance" target="_self" href="https://www.wm.com/us/en/inside-wm/who-we-are/compliance-ethics">Compliance &amp; Ethics</a></div>
+                                    <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-wmpo" target="_self" href="https://www.wm.com/us/en/inside-wm/phoenix-open">WM Phoenix Open</a></div>
+                                    <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-sustainability-reporting" href="https://sustainability.wm.com/" target="_self">Sustainability Report</a></div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex" style="width: 64%;">
+                            <div class="d-flex flex-column" style="width: 55%;">
+                                <div class="QuickLinks__column" style="min-height: 350px;">
+                                <div class="flex-grow-1" data-testid="quick-Links">
+                                    <div class="QuickLinks__heading">
+                                        <h2 class="maax-font-weight-black"> Customer Support </h2>
+                                    </div>
+                                    <div class="mt-3">
+                                        <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-pay" href="https://www.wm.com/us/en/mywm/my-payment/verify" target="_self">Pay My Bill</a></div>
+                                        <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-billing-help" href="https://www.wm.com/us/en/support/faqs/billing" target="_self">Billing &amp; Invoice Help</a></div>
+                                        <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-manage-account" href="https://www.wm.com/us/en/user/login?redirect=/us/en/mywm/user/dashboard" target="_self">Manage My Account</a></div>
+                                        <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-login" href="https://www.wm.com/us/en/user/login" target="_self">Log In to My WM</a></div>
+                                        <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-support" target="_self" href="https://www.wm.com/us/en/support">Customer Support</a></div>
+                                        <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-extra-pickup" href="https://www.wm.com/us/en/mywm/user/my-services/extra-pickup" target="_self">Request Extra Pickup</a></div>
+                                        <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-missed-pickup" href="https://www.wm.com/us/en/support/faqs/how-do-i-report-a-missed-pickup" target="_self">Missed Pickup</a></div>
+                                        <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-faq" href="https://www.wm.com/us/en/support/faqs/frequent-questions" target="_self">Frequently Asked Questions</a></div>
+                                        <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-security" target="_self" href="https://www.wm.com/us/en/support/contact-security">WM.com Security</a></div>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="QuickLinks__column" style="padding-right: 0px;">
+                                <div class="flex-grow-1" data-testid="quick-Links">
+                                    <div class="QuickLinks__heading">
+                                        <h2 class="maax-font-weight-black"> Work With Us </h2>
+                                    </div>
+                                    <div class="mt-3">
+                                        <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-careers" href="https://www.wm.com/careers" target="_self">Careers</a></div>
+                                        <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-investors" href="https://investors.wm.com/" target="_self">Investors</a></div>
+                                        <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-suppliers" target="_self" href="https://www.wm.com/us/en/inside-wm/who-we-are/suppliers">Suppliers</a></div>
+                                        <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-acq-div" target="_self" href="https://www.wm.com/us/en/inside-wm/who-we-are/acquisitions-divestitures">Acquisitions &amp; Divestitures</a></div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column" style="width: 45%;">
+                                <div class="QuickLinks__column" style="padding-right: 0px;">
+                                <div class="flex-grow-1" data-testid="quick-Links">
+                                    <div class="QuickLinks__heading">
+                                        <h2 class="maax-font-weight-black"> Quick Info </h2>
+                                    </div>
+                                    <div class="mt-3">
+                                        <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-rec-101" target="_self" href="https://www.wm.com/us/en/recycle-right/recycling-101">Recycling 101</a></div>
+                                        <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-service-areas" target="_self" href="https://www.wm.com/us/en/location">Our Service Areas</a></div>
+                                        <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-drop-off" target="_self" href="https://www.wm.com/us/en/drop-off-locations">Drop Off Locations</a></div>
+                                        <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-notifications" href="https://www.wm.com/us/en/mywm/notifications" target="_self">Service Notifications</a></div>
+                                        <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-10yd-dumpster" target="_self" href="https://www.wm.com/us/en/dumpster-rental/10-yard">10 Yard Dumpster</a></div>
+                                        <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-20yd-dumpster" target="_self" href="https://www.wm.com/us/en/dumpster-rental/20-yard">20 Yard Dumpster</a></div>
+                                        <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-30yd-dumpster" target="_self" href="https://www.wm.com/us/en/dumpster-rental/30-yard">30 Yard Dumpster</a></div>
+                                        <div class="mb-2"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent  Footer__quicklink " tabindex="0" analytics="footer-holiday-schedule" target="_self" href="https://www.wm.com/us/en/holiday-schedule">Holiday Schedule</a></div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="d-md-flex d-block socialLinks">
+                    <div class="SocialMediaLinks">
+                        <ul class="SocialMediaLinks__image-container d-flex pl-0 mb-0">
+                            <li>
+                                <a target="_blank" rel="noopener noreferrer"
+                                    href="https://www.facebook.com/WasteManagement/"
+                                    style="color: rgb(118, 118, 118); text-decoration: none;">
+                                    <span class="sr-only">Facebook</span>
+                                    <img class="SocialMediaLinks__image"
+                                        src="https://cdn.wm.com/content/dam/wm/icons/social-media/30x30/circle-facebook-white.svg"
+                                        alt="" width="30px" height="30px">
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/WasteManagement"
+                                    style="color: rgb(118, 118, 118); text-decoration: none;">
+                                    <span class="sr-only">Twitter</span>
+                                    <img class="SocialMediaLinks__image"
+                                        src="https://cdn.wm.com/content/dam/wm/icons/social-media/30x30/circle-twitter-white.svg"
+                                        alt="" width="30px" height="30px">
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" rel="noopener noreferrer"
+                                    href="https://www.instagram.com/wastemanagement/"
+                                    style="color: rgb(118, 118, 118); text-decoration: none;">
+                                    <span class="sr-only">Instagram</span>
+                                    <img class="SocialMediaLinks__image"
+                                        src="https://cdn.wm.com/content/dam/wm/icons/social-media/30x30/circle-instagram-white.svg"
+                                        alt="" width="30px" height="30px">
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" rel="noopener noreferrer"
+                                    href="https://www.linkedin.com/company/waste-management"
+                                    style="color: rgb(118, 118, 118); text-decoration: none;">
+                                    <span class="sr-only">LinkedIn</span>
+                                    <img class="SocialMediaLinks__image"
+                                        src="https://cdn.wm.com/content/dam/wm/icons/social-media/30x30/circle-linkedin-white.svg"
+                                        alt="" width="30px" height="30px">
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" rel="noopener noreferrer"
+                                    href="https://www.youtube.com/user/wastemanagement"
+                                    style="color: rgb(118, 118, 118); text-decoration: none;">
+                                    <span class="sr-only">YouTube</span>
+                                    <img class="SocialMediaLinks__image"
+                                        src="https://cdn.wm.com/content/dam/wm/icons/social-media/30x30/circle-youtube-white.svg"
+                                        alt="" width="30px" height="30px">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobileFooter">
+                <div class="MobileFooter" data-testid="MobileFooter">
+                    <div class="border-bottom-white pb-3 mb-4">
+                        <div class="wm-footer-logo footer-main-wrapper justify-content-between align-items-center d-flex"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent mr-4 " tabindex="0" aria-label="footerLogo" target="_self" href="/us/en"><span class="sr-only">footerLogo</span><img class="footer-logo" src="https://cdn.wm.com/content/dam/wm/icons/branding/wm-logo-white-and-transparent.svg" alt="" width="107px" height="44px"></a></div>
+                    </div>
+                    <div>
+                        <div class="mb-3">
+                            <div class="bottomNavItems border-bottom-white d-flex justify-content-between align-items-center pb-3">
+                            <div class="menu-item text-white d-flex align-items-center maax-font-weight-bold">Products &amp; Services </div>
+                            <span class="wm-cursor-pointer">
+                            </span>
+                            </div>
+                            <div class="ml-1 mr-4 d-md-flex" style="height: 0px; margin-top: 0px; overflow: hidden; transition: all 0.3s ease 0s;">
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-trash-home " target="_self" href="https://www.wm.com/us/en/home/residential-waste-recycling-pickup">Residential Trash Collection &amp; Recycling</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-waste-business" target="_self" href="https://www.wm.com/us/en/business/business-waste-recycling-pickup">Commercial Waste Disposal &amp; Recycling</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-tro" target="_self" href="https://www.wm.com/us/en/dumpster-rental">Roll-Off Dumpster Rental</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-bulky-trash" target="_self" href="https://www.wm.com/us/en/home/bulk-trash-pickup">Bulk Trash Pickup</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-construction-waste" target="_self" href="https://www.wm.com/us/en/business/construction-demolition">Construction Waste Disposal</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-bagster" target="_self" href="https://www.wm.com/us/en/home/bagster">Bagster® - Dumpster in a Bag®</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-ewaste" target="_self" href="https://www.wm.com/us/en/home/bulbs-batteries-electronics">eWaste</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-na" target="_self" href="https://www.wm.com/us/en/business/national-accounts">National Accounts</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-moving" target="_self" href="https://www.wm.com/us/en/cpn/moving">Moving In?</a></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="bottomNavItems border-bottom-white d-flex justify-content-between align-items-center pb-3">
+                            <div class="menu-item text-white d-flex align-items-center maax-font-weight-bold">Customer Support</div>
+                            <span class="wm-cursor-pointer">
+                            </span>
+                            </div>
+                            <div class="ml-1 mr-4 d-md-flex" style="height: 0px; margin-top: 0px; overflow: hidden; transition: all 0.3s ease 0s;">
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-pay" href="https://www.wm.com/us/en/mywm/my-payment/verify" rel="noopener noreferrer" target="_self">Pay My Bill</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-billing-help" href="https://www.wm.com/us/en/support/faqs/billing" rel="noopener noreferrer" target="_self">Billing &amp; Invoice Help</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-manage-account" href="https://www.wm.com/us/en/user/login?redirect=/us/en/mywm/user/dashboard" rel="noopener noreferrer" target="_self">Manage My Account</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-login" href="https://www.wm.com/us/en/user/login" rel="noopener noreferrer" target="_self">Log In to My WM</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-support" target="_self" href="https://www.wm.com/us/en/support">Customer Support</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-extra-pickup" href="https://www.wm.com/us/en/mywm/user/my-services/extra-pickup" rel="noopener noreferrer" target="_self">Request Extra Pickup</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-report-mpu" href="https://www.wm.com/us/en/support/faqs/service-questions/how-do-i-report-a-missed-pickup" rel="noopener noreferrer" target="_self">Missed Pickup</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-faq" href="https://www.wm.com/us/en/support/faqs/frequent-questions" rel="noopener noreferrer" target="_self">Frequently Asked Questions</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-security" target="_self" href="https://www.wm.com/us/en/support/contact-security">WM.com Security</a></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="bottomNavItems border-bottom-white d-flex justify-content-between align-items-center pb-3">
+                            <div class="menu-item text-white d-flex align-items-center maax-font-weight-bold">Quick Info</div>
+                            <span class="wm-cursor-pointer">
+                            </span>
+                            </div>
+                            <div class="ml-1 mr-4 d-md-flex" style="height: 0px; margin-top: 0px; overflow: hidden; transition: all 0.3s ease 0s;">
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-rec-101" target="_self" href="https://www.wm.com/us/en/recycle-right/recycling-101">Recycling 101</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-service-areas" target="_self" href="https://www.wm.com/us/en/location">Our Service Areas</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-drop-off" target="_self" href="https://www.wm.com/us/en/drop-off-locations">Drop Off Locations</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-notifications" href="https://www.wm.com/us/en/mywm/notifications" rel="noopener noreferrer" target="_self">Service Notifications</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-10yd-dumpster" target="_self" href="https://www.wm.com/us/en/dumpster-rental/10-yard">10 Yard Dumpster</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-20yd-dumpster" target="_self" href="https://www.wm.com/us/en/dumpster-rental/20-yard">20 Yard Dumpster</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-30yd-dumpster" target="_self" href="https://www.wm.com/us/en/dumpster-rental/30-yard">30 Yard Dumpster</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-holiday-schedule" target="_self" href="https://www.wm.com/us/en/holiday-schedule">Holiday Schedule</a></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="bottomNavItems border-bottom-white d-flex justify-content-between align-items-center pb-3">
+                            <div class="menu-item text-white d-flex align-items-center maax-font-weight-bold">Our Company</div>
+                            <span class="wm-cursor-pointer">
+                            </span>
+                            </div>
+                            <div class="ml-1 mr-4 d-md-flex" style="height: 0px; margin-top: 0px; overflow: hidden; transition: all 0.3s ease 0s;">
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-who-we-are" target="_self" href="https://www.wm.com/us/en/inside-wm/who-we-are">Who We Are</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-why-wm" target="_self" href="https://www.wm.com/us/en/why-wm">Why WM?</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-media" href="https://mediaroom.wm.com/" rel="noopener noreferrer" target="_self">Media Room</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-compliance" target="_self" href="https://www.wm.com/us/en/inside-wm/who-we-are/compliance-ethics">Compliance &amp; Ethics</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-wmpo" target="_self" href="https://www.wm.com/us/en/inside-wm/phoenix-open">WM Phoenix Open</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-sustainability-reporting" href="https://sustainability.wm.com/" rel="noopener noreferrer" target="_self">Sustainability Report</a></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="bottomNavItems border-bottom-white d-flex justify-content-between align-items-center pb-3">
+                            <div class="menu-item text-white d-flex align-items-center maax-font-weight-bold">Work With Us</div>
+                            <span class="wm-cursor-pointer">
+                            </span>
+                            </div>
+                            <div class="ml-1 mr-4 d-md-flex" style="height: 0px; margin-top: 0px; overflow: hidden; transition: all 0.3s ease 0s;">
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-careers" href="https://www.wm.com/careers" rel="noopener noreferrer" target="_self">Careers</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-investors" href="https://investors.wm.com/" rel="noopener noreferrer" target="_self">Investors</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-suppliers" target="_self" href="https://www.wm.com/us/en/inside-wm/who-we-are/suppliers">Suppliers</a></div>
+                            <div class="mb-3"><a data-testid="Link" class="Link a-taggable btn wm-link bg-transparent Footer__quicklink pl-2 " tabindex="0" analytics="footer-acq-div" target="_self" href="https://www.wm.com/us/en/inside-wm/who-we-are/acquisitions-divestitures">Acquisitions &amp; Divestitures</a></div>
+                            </div>
+                        </div>
+                        <div class="SocialMediaLinks" data-testid="SocialMediaLinks">
+                            <ul class="SocialMediaLinks__image-container d-flex pl-0 mb-0">
+                            <li><a data-testid="LinksButton-0" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/WasteManagement/" style="color: rgb(118, 118, 118); text-decoration: none;"><span class="sr-only">Facebook </span><img class="SocialMediaLinks__image" src="https://cdn.wm.com/content/dam/wm/icons/social-media/30x30/circle-facebook-white.svg" alt="" width="30px" height="30px"></a></li>
+                            <li><a data-testid="LinksButton-1" target="_blank" rel="noopener noreferrer" href="https://twitter.com/WasteManagement" style="color: rgb(118, 118, 118); text-decoration: none;"><span class="sr-only">Twitter</span><img class="SocialMediaLinks__image" src="https://cdn.wm.com/content/dam/wm/icons/social-media/30x30/circle-twitter-white.svg" alt="" width="30px" height="30px"></a></li>
+                            <li><a data-testid="LinksButton-2" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/wastemanagement/" style="color: rgb(118, 118, 118); text-decoration: none;"><span class="sr-only">Instagram</span><img class="SocialMediaLinks__image" src="https://cdn.wm.com/content/dam/wm/icons/social-media/30x30/circle-instagram-white.svg" alt="" width="30px" height="30px"></a></li>
+                            <li><a data-testid="LinksButton-3" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/waste-management" style="color: rgb(118, 118, 118); text-decoration: none;"><span class="sr-only">LinkedIn</span><img class="SocialMediaLinks__image" src="https://cdn.wm.com/content/dam/wm/icons/social-media/30x30/circle-linkedin-white.svg" alt="" width="30px" height="30px"></a></li>
+                            <li><a data-testid="LinksButton-4" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/user/wastemanagement" style="color: rgb(118, 118, 118); text-decoration: none;"><span class="sr-only">YouTube</span><img class="SocialMediaLinks__image" src="https://cdn.wm.com/content/dam/wm/icons/social-media/30x30/circle-youtube-white.svg" alt="" width="30px" height="30px"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+        <div class="FooterLegal FooterLegal--en_US wm-footer-green">
+            <div class="container">
+                <div class="FooterLegal__container d-xl-flex justify-content-between align-items-center">
+                    <div class="d-xl-flex w-100 justify-content-between maax-font-weight-regular">
+                        <div class="Copyright">
+                            <div class="legal-copyright" style="color: white;">© 2026 WM Intellectual Property
+                                Holdings, L.L.C.</div>
+                        </div>
+                        <div class="LegalLinks__container">
+                            <div class="LegalLinks d-flex text-lg-center">
+                                <div class="LegalLinks__link d-flex align-items-center ml-2 mr-2 m-md-0"><a
+                                        class="a-taggable" analytics="Sitemap" rel="noopener noreferrer"
+                                        href="https://www.wm.com/us/en/sitemap"
+                                        style="color: white; text-decoration: none; display: inline-flex;">Sitemap</a><span
+                                        class="d-block text-white spacer">|</span></div>
+                                <div class="LegalLinks__link d-flex align-items-center ml-2 mr-2 m-md-0"><a
+                                        class="a-taggable" analytics="Privacy Policy" rel="noopener noreferrer"
+                                        href="https://www.wm.com/us/en/privacy"
+                                        style="color: white; text-decoration: none; display: inline-flex;">Privacy
+                                        Policy</a><span class="d-block text-white spacer">|</span></div>
+                                <div class="LegalLinks__link d-flex align-items-center ml-2 mr-2 m-md-0"><a
+                                        class="a-taggable" analytics="Terms of Use" rel="noopener noreferrer"
+                                        href="https://www.wm.com/us/en/terms"
+                                        style="color: white; text-decoration: none; display: inline-flex;">Terms of
+                                        Use</a><span class="d-block text-white spacer">|</span></div>
+                                <div class="LegalLinks__link d-flex align-items-center ml-2 mr-2 m-md-0"><a
+                                        class="a-taggable" analytics="Disputes/Arbitration" rel="noopener noreferrer"
+                                        href="https://www.wm.com/us/en/disputes"
+                                        style="color: white; text-decoration: none; display: inline-flex;">Disputes/Arbitration</a><span
+                                        class="d-block text-white spacer">|</span></div>
+                                <div class="LegalLinks__link d-flex align-items-center ml-2 mr-2 m-md-0"><a
+                                        class="a-taggable" analytics="Accessibility" rel="noopener noreferrer"
+                                        href="https://www.wm.com/us/en/accessibility"
+                                        style="color: white; text-decoration: none; display: inline-flex;">Accessibility</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-privacy-links">
+                        <a href="javascript:void(0)" class="ot-sdk-show-settings">Your Privacy Choices</a>
+                        <a id="onetrust-ca" style="display:none;" href="https://www.wm.com/us/en/privacy/california-notice">California Privacy Notice</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="thirdparty/font-awesome/fa-v4-shims.min.js"></script> -->
+
+    
+            <script src="https://rest-api.wm.com/assets/file.js"></script>
+    
+
+    <script type="text/javascript">
+    function openNav() {
+        $('.mobilenav').css({
+            'height': '100%',
+            'opacity': '1'
+        });
+    }
+
+    function closeNav() {
+        $('.mobilenav').css({
+            'height': '0%',
+            'opacity': '0'
+        });
+    }
+
+    function makeWholeBoxClicable(boxContainer, findLink) {
+        $(boxContainer).each(function() {
+            var boxLink = $(this).find(findLink).attr('href');
+            if (typeof boxLink != 'undefined') {
+                $(this).attr('onclick', 'window.location=\'' + boxLink + '\';');
+                $(this).css('cursor', 'pointer');
+            }
+        });
+    }
+
+    function makeImageBackground(fbPosition, item) {
+        $(fbPosition + ' ' + item).each(function() {
+            var imgSrc = $(this).find('.wd_imagetable img').attr('src');
+            if (typeof imgSrc != 'undefined') {
+                if ($(this).parents('.wrap50').length) {
+                    $(this).parent().css({
+                        'background-image': 'url(' + imgSrc + ')',
+                        'background-position': '10px',
+                        'background-repeat': 'no-repeat',
+                        'background-size': 'cover',
+                        'background-color': 'transparent',
+                        'padding-left': '10px'
+                    });
+                } else {
+                    $(this).css('background-image', 'url(' + imgSrc + ')');
+                }
+            }
+        });
+    }
+
+    function featureFirstGrid(fbPosition) {
+        var allItems = $(fbPosition + ' .item');
+        var allItemsCount = allItems.length;
+        if (allItemsCount >= 1) {
+            if (allItemsCount <= 2)
+                $(fbPosition + ' .item').wrap('<div class="wrap wrap50"></div>');
+            if (allItemsCount >= 3) {
+                $(fbPosition + ' .item:nth-child(1)').wrap('<div class="wrap wrap50"></div>');
+                for (var i = 1; i < 5; i += 2)
+                    allItems.slice(i, i + 2).wrapAll('<div class="wrap wrap25"></div>');
+                $(fbPosition + ' .item:nth-child(n+4)').wrap('<div class="wrap wrap25"></div>');
+            }
+            makeImageBackground(fbPosition, '.item');
+        }
+    }
+
+    function featureImageFirst(fbPosition, item, imageContainer) {
+        $(fbPosition + ' ' + item).each(function() {
+            var imgSrc = $(this).find(imageContainer + ' img').attr('src');
+            if (typeof imgSrc != 'undefined') {
+                if (imgSrc.indexOf('?') > 0)
+                    imgSrc = imgSrc.substring(0, imgSrc.indexOf('?'));
+                $(this).addClass('');
+                $(this).wrapInner('<div class="itemwrapper" />');
+                $(this).prepend('<div class="wd_imagefirst" />');
+                $(this).find('.wd_imagefirst').css('background-image', 'url(' + imgSrc + ')');
+            }
+        });
+    }
+
+    function removeReturnFromStandard() {
+        $('.wd_standard-teaser .item').each(function() {
+            $(this).find('br[clear=all]').remove();
+        });
+    }
+    $(document).ready(function() {
+
+        featureImageFirst('.wd_featureboxes_featured', '.item', '.itemlink');
+        featureImageFirst('.wd_featureboxes_middle', '.item', '.itemlink');
+        featureImageFirst('.wd_featureboxes_top', '.item', '.itemlink');
+
+        makeWholeBoxClicable('.wd_featureboxes_news .item', '.wd_title a');
+        makeWholeBoxClicable('.wd_featureboxes_top .wd_featurebox_container', '.item_name a');
+        // makeWholeBoxClicable('.wd_featureboxes_middle .item','.item_name a');
+
+        $('.wd_featureboxes_middle .wd_news_headlines-teaser .item').each(function() {
+            if ($(this).find('.item_name a'.length)) {
+                var url = $(this).find('.item_name a').attr('href');
+                var target = $(this).find('.item_name a').attr('target');
+                var title = $(this).find('.item_name a').text();
+                $(this).prepend('<a class="wd_item_link" href="' + url + '" target="' + target +
+                    '"><span class="sr-only">' + title + '</span></a>');
+            }
+
+        })
+
+        removeReturnFromStandard();
+        // END Make The Whole Box Clickable
+        $('.wd_page_prev a, .wd_page_prev span').html('');
+        $('.wd_page_next a, .wd_page_next span').html('');
+
+        // Search icon
+        $('.navbar-nav button.MegaNav__search').click(function() {
+            $('#searchBox').toggleClass('collapse show');
+            if ($('#searchBox').hasClass('show')) {
+                $('#searchBox input[type="text"]').focus();
+            }
+        });
+
+        $('.MobileFooter .bottomNavItems').click(function() {
+            $(this).next().toggleClass('open');
+            $(this).find('.wm-cursor-pointer').toggleClass('active');
+        });
+
+        $('.wd_featureboxes_featured .wd_featurebox_container').each(function() {
+            $(this).find('.wd_imagetable').nextAll().wrapAll(
+                '<div class="wd_featurebox-content"></div>');
+            $(this).find('.wd_featurebox_title').prependTo($(this).find('.wd_featurebox-content'));
+        });
+
+        // mobile nav 
+        $('.mobilenav .has-children.top-level').click(function() {
+            $(this).children('.wd_mobile-subnav').toggle();
+            $(this).find('.wm-cursor-pointer').toggleClass('active');
+        });
+        $('.wd_mobile-subnav .has-children').click(function(e) {
+            e.stopPropagation();
+            $(this).children('.wd_mobile-subnav').toggle();
+            $(this).find('.wm-sub-cursor-pointer').toggleClass('active');
+        });
+
+        // desktop nav dropdowns 
+        $('.nav-item.dropdown').on('mouseenter',function(e) {
+            $(this).toggleClass('show');
+            $(this).children('.dropdown-menu').toggleClass('show');
+        })
+	$('.nav-item.dropdown').on('mouseleave', function(e) {
+            $(this).toggleClass('show');
+            $(this).children('.dropdown-menu').toggleClass('show');
+        })
+        // Media kits
+        $('.wd_pageid_20290 .item .item_name:contains("Videos")').parent().addClass('wd_kit-video');
+        $('.wd_pageid_20290 .item .item_name:contains("Fact Sheets"), .wd_pageid_20290 .item .item_name:contains("Brand Guidelines")')
+            .parent().addClass('wd_kit-facts');
+        $('.wd_pageid_20290 .item .item_name:contains("Graphics")').parent().addClass('wd_kit-graphics');
+        $('.wd_pageid_20290 .item .item_name:contains("Photos"), .wd_pageid_20290 .item .item_name:contains("Logos")')
+            .parent().addClass('wd_kit-photos');
+
+        // Newsfeed releases thumbnail
+        var teaserImages = ['images/WM-CNG-9-large.jpg', 'images/WM_Photography_Truck_Residential_1_Final_2019.jpg', 'images/Houston_Westside_MRF_Facility.jpg', 'images/Collection_-_Recycling-2-large.jpg'
+        ];
+
+
+        $('.wd_newsfeed_releases-teaser .item').each(function() {
+            var url = $(this).find('.wd_title a').attr('href');
+            if ($(this).find('.wd_thumbnail img').length != 0) {
+                var img = $(this).find('.wd_thumbnail img').attr('src');
+                img = img.split('?')[0];
+                $(this).find('.wd_thumbnail img').attr('src', img);
+            } else {
+                var i = Math.floor(Math.random() * teaserImages.length);
+                var img = teaserImages[i];
+                $(this).prepend('<div class="wd_thumbnail"><a href="' + url + '"><img src="' + img +
+                    '" /></a></div>');
+                teaserImages.splice(i, 1);
+            }
+        })
+
+        // Bottom featureboxes 
+        $('.wd_featureboxes_bottom .wd_featurebox_container:first-child').nextAll().wrapAll(
+            '<div class="wd_featureboxes_bottom-flex"></div>');
+        $('.wd_featureboxes_bottom-flex .wd_featurebox_container').each(function() {
+            $(this).find('.wd_featurebox_title').insertAfter($(this).find('.wd_imagetable'));
+        })
+
+		// slideshow
+		$('#single_slider_responsive .single_slider_carousel_inner .item').each(function () {
+			let link = $('> a', this).attr('href');
+			$('h4:last-of-type', this).wrap(`<a href="${link}"></a>`);
+		});
+
+        // form inputs
+        $('#wd_printable_content input[type=text]').focus(function() {
+            $(this).parents('.wd_form_field').addClass('focused');
+        })
+        $('#wd_printable_content input[type=text]').blur(function() {
+            if (!$(this).val()) {
+                $(this).parents('.wd_form_field').removeClass('focused');
+            }
+        })
+    });
+    $('.wd_articles .wd_item_list .wd_item').each(function(){
+        $(this).find('.wd_thumbnail').prependTo($(this));
+
+        //Get Link
+        var article_link =  $(this).find('.wd_title a');
+        var _url = article_link.attr('href');
+        $(this).find('.wd_item_wrapper').append('<a class="wd_btn __read" href="'+_url+'">Read More</a>')
+        if ( $('.wd_title a', this).attr('href') ) {
+            $('.wd_thumbnail a', this).attr('href', $('.wd_title a', this).attr('href'));
+        }
+    });
+    
+	$('.fa-facebook').addClass('fa-brands fa-facebook-f');
+    $('.fa-linkedin').addClass('fa-brands fa-linkedin-in');
+    $('.fa-twitter').removeClass().addClass('fa-brands fa-x-twitter');
+    $('.fa-twitter').removeClass().addClass('fa-brands fa-x-twitter');
+    $('.fa-file-pdf-o').removeClass().addClass('fas fa-file-pdf');
+
+    </script>
+
+<!-- begin spin_special_output(body_end) -->
+<script wd_script_id="piwik_tracking_code"></script>
+<!-- Piwik Tracking Code -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+
+  _paq.push(["setCustomVariable", 1, "Content Type", "News Releases Feed", "page"]);
+
+  _paq.push(["setCustomVariable", 3, "Navigation Page", "Press Releases", "page"]);
+
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
+  (function() {
+    var u="//stats.drivetheweb.com/";
+    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+    _paq.push(["setSiteId", 6524]);
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0];
+    g.type="text/javascript"; g.async=true; g.defer=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript>
+	<img src="https://stats.drivetheweb.com/piwik.php?idsite=6524&rec=1" style="border:0" alt="" />
+</noscript>
+<!-- End Piwik Tracking Code -->
+		
+<!-- end spin_special_output(body_end) -->
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4644bea0b32d110',t:'MTc5MTI4NTgzMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+</html>
