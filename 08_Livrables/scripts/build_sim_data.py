@@ -160,6 +160,52 @@ if "Financement" in wb.sheetnames:
                   "minor": num(fin_row("Partenaire minoritaire", "E")), "minor_cost": num(fin_row("Partenaire minoritaire", "F"))},
     }
 
+# ---------------------------------------------------------------- univers de cibles (Cibles §C) : lu dans le classeur et dans targets.csv
+TCSV = REG.with_name("targets.csv")
+tmeta = {t["id"]: t for t in csv.DictReader(TCSV.open(encoding="utf-8"))} if TCSV.exists() else {}
+targets, target_params = [], {}
+t0 = next((r for r in range(1, cib.max_row + 1) if cib[f"B{r}"].value == "Cible"), None)
+if t0:
+    def cib_value(prefix):
+        rr = next((r for r in range(1, cib.max_row + 1) if isinstance(cib[f"B{r}"].value, str) and cib[f"B{r}"].value.startswith(prefix)), None)
+        return (num(cib[f"C{rr}"].value), cib[f"E{rr}"].value) if rr else (None, None)
+    hr = next(r for r in range(1, cib.max_row + 1) if isinstance(cib[f"B{r}"].value, str) and cib[f"B{r}"].value.startswith("Marge contraignante fin 2027"))
+    m_ret, _ = cib_value("Multiple payé retenu")
+    cad, cad_ref = cib_value("Dollars canadiens pour un euro")
+    crit_cols = ["N", "O", "P", "Q", "R"]
+    target_params = {
+        "multiple": m_ret, "bind_central": num(cib[f"D{hr}"].value), "draws": model.get("n_draws") or len(model.get("uniforms") or []),
+        "criteria": [str(cib[f"{c}{t0}"].value or "").replace(" (0-2)", "") for c in crit_cols],
+        "weights": [num(cib[f"{c}{t0 - 1}"].value) for c in crit_cols],
+        "rates": {"EUR": {"value": 1, "sources": []},
+                  "USD": {"value": inputs.get("fx", {}).get("active"), "label": "hypothèse fx (Hypothèses)", "sources": inputs.get("fx", {}).get("sources", [])},
+                  "CAD": {"value": cad, "label": "taux de référence BCE", "sources": [s for s in [source(str(cad_ref or "").split()[0])] if s]}},
+    }
+    for r in range(t0 + 1, cib.max_row + 1):
+        name = cib[f"B{r}"].value
+        if not isinstance(name, str) or not name.strip():
+            break
+        ref = str(cib[f"T{r}"].value or "")
+        tid = ref.split(" — ")[0] if ref.startswith("T") else None
+        meta = tmeta.get(tid, {})
+        if tid:
+            src = {"id": tid, "label": f"{meta.get('name', name)} : valeur publiée", "value": meta.get("ev_estimate", ""), "unit": meta.get("currency", ""),
+                   "period": "", "file": meta.get("file", ""), "page": meta.get("page", ""), "url": meta.get("source_url", ""),
+                   "checked_by": meta.get("checked_by", ""), "date_consulted": meta.get("date_consulted", "")}
+            sources = [src]
+        else:   # l'étalon (Clean Earth) : ses chiffres viennent du registre
+            sources = [s for s in (source(x.strip()) for x in ref.split(",")) if s]
+        targets.append({
+            "id": tid, "name": name, "benchmark": tid is None,
+            "country": cib[f"C{r}"].value or "", "activity": meta.get("activity") or cib[f"D{r}"].value or "",
+            "owner": cib[f"E{r}"].value or "", "note": meta.get("note", ""),
+            "value": num(cib[f"F{r}"].value), "unit": cib[f"G{r}"].value or "", "basis": cib[f"H{r}"].value or "",
+            "ev_eur": num(cib[f"I{r}"].value), "multiple": num(cib[f"J{r}"].value), "fits": cib[f"K{r}"].value or "",
+            "p": num(cib[f"L{r}"].value), "years": num(cib[f"M{r}"].value),
+            "scores": [num(cib[f"{c}{r}"].value) for c in crit_cols], "score": num(cib[f"S{r}"].value),
+            "sources": sources,
+        })
+
 data = {
     "generated": datetime.now(ZoneInfo("Europe/Paris")).strftime("%d/%m/%Y %H:%M"),
     "model": BOOK.name,
@@ -167,6 +213,7 @@ data = {
     "distribution": distribution, "probabilities": probabilities, "factor_weight": factor_weight,
     "multiples": multiples, "history": history,
     "bascules": bascules, "bascule_params": bascule_params, "financing": financing,
+    "targets": targets, "target_params": target_params,
 }
 OUT.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
-print("écrit", OUT, f"— {len(inputs)} hypothèses, {len(columns)} scénarios, {len(multiples)} multiples")
+print("écrit", OUT, f"— {len(inputs)} hypothèses, {len(columns)} scénarios, {len(multiples)} multiples, {len(targets)} cibles")

@@ -19,6 +19,7 @@ LIV = Path(os.environ.get("DATAROOM_LIVRABLES") or HERE.parent)
 def admin_file(name):
     return ADMIN / name if (ADMIN / name).exists() else HERE / name
 REG = list(csv.DictReader(admin_file("register.csv").open(encoding="utf-8")))
+DEALS = list(csv.DictReader(admin_file("deals.csv").open(encoding="utf-8"))) if admin_file("deals.csv").exists() else []
 WB = load_workbook(os.environ.get("DATAROOM_MODEL") or LIV / "modele-greenup-2027.xlsx", data_only=True)
 OUT = LIV / "dossiers-sujet-2.html"
 NB = " "
@@ -203,6 +204,7 @@ UNF = mv("Cibles", "Marge de manœuvre fin 2027", "C"); FAV = mv("Cibles", "Marg
 _wc = WB["Cibles"]
 _hr = next(c.row for c in _wc["B"] if isinstance(c.value, str) and c.value.startswith("Marge contraignante"))
 grid = {k: [_wc[f"{c}{r}"].value for c in "BCDE"] for k, r in zip((8, 9, 10, 11), range(_hr + 1, _hr + 5))}
+assert abs(grid[9][0] - N(fig("Clean Earth : multiple", "2026e"))) < 1e-9 and grid[8][0] == 8 and grid[10][0] == 12, grid
 LTM = mv("Levier", "EBITDA glissant"); LMECH = mv("Levier", "① Levier mécanique")
 LPF = mv("Levier", "② Levier pro forma"); LSEAS = mv("Levier", "③ Levier pro forma")
 HEAD25 = mv("Levier", "Marge sous le plafond au 31/12/2025")
@@ -258,6 +260,29 @@ M_MIN = mv("Cibles", "Le moins cher payé"); M_MAX = mv("Cibles", "Le plus cher 
 M_SPREAD = mv("Cibles", "Écart avant / après synergies sur Clean Earth")
 M_SEC_MIN = mv("Cibles", "Secteur : multiple avant synergies le plus bas"); M_SEC_MAX = mv("Cibles", "Secteur : multiple avant synergies le plus haut")
 CE_VS_SEC = mv("Cibles", "Clean Earth avant synergies (recalculé) face")
+M_SEC_MED = mv("Cibles", "Secteur : médiane des multiples avant synergies")
+M_SEC_TOP = next(_wc[f"B{c.row}"].value for c in _wc["E"] if c.value == M_SEC_MAX and isinstance(_wc[f"B{c.row}"].value, str) and "→" in _wc[f"B{c.row}"].value)
+CE_VS_SEC_TXT = (f"Clean Earth avant synergies dépasse de {x(CE_VS_SEC)} le plus cher du secteur" if CE_VS_SEC > 0 else
+                 f"Clean Earth avant synergies reste {x(-CE_VS_SEC)} sous le plus cher du secteur ({M_SEC_TOP})")
+M_RET = mv("Cibles", "Multiple payé retenu")
+T_N = mv("Cibles", "Cibles sourcées"); T_VAL = mv("Cibles", "… dont avec une valeur publiée")
+T_FIT = mv("Cibles", "… dont qui tiennent dans la marge centrale"); T_BESTP = mv("Cibles", "Meilleure probabilité de tenir")
+T_MAXFIT = mv("Cibles", "La plus grande cible qui tient")
+_t0 = next(c.row for c in _wc["B"] if c.value == "Cible") + 1
+TARGETS = []
+for _r in range(_t0, _t0 + 60):
+    _name = _wc[f"B{_r}"].value
+    if not _name:
+        break
+    TARGETS.append({"name": _name, "country": _wc[f"C{_r}"].value, "activity": _wc[f"D{_r}"].value, "owner": _wc[f"E{_r}"].value,
+                    "value": _wc[f"F{_r}"].value, "unit": _wc[f"G{_r}"].value, "basis": _wc[f"H{_r}"].value,
+                    "ev_eur": _wc[f"I{_r}"].value if isinstance(_wc[f"I{_r}"].value, (int, float)) else None,
+                    "mult": _wc[f"J{_r}"].value, "fits": _wc[f"K{_r}"].value,
+                    "p": _wc[f"L{_r}"].value if isinstance(_wc[f"L{_r}"].value, (int, float)) else None,
+                    "years": _wc[f"M{_r}"].value, "score": _wc[f"S{_r}"].value or None, "ref": _wc[f"T{_r}"].value,
+                    "benchmark": _name.startswith("Clean Earth")})
+CANDIDATES = [t for t in TARGETS if not t["benchmark"]]
+assert len(CANDIDATES) == T_N, (len(CANDIDATES), T_N)
 # Pari 1 : la capacité en probabilités (onglet Distribution, 1 000 futurs tirés)
 _wd = WB["Distribution"]
 def dist(key, col="F"):
@@ -340,6 +365,9 @@ f = dict(
     tax_pct=R("Taxonomie 2025 : part du capex éligible et aligné", "FY2025"),
     tax_hw=R("Taxonomie 2025, collecte et traitement des déchets dangereux, prévention de la pollution (PPC 2.1, 2.2) : capex éligible et aligné", "FY2025"),
     tax_water=R("Taxonomie 2025, eau et assainissement : capex éligible et aligné", "FY2025"),
+    env_ev=R("EnviroServe (Clean Harbors) : prix d'acquisition", "08/2026"), env_eb=R("EnviroServe (Clean Harbors) : EBITDA ajusté annuel attendu", "2026e"),
+    env_syn=R("EnviroServe (Clean Harbors) : synergies de coûts attendues", "années 1-2"),
+    env_post=R("EnviroServe et ES&H (Clean Harbors) : multiple combiné après synergies", "10/2026"),
     use_ev=R("US Ecology (Republic Services) : valeur totale", "annonce 02/2022"), use_eb=R("US Ecology (Republic Services) : EBITDA ajusté 12 mois", "au 30/09/2021"),
     p_acea=R("Moody's, pairs : ACEA, FFO / dette nette", "LTM 06/2025"), p_hera=R("Moody's, pairs : Hera, FFO / dette nette", "LTM 06/2025"),
     p_suez=R("Moody's, pairs : Suez, FFO / dette nette", "LTM 06/2025"), p_suez_rt=R("Moody's, pairs : Suez, notation", "05/2026"),
@@ -880,6 +908,13 @@ ROLES.append(role(
     "ESG",
 ))
 
+
+def target_line(t):
+    if t["ev_eur"] is None:
+        return f"{t['name']} : prix non publié"
+    return (f"{t['name']} : {fr(t['ev_eur'], 0)}{NB}M€ à {fr(t['mult'], 1)}x, tient dans {pct(t['p'], 0)} des futurs"
+            + (" (oui au central)" if t["fits"] == "oui" else ""))
+
 ROLES.append(role(
     6, "Cibles, puis synthèse", "L'univers de cibles, puis une recommandation calibrée sur l'enveloppe propre.",
     f"Fin 2027, la marge centrale permet une acquisition d'environ <strong>{fr(MAXACQ / 1000, 1)} Md€</strong> au multiple de Clean Earth "
@@ -909,14 +944,19 @@ ROLES.append(role(
         row_fig("Covanta : valeur de la transaction", f["cov_ev"]), row_fig("Covanta : EBITDA 2021 attendu (bas)", f["cov_eb"]),
         row_fig("Stericycle : valeur d'entreprise", f["ste_ev"]), row_fig("Stericycle : synergies", f["ste_syn"]),
         row_fig("US Ecology : valeur totale", f["use_ev"]), row_fig("US Ecology : EBITDA ajusté 12 mois", f["use_eb"]),
+        row_fig("EnviroServe : prix", f["env_ev"]), row_fig("EnviroServe : EBITDA ajusté annuel attendu", f["env_eb"]),
+        row_fig("EnviroServe : synergies attendues", f["env_syn"]), row_fig("EnviroServe et ES&H : multiple après synergies", f["env_post"]),
         row_calc("Secteur, avant synergies", f"{x(M_SEC_MIN)} à {x(M_SEC_MAX)}", "communiqués des acquéreurs, 05_Commercial_Strategy"),
+        row_calc("Secteur, médiane avant synergies", x(M_SEC_MED), "multiple payé retenu pour les cibles"),
         row_calc("Clean Earth avant synergies face au plus cher du secteur", x(CE_VS_SEC), "positif = au-dessus"),
-    ]),
+    ] + [row_calc(f"Cible : {t['name']}", "prix non publié" if t["ev_eur"] is None else
+                  f"{fr(t['ev_eur'], 0)}{NB}M€ ; {pct(t['p'], 0)} des futurs", f"{t['owner']} ; {t['ref']}") for t in CANDIDATES]),
     [
         "La formule : une acquisition ajoute son prix à la dette mais seulement prix / multiple à l'EBITDA. Elle tient sous 3x tant que "
         "prix ≤ marge / (1 − 3 / multiple).",
-        f"La grille : au multiple de Clean Earth, {fr(grid[8][2] / 1000, 2)} Md€ en central, 0 en défavorable, "
-        f"{fr(grid[8][3] / 1000, 2)} Md€ en favorable ; à {fr(grid[10][0], 0)}x, {fr(grid[10][2] / 1000, 2)} Md€ en central.",
+        f"La grille : au multiple de Clean Earth ({fr(grid[9][0], 1)}x), {fr(grid[9][2] / 1000, 2)} Md€ en central, "
+        f"{fr(grid[9][1] / 1000, 2)} en défavorable, {fr(grid[9][3] / 1000, 2)} Md€ en favorable ; à {fr(grid[8][0], 0)}x, "
+        f"{fr(grid[8][2] / 1000, 2)} Md€ ; à {fr(grid[10][0], 0)}x, {fr(grid[10][2] / 1000, 2)} Md€ en central.",
         f"Le calibrage : Clean Earth ne passerait plus. Quatre multiples circulent pour lui : {fr(M_REC, 1)}x sur l'EBITDA 2025 publié par "
         f"le vendeur (reconstitué, onglet Booster §E), {fr(M_PRE, 1)}x sur l'EBITDA 2026E avant synergies, "
         f"{P(f['mult'])}x publié après synergies (non recalculable : {fr(M_POST, 1)}x avec les chiffres publiés), et "
@@ -924,12 +964,15 @@ ROLES.append(role(
         "Les critères de cible : actifs de traitement (pas de collecte seule), géographie des boosters (États-Unis, Asie), PFAS et nouveaux "
         "polluants, taille compatible avec la grille, et pas de doublon de concurrence en Europe, où Veolia est déjà numéro un "
         "(présentation Clean Earth p.9).",
-        "L'univers reste à construire : aucun document de la dataroom ne nomme une cible disponible ; les candidats viendront de la "
-        "presse et des rapports de pairs, chacun avec sa valeur publiée ou « non communiqué ».",
+        f"L'univers : {T_N} cibles sourcées, toutes détenues par des fonds entrés entre 2023 et 2025 (Cibles §C). "
+        f"{T_VAL} ont une valeur publiée ; {T_FIT} {'tiennent' if T_FIT > 1 else 'tient'} dans la marge centrale au multiple retenu "
+        f"({x(M_RET)}, médiane du secteur avant synergies). " + " ; ".join(target_line(t) for t in CANDIDATES) + ".",
+        "La valeur de chaque cible est la dernière publiée (la transaction qui a fait entrer le fonds), pas un prix de vente "
+        "d'aujourd'hui : un fonds qui sort vend plus cher qu'il n'a acheté. La probabilité est donc un plafond.",
     ],
     [
-        "L'univers de cibles reste à construire (onglet Cibles §C) : nom, pays, activité, valeur d'entreprise sourcée, multiple.",
-        "Aucune valeur d'entreprise de cible non cotée n'est dans la dataroom ; une estimation devra le dire.",
+        "La notation qualitative (traitement, géographie, PFAS, concurrence, passifs) est au groupe : cellules jaunes de Cibles §C.",
+        "Arcwood (incinération, PFAS) n'a pas de prix publié : la grille ne peut pas répondre pour elle sans une estimation sourcée.",
         "La recommandation est une proposition du modèle : au groupe de la défendre ou de l'amender.",
     ],
     [
@@ -939,9 +982,14 @@ ROLES.append(role(
         ("Que paie Veolia d'habitude, et que paie le secteur ?",
          f"Veolia publie ses multiples après synergies : {P(f['m_es'])}x pour treize tuck-ins espagnols, environ {P(f['m_t25'])}x pour "
          f"les tuck-ins 2025, {x(M_MED)} en médiane, {x(M_MAX)} au plus (le rachat des 30 % de WTS). Le secteur, avant synergies : "
-         f"{x(M_SEC_MIN)} à {x(M_SEC_MAX)} (HEPACO par Clean Harbors, Covanta par EQT, US Ecology par Republic quand le communiqué est versé) ; "
-         f"HEPACO ressort à {P(f['hep_m'])}x après synergies. Clean Earth avant synergies dépasse de {x(CE_VS_SEC)} le plus cher du secteur : "
+         f"{x(M_SEC_MIN)} à {x(M_SEC_MAX)} (HEPACO et EnviroServe par Clean Harbors, Covanta par EQT, US Ecology par Republic) ; "
+         f"HEPACO ressort à {P(f['hep_m'])}x après synergies, EnviroServe et ES&H à {P(f['env_post'])}x. {CE_VS_SEC_TXT} : "
          f"les synergies « achètent » {x(M_SPREAD)} de multiple. D'où la grille : 8x, 9,8x, 12x."),
+        ("Quelles cibles regardez-vous ?",
+         f"{T_N} cibles réelles, détenues par des fonds : " + " ; ".join(target_line(t) for t in CANDIDATES)
+         + f". Au multiple médian du secteur ({x(M_RET)}), {T_FIT} {'tiennent' if T_FIT > 1 else 'tient'} dans la marge centrale"
+         + (f", la plus grande pour {fr(T_MAXFIT, 0)}{NB}M€" if T_MAXFIT else "")
+         + ". Les valeurs sont celles de l'entrée du fonds : un vendeur demandera plus."),
         ("Et si Veolia veut quand même une cible de 3 Md€ ?",
          f"Le menu de financement (onglet Financement) le chiffre : il manque {fr(FIN_GAP3, 0)} M€ sous 3x fin 2027, rien sous le seuil S&P. "
          f"Les hybrides comblent l'écart pour {fr(FIN_HYB_COST, 0)} M€ de coupon par an, mais les agences n'en retiennent que la moitié ; "
@@ -952,8 +1000,9 @@ ROLES.append(role(
          f"Financement §D, chaque seuil vérifié en le remettant dans le moteur). Pour une cible de 3 Md€, il faudrait une croissance 2026 "
          f"de {pct(BK_G26_C4, 1)} ou un multiple sous {fr(BK_MTUCK_C4, 1)}x."),
         ("Quel multiple retenez-vous ?",
-         "Celui de Clean Earth après synergies, parce que c'est le seul qu'un acheteur comme Veolia ait publié. Plus le multiple monte, "
-         f"plus la taille possible baisse : à {fr(grid[10][0], 0)}x, {fr(grid[10][2] / 1000, 2)} Md€."),
+         "Pour la capacité, celui de Clean Earth après synergies, parce que c'est le seul qu'un acheteur comme Veolia ait publié. Plus le "
+         f"multiple monte, plus la taille possible baisse : à {fr(grid[10][0], 0)}x, {fr(grid[10][2] / 1000, 2)} Md€. Pour noter une cible "
+         f"réelle, la médiane du secteur avant synergies ({x(M_RET)}) : la dette arrive le jour du paiement, les synergies après fin 2027."),
         ("Et si le programme de cessions glisse ?",
          f"Sans encaissement du reste du programme en 2027, la marge baisse de {fr(HEAD - H1_LOW, 0)} M€ et la taille possible au "
          f"multiple de Clean Earth tombe à environ {fr(H1_LOW / (1 - 3 / N(f['mult'])) / 1000, 2)} Md€. La recommandation conditionne "
@@ -1109,14 +1158,14 @@ tr.calc td:first-child {{ font-style: italic; }}
   <section class="todo" aria-labelledby="h-todo">
     <h2 id="h-todo">Ce qu'il reste à faire avant l'oral</h2>
     <ul>
-      <li>Relire en croisé les {len(REG)} chiffres du registre et les 26 deals : aucun n'a encore de relecteur.</li>
+      <li>Relire en croisé les {len(REG)} chiffres du registre ({sum(1 for _r in REG if _r.get('checked_by'))} relus) et les {len(DEALS)} opérations ({sum(1 for _d in DEALS if _d.get('checked_by'))} relues).</li>
       <li>Lire les 10-K 2025 d'Enviri et de Clean Harbors, désormais dans la dataroom, et en tirer les chiffres des rôles 4 et 5
       (passifs environnementaux de Clean Earth, marges et levier de Clean Harbors). Reste à verser : le 10-Q du T1 2026 d'Enviri et le
       communiqué de vente du 20 novembre 2025.</li>
       <li>Avant le 7 octobre : montrer la dataroom comme « sources chargées et lues », et noter dans gaps.md ce qui manque encore.</li>
       <li>Rédiger la page d'annexe sur les outils d'IA : dataroom MCP (recherche, registre, contrôles), Claude pour construire le classeur
       et ces dossiers, LibreOffice pour le recalcul. Aucun chiffre produit par le modèle de langage.</li>
-      <li>Construire l'univers de cibles (onglet Cibles §C) : une ligne par cible, valeur d'entreprise et multiple sourcés.</li>
+      <li>Noter les {T_N} cibles de l'onglet Cibles §C (cellules jaunes) et chercher une valeur sourcée pour celles qui n'en ont pas.</li>
       <li>Chacun ouvre son rôle avec l'outil <span style="font-family:var(--mono)">workstream_status</span> de la dataroom pour voir
       ses chiffres et ce qui manque.</li>
     </ul>

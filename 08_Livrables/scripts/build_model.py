@@ -1410,7 +1410,8 @@ fch.height, fch.width = 8, 16
 ws.add_chart(fch, f"G{FA0 - 1}")
 r += 1
 put(ws, f"B{r}", "Lecture : la fourchette défavorable / favorable de Trajectoire combine tous les extrêmes à la fois, ce qui n'arrive "
-    "presque jamais ; ici, chaque futur tire chaque hypothèse indépendamment (sauf les deux corrélations déclarées). Les probabilités "
+    "presque jamais ; ici, chaque futur tire chaque hypothèse dans sa loi, et un facteur « conjoncture » commun (poids en C11 de "
+    "Simulation) fait bouger ensemble les hypothèses qui y sont exposées. Les probabilités "
     "dépendent des bornes choisies dans Hypothèses : elles mesurent notre incertitude, pas celle du marché.", color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:J{r}"); ws.row_dimensions[r].height = 44
 widths(ws, {"A": 8, "B": 62, "C": 12, "D": 12, "E": 12, "F": 12, "G": 12, "H": 12, "I": 12, "J": 14})
@@ -2225,6 +2226,9 @@ put(ws, f"A{r}", "E", bold=True); put(ws, f"B{r}", "Les multiples du secteur (co
 header(ws, r, ["", "Opération (acquéreur → cible)", "VE (M USD)", "EBITDA de référence (M USD)", "VE / EBITDA avant synergies", "Multiple publié après synergies", "Base de l'EBITDA", "Réf."]); r += 1
 SECTOR = [
     # (libellé, préfixe VE, période VE, ×1000 ?, préfixe EBITDA, période EBITDA, préfixe multiple publié, période, base)
+    ("Clean Harbors → EnviroServe (2026)", "EnviroServe (Clean Harbors) : prix d'acquisition", "08/2026", False,
+     "EnviroServe (Clean Harbors) : EBITDA ajusté annuel attendu", "2026e", "EnviroServe et ES&H (Clean Harbors) : multiple combiné après synergies", "10/2026",
+     "EBITDA ajusté annuel attendu ; 8,9x après synergies publié pour EnviroServe et ES&H ensemble"),
     ("Clean Harbors → HEPACO (2024)", "HEPACO (Clean Harbors) : prix d'acquisition", "03/2024", False,
      "HEPACO (Clean Harbors) : EBITDA ajusté 2023", "FY2023", "HEPACO (Clean Harbors) : multiple après synergies", "2024", "EBITDA ajusté 2023 ; synergies ~20 M$"),
     ("EQT → Covanta (2021)", "Covanta (EQT) : valeur de la transaction", "annonce 07/2021", True,
@@ -2262,31 +2266,114 @@ for lab, ev_pre, ev_per, ev_bn, eb_pre, eb_per, mp_pre, mp_per, base in SECTOR:
 S1 = r - 1
 line(ws, r, "secMin", "Secteur : multiple avant synergies le plus bas (opérations à EBITDA publié)", f"=MIN(E{S0}:E{S1})", "x", "", '0.0"x"', True, store=K); r += 1
 line(ws, r, "secMax", "Secteur : multiple avant synergies le plus haut", f"=MAX(E{S0}:E{S1})", "x", "", '0.0"x"', True, store=K); r += 1
+line(ws, r, "secMed", "Secteur : médiane des multiples avant synergies", f"=MEDIAN(E{S0}:E{S1})", "x",
+     f"{sum(1 for x in SECTOR if x[4])} opérations à EBITDA publié", '0.0"x"', True, store=K); r += 1
+line(ws, r, "secPostMin", "Secteur : multiple publié après synergies, le plus bas", f"=MIN(F{S0}:F{S1})", "x", "", '0.0"x"', store=K); r += 1
+line(ws, r, "secPostMax", "Secteur : multiple publié après synergies, le plus haut", f"=MAX(F{S0}:F{S1})", "x", "", '0.0"x"', store=K); r += 1
 line(ws, r, "ceVsSec", "Clean Earth avant synergies (recalculé) face au haut du secteur", f"={K['mPre']}-{K['secMax']}", "x", "positif = Veolia a payé plus que le plus cher du secteur, avant synergies", '0.0"x"', True, store=K); r += 1
-put(ws, f"B{r}", "Lecture : avant synergies, le secteur paie entre 11x (HEPACO, Covanta) et 14x (US Ecology) ; après synergies, HEPACO "
-    "ressort à 7,1x. Les 9,8x de Clean Earth sont dans la norme après synergies ; avant synergies (15x sur l'EBITDA 2026E de Veolia, "
-    "19x sur l'EBITDA 2025 du vendeur), ils sont au-dessus de tout ce que le secteur a payé depuis 2021. Les communiqués sont dans "
-    "05_Commercial_Strategy ; Stericycle n'a pas d'EBITDA publié dans le sien.", color=GREY, italic=True, wrap=True)
+def _x1(ref):
+    return f'SUBSTITUTE(TEXT({ref},"0.0"),".",",")&"x"'
+_k = {k: K[k] for k in ("secMin", "secMax", "secPostMin", "secPostMax", "mPre", "ceVsSec", "mPub")}
+_lect = ('="Lecture : avant synergies, le secteur paie de "&' + _x1(_k["secMin"]) + '&" à "&' + _x1(_k["secMax"])
+         + f'&" (le plus cher : "&INDEX(B{S0}:B{S1},MATCH({_k["secMax"]},E{S0}:E{S1},0))&") ; après synergies, les acquéreurs publient "&'
+         + _x1(_k["secPostMin"]) + '&" à "&' + _x1(_k["secPostMax"]) + '&". Clean Earth, "&' + _x1(_k["mPre"])
+         + '&" avant synergies sur l\'EBITDA 2026E de Veolia, "&'
+         + f'IF({_k["ceVsSec"]}>0,"est au-dessus de tout ce que le secteur a payé","reste sous le plus cher du secteur, de "&' + _x1("-" + _k["ceVsSec"]) + ')'
+         + '&" ; à "&' + _x1(_k["mPub"]) + '&" après synergies, il est dans la norme. Une petite cible se paie cher avant synergies : '
+         'ce sont les synergies qui ramènent le prix sous 10x. Stericycle n\'a pas d\'EBITDA publié dans son communiqué."')
+put(ws, f"B{r}", _lect, color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:H{r}"); ws.row_dimensions[r].height = 58; r += 2
 
-put(ws, f"A{r}", "C", bold=True); put(ws, f"B{r}", "Univers de cibles — à remplir (phase F)", bold=True); r += 1
-header(ws, r, ["", "Cible", "Pays", "Activité DD", "VE estimée (M EUR)", "Multiple VE / EBITDA", "Tient dans la marge centrale ?",
-               "Fichier", "Page"]); r += 1
-put(ws, f"B{r}", "Exemple : Clean Earth (pour calibrer)", italic=True)
-put(ws, f"C{r}", "États-Unis", italic=True); put(ws, f"D{r}", "TSDF, 82 sites", italic=True)
-put(ws, f"E{r}", f"=-{ce_nfd}", color=GREEN, nf=NF_M); put(ws, f"F{r}", f"={ce_mult}", color=GREEN, nf='0.0"x"')
-put(ws, f"G{r}", f'=IF(AND(ISNUMBER(E{r}),ISNUMBER(F{r})),IF(E{r}<=IF(F{r}>{HY("cap")},MAX(0,$D${HR})/(1-{HY("cap")}/F{r}),0),"oui","non"),"")')
-put(ws, f"H{r}", "01_Financial/veolia_finance_amendment_urd_2025.pdf", color=GREY); put(ws, f"I{r}", 25, color=GREY)
-r += 1
-for _ in range(8):
-    for col in "BCDEFHI":
-        put(ws, f"{col}{r}", None, fill=YELLOW)
-    ws[f"E{r}"].number_format = NF_M; ws[f"F{r}"].number_format = '0.0"x"'
-    put(ws, f"G{r}", f'=IF(AND(ISNUMBER(E{r}),ISNUMBER(F{r})),IF(E{r}<=IF(F{r}>{HY("cap")},MAX(0,$D${HR})/(1-{HY("cap")}/F{r}),0),"oui","non"),"")')
+put(ws, f"A{r}", "C", bold=True); put(ws, f"B{r}", "L'univers de cibles, noté (00_Admin/targets.csv : une ligne par cible, sourcée)", bold=True); r += 1
+put(ws, f"B{r}", "Chaque cible est confrontée aux 1 000 futurs de l'onglet Simulation : elle « tient » dans un tirage si son prix n'excède pas "
+    "marge contraignante / (1 − 3 / multiple) dans ce tirage. Valeurs = dernière valeur publiée (année dans Propriétaire).", color=GREY, italic=True); r += 1
+TARGETS_CSV = admin_file("targets.csv")
+TARGETS = list(csv.DictReader(TARGETS_CSV.open(encoding="utf-8"))) if TARGETS_CSV.exists() else []
+line(ws, r, "mRet", "Multiple payé retenu pour une cible (avant synergies) — jugement du groupe", f"={K['secMed']}", "x",
+     "par défaut : médiane du secteur (§E) ; une cible peut avoir le sien (colonne J)", '0.0"x"', True, store=K)
+ws[f"C{r}"].fill = YELLOW; r += 1
+cad, i_cad = E("Taux de référence BCE : dollars canadiens pour un euro", "06/10/2026")
+line(ws, r, "cad", "Dollars canadiens pour un euro (BCE)", f"={cad}", "CAD / EUR", i_cad, '0.0000', store=K); r += 1
+put(ws, f"B{r}", "Le dollar américain est converti au taux de l'hypothèse fx (Hypothèses), celui de Clean Earth à la clôture.",
+    color=GREY, italic=True); r += 2
+CRIT = [("Traitement", "actifs de traitement (incinération, TSDF), pas de collecte seule"),
+        ("Géographie", "États-Unis ou zone où Veolia veut croître en déchets dangereux"),
+        ("PFAS", "offre PFAS ou polluants émergents"),
+        ("Concurrence", "pas de doublon avec Veolia (2 = aucun chevauchement)"),
+        ("Passifs", "passifs environnementaux connus et limités")]
+CW = ["N", "O", "P", "Q", "R"]
+put(ws, f"M{r}", "Poids", bold=True, align="right")
+for col, (name, _) in zip(CW, CRIT):
+    put(ws, f"{col}{r}", 1, color=BLUE, fill=YELLOW, nf="0", align="center")
+WROW = r; r += 1
+header(ws, r, ["", "Cible", "Pays", "Activité", "Propriétaire (depuis)", "Valeur publiée", "Unité", "Base", "VE (M EUR)",
+               "Multiple retenu", "Tient au central ?", "Tient dans X % des tirages", "Années de détention fin 2027"]
+       + [c[0] + " (0-2)" for c in CRIT] + ["Score (0-2)", "Réf."]); r += 1
+GR0 = r
+N_ = f"{SIM_N}"
+def _fits(row, scen_cell):
+    return (f'=IF(AND(ISNUMBER(I{row}),ISNUMBER(J{row})),IF(I{row}<=IF(J{row}>{HY("cap")},MAX(0,{scen_cell})/(1-{HY("cap")}/J{row}),0),'
+            f'"oui","non"),"")')
+def _prob(row):
+    return (f'=IF(AND(ISNUMBER(I{row}),ISNUMBER(J{row})),IF(J{row}>{HY("cap")},'
+            f'COUNTIF({SIM["BIND27"]},">="&I{row}*(1-{HY("cap")}/J{row}))/{N_},0),"")')
+# l'étalon : Clean Earth, au prix payé et au multiple publié
+put(ws, f"B{r}", "Clean Earth (étalon, déjà acquis)", italic=True); put(ws, f"C{r}", "États-Unis", italic=True)
+put(ws, f"D{r}", "TSDF, 82 sites", italic=True); put(ws, f"E{r}", "Veolia (depuis le 01/06/2026)", italic=True)
+put(ws, f"F{r}", f"=-{ce_nfd}", color=GREEN, nf=NF_M); put(ws, f"G{r}", "M EUR", color=GREY); put(ws, f"H{r}", "effet sur la dette", color=GREY)
+put(ws, f"I{r}", f"=F{r}", nf=NF_M); put(ws, f"J{r}", f"={ce_mult}", color=GREEN, nf='0.0"x"')
+put(ws, f"K{r}", _fits(r, f"$D${HR}")); put(ws, f"L{r}", _prob(r), nf="0%", bold=True)
+put(ws, f"T{r}", f"{i_cenfd}, {id_cemult}", color=GREY)
+CE_ROW = r; r += 1
+SCALE = {"M": 1, "Md": 1000}
+for t in TARGETS:
+    if "Veolia" in (t.get("owner") or ""):
+        continue
+    put(ws, f"B{r}", t["name"]); put(ws, f"C{r}", t["country"]); put(ws, f"D{r}", t["activity"])
+    put(ws, f"E{r}", t.get("owner", ""))
+    unit = (t.get("currency") or "").split()
+    scale, cur = (SCALE.get(unit[0]), unit[1]) if len(unit) == 2 else (None, unit[0] if unit else "")
+    try:
+        v = float((t.get("ev_estimate") or "").replace(",", ""))
+    except ValueError:
+        v = None
+    if v is not None:
+        put(ws, f"F{r}", v, color=BLUE, nf="#,##0.0"); put(ws, f"G{r}", t["currency"], color=GREY)
+        put(ws, f"H{r}", {"enterprise_value": "VE", "equity_value": "fonds propres", "other": "valorisation"}.get(t.get("ev_basis"), t.get("ev_basis", "")), color=GREY)
+        rate = {"EUR": "1", "USD": HY("fx"), "CAD": K["cad"]}.get(cur)
+        if scale and rate:
+            put(ws, f"I{r}", f"=F{r}*{scale}/{rate}", nf=NF_M)
+        else:
+            put(ws, f"I{r}", "devise non convertie", color=GREY, align="right")
+    else:
+        put(ws, f"F{r}", "non publié", color=GREY, align="right"); put(ws, f"I{r}", "n/d", color=GREY, align="right")
+    put(ws, f"J{r}", f"={K['mRet']}", nf='0.0"x"', fill=YELLOW)
+    put(ws, f"K{r}", _fits(r, f"$D${HR}")); put(ws, f"L{r}", _prob(r), nf="0%", bold=True)
+    yr = re.search(r"depuis[^0-9]*?(?:\d{1,2}/\d{1,2}/)?(\d{4})", t.get("owner", ""))
+    if yr:
+        put(ws, f"M{r}", f"=2027-{yr.group(1)}", nf="0", align="center")
+    for col in CW:
+        put(ws, f"{col}{r}", None, fill=YELLOW, nf="0", align="center")
+    put(ws, f"S{r}", f'=IF(COUNT(N{r}:R{r})=0,"",SUMPRODUCT($N${WROW}:$R${WROW},N{r}:R{r})/SUMPRODUCT($N${WROW}:$R${WROW}*(N{r}:R{r}<>"")))',
+        nf="0.0", bold=True)
+    put(ws, f"T{r}", t["id"] + " — " + (t.get("file") or t.get("source_url") or "").split("/")[-1][:44], color=GREY)
     r += 1
-put(ws, f"B{r}", "Cellules jaunes : une ligne par cible, VE et multiple sourcés dans la dataroom. La colonne G répond seule.",
-    color=GREY, italic=True)
-widths(ws, {"A": 4, "B": 46, "C": 14, "D": 16, "E": 16, "F": 16, "G": 18, "H": 46, "I": 7})
+GR1 = r - 1
+r += 1
+line(ws, r, "tN", "Cibles sourcées (hors étalon)", f"=COUNTA(B{CE_ROW + 1}:B{GR1})", "", "targets.csv", NF_I, store=K); r += 1
+line(ws, r, "tValued", "… dont avec une valeur publiée convertie en euros", f"=COUNT(I{CE_ROW + 1}:I{GR1})", "", "", NF_I, store=K); r += 1
+line(ws, r, "tFit", "… dont qui tiennent dans la marge centrale", f'=COUNTIF(K{CE_ROW + 1}:K{GR1},"oui")', "", "", NF_I, True, store=K); r += 1
+line(ws, r, "tBestP", "Meilleure probabilité de tenir parmi les cibles", f"=MAX(L{CE_ROW + 1}:L{GR1})", "", "", "0%", store=K); r += 1
+line(ws, r, "tMaxFit", "La plus grande cible qui tient au central (VE, M EUR)",
+     f'=_xlfn.MAXIFS(I{CE_ROW + 1}:I{GR1},K{CE_ROW + 1}:K{GR1},"oui")', "M EUR", "", NF_M, store=K); r += 1
+put(ws, f"B{r}", "Cellules jaunes : le multiple payé (par défaut la médiane du secteur) et la notation qualitative, à remplir et "
+    "défendre par le groupe ; le score est la moyenne pondérée des critères renseignés. Ajouter une cible : register_target, la ligne apparaît "
+    "au prochain passage de la chaîne.", color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:L{r}"); ws.row_dimensions[r].height = 30; r += 1
+for col, (name, why) in zip(CW, CRIT):
+    put(ws, f"B{r}", f"{name} : {why}", color=GREY); r += 1
+widths(ws, {"A": 4, "B": 46, "C": 16, "D": 30, "E": 30, "F": 14, "G": 9, "H": 12, "I": 12, "J": 12, "K": 12, "L": 14, "M": 12,
+            "N": 11, "O": 11, "P": 11, "Q": 11, "R": 11, "S": 10, "T": 40})
 
 # ================================================================ Vérifications
 ws = sheets["Vérifications"]
