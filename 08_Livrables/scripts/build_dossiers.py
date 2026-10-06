@@ -238,6 +238,9 @@ MAXDEBT_TGT = mv("Levier", "Dette maximale fin 2027 si l'objectif"); MAXDEBT_MOD
 PERHALF = mv("Levier", "Dette libérée par 0,5")
 FFO25 = mv("Levier", "FFO 2025 implicite"); FFOREQ = mv("Levier", "FFO requis en 2026"); FFOGAP = mv("Levier", "Marge de FFO en 2026")
 DEBT18 = mv("Levier", "Dette ajustée maximale au seuil"); ADJGAP = mv("Levier", "Écart entre dette ajustée")
+FFO_REC = mv("Levier", "FFO reconstitué (somme"); FFO_GAP_PCT = mv("Levier", "Écart en % du FFO Moody's")
+COV26 = mv("Échéancier", "Liquidités / flux contractuels 2026"); COV26X = mv("Échéancier", "Liquidités / flux 2026 hors")
+EXTRA_INT = mv("Échéancier", "Surcoût d'intérêts annuel"); EXTRA_PCT = mv("Échéancier", "en % du FFO 2025")
 
 # ------------------------------------------------------------------ registre
 R = lambda *a: fig(*a)
@@ -253,6 +256,12 @@ f = dict(
     nfd25=R("Endettement financier net (groupe)", "31/12/2025"), eb25=R("EBITDA (groupe)", "FY2025"),
     lev25=R("Ratio de levier publié", "FY2025"), nfd24=R("Endettement financier net (groupe)", "31/12/2024"),
     eb24=R("EBITDA (groupe)", "FY2024"), lev24=R("Ratio de levier publié", "FY2024"),
+    flow26=R("Flux contractuels non actualisés : passifs financiers bruts, 2026", "31/12/2025"),
+    flow27=R("Flux contractuels non actualisés : passifs financiers bruts, 2027", "31/12/2025"),
+    cpap=R("Billets de trésorerie (commercial paper)", "31/12/2025"), liq=R("Total des liquidités", "31/12/2025"),
+    synd=R("Ligne de crédit syndiquée non tirée", "31/12/2025"),
+    cfo25=R("Tableau de flux : capacité d'autofinancement avant variation du BFR", "FY2025"),
+    int25=R("Tableau de flux : intérêts payés", "FY2025"),
     nfdh1=R("Endettement financier net (groupe), après Clean Earth", "30/06/2026"),
     nfdh125=R("Endettement financier net (groupe)", "30/06/2025"), ebh1=R("EBITDA (groupe)", "S1 2026"),
     ebh125=R("EBITDA (groupe)", "S1 2025"), hyb=R("Dettes hybrides", "30/06/2026"),
@@ -449,6 +458,14 @@ ROLES.append(role(
         row_calc("Levier fin 2026 (modèle)", x(LEV26), f"pro forma 12 mois : {x(LEV26PF)}"),
         row_calc("Levier fin 2027 (modèle)", x(LEV27), f"marge {fr(HEAD, 0)} M EUR"),
         row_calc("… si 50 % des hybrides comptent en dette", x(D50), "lecture d'analyste"),
+        row_fig("Flux contractuels de dette 2026, principal et intérêts", f["flow26"]), row_fig("Flux contractuels de dette 2027", f["flow27"]),
+        row_fig("Liquidités totales", f["liq"]), row_fig("Ligne syndiquée non tirée, jusqu'en 2030", f["synd"]),
+        row_calc("Liquidités / flux de dette 2026", x(COV26), f"{x(COV26X)} hors billets de trésorerie et hybride notifié"),
+        row_calc("Surcoût d'intérêts annuel, souches 2027-2028 refinancées au taux de juin 2025", fr(EXTRA_INT, 0, "M EUR"),
+                 f"{pct(EXTRA_PCT)} du FFO 2025"),
+        row_fig("Capacité d'autofinancement avant BFR (tableau de flux)", f["cfo25"]), row_fig("Intérêts payés", f["int25"]),
+        row_calc("FFO 2025 reconstitué depuis le tableau de flux", fr(FFO_REC, 0, "M EUR"),
+                 f"Moody's : {P(f['mo_ffo25'])} ; écart {pct(FFO_GAP_PCT)}"),
     ]),
     [
         f"Prendre la définition dans le DEU 2025 (p.355) et la tester : elle redonne {P(f['lev24'])}x pour 2024 et {P(f['lev25'])}x pour 2025.",
@@ -473,10 +490,19 @@ ROLES.append(role(
         f"{P(f['mo_sec'])}, retraitements {P(f['mo_ns'])} = {P(f['mo_adj'])} ; moins une trésorerie retenue de {P(f['mo_cash'])} = "
         f"{P(f['mo_net'])}. Les hybrides pèsent {pct(HYB_SHARE, 0)} de l'écart. Moody's mesure 3,7x de dette nette / EBITDA ajustés "
         f"là où Veolia publie 2,79x : même entreprise, deux définitions.",
+        f"Le mur de refinancement n'en est pas un : les flux contractuels de dette 2026 ({P(f['flow26'])} M€, dont {P(f['cpap'])} de billets "
+        f"de trésorerie renouvelés en continu) sont couverts {x(COV26)} par {P(f['liq'])} M€ de liquidités, dont une ligne syndiquée de "
+        f"{P(f['synd'])} M€ non tirée jusqu'en 2030 ; 2027 pèse {P(f['flow27'])} M€ (DEU p.421). Aucun covenant financier sur la dette de "
+        f"Veolia Environnement (p.422). Ce que le mur change, c'est le FFO : les souches de 2027-2028 portent des coupons de 0 à 1,6 % et "
+        f"se refinanceront vers 3,3 % (émission de juin 2025), soit ~{fr(EXTRA_INT, 0)} M€ d'intérêts de plus par an ({pct(EXTRA_PCT)} du FFO).",
+        f"Le FFO des agences se reconstitue depuis le tableau de flux : capacité d'autofinancement avant BFR {P(f['cfo25'])} M€, moins impôts "
+        f"et intérêts payés, plus remboursements d'actifs financiers opérationnels et dividendes reçus = {fr(FFO_REC, 0)} M€, contre "
+        f"{P(f['mo_ffo25'])} publiés par Moody's (écart {pct(FFO_GAP_PCT)}). Le classeur le contrôle à ± 5 % sur 2024 et 2025.",
     ],
     [
         f"Veolia ne dit pas si son ratio de fin 2026 comptera douze mois de Clean Earth ({x(LEV26PF)}) ou sept ({x(LEV26)}).",
-        "Les agences (BBB / Baa1, présentation Clean Earth p.16) raisonnent sur leurs propres ratios, qui ne sont pas dans la dataroom.",
+        "Les coupons des deux souches euro de 2026 (750 et 650 M€) ne figurent pas au tableau p.407 (lignes courantes) : "
+        "le surcoût de refinancement de 2026 n'est pas chiffré.",
         "Le change sur la dette en dollars n'est pas modélisé.",
     ],
     [
@@ -495,11 +521,19 @@ ROLES.append(role(
         ("Les hybrides sont-ils de la dette ?",
          "Pas pour Veolia ni en IFRS. Mais ils portent un coupon et une date de rappel : un lecteur prudent en compte une partie, "
          f"et le plafond de 2027 n'est alors plus tenu ({x(D50)} à 50 %)."),
+        ("Y a-t-il un mur de refinancement avant 2027 ?",
+         f"Non. {P(f['flow26'])} M€ de flux contractuels en 2026, dont {P(f['cpap'])} de billets de trésorerie qui se renouvellent, face à "
+         f"{P(f['liq'])} M€ de liquidités : couvert {x(COV26)}. Le mur agit sur le FFO, pas sur la dette : environ {fr(EXTRA_INT, 0)} M€ "
+         f"d'intérêts de plus par an quand les souches à bas coupon de 2027-2028 se refinancent au taux de 2025."),
+        ("Comment reconstituez-vous le FFO de Moody's, qui ne publie pas sa formule ?",
+         f"Depuis le tableau de flux du DEU (p.362-363) : capacité d'autofinancement avant BFR, moins impôts et intérêts payés, plus "
+         f"remboursements d'actifs financiers opérationnels et dividendes reçus : {fr(FFO_REC, 0)} M€ contre {P(f['mo_ffo25'])} publiés, "
+         f"écart {pct(FFO_GAP_PCT)}. Même lecture en 2024 à moins de 2 % près : c'est un contrôle bloquant du classeur."),
         ("Pourquoi votre fin 2026 est-il crédible ?",
          f"Il n'utilise que la guidance de croissance (+{P(f['g_lo'])} à +{P(f['g_hi'])} %), le second semestre 2025 reproduit et la moitié des cessions signées : "
          f"il tombe à {x(LEV26)}, ce que Veolia annonce."),
     ],
-    "Levier, Pont de dette",
+    "Levier, Pont de dette, Échéancier",
 ))
 
 top3 = "; ".join(f"{esc(n)} ({fr(v / 1000, 2)} Md€)" for n, v in rank[:3])

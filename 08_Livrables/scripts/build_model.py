@@ -121,7 +121,7 @@ wb = Workbook()
 ws0 = wb.active
 ws0.title = "Lisez-moi"
 sheets = {}
-for name in ["Entrées", "Hypothèses", "Levier", "Pont de dette", "Cessions", "Trajectoire",
+for name in ["Entrées", "Hypothèses", "Levier", "Pont de dette", "Échéancier", "Cessions", "Trajectoire",
              "Sensibilité", "Segments", "Booster", "ESG", "Cibles", "Vérifications"]:
     sheets[name] = wb.create_sheet(name)
 
@@ -170,7 +170,7 @@ ws.auto_filter.ref = f"A5:L{LAST_ENTREE}"
 ws = sheets["Hypothèses"]
 title(ws, "Hypothèses — ce que le groupe suppose, et pourquoi",
       "Seules les cellules jaunes se modifient. Base = scénario central ; Bas / Haut = bornes de la sensibilité.")
-header(ws, 4, ["Code", "Hypothèse", "Base", "Bas", "Haut", "Unité", "Justification et ancrage", "Réf."])
+header(ws, 4, ["Code", "Hypothèse", "Base", "Bas", "Haut", "Unité", "Justification et ancrage", "Réf.", "Actif", "Valeur active"])
 H = {}   # code -> row
 
 
@@ -188,6 +188,9 @@ def hyp(row, code, label, base, low, high, unit, why, refs, nf):
     put(ws, f"F{row}", unit)
     put(ws, f"G{row}", why, wrap=True)
     put(ws, f"H{row}", refs, color=GREY)
+    put(ws, f"I{row}", "Base", color=BLUE, fill=YELLOW, align="center")
+    put(ws, f"J{row}", f'=IF(AND(I{row}="Bas",ISNUMBER(D{row})),D{row},IF(AND(I{row}="Haut",ISNUMBER(E{row})),E{row},C{row}))',
+        nf=nf, bold=True)
 
 
 g_lo, id_glo = E("Guidance 2026 : croissance organique de l'EBITDA, bas", "2026")
@@ -277,13 +280,34 @@ hyp(r, "hybPct", "Part des hybrides comptée en dette (définition élargie)", 0
     id_hyb, NF_P); r += 1
 put(ws, f"A{r+1}", "Les formules de base vertes renvoient à l'onglet Entrées ; les nombres bleus sont des hypothèses saisies.",
     color=GREY, italic=True)
-widths(ws, {"A": 8, "B": 44, "C": 11, "D": 11, "E": 11, "F": 9, "G": 78, "H": 22})
+H_LAST = r - 1
+widths(ws, {"A": 8, "B": 44, "C": 11, "D": 11, "E": 11, "F": 9, "G": 78, "H": 22, "I": 9, "J": 13})
 ws.freeze_panes = "C5"
 for rr in range(5, r + 1):
     ws.row_dimensions[rr].height = 30
+# Sélecteur de scénario : une liste déroulante par hypothèse ; tout le classeur lit la colonne J.
+from openpyxl.worksheet.datavalidation import DataValidation
+from openpyxl.workbook.defined_name import DefinedName
+dv = DataValidation(type="list", formula1='"Base,Bas,Haut"', allow_blank=False)
+dv.errorTitle, dv.error = "Scénario", "Base, Bas ou Haut"
+ws.add_data_validation(dv); dv.add(f"I5:I{H_LAST}")
+dvn = DataValidation(type="decimal", operator="between", formula1="-1000000", formula2="1000000", allow_blank=True)
+dvn.errorTitle, dvn.error = "Hypothèse", "Une hypothèse est un nombre (ou une formule vers Entrées)"
+ws.add_data_validation(dvn); dvn.add(f"C5:E{H_LAST}")
+put(ws, "A3", f'="Scénario actif : "&IF(COUNTIF($I$5:$I${H_LAST},"Bas")+COUNTIF($I$5:$I${H_LAST},"Haut")=0,"base partout",'
+    f'COUNTIF($I$5:$I${H_LAST},"Bas")+COUNTIF($I$5:$I${H_LAST},"Haut")&" hypothèse(s) hors base")', bold=True, color="C00000")
+HSTAT = f"{q('Hypothèses')}!$A$3"
+put(ws, f"I{H_LAST + 2}", "Actif : Base, Bas ou Haut. Une hypothèse sans bornes (—) reste à sa base. Les cellules « Valeur active » (J) "
+    "sont lues par Trajectoire et par tous les onglets : c'est ici qu'on joue un scénario sans toucher un nombre.", color=GREY, italic=True)
+for _code, _hrow in H.items():
+    _dn = DefinedName(f"h_{_code}", attr_text=f"'Hypothèses'!$J${_hrow}")
+    try:
+        wb.defined_names[f"h_{_code}"] = _dn
+    except TypeError:
+        wb.defined_names.append(_dn)
 
 
-def HY(code, col="C"):
+def HY(code, col="J"):
     return f"{q('Hypothèses')}!${col}${H[code]}"
 
 
@@ -439,7 +463,48 @@ put(ws, f"B{r}", "Lecture : les agences ne regardent pas le 3x de Veolia mais FF
     "C'est la limite qui mord en premier, avant le plafond de 3x.", color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 44; r += 2
 
-put(ws, f"A{r}", "C", bold=True); put(ws, f"B{r}", "Le plafond selon la définition retenue (scénario central, fin 2027)", bold=True); r += 1
+put(ws, f"A{r}", "B5", bold=True); put(ws, f"B{r}", "Le pont du FFO : reconstitué depuis le tableau de flux (DEU 2025 p.362-363) face au FFO de Moody's", bold=True); r += 1
+header(ws, r, ["", "Poste (signes du tableau de flux)", "2025", "2024", "Réf."]); r += 1
+FFO_ITEMS = [
+    ("Capacité d'autofinancement avant variation du BFR", "Tableau de flux : capacité d'autofinancement avant variation du BFR"),
+    ("Impôts payés", "Tableau de flux : impôts payés"),
+    ("Intérêts payés", "Tableau de flux : intérêts payés"),
+    ("Intérêts sur actifs IFRIC 12", "Tableau de flux : intérêts sur actifs IFRIC 12"),
+    ("Intérêts sur dette de loyers IFRS 16", "Tableau de flux : intérêts sur dette de loyers IFRS 16"),
+    ("Remboursements d'actifs financiers opérationnels (IFRIC 12)", "Tableau de flux : remboursements d'actifs financiers opérationnels"),
+    ("Dividendes reçus (coentreprises et associés)", "Tableau de flux : dividendes reçus"),
+]
+FF0 = r
+for lab, pre in FFO_ITEMS:
+    a25, i25 = E(pre, "FY2025"); a24, i24 = E(pre, "FY2024")
+    put(ws, f"B{r}", lab); put(ws, f"C{r}", f"={a25}", color=GREEN, nf=NF_M); put(ws, f"D{r}", f"={a24}", color=GREEN, nf=NF_M)
+    put(ws, f"E{r}", f"{i25}, {i24}", color=GREY); r += 1
+put(ws, f"B{r}", "FFO reconstitué (somme, signes du tableau de flux)", bold=True)
+put(ws, f"C{r}", f"=SUM(C{FF0}:C{r-1})", nf=NF_M, bold=True); put(ws, f"D{r}", f"=SUM(D{FF0}:D{r-1})", nf=NF_M, bold=True)
+ws[f"C{r}"].border = TOPLINE; ws[f"D{r}"].border = TOPLINE
+A["ffoRec25"] = f"{q('Levier')}!$C${r}"; A["ffoRec24"] = f"{q('Levier')}!$D${r}"; FFR = r; r += 1
+mo_ffo24b, i_moffo24b = E("Moody's : FFO (funds from operations)", "FY2024")
+put(ws, f"B{r}", "FFO publié par Moody's (Exhibit 15)")
+put(ws, f"C{r}", f"={moffo25}", color=GREEN, nf=NF_M); put(ws, f"D{r}", f"={mo_ffo24b}", color=GREEN, nf=NF_M)
+put(ws, f"E{r}", f"{id_moffo25}, {i_moffo24b}", color=GREY); FFM = r; r += 1
+put(ws, f"B{r}", "Écart reconstitué − Moody's"); put(ws, f"C{r}", f"=C{FFR}-C{FFM}", nf=NF_M); put(ws, f"D{r}", f"=D{FFR}-D{FFM}", nf=NF_M); r += 1
+put(ws, f"B{r}", "Écart en % du FFO Moody's", bold=True)
+put(ws, f"C{r}", f"=C{FFR}/C{FFM}-1", nf=NF_P, bold=True); put(ws, f"D{r}", f"=D{FFR}/D{FFM}-1", nf=NF_P, bold=True)
+A["ffoRecGap25"] = f"{q('Levier')}!$C${r}"; A["ffoRecGap24"] = f"{q('Levier')}!$D${r}"; r += 1
+mond24b, i_mond24b = E("Moody's : dette nette ajustée (Exhibit 13)", "FY2024")
+put(ws, f"B{r}", "FFO reconstitué / EBITDA publié par Veolia (à comparer à l'hypothèse ffo)")
+put(ws, f"C{r}", f"=C{FFR}/{eb25}", nf=NF_P); put(ws, f"D{r}", f"=D{FFR}/{eb24}", nf=NF_P)
+put(ws, f"E{r}", f"{id_eb25}, {id_eb24}", color=GREY); A["ffoRecEb25"] = f"{q('Levier')}!$C${r}"; A["ffoRecEb24"] = f"{q('Levier')}!$D${r}"; r += 1
+put(ws, f"B{r}", "FFO reconstitué / dette nette ajustée Moody's (publié : 20,3 % et 21,3 %)")
+put(ws, f"C{r}", f"=C{FFR}/{A['moNetP']}", nf=NF_P); put(ws, f"D{r}", f"=D{FFR}/{mond24b}", nf=NF_P)
+put(ws, f"E{r}", f"{i_monet}, {i_mond24b}", color=GREY); r += 1
+put(ws, f"B{r}", "Lecture : Moody's ne publie pas sa formule. Lue depuis le tableau de flux de Veolia — capacité d'autofinancement avant BFR, "
+    "moins impôts et intérêts payés (dette, IFRIC 12, IFRS 16), plus les remboursements d'actifs financiers opérationnels et les dividendes "
+    "reçus — la reconstitution retombe sur le FFO de Moody's à moins de 2 % près sur les deux années. C'est la lecture du groupe, contrôlée "
+    "à ± 5 % (Vérifications) ; elle donne un FFO projetable poste par poste, dont les intérêts (Échéancier §B).", color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 58; r += 2
+
+put(ws, f"A{r}", "C", bold=True); put(ws, f"B{r}", "Le plafond selon la définition retenue (scénario actif, fin 2027)", bold=True); r += 1
 header(ws, r, ["", "Définition", "Levier 2027", "Marge (M EUR)", "Ce qu'on ajoute à la DFN"]); r += 1
 DEF_START = r
 defs = [
@@ -534,6 +599,144 @@ line(ws, r, "nfdJun25", "Dette au 30/06/2025", f"={nfdh125}", "", i_nfdh125, sto
 line(ws, r, "nfdDec25", "Dette au 31/12/2025", f"={nfd25}", "", i_nfd25, store=P); r += 1
 line(ws, r, "dropH2", "Baisse de la dette au S2 2025", f"=C{r-2}-C{r-1}", "", "", bold=True, store=P); r += 1
 widths(ws, {"A": 4, "B": 56, "C": 14, "D": 4, "E": 58})
+
+# ================================================================ Échéancier
+ws = sheets["Échéancier"]
+title(ws, "Rôle 2 — Échéancier de la dette : le mur de refinancement face aux liquidités et au cash-flow",
+      "DEU 2025, note 8.1.1 (p.405-409) et note 8.3.2 (p.421-422). Les flux contractuels non actualisés comprennent "
+      "le principal et les intérêts, tels que Veolia les publie.")
+M, MR = {}, {}
+YEARS = ["2026", "2027", "2028", "2029", "2030", "au-delà de 5 ans"]
+r = 4
+put(ws, f"A{r}", "A", bold=True); put(ws, f"B{r}", "Flux contractuels par année au 31/12/2025 (note 8.3.2.1, p.421)", bold=True); r += 1
+header(ws, r, ["", "Instrument", "2026", "2027", "2028", "2029", "2030", "> 5 ans", "Total publié", "Somme des années", "Écart", "Réf."]); r += 1
+INSTR = [("bonds", "Emprunts obligataires", "emprunts obligataires"),
+         ("other", "Autres passifs et découverts bancaires", "autres passifs et découverts bancaires"),
+         ("lease", "Dette de loyers IFRS 16", "dette de loyers IFRS 16")]
+F0 = r
+for key, lab, pre in INSTR + [("gross", "Passifs financiers bruts publiés", "passifs financiers bruts")]:
+    if key == "gross":
+        put(ws, f"B{r}", "Somme des trois instruments", bold=True)
+        for j in range(7):
+            col = L(3 + j)
+            put(ws, f"{col}{r}", f"=SUM({col}{F0}:{col}{r-1})", nf=NF_M, bold=True)
+        M["sum"] = r; r += 1
+    put(ws, f"B{r}", lab, bold=key == "gross")
+    for j, y in enumerate(YEARS):
+        a, _ = E(f"Flux contractuels non actualisés : {pre}, {y}", "31/12/2025")
+        put(ws, f"{L(3 + j)}{r}", f"={a}", color=GREEN, nf=NF_M)
+    a, i = E(f"Flux contractuels non actualisés : {pre}, total", "31/12/2025")
+    put(ws, f"I{r}", f"={a}", color=GREEN, nf=NF_M)
+    put(ws, f"J{r}", f"=SUM(C{r}:H{r})", nf=NF_M)
+    put(ws, f"K{r}", f"=J{r}-I{r}", nf=NF_M, color=GREY)
+    put(ws, f"L{r}", i, color=GREY)
+    M[key] = r; r += 1
+put(ws, f"B{r}", "Écart somme recalculée − publié", color=GREY)
+for j in range(7):
+    col = L(3 + j)
+    put(ws, f"{col}{r}", f"={col}{M['sum']}-{col}{M['gross']}", nf=NF_M, color=GREY)
+r += 1
+put(ws, f"B{r}", "Part de l'année dans le total", color=GREY)
+for j in range(6):
+    col = L(3 + j)
+    put(ws, f"{col}{r}", f"={col}{M['gross']}/$I${M['gross']}", nf=NF_P, color=GREY)
+r += 1
+cp, i_cp = E("Billets de trésorerie (commercial paper)", "31/12/2025")
+hyb863, i_hyb863 = E("Titres super-subordonnés dont le remboursement est notifié", "31/12/2025")
+b1y, i_b1y = E("Emprunts obligataires à moins d'un an", "31/12/2025")
+put(ws, f"B{r}", "   dont, en 2026 : billets de trésorerie, renouvelés en continu (p.408)")
+put(ws, f"C{r}", f"={cp}", color=GREEN, nf=NF_M); put(ws, f"L{r}", i_cp, color=GREY); M["cp"] = r; r += 1
+put(ws, f"B{r}", "   dont, en 2026 : hybride dont le remboursement est notifié, payé le 09/02/2026 (p.408)")
+put(ws, f"C{r}", f"={hyb863}", color=GREEN, nf=NF_M); put(ws, f"L{r}", i_hyb863, color=GREY); M["hyb"] = r; r += 1
+put(ws, f"B{r}", "Flux 2026 hors billets de trésorerie et hybride notifié", bold=True)
+put(ws, f"C{r}", f"=C{M['gross']}-C{M['cp']}-C{M['hyb']}", nf=NF_M, bold=True); M["wall26"] = r; r += 1
+put(ws, f"B{r}", "Pour mémoire : obligations à moins d'un an en valeur comptable (p.406) — les flux 2026 les dépassent car ils comprennent les intérêts")
+put(ws, f"C{r}", f"={b1y}", color=GREEN, nf=NF_M); put(ws, f"L{r}", i_b1y, color=GREY); M["bond1y"] = r; r += 2
+
+put(ws, f"A{r}", "B", bold=True); put(ws, f"B{r}", "Principal des souches euro par année (p.406-407) et coût de leur refinancement", bold=True); r += 1
+header(ws, r, ["", "Année", "Nominal à échéance", "Taux facial moyen pondéré", "Taux de l'émission de juin 2025 (7 ans)",
+               "Surcoût d'intérêts annuel si refinancé à ce taux", "Souches (registre)"]); r += 1
+SER = {
+    "2026": [("Souche obligataire euro à échéance du 09/06/2026", False), ("Souche obligataire euro à échéance du 30/11/2026", False)],
+    "2027": [("Souche EMTN Series 43, échéance 14/01/2027", True), ("Souche EMTN Series 29 (PEO), échéance 30/03/2027", True),
+             ("Souche EMTN Series 23, échéance 02/04/2027", True), ("Souche EMTN Series 3, échéance 08/06/2027", True)],
+    "2028": [("Souche EMTN Series 31 (PEO), échéance 10/01/2028", True), ("Souche EMTN Series 41, échéance 15/04/2028", True),
+             ("Souche EMTN Series 17, échéance 19/05/2028", True)],
+    "2029": [("Souche EMTN Series 34, échéance 04/01/2029", False), ("Souche EMTN Series 19, échéance 03/04/2029", False),
+             ("Souche EMTN Series 13, échéance 21/05/2029", False)],
+    "2030": [("Souche EMTN Series 38, échéance 07/01/2030", False), ("Souche EMTN Series 15, échéance 01/07/2030", False),
+             ("Souche EMTN Series 21, échéance 17/09/2030", False), ("Souche EMTN Series 9 (GBP), échéance 02/12/2030", False)],
+}
+new7, i_new7 = E("Émission obligataire du 17/06/2025, tranche 2032 : taux", "FY2025")
+for year, items in SER.items():
+    put(ws, f"B{r}", year, align="center")
+    noms, ids = [], []
+    for pre, _has_rate in items:
+        a, i = E(pre + " : nominal", "31/12/2025"); noms.append(a); ids.append(i)
+    put(ws, f"C{r}", "=" + "+".join(noms), color=GREEN, nf=NF_M, bold=True)
+    if all(h for _, h in items):
+        rates = [E(pre + " : taux", "31/12/2025")[0] for pre, _ in items]
+        prod = "+".join(f"{n}*{t}" for n, t in zip(noms, rates))
+        put(ws, f"D{r}", f"=({prod})/C{r}/100", nf='0.00%')
+        put(ws, f"E{r}", f"={new7}/100", color=GREEN, nf='0.000%')
+        put(ws, f"F{r}", f"=C{r}*(E{r}-D{r})", nf=NF_M, bold=True)
+    else:
+        for col in "DEF":
+            put(ws, f"{col}{r}", "—", color=GREY, align="center")
+    put(ws, f"G{r}", ", ".join(ids), color=GREY)
+    M[f"nom{year}"] = r; r += 1
+emtn, i_emtn = E("Souches EMTN : nominal total", "31/12/2025")
+put(ws, f"B{r}", "Souches 2027-2030 listées ci-dessus, en part du nominal EMTN total (p.407)")
+put(ws, f"C{r}", f"=SUM(C{M['nom2027']}:C{M['nom2030']})/{emtn}", nf=NF_P); put(ws, f"G{r}", i_emtn, color=GREY); r += 1
+put(ws, f"B{r}", "Surcoût d'intérêts annuel, en régime, si les souches 2027 et 2028 sont refinancées au taux de juin 2025", bold=True)
+put(ws, f"C{r}", f"=F{M['nom2027']}+F{M['nom2028']}", nf=NF_M, bold=True); M["extraInt"] = r; r += 1
+put(ws, f"B{r}", "   en % du FFO 2025 publié par Moody's", color=GREY)
+put(ws, f"C{r}", f"=C{r-1}/{moffo25}", nf=NF_P, color=GREY); put(ws, f"G{r}", id_moffo25, color=GREY); M["extraIntPct"] = r; r += 1
+put(ws, f"B{r}", "Lecture : la dette qui tombe en 2027-2028 porte les coupons des années de taux bas (0 % à 1,6 %, une souche à 4,6 %). "
+    "Refinancée au taux de juin 2025, elle coûte quelques dizaines de millions d'intérêts de plus par an : l'effet passe par le FFO que "
+    "regardent les agences, pas par la dette nette. Le mur lui-même est petit face aux liquidités (§C).", color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:L{r}"); ws.row_dimensions[r].height = 44; r += 2
+
+put(ws, f"A{r}", "C", bold=True); put(ws, f"B{r}", "Les liquidités face au mur (note 8.3.2.2, p.421-422)", bold=True); r += 1
+header(ws, r, ["", "Libellé", "Valeur", "Unité", "Réf. / calcul"]); r += 1
+
+
+def ln(key, label, formula, unit, ref, nf=NF_M, bold=False):
+    global r
+    line(ws, r, key, label, formula, unit, ref, nf, bold, store=MR)
+    M[key] = r
+    r += 1
+
+
+C0 = r
+for key, lab, pre in (
+        ("synd", "Ligne syndiquée non tirée, prolongée jusqu'en 2030", "Ligne de crédit syndiquée non tirée"),
+        ("bilat", "Lignes bilatérales MT non tirées (Veolia Environnement)", "Lignes de crédit bilatérales MT non tirées"),
+        ("cashVE", "Trésorerie, actifs liquides et de financement (Veolia Environnement)",
+         "Trésorerie, équivalents, actifs liquides et de financement (Veolia Environnement)"),
+        ("bilatSub", "Lignes bilatérales des filiales", "Lignes de crédit bilatérales des filiales"),
+        ("cashSub", "Trésorerie, actifs liquides et de financement (filiales)",
+         "Trésorerie, équivalents, actifs liquides et de financement (filiales)")):
+    a, i = E(pre, "31/12/2025")
+    ln(key, lab, f"={a}", "M EUR", i)
+ln("liqC", "Liquidités totales recalculées", f"=SUM(C{C0}:C{r-1})", "M EUR", "somme", NF_M, True)
+tl, i_tl = E("Total des liquidités", "31/12/2025")
+ln("liqP", "Liquidités totales publiées", f"={tl}", "M EUR", i_tl)
+ln("lines", "   dont lignes confirmées non tirées", f"=C{M['synd']}+C{M['bilat']}+C{M['bilatSub']}", "M EUR", "syndiquée + bilatérales")
+ln("cash", "   dont trésorerie et actifs liquides", f"=C{M['cashVE']}+C{M['cashSub']}", "M EUR", "")
+ln("cov26", "Liquidités / flux contractuels 2026", f"=C{M['liqP']}/C{M['gross']}", "x", "le mur de 2026 est couvert … fois", NF_X, True)
+ln("cov26x", "Liquidités / flux 2026 hors billets de trésorerie et hybride notifié", f"=C{M['liqP']}/C{M['wall26']}", "x", "", NF_X, True)
+ln("cov2627", "Liquidités / flux contractuels 2026 + 2027", f"=C{M['liqP']}/(C{M['gross']}+D{M['gross']})", "x", "", NF_X)
+ln("cov27fcf", "(Liquidités + cash-flow libre net 2027 du modèle) / flux 2026 + 2027",
+   f"=(C{M['liqP']}+{q('Trajectoire')}!$D$FCF27)/(C{M['gross']}+D{M['gross']})", "x", "FCF 2027 : Trajectoire, scénario actif", NF_X)
+mat25b, i_mat25b = E("Maturité moyenne de la dette financière nette", "31/12/2025")
+ln("mat", "Maturité moyenne de la dette nette", f"={mat25b}", "années", i_mat25b, '0.0')
+put(ws, f"B{r}", "Covenants : la documentation des financements bancaires et obligataires de Veolia Environnement ne contient aucun covenant "
+    "financier (p.422). Des covenants existent sur certains financements de filiales ; le groupe les déclare respectés au 31/12/2025.",
+    color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:L{r}"); ws.row_dimensions[r].height = 30; r += 1
+widths(ws, {"A": 4, "B": 70, "C": 14, "D": 14, "E": 14, "F": 14, "G": 14, "H": 11, "I": 13, "J": 14, "K": 10, "L": 40})
+ws.freeze_panes = "C4"
 
 # ================================================================ Cessions
 ws = sheets["Cessions"]
@@ -642,9 +845,9 @@ widths(ws, {"A": 4, "B": 60, "C": 16, "D": 12, "E": 50})
 # ================================================================ Trajectoire
 ws = sheets["Trajectoire"]
 title(ws, "Rôles 3 et 6 — Trajectoire 2026-2027 et marge de manœuvre sous 3x",
-      "Colonne D = scénario central. Chaque colonne suivante change UNE hypothèse (cellule saumon). "
+      "Colonne D = scénario actif (Hypothèses, colonne Actif ; base partout par défaut). Chaque colonne suivante change UNE hypothèse (cellule saumon). "
       "Les deux dernières combinent tous les bas défavorables, puis tous les hauts favorables.")
-cols = [("D", "Base", None, None)]
+cols = [("D", "Scénario actif", None, None)]
 ci = 5
 for code in VARIED:
     for side in ("Bas", "Haut"):
@@ -758,15 +961,37 @@ for code in INPUT_ORDER:
             f, color, fill = f"=$D{rr}", BLACK, None
         put(ws, f"{col}{rr}", f, color=color, nf=nf, fill=fill)
 # remplace les jetons NFD27 / EB27 posés dans Levier avant de connaître les lignes
-for row in sheets["Levier"].iter_rows():
-    for cell in row:
-        if isinstance(cell.value, str) and ("$NFD27" in cell.value or "$EB27" in cell.value):
-            cell.value = cell.value.replace("$D$NFD27", f"$D${ROW['NFD27']}").replace("$D$EB27", f"$D${ROW['EB27']}")
+for _sh in ("Levier", "Échéancier"):
+    for row in sheets[_sh].iter_rows():
+        for cell in row:
+            if isinstance(cell.value, str) and "$D$" in cell.value:
+                for _key in ("NFD27", "EB27", "FCF27"):
+                    cell.value = cell.value.replace(f"$D${_key}", f"$D${ROW[_key]}")
 widths(ws, {"A": 8, "B": 54, "C": 9, **{c: 11 for c, *_ in cols}})
 ws.column_dimensions[UNFAV].width = 13
 ws.column_dimensions[FAV].width = 13
 ws.freeze_panes = "D5"
 T = {k: f"{q('Trajectoire')}!$D${v}" for k, v in ROW.items()}
+# graphique : levier 2024 → 2027, scénario actif, défavorable et favorable
+rr = max(ROW.values()) + 2
+put(ws, f"B{rr}", "Levier par scénario (source du graphique)", bold=True); rr += 1
+header(ws, rr, ["", "Année", "Scénario actif", "Défavorable combiné", "Favorable combiné"]); rr += 1
+G0 = rr
+for year, trio in (("2024", (f"={lev24}",) * 3), ("2025", (f"={lev25}",) * 3),
+                   ("2026", (f"=$D${ROW['LEV26']}", f"=${UNFAV}${ROW['LEV26']}", f"=${FAV}${ROW['LEV26']}")),
+                   ("2027", (f"=$D${ROW['LEV27']}", f"=${UNFAV}${ROW['LEV27']}", f"=${FAV}${ROW['LEV27']}"))):
+    put(ws, f"B{rr}", year, align="center")
+    for col, f in zip("CDE", trio):
+        put(ws, f"{col}{rr}", f, nf=NF_X, color=GREEN if "Entrées" in f else BLACK)
+    rr += 1
+G1 = rr - 1
+lch = BarChart(); lch.type = "col"; lch.grouping = "clustered"
+lch.title = "Levier 2024 → 2027 (plafond : 3x fin 2027)"
+lch.y_axis.title = "× EBITDA"; lch.y_axis.delete = False; lch.x_axis.delete = False
+lch.add_data(Reference(ws, min_col=3, max_col=5, min_row=G0 - 1, max_row=G1), titles_from_data=True)
+lch.set_categories(Reference(ws, min_col=2, min_row=G0, max_row=G1))
+lch.height, lch.width = 9, 18
+ws.add_chart(lch, f"G{G0 - 2}")
 
 # ================================================================ Sensibilité
 ws = sheets["Sensibilité"]
@@ -1286,6 +1511,17 @@ checks = [
     ("Pont 2025 : flux non détaillés dans le communiqué", P["resid25"], 0, None, NF_M, "Info"),
     ("Clean Earth : effet sur la dette − prix payé", P["ceGap"], 0, None, NF_M, "Info"),
     ("Multiple Clean Earth recalculé après synergies vs publié", K["mPost"], K["mPub"], None, '0.0"x"', "Info"),
+    ("FFO 2025 reconstitué depuis le tableau de flux = FFO Moody's (± 5 %)", A["ffoRecGap25"], 0, 0.05, NF_P, "Bloquant"),
+    ("FFO 2024 reconstitué depuis le tableau de flux = FFO Moody's (± 5 %)", A["ffoRecGap24"], 0, 0.05, NF_P, "Bloquant"),
+    ("Échéancier : somme des trois instruments = passifs financiers bruts publiés, flux 2026", f"{q('Échéancier')}!$C${M['sum']}",
+     f"{q('Échéancier')}!$C${M['gross']}", 1, NF_M, "Bloquant"),
+    ("Échéancier : somme des années = total publié (obligations)", f"{q('Échéancier')}!$J${M['bonds']}",
+     f"{q('Échéancier')}!$I${M['bonds']}", 1, NF_M, "Bloquant"),
+    ("Échéancier : somme des années = total publié (passifs financiers bruts)", f"{q('Échéancier')}!$J${M['gross']}",
+     f"{q('Échéancier')}!$I${M['gross']}", 1, NF_M, "Bloquant"),
+    ("Liquidités totales recalculées = publiées (p.421)", MR["liqC"], MR["liqP"], 1, NF_M, "Bloquant"),
+    ("Flux contractuels 2026 des obligations − obligations à moins d'un an (positif : les flux comprennent les intérêts)",
+     f"{q('Échéancier')}!$C${M['bonds']}-{q('Échéancier')}!$C${M['bond1y']}", 0, None, NF_M, "Info"),
     ("Chiffres de l'onglet Entrées non relus par un tiers", f"COUNTIF({q('Entrées')}!$L${FIRST}:$L${LAST_ENTREE},\"à relire\")",
      0, None, NF_I, "Info"),
 ]
@@ -1320,7 +1556,7 @@ ws = ws0
 title(ws, "Modèle GreenUp 2027 — Veolia, sujet 2 du capstone EDHEC",
       "Combien Veolia peut-elle encore acheter en déchets dangereux sans dépasser son plafond de levier ?")
 r = 4
-put(ws, f"B{r}", "Résultats du scénario central", bold=True, size=12); r += 1
+put(ws, f"B{r}", "Résultats du scénario actif (base partout, sauf choix dans Hypothèses, colonne Actif)", bold=True, size=12); r += 1
 res = [
     ("Levier fin 2026 (guidance : égal ou légèrement supérieur à 3x)", T["LEV26"], NF_X),
     ("Levier fin 2027 (engagement : ≤ 3x)", T["LEV27"], NF_X),
@@ -1336,7 +1572,11 @@ res = [
     ("EBITDA 2027 si chaque segment garde son rythme organique de 2025, en M EUR", SG["eb27seg"], NF_M),
     ("Clean Earth : multiple du prix sur l'EBITDA 2025 publié par le vendeur (reconstitué)", B["mRec"], '0.0"x"'),
     ("Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple de Clean Earth, en M EUR", T["MAXACQB"], NF_M),
+    ("Liquidités / flux contractuels de dette 2026 (DEU p.421)", MR["cov26"], NF_X),
+    ("Surcoût d'intérêts annuel si les souches 2027-2028 sont refinancées au taux de juin 2025, en M EUR", f"{q('Échéancier')}!$C${M['extraInt']}", NF_M),
+    ("FFO 2025 reconstitué depuis le tableau de flux, en M EUR (Moody's publie 5 160)", A["ffoRec25"], NF_M),
     ("Contrôles bloquants", VSTAT, None),
+    ("Scénario", HSTAT, None),
 ]
 for lab, ref, nf in res:
     put(ws, f"B{r}", lab)
@@ -1352,6 +1592,8 @@ legend = [
     ("Jaune", "hypothèse du groupe : seules ces cellules se modifient (onglet Hypothèses, et cadres à remplir)", Font(name=F),
      YELLOW),
     ("Saumon", "dans Trajectoire : la seule hypothèse qui change dans ce scénario", Font(name=F), CHANGED),
+    ("Actif", "colonne Actif de l'onglet Hypothèses : Base, Bas ou Haut par hypothèse ; tous les onglets lisent la « Valeur active »",
+     Font(name=F, color=BLUE), YELLOW),
 ]
 for k, v, fnt, fill in legend:
     c = ws[f"B{r}"]; c.value = k; c.font = fnt
@@ -1363,7 +1605,8 @@ r += 1
 put(ws, f"B{r}", "Les six rôles", bold=True, size=12); r += 1
 roles = [
     ("1. Périmètre et sources", "Entrées, Cessions §A-B", "L'enveloppe annoncée est nette des cessions ; Clean Earth en sort."),
-    ("2. La contrainte", "Levier, Pont de dette", "Définition de Veolia, ratios publiés reproduits, trois lectures du départ au 30/06/2026."),
+    ("2. La contrainte", "Levier, Pont de dette, Échéancier", "Définition de Veolia, ratios publiés reproduits, trois lectures du départ au 30/06/2026 ; "
+     "seuils des agences, pont du FFO, mur de refinancement."),
     ("3. Capacité et sensibilité", "Trajectoire, Sensibilité, Cessions §C", "FCF, calendrier des cessions, ce qui bouge le plus la marge."),
     ("4. L'écart et les comparables", "Segments, Booster", "D'où viennent les 8 Md€ ; volumes face à 9 et 10 Mt ; Clean Harbors en comparable ; Clean Earth vu du vendeur."),
     ("5. Le coût ESG", "ESG", "Provisions de fermeture ; ce que l'affectation du prix de Clean Earth ne montre pas encore."),
@@ -1383,7 +1626,10 @@ rules = [
     "Les cessions retirent leur EBITDA sur l'année entière où elles sont encaissées : c'est prudent.",
     "Le change sur la dette en dollars n'est pas modélisé ; aucun dividende n'est supposé versé au S2.",
     "Le levier 2026 « publié » compte 7 mois de Clean Earth ; la ligne pro forma en compte 12. Veolia ne dit pas laquelle elle retient.",
-    "Registre : chiffres versés dans dataroom.is42.fr le 1er octobre 2026. Aucun n'a encore été relu par un tiers (Vérifications, ligne 14).",
+    "Le sélecteur de scénario (Hypothèses, colonne Actif) change tout le classeur ; les colonnes de Trajectoire restent des variations "
+    "une à une autour du scénario actif. Les noms h_<code> (ex. h_s27) pointent sur la valeur active de chaque hypothèse.",
+    "Registre : chiffres versés dans dataroom.is42.fr du 1er au 6 octobre 2026. La relecture par un tiers se suit dans Vérifications "
+    "(dernière ligne) et sur la page Relecture de la dataroom.",
 ]
 for t in rules:
     put(ws, f"B{r}", f"•  {t}", wrap=True); ws.merge_cells(f"B{r}:F{r}")

@@ -186,17 +186,94 @@
   "F254",
   "F255",
   "F256",
+  "F257",
   "F261",
   "F262",
   "F263",
   "F264",
   "F265",
+  "F267-af42",
   "F268",
   "F269",
   "F271",
+  "F271-543e",
+  "F272-40a3",
   "F272",
   "F273",
-  "F274"
+  "F274",
+  "F276-facd",
+  "F279",
+  "F280",
+  "F281",
+  "F282",
+  "F283",
+  "F284",
+  "F285",
+  "F286",
+  "F287",
+  "F288",
+  "F289",
+  "F290",
+  "F296",
+  "F297",
+  "F308",
+  "F309",
+  "F314",
+  "F315",
+  "F319",
+  "F320",
+  "F321",
+  "F328",
+  "F329",
+  "F330",
+  "F331",
+  "F332",
+  "F333",
+  "F349",
+  "F350",
+  "F351",
+  "F352",
+  "F353",
+  "F354",
+  "F355",
+  "F356",
+  "F357",
+  "F358",
+  "F359",
+  "F360",
+  "F361",
+  "F362",
+  "F363",
+  "F364",
+  "F365",
+  "F366",
+  "F367",
+  "F368",
+  "F369",
+  "F370",
+  "F371",
+  "F372",
+  "F373",
+  "F374",
+  "F375",
+  "F376",
+  "F377",
+  "F378",
+  "F379",
+  "F380",
+  "F381",
+  "F382",
+  "F383",
+  "F384",
+  "F385",
+  "F386",
+  "F396",
+  "F405",
+  "F406",
+  "F407",
+  "F408",
+  "F409",
+  "F417"
  ],
  "lookups": [
   {
@@ -590,6 +667,102 @@
    "unit": ""
   },
   {
+   "id": "F308",
+   "prefix": "Tableau de flux : capacité d'autofinancement avant variation du BFR",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F309",
+   "prefix": "Tableau de flux : capacité d'autofinancement avant variation du BFR",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F314",
+   "prefix": "Tableau de flux : impôts payés",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F315",
+   "prefix": "Tableau de flux : impôts payés",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F328",
+   "prefix": "Tableau de flux : intérêts payés",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F329",
+   "prefix": "Tableau de flux : intérêts payés",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F330",
+   "prefix": "Tableau de flux : intérêts sur actifs IFRIC 12",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F331",
+   "prefix": "Tableau de flux : intérêts sur actifs IFRIC 12",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F332",
+   "prefix": "Tableau de flux : intérêts sur dette de loyers IFRS 16",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F333",
+   "prefix": "Tableau de flux : intérêts sur dette de loyers IFRS 16",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F396",
+   "prefix": "Tableau de flux : remboursements d'actifs financiers opérationnels",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F319",
+   "prefix": "Tableau de flux : remboursements d'actifs financiers opérationnels",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F320",
+   "prefix": "Tableau de flux : dividendes reçus",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F321",
+   "prefix": "Tableau de flux : dividendes reçus",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F262",
+   "prefix": "Moody's : FFO (funds from operations)",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F257",
+   "prefix": "Moody's : dette nette ajustée (Exhibit 13)",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
    "id": "F28",
    "prefix": "Cash-flow libre net avant",
    "period": "S1 2026",
@@ -713,6 +886,384 @@
    "id": "F84",
    "prefix": "Variation du BFR opérationnel",
    "period": "S1 2025",
+   "unit": ""
+  },
+  {
+   "id": "F406",
+   "prefix": "Flux contractuels non actualisés : emprunts obligataires, 2026",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F349",
+   "prefix": "Flux contractuels non actualisés : emprunts obligataires, 2027",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F350",
+   "prefix": "Flux contractuels non actualisés : emprunts obligataires, 2028",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F351",
+   "prefix": "Flux contractuels non actualisés : emprunts obligataires, 2029",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F352",
+   "prefix": "Flux contractuels non actualisés : emprunts obligataires, 2030",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F353",
+   "prefix": "Flux contractuels non actualisés : emprunts obligataires, au-delà de 5 ans",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F405",
+   "prefix": "Flux contractuels non actualisés : emprunts obligataires, total",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F355",
+   "prefix": "Flux contractuels non actualisés : autres passifs et découverts bancaires, 2026",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F356",
+   "prefix": "Flux contractuels non actualisés : autres passifs et découverts bancaires, 2027",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F357",
+   "prefix": "Flux contractuels non actualisés : autres passifs et découverts bancaires, 2028",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F358",
+   "prefix": "Flux contractuels non actualisés : autres passifs et découverts bancaires, 2029",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F359",
+   "prefix": "Flux contractuels non actualisés : autres passifs et découverts bancaires, 2030",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F360",
+   "prefix": "Flux contractuels non actualisés : autres passifs et découverts bancaires, au-delà de 5 ans",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F354",
+   "prefix": "Flux contractuels non actualisés : autres passifs et découverts bancaires, total",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F362",
+   "prefix": "Flux contractuels non actualisés : dette de loyers IFRS 16, 2026",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F363",
+   "prefix": "Flux contractuels non actualisés : dette de loyers IFRS 16, 2027",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F364",
+   "prefix": "Flux contractuels non actualisés : dette de loyers IFRS 16, 2028",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F365",
+   "prefix": "Flux contractuels non actualisés : dette de loyers IFRS 16, 2029",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F366",
+   "prefix": "Flux contractuels non actualisés : dette de loyers IFRS 16, 2030",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F367",
+   "prefix": "Flux contractuels non actualisés : dette de loyers IFRS 16, au-delà de 5 ans",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F361",
+   "prefix": "Flux contractuels non actualisés : dette de loyers IFRS 16, total",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F408",
+   "prefix": "Flux contractuels non actualisés : passifs financiers bruts, 2026",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F368",
+   "prefix": "Flux contractuels non actualisés : passifs financiers bruts, 2027",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F369",
+   "prefix": "Flux contractuels non actualisés : passifs financiers bruts, 2028",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F370",
+   "prefix": "Flux contractuels non actualisés : passifs financiers bruts, 2029",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F371",
+   "prefix": "Flux contractuels non actualisés : passifs financiers bruts, 2030",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F372",
+   "prefix": "Flux contractuels non actualisés : passifs financiers bruts, au-delà de 5 ans",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F407",
+   "prefix": "Flux contractuels non actualisés : passifs financiers bruts, total",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F296",
+   "prefix": "Billets de trésorerie (commercial paper)",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F297",
+   "prefix": "Titres super-subordonnés dont le remboursement est notifié",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F267-af42",
+   "prefix": "Emprunts obligataires à moins d'un an",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F276-facd",
+   "prefix": "Émission obligataire du 17/06/2025, tranche 2032 : taux",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F271-543e",
+   "prefix": "Souche obligataire euro à échéance du 09/06/2026 : nominal",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F272-40a3",
+   "prefix": "Souche obligataire euro à échéance du 30/11/2026 : nominal",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F279",
+   "prefix": "Souche EMTN Series 43, échéance 14/01/2027 : nominal",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F281",
+   "prefix": "Souche EMTN Series 29 (PEO), échéance 30/03/2027 : nominal",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F283",
+   "prefix": "Souche EMTN Series 23, échéance 02/04/2027 : nominal",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F285",
+   "prefix": "Souche EMTN Series 3, échéance 08/06/2027 : nominal",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F280",
+   "prefix": "Souche EMTN Series 43, échéance 14/01/2027 : taux",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F282",
+   "prefix": "Souche EMTN Series 29 (PEO), échéance 30/03/2027 : taux",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F284",
+   "prefix": "Souche EMTN Series 23, échéance 02/04/2027 : taux",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F286",
+   "prefix": "Souche EMTN Series 3, échéance 08/06/2027 : taux",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F287",
+   "prefix": "Souche EMTN Series 31 (PEO), échéance 10/01/2028 : nominal",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F377",
+   "prefix": "Souche EMTN Series 41, échéance 15/04/2028 : nominal",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F379",
+   "prefix": "Souche EMTN Series 17, échéance 19/05/2028 : nominal",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F288",
+   "prefix": "Souche EMTN Series 31 (PEO), échéance 10/01/2028 : taux",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F378",
+   "prefix": "Souche EMTN Series 41, échéance 15/04/2028 : taux",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F380",
+   "prefix": "Souche EMTN Series 17, échéance 19/05/2028 : taux",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F381",
+   "prefix": "Souche EMTN Series 34, échéance 04/01/2029 : nominal",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F382",
+   "prefix": "Souche EMTN Series 19, échéance 03/04/2029 : nominal",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F383",
+   "prefix": "Souche EMTN Series 13, échéance 21/05/2029 : nominal",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F384",
+   "prefix": "Souche EMTN Series 38, échéance 07/01/2030 : nominal",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F385",
+   "prefix": "Souche EMTN Series 15, échéance 01/07/2030 : nominal",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F386",
+   "prefix": "Souche EMTN Series 21, échéance 17/09/2030 : nominal",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F289",
+   "prefix": "Souche EMTN Series 9 (GBP), échéance 02/12/2030 : nominal",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F290",
+   "prefix": "Souches EMTN : nominal total",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F373",
+   "prefix": "Ligne de crédit syndiquée non tirée",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F374",
+   "prefix": "Lignes de crédit bilatérales MT non tirées",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F375",
+   "prefix": "Trésorerie, équivalents, actifs liquides et de financement (Veolia Environnement)",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F376",
+   "prefix": "Lignes de crédit bilatérales des filiales",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F409",
+   "prefix": "Trésorerie, équivalents, actifs liquides et de financement (filiales)",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F417",
+   "prefix": "Total des liquidités",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F144",
+   "prefix": "Maturité moyenne de la dette financière nette",
+   "period": "31/12/2025",
    "unit": ""
   },
   {
