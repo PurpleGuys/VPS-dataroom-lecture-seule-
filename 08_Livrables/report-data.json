@@ -1,7 +1,7 @@
 {
  "generated": "2026-10-06",
  "checks": "OK",
- "n_figures": 470,
+ "n_figures": 487,
  "title": "GreenUp 2027 : combien Veolia peut-elle encore acheter sans dépasser ses engagements de levier ?",
  "subtitle": "Capstone Innovations in Finance — sujet 2, périmètre « capacité financière »",
  "thread": "Veolia annonce des enveloppes nettes. Clean Earth en est sorti ; le programme de cessions de plus de 2 Md€ d'ici mi-2028 l'y ramène. Si ce programme est encaissé à temps, il reste fin 2027 environ 1,6 Md€ de marge sous 3x, soit une acquisition d'environ 2,3 Md€ au multiple de Clean Earth. Cette marge dépend d'abord du calendrier des cessions, de la croissance organique de 2027 et des tuck-ins. Elle disparaît si tout tourne mal en même temps, ou si l'on compte la moitié des hybrides en dette. Le seuil des agences (FFO / dette ajustée ≥ 18 % chez S&P) est la contrainte de 2026 : 19,3 % dans le scénario central, dans l'attente de Moody's ; fin 2027 il laisse 4,3 Md€ et c'est le 3x qui mord. Le booster déchets dangereux tient son objectif de volume révisé, pas l'initial, et sa croissance est surtout achetée. Le passif environnemental de Clean Earth n'est pas encore visible dans les comptes.",
@@ -19,7 +19,7 @@
   [
    "Marge sous 3x fin 2027",
    "1,57 Md€",
-   "défavorable −0,50 · favorable 3,49"
+   "défavorable −0,53 · favorable 3,49"
   ],
   [
    "Marge sous 18 % S&P fin 2027",
@@ -53,13 +53,13 @@
  "range_rows": [
   [
    "Marge de dette sous le levier ≤ 3x (M EUR)",
-   "−500",
+   "−535",
    "1 571",
    "3 491"
   ],
   [
    "Marge de dette sous le seuil S&P 18 % FFO / dette ajustée (M EUR)",
-   "565",
+   "521",
    "4 333",
    "7 355"
   ],
@@ -73,7 +73,7 @@
    "Acquisition maximale au multiple de Clean Earth (9,8x), M EUR",
    "0",
    "2 264",
-   "5 031"
+   "5 871"
   ]
  ],
  "roles": [
@@ -905,13 +905,13 @@
    "n": 3,
    "name": "Capacité et sensibilité",
    "brief": "Le cash-flow libre, le programme de cessions et son calendrier, et ce qui fait le plus bouger la réponse.",
-   "answer": "Le cash-flow libre net (1 178 M€ en 2025) paie à peine les dividendes : la marge vient de la croissance de l'EBITDA et des cessions. Ce qui bouge le plus la marge de fin 2027 : Part du reste du programme encaissée en 2027 (0,96 Md€); Croissance organique de l'EBITDA en 2027 (0,72 Md€); Tuck-ins payés en 2027 (0,68 Md€). Si tout tourne mal en même temps, la marge devient négative (−500 M€).",
+   "answer": "Le cash-flow libre net (1 178 M€ en 2025) paie à peine les dividendes : la marge vient de la croissance de l'EBITDA et des cessions. Ce qui bouge le plus la marge de fin 2027 : Part du reste du programme encaissée en 2027 (0,96 Md€); Croissance organique de l'EBITDA en 2027 (0,72 Md€); Tuck-ins payés en 2027 (0,68 Md€). Si tout tourne mal en même temps, la marge devient négative (−535 M€).",
    "reasoning": [
     "La saisonnalité d'abord : le premier semestre consomme du cash (BFR −1 238 M€), le second en rend (1 629 M€ en 2025). Toute analyse en juin doit en tenir compte.",
     "Le calendrier : 0,1 Md€ encaissés, environ 0,5 Md€ de signatures attendues en 2026, le solde d'ici mi-2028. Signer n'est pas encaisser : le scénario central encaisse la moitié des signatures en 2026 et la moitié du reste en 2027.",
     "Ce que vaut chaque levier sur la marge 2027 : EBITDA 2027 317, Cash-flow libre 100, Cessions (au multiple central) 70, Tuck-ins (au multiple des tuck-ins) −69, Dividendes −100, Dette requalifiée (hybrides, provisions) −100 (M€ pour +100 M€).",
     "Le classement : 1. Part du reste du programme encaissée en 2027 (956 M€); 2. Croissance organique de l'EBITDA en 2027 (721 M€); 3. Tuck-ins payés en 2027 (677 M€); 4. Cash-flow libre net du S2 2026 (489 M€); 5. Conversion cash-flow libre net / EBITDA en 2027 (399 M€); 6. Croissance organique de l'EBITDA en 2026 (236 M€).",
-    "Les combinaisons : tout défavorable donne −500 M€, tout favorable 3 491 M€. La réponse dépend moins du point central que du calendrier des cessions."
+    "Les combinaisons : tout défavorable donne −535 M€, tout favorable 3 491 M€. La réponse dépend moins du point central que du calendrier des cessions."
    ],
    "open": [
     "Aucun multiple de cession n'est publié : on suppose 10x, entre 8x et 12x. Les produits de cession passés (deals.csv) sont des encaissements, pas des valeurs d'entreprise : ils disent le rythme, pas le prix.",
@@ -1083,7 +1083,7 @@
      "Marge centrale fin 2027",
      "",
      "1 571 M EUR",
-     "défavorable −500 · favorable 3 491",
+     "défavorable −535 · favorable 3 491",
      ""
     ],
     [
@@ -1777,6 +1777,10 @@
      "Parce qu'au multiple de Clean Earth elle demanderait une marge de 2 082 M€ et que le scénario central n'en dégage que 1 571, sans même compter un glissement des cessions."
     ],
     [
+     "Que paie Veolia d'habitude, et que paie le secteur ?",
+     "Veolia publie ses multiples après synergies : 7,4x pour treize tuck-ins espagnols, environ 9x pour les tuck-ins 2025, 9,40x en médiane, 11,00x au plus (le rachat des 30 % de WTS). Le secteur, avant synergies : 11,11x à 11,52x (HEPACO par Clean Harbors, Covanta par EQT, US Ecology par Republic quand le communiqué est versé) ; HEPACO ressort à 7,1x après synergies. Clean Earth avant synergies dépasse de 3,48x le plus cher du secteur : les synergies « achètent » 5,20x de multiple. D'où la grille : 8x, 9,8x, 12x."
+    ],
+    [
      "Quel multiple retenez-vous ?",
      "Celui de Clean Earth après synergies, parce que c'est le seul qu'un acheteur comme Veolia ait publié. Plus le multiple monte, plus la taille possible baisse : à 12x, 2,09 Md€."
     ],
@@ -1866,12 +1870,116 @@
      "9,8x",
      "veolia_clean_earth_investor_presentation.pdf, p. 3",
      ""
+    ],
+    [
+     "F445",
+     "Espagne : multiple moyen des tuck-ins",
+     "2024-2025",
+     "7,4x",
+     "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 19",
+     ""
+    ],
+    [
+     "F472",
+     "Tuck-ins 2025 : multiple moyen",
+     "FY2025",
+     "9x",
+     "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 11",
+     ""
+    ],
+    [
+     "F473",
+     "WTS : multiple après synergies",
+     "2025e",
+     "11x",
+     "finance_veolia_q1_presentation_2025.pdf, p. 11",
+     ""
+    ],
+    [
+     "calcul",
+     "Multiples publiés par Veolia, après synergies",
+     "",
+     "7,40x à 11,00x",
+     "médiane 9,40x",
+     ""
+    ],
+    [
+     "F478",
+     "HEPACO : prix",
+     "03/2024",
+     "400 M$",
+     "clean-harbors-hepaco-2024-03-25.html, p. 1",
+     ""
+    ],
+    [
+     "F479",
+     "HEPACO : EBITDA ajusté 2023",
+     "FY2023",
+     "36 M$",
+     "clean-harbors-hepaco-2024-03-25.html, p. 1",
+     ""
+    ],
+    [
+     "F483",
+     "HEPACO : multiple après synergies",
+     "2024",
+     "7,1x",
+     "clean-harbors-hepaco-2024-03-25.html, p. 1",
+     ""
+    ],
+    [
+     "F484",
+     "Covanta : valeur de la transaction",
+     "annonce 07/2021",
+     "5,3 Md$",
+     "eqt-covanta-2021-07-14.html, p. 1",
+     ""
+    ],
+    [
+     "F486",
+     "Covanta : EBITDA 2021 attendu (bas)",
+     "2021e",
+     "460 M$",
+     "eqt-covanta-2021-07-14.html, p. 1",
+     ""
+    ],
+    [
+     "F474",
+     "Stericycle : valeur d'entreprise",
+     "annonce 06/2024",
+     "7,2 Md$",
+     "wm-stericycle-2024-06-03.html, p. 1",
+     ""
+    ],
+    [
+     "F477",
+     "Stericycle : synergies",
+     "régime de croisière",
+     "125 M$",
+     "wm-stericycle-2024-06-03.html, p. 1",
+     ""
+    ],
+    [
+     "calcul",
+     "Secteur, avant synergies",
+     "",
+     "11,11x à 11,52x",
+     "communiqués des acquéreurs, 05_Commercial_Strategy",
+     ""
+    ],
+    [
+     "calcul",
+     "Clean Earth avant synergies face au plus cher du secteur",
+     "",
+     "3,48x",
+     "positif = au-dessus",
+     ""
     ]
    ]
   }
  ],
  "todo": [
-  "Relire en croisé les 470 chiffres du registre et les 26 deals : aucun n'a encore de relecteur.",
+  "Relire en croisé les 487 chiffres du registre et les 26 deals : aucun n'a encore de relecteur.",
   "Lire les 10-K 2025 d'Enviri et de Clean Harbors, désormais dans la dataroom, et en tirer les chiffres des rôles 4 et 5 (passifs environnementaux de Clean Earth, marges et levier de Clean Harbors). Reste à verser : le 10-Q du T1 2026 d'Enviri et le communiqué de vente du 20 novembre 2025.",
   "Avant le 7 octobre : montrer la dataroom comme « sources chargées et lues », et noter dans gaps.md ce qui manque encore.",
   "Rédiger la page d'annexe sur les outils d'IA : dataroom MCP (recherche, registre, contrôles), Claude pour construire le classeur et ces dossiers, LibreOffice pour le recalcul. Aucun chiffre produit par le modèle de langage.",
@@ -6107,6 +6215,159 @@
    "FY2025",
    "finance_veolia_urd_2025_en.pdf, p. 375, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
    "3",
+   ""
+  ],
+  [
+   "F471",
+   "Tuck-ins 2025 (États-Unis, Brésil, Japon) : montant",
+   "370 M EUR",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "6",
+   ""
+  ],
+  [
+   "F472",
+   "Tuck-ins 2025 (États-Unis, Brésil, Japon) : multiple moyen VE / EBITDA, environ",
+   "9 x",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "6",
+   ""
+  ],
+  [
+   "F473",
+   "WTS, rachat des 30 % : multiple VE / EBITDA 2025e après synergies, environ",
+   "11 x",
+   "2025e",
+   "finance_veolia_q1_presentation_2025.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/05/Finance_Veolia_Q1_presentation_2025.pdf (consulté le 2026-09-22)",
+   "6",
+   ""
+  ],
+  [
+   "F474",
+   "Stericycle (WM) : valeur d'entreprise, environ",
+   "7.2 Md USD",
+   "annonce 06/2024",
+   "wm-stericycle-2024-06-03.html, p. 1, https://mediaroom.wm.com/2024-06-03-WM-to-Acquire-Stericycle,-a-Leader-in-Medical-Waste-Services,-for-7-2-Billion (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F475",
+   "Stericycle (WM) : dette nette comprise dans la valeur d'entreprise, environ",
+   "1.4 Md USD",
+   "annonce 06/2024",
+   "wm-stericycle-2024-06-03.html, p. 1, https://mediaroom.wm.com/2024-06-03-WM-to-Acquire-Stericycle,-a-Leader-in-Medical-Waste-Services,-for-7-2-Billion (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F476",
+   "Stericycle (WM) : prix par action",
+   "62.00 USD",
+   "annonce 06/2024",
+   "wm-stericycle-2024-06-03.html, p. 1, https://mediaroom.wm.com/2024-06-03-WM-to-Acquire-Stericycle,-a-Leader-in-Medical-Waste-Services,-for-7-2-Billion (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F477",
+   "Stericycle (WM) : synergies annuelles attendues, plus de",
+   "125 M USD",
+   "régime de croisière",
+   "wm-stericycle-2024-06-03.html, p. 1, https://mediaroom.wm.com/2024-06-03-WM-to-Acquire-Stericycle,-a-Leader-in-Medical-Waste-Services,-for-7-2-Billion (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F478",
+   "HEPACO (Clean Harbors) : prix d'acquisition",
+   "400 M USD",
+   "03/2024",
+   "clean-harbors-hepaco-2024-03-25.html, p. 1, https://www.cleanharbors.com/2024/clean-harbors-completes-acquisition-of-hepaco (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F479",
+   "HEPACO (Clean Harbors) : EBITDA ajusté 2023, environ",
+   "36 M USD",
+   "FY2023",
+   "clean-harbors-hepaco-2024-03-25.html, p. 1, https://www.cleanharbors.com/2024/clean-harbors-completes-acquisition-of-hepaco (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F480",
+   "HEPACO (Clean Harbors) : chiffre d'affaires 2023",
+   "270 M USD",
+   "FY2023",
+   "clean-harbors-hepaco-2024-03-25.html, p. 1, https://www.cleanharbors.com/2024/clean-harbors-completes-acquisition-of-hepaco (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F481",
+   "HEPACO (Clean Harbors) : EBITDA ajusté attendu en 2024, environ",
+   "30 M USD",
+   "2024",
+   "clean-harbors-hepaco-2024-03-25.html, p. 1, https://www.cleanharbors.com/2024/clean-harbors-completes-acquisition-of-hepaco (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F482",
+   "HEPACO (Clean Harbors) : synergies de coûts attendues, environ",
+   "20 M USD",
+   "année 1",
+   "clean-harbors-hepaco-2024-03-25.html, p. 1, https://www.cleanharbors.com/2024/clean-harbors-completes-acquisition-of-hepaco (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F483",
+   "HEPACO (Clean Harbors) : multiple après synergies",
+   "7.1 x",
+   "2024",
+   "clean-harbors-hepaco-2024-03-25.html, p. 1, https://www.cleanharbors.com/2024/clean-harbors-completes-acquisition-of-hepaco (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F484",
+   "Covanta (EQT) : valeur de la transaction, dette comprise",
+   "5.3 Md USD",
+   "annonce 07/2021",
+   "eqt-covanta-2021-07-14.html, p. 1, https://www.prnewswire.com/news-releases/eqt-infrastructure-to-acquire-covanta-holding-corporation-a-global-leader-in-waste-to-energy-solutions-for-usd-5-3-billion-301333761.html (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F485",
+   "Covanta (EQT) : prix par action",
+   "20.25 USD",
+   "annonce 07/2021",
+   "eqt-covanta-2021-07-14.html, p. 1, https://www.prnewswire.com/news-releases/eqt-infrastructure-to-acquire-covanta-holding-corporation-a-global-leader-in-waste-to-energy-solutions-for-usd-5-3-billion-301333761.html (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F486",
+   "Covanta (EQT) : EBITDA ajusté 2021 attendu, bas",
+   "460 M USD",
+   "2021e",
+   "eqt-covanta-2021-07-14.html, p. 1, https://www.prnewswire.com/news-releases/eqt-infrastructure-to-acquire-covanta-holding-corporation-a-global-leader-in-waste-to-energy-solutions-for-usd-5-3-billion-301333761.html (consulté le 2026-10-06)",
+   "6",
+   ""
+  ],
+  [
+   "F487",
+   "Covanta (EQT) : EBITDA ajusté 2021 attendu, haut",
+   "480 M USD",
+   "2021e",
+   "eqt-covanta-2021-07-14.html, p. 1, https://www.prnewswire.com/news-releases/eqt-infrastructure-to-acquire-covanta-holding-corporation-a-global-leader-in-waste-to-energy-solutions-for-usd-5-3-billion-301333761.html (consulté le 2026-10-06)",
+   "6",
    ""
   ]
  ]

@@ -200,8 +200,8 @@
   "F269",
   "F271-543e",
   "F271",
-  "F272-40a3",
   "F272",
+  "F272-40a3",
   "F273",
   "F274",
   "F276-facd",
@@ -290,6 +290,7 @@
   "F435",
   "F438",
   "F441",
+  "F445",
   "F448",
   "F450",
   "F451",
@@ -309,7 +310,16 @@
   "F467",
   "F468",
   "F469",
-  "F470"
+  "F470",
+  "F471",
+  "F472",
+  "F473",
+  "F474",
+  "F478",
+  "F479",
+  "F483",
+  "F484",
+  "F486"
  ],
  "lookups": [
   {
@@ -436,6 +446,18 @@
    "id": "F261",
    "prefix": "Moody's : FFO (funds from operations)",
    "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F445",
+   "prefix": "Espagne : multiple moyen des tuck-ins",
+   "period": "2024-2025",
+   "unit": ""
+  },
+  {
+   "id": "F473",
+   "prefix": "WTS, rachat des 30 % : multiple",
+   "period": "2025e",
    "unit": ""
   },
   {
@@ -2284,6 +2306,54 @@
    "id": "F209",
    "prefix": "Enviri : chiffre d'affaires du segment Clean Earth",
    "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F472",
+   "prefix": "Tuck-ins 2025 (États-Unis, Brésil, Japon) : multiple",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F471",
+   "prefix": "Tuck-ins 2025 (États-Unis, Brésil, Japon) : montant",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F478",
+   "prefix": "HEPACO (Clean Harbors) : prix d'acquisition",
+   "period": "03/2024",
+   "unit": ""
+  },
+  {
+   "id": "F479",
+   "prefix": "HEPACO (Clean Harbors) : EBITDA ajusté 2023",
+   "period": "FY2023",
+   "unit": ""
+  },
+  {
+   "id": "F483",
+   "prefix": "HEPACO (Clean Harbors) : multiple après synergies",
+   "period": "2024",
+   "unit": ""
+  },
+  {
+   "id": "F484",
+   "prefix": "Covanta (EQT) : valeur de la transaction",
+   "period": "annonce 07/2021",
+   "unit": ""
+  },
+  {
+   "id": "F486",
+   "prefix": "Covanta (EQT) : EBITDA ajusté 2021 attendu, bas",
+   "period": "2021e",
+   "unit": ""
+  },
+  {
+   "id": "F474",
+   "prefix": "Stericycle (WM) : valeur d'entreprise",
+   "period": "annonce 06/2024",
    "unit": ""
   },
   {

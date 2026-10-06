@@ -257,7 +257,7 @@ moffo25, id_moffo25 = E("Moody's : FFO (funds from operations)", "FY2025")
 hyp(r, "ffo", "FFO (mesure des agences) en % de l'EBITDA", f"={moffo25}/{eb25}", f"=C{r}*0.95", f"=C{r}*1.03", "%",
     "FFO 2025 publié par Moody's (Exhibit 15, 5 160 M€) rapporté à l'EBITDA 2025 publié par Veolia. Le bas couvre le surcoût d'intérêts de la dette Clean Earth.",
     f"{id_moffo25}, {id_eb25}", NF_P); r += 1
-VARIED = ["g26", "g27", "ceEb", "syn", "fcfH2", "conv", "gDiv", "s26", "s27", "mDisp", "tuck", "ffo"]
+VARIED = ["g26", "g27", "ceEb", "syn", "fcfH2", "conv", "gDiv", "s26", "s27", "mDisp", "tuck", "ffo", "mTuck"]
 r += 1
 put(ws, f"A{r}", "Hypothèses fixes (non soumises à la sensibilité)", bold=True); r += 1
 hyp(r, "fx", "Change USD par EUR", f"={ce_usd}/{ce_eur}", None, None, "USD/EUR",
@@ -266,7 +266,9 @@ hyp(r, "fx", "Change USD par EUR", f"={ce_usd}/{ce_eur}", None, None, "USD/EUR",
 hyp(r, "minDiv", "Dividendes versés aux minoritaires en 2027", f"=-{div_t26}-{div_sh26}", None, None, "M EUR",
     "Écart du S1 2026 entre dividendes totaux (1 394) et dividende Veolia (1 099), supposé constant.",
     f"{id_divt26}, {id_divsh26}", NF_M); r += 1
-hyp(r, "mTuck", "Multiple VE / EBITDA des tuck-ins", f"={ce_mult}", None, None, "x",
+m_es, id_mes = E("Espagne : multiple moyen des tuck-ins", "2024-2025")
+m_wts, id_mwts = E("WTS, rachat des 30 % : multiple", "2025e")
+hyp(r, "mTuck", "Multiple VE / EBITDA des tuck-ins", f"={ce_mult}", f"={m_es}", f"={m_wts}", "x",
     "Celui de Clean Earth après synergies, faute de mieux.", id_cemult, '0.0"x"'); r += 1
 hyp(r, "tuckH2", "Tuck-ins payés au S2 2026", 0, None, None, "Md EUR",
     "Enviropacific (137 M€) est déjà au S1 ; rien d'annoncé pour le S2.", "—", NF_D2); r += 1
@@ -1701,6 +1703,78 @@ put(ws, f"B{r}", "Écart à expliquer : le 9,8x publié ne se retrouve pas avec 
     "(pré IFRS 16 ?) ou synergies nettes des coûts ? Question pour le rôle 6.", color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:F{r}"); ws.row_dimensions[r].height = 30; r += 2
 
+put(ws, f"A{r}", "D", bold=True); put(ws, f"B{r}", "Les multiples que Veolia dit avoir payés (2024-2026)", bold=True); r += 1
+header(ws, r, ["", "Opération", "Multiple VE / EBITDA", "Base", "Réf.", "Source"]); r += 1
+m_t25, id_mt25 = E("Tuck-ins 2025 (États-Unis, Brésil, Japon) : multiple", "FY2025")
+a_t25, id_at25 = E("Tuck-ins 2025 (États-Unis, Brésil, Japon) : montant", "FY2025")
+M0 = r
+for lab, f, base, ref, srcdoc in (
+        ("Tuck-ins en Espagne, 13 opérations, 87 M€ de VE (2024-2025)", f"={m_es}", "moyenne publiée", id_mes, "Résultats 2025, p.19"),
+        ("Tuck-ins 2025 : États-Unis, Brésil, Japon (370 M€)", f"={m_t25}", "moyenne publiée, environ", id_mt25, "Résultats 2025, p.11"),
+        ("Clean Earth, après synergies en régime de croisière", f"={ce_mult}", "VE / EBITDA 2026e + synergies", id_cemult, "Présentation Clean Earth"),
+        ("WTS, rachat des 30 % (1,75 Md$)", f"={m_wts}", "VE / EBITDA 2025e après synergies, environ", id_mwts, "Résultats T1 2025, p.11"),
+        ("Clean Earth, avant synergies (recalculé)", f"={K['mPre']}", "VE / EBITDA 2026E de Veolia", "§B", "classeur"),
+        ("Clean Earth, sur l'EBITDA 2025 du vendeur (recalculé)", f"={B['mRec']}", "VE / EBITDA 2025 reconstitué d'Enviri", "Booster §E", "classeur")):
+    put(ws, f"B{r}", lab); put(ws, f"C{r}", f, color=GREEN, nf='0.0"x"'); put(ws, f"D{r}", base, color=GREY)
+    put(ws, f"E{r}", ref, color=GREY); put(ws, f"F{r}", srcdoc, color=GREY); r += 1
+M1 = r - 1
+line(ws, r, "mMin", "Le moins cher payé (après synergies, tel que publié)", f"=MIN(C{M0}:C{M0+3})", "x", "min des quatre multiples publiés", '0.0"x"', True, store=K); r += 1
+line(ws, r, "mMed", "Médiane des quatre multiples publiés", f"=MEDIAN(C{M0}:C{M0+3})", "x", "", '0.0"x"', store=K); r += 1
+line(ws, r, "mMax", "Le plus cher payé (après synergies, tel que publié)", f"=MAX(C{M0}:C{M0+3})", "x", "max des quatre", '0.0"x"', True, store=K); r += 1
+line(ws, r, "mSpread", "Écart avant / après synergies sur Clean Earth (recalculé)", f"=C{M0+4}-C{M0+2}", "x", "ce que les synergies « achètent » de multiple", '0.0"x"', store=K); r += 1
+put(ws, f"B{r}", "Lecture : Veolia publie ses multiples après synergies, entre 7x et 11x ; l'hypothèse mTuck (Hypothèses) est bornée par "
+    "ces deux points, Clean Earth au centre. Avant synergies, le même Clean Earth coûte près de deux fois plus : c'est la base qu'il faut "
+    "préciser à chaque comparaison — et la question à poser pour toute cible.", color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:F{r}"); ws.row_dimensions[r].height = 44; r += 2
+
+put(ws, f"A{r}", "E", bold=True); put(ws, f"B{r}", "Les multiples du secteur (communiqués des acquéreurs, versés dans la dataroom)", bold=True); r += 1
+header(ws, r, ["", "Opération (acquéreur → cible)", "VE (M USD)", "EBITDA de référence (M USD)", "VE / EBITDA avant synergies", "Multiple publié après synergies", "Base de l'EBITDA", "Réf."]); r += 1
+SECTOR = [
+    # (libellé, préfixe VE, période VE, ×1000 ?, préfixe EBITDA, période EBITDA, préfixe multiple publié, période, base)
+    ("Clean Harbors → HEPACO (2024)", "HEPACO (Clean Harbors) : prix d'acquisition", "03/2024", False,
+     "HEPACO (Clean Harbors) : EBITDA ajusté 2023", "FY2023", "HEPACO (Clean Harbors) : multiple après synergies", "2024", "EBITDA ajusté 2023 ; synergies ~20 M$"),
+    ("EQT → Covanta (2021)", "Covanta (EQT) : valeur de la transaction", "annonce 07/2021", True,
+     "Covanta (EQT) : EBITDA ajusté 2021 attendu, bas", "2021e", None, None, "bas de la fourchette d'EBITDA 2021 attendu (460-480)"),
+    ("WM → Stericycle (2024)", "Stericycle (WM) : valeur d'entreprise", "annonce 06/2024", True,
+     None, None, None, None, "EBITDA non publié dans le communiqué (synergies > 125 M$/an)"),
+    ("Republic Services → US Ecology (2022)", "US Ecology (Republic Services) : valeur totale", "annonce 02/2022", True,
+     "US Ecology (Republic Services) : EBITDA ajusté 12 mois", "au 30/09/2021", None, None, "EBITDA ajusté des 12 mois au 30/09/2021"),
+]
+S0 = r
+for lab, ev_pre, ev_per, ev_bn, eb_pre, eb_per, mp_pre, mp_per, base in SECTOR:
+    put(ws, f"B{r}", lab)
+    try:
+        ev, i_ev = E(ev_pre, ev_per)
+    except SystemExit:
+        ev, i_ev = None, "non versé"
+    refs = [i_ev]
+    put(ws, f"C{r}", (f"={ev}*1000" if ev_bn else f"={ev}") if ev else "n/d", color=GREEN if ev else GREY, nf=NF_M, align=None if ev else "right")
+    if eb_pre:
+        try:
+            eb, i_eb = E(eb_pre, eb_per); refs.append(i_eb)
+            put(ws, f"D{r}", f"={eb}", color=GREEN, nf=NF_M)
+            put(ws, f"E{r}", f"=C{r}/D{r}", nf='0.0"x"', bold=True)
+        except SystemExit:
+            put(ws, f"D{r}", "non versé", color=GREY, align="right"); put(ws, f"E{r}", "—", color=GREY, align="center")
+    else:
+        put(ws, f"D{r}", "n/d", color=GREY, align="right"); put(ws, f"E{r}", "—", color=GREY, align="center")
+    if mp_pre:
+        mp, i_mp = E(mp_pre, mp_per); refs.append(i_mp)
+        put(ws, f"F{r}", f"={mp}", color=GREEN, nf='0.0"x"')
+    else:
+        put(ws, f"F{r}", "—", color=GREY, align="center")
+    put(ws, f"G{r}", base, color=GREY); put(ws, f"H{r}", ", ".join(refs), color=GREY)
+    r += 1
+S1 = r - 1
+line(ws, r, "secMin", "Secteur : multiple avant synergies le plus bas (opérations à EBITDA publié)", f"=MIN(E{S0}:E{S1})", "x", "", '0.0"x"', True, store=K); r += 1
+line(ws, r, "secMax", "Secteur : multiple avant synergies le plus haut", f"=MAX(E{S0}:E{S1})", "x", "", '0.0"x"', True, store=K); r += 1
+line(ws, r, "ceVsSec", "Clean Earth avant synergies (recalculé) face au haut du secteur", f"={K['mPre']}-{K['secMax']}", "x", "positif = Veolia a payé plus que le plus cher du secteur, avant synergies", '0.0"x"', True, store=K); r += 1
+put(ws, f"B{r}", "Lecture : avant synergies, le secteur paie entre 11x (HEPACO, Covanta) et 14x (US Ecology) ; après synergies, HEPACO "
+    "ressort à 7,1x. Les 9,8x de Clean Earth sont dans la norme après synergies ; avant synergies (15x sur l'EBITDA 2026E de Veolia, "
+    "19x sur l'EBITDA 2025 du vendeur), ils sont au-dessus de tout ce que le secteur a payé depuis 2021. Les communiqués sont dans "
+    "05_Commercial_Strategy ; Stericycle n'a pas d'EBITDA publié dans le sien.", color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:H{r}"); ws.row_dimensions[r].height = 58; r += 2
+
 put(ws, f"A{r}", "C", bold=True); put(ws, f"B{r}", "Univers de cibles — à remplir (phase F)", bold=True); r += 1
 header(ws, r, ["", "Cible", "Pays", "Activité DD", "VE estimée (M EUR)", "Multiple VE / EBITDA", "Tient dans la marge centrale ?",
                "Fichier", "Page"]); r += 1
@@ -1762,6 +1836,8 @@ checks = [
     ("Pont 2025 : flux non détaillés dans le communiqué", P["resid25"], 0, None, NF_M, "Info"),
     ("Clean Earth : effet sur la dette − prix payé", P["ceGap"], 0, None, NF_M, "Info"),
     ("Multiple Clean Earth recalculé après synergies vs publié", K["mPost"], K["mPub"], None, '0.0"x"', "Info"),
+    ("Multiples publiés par Veolia : le minimum (Espagne) est bien la borne basse de mTuck", K["mMin"], HY("mTuck", "D"), 0.001, '0.0"x"', "Bloquant"),
+    ("Multiples publiés par Veolia : le maximum (WTS) est bien la borne haute de mTuck", K["mMax"], HY("mTuck", "E"), 0.001, '0.0"x"', "Bloquant"),
     ("Pont EBITDA : somme des marches 2025 → 2027 = EBITDA 2027 de Trajectoire", PB["eb27"], PB["eb27T"], 1, NF_M, "Bloquant"),
     ("Pont EBITDA : croissance annuelle implicite de GreenUp (6,5 → 8) face au « ~5 % » annoncé", PB["cagrC"], PB["cagrP"], 0.01, NF_P, "Bloquant"),
     ("Pont EBITDA : strongholds + boosters (EBITDA × organique) face à la croissance organique du groupe en M EUR (± 60)", PB["famOrg"], PB["orgM"], None, NF_M, "Info"),
@@ -1833,6 +1909,9 @@ res = [
     ("Part de l'écart GreenUp 2023 → 2027 que couvre la seule efficacité promise (350 M€ par an)", PB["effShare"], NF_P),
     ("Part de la croissance organique 2025 de l'EBITDA expliquée par les gains d'efficacité", PB["effShareY"], NF_P),
     ("Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR", PB["head27k0"], NF_M),
+    ("Multiples payés par Veolia, après synergies : du moins cher au plus cher (Cibles §D)", f'=TEXT({K["mMin"]},"0.0")&"x à "&TEXT({K["mMax"]},"0.0")&"x"', None),
+    ("Secteur, avant synergies : du moins cher au plus cher (Cibles §E)", f'=TEXT({K["secMin"]},"0.0")&"x à "&TEXT({K["secMax"]},"0.0")&"x"', None),
+    ("Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)", K["ceVsSec"], '0.0"x"'),
     ("Programme de cessions au multiple central, en part de l'EBITDA des déchets solides", C["progShareSw"], NF_P),
     ("Années nécessaires pour céder 2 Md EUR au rythme des cessions 2022-2025", C["needYears"], NF_D2),
     ("Liquidités / flux contractuels de dette 2026 (DEU p.421)", MR["cov26"], NF_X),

@@ -247,6 +247,10 @@ PROG_SH = mv("Cessions", "EBITDA cédé en part des strongholds"); PROG_REVPCT =
 SOLD_SUM = mv("Cessions", "Produits de cession cumulés"); SOLD_N = mv("Cessions", "Nombre d'opérations"); SOLD_AVG = mv("Cessions", "Taille moyenne")
 SOLD_MAX = mv("Cessions", "La plus grande"); SOLD_PY = mv("Cessions", "Rythme passé"); NEED_AVG = mv("Cessions", "Opérations de taille moyenne")
 NEED_YEARS = mv("Cessions", "Années nécessaires au rythme passé")
+M_MIN = mv("Cibles", "Le moins cher payé"); M_MAX = mv("Cibles", "Le plus cher payé"); M_MED = mv("Cibles", "Médiane des quatre")
+M_SPREAD = mv("Cibles", "Écart avant / après synergies sur Clean Earth")
+M_SEC_MIN = mv("Cibles", "Secteur : multiple avant synergies le plus bas"); M_SEC_MAX = mv("Cibles", "Secteur : multiple avant synergies le plus haut")
+CE_VS_SEC = mv("Cibles", "Clean Earth avant synergies (recalculé) face")
 EFF_SHARE_Y = mv("Pont EBITDA", "Part de la croissance organique expliquée"); REST = mv("Pont EBITDA", "Reste : volumes")
 ORG_M = mv("Pont EBITDA", "… en M EUR, sur la base publiée"); ORG26 = mv("Pont EBITDA", "+ croissance organique 2026")
 ORG27 = mv("Pont EBITDA", "+ croissance organique 2027"); EFF_IN26 = mv("Pont EBITDA", "Part de l'organique 2026")
@@ -284,6 +288,11 @@ f = dict(
     sw_eb=R("Déchets solides : EBITDA", "FY2025"), sh_eb=R("Strongholds : EBITDA", "FY2025"),
     rev_fr=R("Chiffre d'affaires par pays : France", "FY2025"), rev_ma=R("Chiffre d'affaires par pays : Maroc", "FY2025"),
     rev_other=R("Chiffre d'affaires par pays : autres pays", "FY2025"),
+    m_es=R("Espagne : multiple moyen des tuck-ins", "2024-2025"), m_t25=R("Tuck-ins 2025 (États-Unis, Brésil, Japon) : multiple", "FY2025"),
+    m_wts=R("WTS, rachat des 30 % : multiple", "2025e"), hep_m=R("HEPACO (Clean Harbors) : multiple après synergies", "2024"),
+    hep_ev=R("HEPACO (Clean Harbors) : prix d'acquisition", "03/2024"), hep_eb=R("HEPACO (Clean Harbors) : EBITDA ajusté 2023", "FY2023"),
+    cov_ev=R("Covanta (EQT) : valeur de la transaction", "annonce 07/2021"), cov_eb=R("Covanta (EQT) : EBITDA ajusté 2021 attendu, bas", "2021e"),
+    ste_ev=R("Stericycle (WM) : valeur d'entreprise", "annonce 06/2024"), ste_syn=R("Stericycle (WM) : synergies annuelles", "régime de croisière"),
     nfdh1=R("Endettement financier net (groupe), après Clean Earth", "30/06/2026"),
     nfdh125=R("Endettement financier net (groupe)", "30/06/2025"), ebh1=R("EBITDA (groupe)", "S1 2026"),
     ebh125=R("EBITDA (groupe)", "S1 2025"), hyb=R("Dettes hybrides", "30/06/2026"),
@@ -792,6 +801,14 @@ ROLES.append(role(
         row_calc("Multiple avant synergies recalculé", fr(M_PRE, 1) + "x", "VE / EBITDA 2026E"),
         row_calc("Multiple après synergies recalculé", fr(M_POST, 1) + "x", "VE / (EBITDA + synergies)"),
         row_fig("Multiple publié après synergies", f["mult"]),
+        row_fig("Espagne : multiple moyen des tuck-ins", f["m_es"]), row_fig("Tuck-ins 2025 : multiple moyen", f["m_t25"]),
+        row_fig("WTS : multiple après synergies", f["m_wts"]),
+        row_calc("Multiples publiés par Veolia, après synergies", f"{x(M_MIN)} à {x(M_MAX)}", f"médiane {x(M_MED)}"),
+        row_fig("HEPACO : prix", f["hep_ev"]), row_fig("HEPACO : EBITDA ajusté 2023", f["hep_eb"]), row_fig("HEPACO : multiple après synergies", f["hep_m"]),
+        row_fig("Covanta : valeur de la transaction", f["cov_ev"]), row_fig("Covanta : EBITDA 2021 attendu (bas)", f["cov_eb"]),
+        row_fig("Stericycle : valeur d'entreprise", f["ste_ev"]), row_fig("Stericycle : synergies", f["ste_syn"]),
+        row_calc("Secteur, avant synergies", f"{x(M_SEC_MIN)} à {x(M_SEC_MAX)}", "communiqués des acquéreurs, 05_Commercial_Strategy"),
+        row_calc("Clean Earth avant synergies face au plus cher du secteur", x(CE_VS_SEC), "positif = au-dessus"),
     ]),
     [
         "La formule : une acquisition ajoute son prix à la dette mais seulement prix / multiple à l'EBITDA. Elle tient sous 3x tant que "
@@ -817,6 +834,12 @@ ROLES.append(role(
         ("Pourquoi ne pas recommander une acquisition de 3 Md€ ?",
          f"Parce qu'au multiple de Clean Earth elle demanderait une marge de {fr(3000 * (1 - 3 / N(f['mult'])), 0)} M€ et "
          f"que le scénario central n'en dégage que {fr(HEAD, 0)}, sans même compter un glissement des cessions."),
+        ("Que paie Veolia d'habitude, et que paie le secteur ?",
+         f"Veolia publie ses multiples après synergies : {P(f['m_es'])}x pour treize tuck-ins espagnols, environ {P(f['m_t25'])}x pour "
+         f"les tuck-ins 2025, {x(M_MED)} en médiane, {x(M_MAX)} au plus (le rachat des 30 % de WTS). Le secteur, avant synergies : "
+         f"{x(M_SEC_MIN)} à {x(M_SEC_MAX)} (HEPACO par Clean Harbors, Covanta par EQT, US Ecology par Republic quand le communiqué est versé) ; "
+         f"HEPACO ressort à {P(f['hep_m'])}x après synergies. Clean Earth avant synergies dépasse de {x(CE_VS_SEC)} le plus cher du secteur : "
+         f"les synergies « achètent » {x(M_SPREAD)} de multiple. D'où la grille : 8x, 9,8x, 12x."),
         ("Quel multiple retenez-vous ?",
          "Celui de Clean Earth après synergies, parce que c'est le seul qu'un acheteur comme Veolia ait publié. Plus le multiple monte, "
          f"plus la taille possible baisse : à {fr(grid[10][0], 0)}x, {fr(grid[10][2] / 1000, 2)} Md€."),

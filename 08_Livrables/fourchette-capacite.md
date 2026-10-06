@@ -8,10 +8,10 @@ Chaque chiffre d'entrée vient de `00_Admin/register.csv` ; les hypothèses sont
 
 | Fin 2027 | Défavorable | Central | Favorable |
 |---|---|---|---|
-| Marge de dette sous le levier ≤ 3x (M EUR) | −500 | 1 571 | 3 491 |
-| Marge de dette sous le seuil S&P 18 % FFO / dette ajustée (M EUR) | 565 | 4 333 | 7 355 |
+| Marge de dette sous le levier ≤ 3x (M EUR) | −535 | 1 571 | 3 491 |
+| Marge de dette sous le seuil S&P 18 % FFO / dette ajustée (M EUR) | 521 | 4 333 | 7 355 |
 | Contrainte qui mord en premier | Veolia | Veolia | Veolia |
-| Acquisition maximale au multiple de Clean Earth (9,8x), M EUR | 0 | 2 264 | 5 031 |
+| Acquisition maximale au multiple de Clean Earth (9,8x), M EUR | 0 | 2 264 | 5 871 |
 
 Lecture : une acquisition ajoute son prix à la dette et seulement prix ÷ multiple à l'EBITDA ; elle tient tant que
 prix ≤ marge ÷ (1 − 3 ÷ multiple). Au multiple de Clean Earth, 1 Md€ de marge vaut environ 1,44 Md€ d'acquisition.
