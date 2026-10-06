@@ -1,7 +1,7 @@
 # Fourchette de capacité d'acquisition — GreenUp 2027
 
 Périmètre « capacité financière », pour les groupes des trois autres périmètres. Généré depuis le classeur
-`modele-greenup-2027.xlsx` (contrôles bloquants : OK) le 2026-10-02.
+`modele-greenup-2027.xlsx` (contrôles bloquants : OK) le 2026-10-06.
 Chaque chiffre d'entrée vient de `00_Admin/register.csv` ; les hypothèses sont dans l'onglet Hypothèses.
 
 ## Le nombre à respecter
@@ -9,7 +9,7 @@ Chaque chiffre d'entrée vient de `00_Admin/register.csv` ; les hypothèses sont
 | Fin 2027 | Défavorable | Central | Favorable |
 |---|---|---|---|
 | Marge de dette sous le levier ≤ 3x (M EUR) | −500 | 1 571 | 3 491 |
-| Marge de dette sous le seuil S&P 18 % FFO / dette ajustée (M EUR) | 547 | 4 314 | 7 334 |
+| Marge de dette sous le seuil S&P 18 % FFO / dette ajustée (M EUR) | 565 | 4 333 | 7 355 |
 | Contrainte qui mord en premier | Veolia | Veolia | Veolia |
 | Acquisition maximale au multiple de Clean Earth (9,8x), M EUR | 0 | 2 264 | 5 031 |
 

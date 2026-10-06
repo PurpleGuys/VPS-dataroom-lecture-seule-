@@ -83,7 +83,7 @@ def q(sheet):
 # ---------------------------------------------------------------- registre
 def parse(value: str) -> float:
     v = value.replace(" ", "").replace(" ", "").replace(" ", "").strip()
-    if re.fullmatch(r"-?\d{1,3}(,\d{3})+", v):
+    if re.fullmatch(r"[-+]?\d{1,3}(,\d{3})+(\.\d+)?", v):
         return float(v.replace(",", ""))
     if re.fullmatch(r"-?\d+,\d+", v):
         return float(v.replace(",", "."))
@@ -247,11 +247,10 @@ hyp(r, "mDisp", "Multiple VE / EBITDA des actifs cédés", 10, 8, 12, "x",
 hyp(r, "tuck", "Tuck-ins payés en 2027", f"={tuck_lo}", 0, f"={tuck_hi}", "Md EUR",
     "Bas de la fourchette GreenUp (0,5 à 1,0 Md€) : Clean Earth a déjà consommé l'enveloppe.",
     f"{id_tlo}, {id_thi}", NF_D2); r += 1
-mo25h, id_mo25h = E("Moody's : FFO / dette nette ajustée", "FY2025")
-mond25h, id_mond25h = E("Moody's : dette nette ajustée", "FY2025")
-hyp(r, "ffo", "FFO (mesure des agences) en % de l'EBITDA", f"={mo25h}/100*{mond25h}*1000/{eb25}", f"=C{r}*0.95", f"=C{r}*1.03", "%",
-    "FFO 2025 implicite chez Moody's (20,3 % × 25,4 Md€ = 5,2 Md€) rapporté à l'EBITDA 2025 publié. Le bas couvre le surcoût d'intérêts de la dette Clean Earth.",
-    f"{id_mo25h}, {id_mond25h}, {id_eb25}", NF_P); r += 1
+moffo25, id_moffo25 = E("Moody's : FFO (funds from operations)", "FY2025")
+hyp(r, "ffo", "FFO (mesure des agences) en % de l'EBITDA", f"={moffo25}/{eb25}", f"=C{r}*0.95", f"=C{r}*1.03", "%",
+    "FFO 2025 publié par Moody's (Exhibit 15, 5 160 M€) rapporté à l'EBITDA 2025 publié par Veolia. Le bas couvre le surcoût d'intérêts de la dette Clean Earth.",
+    f"{id_moffo25}, {id_eb25}", NF_P); r += 1
 VARIED = ["g26", "g27", "ceEb", "syn", "fcfH2", "conv", "gDiv", "s26", "s27", "mDisp", "tuck", "ffo"]
 r += 1
 put(ws, f"A{r}", "Hypothèses fixes (non soumises à la sensibilité)", bold=True); r += 1
@@ -365,7 +364,7 @@ mo25, i_mo25 = E("Moody's : FFO / dette nette ajustée", "FY2025")
 mo24, i_mo24 = E("Moody's : FFO / dette nette ajustée", "FY2024")
 mo26lo, i_mo26lo = E("Moody's : FFO / dette nette ajustée attendu, bas", "2026F")
 mo26hi, i_mo26hi = E("Moody's : FFO / dette nette ajustée attendu, haut", "2026F")
-mond25, i_mond25 = E("Moody's : dette nette ajustée", "FY2025")
+mond25, i_mond25 = E("Moody's : dette nette ajustée", "FY2025", "Md EUR")
 mond26, i_mond26 = E("Moody's : dette nette ajustée, pic", "2026F")
 motrig, i_motrig = E("Moody's : seuil de dégradation", "2026-2027")
 sptrig, i_sptrig = E("S&P : seuil de dégradation", "2026-2028")
@@ -384,7 +383,57 @@ line(ws, r, "ffo25", "FFO 2025 implicite (ratio × dette ajustée)", f"={A['mo25
 line(ws, r, "ffoReq", "FFO requis en 2026 au seuil S&P (18 % × pic de dette ajustée)", f"={A['sptrig']}*{A['mond26']}", "M EUR", "seuil × dette ajustée 2026", NF_M, True); r += 1
 line(ws, r, "ffoGap", "Marge de FFO en 2026 au seuil S&P (FFO 2025 implicite − requis)", f"={A['ffo25']}-{A['ffoReq']}", "M EUR", "négatif = le seuil mord avant le 3x de Veolia", NF_M, True); r += 1
 line(ws, r, "debtAt18", "Dette ajustée maximale au seuil S&P avec le FFO 2025 implicite", f"={A['ffo25']}/{A['sptrig']}", "M EUR", "FFO / 18 %", NF_M); r += 1
-line(ws, r, "adjGap", "Écart entre dette ajustée Moody's 2025 et dette nette publiée (IFRS 16 incl.)", f"={A['mond25']}-{nfd25}", "M EUR", f"{i_mond25} − {i_nfd25} : retraitements d'agence (hybrides à 50 %, pensions, etc.)", NF_M); r += 1
+line(ws, r, "adjGap", "Écart entre dette ajustée Moody's 2025 et dette nette publiée (IFRS 16 incl.)", f"={A['mond25']}-{nfd25}", "M EUR", f"{i_mond25} − {i_nfd25} : décomposé ci-dessous", NF_M); r += 2
+put(ws, f"A{r}", "B3", bold=True); put(ws, f"B{r}", "D'où vient l'écart : la réconciliation de Moody's (Exhibit 13), poste par poste", bold=True); r += 1
+mo_rep, i_morep = E("Moody's : dette brute publiée", "FY2025")
+mo_pens, i_mopens = E("Moody's : ajustement pensions", "FY2025")
+mo_hyb, i_mohyb = E("Moody's : ajustement titres hybrides", "FY2025")
+mo_sec, i_mosec = E("Moody's : ajustement titrisation", "FY2025")
+mo_ns, i_mons = E("Moody's : ajustements non standard", "FY2025")
+mo_adj, i_moadj = E("Moody's : dette brute ajustée", "FY2025", "M EUR")
+mo_cash, i_mocash = E("Moody's : trésorerie retenue", "FY2025")
+mo_net, i_monet = E("Moody's : dette nette ajustée (Exhibit 13)", "FY2025")
+urd_gross, i_ugross = E("Sous-total des emprunts", "31/12/2025")
+urd_cash, i_ucash = E("Trésorerie et équivalents", "31/12/2025")
+urd_liq, i_uliq = E("Actifs liquides et actifs liés au financement", "31/12/2025")
+urd_fv, i_ufv = E("Juste valeur des dérivés de couverture de dette", "31/12/2025")
+line(ws, r, "moRep", "Dette brute publiée (as reported)", f"={mo_rep}", "M EUR", f"{i_morep} ; URD p.351 sous-total des emprunts : {i_ugross}"); r += 1
+line(ws, r, "moPens", "+ Pensions (engagements non financés)", f"={mo_pens}", "M EUR", i_mopens); r += 1
+line(ws, r, "moHyb", "+ Hybrides comptés à 50 %", f"={mo_hyb}", "M EUR", f"{i_mohyb} = 50 % × {id_hyb} (4,1 Md€)"); r += 1
+line(ws, r, "moSec", "+ Titrisation (créances cédées)", f"={mo_sec}", "M EUR", i_mosec); r += 1
+line(ws, r, "moNs", "+ Ajustements non standard", f"={mo_ns}", "M EUR", i_mons); r += 1
+line(ws, r, "moAdjC", "Dette brute ajustée recalculée (somme)", f"=SUM(C{r-5}:C{r-1})", "M EUR", "somme", NF_M, True); r += 1
+line(ws, r, "moAdjP", "Dette brute ajustée publiée par Moody's", f"={mo_adj}", "M EUR", i_moadj); r += 1
+line(ws, r, "moCash", "− Trésorerie retenue par Moody's", f"={mo_cash}", "M EUR", f"{i_mocash} ; Veolia déduit {i_ucash} + {i_uliq} (8 021 + 1 952)"); r += 1
+line(ws, r, "moNetC", "Dette nette ajustée recalculée (brute ajustée − trésorerie)", f"=C{r-2}-C{r-1}", "M EUR", "", NF_M, True); r += 1
+line(ws, r, "moNetP", "Dette nette ajustée publiée par Moody's", f"={mo_net}", "M EUR", i_monet); r += 1
+line(ws, r, "veoNet", "Pour mémoire : dette nette Veolia = brute − trésorerie − actifs liquides + JV dérivés (± PPA)", f"={urd_gross}-{urd_cash}-{urd_liq}+{urd_fv}", "M EUR",
+     f"{i_ugross} − {i_ucash} − {i_uliq} + {i_ufv} ; écart résiduel = retraitement PPA Suez", NF_M); r += 1
+line(ws, r, "hybShare", "Part des hybrides dans l'écart de dette nette", f"={A['moHyb']}/({A['moNetP']}-{nfd25})", "%", "hybrides / écart total", NF_P); r += 2
+put(ws, f"A{r}", "B4", bold=True); put(ws, f"B{r}", "Le FFO tel que Moody's le publie (Exhibit 15)", bold=True); r += 1
+mo_ffo24, i_moffo24 = E("Moody's : FFO (funds from operations)", "FY2024")
+mo_ffo23, i_moffo23 = E("Moody's : FFO (funds from operations)", "FY2023")
+mo_div, i_modiv = E("Moody's : dividendes", "FY2025")
+mo_rcf, i_morcf = E("Moody's : RCF (retained", "FY2025")
+mo_int, i_moint = E("Moody's : charge d'intérêts ajustée", "FY2025")
+mo_ndeb, i_mondeb = E("Moody's : dette nette ajustée / EBITDA ajusté", "FY2025")
+mo_f26, i_mof26 = E("Moody's : FFO / dette nette ajustée prévu", "2026F")
+mo_f27, i_mof27 = E("Moody's : FFO / dette nette ajustée prévu", "2027F")
+line(ws, r, "ffo23", "FFO 2023", f"={mo_ffo23}", "M EUR", i_moffo23); r += 1
+line(ws, r, "ffo24", "FFO 2024", f"={mo_ffo24}", "M EUR", i_moffo24); r += 1
+line(ws, r, "ffo25p", "FFO 2025 publié", f"={moffo25}", "M EUR", id_moffo25, NF_M, True); r += 1
+line(ws, r, "ffoRatio", "FFO 2025 / EBITDA 2025 publié par Veolia (= hypothèse ffo)", f"=C{r-1}/{eb25}", "%", f"{id_moffo25} / {id_eb25}", NF_P); r += 1
+line(ws, r, "ffoCheck", "FFO 2025 / dette nette ajustée publiée (doit redonner 20,3 %)", f"=C{r-2}/{A['moNetP']}", "%", "", NF_P); r += 1
+line(ws, r, "moDiv", "Dividendes (minoritaires et hybrides compris, selon Moody's)", f"={mo_div}", "M EUR", i_modiv); r += 1
+line(ws, r, "moRcf", "RCF = FFO − dividendes", f"={mo_rcf}", "M EUR", i_morcf); r += 1
+line(ws, r, "moInt", "Charge d'intérêts ajustée", f"={mo_int}", "M EUR", i_moint); r += 1
+line(ws, r, "moNdeb", "Dette nette ajustée / EBITDA ajusté selon Moody's", f"={mo_ndeb}", "x", f"{i_mondeb} — contre 2,79x publié par Veolia : même entreprise, deux définitions", NF_X); r += 1
+line(ws, r, "moF26", "Prévision Moody's : FFO / dette nette 2026", f"={mo_f26}/100", "%", i_mof26, NF_P); r += 1
+line(ws, r, "moF27", "Prévision Moody's : FFO / dette nette 2027", f"={mo_f27}/100", "%", i_mof27, NF_P); r += 1
+put(ws, f"B{r}", "Lecture : l'écart de 5,7 Md€ entre la dette des agences et celle de Veolia tient aux hybrides pour un peu plus d'un tiers, "
+    "le reste aux pensions, à la titrisation et aux retraitements de Moody's. Le FFO publié (5 160 M€) redonne le ratio 20,3 % : "
+    "c'est lui que le modèle projette.", color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 44; r += 1
 put(ws, f"B{r}", "Lecture : les agences ne regardent pas le 3x de Veolia mais FFO / dette ajustée. Au pic de dette 2026 (~29 Md€), tenir 18 % "
     "demande ~5,2 Md€ de FFO, à peu près le FFO 2025 implicite : la marge est nulle en 2026 et ne revient qu'avec les cessions. "
     "C'est la limite qui mord en premier, avant le plafond de 3x.", color=GREY, italic=True, wrap=True)
@@ -652,11 +701,11 @@ calc = [
      "=IF({c}{mTuck}>{c}{cap},MAX(0,{c}{HEAD27})/(1-{c}{cap}/{c}{mTuck}),0)", "M EUR", NF_M, True),
     ("GAP8", "EBITDA 2027 moins l'objectif ≥ 8 Md€", "={c}{EB27}-{tgt}*1000", "M EUR", NF_M, False),
     ("SEP2", None, None, None, None, None),
-    ("ADJ26", "Dette nette ajustée par les agences fin 2026 (DFN + écart Moody's 2025)", "={c}{NFD26}+({mond25}*1000-{nfd25})", "M EUR", NF_M, False),
+    ("ADJ26", "Dette nette ajustée par les agences fin 2026 (DFN + écart Moody's 2025)", "={c}{NFD26}+({monet}-{nfd25})", "M EUR", NF_M, False),
     ("FFO26", "FFO 2026 (hypothèse ffo × EBITDA 2026)", "={c}{ffo}*{c}{EB26}", "M EUR", NF_M, False),
     ("RATIO26", "FFO / dette ajustée fin 2026", "={c}{FFO26}/{c}{ADJ26}", "%", NF_P, True),
     ("HEADSP26", "Marge de dette fin 2026 sous le seuil S&P (FFO / 18 % − dette ajustée)", "={c}{FFO26}/({sptrig}/100)-{c}{ADJ26}", "M EUR", NF_M, True),
-    ("ADJ27", "Dette nette ajustée fin 2027", "={c}{NFD27}+({mond25}*1000-{nfd25})", "M EUR", NF_M, False),
+    ("ADJ27", "Dette nette ajustée fin 2027", "={c}{NFD27}+({monet}-{nfd25})", "M EUR", NF_M, False),
     ("FFO27", "FFO 2027", "={c}{ffo}*{c}{EB27}", "M EUR", NF_M, False),
     ("RATIO27", "FFO / dette ajustée fin 2027", "={c}{FFO27}/{c}{ADJ27}", "%", NF_P, True),
     ("HEADSP27", "Marge de dette fin 2027 sous le seuil S&P 18 %", "={c}{FFO27}/({sptrig}/100)-{c}{ADJ27}", "M EUR", NF_M, True),
@@ -673,7 +722,7 @@ rr = RES0
 for key, *_ in calc:
     ROW[key] = rr; rr += 1
 refs = dict(eb25=eb25, sign26=sign26, nfdh126=nfdh126, prog=prog, closed=closed, divsh26=div_sh26, tgt=tgt, synRR=syn_rr,
-            mond25=mond25, nfd25=nfd25, sptrig=sptrig)
+            mond25=mond25, nfd25=nfd25, sptrig=sptrig, monet=mo_net)
 for key, label, formula, unit, nf, bold in calc:
     rr = ROW[key]
     if label is None:
@@ -1229,7 +1278,13 @@ checks = [
      f"-{E('Investissements financiers nets 2024', 'FY2024')[0]}*1000",
      E("Pont de dette 2024 : investissements financiers nets des cessions", "FY2024")[0], 60, NF_M, "Bloquant"),
     ("Dette maximale 2027 à l'objectif 8 Md€ ≈ 24 Md€ (cadrage du cours)", A["maxDebtTgt"], 24000, 1, NF_M, "Bloquant"),
-    ("FFO / dette ajustée 2026 du modèle dans l'attente de Moody's (18-19 %, ± 2 pts)", T["RATIO26"], 0.185, 0.02, NF_P, "Bloquant"),
+    ("FFO / dette ajustée 2026 du modèle face à la prévision Moody's (18,5 %, ± 2 pts)", T["RATIO26"], f"{mo_f26}/100", 0.02, NF_P, "Bloquant"),
+    ("FFO / dette ajustée 2027 du modèle face à la prévision Moody's (19,5 %, ± 2,5 pts)", T["RATIO27"], f"{mo_f27}/100", 0.025, NF_P, "Bloquant"),
+    ("Dette brute publiée selon Moody's = sous-total des emprunts du DEU (p.351)", A["moRep"], f"{urd_gross}", 1, NF_M, "Bloquant"),
+    ("Réconciliation Moody's : brute + ajustements = dette brute ajustée publiée", A["moAdjC"], A["moAdjP"], 1, NF_M, "Bloquant"),
+    ("Réconciliation Moody's : brute ajustée − trésorerie = dette nette ajustée publiée", A["moNetC"], A["moNetP"], 1, NF_M, "Bloquant"),
+    ("FFO implicite (20,3 % × dette nette) = FFO publié par Moody's (5 160)", A["ffo25"], A["ffo25p"], 60, NF_M, "Bloquant"),
+    ("Dette nette Veolia recalculée (brute − trésorerie − actifs liquides + JV) face à la publiée : l'écart est le retraitement PPA Suez", A["veoNet"], f"{nfd25}", None, NF_M, "Info"),
     ("Marge des boosters 2025 recalculée = publiée (12,6 %)", SG["boostMargin"], SG["boostMarginPub"], 0.002, NF_P, "Bloquant"),
     ("Clean Harbors : marge d'EBITDA ajusté recalculée = publiée (19,4 %)",
      f"{E('Clean Harbors : EBITDA ajusté total', 'FY2025')[0]}/1000/{E('Clean Harbors : chiffre d\'affaires direct total', 'FY2025')[0]}",

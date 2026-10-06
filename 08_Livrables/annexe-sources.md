@@ -1,6 +1,6 @@
 # Annexe — sources et chiffres cités
 
-Généré le 2026-10-02 depuis la dataroom : 243 chiffres (0 relus par un tiers), 26 opérations (0 relues), 155 documents citables.
+Généré le 2026-10-06 depuis la dataroom : 276 chiffres (0 relus par un tiers), 26 opérations (0 relues), 155 documents citables.
 Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date de consultation. « non relu » signifie qu'un seul membre a lu la page.
 
 ## 1. Chiffres, par rôle
@@ -26,7 +26,7 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F137 | Investissements financiers nets 2025e (déchets dangereux US, WTS minoritaires…) | 2.3 Md EUR | FY2025e | veolia_clean_earth_investor_presentation.pdf, p. 17, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/11/Veolia_Clean_Earth_Investor_Presentation.pdf (consulté le 2026-09-22) | non relu |
 | F138 | Pont de dette 2024 : investissements financiers nets des cessions (entrée nette) | +397 M EUR | FY2024 | pr-2024-annual-results-veolia.pdf, p. 9, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/02/pr-2024-annual-results-veolia.pdf (consulté le 2026-09-22) | non relu |
 
-### Rôle 2 — La contrainte (44 chiffres, 0 relus)
+### Rôle 2 — La contrainte (74 chiffres, 0 relus)
 
 | ID | Chiffre | Valeur | Période | Citation | Relecture |
 |---|---|---|---|---|---|
@@ -74,8 +74,38 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F164 | S&P : FFO / dette ajustés attendu, bas de fourchette | 20 % | 2026-2028 | ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf, p. 3, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/04/RatingsDirect_TearSheet_VeoliaEnvironnementS.A._3552186_Apr-27-2026.pdf (consulté le 2026-10-02) | non relu |
 | F165 | S&P : FFO / dette ajustés attendu, haut de fourchette | 22 % | 2026-2028 | ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf, p. 3, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/04/RatingsDirect_TearSheet_VeoliaEnvironnementS.A._3552186_Apr-27-2026.pdf (consulté le 2026-10-02) | non relu |
 | F217 | Enviri : covenant dette nette / EBITDA ajusté après la vente | 3.00 x | 2026 | enviri-10-k-2025.pdf, p. 68, https://www.sec.gov/Archives/edgar/data/45876/000004587626000010/nvri-20251231.htm (consulté le 2026-10-02) | non relu |
+| F244 | Moody's : FFO / dette nette ajustée prévu | 18.5 % | 2026F | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 2, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F245 | Moody's : FFO / dette nette ajustée prévu | 19.5 % | 2027F | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 2, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F246 | Moody's : RCF / dette nette ajustée prévu | 13.5 % | 2026F | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 2, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F247 | Moody's : RCF / dette nette ajustée prévu | 14.5 % | 2027F | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 2, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F248 | Moody's : (FFO + intérêts) / intérêts | 5.4 x | FY2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 2, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F249 | Moody's : dette brute publiée (as reported debt) | 29,518.0 M EUR | FY2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F250 | Moody's : ajustement pensions | 647.0 M EUR | FY2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F251 | Moody's : ajustement titres hybrides (50 % en dette) | 2,050.0 M EUR | FY2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F252 | Moody's : ajustement titrisation | 1,014.0 M EUR | FY2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F253 | Moody's : ajustements non standard | 1,650.0 M EUR | FY2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F254 | Moody's : dette brute ajustée | 34,879.0 M EUR | FY2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F255 | Moody's : trésorerie retenue | 9,475.0 M EUR | FY2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F256 | Moody's : dette nette ajustée (Exhibit 13) | 25,404.0 M EUR | FY2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F257 | Moody's : dette nette ajustée (Exhibit 13) | 23,273.0 M EUR | FY2024 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F258 | Moody's : ajustement titres hybrides (50 % en dette) | 1,800.0 M EUR | FY2024 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F259 | Moody's : EBITDA publié selon Moody's (as reported EBITDA) | 6,464.0 M EUR | FY2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F260 | Moody's : EBITDA ajusté | 6,777.8 M EUR | FY2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F261 | Moody's : FFO (funds from operations) | 5,160 M EUR | FY2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 12, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F262 | Moody's : FFO (funds from operations) | 4,948 M EUR | FY2024 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 12, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F263 | Moody's : FFO (funds from operations) | 4,655 M EUR | FY2023 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 12, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F264 | Moody's : dividendes (y compris minoritaires et hybrides) | 1,341 M EUR | FY2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 12, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F268 | Moody's : charge d'intérêts ajustée | 1,162 M EUR | FY2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 12, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F269 | Moody's : dette nette ajustée / EBITDA ajusté | 3.7 x | FY2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 12, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F270 | Moody's : dette brute ajustée / EBITDA ajusté | 5.1 x | FY2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 12, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F271 | Sous-total des emprunts (dette brute) | 29,518 M EUR | 31/12/2025 | finance_veolia_urd_2025_en.pdf, p. 351, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22) | non relu |
+| F272 | Trésorerie et équivalents | 8,021 M EUR | 31/12/2025 | finance_veolia_urd_2025_en.pdf, p. 351, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22) | non relu |
+| F273 | Actifs liquides et actifs liés au financement | 1,952 M EUR | 31/12/2025 | finance_veolia_urd_2025_en.pdf, p. 351, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22) | non relu |
+| F274 | Juste valeur des dérivés de couverture de dette | 276 M EUR | 31/12/2025 | finance_veolia_urd_2025_en.pdf, p. 351, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22) | non relu |
+| F275 | Sous-total des emprunts (dette brute) | 29,283 M EUR | 31/12/2024 | finance_veolia_urd_2025_en.pdf, p. 351, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22) | non relu |
+| F276 | Trésorerie et équivalents | 9,601 M EUR | 31/12/2024 | finance_veolia_urd_2025_en.pdf, p. 351, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22) | non relu |
 
-### Rôle 3 — Capacité et sensibilité (45 chiffres, 0 relus)
+### Rôle 3 — Capacité et sensibilité (48 chiffres, 0 relus)
 
 | ID | Chiffre | Valeur | Période | Citation | Relecture |
 |---|---|---|---|---|---|
@@ -124,6 +154,9 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F206 | Synergies Suez cumulées | 435 M EUR | FY2024 | finance_2024_full_year_results_presentation.pdf, p. 5, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/02/Finance_2024_full_year_results_presentation.pdf (consulté le 2026-09-22) | non relu |
 | F207 | Synergies Suez : objectif cumulé relevé (initial 500) | 530 M EUR | fin 2025 | finance_operating_and_financial_review_2024.pdf, p. 18, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/02/Finance_Operating_and_financial_review_2024.pdf (consulté le 2026-09-22) | non relu |
 | F208 | Synergies Suez cumulées réalisées | 534 M EUR | FY2025 | finance_veolia_operating_and_financial_review_2025.pdf, p. 17, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/02/Finance_Veolia_Operating_and_financial_review_2025.pdf (consulté le 2026-09-22) | non relu |
+| F265 | Moody's : RCF (retained cash flow) | 3,819 M EUR | FY2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 12, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F266 | Moody's : cash-flow opérationnel (CFO) | 4,681 M EUR | FY2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 12, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
+| F267 | Moody's : free cash flow (après dividendes et capex) | -272 M EUR | FY2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 12, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
 
 ### Rôle 4 — L'écart et les comparables (99 chiffres, 0 relus)
 

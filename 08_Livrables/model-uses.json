@@ -178,7 +178,28 @@
   "F234",
   "F235",
   "F236",
-  "F239"
+  "F239",
+  "F244",
+  "F245",
+  "F249",
+  "F250",
+  "F251",
+  "F252",
+  "F253",
+  "F254",
+  "F255",
+  "F256",
+  "F261",
+  "F262",
+  "F263",
+  "F264",
+  "F265",
+  "F268",
+  "F269",
+  "F271",
+  "F272",
+  "F273",
+  "F274"
  ],
  "lookups": [
   {
@@ -302,14 +323,8 @@
    "unit": ""
   },
   {
-   "id": "F147",
-   "prefix": "Moody's : FFO / dette nette ajustée",
-   "period": "FY2025",
-   "unit": ""
-  },
-  {
-   "id": "F150",
-   "prefix": "Moody's : dette nette ajustée",
+   "id": "F261",
+   "prefix": "Moody's : FFO (funds from operations)",
    "period": "FY2025",
    "unit": ""
   },
@@ -425,7 +440,7 @@
    "id": "F150",
    "prefix": "Moody's : dette nette ajustée",
    "period": "FY2025",
-   "unit": ""
+   "unit": "Md EUR"
   },
   {
    "id": "F151",
@@ -455,6 +470,126 @@
    "id": "F165",
    "prefix": "S&P : FFO / dette ajustés attendu, haut",
    "period": "2026-2028",
+   "unit": ""
+  },
+  {
+   "id": "F249",
+   "prefix": "Moody's : dette brute publiée",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F250",
+   "prefix": "Moody's : ajustement pensions",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F251",
+   "prefix": "Moody's : ajustement titres hybrides",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F252",
+   "prefix": "Moody's : ajustement titrisation",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F253",
+   "prefix": "Moody's : ajustements non standard",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F254",
+   "prefix": "Moody's : dette brute ajustée",
+   "period": "FY2025",
+   "unit": "M EUR"
+  },
+  {
+   "id": "F255",
+   "prefix": "Moody's : trésorerie retenue",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F256",
+   "prefix": "Moody's : dette nette ajustée (Exhibit 13)",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F271",
+   "prefix": "Sous-total des emprunts",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F272",
+   "prefix": "Trésorerie et équivalents",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F273",
+   "prefix": "Actifs liquides et actifs liés au financement",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F274",
+   "prefix": "Juste valeur des dérivés de couverture de dette",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F262",
+   "prefix": "Moody's : FFO (funds from operations)",
+   "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F263",
+   "prefix": "Moody's : FFO (funds from operations)",
+   "period": "FY2023",
+   "unit": ""
+  },
+  {
+   "id": "F264",
+   "prefix": "Moody's : dividendes",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F265",
+   "prefix": "Moody's : RCF (retained",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F268",
+   "prefix": "Moody's : charge d'intérêts ajustée",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F269",
+   "prefix": "Moody's : dette nette ajustée / EBITDA ajusté",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F244",
+   "prefix": "Moody's : FFO / dette nette ajustée prévu",
+   "period": "2026F",
+   "unit": ""
+  },
+  {
+   "id": "F245",
+   "prefix": "Moody's : FFO / dette nette ajustée prévu",
+   "period": "2027F",
    "unit": ""
   },
   {

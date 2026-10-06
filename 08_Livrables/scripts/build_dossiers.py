@@ -60,8 +60,8 @@ def esc(s):
 
 def parse(value):
     v = value.replace("\u00a0", "").replace("\u202f", "").replace(" ", "").strip()
-    if re.fullmatch(r"-?\d{1,3}(,\d{3})+", v):
-        return float(v.replace(",", "")), 0
+    if re.fullmatch(r"[-+]?\d{1,3}(,\d{3})+(\.\d+)?", v):
+        return float(v.replace(",", "")), (len(v.split(".")[1]) if "." in v else 0)
     if re.fullmatch(r"-?\d+,\d+", v):
         return float(v.replace(",", ".")), len(v.split(",")[1])
     try:
@@ -297,7 +297,7 @@ f = dict(
     nfdh125b=R("Endettement financier net (groupe)", "30/06/2025"),
     mo25=R("Moody's : FFO / dette nette ajustée", "FY2025"), mo24=R("Moody's : FFO / dette nette ajustée", "FY2024"),
     mo26lo=R("Moody's : FFO / dette nette ajustée attendu, bas", "2026F"), mo26hi=R("Moody's : FFO / dette nette ajustée attendu, haut", "2026F"),
-    mond25=R("Moody's : dette nette ajustée", "FY2025"), mond26=R("Moody's : dette nette ajustée, pic", "2026F"),
+    mond25=R("Moody's : dette nette ajustée", "FY2025", "Md EUR"), mond26=R("Moody's : dette nette ajustée, pic", "2026F"),
     motrig=R("Moody's : seuil de dégradation", "2026-2027"), moup=R("Moody's : condition de relèvement", "2026-2027"),
     sptrig=R("S&P : seuil de dégradation", "2026-2028"), splo=R("S&P : FFO / dette ajustés attendu, bas", "2026-2028"),
     sphi=R("S&P : FFO / dette ajustés attendu, haut", "2026-2028"), molev=R("Moody's : levier net selon la définition de Veolia", "FY2025"),
@@ -314,7 +314,16 @@ f = dict(
     syn530=R("Synergies Suez : objectif cumulé relevé", "fin 2025"), syn534=R("Synergies Suez cumulées réalisées", "FY2025"),
     co25=R("KPI GreenUp : émissions de GES évitées, progression vs 2023", "2025"), co18=R("KPI GreenUp : émissions de GES évitées, objectif", "2027", "Mt CO2e"),
     w25=R("KPI GreenUp : eau douce économisée", "2025"),
+    mo_rep=R("Moody's : dette brute publiée", "FY2025"), mo_pens=R("Moody's : ajustement pensions", "FY2025"),
+    mo_hyb=R("Moody's : ajustement titres hybrides", "FY2025"), mo_sec=R("Moody's : ajustement titrisation", "FY2025"),
+    mo_ns=R("Moody's : ajustements non standard", "FY2025"), mo_adj=R("Moody's : dette brute ajustée", "FY2025", "M EUR"),
+    mo_cash=R("Moody's : trésorerie retenue", "FY2025"), mo_net=R("Moody's : dette nette ajustée (Exhibit 13)", "FY2025"),
+    mo_ffo25=R("Moody's : FFO (funds from operations)", "FY2025"), mo_ffo24=R("Moody's : FFO (funds from operations)", "FY2024"),
+    mo_div=R("Moody's : dividendes", "FY2025"), mo_rcf=R("Moody's : RCF (retained", "FY2025"), mo_ndeb=R("Moody's : dette nette ajustée / EBITDA ajusté", "FY2025"),
+    mo_f26=R("Moody's : FFO / dette nette ajustée prévu", "2026F"), mo_f27=R("Moody's : FFO / dette nette ajustée prévu", "2027F"),
+    urd_gross=R("Sous-total des emprunts", "31/12/2025"),
 )
+HYB_SHARE = mv("Levier", "Part des hybrides dans l'écart")
 SEG_EB27 = mv("Segments", "EBITDA 2027 « au rythme", "E"); CE_EBREC = mv("Booster", "EBITDA 2025 recalculé"); CE_EBGAP = mv("Booster", "Écart entre l'EBITDA de Veolia")
 M_REC = mv("Booster", "Multiple sur l'EBITDA 2025 reconstitué"); CE_MREC = mv("Booster", "Marge d'EBITDA 2025 recalculée")
 CLH_ENVPCT = mv("ESG", "Clean Harbors : passifs environnementaux en %"); EN_ENV = mv("ESG", "Enviri (groupe entier)"); CE_ANALOG = mv("ESG", "Ordre de grandeur par analogie")
@@ -405,7 +414,11 @@ ROLES.append(role(
     f"à FFO constant il n'y a pas de marge. Si le FFO suit l'EBITDA, le modèle donne {pct(RATIO26)} fin 2026 (Moody's attend "
     f"{P(f['mo26lo'])}-{P(f['mo26hi'])} %) et {pct(RATIO27)} fin 2027 : <strong>le seuil des agences mord en 2026, le 3x de Veolia "
     f"mord en 2027</strong> ({fr(HEADSP27 / 1000, 1)} Md€ de marge sous 18 % contre {fr(HEAD / 1000, 2)} Md€ sous 3x). "
-    f"Dans le scénario défavorable, la marge d'agence 2026 tombe à {fr(HEADSP26_UNF / 1000, 2)} Md€.",
+    f"Dans le scénario défavorable, la marge d'agence 2026 tombe à {fr(HEADSP26_UNF / 1000, 2)} Md€. "
+    f"L'écart de {fr(N(f['mo_net']) - N(f['nfd25']), 0)} M€ entre la dette des agences et celle de Veolia se réconcilie poste par poste "
+    f"(Moody's, Exhibit 13) : hybrides comptés à 50 % ({P(f['mo_hyb'])}), pensions ({P(f['mo_pens'])}), titrisation ({P(f['mo_sec'])}), "
+    f"retraitements ({P(f['mo_ns'])}), et une trésorerie retenue plus basse. Moody's publie aussi le FFO : {P(f['mo_ffo25'])} M€ en 2025, "
+    f"et prévoit {P(f['mo_f26'])} % de FFO / dette nette en 2026, {P(f['mo_f27'])} % en 2027.",
     table([
         row_fig("Dette financière nette", f["nfd24"]), row_fig("EBITDA", f["eb24"]), row_fig("Levier publié", f["lev24"]),
         row_fig("Dette financière nette", f["nfd25"]), row_fig("EBITDA", f["eb25"]), row_fig("Levier publié", f["lev25"]),
@@ -432,6 +445,14 @@ ROLES.append(role(
         row_calc("FFO requis en 2026 au seuil S&P", fr(FFOREQ, 0, "M EUR"), "18 % × ~29 000"),
         row_calc("Marge de FFO en 2026 au seuil S&P", fr(FFOGAP, 0, "M EUR"), "FFO 2025 − requis"),
         row_calc("Écart dette ajustée Moody's − dette nette publiée 2025", fr(ADJGAP, 0, "M EUR"), "retraitements d'agence"),
+        row_fig("Moody's : dette brute publiée", f["mo_rep"]), row_fig("Sous-total des emprunts (DEU)", f["urd_gross"]),
+        row_fig("+ pensions", f["mo_pens"]), row_fig("+ hybrides à 50 %", f["mo_hyb"]), row_fig("+ titrisation", f["mo_sec"]),
+        row_fig("+ ajustements non standard", f["mo_ns"]), row_fig("= dette brute ajustée", f["mo_adj"]),
+        row_fig("− trésorerie retenue", f["mo_cash"]), row_fig("= dette nette ajustée", f["mo_net"]),
+        row_calc("Part des hybrides dans l'écart", pct(HYB_SHARE), "hybrides / (ajustée − publiée)"),
+        row_fig("Moody's : FFO", f["mo_ffo24"]), row_fig("Moody's : FFO", f["mo_ffo25"]), row_fig("Moody's : dividendes", f["mo_div"]),
+        row_fig("Moody's : RCF", f["mo_rcf"]), row_fig("Moody's : dette nette / EBITDA ajustés", f["mo_ndeb"]),
+        row_fig("Moody's : FFO / dette nette prévu", f["mo_f26"]), row_fig("Moody's : FFO / dette nette prévu", f["mo_f27"]),
         row_fig("Guidance fin 2026 : égal ou légèrement au-dessus de", f["guid"]),
         row_fig("Engagement 2027 : au plus", f["cap"]),
         row_calc("Levier fin 2026 (modèle)", x(LEV26), f"pro forma 12 mois : {x(LEV26PF)}"),
@@ -456,6 +477,11 @@ ROLES.append(role(
         f"{P(f['mond26'])} Md€ ; dégradation si le ratio passe sous « {esc(f['motrig']['value'])} ». S&P (BBB stable, avril 2026) : "
         f"dégradation si FFO / dette ne reste pas durablement au-dessus de {P(f['sptrig'])} %. La dette ajustée des agences dépasse de "
         f"{fr(ADJGAP / 1000, 1)} Md€ la dette nette publiée : hybrides comptés en partie, pensions, provisions.",
+        f"La réconciliation, poste par poste (Moody's Exhibit 13) : dette brute publiée {P(f['mo_rep'])} M€ (c'est le sous-total des "
+        f"emprunts du DEU, {P(f['urd_gross'])}), plus pensions {P(f['mo_pens'])}, hybrides à 50 % {P(f['mo_hyb'])}, titrisation "
+        f"{P(f['mo_sec'])}, retraitements {P(f['mo_ns'])} = {P(f['mo_adj'])} ; moins une trésorerie retenue de {P(f['mo_cash'])} = "
+        f"{P(f['mo_net'])}. Les hybrides pèsent {pct(HYB_SHARE, 0)} de l'écart. Moody's mesure 3,7x de dette nette / EBITDA ajustés "
+        f"là où Veolia publie 2,79x : même entreprise, deux définitions.",
     ],
     [
         f"Veolia ne dit pas si son ratio de fin 2026 comptera douze mois de Clean Earth ({x(LEV26PF)}) ou sept ({x(LEV26)}).",
@@ -471,6 +497,10 @@ ROLES.append(role(
          f"Au pic de dette de 2026, ce seuil demande {fr(FFOREQ / 1000, 1)} Md€ de FFO pour {fr(FFO25 / 1000, 1)} Md€ générés en 2025 : "
          f"c'est 2026 qui est tendu, et c'est pour cela que les cessions sont annoncées dans les deux ans. Fin 2027, avec un FFO qui suit "
          f"l'EBITDA, le ratio remonte à {pct(RATIO27)} et c'est le 3x de Veolia qui limite la capacité ({WHICH27.split(' : ')[0]} dans le modèle)."),
+        ("D'où vient l'écart de 5,7 Md€ entre la dette des agences et la dette publiée ?",
+         f"De la réconciliation que Moody's publie : la dette brute est la même ({P(f['mo_rep'])} M€), Moody's y ajoute pensions, "
+         f"titrisation, retraitements et la moitié des hybrides ({P(f['mo_hyb'])} M€), puis retient moins de trésorerie "
+         f"({P(f['mo_cash'])} contre 8 021 + 1 952 chez Veolia). Chaque poste est au registre avec sa page."),
         ("Les hybrides sont-ils de la dette ?",
          "Pas pour Veolia ni en IFRS. Mais ils portent un coupon et une date de rappel : un lecteur prudent en compte une partie, "
          f"et le plafond de 2027 n'est alors plus tenu ({x(D50)} à 50 %)."),
