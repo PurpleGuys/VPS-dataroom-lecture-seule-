@@ -253,6 +253,9 @@ M_SEC_MIN = mv("Cibles", "Secteur : multiple avant synergies le plus bas"); M_SE
 CE_VS_SEC = mv("Cibles", "Clean Earth avant synergies (recalculé) face")
 TAX_ALIGNED = mv("ESG", "Part du capex éligible et aligné, recalculée"); TAX_HW_SHARE = mv("ESG", "Déchets dangereux (PPC) : part du capex aligné")
 TAX_HW_RATE = mv("ESG", "Déchets dangereux (PPC) : capex aligné / éligible"); TAX_NONELIG = mv("ESG", "Capex non éligible")
+PEER_GAP_SUEZ = mv("Levier", "Écart de FFO / dette nette entre Veolia et Suez"); PEER_GAP_HERA = mv("Levier", "Écart entre Veolia et le mieux noté")
+MA_ENERGY_H1 = mv("Sensibilité", "Énergie et recyclats : effet au S1 2026", "E"); MA_USD10 = mv("Sensibilité", "Dollar : dette en USD, effet", "E")
+MA_RATE1 = mv("Sensibilité", "Taux : position nette à taux variable", "E")
 EFF_SHARE_Y = mv("Pont EBITDA", "Part de la croissance organique expliquée"); REST = mv("Pont EBITDA", "Reste : volumes")
 ORG_M = mv("Pont EBITDA", "… en M EUR, sur la base publiée"); ORG26 = mv("Pont EBITDA", "+ croissance organique 2026")
 ORG27 = mv("Pont EBITDA", "+ croissance organique 2027"); EFF_IN26 = mv("Pont EBITDA", "Part de l'organique 2026")
@@ -300,6 +303,11 @@ f = dict(
     tax_hw=R("Taxonomie 2025, collecte et traitement des déchets dangereux, prévention de la pollution (PPC 2.1, 2.2) : capex éligible et aligné", "FY2025"),
     tax_water=R("Taxonomie 2025, eau et assainissement : capex éligible et aligné", "FY2025"),
     use_ev=R("US Ecology (Republic Services) : valeur totale", "annonce 02/2022"), use_eb=R("US Ecology (Republic Services) : EBITDA ajusté 12 mois", "au 30/09/2021"),
+    p_acea=R("Moody's, pairs : ACEA, FFO / dette nette", "LTM 06/2025"), p_hera=R("Moody's, pairs : Hera, FFO / dette nette", "LTM 06/2025"),
+    p_suez=R("Moody's, pairs : Suez, FFO / dette nette", "LTM 06/2025"), p_suez_rt=R("Moody's, pairs : Suez, notation", "05/2026"),
+    en25=R("Effet des prix des commodités (énergie, recyclats) sur l'EBITDA", "FY2025"), enh1=R("Effet des prix des commodités sur l'EBITDA", "S1 2026"),
+    usd_debt=R("Dette libellée en dollars", "31/12/2025"), flt=R("Position nette à taux variable", "31/12/2025"),
+    fx_oi=R("Sensibilité au change : résultat opérationnel si les devises se déprécient", "FY2025"),
     nfdh1=R("Endettement financier net (groupe), après Clean Earth", "30/06/2026"),
     nfdh125=R("Endettement financier net (groupe)", "30/06/2025"), ebh1=R("EBITDA (groupe)", "S1 2026"),
     ebh125=R("EBITDA (groupe)", "S1 2025"), hyb=R("Dettes hybrides", "30/06/2026"),
@@ -491,6 +499,8 @@ ROLES.append(role(
         row_fig("Moody's : FFO", f["mo_ffo24"]), row_fig("Moody's : FFO", f["mo_ffo25"]), row_fig("Moody's : dividendes", f["mo_div"]),
         row_fig("Moody's : RCF", f["mo_rcf"]), row_fig("Moody's : dette nette / EBITDA ajustés", f["mo_ndeb"]),
         row_fig("Moody's : FFO / dette nette prévu", f["mo_f26"]), row_fig("Moody's : FFO / dette nette prévu", f["mo_f27"]),
+        row_fig("Pairs : ACEA, FFO / dette nette", f["p_acea"]), row_fig("Pairs : Hera, FFO / dette nette", f["p_hera"]),
+        row_fig("Pairs : Suez, FFO / dette nette", f["p_suez"]), row_fig("Pairs : Suez, notation", f["p_suez_rt"]),
         row_fig("Guidance fin 2026 : égal ou légèrement au-dessus de", f["guid"]),
         row_fig("Engagement 2027 : au plus", f["cap"]),
         row_calc("Levier fin 2026 (modèle)", x(LEV26), f"pro forma 12 mois : {x(LEV26PF)}"),
@@ -563,6 +573,11 @@ ROLES.append(role(
          f"Non. {P(f['flow26'])} M€ de flux contractuels en 2026, dont {P(f['cpap'])} de billets de trésorerie qui se renouvellent, face à "
          f"{P(f['liq'])} M€ de liquidités : couvert {x(COV26)}. Le mur agit sur le FFO, pas sur la dette : environ {fr(EXTRA_INT, 0)} M€ "
          f"d'intérêts de plus par an quand les souches à bas coupon de 2027-2028 se refinancent au taux de 2025."),
+        ("Où se place Veolia parmi ses pairs ?",
+         f"Dans le tableau de Moody's (Exhibit 12, douze mois à juin 2025) : {P(f['mo25'])} % de FFO / dette nette pour Veolia, "
+         f"{P(f['p_acea'])} % pour ACEA, {P(f['p_hera'])} % pour Hera, tous trois Baa1 ; Suez, « {esc(f['p_suez_rt']['value'])} », "
+         f"est à {P(f['p_suez'])} %. L'écart avec Suez est de {pct(PEER_GAP_SUEZ, 1)} ; avec Hera, {pct(PEER_GAP_HERA, 1)}. "
+         f"Le seuil des « high teens » n'est pas une abstraction : c'est la zone où se trouve déjà le concurrent direct."),
         ("Comment reconstituez-vous le FFO de Moody's, qui ne publie pas sa formule ?",
          f"Depuis le tableau de flux du DEU (p.362-363) : capacité d'autofinancement avant BFR, moins impôts et intérêts payés, plus "
          f"remboursements d'actifs financiers opérationnels et dividendes reçus : {fr(FFO_REC, 0)} M€ contre {P(f['mo_ffo25'])} publiés, "
@@ -630,6 +645,12 @@ ROLES.append(role(
          f"du modèle ({fr(ORG26, 0)} M€), c'est le programme de 350 M€ par an de GreenUp. Un programme de coûts se tient ou ne se tient pas ; "
          f"la sensibilité de Trajectoire (g26 bas, g27 bas) en donne la version douce, l'onglet Pont EBITDA §D la version dure : "
          f"{fr(HEAD_K0, 0)} M€ de marge si rien n'est livré."),
+        ("Et l'énergie, le dollar, les taux ?",
+         f"Des entrées externes que le DEU chiffre : l'énergie et les recyclats ont coûté {P(f['en25'])} M€ d'EBITDA en 2025 et "
+         f"{P(f['enh1'])} M€ au seul S1 2026 — une année comme ce semestre coûterait {fr(-MA_ENERGY_H1, 0)} M€ de marge sous 3x. "
+         f"La dette en dollars ({P(f['usd_debt'])} M€) ajoute {fr(-MA_USD10, 0)} M€ de dette si le dollar monte de 10 % ; "
+         f"la position nette à taux variable ({P(f['flt'])} M€) coûte {fr(-MA_RATE1, 0)} M€ par point de taux. Aucune ne pèse autant "
+         f"que les cessions ou l'efficacité, mais elles s'additionnent (Sensibilité, bloc Macro)."),
         ("Et si les cessions glissent en 2028 ?",
          f"Sans rien encaisser du reste du programme en 2027, la marge tombe de {fr(HEAD, 0)} à {fr(H1_LOW, 0)} M€. C'est le premier facteur."),
         ("Pourquoi ne pas couper le dividende ?",

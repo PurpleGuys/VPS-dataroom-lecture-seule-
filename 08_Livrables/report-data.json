@@ -1,7 +1,7 @@
 {
  "generated": "2026-10-06",
  "checks": "OK",
- "n_figures": 529,
+ "n_figures": 561,
  "title": "GreenUp 2027 : combien Veolia peut-elle encore acheter sans dépasser ses engagements de levier ?",
  "subtitle": "Capstone Innovations in Finance — sujet 2, périmètre « capacité financière »",
  "thread": "Veolia annonce des enveloppes nettes. Clean Earth en est sorti ; le programme de cessions de plus de 2 Md€ d'ici mi-2028 l'y ramène. Si ce programme est encaissé à temps, il reste fin 2027 environ 1,6 Md€ de marge sous 3x, soit une acquisition d'environ 2,3 Md€ au multiple de Clean Earth. Cette marge dépend d'abord du calendrier des cessions, de la croissance organique de 2027 et des tuck-ins. Elle disparaît si tout tourne mal en même temps, ou si l'on compte la moitié des hybrides en dette. Le seuil des agences (FFO / dette ajustée ≥ 18 % chez S&P) est la contrainte de 2026 : 19,3 % dans le scénario central, dans l'attente de Moody's ; fin 2027 il laisse 4,3 Md€ et c'est le 3x qui mord. Le booster déchets dangereux tient son objectif de volume révisé, pas l'initial, et sa croissance est surtout achetée. Le passif environnemental de Clean Earth n'est pas encore visible dans les comptes.",
@@ -351,6 +351,10 @@
     [
      "Y a-t-il un mur de refinancement avant 2027 ?",
      "Non. 9 642 M€ de flux contractuels en 2026, dont 4 933 de billets de trésorerie qui se renouvellent, face à 15 911 M€ de liquidités : couvert 1,65x. Le mur agit sur le FFO, pas sur la dette : environ 74 M€ d'intérêts de plus par an quand les souches à bas coupon de 2027-2028 se refinancent au taux de 2025."
+    ],
+    [
+     "Où se place Veolia parmi ses pairs ?",
+     "Dans le tableau de Moody's (Exhibit 12, douze mois à juin 2025) : 20,3 % de FFO / dette nette pour Veolia, 20,3 % pour ACEA, 23,3 % pour Hera, tous trois Baa1 ; Suez, « Baa2 Negative », est à 11,4 %. L'écart avec Suez est de 8,9 % ; avec Hera, −3,0 %. Le seuil des « high teens » n'est pas une abstraction : c'est la zone où se trouve déjà le concurrent direct."
     ],
     [
      "Comment reconstituez-vous le FFO de Moody's, qui ne publie pas sa formule ?",
@@ -788,6 +792,38 @@
      ""
     ],
     [
+     "F532",
+     "Pairs : ACEA, FFO / dette nette",
+     "LTM 06/2025",
+     "20,3 %",
+     "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11",
+     ""
+    ],
+    [
+     "F537",
+     "Pairs : Hera, FFO / dette nette",
+     "LTM 06/2025",
+     "23,3 %",
+     "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11",
+     ""
+    ],
+    [
+     "F542",
+     "Pairs : Suez, FFO / dette nette",
+     "LTM 06/2025",
+     "11,4 %",
+     "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11",
+     ""
+    ],
+    [
+     "F540",
+     "Pairs : Suez, notation",
+     "05/2026",
+     "« Baa2 Negative »",
+     "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11",
+     ""
+    ],
+    [
      "F57",
      "Guidance fin 2026 : égal ou légèrement au-dessus de",
      "31/12/2026",
@@ -926,6 +962,10 @@
     [
      "Quelle est l'hypothèse la plus fragile du modèle ?",
      "La croissance organique de l'EBITDA (g26, g27), parce qu'elle est faite d'efficacité : 90 % de l'organique 2026 du modèle (388 M€), c'est le programme de 350 M€ par an de GreenUp. Un programme de coûts se tient ou ne se tient pas ; la sensibilité de Trajectoire (g26 bas, g27 bas) en donne la version douce, l'onglet Pont EBITDA §D la version dure : −529 M€ de marge si rien n'est livré."
+    ],
+    [
+     "Et l'énergie, le dollar, les taux ?",
+     "Des entrées externes que le DEU chiffre : l'énergie et les recyclats ont coûté −30 M€ d'EBITDA en 2025 et −60 M€ au seul S1 2026 — une année comme ce semestre coûterait 360 M€ de marge sous 3x. La dette en dollars (2 455 M€) ajoute 246 M€ de dette si le dollar monte de 10 % ; la position nette à taux variable (−2 992 M€) coûte 30 M€ par point de taux. Aucune ne pèse autant que les cessions ou l'efficacité, mais elles s'additionnent (Sensibilité, bloc Macro)."
     ],
     [
      "Et si les cessions glissent en 2028 ?",
@@ -1999,7 +2039,7 @@
   }
  ],
  "todo": [
-  "Relire en croisé les 529 chiffres du registre et les 26 deals : aucun n'a encore de relecteur.",
+  "Relire en croisé les 561 chiffres du registre et les 26 deals : aucun n'a encore de relecteur.",
   "Lire les 10-K 2025 d'Enviri et de Clean Harbors, désormais dans la dataroom, et en tirer les chiffres des rôles 4 et 5 (passifs environnementaux de Clean Earth, marges et levier de Clean Harbors). Reste à verser : le 10-Q du T1 2026 d'Enviri et le communiqué de vente du 20 novembre 2025.",
   "Avant le 7 octobre : montrer la dataroom comme « sources chargées et lues », et noter dans gaps.md ce qui manque encore.",
   "Rédiger la page d'annexe sur les outils d'IA : dataroom MCP (recherche, registre, contrôles), Claude pour construire le classeur et ces dossiers, LibreOffice pour le recalcul. Aucun chiffre produit par le modèle de langage.",
@@ -6766,6 +6806,294 @@
    "à 3 ans",
    "bic-us-ecology-republic-2022.html, p. 1, https://www.bicmagazine.com/industry/investment-banking/us-ecology-joins-republic-services/ (consulté le 2026-10-06)",
    "6",
+   ""
+  ],
+  [
+   "F530",
+   "Moody's, pairs : ACEA, notation et perspective",
+   "Baa1 Stable",
+   "05/2026",
+   "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02)",
+   "2",
+   ""
+  ],
+  [
+   "F531",
+   "Moody's, pairs : ACEA, EBITDA ajusté",
+   "1,415 M EUR",
+   "LTM 06/2025",
+   "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02)",
+   "2",
+   ""
+  ],
+  [
+   "F532",
+   "Moody's, pairs : ACEA, FFO / dette nette",
+   "20.3 %",
+   "LTM 06/2025",
+   "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02)",
+   "2",
+   ""
+  ],
+  [
+   "F533",
+   "Moody's, pairs : ACEA, RCF / dette nette",
+   "17.5 %",
+   "LTM 06/2025",
+   "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02)",
+   "2",
+   ""
+  ],
+  [
+   "F534",
+   "Moody's, pairs : ACEA, dette / EBITDA",
+   "4.2 x",
+   "LTM 06/2025",
+   "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02)",
+   "2",
+   ""
+  ],
+  [
+   "F535",
+   "Moody's, pairs : Hera, notation et perspective",
+   "Baa1 Stable",
+   "05/2026",
+   "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02)",
+   "2",
+   ""
+  ],
+  [
+   "F536",
+   "Moody's, pairs : Hera, EBITDA ajusté",
+   "1,476 M EUR",
+   "LTM 06/2025",
+   "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02)",
+   "2",
+   ""
+  ],
+  [
+   "F537",
+   "Moody's, pairs : Hera, FFO / dette nette",
+   "23.3 %",
+   "LTM 06/2025",
+   "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02)",
+   "2",
+   ""
+  ],
+  [
+   "F538",
+   "Moody's, pairs : Hera, RCF / dette nette",
+   "16.9 %",
+   "LTM 06/2025",
+   "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02)",
+   "2",
+   ""
+  ],
+  [
+   "F539",
+   "Moody's, pairs : Hera, dette / EBITDA",
+   "3.8 x",
+   "LTM 06/2025",
+   "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02)",
+   "2",
+   ""
+  ],
+  [
+   "F540",
+   "Moody's, pairs : Suez, notation et perspective",
+   "Baa2 Negative",
+   "05/2026",
+   "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02)",
+   "2",
+   ""
+  ],
+  [
+   "F541",
+   "Moody's, pairs : Suez, EBITDA ajusté",
+   "1,088 M EUR",
+   "LTM 06/2025",
+   "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02)",
+   "2",
+   ""
+  ],
+  [
+   "F542",
+   "Moody's, pairs : Suez, FFO / dette nette",
+   "11.4 %",
+   "LTM 06/2025",
+   "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02)",
+   "2",
+   ""
+  ],
+  [
+   "F543",
+   "Moody's, pairs : Suez, RCF / dette nette",
+   "10.3 %",
+   "LTM 06/2025",
+   "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02)",
+   "2",
+   ""
+  ],
+  [
+   "F544",
+   "Moody's, pairs : Suez, dette / EBITDA",
+   "6.8 x",
+   "LTM 06/2025",
+   "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02)",
+   "2",
+   ""
+  ],
+  [
+   "F545",
+   "Moody's, pairs : Veolia, notation et perspective",
+   "Baa1 Stable",
+   "05/2026",
+   "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02)",
+   "2",
+   ""
+  ],
+  [
+   "F546",
+   "Sensibilité au change : chiffre d'affaires si les devises s'apprécient de 10 %",
+   "2,824 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 418, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F547",
+   "Sensibilité au change : chiffre d'affaires si les devises se déprécient de 10 %",
+   "-2,311 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 418, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F548",
+   "Sensibilité au change : résultat opérationnel si les devises s'apprécient de 10 %",
+   "273 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 418, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F549",
+   "Sensibilité au change : résultat opérationnel si les devises se déprécient de 10 %",
+   "-223 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 418, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F550",
+   "Sensibilité au change : actif net si les devises s'apprécient de 10 %",
+   "1,643 M EUR",
+   "31/12/2025",
+   "finance_veolia_urd_2025_en.pdf, p. 418, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F551",
+   "Sensibilité au change : coût de l'endettement financier net si les devises s'apprécient de 10 %",
+   "27 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 418, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F552",
+   "Coût de l'endettement financier net : part libellée en euros",
+   "57 %",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 418, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "2",
+   ""
+  ],
+  [
+   "F553",
+   "Coût de l'endettement financier net : part libellée en dollars",
+   "16 %",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 418, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "2",
+   ""
+  ],
+  [
+   "F554",
+   "Dette brute après couverture : part à taux fixe",
+   "56.1 %",
+   "31/12/2025",
+   "finance_veolia_urd_2025_en.pdf, p. 416, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "2",
+   ""
+  ],
+  [
+   "F555",
+   "Dette brute après couverture : part à taux variable",
+   "43.9 %",
+   "31/12/2025",
+   "finance_veolia_urd_2025_en.pdf, p. 416, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "2",
+   ""
+  ],
+  [
+   "F556",
+   "Position nette à taux variable après couverture (passif)",
+   "-2,992 M EUR",
+   "31/12/2025",
+   "finance_veolia_urd_2025_en.pdf, p. 416, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "2",
+   ""
+  ],
+  [
+   "F557",
+   "Dette libellée en dollars (avant swaps de devises)",
+   "2,455 M EUR",
+   "31/12/2025",
+   "finance_veolia_urd_2025_en.pdf, p. 409, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "2",
+   ""
+  ],
+  [
+   "F558",
+   "Dette libellée en euros (avant swaps de devises)",
+   "23,041 M EUR",
+   "31/12/2025",
+   "finance_veolia_urd_2025_en.pdf, p. 409, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "2",
+   ""
+  ],
+  [
+   "F559",
+   "Effet de change sur les obligations en dollars (conversion au cours de clôture)",
+   "-190 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 406, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "2",
+   ""
+  ],
+  [
+   "F560",
+   "Effet des prix des commodités (énergie, recyclats) sur l'EBITDA",
+   "-30 M EUR",
+   "FY2025",
+   "finance_veolia_operating_and_financial_review_2025.pdf, p. 17, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/02/Finance_Veolia_Operating_and_financial_review_2025.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F561",
+   "Effet des prix des commodités sur l'EBITDA",
+   "-60 M EUR",
+   "S1 2026",
+   "veolia_finance_amendment_urd_2025.pdf, p. 22, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_Amendment_URD_2025.pdf (consulté le 2026-09-22)",
+   "3",
    ""
   ]
  ]

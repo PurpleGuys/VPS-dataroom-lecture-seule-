@@ -509,6 +509,34 @@ put(ws, f"B{r}", "Lecture : Moody's ne publie pas sa formule. Lue depuis le tabl
     "à ± 5 % (Vérifications) ; elle donne un FFO projetable poste par poste, dont les intérêts (Échéancier §B).", color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 58; r += 2
 
+put(ws, f"A{r}", "B6", bold=True); put(ws, f"B{r}", "Les pairs selon Moody's (Exhibit 12, 12 mois à juin 2025) : où se place Veolia", bold=True); r += 1
+header(ws, r, ["", "Société", "Notation", "FFO / dette nette", "RCF / dette nette", "Dette / EBITDA", "EBITDA ajusté (M EUR)", "Réf."]); r += 1
+PR = {}
+PEER0 = r
+for name in ("Veolia", "ACEA", "Hera", "Suez"):
+    put(ws, f"B{r}", name, bold=name == "Veolia")
+    rating, i_rt = E(f"Moody's, pairs : {name}, notation", "05/2026")
+    put(ws, f"C{r}", f"={rating}", color=GREEN, align="center")
+    if name == "Veolia":
+        put(ws, f"D{r}", f"={A['mo25']}", color=GREEN, nf=NF_P); put(ws, f"E{r}", f"={mo_rcf}/{A['moNetP']}", nf=NF_P)
+        put(ws, f"F{r}", f"={E('Moody' + chr(39) + 's : dette brute ajustée / EBITDA ajusté', 'FY2025')[0]}", color=GREEN, nf=NF_X)
+        put(ws, f"G{r}", f"={E('Moody' + chr(39) + 's : EBITDA ajusté', 'FY2025')[0]}", color=GREEN, nf=NF_M)
+        put(ws, f"H{r}", f"{i_rt} ; FY2025 (Exhibit 15)", color=GREY)
+    else:
+        refs = [i_rt]
+        for col, what, nf in (("D", "FFO / dette nette", NF_P), ("E", "RCF / dette nette", NF_P), ("F", "dette / EBITDA", NF_X), ("G", "EBITDA ajusté", NF_M)):
+            a, i = E(f"Moody's, pairs : {name}, {what}", "LTM 06/2025"); refs.append(i)
+            put(ws, f"{col}{r}", f"={a}" + ("/100" if nf == NF_P else ""), color=GREEN, nf=nf)
+        put(ws, f"H{r}", ", ".join(refs), color=GREY)
+    PR[name] = r; r += 1
+line(ws, r, "peerGapSuez", "Écart de FFO / dette nette entre Veolia et Suez (même notation à un cran près, perspective négative)", f"=D{PR['Veolia']}-D{PR['Suez']}", "pts", "Veolia − Suez", NF_P, True); r += 1
+line(ws, r, "peerGapHera", "Écart entre Veolia et le mieux noté des pairs comparables (Hera)", f"=D{PR['Veolia']}-D{PR['Hera']}", "pts", "négatif = Veolia en dessous", NF_P, True); r += 1
+put(ws, f"B{r}", "Lecture : à notation égale (Baa1), Veolia est au niveau d'ACEA et sous Hera ; Suez, Baa2 à perspective négative, est à 11 %. "
+    "Le seuil des « high teens » de Moody's n'est pas théorique : c'est la zone où se trouve déjà le concurrent direct. La marge de "
+    "sécurité que gardent les pairs sous leur seuil est de l'ordre de 2 à 5 points ; la nôtre, fin 2026, est de 1 point (Trajectoire).",
+    color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:H{r}"); ws.row_dimensions[r].height = 44; r += 2
+
 put(ws, f"A{r}", "C", bold=True); put(ws, f"B{r}", "Le plafond selon la définition retenue (scénario actif, fin 2027)", bold=True); r += 1
 header(ws, r, ["", "Définition", "Levier 2027", "Marge (M EUR)", "Ce qu'on ajoute à la DFN"]); r += 1
 DEF_START = r
@@ -1146,6 +1174,36 @@ el = [
 ]
 for lab, f, why in el:
     put(ws, f"B{r}", lab); put(ws, f"C{r}", f, nf=NF_M); put(ws, f"E{r}", why, color=GREY); r += 1
+r += 1
+put(ws, f"A{r}", "Macro — ce que valent l'énergie, le dollar et les taux sur la marge 2027 (DEU 2025 p.406, 409, 416, 418 ; résultats 2025 ; amendement)", bold=True); r += 1
+header(ws, r, ["", "Entrée externe", "Effet publié", "Unité", "Effet sur la marge 2027 (M EUR)", "Comment"]); r += 1
+en25, i_en25 = E("Effet des prix des commodités (énergie, recyclats) sur l'EBITDA", "FY2025")
+enh1, i_enh1 = E("Effet des prix des commodités sur l'EBITDA", "S1 2026")
+usd_debt, i_usd = E("Dette libellée en dollars", "31/12/2025")
+fx_bond, i_fxb = E("Effet de change sur les obligations en dollars", "FY2025")
+fx_oi, i_fxoi = E("Sensibilité au change : résultat opérationnel si les devises se déprécient", "FY2025")
+fx_fin, i_fxfin = E("Sensibilité au change : coût de l'endettement financier net", "FY2025")
+flt, i_flt = E("Position nette à taux variable après couverture", "31/12/2025")
+fix_pct, i_fix = E("Dette brute après couverture : part à taux fixe", "31/12/2025")
+MA = {}
+for key, lab, f_eff, unit, f_marge, how, i in (
+        ("energy25", "Énergie et recyclats : effet sur l'EBITDA 2025", f"={en25}", "M EUR", f"=C{{r}}*{HY('cap')}", "effet × plafond : si 2027 revit 2025", i_en25),
+        ("energyH1", "Énergie et recyclats : effet au S1 2026 (à annualiser : × 2)", f"={enh1}", "M EUR", f"=C{{r}}*2*{HY('cap')}", "effet × 2 × plafond : si 2027 revit le S1 2026", i_enh1),
+        ("usd10", "Dollar : dette en USD, effet d'une hausse de 10 % du dollar sur la dette nette", f"={usd_debt}", "M EUR de dette", f"=-C{{r}}*0.1", "10 % de la dette en dollars, convertie", i_usd),
+        ("fxbond", "Dollar : effet de change réel sur les obligations en USD en 2025 (dollar plus bas)", f"={fx_bond}", "M EUR", f"=-C{{r}}", "signe : une baisse du dollar a réduit la dette", i_fxb),
+        ("fxoi", "Toutes devises : résultat opérationnel si les devises baissent de 10 % (sensibilité DEU)", f"={fx_oi}", "M EUR", f"=C{{r}}*{HY('cap')}", "résultat opérationnel ≈ EBITDA à amortissements constants", i_fxoi),
+        ("rate1", "Taux : position nette à taux variable ; +1 point de taux = coût en plus", f"={flt}", "M EUR", f"=C{{r}}*0.01", "position × 1 % (la position est un passif net : négatif = coût)", i_flt),
+        ("fixpct", "Taux : part de la dette brute à taux fixe après couverture", f"={fix_pct}/100", "%", "", "pour mémoire", i_fix)):
+    put(ws, f"A{r}", key, color=GREY); put(ws, f"B{r}", lab)
+    put(ws, f"C{r}", f_eff, color=GREEN, nf=NF_P if unit == "%" else NF_M); put(ws, f"D{r}", unit, color=GREY)
+    if f_marge:
+        put(ws, f"E{r}", f_marge.replace("{r}", str(r)), nf=NF_M, bold=True)
+    put(ws, f"F{r}", f"{how} — {i}", color=GREY)
+    MA[key] = f"{q('Sensibilité')}!$E${r}"; r += 1
+put(ws, f"B{r}", "Lecture : aucune de ces entrées ne déplace la marge autant que les cessions ou l'efficacité, mais elles s'additionnent : une "
+    "année d'énergie comme le S1 2026 (−120 M€ d'EBITDA) coûte 360 M€ de marge, un dollar 10 % plus fort 245 M€ de dette. Le DEU ne "
+    "donne pas d'élasticité de l'EBITDA au prix de l'énergie : c'est l'effet réalisé qui sert de borne.", color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:F{r}"); ws.row_dimensions[r].height = 44; r += 1
 widths(ws, {"A": 7, "B": 50, "C": 12, "D": 12, "E": 12, "F": 12, "G": 10, "H": 10, "I": 11, "J": 11, "K": 11, "L": 11,
             "M": 13, "N": 13, "O": 12})
 ws.column_dimensions["L"].hidden = True
@@ -1978,6 +2036,9 @@ res = [
     ("Multiples payés par Veolia, après synergies : du moins cher au plus cher (Cibles §D)", f'=TEXT({K["mMin"]},"0.0")&"x à "&TEXT({K["mMax"]},"0.0")&"x"', None),
     ("Secteur, avant synergies : du moins cher au plus cher (Cibles §E)", f'=TEXT({K["secMin"]},"0.0")&"x à "&TEXT({K["secMax"]},"0.0")&"x"', None),
     ("Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)", K["ceVsSec"], '0.0"x"'),
+    ("Pairs Moody's : FFO / dette nette de Veolia moins celui de Suez (Baa2, perspective négative), en points", A["peerGapSuez"], NF_P),
+    ("Macro : marge 2027 perdue si 2027 revit l'énergie du S1 2026, en M EUR", MA["energyH1"], NF_M),
+    ("Macro : dette nette en plus si le dollar monte de 10 %, en M EUR", MA["usd10"], NF_M),
     ("Taxonomie 2025 : part du capex du groupe éligible et aligné (DEU p.250)", TX["cxAlignedShare"], NF_P),
     ("Taxonomie 2025 : déchets dangereux, part du capex aligné du groupe", TX["hwShare"], NF_P),
     ("Programme de cessions au multiple central, en part de l'EBITDA des déchets solides", C["progShareSw"], NF_P),

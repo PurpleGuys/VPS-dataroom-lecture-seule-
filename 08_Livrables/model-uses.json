@@ -190,6 +190,7 @@
   "F255",
   "F256",
   "F257",
+  "F260",
   "F261",
   "F262",
   "F263",
@@ -198,8 +199,9 @@
   "F267-af42",
   "F268",
   "F269",
-  "F271",
+  "F270",
   "F271-543e",
+  "F271",
   "F272-40a3",
   "F272",
   "F273",
@@ -353,7 +355,31 @@
   "F523",
   "F524",
   "F525",
-  "F527"
+  "F527",
+  "F530",
+  "F531",
+  "F532",
+  "F533",
+  "F534",
+  "F535",
+  "F536",
+  "F537",
+  "F538",
+  "F539",
+  "F540",
+  "F541",
+  "F542",
+  "F543",
+  "F544",
+  "F545",
+  "F549",
+  "F551",
+  "F554",
+  "F556",
+  "F557",
+  "F559",
+  "F560",
+  "F561"
  ],
  "lookups": [
   {
@@ -852,6 +878,114 @@
    "id": "F257",
    "prefix": "Moody's : dette nette ajustée (Exhibit 13)",
    "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F545",
+   "prefix": "Moody's, pairs : Veolia, notation",
+   "period": "05/2026",
+   "unit": ""
+  },
+  {
+   "id": "F270",
+   "prefix": "Moody's : dette brute ajustée / EBITDA ajusté",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F260",
+   "prefix": "Moody's : EBITDA ajusté",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F530",
+   "prefix": "Moody's, pairs : ACEA, notation",
+   "period": "05/2026",
+   "unit": ""
+  },
+  {
+   "id": "F532",
+   "prefix": "Moody's, pairs : ACEA, FFO / dette nette",
+   "period": "LTM 06/2025",
+   "unit": ""
+  },
+  {
+   "id": "F533",
+   "prefix": "Moody's, pairs : ACEA, RCF / dette nette",
+   "period": "LTM 06/2025",
+   "unit": ""
+  },
+  {
+   "id": "F534",
+   "prefix": "Moody's, pairs : ACEA, dette / EBITDA",
+   "period": "LTM 06/2025",
+   "unit": ""
+  },
+  {
+   "id": "F531",
+   "prefix": "Moody's, pairs : ACEA, EBITDA ajusté",
+   "period": "LTM 06/2025",
+   "unit": ""
+  },
+  {
+   "id": "F535",
+   "prefix": "Moody's, pairs : Hera, notation",
+   "period": "05/2026",
+   "unit": ""
+  },
+  {
+   "id": "F537",
+   "prefix": "Moody's, pairs : Hera, FFO / dette nette",
+   "period": "LTM 06/2025",
+   "unit": ""
+  },
+  {
+   "id": "F538",
+   "prefix": "Moody's, pairs : Hera, RCF / dette nette",
+   "period": "LTM 06/2025",
+   "unit": ""
+  },
+  {
+   "id": "F539",
+   "prefix": "Moody's, pairs : Hera, dette / EBITDA",
+   "period": "LTM 06/2025",
+   "unit": ""
+  },
+  {
+   "id": "F536",
+   "prefix": "Moody's, pairs : Hera, EBITDA ajusté",
+   "period": "LTM 06/2025",
+   "unit": ""
+  },
+  {
+   "id": "F540",
+   "prefix": "Moody's, pairs : Suez, notation",
+   "period": "05/2026",
+   "unit": ""
+  },
+  {
+   "id": "F542",
+   "prefix": "Moody's, pairs : Suez, FFO / dette nette",
+   "period": "LTM 06/2025",
+   "unit": ""
+  },
+  {
+   "id": "F543",
+   "prefix": "Moody's, pairs : Suez, RCF / dette nette",
+   "period": "LTM 06/2025",
+   "unit": ""
+  },
+  {
+   "id": "F544",
+   "prefix": "Moody's, pairs : Suez, dette / EBITDA",
+   "period": "LTM 06/2025",
+   "unit": ""
+  },
+  {
+   "id": "F541",
+   "prefix": "Moody's, pairs : Suez, EBITDA ajusté",
+   "period": "LTM 06/2025",
    "unit": ""
   },
   {
@@ -1638,6 +1772,54 @@
    "id": "F49",
    "prefix": "Clean Earth : synergies de coûts",
    "period": "année 4",
+   "unit": ""
+  },
+  {
+   "id": "F560",
+   "prefix": "Effet des prix des commodités (énergie, recyclats) sur l'EBITDA",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F561",
+   "prefix": "Effet des prix des commodités sur l'EBITDA",
+   "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F557",
+   "prefix": "Dette libellée en dollars",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F559",
+   "prefix": "Effet de change sur les obligations en dollars",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F549",
+   "prefix": "Sensibilité au change : résultat opérationnel si les devises se déprécient",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F551",
+   "prefix": "Sensibilité au change : coût de l'endettement financier net",
+   "period": "FY2025",
+   "unit": ""
+  },
+  {
+   "id": "F556",
+   "prefix": "Position nette à taux variable après couverture",
+   "period": "31/12/2025",
+   "unit": ""
+  },
+  {
+   "id": "F554",
+   "prefix": "Dette brute après couverture : part à taux fixe",
+   "period": "31/12/2025",
    "unit": ""
   },
   {
