@@ -251,6 +251,20 @@ M_MIN = mv("Cibles", "Le moins cher payé"); M_MAX = mv("Cibles", "Le plus cher 
 M_SPREAD = mv("Cibles", "Écart avant / après synergies sur Clean Earth")
 M_SEC_MIN = mv("Cibles", "Secteur : multiple avant synergies le plus bas"); M_SEC_MAX = mv("Cibles", "Secteur : multiple avant synergies le plus haut")
 CE_VS_SEC = mv("Cibles", "Clean Earth avant synergies (recalculé) face")
+# Pari 1 : la capacité en probabilités (onglet Distribution, 1 000 futurs tirés)
+_wd = WB["Distribution"]
+def dist(key, col="F"):
+    row = next(c.row for c in _wd["A"] if c.value == key)
+    return _wd[f"{col}{row}"].value
+def prob(label):
+    row = next(c.row for c in _wd["B"] if isinstance(c.value, str) and c.value.startswith(label))
+    return _wd[f"C{row}"].value
+P_BIND = prob("La marge contraignante fin 2027 est positive"); P_ACQ1 = prob("Veolia peut acheter au moins 1 Md€")
+P_ACQ2 = prob("… au moins 2 Md€"); P_ACQ3 = prob("… au moins 3 Md€"); P_SP26 = prob("Le ratio FFO / dette passe sous le seuil S&P fin 2026")
+P_GAP8 = prob("L'EBITDA 2027 atteint l'objectif"); N_NEG = prob("Futurs (sur l'ensemble des tirages)")
+ACQ_P10, ACQ_P50, ACQ_P90 = dist("MAXACQB", "E"), dist("MAXACQB", "F"), dist("MAXACQB", "G")
+BIND_P5, BIND_P50 = dist("BIND27", "D"), dist("BIND27", "F")
+FW = WB["Simulation"]["C11"].value
 TAX_ALIGNED = mv("ESG", "Part du capex éligible et aligné, recalculée"); TAX_HW_SHARE = mv("ESG", "Déchets dangereux (PPC) : part du capex aligné")
 TAX_HW_RATE = mv("ESG", "Déchets dangereux (PPC) : capex aligné / éligible"); TAX_NONELIG = mv("ESG", "Capex non éligible")
 PEER_GAP_SUEZ = mv("Levier", "Écart de FFO / dette nette entre Veolia et Suez"); PEER_GAP_HERA = mv("Levier", "Écart entre Veolia et le mieux noté")
@@ -606,7 +620,10 @@ ROLES.append(role(
     "Le cash-flow libre, le programme de cessions et son calendrier, et ce qui fait le plus bouger la réponse.",
     f"Le cash-flow libre net ({P(f['nfcf25'])} M€ en 2025) paie à peine les dividendes : la marge vient de la croissance de "
     f"l'EBITDA et des cessions. Ce qui bouge le plus la marge de fin 2027 : {top3}. Si tout tourne mal en même temps, "
-    f"la marge devient négative ({fr(UNF, 0)} M€).",
+    f"la marge devient négative ({fr(UNF, 0)} M€). <strong>Mais « tout en même temps » n'arrive presque jamais</strong> : sur 1 000 futurs "
+    f"tirés entre les bornes de chaque hypothèse, avec un facteur conjoncture commun (corrélation {fr(FW, 1)}), {pct(P_BIND, 0)} tiennent les "
+    f"deux plafonds fin 2027 ; la marge contraignante médiane est de {fr(BIND_P50, 0)} M€, et 95 % des futurs dépassent {fr(BIND_P5, 0)} M€. "
+    f"Le risque n'est pas de franchir le plafond par la conjoncture : c'est de le franchir par une décision (une acquisition trop grande).",
     table([
         row_fig("Cash-flow libre net", f["nfcf24"]), row_fig("Cash-flow libre net", f["nfcf25"]),
         row_fig("Cash-flow libre net, S1", f["nfcfh125"]), row_fig("Cash-flow libre net, S1", f["nfcfh126"]),
@@ -667,6 +684,12 @@ ROLES.append(role(
          f"La dette en dollars ({P(f['usd_debt'])} M€) ajoute {fr(-MA_USD10, 0)} M€ de dette si le dollar monte de 10 % ; "
          f"la position nette à taux variable ({P(f['flt'])} M€) coûte {fr(-MA_RATE1, 0)} M€ par point de taux. Aucune ne pèse autant "
          f"que les cessions ou l'efficacité, mais elles s'additionnent (Sensibilité, bloc Macro)."),
+        ("Votre fourchette est-elle une probabilité ?",
+         f"Oui depuis l'onglet Distribution : chaque hypothèse est tirée dans une loi triangulaire entre ses bornes (le sommet à la base), "
+         f"un facteur « conjoncture » fait bouger ensemble croissance, cash-flow, cessions et multiples (poids {fr(FW, 1)}, hypothèse du groupe). "
+         f"Sur 1 000 futurs : {pct(P_BIND, 0)} tiennent les deux plafonds, {pct(P_SP26, 0)} passent sous le seuil S&P fin 2026, "
+         f"{pct(P_GAP8, 0)} atteignent 8 Md€ d'EBITDA. Les tirages sont fixés par une graine : le classeur redonne les mêmes nombres, "
+         f"et le simulateur web, qui lit les mêmes formules, aussi."),
         ("Et si les cessions glissent en 2028 ?",
          f"Sans rien encaisser du reste du programme en 2027, la marge tombe de {fr(HEAD, 0)} à {fr(H1_LOW, 0)} M€. C'est le premier facteur."),
         ("Pourquoi ne pas couper le dividende ?",
@@ -837,7 +860,9 @@ ROLES.append(role(
 
 ROLES.append(role(
     6, "Cibles, puis synthèse", "L'univers de cibles, puis une recommandation calibrée sur l'enveloppe propre.",
-    f"Fin 2027, la marge centrale permet une acquisition d'environ <strong>{fr(MAXACQ / 1000, 1)} Md€</strong> au multiple de Clean Earth, "
+    f"Fin 2027, la marge centrale permet une acquisition d'environ <strong>{fr(MAXACQ / 1000, 1)} Md€</strong> au multiple de Clean Earth "
+    f"(médiane des 1 000 futurs tirés : {fr(ACQ_P50 / 1000, 2)} Md€ ; 80 % entre {fr(ACQ_P10 / 1000, 2)} et {fr(ACQ_P90 / 1000, 2)} Md€ ; "
+    f"probabilité de pouvoir acheter 1 Md€ : {pct(P_ACQ1, 0)}, 2 Md€ : {pct(P_ACQ2, 0)}, 3 Md€ : {pct(P_ACQ3, 0)}), "
     f"moins que Clean Earth lui-même ({fr(-N(f['ce_nfd']) / 1000, 1)} Md€). Dans le scénario défavorable, "
     "rien. Recommandation proposée : pas de nouvelle grande opération avant l'encaissement du programme de cessions ; des tuck-ins "
     "au bas de la fourchette en 2027 ; une cible de 1 à 2 Md€ seulement une fois les cessions encaissées.",
