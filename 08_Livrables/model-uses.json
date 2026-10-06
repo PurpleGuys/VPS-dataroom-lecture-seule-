@@ -99,9 +99,6 @@
   "F107",
   "F108",
   "F109",
-  "F110",
-  "F111",
-  "F113",
   "F129",
   "F130",
   "F131",
@@ -1274,24 +1271,6 @@
    "id": "F97",
    "prefix": "EBITDA Amériques",
    "period": "S1 2026",
-   "unit": ""
-  },
-  {
-   "id": "F110",
-   "prefix": "Séché : chiffre d'affaires contributif",
-   "period": "FY2025",
-   "unit": ""
-  },
-  {
-   "id": "F111",
-   "prefix": "Séché : EBITDA",
-   "period": "FY2025",
-   "unit": ""
-  },
-  {
-   "id": "F113",
-   "prefix": "Séché : marge d'EBITDA",
-   "period": "FY2025",
    "unit": ""
   },
   {

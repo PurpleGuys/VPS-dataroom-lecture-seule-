@@ -327,15 +327,6 @@ HYB_SHARE = mv("Levier", "Part des hybrides dans l'écart")
 SEG_EB27 = mv("Segments", "EBITDA 2027 « au rythme", "E"); CE_EBREC = mv("Booster", "EBITDA 2025 recalculé"); CE_EBGAP = mv("Booster", "Écart entre l'EBITDA de Veolia")
 M_REC = mv("Booster", "Multiple sur l'EBITDA 2025 reconstitué"); CE_MREC = mv("Booster", "Marge d'EBITDA 2025 recalculée")
 CLH_ENVPCT = mv("ESG", "Clean Harbors : passifs environnementaux en %"); EN_ENV = mv("ESG", "Enviri (groupe entier)"); CE_ANALOG = mv("ESG", "Ordre de grandeur par analogie")
-SECHE = {}
-for key, pre, per in [("rev", "Séché : chiffre d'affaires contributif", "FY2025"), ("eb", "Séché : EBITDA", "FY2025"),
-                      ("m", "Séché : marge d'EBITDA", "FY2025"), ("lev", "Séché : levier financier", "31/12/2025"),
-                      ("lev24", "Séché : levier financier", "31/12/2024"), ("intl", "Séché : part de l'international", "FY2025"),
-                      ("levh1", "Séché : levier financier", "30/06/2026"), ("acq", "Séché : effet des acquisitions", "S1 2026")]:
-    try:
-        SECHE[key] = fig(pre, per)
-    except SystemExit:
-        SECHE[key] = None
 
 ROLES = []
 ROLES.append(role(
@@ -562,14 +553,6 @@ ROLES.append(role(
 ))
 
 seche_rows, seche_text = [], ""
-if SECHE.get("rev"):
-    s = SECHE
-    seche_rows = [row_fig("Séché : chiffre d'affaires contributif", s["rev"]), row_fig("Séché : EBITDA", s["eb"]),
-                  row_fig("Séché : marge d'EBITDA", s["m"]), row_fig("Séché : levier (méthode bancaire)", s["lev"])]
-    if s.get("lev24"):
-        seche_rows.append(row_fig("Séché : levier (méthode bancaire)", s["lev24"]))
-    seche_text = (f"Séché, pair coté européen, fait {P(s['rev'])} M€ de chiffre d'affaires pour {P(s['eb'])} M€ "
-                  f"d'EBITDA ({P(s['m'])} %), contre {P(f['pfm'])} % pour le pro forma déchets dangereux de Veolia. ")
 ROLES.append(role(
     4, "L'écart et les comparables", "Où se situe le booster face à 2027, et qui est réellement comparable.",
     f"En volume, l'objectif est passé de {P(f['hwt0'])} Mt (« déchets dangereux et polluants ») à {P(f['hwt'])} Mt : "
@@ -614,11 +597,11 @@ ROLES.append(role(
         f"Clean Earth vu du vendeur : {P(f['en_rev'])} M$ de chiffre d'affaires et {P(f['en_oi'])} M$ de résultat opérationnel en 2025, "
         f"soit {fr(CE_EBREC, 0)} M$ d'EBITDA une fois les {fr((N(f['en_dep']) + N(f['en_am'])) / 1000, 1)} M$ de D&A rajoutés. Veolia paie 9,8x "
         f"un EBITDA 2026E de {P(f['ceeb'])} M$, {pct(CE_EBGAP, 0)} plus haut : sur l'EBITDA du vendeur, le prix ressort à {fr(M_REC, 1)}x.",
-        "Comparabilité : même mix (incinération, traitement physico-chimique, centres de stockage spécialisés), même taille, même "
-        "géographie, et même définition d'EBITDA et de levier. Séché calcule son levier sur la dette moyenne selon sa documentation "
-        "bancaire ; Veolia sur la dette de clôture.",
-        "Candidats : Séché (Europe, dans la dataroom), Clean Harbors (États-Unis, concurrent direct de Clean Earth), Enviri (le vendeur : "
-        "ses comptes donnent l'historique de la cible). Republic Services n'est comparable que par sa filiale US Ecology.",
+        "Comparabilité : même mix (incinération, traitement physico-chimique, centres de stockage spécialisés), même géographie "
+        "que le booster américain, et même définition d'EBITDA et de levier — Clean Harbors publie un EBITDA « ajusté » selon sa propre "
+        "définition, Veolia un EBITDA IFRS 16 inclus.",
+        "Candidats : Clean Harbors (États-Unis, concurrent direct de Clean Earth, dans la dataroom), Enviri (le vendeur : ses comptes "
+        "donnent l'historique de la cible). Republic Services n'est comparable que par sa filiale US Ecology.",
     ],
     [
         "Les comptes de Clean Harbors et d'Enviri ne se téléchargent pas depuis le serveur (refus 403) : à verser à la main.",
@@ -628,11 +611,10 @@ ROLES.append(role(
     [
         ("Le booster est-il en retard ?",
          "En volume, sur l'objectif initial, oui ; sur l'objectif révisé, non. En valeur, il n'est dans les clous que grâce à Clean Earth."),
-        ("Pourquoi Séché est-il comparable ?",
-         "Même métier (traitement des déchets dangereux), coté, publie ses comptes en IFRS. Mais il est environ "
-         + (fr(N(f['pfrev']) * 1000 / N(SECHE['rev']), 0) if SECHE.get('rev') else "quatre")
-         + " fois plus petit que le métier déchets dangereux de Veolia avec Clean Earth, très exposé à la France, et sa définition "
-         "du levier n'est pas celle de Veolia."),
+        ("Pourquoi Clean Harbors est-il le bon comparable ?",
+         f"Même métier aux États-Unis, là où Clean Earth opère : {P(f['clh_rev'])} M$ de chiffre d'affaires, marge {P(f['clh_m'])} %, "
+         "comptes 10-K audités. Mais son EBITDA est « ajusté » selon sa définition, et il porte ses propres passifs environnementaux : "
+         "comparer les marges demande la même base."),
         ("L'objectif de 9 Mt est-il une révision à la baisse ?",
          "Le chiffre baisse et le libellé perd « et polluants ». Le DEU ne l'explique pas : c'est une question à poser, pas à trancher."),
     ],
@@ -720,8 +702,8 @@ ROLES.append(role(
         "Les critères de cible : actifs de traitement (pas de collecte seule), géographie des boosters (États-Unis, Asie), PFAS et nouveaux "
         "polluants, taille compatible avec la grille, et pas de doublon de concurrence en Europe, où Veolia est déjà numéro un "
         "(présentation Clean Earth p.9).",
-        "Le marché bouge : Séché a acheté Hidronor (numéro un des déchets dangereux au Chili) et La Filippa en 2026, et a notifié "
-        "le rachat de Groupe Flamme en France. Ces actifs sortent de l'univers.",
+        "L'univers reste à construire : aucun document de la dataroom ne nomme une cible disponible ; les candidats viendront de la "
+        "presse et des rapports de pairs, chacun avec sa valeur publiée ou « non communiqué ».",
     ],
     [
         "L'univers de cibles reste à construire (onglet Cibles §C) : nom, pays, activité, valeur d'entreprise sourcée, multiple.",

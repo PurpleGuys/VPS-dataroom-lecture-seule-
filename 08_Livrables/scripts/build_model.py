@@ -1052,24 +1052,14 @@ put(ws, f"A{r}", "D", bold=True); put(ws, f"B{r}", "Comparables — cadre à rem
 header(ws, r, ["", "Société", "Pays", "Part DD du CA", "CA (M)", "EBITDA (M)", "Marge", "VE / EBITDA", "Fichier", "Page",
                "Pourquoi comparable (ou pas)"]); r += 1
 peers = [("Clean Harbors", "États-Unis", "TSDF, incinération ; leader US, concurrent direct de Clean Earth"),
-         ("Séché Environnement", "France", "spécialiste DD européen, coté à Paris"),
          ("Enviri (ex-Harsco)", "États-Unis", "vendeur de Clean Earth : ses comptes donnent l'historique de la cible"),
          ("Republic Services (US Ecology)", "États-Unis", "généraliste ; DD via US Ecology — mix différent"),
          ("Remondis / SARP", "Allemagne", "non coté : comparable métier, pas de multiple de marché")]
-sec_rev, i_srev = E("Séché : chiffre d'affaires contributif", "FY2025")
-sec_eb, i_seb = E("Séché : EBITDA", "FY2025")
-sec_m, i_sm = E("Séché : marge d'EBITDA", "FY2025")
 for name, ctry, why in peers:
     put(ws, f"B{r}", name); put(ws, f"C{r}", ctry)
     for col in "DEFGHIJ":
         put(ws, f"{col}{r}", None, fill=YELLOW)
-    if name.startswith("Séché"):
-        put(ws, f"E{r}", f"={sec_rev}", color=GREEN, nf=NF_M1)
-        put(ws, f"F{r}", f"={sec_eb}", color=GREEN, nf=NF_M1)
-        put(ws, f"I{r}", "01_Financial/26-02_cp-bn-25_en.pdf", color=GREY)
-        put(ws, f"J{r}", f"{i_srev} p.1, {i_seb} p.3", color=GREY)
-        why += " — 2025, M EUR ; levier 2,3x calculé sur la dette moyenne selon la doc bancaire, pas comme Veolia"
-    elif name.startswith("Clean Harbors"):
+    if name.startswith("Clean Harbors"):
         clh_rev, i_crev = E("Clean Harbors : chiffre d'affaires direct total", "FY2025")
         clh_eb, i_ceb = E("Clean Harbors : EBITDA ajusté total", "FY2025")
         put(ws, f"D{r}", "100 % (déchets dangereux et services associés)", color=GREY)
@@ -1093,8 +1083,6 @@ for name, ctry, why in peers:
     ws[f"G{r}"].fill = PatternFill()
     put(ws, f"K{r}", why, color=GREY)
     r += 1
-put(ws, f"B{r}", "Pour mémoire : marge d'EBITDA de Séché publiée")
-put(ws, f"G{r}", f"={sec_m}/100", color=BLACK, nf=NF_P); put(ws, f"K{r}", i_sm, color=GREY); r += 1
 clh_m, i_clhm = E("Clean Harbors : marge d'EBITDA ajusté", "FY2025")
 put(ws, f"B{r}", "Pour mémoire : marge d'EBITDA ajusté de Clean Harbors publiée")
 put(ws, f"G{r}", f"={clh_m}/100", color=BLACK, nf=NF_P); put(ws, f"K{r}", i_clhm, color=GREY); B["clhMargin"] = f"{q('Booster')}!$G${r}"; r += 2
@@ -1377,7 +1365,7 @@ roles = [
     ("1. Périmètre et sources", "Entrées, Cessions §A-B", "L'enveloppe annoncée est nette des cessions ; Clean Earth en sort."),
     ("2. La contrainte", "Levier, Pont de dette", "Définition de Veolia, ratios publiés reproduits, trois lectures du départ au 30/06/2026."),
     ("3. Capacité et sensibilité", "Trajectoire, Sensibilité, Cessions §C", "FCF, calendrier des cessions, ce qui bouge le plus la marge."),
-    ("4. L'écart et les comparables", "Segments, Booster", "D'où viennent les 8 Md€ ; volumes face à 9 et 10 Mt ; Clean Harbors et Séché en comparables ; Clean Earth vu du vendeur."),
+    ("4. L'écart et les comparables", "Segments, Booster", "D'où viennent les 8 Md€ ; volumes face à 9 et 10 Mt ; Clean Harbors en comparable ; Clean Earth vu du vendeur."),
     ("5. Le coût ESG", "ESG", "Provisions de fermeture ; ce que l'affectation du prix de Clean Earth ne montre pas encore."),
     ("6. Cibles, puis synthèse", "Cibles", "Taille maximale selon le multiple ; univers de cibles à remplir."),
 ]

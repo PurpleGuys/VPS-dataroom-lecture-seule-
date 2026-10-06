@@ -1,6 +1,6 @@
 # Annexe — sources et chiffres cités
 
-Généré le 2026-10-06 depuis la dataroom : 276 chiffres (0 relus par un tiers), 26 opérations (0 relues), 155 documents citables.
+Généré le 2026-10-06 depuis la dataroom : 259 chiffres (0 relus par un tiers), 26 opérations (0 relues), 151 documents citables.
 Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date de consultation. « non relu » signifie qu'un seul membre a lu la page.
 
 ## 1. Chiffres, par rôle
@@ -158,7 +158,7 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F266 | Moody's : cash-flow opérationnel (CFO) | 4,681 M EUR | FY2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 12, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
 | F267 | Moody's : free cash flow (après dividendes et capex) | -272 M EUR | FY2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 12, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
 
-### Rôle 4 — L'écart et les comparables (99 chiffres, 0 relus)
+### Rôle 4 — L'écart et les comparables (83 chiffres, 0 relus)
 
 | ID | Chiffre | Valeur | Période | Citation | Relecture |
 |---|---|---|---|---|---|
@@ -184,22 +184,6 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F95 | EBITDA France et Déchets dangereux Europe | 676 M EUR | S1 2026 | veolia-2026-first-half-results.pdf, p. 7, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/veolia-2026-first-half-results.pdf (consulté le 2026-09-22) | non relu |
 | F96 | EBITDA Amériques, Asie-Pacifique, Afrique Moyen-Orient | 894 M EUR | S1 2025 | veolia-2026-first-half-results.pdf, p. 7, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/veolia-2026-first-half-results.pdf (consulté le 2026-09-22) | non relu |
 | F97 | EBITDA Amériques, Asie-Pacifique, Afrique Moyen-Orient | 991 M EUR | S1 2026 | veolia-2026-first-half-results.pdf, p. 7, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/veolia-2026-first-half-results.pdf (consulté le 2026-09-22) | non relu |
-| F110 | Séché : chiffre d'affaires contributif | 1,152 M EUR | FY2025 | 26-02_cp-bn-25_en.pdf, p. 1, https://www.groupe-seche.com/uploads/2026/03/26-02_cp-bn-25_en.pdf (consulté le 2026-10-01) | non relu |
-| F111 | Séché : EBITDA | 225.4 M EUR | FY2025 | 26-02_cp-bn-25_en.pdf, p. 3, https://www.groupe-seche.com/uploads/2026/03/26-02_cp-bn-25_en.pdf (consulté le 2026-10-01) | non relu |
-| F112 | Séché : EBITDA | 242.3 M EUR | FY2024 | 26-02_cp-bn-25_en.pdf, p. 3, https://www.groupe-seche.com/uploads/2026/03/26-02_cp-bn-25_en.pdf (consulté le 2026-10-01) | non relu |
-| F113 | Séché : marge d'EBITDA | 19.6 % | FY2025 | 26-02_cp-bn-25_en.pdf, p. 3, https://www.groupe-seche.com/uploads/2026/03/26-02_cp-bn-25_en.pdf (consulté le 2026-10-01) | non relu |
-| F114 | Séché : dette financière nette (IFRS) | 548.8 M EUR | 31/12/2025 | 26-02_cp-bn-25_en.pdf, p. 3, https://www.groupe-seche.com/uploads/2026/03/26-02_cp-bn-25_en.pdf (consulté le 2026-10-01) | non relu |
-| F115 | Séché : dette financière nette (IFRS) | 849.7 M EUR | 31/12/2024 | 26-02_cp-bn-25_en.pdf, p. 3, https://www.groupe-seche.com/uploads/2026/03/26-02_cp-bn-25_en.pdf (consulté le 2026-10-01) | non relu |
-| F116 | Séché : dette nette selon la documentation bancaire (hors prêts sans recours, affacturage) | 509.2 M EUR | 31/12/2025 | 26-02_cp-bn-25_en.pdf, p. 3, https://www.groupe-seche.com/uploads/2026/03/26-02_cp-bn-25_en.pdf (consulté le 2026-10-01) | non relu |
-| F117 | Séché : levier financier (méthode bancaire) | 2.3 x | 31/12/2025 | 26-02_cp-bn-25_en.pdf, p. 3, https://www.groupe-seche.com/uploads/2026/03/26-02_cp-bn-25_en.pdf (consulté le 2026-10-01) | non relu |
-| F118 | Séché : levier financier (méthode bancaire) | 3.2 x | 31/12/2024 | 26-02_cp-bn-25_en.pdf, p. 3, https://www.groupe-seche.com/uploads/2026/03/26-02_cp-bn-25_en.pdf (consulté le 2026-10-01) | non relu |
-| F119 | Séché : objectif de levier, en dessous de | 3 x | 30/06/2027 | 26-02_cp-bn-25_en.pdf, p. 1, https://www.groupe-seche.com/uploads/2026/03/26-02_cp-bn-25_en.pdf (consulté le 2026-10-01) | non relu |
-| F120 | Séché : part de l'international dans le chiffre d'affaires | 36 % | FY2025 | 26-02_cp-bn-25_en.pdf, p. 5, https://www.groupe-seche.com/uploads/2026/03/26-02_cp-bn-25_en.pdf (consulté le 2026-10-01) | non relu |
-| F121 | Séché : conversion de l'EBITDA en cash | 51 % | FY2025 | 26-02_cp-bn-25_en.pdf, p. 8, https://www.groupe-seche.com/uploads/2026/03/26-02_cp-bn-25_en.pdf (consulté le 2026-10-01) | non relu |
-| F122 | Séché : chiffre d'affaires contributif | 607,8 M EUR | S1 2026 | 26-06_cp-bn-s1-26-eng.pdf, p. 3, https://www.groupe-seche.com/uploads/2026/09/26-06_cp-bn-s1-26-eng.pdf (consulté le 2026-10-01) | non relu |
-| F123 | Séché : EBITDA | 128,3 M EUR | S1 2026 | 26-06_cp-bn-s1-26-eng.pdf, p. 3, https://www.groupe-seche.com/uploads/2026/09/26-06_cp-bn-s1-26-eng.pdf (consulté le 2026-10-01) | non relu |
-| F124 | Séché : dette financière nette (IFRS) | 757,4 M EUR | 30/06/2026 | 26-06_cp-bn-s1-26-eng.pdf, p. 3, https://www.groupe-seche.com/uploads/2026/09/26-06_cp-bn-s1-26-eng.pdf (consulté le 2026-10-01) | non relu |
-| F125 | Séché : levier financier (méthode bancaire, dette nette moyenne) | 2,9 x | 30/06/2026 | 26-06_cp-bn-s1-26-eng.pdf, p. 3, https://www.groupe-seche.com/uploads/2026/09/26-06_cp-bn-s1-26-eng.pdf (consulté le 2026-10-01) | non relu |
 | F160 | Moody's : chiffre d'affaires du segment Déchets dangereux | 4.2 Md EUR | FY2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 5, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
 | F161 | Moody's : part des déchets dangereux dans le chiffre d'affaires | 9.5 % | FY2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 5, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
 | F162 | Moody's : chiffre d'affaires déchets dangereux pro forma avec Clean Earth | 5.1 Md EUR | 2025 | credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 5, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf (consulté le 2026-10-02) | non relu |
@@ -290,7 +274,7 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F238 | Clean Harbors : passifs de dépollution (remedial) | 95,369 k USD | 31/12/2025 | clean-harbors-10-k-2025.pdf, p. 43, https://www.sec.gov/Archives/edgar/data/822818/000082281826000009/clh-20251231.htm (consulté le 2026-10-02) | non relu |
 | F239 | Clean Harbors : passifs environnementaux totaux | 230,697 k USD | 31/12/2025 | clean-harbors-10-k-2025.pdf, p. 43, https://www.sec.gov/Archives/edgar/data/822818/000082281826000009/clh-20251231.htm (consulté le 2026-10-02) | non relu |
 
-### Rôle 6 — Cibles, puis synthèse (16 chiffres, 0 relus)
+### Rôle 6 — Cibles, puis synthèse (15 chiffres, 0 relus)
 
 | ID | Chiffre | Valeur | Période | Citation | Relecture |
 |---|---|---|---|---|---|
@@ -301,7 +285,6 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F50 | Clean Earth : coûts de mise en œuvre attendus des synergies | 90 M USD | année 1-4 | veolia_clean_earth_investor_presentation.pdf, p. 13, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/11/Veolia_Clean_Earth_Investor_Presentation.pdf (consulté le 2026-09-22) | non relu |
 | F76 | Clean Earth : effet sur l'endettement financier net | -2,778 M EUR | S1 2026 | veolia_finance_amendment_urd_2025.pdf, p. 25, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_Amendment_URD_2025.pdf (consulté le 2026-09-22) | non relu |
 | F77 | Enviropacific Services : effet sur l'endettement financier net | -137 M EUR | S1 2026 | veolia_finance_amendment_urd_2025.pdf, p. 25, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_Amendment_URD_2025.pdf (consulté le 2026-09-22) | non relu |
-| F126 | Séché : effet des acquisitions Hidronor et La Filippa sur la dette nette | 224 M EUR | S1 2026 | 26-06_cp-bn-s1-26-eng.pdf, p. 4, https://www.groupe-seche.com/uploads/2026/09/26-06_cp-bn-s1-26-eng.pdf (consulté le 2026-10-01) | non relu |
 | F209 | Enviri : chiffre d'affaires du segment Clean Earth | 973.9 M USD | FY2025 | enviri-10-k-2025.pdf, p. 69, https://www.sec.gov/Archives/edgar/data/45876/000004587626000010/nvri-20251231.htm (consulté le 2026-10-02) | non relu |
 | F210 | Enviri : chiffre d'affaires du segment Clean Earth | 940.3 M USD | FY2024 | enviri-10-k-2025.pdf, p. 69, https://www.sec.gov/Archives/edgar/data/45876/000004587626000010/nvri-20251231.htm (consulté le 2026-10-02) | non relu |
 | F211 | Enviri : résultat opérationnel du segment Clean Earth | 91.7 M USD | FY2025 | enviri-10-k-2025.pdf, p. 70, https://www.sec.gov/Archives/edgar/data/45876/000004587626000010/nvri-20251231.htm (consulté le 2026-10-02) | non relu |
@@ -395,10 +378,6 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | 01_Financial | Standard & Poor's Ratings Direct - Veolia Environnement SA - November 2025 | S&P Global Ratings | 2026-10-02 | https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/12/RatingsDirect_Update_VeoliaEnvironnementS.A._3485780_Nov-25-2025.pdf | Rapport d'agence publié par Veolia sur sa page « Debt and ratings » : notation, métriques ajustées (FFO / dette nette) et seuils de dégradation — la vraie limite de la capacité d'endettement (rôles 2 et 3). |
 | 01_Financial | Standard & Poor's: Ratings Direct Veolia Environnement SA - March 2025 | S&P Global Ratings | 2026-10-02 | https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/04/Finance_Standard_%26_Poors_Ratings_Direct_Veolia_Environnement_SA_Mars_2025_03-04-25.pdf | Rapport d'agence publié par Veolia sur sa page « Debt and ratings » : notation, métriques ajustées (FFO / dette nette) et seuils de dégradation — la vraie limite de la capacité d'endettement (rôles 2 et 3). |
 | 01_Financial | Strategy Day - Green Up Presentation | Veolia Environnement SA | 2026-09-22 | https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/03/EN_Master_GreenUp_Strategy%20day_V270324.pdf | Moissonné depuis l'archive de l'éditeur, publié le 2024-02-29. |
-| 01_Financial | Séché Environnement — Document d'enregistrement universel 2025 | Séché Environnement SA | 2026-10-01 | https://www.groupe-seche.com/uploads/2026/03/seche_environnement_deu_2025_fr.pdf | Pair coté spécialiste des déchets dangereux : comptes 2025, dette, levier, provisions de site. Comparable du rôle 4. |
-| 01_Financial | Séché Environnement — First-half 2026 results press release (9 September 2026) | Séché Environnement SA | 2026-10-01 | https://www.groupe-seche.com/uploads/2026/09/26-06_cp-bn-s1-26-eng.pdf | Résultats S1 2026 et acquisitions au Chili et en Italie : deals récents d'un pair, utiles aux multiples. |
-| 01_Financial | Séché Environnement — Full-Year 2025 Consolidated Results, information meeting (10 March 2026) | Séché Environnement SA | 2026-10-01 | https://www.groupe-seche.com/uploads/2026/03/26-02_bn-25-en.pdf | Présentation des résultats 2025 : mix d'activités, marges, allocation du capital. |
-| 01_Financial | Séché Environnement — Full-year 2025 results press release (9 March 2026) | Séché Environnement SA | 2026-10-01 | https://www.groupe-seche.com/uploads/2026/03/26-02_cp-bn-25_en.pdf | Chiffre d'affaires, EBITDA, dette nette et levier 2025 d'un pair coté des déchets dangereux. |
 | 01_Financial | Universal registration document 2025 - Veolia Environnement | Veolia Environnement SA | 2026-09-22 | https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf | Moissonné depuis l'archive de l'éditeur, publié le 2026-03-27. |
 | 01_Financial | URD 2022 - Veolia Environment | Veolia Environnement SA | 2026-09-22 | https://www.veolia.com/sites/g/files/dvc4206/files/document/2023/04/VE_URD_2022_EN.pdf | Moissonné depuis l'archive de l'éditeur, publié le 2023-03-22. |
 | 01_Financial | URD 2023 - Veolia Environnement | Veolia Environnement SA | 2026-09-22 | https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/04/Finance_Veolia_URD_2023.pdf | Moissonné depuis l'archive de l'éditeur, publié le 2024-03-22. |

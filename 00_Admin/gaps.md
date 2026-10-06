@@ -20,7 +20,7 @@ it matters, and what we used instead. Keep one `##` section per target so
 ## Général
 
 - **Comptes de Clean Harbors : 10-K 2025** — Rôle 4. Premier comparable américain de Clean Earth (TSDF, incinération). ir.cleanharbors.com et sec.gov renvoient 403 au serveur : à télécharger depuis un navigateur et à verser à la main. *(signalé par dataroom-bearer)*
-- **Univers de cibles disponibles en déchets dangereux (hors Clean Earth, Hidronor, Flamme)** — Rôle 6. Aucun document de la dataroom ne nomme une cible encore disponible : les candidats viennent de la presse et des rapports de pairs. À sourcer par submit_url (communiqués, presse spécialisée) puis register_target, avec la valeur publiée ou « non communiqué ». *(signalé par dataroom-bearer)*
+- **Univers de cibles disponibles en déchets dangereux (hors Clean Earth)** — Rôle 6. Aucun document de la dataroom ne nomme une cible encore disponible : les candidats viennent de la presse et des rapports de pairs. À sourcer par submit_url (communiqués, presse spécialisée) puis register_target, avec la valeur publiée ou « non communiqué ». *(signalé par dataroom-bearer)*
 
 ## Clean Earth
 

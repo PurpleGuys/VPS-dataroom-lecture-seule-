@@ -48,7 +48,7 @@ dataroom (fichier, page).
     p. 6). Chez Enviri, le segment fait 91,7 M$ de résultat opérationnel et environ 63 M$ de D&A en 2025
     (10-K, p. 70 et p. 284), soit ~155 M$. Quel pont entre les deux ?** C'est la question du prix payé.
 11. **Déchets dangereux Europe : −0,2 % en organique au S1 2026 (communiqué, p. 7). Conjoncturel (chimie
-    européenne) ou structurel ?** Séché décrit la même chose (CP 2025, p. 5).
+    européenne) ou structurel ?**
 
 ## Rôle 5 — le coût ESG
 
