@@ -7,11 +7,12 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 100 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 107 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/ambitions-veolia-spain.pdf.md|In Spain, Veolia displays strong ambitions to support ecological transformation by putting expertise and innovation at the service of territories]]
 - [[05_Commercial_Strategy/annual-resultats-2025.pdf.md|Full year 2025 results]]
+- [[05_Commercial_Strategy/arcwood-rebrand-2025-03-18.html.md|Heritage Environmental Services Rebrands to Arcwood Environmental (18 March 2025)]]
 - [[05_Commercial_Strategy/bic-us-ecology-republic-2022.html.md|US Ecology joins Republic Services (BIC Magazine, reprise du communiqué du 9 février 2022)]]
 - [[05_Commercial_Strategy/clean-harbors-hepaco-2024-03-25.html.md|Clean Harbors Completes Acquisition of HEPACO (25 March 2024)]]
 - [[05_Commercial_Strategy/cp-cession-lydec-en.pdf.md|Morocco: Veolia signs an agreement to divest its stake in Lydec]]
@@ -20,7 +21,12 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/cp-lapouyade-181125.pdf.md|Veolia deploys for the first time in France an innovative electricity flexibility solution at a waste recovery site]]
 - [[05_Commercial_Strategy/cp-post-ag-ve-2026-gb.pdf.md|Combined Shareholders’ General Meeting, April 23, 2026]]
 - [[05_Commercial_Strategy/cp-veolia-devoile-un-projet-majeur-visant-a-eliminer-progressivement-le-charbon-en-pologne-pour-soutenir-la-decarbonation-europeenne-et-renforcer-la-resilience-energetique-a-poznan_0.pdf.md|Veolia unveils a major project to phase out coal in Poland to support European decarbonization and strengthen energy resilience in Poznań]]
+- [[05_Commercial_Strategy/crystal-clean-jfl-2023-07-19.html.md|Heritage-Crystal Clean, Inc. to be Acquired by J.F. Lehman & Company for $1.2 Billion (19 July 2023)]]
+- [[05_Commercial_Strategy/crystal-clean-jfl-2023-10-17.html.md|J.F. Lehman & Company Completes Acquisition of Heritage-Crystal Clean, Inc. (17 October 2023)]]
 - [[05_Commercial_Strategy/eqt-covanta-2021-07-14.html.md|EQT Infrastructure to acquire Covanta for USD 5.3 billion (14 July 2021)]]
+- [[05_Commercial_Strategy/fortum-summa-2024-11-29.html.md|Fortum completes the divestment of its recycling and waste business (29 November 2024)]]
+- [[05_Commercial_Strategy/fortum-summa-ng-group-2024-07-18.html.md|Summa Equity through NG Group acquires Fortum Recycling and Waste (18 July 2024)]]
+- [[05_Commercial_Strategy/gfl-es-latham-2025-01-07.html.md|Latham & Watkins Advises GFL Environmental Inc. on Sale of Environmental Services Business (7 January 2025)]]
 - [[05_Commercial_Strategy/inauguration-gln-veoliaxenagas-en.pdf.md|World first: Veolia, Enagás and Barcelona City Council inaugurate the first urban cold recovery network from an LNG terminal]]
 - [[05_Commercial_Strategy/pr-2023-finance-guidance.pdf.md|Long term financial guidances 2024 - 2027]]
 - [[05_Commercial_Strategy/pr-2024-annual-results-veolia.pdf.md|2024 ANNUAL RESULTS]]
@@ -99,6 +105,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/press-release-hassyan-05132024.pdf.md|Veolia wins $320 million water technology contract for world’s most energy-efficient desalination plant, enhancing water security in UAE]]
 - [[05_Commercial_Strategy/press-release-results-q1-2024.pdf.md|KEY FIGURES AT 31 MARCH 2024]]
 - [[05_Commercial_Strategy/stakeholders-assembly-water-reuse-water-security-060526.pdf.md|Veolia’s Stakeholders Assembly calls for accelerated uptake of water reuse to strengthen water security]]
+- [[05_Commercial_Strategy/triumvirate-berkshire-2025-02-04.html.md|Triumvirate Environmental valued at $1.8 billion after investment (Reuters, 4 February 2025)]]
 - [[05_Commercial_Strategy/veolia-2023-annual-results-02292024.pdf.md|2023 ANNUAL RESULTS]]
 - [[05_Commercial_Strategy/veolia-2026-first-half-results.pdf.md|2026 first-half results]]
 - [[05_Commercial_Strategy/veolia-accelerates-local-decarbonizing-energy-development-with-4-billion-investment-by-2030.pdf.md|Veolia Accelerates Local Decarbonizing Energy Development With €4 Billion Investment by 2030]]
