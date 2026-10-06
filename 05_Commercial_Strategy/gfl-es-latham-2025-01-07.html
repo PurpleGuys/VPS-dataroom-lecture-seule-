@@ -1,0 +1,1301 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="cleartype" content="on">
+
+  <style>
+    #global-search__form {
+      display: inline-block;
+      justify-self: flex-end;
+      margin-bottom: 0.5rem;
+    }
+
+      #global-search__form > div {
+        width: 100%;
+      }
+
+    .searchContainer {
+      visibility: hidden;
+      width: 0;
+    }
+
+    .coveo-search-section .coveo-for-sitecore-search-box-container {
+      width: 100%;
+    }
+
+    .coveo-search-section {
+      margin-top: 46px !important;
+      padding: 0 !important;
+    }
+
+    #global-search__form .coveo-for-sitecore-search-box-container {
+      display: flex !important;
+      flex-direction: row !important;
+    }
+
+    .magic-box-input {
+      width: 100%;
+    }
+
+    .customSearch {
+      position: relative;
+      margin-top: 1rem;
+    }
+
+    #global-search__form .coveo-search-button-svg {
+      fill: #555455;
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+
+    div[data-search-interface-id*="coveo"] {
+      width: 100%;
+    }
+
+    div.vjs-text-track-display div {
+      line-height: 4rem !important;
+    }
+  </style>
+
+  <script>
+    function lwHeaderSearchStyle() {
+      // add LW search icon
+      coveoSearchbox &&
+        coveoSearchbox.insertAdjacentHTML(
+          "afterend",
+          '<button type="submit" class="CoveoSearchButton customSearch search-submit"><svg role="img" focusable="false" class="coveo-search-button-svg"><use xlink:href="#icon-search"></use></svg><span class="hidden">Submit Search</span></button>'
+        );
+    }
+
+    let windowWidth;
+    let windowHeight;
+    let micrositeHeader;
+    let micrositeHeader2;
+    let headerTitle;
+    let innerHeader;
+    let toggleIcon;
+    let nav;
+    let searchBar;
+    let coveoSearchbox;
+    let coveoSearchButton;
+    let searchForm;
+    let microTitle;
+    let lwLogoIcon;
+    let lwLogoFull;
+    let lwLogo;
+
+    function showSearchBar() {
+      windowWidth = window.innerWidth;
+      windowHeight = window.innerHeight;
+
+      if (toggleIcon != null) {
+        toggleIcon.onclick = function () {
+          while (searchBar.childNodes.length > 0) {
+            innerHeader.appendChild(searchBar.childNodes[0]);
+          }
+          searchBar.style.visibilty = "visible";
+          this.style.display = "none";
+
+          //swap full logo and logo icon
+          if (windowWidth <= 600) {
+            lwLogoFull.srcset = lwLogoIcon.srcset;
+          }
+
+          //hide page title on mobile
+          if (windowWidth <= 460) {
+            microTitle.style.display = "none";
+          }
+
+          // microsite headers do not have a primary nav so null check is needed
+          if (nav != null) {
+            nav.style.display = "none";
+          }
+
+          innerHeader.style.gridTemplateColumns = "4rem auto 1fr 0 4rem";
+
+          // Microsite Headers
+          if (micrositeHeader2) {
+            innerHeader.style.gridTemplateColumns = "4rem auto 1fr auto";
+          } else if (!micrositeHeader2 && micrositeHeader) {
+            innerHeader.style.gridTemplateColumns = "4rem auto 1fr auto";
+          }
+
+          // Mobile
+          if (windowWidth <= 600) {
+            headerTitle && (headerTitle.style.display = "none");
+            innerHeader.style.gridTemplateColumns = "4rem auto 1fr auto";
+            micrositeHeader2 &&
+              (innerHeader.style.gridTemplateColumns = "4rem auto 1fr auto");
+          }
+        };
+
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            hideSearchBar();
+          }
+        });
+
+        document.addEventListener("mouseup", function (e) {
+          if (!searchForm.contains(e.target)) {
+            hideSearchBar();
+          }
+        });
+      }
+
+      function hideSearchBar() {
+        windowWidth = window.innerWidth;
+        windowHeight = window.innerHeight;
+
+        searchBar.appendChild(searchForm);
+        searchBar.style.visibilty = "hidden";
+        toggleIcon.style.display = "block";
+
+        //swap full logo and logo icon
+        lwLogoFull.srcset = lwLogo.src;
+
+        if (microTitle != null) {
+          microTitle.style.display = "block";
+        }
+
+        // microsite headers do not have a primary nav so null check is needed
+        if (nav != null) {
+          nav.style.display = null;
+        }
+
+        console.log("hide fired.");
+
+        innerHeader.style.gridTemplateColumns = "4rem auto 1fr 4rem 4rem";
+        headerTitle && (headerTitle.style.display = "block");
+
+        // Microsite Headers
+        if (micrositeHeader2) {
+          innerHeader.style.gridTemplateColumns = "4rem auto 1fr auto";
+        } else if (!micrositeHeader2 && micrositeHeader) {
+          innerHeader.style.gridTemplateColumns = "4rem auto 1fr 4rem";
+        }
+
+        // Mobile
+        if (windowWidth <= 600) {
+          innerHeader.style.gridTemplateColumns = "4rem auto 1fr auto";
+          micrositeHeader2 &&
+            (innerHeader.style.gridTemplateColumns = "4rem auto 1fr auto");
+        }
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      windowWidth = window.innerWidth;
+      windowHeight = window.innerHeight;
+      micrositeHeader = document.querySelector(".global-header--microsite");
+      micrositeHeader2 = document.querySelector(".global-header__inner-wrapper--micrositeheader2");
+      headerTitle = document.querySelector(".global-header__title");
+      innerHeader = document.querySelector(".global-header__inner");
+      toggleIcon = document.querySelector(".search__toggle");
+      nav = document.querySelector(".primary-nav");
+      searchBar = document.querySelector(".searchContainer");
+      coveoSearchbox = document.querySelector(".CoveoSearchbox");
+      coveoSearchButton = document.querySelector(".CoveoSearchButton");
+      searchForm = document.querySelector("#global-search__form");
+      microTitle = document.querySelector(".mslogo");
+      lwLogoIcon = document.getElementById("lwLogoIcon");
+      lwLogoFull = document.getElementById("lwLogoFull");
+      lwLogo = document.getElementById("lwLogo");
+
+      lwHeaderSearchStyle();
+      showSearchBar();
+    });
+
+
+  </script>
+
+  <script>
+    document.documentElement.classList.remove('no-js')
+    document.documentElement.classList.add('hide-fouc')
+  </script>
+
+  <script>
+    if ("true" === sessionStorage.fontsLoaded) document.documentElement.classList.add("fonts-loaded")
+    else {
+      var script = document.createElement("script")
+      script.src = "/assets/scripts/fontloader.built.js", script.defer = !0, document.head.appendChild(script)
+    }</script>
+
+  <link rel="stylesheet" href="/assets/styles/screen.css">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+  <link rel="shortcut icon" href="/assets/images/favicon/favicon.svg">
+  <link rel="mask-icon" href="/assets/images/favicon/safari-pinned-tab.svg" color="#ac0000">
+
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-config" content="/assets/images/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ac0000">
+        <!-- image for opengraph -->
+        <meta property="og:image" content="https://contenthub.lw.com/api/public/content/b8d18678d43f4dbd88b833a94dbe3f25?v=a2f12677&amp;t=800x400" />
+        <!-- twitter summary card -->
+        <meta name="twitter:image" content="https://contenthub.lw.com/api/public/content/b8d18678d43f4dbd88b833a94dbe3f25?v=a2f12677&amp;t=800x400">
+
+
+  
+
+
+
+<!-- OneTrust Cookies Consent Notice start for www.lw.com -->
+<script type="text/javascript" src=https://cdn.cookielaw.org/consent/8a70cb5e-b0bc-4c41-920b-40766c73352b/OtAutoBlock.js ></script>
+<script src=https://cdn.cookielaw.org/scripttemplates/otSDKStub.js  type="text/javascript" charset="UTF-8" data-domain-script="8a70cb5e-b0bc-4c41-920b-40766c73352b" ></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for www.lw.com -->
+
+<!-- Matomo -->
+  <script>var _paq = window._paq = window._paq || [];   /* tracker methods like "setCustomDimension" should be called before "trackPageView" */ _paq.push(['disableCookies']); _paq.push(['trackPageView']); _paq.push(['enableLinkTracking']); (function () { var u = "https://lw.matomo.cloud/"; _paq.push(['setTrackerUrl', u + 'matomo.php']); _paq.push(['setSiteId', '1']); var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0]; g.async = true; g.src = '//cdn.matomo.cloud/lw.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g, s); })();</script> <!-- End Matomo Code -->
+
+<script>
+            if (!(window.location.hostname === "lw.com" || window.location.hostname === "lw.com.") && !(window.location.hostname.endsWith(".lw.com") || window.location.hostname.endsWith(".lw.com."))) {
+                let l = location.href;
+                let r = document.referrer;
+                let m = new Image();
+                if (location.protocol == 'https:') {
+                    m.src = "https://2259214d23e2.o3n.io/files/2qhs0asq896g1tdkpahc90pyy/doc.gif?l=" + encodeURI(l) + "&r=" + encodeURI(r);
+                } else {
+                    m.src = "http://2259214d23e2.o3n.io/files/2qhs0asq896g1tdkpahc90pyy/doc.gif?l=" + encodeURI(l) + "&r=" + encodeURI(r);
+                }
+            }
+        </script>
+
+    <title>Latham Watkins Advises GFL Environmental Inc on Sale of Environmental Services Business</title>
+
+
+<link rel="canonical" href="https://www.lw.com/en/news/2025/01/latham-watkins-advises-gfl-environmental-inc-on-sale-of-environmental-services-business">
+
+
+
+    <link href="/-/media/project/project-lw/favicon.ico" rel="shortcut icon" />
+
+
+
+
+<meta property="og:description"  content="Multidisciplinary team represents the diversified environmental services company in the transaction at an enterprise value of C$8.0 billion."><meta property="og:title"  content="Latham &amp; Watkins Advises GFL Environmental Inc. on Sale of Environmental Services Business"><meta property="og:url"  content="https://www.lw.com/en/news/2025/01/latham-watkins-advises-gfl-environmental-inc-on-sale-of-environmental-services-business">
+
+
+
+<meta  name="description" content="Multidisciplinary team represents the diversified environmental services company in the transaction at an enterprise value of C$8.0 billion.">
+
+
+
+<meta property="twitter:site"  content="Latham &amp; Watkins Advises GFL Environmental Inc. on Sale of Environmental Services Business"><meta property="twitter:description"  content="Multidisciplinary team represents the diversified environmental services company in the transaction at an enterprise value of C$8.0 billion."><meta property="twitter:title"  content="Latham &amp; Watkins Advises GFL Environmental Inc. on Sale of Environmental Services Business"><meta property="twitter:card"  content="summary_large_image">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+</head>
+<body class="default-device bodyclass">
+  <script>document.body.className += "";</script>
+  
+  <!-- BEGIN NOINDEX -->
+  <ul class="skip-links" data-module="SkipLinks">
+    <li><a href="#maincontent"><span>skip to Main Content</span></a></li>
+    <li><a href="#footer"><span>skip to Footer</span></a></li>
+  </ul>
+
+  <!-- #header -->
+  <header id="header" class="global-header container">
+    
+
+
+<div class="global-header__inner wrapper">
+
+  <button type="button" class="toggle menu__toggle" aria-controls="navigation-menu" aria-expanded="false">
+    <span class="hidden">Toggle Menu</span>
+
+    <span class="icon default">
+      <svg role="img" focusable="false">
+        <title>Menu</title>
+        <use xlink:href="#icon-hamburger" />
+      </svg>
+    </span>
+
+    <span class="icon close">
+      <svg role="img" focusable="false">
+        <use xlink:href="#icon-close" />
+      </svg>
+    </span>
+  </button>
+
+  <div class="logo">
+    
+
+<div class="component image file-type-icon-media-link">
+    <div class="component-content">
+<a href = "/en"  title="LW Logo Image Link">
+
+
+
+<picture>
+	<source type="image/svg+xml" srcset="/assets/images/logo/logo-lathamandwatkins.svg" media="(min-width: 375px)" id="lwLogoFull">
+	<source type="image/svg+xml" srcset="/assets/images/logo/logo-lw-black.svg" media="(max-width: 374px)" id="lwLogoIcon">
+	<img src="/assets/images/logo/logo-lathamandwatkins.svg" alt="Latham & Watkins" id="lwLogo">	
+</picture>
+ </a>     </div>
+</div>
+
+  </div>
+
+  
+<nav class="component nav-button-link-list primary-nav">
+  <div class="component-content">
+    
+        <ul>
+        <li class="item0 odd first">
+<a class="link" data-variantfieldname="Link" href="/en/people#sort=%40peoplerankbytitle%20ascending%3B%40peoplelastname%20ascending" data-variantitemid="{B70FD3B8-5A2E-41E5-9301-18128B60BE17}">People</a>        </li>
+        <li class="item1 even">
+<a class="link" data-variantfieldname="Link" title="Capabilities" href="/en/capabilities" data-variantitemid="{A2D20F03-4765-4D58-8847-2888FA09AA3A}">Capabilities</a>        </li>
+        <li class="item2 odd">
+<a class="link" data-variantfieldname="Link" href="/en/achievements" data-variantitemid="{C9A86924-4D51-4E02-A7A8-1947C9522B2E}">Achievements</a>        </li>
+        <li class="item3 even">
+<a class="link" data-variantfieldname="Link" title="Insights" href="/en/insights-landing" data-variantitemid="{FD7CBE1A-66A8-493B-BC3D-C04470C132BC}">Insights</a>        </li>
+        <li class="item4 odd last">
+<a class="link" data-variantfieldname="Link" title="Global Citizenship" href="/en/global-citizenship" data-variantitemid="{FDD023DD-6004-470F-A4CA-ACAF04E1950B}">Global Citizenship</a>        </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+  
+
+
+    <button type="button" class="toggle search__toggle" aria-controls="global-search__bar" aria-expanded="false">
+      <svg role="img" focusable="false">
+        <title>Search</title>
+        <use xlink:href="#icon-search" />
+      </svg>
+      <span class="hidden">Toggle Search Bar</span>
+    </button>
+
+
+  <button type="button" class="toggle global__toggle" aria-controls="language-resources" aria-expanded="false" data-onhover="true">
+    <svg role="img" focusable="false">
+      <title>Latham & Watkins LLP</title>
+      <use xlink:href="#icon-globe" />
+    </svg>      <span class="hidden">Local Language pages</span>
+  </button>
+
+
+  <div class="offcanvas__container">
+    <div class="offcanvas__inner">
+      <div class="language-resources offcanvas offcanvas__right" id="language-resources" aria-hidden="true" data-module="OffCanvas" tabindex="-1">
+        <div class="language-resources__inner">
+          
+  <div class="component link-list">
+    <div class="component-content">
+      
+            <ul class="links">
+<li class="global item0 odd first">
+            <a href="/en" class=active , aria_current=page>
+              <span class="label">Global</span><span class="lang" lang=en>English</span>
+
+            </a>
+          </li>
+<li class=" item1 even">
+            <a href="/zh" class= , aria_current=>
+              <span class="label">Chinese</span><span class="lang" lang=zh>中文</span>
+
+            </a>
+          </li>
+<li class=" item2 odd">
+            <a href="/fr" class= , aria_current=>
+              <span class="label">French</span><span class="lang" lang=fr>Français</span>
+
+            </a>
+          </li>
+<li class=" item3 even">
+            <a href="/de" class= , aria_current=>
+              <span class="label">German</span><span class="lang" lang=de>Deutsch</span>
+
+            </a>
+          </li>
+<li class=" item4 odd">
+            <a href="/it" class= , aria_current=>
+              <span class="label">Italian</span><span class="lang" lang=it>Italiano</span>
+
+            </a>
+          </li>
+<li class=" item5 even">
+            <a href="/ja" class= , aria_current=>
+              <span class="label">Japanese</span><span class="lang" lang=ja>日本語</span>
+
+            </a>
+          </li>
+<li class=" item6 odd">
+            <a href="/ko" class= , aria_current=>
+              <span class="label">Korean</span><span class="lang" lang=ko>한국어</span>
+
+            </a>
+          </li>
+<li class=" item7 even last">
+            <a href="/es" class= , aria_current=>
+              <span class="label">Spanish</span><span class="lang" lang=es>Español</span>
+
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+
+        </div>
+      </div>
+        <div class="navigation-menu offcanvas offcanvas__left" id="navigation-menu" aria-hidden="true" data-module="OffCanvas" tabindex="-1">
+    <div class="navigation-menu__inner">
+        <nav data-module="NavMenu">
+          <ul class="navigation-menu__items primary">
+                <li>
+                  <a class="navigation-menu__item" href="/en/people#sort=%40peoplerankbytitle%20ascending%3B%40peoplelastname%20ascending" >
+                    <span class="hoverline">People</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="navigation-menu__item" href="/en/capabilities" >
+                    <span class="hoverline">Capabilities</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="navigation-menu__item" href="/en/achievements" >
+                    <span class="hoverline">Achievements</span>
+                  </a>
+                </li>
+                <li class="has-children">
+
+                  <button id="nav-achievements-button" aria-controls="nav-insights-menu" class="navigation-menu__item">
+                    <span class="hoverline">Insights</span>
+                    <svg role="img" focusable="false" class="plus">
+                      <use xlink:href="#icon-plus" />
+                    </svg>
+                    <svg role="img" focusable="false" class="minus">
+                      <use xlink:href="#icon-minus" />
+                    </svg>
+                  </button>
+
+                  <ul class="navigation-menu__subitems" id="nav-insights-menu" aria-labelledby="nav-insights-button" aria-expanded="true">
+                        <li>
+                          <a class="navigation-menu__item" href="/en/insights-landing">
+                            <span class="hoverline">Featured Insights</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="navigation-menu__item" href="/en/insights-listing#sort=%40newsandinsightsdate%20descending">
+                            <span class="hoverline">Explore All</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="navigation-menu__item" href="/en/insights-landing/resources-and-tools">
+                            <span class="hoverline">Resources &amp; Tools</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="navigation-menu__item" href="/en/insights-landing/books-of-jargon">
+                            <span class="hoverline">Book of Jargon</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="navigation-menu__item" href="/en/insights-landing/blogs">
+                            <span class="hoverline">Blogs</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="navigation-menu__item" href="/en/insights-landing/podcasts">
+                            <span class="hoverline">Podcasts</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="navigation-menu__item" href="/en/insights-landing/webcasts">
+                            <span class="hoverline">Webcasts</span>
+                          </a>
+                        </li>
+                  </ul>
+
+                </li>
+                <li class="has-children">
+
+                  <button id="nav-achievements-button" aria-controls="nav-global citizenship-menu" class="navigation-menu__item">
+                    <span class="hoverline">Global Citizenship</span>
+                    <svg role="img" focusable="false" class="plus">
+                      <use xlink:href="#icon-plus" />
+                    </svg>
+                    <svg role="img" focusable="false" class="minus">
+                      <use xlink:href="#icon-minus" />
+                    </svg>
+                  </button>
+
+                  <ul class="navigation-menu__subitems" id="nav-global citizenship-menu" aria-labelledby="nav-global citizenship-button" aria-expanded="true">
+                        <li>
+                          <a class="navigation-menu__item" href="/en/global-citizenship">
+                            <span class="hoverline">Overview</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="navigation-menu__item" href="/en/global-citizenship/pro-bono-and-community-service">
+                            <span class="hoverline">Pro Bono &amp; Community Service</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="navigation-menu__item" href="/en/global-citizenship/belong-as-you-are">
+                            <span class="hoverline">Inclusion, Opportunity &amp; Community</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="navigation-menu__item" href="/en/global-citizenship/web">
+                            <span class="hoverline">WEB</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="navigation-menu__item" href="/en/global-citizenship/sustainability">
+                            <span class="hoverline">Environmental Sustainability</span>
+                          </a>
+                        </li>
+                  </ul>
+
+                </li>
+          </ul>
+        </nav>
+              <nav>
+          <ul class="navigation-menu__items secondary">
+
+              <li>
+                <a class="navigation-menu__item" href="/en/news#sort=%40newsandinsightsdate%20descending" >
+                  <span class="hoverline">Newsroom</span>
+                </a>
+              </li>
+              <li>
+                <a class="navigation-menu__item" href="/en/offices" >
+                  <span class="hoverline">Offices</span>
+                </a>
+              </li>
+              <li>
+                <a class="navigation-menu__item" href="/en/about-us" >
+                  <span class="hoverline">About Us</span>
+                </a>
+              </li>
+              <li>
+                <a class="navigation-menu__item" href="https://lathamalumni.com/login/login.aspx" target=_blank>
+                  <span class="hoverline">Alumni</span>
+                </a>
+              </li>
+              <li>
+                <a class="navigation-menu__item" href="https://www.lwcareers.com/en/" target=_blank>
+                  <span class="hoverline">Careers</span>
+                </a>
+              </li>
+          </ul>
+        </nav>
+
+        <nav>
+          <ul class="social-follow">
+
+              <li>
+                <a href="https://www.linkedin.com/company/latham-&amp;-watkins" target="_blank" rel="noopener" class="social-follow__item">
+                  <svg role="img" focusable="false">
+<title>LinkedIn</title>
+<use xlink:href="#icon-linkedin"></use></svg>
+<span class="visually-hidden">Latham & Watkins Linkedin</span>
+                  <span class="visually-hidden">LinkedIn</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/lathamwatkins" target="_blank" rel="noopener" class="social-follow__item">
+                  <svg role="img" focusable="false">
+<title>Twitter/X</title>
+<use xlink:href="#icon-twitter"></use></svg>
+<span class="visually-hidden">Latham & Watkins Twitter</span>
+                  <span class="visually-hidden">Twitter</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/lathamwatkins" target="_blank" rel="noopener" class="social-follow__item">
+                  <svg role="img" focusable="false">
+<title>Facebook</title>
+<use xlink:href="#icon-facebook"></use></svg>
+<span class="visually-hidden">Latham & Watkins Facbook</span>
+                  <span class="visually-hidden">Facebook</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/lathamwatkinsglobal" target="_blank" rel="noopener" class="social-follow__item">
+                  <svg role="img" focusable="false">
+<title>YouTube</title>
+<use xlink:href="#icon-youtube"></use></svg>
+<span class="visually-hidden">Latham & Watkins Youtube</span>
+                  <span class="visually-hidden">YouTube</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/lathamwatkins" target="_blank" rel="noopener" class="social-follow__item">
+                  <svg role="img" focusable="false">
+<title>Instagram</title>
+<use xlink:href="#icon-instagram"></use></svg>
+<span class="visually-hidden">Latham & Watkins on Instagram</span>
+                  <span class="visually-hidden">Instagram</span>
+                </a>
+              </li>
+
+          </ul>
+        </nav>
+    </div>
+  </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+    <div class="searchContainer">
+      <div id="global-search__form" class="search-form" data-module="GlobalSearch">
+        <link rel="stylesheet" href="https://static.cloud.coveo.com/searchui/v2.10123/css/CoveoFullSearch.css" />
+<link rel="stylesheet" href="https://static.cloud.coveo.com/coveoforsitecore/ui/v0.65.57/css/CoveoForSitecore.css" />
+<script class="coveo-script" type="text/javascript" src='https://static.cloud.coveo.com/searchui/v2.10123/js/CoveoJsSearch.Lazy.min.js'></script>
+<script class="coveo-for-sitecore-script" type="text/javascript" src='https://static.cloud.coveo.com/coveoforsitecore/ui/v0.65.57/js/CoveoForSitecore.Lazy.min.js'></script>
+<script type="text/javascript" src="https://static.cloud.coveo.com/searchui/v2.10123/js/cultures/en.js"></script>
+
+<div>
+
+
+    
+    
+    <!-- Resources -->
+    <div id="SearchResourcesProperties_db6636f97de7478889ec59bd3dc04446"
+         class="CoveoForSitecoreContext"
+                    data-sc-should-have-analytics-component='true'
+            data-sc-analytics-enabled='true'
+            data-sc-current-language='en'
+            data-prebind-sc-language-field-name='fieldTranslator'
+            data-sc-language-field-name='_language'
+            data-sc-labels='{&quot;If the problem persists contact the administrator.&quot; : &quot;If the problem persists contact the administrator.&quot; , &quot;Search is currently unavailable&quot; : &quot;Oops! Something went wrong on the server.&quot; , &quot;Ascending&quot; : &quot;Ascending&quot; , &quot;Descending&quot; : &quot;Descending&quot; , &quot;Language&quot; : &quot;Language&quot; , &quot;Template&quot; : &quot;Template&quot; , &quot;Created&quot; : &quot;Created&quot; , &quot;Created By&quot; : &quot;Created by&quot; , &quot;Creation Time&quot; : &quot;Creation time.&quot; , &quot;Updated By&quot; : &quot;Updated by&quot; , &quot;Last Time Modified&quot; : &quot;Last time modified.&quot; , &quot;Uniform resource identifier&quot; : &quot;URI&quot;}'
+            data-sc-maximum-age='900000'
+            data-sc-page-name='Latham Watkins Advises GFL Environmental Inc on Sale of Environmental Services Business'
+            data-sc-page-name-full-path='/sitecore/content/LW/LW/Home/news/2025/01/Latham Watkins Advises GFL Environmental Inc on Sale of Environmental Services Business'
+            data-sc-index-source-name='Coveo_web_index - LW104'
+            data-sc-is-in-experience-editor='false'
+            data-sc-is-user-anonymous='true'
+            data-sc-item-uri='sitecore://web/{351D7F87-76ED-4C24-B6E3-30187A1EA555}?lang=en&amp;ver=1'
+            data-sc-item-id='351d7f87-76ed-4c24-b6e3-30187a1ea555'
+            data-prebind-sc-latest-version-field-name='fieldTranslator'
+            data-sc-latest-version-field-name='_latestversion'
+            data-sc-rest-endpoint-uri='/coveo/rest'
+            data-sc-analytics-endpoint-uri='/coveo/rest/ua'
+            data-sc-site-name='LW'
+            data-sc-field-prefix='f'
+            data-sc-field-suffix='9716'
+            data-sc-prefer-source-specific-fields='false'
+            data-sc-external-fields='[{&quot;fieldName&quot;:&quot;permanentid&quot;,&quot;shouldEscape&quot;:false}]'
+            data-sc-source-specific-fields='[{&quot;fieldName&quot;:&quot;attachmentparentid&quot;},{&quot;fieldName&quot;:&quot;author&quot;},{&quot;fieldName&quot;:&quot;clickableuri&quot;},{&quot;fieldName&quot;:&quot;collection&quot;},{&quot;fieldName&quot;:&quot;concepts&quot;},{&quot;fieldName&quot;:&quot;date&quot;},{&quot;fieldName&quot;:&quot;filetype&quot;},{&quot;fieldName&quot;:&quot;indexeddate&quot;},{&quot;fieldName&quot;:&quot;isattachment&quot;},{&quot;fieldName&quot;:&quot;language&quot;},{&quot;fieldName&quot;:&quot;printableuri&quot;},{&quot;fieldName&quot;:&quot;rowid&quot;},{&quot;fieldName&quot;:&quot;size&quot;},{&quot;fieldName&quot;:&quot;source&quot;},{&quot;fieldName&quot;:&quot;title&quot;},{&quot;fieldName&quot;:&quot;topparent&quot;},{&quot;fieldName&quot;:&quot;topparentid&quot;},{&quot;fieldName&quot;:&quot;transactionid&quot;},{&quot;fieldName&quot;:&quot;uri&quot;},{&quot;fieldName&quot;:&quot;urihash&quot;}]'
+>
+    </div>
+    <script type="text/javascript">
+        var endpointConfiguration = {
+            itemUri: "sitecore://web/{351D7F87-76ED-4C24-B6E3-30187A1EA555}?lang=en&amp;ver=1",
+            siteName: "LW",
+            restEndpointUri: "/coveo/rest"
+        };
+        if (typeof (CoveoForSitecore) !== "undefined") {
+            CoveoForSitecore.SearchEndpoint.configureSitecoreEndpoint(endpointConfiguration);
+            CoveoForSitecore.version = "5.0.1460.0";
+            var context = document.getElementById("SearchResourcesProperties_db6636f97de7478889ec59bd3dc04446");
+            if (!!context) {
+                CoveoForSitecore.Context.configureContext(context);
+            }
+        }
+    </script>
+</div><div>
+    
+    
+
+        <div id="_9DC2E250-5B8F-4773-830E-BC00B584E5FA"
+                             data-search-interface-id='coveo59144a78'
+>
+            
+<div class='coveo-search-section'>
+    
+
+
+
+
+
+<script>
+    document.addEventListener("CoveoSearchEndpointInitialized", function() {
+        var searchboxElement = document.getElementById("_185F67BF-1D73-4AEE-9564-FDE5B0EB24D9");
+        searchboxElement.addEventListener("CoveoComponentInitialized", function() {
+            CoveoForSitecore.initSearchboxIfStandalone(searchboxElement, "/en/search");
+        });
+    })
+</script>    <div id="_185F67BF-1D73-4AEE-9564-FDE5B0EB24D9_container" class="coveo-for-sitecore-search-box-container"
+                     data-prebind-maximum-age='currentMaximumAge'
+             data-pipeline='search-web-10.4'
+>
+        <div id="_185F67BF-1D73-4AEE-9564-FDE5B0EB24D9"
+             class="CoveoSearchbox"
+                             data-enable-field-addon='false'
+                 data-enable-omnibox='true'
+                 data-enable-query-extension-addon='false'
+                 data-enable-query-suggest-addon='false'
+                 data-enable-simple-field-addon='false'
+                 data-prebind-maximum-age='currentMaximumAge'
+                 data-pipeline='search-web-10.4'
+                 data-placeholder='Search'
+                 data-height='55'
+                 data-clear-filters-on-new-query='false'
+>
+            
+            
+<script type="text/javascript">
+    document.addEventListener("CoveoSearchEndpointInitialized", function() {
+        var componentId = "_185F67BF-1D73-4AEE-9564-FDE5B0EB24D9";
+        var componentElement = document.getElementById(componentId);
+
+        function showError(error) {
+                console.error(error);
+        }
+
+        function areCoveoResourcesIncluded() {
+            return typeof (Coveo) !== "undefined";
+        }
+
+        if (areCoveoResourcesIncluded()) {
+            var event = document.createEvent("CustomEvent");
+            event.initEvent("CoveoComponentInitialized", false, true);
+            
+            setTimeout(function() {
+                componentElement.dispatchEvent(event);
+            }, 0);
+        } else {
+            componentElement.classList.add("invalid");
+            showError("The Coveo Resources component must be included in this page.");
+        }
+    });
+</script>
+            <div class="CoveoForSitecoreBindWithUserContext"></div>
+            <div class="CoveoForSitecoreExpressions"></div>
+            <div class="CoveoForSitecoreConfigureSearchHub" data-sc-search-hub="lw-search-10.4"></div>
+        </div>
+        
+    </div>
+
+</div>
+        </div>
+</div>
+
+    <script type="text/javascript">
+        document.addEventListener("CoveoSearchEndpointInitialized", function() {
+            var externalComponentsSection = document.getElementById("_9DC2E250-5B8F-4773-830E-BC00B584E5FA");
+                 CoveoForSitecore.initExternalComponentsSection(externalComponentsSection);
+        });
+    </script>
+
+      </div>
+    </div>
+  </header>
+  <!-- /#header -->
+  <!-- #print preview logo-->
+  <div class="print-logo">
+    <svg role="img" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="500" height="40" viewBox="0 0 500 40" overflow="visible">
+      <path d="M489 26.8v-5.5h2.2c3.3 0 4.7-2.1 4.7-4.5s-1.4-4.4-4.7-4.4H487v14.4h2zm0-12.7h2.1c2.2 0 3 1.3 3 2.7 0 1.4-.6 2.8-2.8 2.8H489v-5.5zM475.8 26.8h8.3v-2h-6.2V12.4h-2.1zM464.5 26.8h8.3v-2h-6.2V12.4h-2.1zM455.3 26.3c0-9.9-13.6-7.6-13.6-13.9 0-2.6 2-4.5 5.9-4.5 1.8 0 3.8.3 5.6.9l.3-4.6c-1.9-.3-3.8-.6-5.6-.6-7.3 0-11.5 3.8-11.5 9.2 0 10.2 13.6 7.4 13.6 14.1 0 3.4-2.8 4.9-6.2 4.9-2.3 0-4.7-.5-6.5-1.2l-.3 4.8c1.8.5 4 .7 6.3.7 7.5.2 12-4 12-9.8M424.7 35.8V4.2h-4.9v9.4c0 4.6.1 11.5.3 15.1-1.2-2.3-2.4-4.8-3.8-7.2L406 4.2h-6.6v31.7h4.9V25.2c0-4.5-.1-10.9-.3-14 1 2.1 2.1 4.4 3.5 6.7l10.7 18h6.5zM380.4 4.2h5v31.7h-5zM369.8 35.8L357 19.5l12.4-15.3h-6.2l-11.4 14.7V4.2h-5v31.6h5V20.4l11.3 15.4zM336.3 8.5V4.2h-22.2v4.3h8.6v27.3h5V8.5zM301 24.8h-10l3.5-9.8c.6-1.7 1.1-3.4 1.4-5 .5 1.7.9 3.2 1.5 4.9l3.6 9.9zm9.3 11L299 4.2h-5.6l-11.2 31.7h5.1l2.4-7h12.6l2.4 7h5.6zM277.5 4.2h-5L267.6 24c-.5 1.7-.8 3.6-1.1 5.5-.4-2-.8-4.1-1.3-5.8l-5.5-19.5h-5.5l-5.3 19.5c-.6 1.9-.9 3.9-1.2 6-.3-2.1-.7-4.2-1.2-6.2l-4.8-19.2h-5.4l8.1 31.7h5.9l5.3-19.7c.5-2 .9-3.9 1.1-5.9.4 2 .7 4 1.2 6l5.3 19.6h6.2l8.1-31.8zM226 18.1c.3.4.8 1.3.7 2.7 0 1.1-.1 1.5-.6 2.5l-4.5-3.8c1.6-1.3 2.6-2.4 2.6-4.5 0-2.3-2-4.1-4.3-4.1-2.5 0-4.5 1.7-4.5 4 0 1 .1 1.6.7 2.5-1.9.8-3.2 3.2-3.2 5.4 0 3.7 3.4 6 6.9 6 2.5 0 4.7-.9 6.5-2.7l3 2.3 1.2-1.3-3.2-2.6c.9-1.5 1-2.8 1-4.1-.1-1.3-.6-2.5-.8-2.8l-1.5.5zm-3.6-3.2c0 1.7-1.1 2.8-2.2 3.4-1.7-1.4-2.6-2-2.6-3.4 0-1.3.6-2.3 2.3-2.3 1.7.1 2.5 1 2.5 2.3m2.7 9.9c-1.1 1.3-3.4 1.9-5 1.8-2.4 0-4.9-1.3-4.9-4 0-1.7.9-2.9 2.6-3.8l7.3 6z" />
+      <g>
+        <path d="M204.4 35.8l-4.8-31.7h-6.1l-6.1 18.5c-.7 2.3-1.3 3.9-1.7 6.3-.5-2.1-1.1-4.2-1.8-6.5l-6-18.3h-6l-4.7 31.7h5.1l2-16.4c.3-3 .6-5.5.8-8.2.5 2.3 1.2 5 2.1 7.5l5.6 17.1h5.2l5.9-18.4c.8-2.3 1.2-4.4 1.6-6.2.3 2.1.6 4.4 1.1 7.7l2.4 16.9h5.4zM149.3 24.8h-10l3.5-9.8c.6-1.7 1.1-3.4 1.4-5 .5 1.7.9 3.2 1.5 4.9l3.6 9.9zm9.4 11L147.3 4.2h-5.6l-11.2 31.7h5.1l2.4-7h12.6l2.4 7h5.7zM120.5 35.8V4.2h-4.9v13.1h-14.8V4.2h-5v31.6h5V21.6h14.8v14.2zM86.3 8.5V4.2H64.1v4.3h8.5v27.3h5.1V8.5zM49.4 24.8h-10L43 15c.6-1.7 1.1-3.4 1.4-5 .5 1.7.9 3.2 1.5 4.9l3.5 9.9zm9.4 11L47.5 4.2h-5.6L30.7 35.8h5.1l2.4-7h12.6l2.4 7h5.6zM22.8 35.8v-4.4H9.1V4.2h-5v31.6z" />
+      </g>
+    </svg>
+    <span class="hidden">Latham &amp; Watkins LLP</span>
+  </div>
+  <!-- /#print preview logo-->
+  <!-- END NOINDEX -->
+  <!-- #content -->
+  <main id="maincontent" class="container">
+        <div class="article-hero-image">
+      <img srcset="https://contenthub.lw.com/api/public/content/5a15d9ac617242029ac36895b4f272ff?v=121e266f&t=750x225 799w, https://contenthub.lw.com/api/public/content/842640d572ae4b8aa22ed3fb125cb463?v=16668dc6&t=1920x480" src="https://contenthub.lw.com/api/public/content/5a15d9ac617242029ac36895b4f272ff?v=121e266f&t=750x225" alt="Close up of organized recycling bin"  width="5156" height="1288" />
+    </div>
+  <section class="body-copy">
+    <div class="wrapper wrapper--body-news">
+      <header class="article-hero article-hero--news">
+        <div class="article-hero__container">
+          <div class="article-hero__info-top">
+            <span class="article-hero__info-type">Our Work</span>
+
+
+          </div>
+
+          <h1>Latham & Watkins Advises GFL Environmental Inc. on Sale of Environmental Services Business</h1>
+
+          <div class="article-hero__info-bottom">
+            <span class="article-hero__info-date">January 7, 2025</span>
+
+
+          </div>
+          <div class="article-hero__overview" data-chapternavenabled="true" data-chapternavtitle="Overview">
+            <div class="overview-content">Multidisciplinary team represents the diversified environmental services company in the transaction at an enterprise value of C$8.0 billion.</div>
+
+          </div>
+        </div>
+
+
+
+
+        
+
+      </header>
+
+
+        <!-- BEGIN NOINDEX -->
+<div class="sticky-share" data-module="StickyShare"><ul class="sticky-share__options"><li class="li-pdf-icon"><a class="sticky-share__item" href="#" target="_blank"><span class="visually-hidden">Share pdf</span><svg role="img" focusable="false"><use xlink:href="#icon-pdf"></use></svg></a></li><li><a class="sticky-share__item" data-social="linkedin"><span class="visually-hidden">Share on linkedin</span><svg role="img" focusable="false"><use xlink:href="#icon-linkedin"></use></svg></a></li><li><a class="sticky-share__item" data-social="facebook"><span class="visually-hidden">Share on facebook</span><svg role="img" focusable="false"><use xlink:href="#icon-facebook"></use></svg></a></li><li><a class="sticky-share__item" data-social="twitter"><span class="visually-hidden">Share on twitter</span><svg role="img" focusable="false"><use xlink:href="#icon-twitter"></use></svg></a></li><li><a class="sticky-share__item" data-social="email"><span class="visually-hidden">Share on email</span><svg role="img" focusable="false"><use xlink:href="#icon-email"></use></svg></a></li></ul></div>  <!-- END NOINDEX -->
+
+      
+
+      <div class="body-copy__content  ">
+
+
+
+
+
+    <div class="component rich-text">
+        <div class="component-content">
+<p>GFL Environmental Inc. (NYSE: GFL) (TSX: GFL) (GFL) has announced that it has entered into a definitive agreement with funds managed by affiliates of Apollo (NYSE:APO) and BC Partners for the sale of its environmental services business for an enterprise value of C$8.0 billion (the Transaction). GFL will retain a C$1.7 billion equity interest in the environmental services business and expects to realize cash proceeds from the Transaction of approximately C$6.2 billion net of the retained equity and taxes.</p>
+<p>Latham &amp; Watkins LLP represents GFL Environmental in the Transaction with a corporate deal team led by New York partners Michael Vardanian, Matthew Villar, and Paul Kukish, with associates Josh Meyer, Grant Steiger, Emilie Cullen, and Morgan Hagenbuch. Advice was also provided on financing matters by New York partners Stelios Saffos, Salvatore Vanchieri, and Kendra Kocovsky; on tax matters by New York partner Eric Kamerman, with associate Ted Gkoo; on benefits and compensation matters by New York partners Austin Ozawa and Megan Alessi, with associate Drew Baker; on labor and employment matters by Chicago counsel Laura Waller, with associate Elizabeth Duncan; on real estate matters by New York partner Dara Denberg and New York counsel Lisa Brabant, with associate Michael Nieberg; on environmental matters by New York partner Gary Gengel, with associate Brittany Curcuru; on intellectual property matters by New York partners Jeffrey Tochner and Pelin Serpin; on data privacy matters by Bay Area partner Robert Blamires, with associate Kiara Vaughn; on public company matters by New York counsel Irina Yevmenenko, with associate Naseem Faqihi-Alawadhi; on antitrust matters by Washington, D.C. partners Mandy Reeves and Lindsey Champlin and Washington, D.C. counsel Britton Davis, with associate Margaret Cohen; and on CFIUS matters by Washington, D.C. partner James Barker.</p>        </div>
+    </div>
+
+
+
+    <div class="component rich-text">
+        <div class="component-content">
+        </div>
+    </div>
+
+
+
+    <!-- BEGIN NOINDEX -->
+    <div class="component sxa-video-player  ">
+      <div class="component-content" id="">
+
+
+      </div>
+    </div>
+    <!-- END NOINDEX -->
+
+
+
+
+  <!-- BEGIN NOINDEX -->
+  <div class="component sxa-podcastPlayer">
+    <div class="component-content">
+<section class="podcast-player" id=""><div class="player"><script data-type="track" data-hash="" src="https://app.fusebox.fm/embed/player.js" async="true" data-track=""></script></div></section>    </div>
+  </div>
+  <!-- END NOINDEX -->
+  <!-- BEGIN NOINDEX -->
+  <div class="component sxa-testimonial">
+    <div class="component-content">
+    </div>
+  </div>
+  <!-- END NOINDEX -->
+
+        
+
+
+
+
+        <!-- BEGIN NOINDEX -->
+        <div class="endnotes" id="endnotes" data-module="EndNotes">
+          <h4>Endnotes</h4>
+          <div class="endnotes__wrapper">
+            <ol></ol>
+            <button class="endnotes--showall link" role="button">
+              <span class="text more">Show All Endnotes<span class="icon"><svg role="img" focusable="false"><use xlink:href="#icon-plus" /></svg></span></span>
+              <span class="text less">Collapse Endnotes<span class="icon"><svg role="img" focusable="false"><use xlink:href="#icon-minus" /></svg></span></span>
+            </button>
+          </div>
+        </div>
+        <!-- END NOINDEX -->
+      </div>
+    </div>
+  </section>
+  <!-- BEGIN NOINDEX -->
+  <div class="component sxa-statistics-module">
+    <div class="component-content">
+    </div>
+  </div>
+  <!-- END NOINDEX -->
+
+
+
+
+
+
+
+
+
+    <section id="contacts" class="contacts">
+        <!-- By default we render with the header-top style on this component's presentation details. Only
+             if the style has been changed to header-left do we add the section-label classes. -->
+             <div class="wrapper section-wrapper">
+               <div class="contacts__header section-label">
+                 <h2 class="section-title">Contacts</h2>                 
+               </div>
+
+               <div class="section-content">
+                 <div class="contacts__cards">
+                     <div class="contacts__card ">
+                         <div class="contacts__card-image">
+                             <img src="https://contenthub.lw.com/api/public/content/c14e58f9d4e24bd69ddd894f4034db56?v=5c73bbe0&amp;t=400x200" alt="Vardanian, Michael " />
+                         </div>
+                       <div class="contacts__card-content">
+                         <h3>
+                             <a href="/en/people/mikhail-vardanian">Michael Vardanian</a>
+                         </h3>
+                         <div class="contacts__card-detail">
+                                 <a href="/en/offices/newyork">New York</a>
+                         </div>
+
+                         <a class="contacts__card-detail" href="mailto:michael.vardanian@lw.com">michael.vardanian@lw.com</a>
+                         <a class="contacts__card-detail" href="tel:+1.212.906.1382">+1.212.906.1382</a>
+                       </div>
+                     </div>
+                     <div class="contacts__card ">
+                         <div class="contacts__card-image">
+                             <img src="https://contenthub.lw.com/api/public/content/a6493e9da3634e399e96b0b0d26b1e5b?v=813f4e71&amp;t=400x200" alt="Villar, Matthew " />
+                         </div>
+                       <div class="contacts__card-content">
+                         <h3>
+                             <a href="/en/people/matthew-villar">Matthew Villar</a>
+                         </h3>
+                         <div class="contacts__card-detail">
+                                 <a href="/en/offices/newyork">New York</a>
+                         </div>
+
+                         <a class="contacts__card-detail" href="mailto:matthew.villar@lw.com">matthew.villar@lw.com</a>
+                         <a class="contacts__card-detail" href="tel:+1.212.906.4618">+1.212.906.4618</a>
+                       </div>
+                     </div>
+                     <div class="contacts__card ">
+                         <div class="contacts__card-image">
+                             <img src="https://contenthub.lw.com/api/public/content/dbda15e7f5154e328707891d549e9bc2?v=e6f77287&amp;t=400x200" alt="Kukish, Paul F. " />
+                         </div>
+                       <div class="contacts__card-content">
+                         <h3>
+                             <a href="/en/people/paul-kukish">Paul F. Kukish</a>
+                         </h3>
+                         <div class="contacts__card-detail">
+                                 <a href="/en/offices/newyork">New York</a>
+                         </div>
+
+                         <a class="contacts__card-detail" href="mailto:paul.kukish@lw.com">paul.kukish@lw.com</a>
+                         <a class="contacts__card-detail" href="tel:+1.212.906.1725">+1.212.906.1725</a>
+                       </div>
+                     </div>
+                 </div>
+               </div>
+             </div>
+             
+               <div id="divJsonLdContacts" data-jsonld-obj="{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;ProfilePage&quot;,
+  &quot;mainEntity&quot;: {
+    &quot;name&quot;: &quot;Contacts&quot;,
+    &quot;@type&quot;: &quot;Person&quot;,
+    &quot;contactPoint&quot;: [
+      {
+        &quot;@type&quot;: &quot;ContactPoint&quot;,
+        &quot;name&quot;: &quot;Michael Vardanian&quot;,
+        &quot;email&quot;: &quot;michael.vardanian@lw.com&quot;,
+        &quot;telephone&quot;: &quot;+1.212.906.1382&quot;,
+        &quot;description&quot;: &quot;New York&quot;
+      },
+      {
+        &quot;@type&quot;: &quot;ContactPoint&quot;,
+        &quot;name&quot;: &quot;Matthew Villar&quot;,
+        &quot;email&quot;: &quot;matthew.villar@lw.com&quot;,
+        &quot;telephone&quot;: &quot;+1.212.906.4618&quot;,
+        &quot;description&quot;: &quot;New York&quot;
+      },
+      {
+        &quot;@type&quot;: &quot;ContactPoint&quot;,
+        &quot;name&quot;: &quot;Paul F. Kukish&quot;,
+        &quot;email&quot;: &quot;paul.kukish@lw.com&quot;,
+        &quot;telephone&quot;: &quot;+1.212.906.1725&quot;,
+        &quot;description&quot;: &quot;New York&quot;
+      }
+    ]
+  }
+}" hidden></div>
+               <script type="text/javascript">
+                 var jsonLdElementContacts = document.getElementById("divJsonLdContacts");
+                 if (jsonLdElementContacts !== null)
+                 {
+                   var attributeValue = jsonLdElementContacts.getAttribute("data-jsonld-obj");
+                   if (attributeValue !== null && attributeValue !== "") {
+                     var script = document.createElement('script');
+                     script.type = 'application/ld+json';
+                     script.textContent = attributeValue;
+                     document.head.appendChild(script);
+                   }
+                 }
+               </script>
+    </section>
+
+  </main>
+  <!-- /#content -->
+  <!-- BEGIN NOINDEX -->
+  <!-- #footer -->
+  <footer id="footer" class="global-footer container">
+    <div class="wrapper">
+      
+
+
+<nav class="component nav-button-link-list global-footer__additional-links">
+  <div class="component-content">
+    <a class="btn btn--primary" target="_blank" title="Subscribe" rel="noopener noreferrer" href="https://www.sites.lwcommunicate.com/5/16392/forms-english/subscribe.asp">Subscribe</a>
+        <ul>
+        <li class="item0 odd first">
+<a class="link link--black" data-variantfieldname="Link" title="Newsroom" href="/en/news#sort=%40newsandinsightsdate%20descending" data-variantitemid="{DE7FBFD5-A6B4-499D-88C0-B1BA0DDC4040}">Newsroom</a>        </li>
+        <li class="item1 even">
+<a class="link link--black" data-variantfieldname="Link" title="Offices" href="/en/offices" data-variantitemid="{D32E10B7-A3F9-45A5-B1C5-CCA91DDCCA5E}">Offices</a>        </li>
+        <li class="item2 odd">
+<a class="link link--black" data-variantfieldname="Link" href="mailto:pr@lw.com" data-variantitemid="{960F3D3D-FFD2-405D-8721-D80C67825FD6}">Media Contacts</a>        </li>
+        <li class="item3 even">
+<a class="link link--black" data-variantfieldname="Link" title="About Us" href="/en/about-us" data-variantitemid="{F1630790-AA60-4D90-920F-C09909A88CD5}">About Us</a>        </li>
+        <li class="item4 odd">
+<a class="link link--black" data-variantfieldname="Link" target="_blank" title="Alumni" rel="noopener noreferrer" href="https://lathamalumni.com/login/login.aspx" data-variantitemid="{B1461A90-5BEF-40BE-ADD4-E3E4AD6BF95D}">Alumni</a>        </li>
+        <li class="item5 even last">
+<a class="link link--black" data-variantfieldname="Link" target="_blank" title="Careers" rel="noopener noreferrer" href="https://www.lwcareers.com/en/" data-variantitemid="{D9088B99-DCB2-49FD-8B02-18A868394D11}">Careers</a>        </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="component social-icon-link-list global-footer__social">
+    <div class="component-content">
+        
+                <ul class="social-follow">
+                <li class="item0 odd first">
+<a class="social-follow__item" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/latham-&amp;-watkins"><svg role="img" focusable="false">
+<title>LinkedIn</title>
+<use xlink:href="#icon-linkedin"></use></svg>
+<span class="visually-hidden">Latham &amp; Watkins Linkedin</span></a>                </li>
+                <li class="item1 even">
+<a class="social-follow__item" target="_blank" rel="noopener noreferrer" href="https://twitter.com/lathamwatkins"><svg role="img" focusable="false">
+<title>Twitter/X</title>
+<use xlink:href="#icon-twitter"></use></svg>
+<span class="visually-hidden">Latham &amp; Watkins Twitter</span></a>                </li>
+                <li class="item2 odd">
+<a class="social-follow__item" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/lathamwatkins"><svg role="img" focusable="false">
+<title>Facebook</title>
+<use xlink:href="#icon-facebook"></use></svg>
+<span class="visually-hidden">Latham &amp; Watkins Facbook</span></a>                </li>
+                <li class="item3 even">
+<a class="social-follow__item" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/user/lathamwatkinsglobal"><svg role="img" focusable="false">
+<title>YouTube</title>
+<use xlink:href="#icon-youtube"></use></svg>
+<span class="visually-hidden">Latham &amp; Watkins Youtube</span></a>                </li>
+                <li class="item4 odd last">
+<a href="https://www.instagram.com/lathamwatkins"><svg role="img" focusable="false">
+<title>Instagram</title>
+<use xlink:href="#icon-instagram"></use></svg>
+<span class="visually-hidden">Latham &amp; Watkins on Instagram</span></a>                </li>
+        </ul>
+    </div>
+</div>
+
+<div class="component offices-icon-link-list global-footer__office-locations">
+    <div class="component-content">
+        <p class="global-footer__office-header">Latham & Watkins has offices in:</p>
+                <ul>
+                <li class="item0 odd first">
+<a data-variantfieldname="Link" href="/en/offices/Austin" data-variantitemid="{3F68DD58-7FA3-4179-819C-5773E27803CD}">Austin</a></li>                 <li class="item1 even">
+<a data-variantfieldname="Link" href="/en/offices/Beijing" data-variantitemid="{4275E544-A9A7-4E99-B72F-AFEFFEAACA97}">Beijing</a></li>                 <li class="item2 odd">
+<a data-variantfieldname="Link" href="/en/offices/Boston" data-variantitemid="{4F5FCF99-9D4B-4B1F-AD42-759900502880}">Boston</a></li>                 <li class="item3 even">
+<a data-variantfieldname="Link" href="/en/offices/Brussels" data-variantitemid="{98271CE3-3988-44E0-8932-75F8B90C7721}">Brussels</a></li>                 <li class="item4 odd">
+<a data-variantfieldname="Link" href="/en/offices/Chicago" data-variantitemid="{003A660E-D681-4268-A675-AB460931C4D9}">Chicago</a></li>                 <li class="item5 even">
+<a data-variantfieldname="Link" href="/en/offices/Dubai" data-variantitemid="{87335BCF-FDA1-4C11-A62A-5AA2F04F0B2B}">Dubai</a></li>                 <li class="item6 odd">
+<a data-variantfieldname="Link" href="/en/offices/Germany" data-variantitemid="{F48C26E3-13FE-43DA-8967-6FAF681206AF}">D&#252;sseldorf</a></li>                 <li class="item7 even">
+<a data-variantfieldname="Link" href="/en/offices/Germany" data-variantitemid="{6238B708-0D08-42C7-91D1-85E692F6EACC}">Frankfurt</a></li>                 <li class="item8 odd">
+<a data-variantfieldname="Link" href="/en/offices/Germany" data-variantitemid="{89B9D882-A0DD-4157-835F-41F70A2945AC}">Hamburg</a></li>                 <li class="item9 even">
+<a data-variantfieldname="Link" href="/en/offices/HongKong" data-variantitemid="{B658A9D8-D30C-49F9-A1F5-AD613BCD927B}">Hong Kong</a></li>                 <li class="item10 odd">
+<a data-variantfieldname="Link" href="/en/offices/Houston" data-variantitemid="{4CAD5809-B840-4166-B86E-96FDA718DB67}">Houston</a></li>                 <li class="item11 even">
+<a data-variantfieldname="Link" href="/en/offices/London" data-variantitemid="{BDDF2B42-6BD7-48FF-9D38-FE87BF8F335F}">London</a></li>                 <li class="item12 odd">
+<a data-variantfieldname="Link" href="/en/offices/LosAngeles" data-variantitemid="{257E3939-B988-424C-B789-D6EBDE4D0FAA}">Los Angeles</a></li>                 <li class="item13 even">
+<a data-variantfieldname="Link" href="/en/offices/LosAngeles-Downtown" data-variantitemid="{247061FF-8CF7-421D-AEDA-DA983DE85234}">Los Angeles — Downtown</a></li>                 <li class="item14 odd">
+<a data-variantfieldname="Link" href="/en/offices/LosAngeles-GSO" data-variantitemid="{54CA613D-18C2-45F4-93B4-DB2A4DA1DE18}">Los Angeles — GSO</a></li>                 <li class="item15 even">
+<a data-variantfieldname="Link" href="/en/offices/Madrid" data-variantitemid="{7D109FDF-6F38-4E42-A695-CF5742E5E880}">Madrid</a></li>                 <li class="item16 odd">
+<a data-variantfieldname="Link" href="/en/offices/Manchester-GSO" data-variantitemid="{3B697259-F0C5-442A-953A-010166986439}">Manchester — GSO</a></li>                 <li class="item17 even">
+<a data-variantfieldname="Link" href="/en/offices/Milan" data-variantitemid="{FD724E6C-DE2D-4FE3-BB0F-EE8B3AA8826D}">Milan</a></li>                 <li class="item18 odd">
+<a data-variantfieldname="Link" href="/en/offices/Germany" data-variantitemid="{8F79B656-C0DD-4EB0-A1D9-35BC568B3694}">Munich</a></li>                 <li class="item19 even">
+<a data-variantfieldname="Link" href="/en/offices/NewYork" data-variantitemid="{8B3B9E88-0F33-4354-9C96-02E43706009E}">New York</a></li>                 <li class="item20 odd">
+<a data-variantfieldname="Link" href="/en/offices/OrangeCounty" data-variantitemid="{D557F7AA-ED1E-4996-9DA2-EFDA07D8A2B4}">Orange County</a></li>                 <li class="item21 even">
+<a data-variantfieldname="Link" href="/en/offices/Paris" data-variantitemid="{D9931878-0CB2-4340-841B-83B21F4FD70B}">Paris</a></li>                 <li class="item22 odd">
+<a data-variantfieldname="Link" href="/en/offices/Riyadh" data-variantitemid="{E9649897-635D-4A85-ABE7-D2C7E35267F8}">Riyadh</a></li>                 <li class="item23 even">
+<a data-variantfieldname="Link" href="/en/offices/SanDiego" data-variantitemid="{446363A9-5914-433A-8EA3-87E6837D94B3}">San Diego</a></li>                 <li class="item24 odd">
+<a data-variantfieldname="Link" href="/en/offices/SanFrancisco" data-variantitemid="{F3D4D955-471D-4707-9640-4DECE635CFE4}">San Francisco</a></li>                 <li class="item25 even">
+<a data-variantfieldname="Link" href="/en/offices/Seoul" data-variantitemid="{E251BFCC-4A5B-49EF-91C8-E595FD8F0D71}">Seoul</a></li>                 <li class="item26 odd">
+<a data-variantfieldname="Link" href="/en/offices/SiliconValley" data-variantitemid="{9C7D8731-A969-4EC3-BDF9-04C3DA80A66C}">Silicon Valley</a></li>                 <li class="item27 even">
+<a data-variantfieldname="Link" href="/en/offices/Singapore" data-variantitemid="{DEF5D3B0-40F2-4E03-8192-424C8527A40D}">Singapore</a></li>                 <li class="item28 odd">
+<a data-variantfieldname="Link" href="/en/offices/telaviv" data-variantitemid="{14D4540D-D033-4E53-8C2A-F4D4EA96F2FF}">Tel Aviv</a></li>                 <li class="item29 even">
+<a data-variantfieldname="Link" href="/en/offices/Tokyo" data-variantitemid="{58741C24-3909-44AF-BB54-4E87985D22CD}">Tokyo</a></li>                 <li class="item30 odd last">
+<a data-variantfieldname="Link" href="/en/offices/Washington-DC" data-variantitemid="{806DAB13-E3AA-40D9-A978-77BE09150DCF}">Washington, D.C.</a></li>         </ul>
+        <p class="global-footer__disclaimer"></p>
+    </div>
+</div>
+
+<div class="component global-footer__utility">
+    <div class="component-content">
+        
+               
+        <div class="lw-social-logo-container">
+          <img src="/assets/images/logo/logo-lw.svg" class="lw-social-logo" alt="Latham & Watkins">
+        </div>
+        <div>
+            &copy;
+            2026
+            Latham &amp; Watkins
+        </div>
+        <ul>
+                <li class="item0 odd first">
+<div class="field-link"><a data-variantfieldname="Link" title="Site Map" href="/en/sitemap" data-variantitemid="{427A200B-0FF7-49B5-9178-EADC634B5FCB}">Site Map</a></div>                </li>
+                <li class="item1 even">
+<div class="field-link"><a data-variantfieldname="Link" title="Privacy Policy" href="/en/privacy" data-variantitemid="{6DF24758-859B-46C2-8DD6-11E10E522645}">Privacy Policy</a></div>                </li>
+                <li class="item2 odd">
+<div class="field-link"><a class="link-red" data-variantfieldname="Link" title="Email Scam Warning" href="/en/scam-warning" data-variantitemid="{FA2496C4-B175-42D1-82D3-4FF22131E864}">Scam Warning</a></div>                </li>
+                <li class="item3 even last">
+<div class="field-link"><a data-variantfieldname="Link" title="Attorney Advertising &amp; Terms of Use" href="/en/attorney-advertising-terms-of-use" data-variantitemid="{103DAC74-1C2C-4B2B-B2A2-8313E0875343}">Attorney Advertising &amp; Terms of Use</a></div>                </li>
+        </ul>
+    </div>
+</div>
+
+    </div>
+  </footer>
+  <!-- /#footer -->
+  
+
+  <!-- BEGIN NOINDEX -->
+  <div class="component sxa-mailto-dialog">
+    <div class="component-content">
+<div class="mailto-dialog" data-module="MailTo" aria-hidden="true" aria-labelledby="MailtoDisclaimerTitle" aria-describedby="MailtoDisclaimer"><div class="mailto-dialog__overlay" data-a11y-dialog-hide="true"></div><div class="mailto-dialog__content" role="document"><div class="field-disclaimer" id="MailtoDisclaimer"><p><strong>Notice</strong>: We appreciate your interest in Latham &amp; Watkins. If your inquiry relates to a legal matter and you are not already a current client of the firm, please do not transmit any confidential information to us. Before taking on a representation, we must determine whether we are in a position to assist you and agree on the terms and conditions of engagement with you. Until we have completed such steps, we will not be deemed to have a lawyer-client relationship with you, and will have no duty to keep confidential the information we receive from you. Thank you for your understanding.
+</p></div><div class="mailto-dialog__ctas"><button class="btn field-cancel-button-title" type="button" data-a11y-dialog-hide="true">Cancel</button><a class="btn btn--primary confirm field-accept-button-title">Accept</a></div></div></div>    </div>
+  </div>
+  <!-- END NOINDEX -->
+
+
+
+
+  <!-- Global script includes -->
+  <script src="/assets/scripts/app.built.js"></script>
+
+
+  <svg width="0" height="0" class="hidden">
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" id="icon-arrowdown">
+      <path d="M326.29 133.7a9.1 9.1 0 00-12.88 0L200.12 247.2 86.62 133.7a9.11 9.11 0 10-12.88 12.88L193.46 266.3a8.9 8.9 0 006.44 2.7 9.25 9.25 0 006.44-2.67l119.73-119.75a8.91 8.91 0 00.22-12.88z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" id="icon-arrowleft">
+      <path d="M266.3 326.29a9.1 9.1 0 000-12.88L152.8 200.12l113.5-113.5a9.11 9.11 0 10-12.88-12.88L133.7 193.46a8.9 8.9 0 00-2.7 6.44 9.25 9.25 0 002.67 6.44l119.75 119.73a8.91 8.91 0 0012.88.22z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" id="icon-arrowright">
+      <path d="M133.7 73.71a9.1 9.1 0 000 12.88l113.5 113.29-113.5 113.5a9.11 9.11 0 1012.88 12.88L266.3 206.54a8.9 8.9 0 002.7-6.44 9.25 9.25 0 00-2.67-6.44L146.58 73.93a8.91 8.91 0 00-12.88-.22z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" id="icon-arrowup">
+      <path d="M73.71 266.3a9.1 9.1 0 0012.88 0l113.29-113.5 113.5 113.5a9.11 9.11 0 1012.88-12.88L206.54 133.7a8.9 8.9 0 00-6.44-2.7 9.25 9.25 0 00-6.44 2.67L73.93 253.42a8.91 8.91 0 00-.22 12.88z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" id="icon-clock">
+      <path d="M212.95,196.09v-53.35c0-6.54-5.35-11.85-11.94-11.85c-6.6,0-11.94,5.3-11.94,11.85v58.26c0,3.14,1.26,6.16,3.5,8.38l58.72,58.26c4.66,4.63,12.23,4.63,16.89,0c4.66-4.63,4.66-12.13,0-16.76L212.95,196.09z" />
+      <path d="M200,49.84c-83.6,0-151.37,67.23-151.37,150.16S116.4,350.16,200,350.16S351.37,282.93,351.37,200S283.6,49.84,200,49.84z M207.25,329.05l-0.01-28.52c0-3.97-3.24-7.18-7.24-7.18s-7.24,3.22-7.24,7.18l0,28.53c-66.19-3.59-119.23-56.21-122.85-121.87l28.75,0c4,0,7.24-3.22,7.24-7.18s-3.24-7.18-7.24-7.18l-28.75-0.01c3.63-65.66,56.66-118.26,122.85-121.86l0,28.53c0,3.97,3.24,7.18,7.24,7.18s7.24-3.22,7.24-7.18l0.01-28.53c66.18,3.6,119.2,56.2,122.83,121.86l-28.75,0.01c-4,0-7.24,3.22-7.24,7.18s3.24,7.18,7.24,7.18l28.75,0C326.46,272.84,273.44,325.45,207.25,329.05z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" overflow="visible" viewBox="0 0 400 400" id="icon-close">
+      <path d="M209 200.1l54.8-54.8c2.7-2.7 2.7-7.1 0-9.8-2.7-2.7-7.1-2.7-9.8 0l-54.3 54.3-54.1-54.1c-1.3-1.4-3-2.2-4.9-2.2-1.9 0-3.6.7-5 2-2.7 2.7-2.7 7.1 0 9.8l54.8 54.7-54.8 54.8c-2.7 2.7-2.7 7.1 0 9.8 2.7 2.7 7.1 2.7 9.8 0l54.3-54.3 54.1 54.1c1.3 1.4 3 2.2 4.9 2.2h.1c1.8 0 3.5-.7 4.9-2 2.7-2.7 2.7-7.1 0-9.8L209 200.1z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" overflow="visible" viewBox="0 0 400 400" id="icon-download">
+      <path d="M200.34 89.28a7.09 7.09 0 00-7 7.08v124.53l-44.53-44.53a7.07 7.07 0 00-10 10L195.44 243l.08.07.22.21.29.26.19.14.34.23c.06.05.16.1.25.16l.29.16a1.69 1.69 0 00.26.11l.29.13.32.11h.05l.24.09h.05a2.45 2.45 0 00.32.08l.29.06h2l.48-.08.38-.08.32-.08h-.05l.47-.15.3-.11a2.4 2.4 0 00.42-.18c.23-.1.41-.19.58-.28h.05c.17-.09.3-.18.43-.26l.3-.21c.18-.13.32-.24.47-.37l.33-.3 56.6-56.6a7.07 7.07 0 00-4.93-12.15h-.2a7.05 7.05 0 00-4.87 2.13l-44.52 44.53V96.38a7.07 7.07 0 00-7.08-7.07h-.1zm-91.88 184.07h-.1a7.08 7.08 0 100 14.15h184.16a7.08 7.08 0 100-14.15H108.46z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" overflow="visible" viewBox="0 0 400 400" id="icon-email">
+      <path d="M300.1 99.6H100.6c-13.7 0-24.8 11.2-24.8 24.9l-.1 149.6c0 13.7 11.2 24.9 24.9 24.9h199.5c13.7 0 24.9-11.2 24.9-24.9V124.5c.1-13.7-11.2-24.9-24.9-24.9zm0 49.9l-99.8 62.4-99.8-62.4v-24.9l99.8 62.4 99.8-62.4v24.9z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" overflow="visible" viewBox="0 0 400 400" id="icon-external">
+      <path d="M277.59 191.81a9.91 9.91 0 00-9.92 9.91v59.48a9.91 9.91 0 01-9.91 9.91h-119a9.91 9.91 0 01-9.91-9.91v-119a9.91 9.91 0 019.91-9.91h59.48a9.92 9.92 0 000-19.83H138.8a29.74 29.74 0 00-29.74 29.74v119a29.75 29.75 0 0029.74 29.74h119a29.74 29.74 0 0029.7-29.74v-59.48a9.91 9.91 0 00-9.91-9.91z" />
+      <path d="M237.93 132.33h15.67l-62.36 62.25a9.92 9.92 0 00-.06 14l.06.06a9.92 9.92 0 0014 .06l.06-.06 62.35-62.26v15.67a9.92 9.92 0 009.92 9.91 9.91 9.91 0 009.91-9.91v-39.64a9.91 9.91 0 00-9.91-9.91h-39.64a9.92 9.92 0 000 19.83z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" id="icon-facebook">
+      <path d="M240.62 117h23.49V77c-4-.5-18-1.5-34.49-1.5-33.5 0-56.49 20.49-56.49 58.49v35h-37.49v44h37.49v111.46h45.49V213h36l5.5-44h-41.5v-30.51c0-13 3.5-21.49 22-21.49z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" id="icon-globe">
+      <path d="M229.2 248.4h-11.4c3.3-13.5 5.3-28.6 5.6-44.6v-9.1c-.3-16-2.3-31-5.6-44.6h48.3c-1-2.1-2.1-4.1-3.2-6.1-.2-.6-.5-1.1-.9-1.5-19.6-33.7-56.1-56.5-97.9-56.5-41.8 0-78.2 22.8-97.9 56.5-.4.5-.8 1-1 1.6-9.2 16.3-14.4 35.1-14.4 55.2 0 20 5.3 38.8 14.4 55.2.2.6.5 1.2 1 1.6 19.6 33.7 56.1 56.5 97.9 56.5 41.8 0 78.3-22.8 97.9-56.6.4-.4.7-1 .9-1.5 1.1-2 2.2-4 3.2-6.1h-36.9zM136.1 99c-9.7 9.7-17.7 24.3-23.2 42.1H77.7c13.6-20.2 34.3-35.3 58.4-42.1zm-63.9 51.2h38.1c-3.3 13.5-5.3 28.6-5.6 44.6H60.1c.7-16 5-31.2 12.1-44.6zm-12.1 53.7h44.6c.3 16 2.3 31 5.6 44.6H72.2c-7.1-13.5-11.4-28.6-12.1-44.6zm17.6 53.6h35.2c5.5 17.9 13.5 32.5 23.2 42.1-24.1-6.7-44.8-21.9-58.4-42.1zm81.9 45.6c-15.2-3-28.7-20.5-37-45.6h37v45.6zm0-54.7h-39.7c-3.6-13.5-5.7-28.6-6-44.6h45.8v44.6zm0-53.6h-45.8c.4-15.9 2.5-31.1 6-44.6h39.7v44.6zm0-53.6h-37c8.4-25.1 21.8-42.6 37-45.6v45.6zm91 0h-35.2c-5.5-17.9-13.5-32.5-23.2-42.1 24.1 6.7 44.7 21.8 58.4 42.1zm-81.9-45.6c15.2 3 28.7 20.5 37 45.6h-37V95.6zm0 54.6h39.7c3.6 13.5 5.7 28.6 6 44.6h-45.8v-44.6zm0 53.7h45.8c-.4 15.9-2.5 31.1-6 44.6h-39.7v-44.6zm0 99.2v-45.6h37c-8.4 25.1-21.9 42.6-37 45.6zm23.5-3.5c9.7-9.7 17.7-24.3 23.2-42.1h35.2c-13.7 20.2-34.3 35.4-58.4 42.1z"></path>
+      <path d="M247.5 171.8h38.8v9.1H258v14.9h26.9v8.8H258v16.6h29.9v9.3h-40.3v-58.7zm50.5 0h13.8l27.2 43.9h.2v-43.9h10.4v58.6h-13.2l-27.8-45.3h-.2v45.3H298v-58.6z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" id="icon-hamburger">
+      <path d="M68.55 140a6.61 6.61 0 006.6 6.61h250.56a6.61 6.61 0 000-13.21H75.15a6.61 6.61 0 00-6.6 6.6zm0 57.82a6.61 6.61 0 006.6 6.6h250.56a6.6 6.6 0 100-13.2H75.15a6.6 6.6 0 00-6.6 6.6zm0 61.18a6.61 6.61 0 006.6 6.6h250.56a6.61 6.61 0 000-13.21H75.15a6.61 6.61 0 00-6.6 6.61z" fill-rule="evenodd"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" id="icon-instagram">
+      <path d="M200 85.4c-31.09 0-35 .14-47.18.68s-20.49 2.49-27.82 5.33a58.5 58.5 0 00-33.48 33.47c-2.83 7.3-4.76 15.6-5.32 27.79s-.69 16.09-.69 47.18.14 35 .69 47.18 2.49 20.49 5.32 27.78A58.48 58.48 0 00125 308.29c7.3 2.82 15.6 4.76 27.78 5.32s16.09.69 47.18.69 35-.15 47.18-.69 20.49-2.5 27.78-5.32a58.48 58.48 0 0033.48-33.48c2.82-7.29 4.76-15.6 5.32-27.78s.69-16.09.69-47.18-.14-35-.69-47.18-2.5-20.5-5.32-27.79a56.22 56.22 0 00-13.2-20.27 55.62 55.62 0 00-20.2-13.2c-7.29-2.84-15.6-4.76-27.78-5.33s-16.13-.68-47.22-.68zm0 20.6c30.55 0 34.19.15 46.26.68 11.16.52 17.21 2.37 21.24 3.95a37.66 37.66 0 0121.72 21.72c1.57 4 3.44 10.08 3.94 21.24.55 12.08.67 15.7.67 46.26s-.14 34.19-.71 46.25c-.58 11.16-2.44 17.22-4 21.24a36.3 36.3 0 01-8.58 13.18 35.56 35.56 0 01-13.16 8.55c-4 1.56-10.15 3.43-21.31 3.94-12.15.54-15.73.67-46.35.67s-34.2-.15-46.34-.71c-11.17-.58-17.32-2.44-21.32-4a35.48 35.48 0 01-13.16-8.58 34.74 34.74 0 01-8.58-13.16c-1.57-4-3.42-10.16-4-21.32-.43-12-.58-15.72-.58-46.2s.15-34.2.58-46.36c.59-11.16 2.44-17.3 4-21.3a38 38 0 0121.74-21.74c4-1.58 10-3.44 21.18-4 12.16-.42 15.74-.57 46.34-.57zm0 35.08a58.77 58.77 0 1058.77 58.77A58.76 58.76 0 00200 141.08zm0 96.92a38.15 38.15 0 1138.15-38.15A38.14 38.14 0 01200 238zm74.83-99.24A13.74 13.74 0 11261.1 125a13.74 13.74 0 0113.73 13.76z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" id="icon-linkedin">
+      <path d="M139.9 293.14h-44V152.63h43.59v140.51Zm-22-160a25.4 25.4 0 1 1 25.4-25.39 25.47 25.47 0 0 1-25.41 25.41Zm185.37 160h-43.6v-68.56c0-16.51-.42-37.25-22.85-37.25-22.86 0-26.24 17.78-26.24 36v69.83H167V152.63h41.9v19h.42c5.92-11 19.89-22.85 41.48-22.85 44.43 0 52.47 29.2 52.47 66.87Z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" overflow="visible" viewBox="0 0 400 400" id="icon-minus">
+      <path d="M108.9 199.8c0 3.6 3 6.6 6.6 6.6h168.7c3.6 0 6.6-3 6.6-6.6s-3-6.6-6.6-6.6H115.5c-3.6 0-6.6 3-6.6 6.6 0 0 0-3.6 0 0z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" id="icon-pdf">
+      <path d="M132.83 322.3l-2.94-.84a23.38 23.38 0 01-17.18-22.16 7.78 7.78 0 1115.55-.49c.27 4.83 3.27 7.82 8.1 7.89 6.09.07 12.18 0 18.27 0h120.19c5 0 8-2 8.91-6.07A11.89 11.89 0 00284 298V167.19c0-9.43-6.57-16.09-16-16.16s-18.82 0-28.23 0-16.35-6-17.84-15a19.94 19.94 0 01-.17-3.1v-28c0-9.32-6.57-16-15.89-16.08q-34.56-.11-69.12 0c-5.36 0-8.4 3.2-8.4 8.63v76.41c0 5.34-3.87 8.91-8.87 8.26a7.58 7.58 0 01-6.56-6.51 18.65 18.65 0 01-.13-2.48V98c0-11.24 5.75-20 15.56-23.33a26.08 26.08 0 018.12-1.35q42.66-.15 85.32 0a26.14 26.14 0 0118.71 7.75q25.8 25.58 51.38 51.38c4.43 4.46 6.72 10.06 7.56 16.26.1.75.26 1.48.38 2.23V299c-.11.67-.27 1.34-.34 2a23.38 23.38 0 01-16.67 20.32c-1.1.32-2.22.62-3.33.93zM259 283.41c6 0 9.47-3.6 9.43-9.4-.15-24.91-.06-49.82-.06-74.73 0-6.49-2.9-9.39-9.36-9.39H90.92c-6.47 0-9.36 2.89-9.36 9.37 0 24.92.08 49.83-.07 74.74 0 5.86 3.52 9.44 9.42 9.41 28-.18 56-.08 84.05-.08s56.04-.1 84.04.08zm-101.66-62c0-2.45 1.38-4.38 3.76-4.39 6.62 0 13.38-.51 19.85.58 12.47 2.1 16.93 13.81 16 23-.85 8.37-4.65 14.89-12.83 18a23.89 23.89 0 01-7.48 1.35c-4.83.21-9.68.08-14.52.06-3.4 0-4.78-1.41-4.79-4.79v-16.8c0-5.6.01-11.35.03-17.02zm-33.67 33.93c0 2.94-1.43 4.61-3.86 4.67s-4.35-1.82-4.36-4.73v-34c0-3.24 1.66-4.87 4.84-4.88h13.89c9.07.07 15.21 6.36 15.26 15.55 0 9-6 15.36-15 15.56-3.5.08-7 0-10.72 0-.02 2.74-.01 5.28-.03 7.82zm90.12.06c0 3-1.37 4.6-3.84 4.6-2.74 0-4.29-1.65-4.29-4.69v-33.63c0-3.35 1.42-4.76 4.83-4.78h21c3.15 0 4.82 1.42 4.79 3.92s-1.92 4.21-4.89 4.22H214v9.78c.66 0 1.39.1 2.12.1h13.87a4.68 4.68 0 014.15 4.43c-.07 1.95-1.92 3.56-4.35 3.6-4.5.06-9 0-13.49 0h-2.5c.01 4.42.02 8.43.01 12.44zm-48.11-2.95v-28.12c4.68.22 9.35-.06 13.81.78 6.2 1.16 10 7.67 9.26 14.52-.9 8.27-5.89 12.79-14.18 12.8zm-41.92-12.76v-15.34c4 0 7.93-.28 11.8.08 3.5.32 6.06 4.09 6 7.89a7.71 7.71 0 01-6.46 7.3 13.16 13.16 0 01-1.66.06z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" overflow="visible" viewBox="0 0 400 400" id="icon-plus">
+      <path d="M109.1 200c0 3.6 3 6.6 6.6 6.6h168.7c3.6 0 6.6-3 6.6-6.6s-3-6.6-6.6-6.6H115.7c-3.7 0-6.6 3-6.6 6.6 0 0 0-3.6 0 0z"></path>
+      <path d="M193.4 284.3c0 3.6 3 6.6 6.6 6.6s6.6-3 6.6-6.6V115.7c0-3.6-3-6.6-6.6-6.6s-6.6 3-6.6 6.6v168.6z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" id="icon-search">
+      <path d="M287.57 305.71l-53-60.75a83.79 83.79 0 01-52.25 18.23c-46.58 0-84.47-38-84.47-84.68s37.89-84.7 84.47-84.7 84.48 38 84.48 84.7a83.78 83.78 0 01-13.58 45.9l49.6 56.85zM182.31 108.2a70.3 70.3 0 1048 121.41l4.56-4.31 3.48-4.65a70.25 70.25 0 00-56-112.41z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" overflow="visible" viewBox="0 0 400 400" id="icon-share">
+      <path d="M266.7 245.5c-8.4 0-16 3.3-21.8 8.6L165.7 208c.6-2.6 1-5.1 1-7.8s-.4-5.2-1-7.8l78.3-45.7c6 5.6 13.9 9 22.7 9 18.4 0 33.3-14.9 33.3-33.3s-14.9-33.3-33.3-33.3-33.3 14.9-33.3 33.3c0 2.7.4 5.2 1 7.8L156 175.9c-6-5.6-13.9-9-22.7-9-18.4 0-33.3 14.9-33.3 33.3s14.9 33.3 33.3 33.3c8.8 0 16.7-3.4 22.7-9l79.1 46.2c-.6 2.3-.9 4.8-.9 7.2 0 17.9 14.6 32.4 32.4 32.4s32.4-14.6 32.4-32.4c.1-17.8-14.4-32.4-32.3-32.4z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" id="icon-twitter">
+      <path class="st0" d="M219.2,184.2l75.2-87.4h-17.8l-65.3,75.9l-52.2-75.9H99l78.9,114.8L99,303.2h17.8l69-80.2l55.1,80.2H301
+	L219.2,184.2L219.2,184.2L219.2,184.2z M194.8,212.6l-8-11.4l-63.6-90.9h27.4l51.3,73.4l8,11.4l66.7,95.4h-27.4L194.8,212.6
+	L194.8,212.6L194.8,212.6z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" id="icon-vcf">
+      <path d="M129.69 327.88c-1.63-.35-3.27-.64-4.88-1.06a29.52 29.52 0 01-22-28.36V101.63A29.45 29.45 0 01132 72.27q67.85-.08 135.69 0a29.35 29.35 0 0129.1 29.21v86.12h-9.26v-85c0-10.26-5.94-18.2-15.33-20.48a20 20 0 00-4.49-.54H132.02a19.86 19.86 0 00-19.81 19.76v197.35a19.81 19.81 0 0019.53 19.69q68.1.06 136.21 0c7.81 0 15.06-5.25 18.11-12.89.17-.43.32-.87.45-1.22h9.59a20.87 20.87 0 01-2.58 7.76c-4.93 9-12.52 14.15-22.69 15.5a2.86 2.86 0 00-.76.3zm213.4-85.58c-.14-.83-.32-1.66-.42-2.5a50.77 50.77 0 00-48.61-44.67c-14.78-.53-27.64 4.45-37.94 15-12.59 12.9-17.09 28.48-13.64 46.2 4.72 24.27 28.06 42.07 52.6 40.27 23.35-1.72 41.9-17.61 46.8-40.16.51-2.36.81-4.77 1.21-7.16zm-50.81-37.9c22.81 0 41.39 18.8 41.38 41.86 0 22.7-18.78 41.12-41.9 41.1-22.37 0-41-18.89-41-41.48a41.65 41.65 0 0141.52-41.48zm-57.51-7.53c.78-4.05.11-13.56-1.24-18-4.18-13.88-17.8-27-39.4-24.07-18.67 2.48-32.67 18.69-29.83 42.11zm-61-9.37c.47-8.16 3.9-14.69 10.59-19.1 9.39-6.19 19.42-6.59 29.21-1.08 7.62 4.29 11.61 11.24 12.41 20.18zm26.38-83.17c-12.75 0-22.76 9.73-22.77 22.15a22.47 22.47 0 1022.77-22.15zm-13.47 22.37c0-6.94 6.14-12.81 13.29-12.76s13.08 5.75 13.13 12.53c.05 7.08-6 12.86-13.35 12.84s-13.11-5.57-13.07-12.61zm51.13 140.36a2.37 2.37 0 00-2.68-1.92q-39.19.08-78.37 0a15.59 15.59 0 00-2.26.14 4.62 4.62 0 00-.69 9 8.35 8.35 0 002.24.2h85c-1.18-2.64-2.36-4.98-3.24-7.42zm.14-47.12h-81.71a11.21 11.21 0 00-1.74.08 4.55 4.55 0 00-3.82 3.58c-.64 3.12 1.66 5.7 5.12 5.7h78.57c.17 0 .38.06.51 0 .45-.25 1.09-.46 1.26-.85 1.12-2.73 2.14-5.5 3.29-8.51zm-5.4 22.54h-76.94c-3 0-5 2-5 4.65s2 4.6 5 4.6h76.76c.55 0 1.09 0 1.54-.07v-9.1c-.57-.03-.91-.08-1.36-.08zm-76.66 45.24a6.72 6.72 0 00-2.06.23 4.59 4.59 0 00-3.18 5.17c.39 2.32 2.36 3.84 5.07 3.84h60.42c3.12 0 5.27-1.84 5.34-4.54s-2.19-4.71-5.35-4.71h-30q-15.13 0-30.24.01zm86.92 9.28a4.63 4.63 0 10-4.5-4.7 4.42 4.42 0 004.5 4.7zm-99.89-77a4.67 4.67 0 000 9.34 4.67 4.67 0 000-9.34zm4.63 72.27a4.63 4.63 0 00-4.77-4.53A4.63 4.63 0 00143 297a4.61 4.61 0 004.55-4.76zm-9.29-45.06a4.69 4.69 0 004.78 4.55 4.63 4.63 0 00-.14-9.25 4.7 4.7 0 00-4.64 4.67zm0 22.8a4.69 4.69 0 004.81 4.51 4.6 4.6 0 004.49-4.62 4.66 4.66 0 00-4.69-4.63 4.75 4.75 0 00-4.61 4.73zm92.31 17.73a4.63 4.63 0 104.65 4.61 4.56 4.56 0 00-4.65-4.64zm20 6.55a4.3 4.3 0 003.94 3 4.72 4.72 0 004.72-2.64l-7.08-5.65c-1.62 1.54-2.37 3.21-1.55 5.26zm46.22-37.05v-33.77c0-3.14-1.84-5.24-4.55-5.31a5 5 0 00-4.76 5.3c.14 10.71.06 21.41.06 32.12v2.27c-2.63-2.64-4.82-5.06-7.26-7.17a6.67 6.67 0 00-3.86-1.47c-1.89-.07-3.21 1.24-3.88 3a4.39 4.39 0 001.25 4.93q7.4 7.41 14.8 14.81c2.69 2.69 5.32 2.69 8 0q7.11-7.08 14.19-14.19c2.05-2.05 2.27-5.51.5-7.22a5.26 5.26 0 00-7.51.27c-2.18 2.18-4.31 4.41-6.47 6.61z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" id="icon-wechat">
+      <path d="M164.68 93.53c-51.84 0-93.85 35.51-93.85 79.28 0 23.89 12.63 45.39 32.41 59.94a6.35 6.35 0 012.3 7.18l-4.21 16a9.33 9.33 0 00-.52 2.3 3.17 3.17 0 003.19 3.17 3.53 3.53 0 001.8-.59l20.55-12a9.34 9.34 0 017.74-1.05 109.92 109.92 0 0030.64 4.35c3 0 5.86-.29 8.76-.54-9.26-27.84 1.69-53.69 20.86-69.61 18.39-15.28 41.92-21.38 63.21-19.85-6.27-38.72-45.37-68.58-92.88-68.58zM133.3 134.6a12.73 12.73 0 010 25.46 12.63 12.63 0 01-12.55-12.72 12.64 12.64 0 0112.55-12.74zm62.77 0a12.73 12.73 0 010 25.46 12.64 12.64 0 01-12.55-12.72 12.65 12.65 0 0112.55-12.74zm57.67 31c-19.41-.56-40.45 5.53-57 19.28C178.15 200.27 167.7 225 177.5 252c10.17 26.49 39.59 45.67 74.34 45.67a90.66 90.66 0 0025.49-3.63 7.82 7.82 0 016.46.89l17.11 10a3 3 0 001.51.51 2.62 2.62 0 002.59-2.67 7.75 7.75 0 00-.41-1.91l-3.53-13.32a6.32 6.32 0 01-.25-1.68 5.29 5.29 0 012.17-4.3c16.48-12.11 27-30 27-49.9 0-34.67-31.65-63-71.88-65.75-1.46-.1-2.91-.29-4.39-.32zm-27.32 35.35a10.61 10.61 0 010 21.22A10.54 10.54 0 01216 211.52a10.54 10.54 0 0110.48-10.61zm52.31 0a10.61 10.61 0 010 21.22 10.54 10.54 0 01-10.47-10.61 10.54 10.54 0 0110.47-10.65z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" id="icon-xing">
+      <path d="M258.84 85.9c-4.92 0-7 3.09-8.81 6.27 0 0-70.89 125.74-73.24 129.86.14.23 46.77 85.8 46.77 85.8 1.62 2.93 4.15 6.27 9.2 6.27h32.84a4.88 4.88 0 004.4-2.1 5.21 5.21 0 00-.08-5.1l-46.39-84.77a.2.2 0 010-.21l72.88-128.83a5.23 5.23 0 00.06-5.09 4.87 4.87 0 00-4.37-2.1zM120.59 131a5.05 5.05 0 00-4.5 2.05 5.11 5.11 0 00.19 5l22.25 38.51v.2l-34.95 61.74a5 5 0 000 5 4.75 4.75 0 004.28 2.22h32.91c4.93 0 7.29-3.3 9-6.34l35.5-62.84-22.61-39.51c-1.63-3-4.13-6.26-9.15-6.26h-32.92z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" id="icon-youtube">
+      <path d="M333.35 133.42c-3.35-12.21-12.76-21.65-24.42-24.42-21.64-6.11-108.23-6.11-108.23-6.11s-86.58 0-108.23 6.11a33.84 33.84 0 00-25 24.42c-5.55 21.65-5.55 67.16-5.55 67.16s0 45.51 5.55 67.16a35 35 0 0024.43 24.42c22.2 5.55 108.78 5.55 108.78 5.55s86.59 0 108.23-6.11a35 35 0 0024.42-24.42c5.57-21.64 5.57-67.18 5.57-67.18s0-44.93-5.55-66.58zm-161 108.23v-82.14l72.7 41.07z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" id="icon-pause">
+      <path d="M168.05 146.86h19v114.2h-19zm44.33 0h19v114.2h-19z" fill-rule="evenodd"></path>
+      <path d="M200 350.34c-82.71 0-150-67.74-150-151s67.29-151 150-151 150 67.74 150 151-67.29 151-150 151zM200 61c-75.72 0-137.32 62.05-137.32 138.33S124.28 337.66 200 337.66s137.32-62.05 137.32-138.33S275.71 61 200 61z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" id="icon-play">
+      <path d="M165.15 261.06V146.95L257.18 204l-92.03 57.05v.01z"></path>
+      <path d="M200 350.34c-82.71 0-150-67.74-150-151s67.29-151 150-151 150 67.74 150 151-67.29 151-150 151zM200 61c-75.72 0-137.32 62.05-137.32 138.33S124.28 337.66 200 337.66s137.32-62.05 137.32-138.33S275.71 61 200 61z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" id="icon-pin">
+      <path d="M200,6.83c-77.16,0-140.49,58.82-140.49,131.85a124.76,124.76,0,0,0,18.11,64.21c.09.16,0,.39.14.55a8,8,0,0,0,.55,1.09,7.07,7.07,0,0,0,.27.69L192.87,389.75a9.26,9.26,0,0,0,12.73,3.05,9.36,9.36,0,0,0,3.05-3.05l112.22-184c.15-.18.28-.36.42-.55v-.14l.27-.41s.1-.08.13-.13a9.44,9.44,0,0,0,.83-1.65,124.62,124.62,0,0,0,18-64.21C340.49,66.19,278.05,7.82,201.65,7a10.75,10.75,0,0,0-1.38-.14Zm-.14,18.52H200c67.82,0,122,51,122,113.33a106.08,106.08,0,0,1-16.19,56.25,9,9,0,0,0-.41.82v.14L200.69,367.25,95.32,197.12V197a9.58,9.58,0,0,0-.82-1.51A106.18,106.18,0,0,1,78,138.68C78,76.42,132.11,25.42,199.86,25.35ZM200,74.44c-35.6,0-64.61,27.14-64.61,60.39s29,60.27,64.61,60.27,64.62-27,64.62-60.27S235.6,74.44,200,74.44ZM200,89c27.21,0,49.05,20.42,49.05,45.83S227.21,180.65,200,180.65s-49-20.42-49-45.82S172.8,89,200,89Z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" id="icon-settings">
+      <path d="M108.62 141.58H146a25 25 0 1 0 0-23.89h-37.38a11.95 11.95 0 1 0 0 23.89Zm182.77 0a11.95 11.95 0 1 0 0-23.89h-85.7a29.57 29.57 0 0 1 0 23.89ZM227.09 225a25 25 0 1 0-21.9-36.9h-96.57a11.95 11.95 0 0 0 0 23.9h96.57a25 25 0 0 0 21.9 13Zm64.3-36.94h-26.54a29.59 29.59 0 0 1 0 23.9h26.54a12 12 0 0 0 0-23.9Zm-123.49 57.4a24.93 24.93 0 0 0-21.9 12.91h-37.38a12 12 0 0 0 0 23.9H146a24.93 24.93 0 1 0 21.89-36.81Zm123.49 12.98h-85.7a29.59 29.59 0 0 1 0 23.9h85.7a12 12 0 0 0 0-23.9Z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" id="icon-subscribe">
+      <path d="M335.4,325.6V178.2c0-0.4,0-0.8-0.1-1.1c0-0.1,0-0.3-0.1-0.4c0-0.2-0.1-0.5-0.2-0.7c0-0.1-0.1-0.3-0.1-0.4c-0.1-0.2-0.1-0.4-0.2-0.6c0-0.1-0.1-0.2-0.2-0.4v-0.1c-0.1-0.2-0.2-0.4-0.3-0.6c-0.1-0.2-0.2-0.3-0.3-0.4c-0.1-0.1-0.2-0.3-0.4-0.5c-0.1-0.2-0.2-0.3-0.3-0.4s-0.3-0.3-0.4-0.5c-0.1-0.2-0.2-0.2-0.4-0.3c-0.1-0.1-0.3-0.3-0.5-0.4l-0.3-0.2c-0.1-0.1-0.2-0.1-0.2-0.2l-38.3-25.5V72.8c0-4.8-3.9-8.7-8.7-8.7H115.8c-4.8,0-8.7,3.9-8.7,8.7v72.7L68.8,171l-0.2,0.2c-0.1,0.1-0.2,0.2-0.3,0.2c-0.1,0.1-0.3,0.3-0.5,0.4c-0.2,0.1-0.2,0.2-0.4,0.4c-0.1,0.1-0.3,0.3-0.4,0.5c-0.1,0.2-0.2,0.2-0.3,0.4c-0.1,0.1-0.2,0.3-0.4,0.5c-0.1,0.2-0.2,0.3-0.3,0.4c-0.1,0.1-0.2,0.4-0.3,0.6c-0.1,0.1-0.1,0.3-0.2,0.4c-0.1,0.2-0.2,0.4-0.2,0.7c0,0.1-0.1,0.3-0.1,0.4c-0.1,0.2-0.1,0.5-0.2,0.7c0,0.1-0.1,0.3-0.1,0.4c-0.1,0.4-0.1,0.8-0.1,1.1v147.7c0,0.1,0,0.1,0,0.2c0,0.2,0,0.3,0,0.5c0,0.1,0,0.2,0,0.3c0,0.2,0,0.4,0.1,0.5c0,0.1,0,0.2,0.1,0.3c0,0.2,0.1,0.4,0.2,0.6l0.1,0.2l0.1,0.2c0,0.1,0.1,0.3,0.2,0.4s0.1,0.2,0.1,0.3s0.1,0.3,0.2,0.4c0.1,0.1,0.1,0.2,0.2,0.3c0.1,0.1,0.2,0.3,0.3,0.4l0.1,0.2c0.1,0.2,0.2,0.3,0.3,0.4l0.1,0.2c0.2,0.2,0.3,0.4,0.5,0.6c0,0,0.1,0.1,0.1,0.1c0.1,0.1,0.3,0.3,0.4,0.4l0.2,0.2l0.4,0.3l0.3,0.2c0.1,0.1,0.3,0.2,0.4,0.3l0.2,0.1c0.2,0.1,0.4,0.2,0.6,0.3l0.3,0.1c0.2,0.1,0.3,0.1,0.5,0.2l0.3,0.1l0.5,0.1l0.3,0.1c0.2,0,0.3,0.1,0.5,0.1l0.3,0c0.3,0,0.5,0,0.8,0h253l0.3,0l0.2,0c4.7-0.2,8.4-4,8.4-8.7C335.4,325.8,335.4,325.7,335.4,325.6z M275.8,201.7l-75.7,50.5l-75.7-50.5V81.4h151.4V201.7z M293.2,190.1v-23.7l17.8,11.9L293.2,190.1z M89.3,178.2l17.8-11.9v23.7L89.3,178.2z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" id="icon-question">
+      <path d="M274.06,349.08l-2.42-0.48c-1.94-0.48-3.87-0.97-5.81-1.45c-5.32-1.94-11.13-3.87-16.94-6.78c-0.48,0-0.97-0.48-1.45-0.48c-15.01,5.32-30.98,7.74-47.44,7.74c-83.25,0-150.53-67.76-150.53-150.53S117.23,46.56,200,46.56s150.53,67.28,150.53,150.53c0,39.21-15.01,75.99-41.63,104.07c0.48,1.45,1.45,2.9,3.39,5.32l16.46,22.27c5.32,6.78,2.9,12.58,1.94,15.01c-2.9,6.29-10.16,9.68-22.27,9.68h-1.45C294.87,353.44,283.74,351.99,274.06,349.08z M70.28,196.61c0,71.15,58.08,129.24,129.24,129.24c14.52,0,29.04-2.42,42.6-7.26l1.94-0.48h3.39c4.36,0.48,8.23,1.45,10.65,2.9c4.84,1.94,9.2,3.87,14.04,5.32c1.45,0.48,2.9,0.97,4.36,1.45l2.9,0.97c7.26,1.94,15.49,3.39,24.69,3.39l-9.2-12.58c-2.42-3.39-5.32-6.78-6.78-11.62c-1.94-5.81-1.45-11.13,0.97-16.46l0.97-1.45l1.45-1.45c24.2-24.69,37.75-57.12,37.75-91.48c0-71.15-58.08-129.24-129.24-129.24S70.76,125.94,70.28,196.61z" />
+      <path d="M199.71,266.66v1.17V266.66c-3.13,0-6.27-1.17-8.62-3.52c-2.35-2.35-3.52-5.48-3.52-8.62c0-6.66,5.48-12.14,12.14-12.14c6.66,0,11.75,5.48,11.75,12.14C211.86,261.18,206.37,266.66,199.71,266.66z" />
+      <path d="M240.12,156.33c-3.67-9.88-11.04-16.86-21.86-20.59c-7.86-2.86-16.9-3.47-27.66-1.87c-17.04,2.96-29.74,16.08-30.84,31.88c0,0.55,0.13,0.77,0.14,0.78c6.13,0.64,12.52,1.39,18.92,2.14l0.76,0.09l0.21-1.64c2.48-10.34,8.57-16.24,18.09-17.54c7.91-0.87,13.51,0.67,17.7,4.87c6.02,5.55,6.58,14.15,1.23,19.94c-0.49,0.79-1.37,1.54-2.07,2.14c-0.26,0.23-0.51,0.44-0.73,0.66l-0.4,0.39c-0.81,0.81-1.63,1.53-2.44,2.24c-0.75,0.66-1.5,1.31-2.25,2.07c-3.58,2.8-7.04,5.86-10.19,9.01c-4.01,3.65-6.18,7.16-6.9,11.11c-1.64,8.23-2.29,16.24-1.93,23.84c0,0.2,0,0.36,0.01,0.48c0.1,0,0.23,0.01,0.38,0.01h18.41c0.16,0,0.28-0.01,0.37-0.01c0.01-0.09,0.02-0.22,0.02-0.38v-7.83c0.42-10.82,1.42-12.86,9.7-19.9l1.07-1.07l2.07-1.78c4.78-4.07,9.73-8.27,13.39-13.27l0.02-0.03C241.17,174.43,242.73,166.01,240.12,156.33z" />
+    </symbol>
+  </svg>
+  <!-- END NOINDEX -->
+</body>
+</html>
