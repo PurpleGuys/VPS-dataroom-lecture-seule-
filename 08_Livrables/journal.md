@@ -6,7 +6,7 @@ Généré depuis le journal des requêtes du serveur et les registres ; rien n'e
 ## 2026-10-07
 
 - **benjamin** : 1 recherche(s), 0 page(s) lue(s).
-- **compte partagé (dataroom-bearer)** : 4 document(s) versé(s).
+- **compte partagé (dataroom-bearer)** : 2 chiffre(s) ajouté(s) (F616, F617); 2 deal(s) (D38, D39); 1 cible(s) (T7); 4 document(s) versé(s); 0 recherche(s), 2 page(s) lue(s).
 - **ethan** : 1 recherche(s), 0 page(s) lue(s).
 - **kevin** : 5 recherche(s), 0 page(s) lue(s).
 - **membre5** : 5 recherche(s), 0 page(s) lue(s).

@@ -1,7 +1,7 @@
 # Fourchette de capacité d'acquisition — GreenUp 2027
 
 Périmètre « capacité financière », pour les groupes des trois autres périmètres. Généré depuis le classeur
-`modele-greenup-2027.xlsx` (contrôles bloquants : OK) le 2026-10-06.
+`modele-greenup-2027.xlsx` (contrôles bloquants : OK) le 2026-10-07.
 Chaque chiffre d'entrée vient de `00_Admin/register.csv` ; les hypothèses sont dans l'onglet Hypothèses.
 
 ## Le nombre à respecter

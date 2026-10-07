@@ -7,7 +7,7 @@ generated: true
 
 # Deals
 
-Rubrique de [[Targets/Veolia|Veolia]] — 37 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 39 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[Deals/D20 New England Disposal Technologies, Bio-Med Innovations, Ingenium, Cham.md|D20 · New England Disposal Technologies, Bio-Med Innovations, Ingenium, Chameleon Industries Group]]
@@ -41,7 +41,9 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[Deals/D37 GFL Environmental Services (services environnementaux cédés par GFL, C.md|D37 · GFL Environmental Services (services environnementaux cédés par GFL, Canada et États-Unis)]] · 2025-03-03
 - [[Deals/D14 30 % de Water Technologies and Solutions (WTS).md|D14 · 30 % de Water Technologies and Solutions (WTS)]] · 2025-05-07
 - [[Deals/D19 Zeeklite Co. LTD.md|D19 · Zeeklite Co. LTD]] · 2025-05-30
+- [[Deals/D38 Enviracore Services (plateforme de services environnementaux intervent.md|D38 · Enviracore Services (plateforme de services environnementaux : intervention d'urgence, nettoyage industriel, eaux usées, États-Unis)]] · 2025-09-30
 - [[Deals/D4 Enviropacific Services.md|D4 · Enviropacific Services]] · 2026-03-31
+- [[Deals/D39 Environmental Management, LLC (EMI déchets dangereux, transport et éli.md|D39 · Environmental Management, LLC (EMI : déchets dangereux, transport et élimination de déchets réglementés, intervention d'urgence, Oklahoma)]] · 2026-05-08
 - [[Deals/D2 Clean Earth.md|D2 · Clean Earth]] · 2026-06-01
 - [[Deals/D3 Participations du Groupe en France.md|D3 · Participations du Groupe en France]] · 2026-06-30
 - [[Deals/D5 Participations du Groupe au Belux.md|D5 · Participations du Groupe au Belux]] · 2026-06-30

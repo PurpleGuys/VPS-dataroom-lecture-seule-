@@ -1,6 +1,6 @@
 # Questions pour Veolia, classées par ce que la réponse déplacerait
 
-Généré le 06/10/2026 depuis le classeur (onglet Sensibilité, classement). **Amplitude** : écart de la marge
+Généré le 07/10/2026 depuis le classeur (onglet Sensibilité, classement). **Amplitude** : écart de la marge
 sous 3x fin 2027 entre la borne basse et la borne haute de l'hypothèse, toutes les autres à leur base (M€).
 Les numéros renvoient à `questions-veolia.md`. Une réponse de Veolia vaut ce qu'elle resserre : commencer par le haut.
 
