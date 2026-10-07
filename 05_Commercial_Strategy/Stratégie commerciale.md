@@ -7,7 +7,7 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 111 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 115 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/ambitions-veolia-spain.pdf.md|In Spain, Veolia displays strong ambitions to support ecological transformation by putting expertise and innovation at the service of territories]]
@@ -26,6 +26,8 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/cp-veolia-devoile-un-projet-majeur-visant-a-eliminer-progressivement-le-charbon-en-pologne-pour-soutenir-la-decarbonation-europeenne-et-renforcer-la-resilience-energetique-a-poznan_0.pdf.md|Veolia unveils a major project to phase out coal in Poland to support European decarbonization and strengthen energy resilience in Poznań]]
 - [[05_Commercial_Strategy/crystal-clean-jfl-2023-07-19.html.md|Heritage-Crystal Clean, Inc. to be Acquired by J.F. Lehman & Company for $1.2 Billion (19 July 2023)]]
 - [[05_Commercial_Strategy/crystal-clean-jfl-2023-10-17.html.md|J.F. Lehman & Company Completes Acquisition of Heritage-Crystal Clean, Inc. (17 October 2023)]]
+- [[05_Commercial_Strategy/enviracore-emi-2026-05-08.html.md|Enviracore Services Acquires Environmental Management, LLC (8 May 2026, Business Wire via Yahoo Finance)]]
+- [[05_Commercial_Strategy/enviracore-lancement-2025-09-30.html.md|Seaside Equity Partners Launches Environmental Services Platform, Enviracore Services (30 September 2025, Business Wire via Yahoo Finance)]]
 - [[05_Commercial_Strategy/eqt-covanta-2021-07-14.html.md|EQT Infrastructure to acquire Covanta for USD 5.3 billion (14 July 2021)]]
 - [[05_Commercial_Strategy/fortum-summa-2024-11-29.html.md|Fortum completes the divestment of its recycling and waste business (29 November 2024)]]
 - [[05_Commercial_Strategy/fortum-summa-ng-group-2024-07-18.html.md|Summa Equity through NG Group acquires Fortum Recycling and Waste (18 July 2024)]]
@@ -108,6 +110,8 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/pr-wts-050725.pdf.md|Veolia acquires CDPQ’s 30% stake in Water Technologies and Solutions, achieving full ownership to accelerate value creation]]
 - [[05_Commercial_Strategy/press-release-hassyan-05132024.pdf.md|Veolia wins $320 million water technology contract for world’s most energy-efficient desalination plant, enhancing water security in UAE]]
 - [[05_Commercial_Strategy/press-release-results-q1-2024.pdf.md|KEY FIGURES AT 31 MARCH 2024]]
+- [[05_Commercial_Strategy/seaside-criteres-2026-10-07.html.md|Seaside Equity Partners — Investment Criteria (consulté le 7 octobre 2026)]]
+- [[05_Commercial_Strategy/seaside-portefeuille-2026-10-07.html.md|Seaside Equity Partners — Portfolio (consulté le 7 octobre 2026)]]
 - [[05_Commercial_Strategy/stakeholders-assembly-water-reuse-water-security-060526.pdf.md|Veolia’s Stakeholders Assembly calls for accelerated uptake of water reuse to strengthen water security]]
 - [[05_Commercial_Strategy/triumvirate-berkshire-2025-02-04.html.md|Triumvirate Environmental valued at $1.8 billion after investment (Reuters, 4 February 2025)]]
 - [[05_Commercial_Strategy/veolia-2023-annual-results-02292024.pdf.md|2023 ANNUAL RESULTS]]

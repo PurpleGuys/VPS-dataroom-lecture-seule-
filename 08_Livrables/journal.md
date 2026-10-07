@@ -6,6 +6,7 @@ Généré depuis le journal des requêtes du serveur et les registres ; rien n'e
 ## 2026-10-07
 
 - **benjamin** : 1 recherche(s), 0 page(s) lue(s).
+- **compte partagé (dataroom-bearer)** : 4 document(s) versé(s).
 - **ethan** : 1 recherche(s), 0 page(s) lue(s).
 - **kevin** : 5 recherche(s), 0 page(s) lue(s).
 - **membre5** : 5 recherche(s), 0 page(s) lue(s).
