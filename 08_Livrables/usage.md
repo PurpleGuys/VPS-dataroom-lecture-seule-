@@ -1,6 +1,6 @@
 # Usage de la dataroom — membre par membre
 
-Relevé le 07/10/2026 16:19 depuis le journal des requêtes du serveur et les registres. 920 appel(s) en tout. Une identité partagée (`dataroom-bearer`) ne désigne personne : c'est le token commun, utilisé avant les tokens personnels.
+Relevé le 07/10/2026 16:21 depuis le journal des requêtes du serveur et les registres. 922 appel(s) en tout. Une identité partagée (`dataroom-bearer`) ne désigne personne : c'est le token commun, utilisé avant les tokens personnels.
 
 | Membre | Appels | Recherches | Pages lues | Écritures | Relectures | Chiffres ajoutés | Lignes relues | Jours actifs | Premier | Dernier |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -9,7 +9,7 @@ Relevé le 07/10/2026 16:19 depuis le journal des requêtes du serveur et les re
 | ethan | 3 | 3 | 0 | 0 | 0 | 0 | 0 | 2 | 2026-10-06 | 2026-10-07 |
 | kevin | 6 | 5 | 0 | 0 | 0 | 0 | 0 | 1 | 2026-10-07 | 2026-10-07 |
 | membre5 | 5 | 5 | 0 | 0 | 0 | 0 | 0 | 1 | 2026-10-07 | 2026-10-07 |
-| noa | 6 | 6 | 0 | 0 | 0 | 0 | 0 | 1 | 2026-10-07 | 2026-10-07 |
+| noa | 8 | 8 | 0 | 0 | 0 | 0 | 0 | 1 | 2026-10-07 | 2026-10-07 |
 | promo-bioenergie (autre groupe, lecture) | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 2026-10-07 | 2026-10-07 |
 | promo-dechets (autre groupe, lecture) | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 2026-10-07 | 2026-10-07 |
 | promo-eau (autre groupe, lecture) | 2 | 1 | 0 | 0 | 0 | 0 | 0 | 2 | 2026-10-06 | 2026-10-07 |
@@ -21,7 +21,7 @@ Relevé le 07/10/2026 16:19 depuis le journal des requêtes du serveur et les re
 | `register_figure` | 632 |
 | `read_page` | 72 |
 | `register_deal` | 37 |
-| `search_dataroom` | 29 |
+| `search_dataroom` | 30 |
 | `dataroom_status` | 22 |
 | `submit_url` | 20 |
 | `workstream_status` | 18 |
@@ -31,10 +31,10 @@ Relevé le 07/10/2026 16:19 depuis le journal des requêtes du serveur et les re
 | `register_target` | 9 |
 | `lookup_deal` | 8 |
 | `list_documents` | 6 |
+| `list_targets` | 5 |
 | `note_gap` | 4 |
 | `read_table` | 4 |
 | `review_queue` | 4 |
-| `list_targets` | 4 |
 | `list_gaps` | 3 |
 | `find_deal_candidates` | 3 |
 | `lookup_figure` | 2 |
