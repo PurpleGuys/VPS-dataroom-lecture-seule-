@@ -7,7 +7,7 @@ Généré depuis le journal des requêtes du serveur et les registres ; rien n'e
 
 - **benjamin** : 1 recherche(s), 0 page(s) lue(s).
 - **ethan** : 1 recherche(s), 0 page(s) lue(s).
-- **kevin** : 3 recherche(s), 0 page(s) lue(s).
+- **kevin** : 4 recherche(s), 0 page(s) lue(s).
 - **noa** : 6 recherche(s), 0 page(s) lue(s).
 - **promo-bioenergie** : 1 recherche(s), 0 page(s) lue(s).
 - **promo-dechets** : 1 recherche(s), 0 page(s) lue(s).
