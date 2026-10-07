@@ -1,7 +1,17 @@
 # Journal du groupe
 
-5 jour(s) d'activité, 2 membre(s) identifié(s) ; le compte partagé n'est attribuable à personne.
+6 jour(s) d'activité, 7 membre(s) identifié(s) ; le compte partagé n'est attribuable à personne.
 Généré depuis le journal des requêtes du serveur et les registres ; rien n'est saisi à la main.
+
+## 2026-10-07
+
+- **benjamin** : 1 recherche(s), 0 page(s) lue(s).
+- **ethan** : 1 recherche(s), 0 page(s) lue(s).
+- **kevin** : 1 recherche(s), 0 page(s) lue(s).
+- **noa** : 1 recherche(s), 0 page(s) lue(s).
+- **promo-bioenergie** : 1 recherche(s), 0 page(s) lue(s).
+- **promo-dechets** : 1 recherche(s), 0 page(s) lue(s).
+- **promo-eau** : 1 recherche(s), 0 page(s) lue(s).
 
 ## 2026-10-06
 
