@@ -10,7 +10,7 @@ Généré depuis le journal des requêtes du serveur et les registres ; rien n'e
 - **ethan** : 1 recherche(s), 0 page(s) lue(s).
 - **kevin** : 5 recherche(s), 0 page(s) lue(s).
 - **membre5** : 7 recherche(s), 0 page(s) lue(s).
-- **noa** : 1 cible(s) (T8); 4 document(s) versé(s); 3 manque(s) noté(s); 10 recherche(s), 0 page(s) lue(s).
+- **noa** : 2 cible(s) (T8, T9); 10 document(s) versé(s); 6 manque(s) noté(s); 10 recherche(s), 0 page(s) lue(s).
 - **promo-bioenergie** : 1 recherche(s), 0 page(s) lue(s).
 - **promo-dechets** : 1 recherche(s), 0 page(s) lue(s).
 - **promo-eau** : 1 recherche(s), 0 page(s) lue(s).

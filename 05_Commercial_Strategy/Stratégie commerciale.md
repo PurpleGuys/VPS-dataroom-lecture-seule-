@@ -7,7 +7,7 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 121 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 126 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/ambitions-veolia-spain.pdf.md|In Spain, Veolia displays strong ambitions to support ecological transformation by putting expertise and innovation at the service of territories]]
@@ -33,9 +33,14 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/enviracore-emi-2026-05-08.html.md|Enviracore Services Acquires Environmental Management, LLC (8 May 2026, Business Wire via Yahoo Finance)]]
 - [[05_Commercial_Strategy/enviracore-lancement-2025-09-30.html.md|Seaside Equity Partners Launches Environmental Services Platform, Enviracore Services (30 September 2025, Business Wire via Yahoo Finance)]]
 - [[05_Commercial_Strategy/enviracore-seaside-launch-2025-09-30.html.md|User]]
+- [[05_Commercial_Strategy/envisol-axelera-profile.html.md|ENVISOL]]
+- [[05_Commercial_Strategy/envisol-cfnews-geotec-buildup.html.md|Géotec renforce son pôle environnement | CFNEWS]]
+- [[05_Commercial_Strategy/envisol-plassart-geostatistics-2013.pdf.md|Contaminated sites and soil geostatistics: advanced technology in characterisation and rehabilitation (Envisol)]]
 - [[05_Commercial_Strategy/eqt-covanta-2021-07-14.html.md|EQT Infrastructure to acquire Covanta for USD 5.3 billion (14 July 2021)]]
 - [[05_Commercial_Strategy/fortum-summa-2024-11-29.html.md|Fortum completes the divestment of its recycling and waste business (29 November 2024)]]
 - [[05_Commercial_Strategy/fortum-summa-ng-group-2024-07-18.html.md|Summa Equity through NG Group acquires Fortum Recycling and Waste (18 July 2024)]]
+- [[05_Commercial_Strategy/geotec-cbinsights-acquisitions.html.md|Geotec Stock Price, Funding, Valuation, Revenue & Financial Statements]]
+- [[05_Commercial_Strategy/geotec-cbinsights-profile.html.md|Geotec - Products, Competitors, Financials, Employees, Headquarters Locations]]
 - [[05_Commercial_Strategy/gfl-es-canadian-lawyer-2025.html.md|GFL finalizes $8 billion sale of Environmental Services Unit (Canadian Lawyer, 9 January 2025)]]
 - [[05_Commercial_Strategy/gfl-es-latham-2025-01-07.html.md|Latham & Watkins Advises GFL Environmental Inc. on Sale of Environmental Services Business (7 January 2025)]]
 - [[05_Commercial_Strategy/inauguration-gln-veoliaxenagas-en.pdf.md|World first: Veolia, Enagás and Barcelona City Council inaugurate the first urban cold recovery network from an LNG terminal]]

@@ -1,6 +1,6 @@
 # Usage de la dataroom — membre par membre
 
-Relevé le 07/10/2026 16:43 depuis le journal des requêtes du serveur et les registres. 954 appel(s) en tout. Une identité partagée (`dataroom-bearer`) ne désigne personne : c'est le token commun, utilisé avant les tokens personnels.
+Relevé le 07/10/2026 16:45 depuis le journal des requêtes du serveur et les registres. 964 appel(s) en tout. Une identité partagée (`dataroom-bearer`) ne désigne personne : c'est le token commun, utilisé avant les tokens personnels.
 
 | Membre | Appels | Recherches | Pages lues | Écritures | Relectures | Chiffres ajoutés | Lignes relues | Jours actifs | Premier | Dernier |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -9,7 +9,7 @@ Relevé le 07/10/2026 16:43 depuis le journal des requêtes du serveur et les re
 | ethan | 3 | 3 | 0 | 0 | 0 | 0 | 0 | 2 | 2026-10-06 | 2026-10-07 |
 | kevin | 6 | 5 | 0 | 0 | 0 | 0 | 0 | 1 | 2026-10-07 | 2026-10-07 |
 | membre5 | 7 | 7 | 0 | 0 | 0 | 0 | 0 | 1 | 2026-10-07 | 2026-10-07 |
-| noa | 18 | 10 | 0 | 8 | 0 | 1 | 0 | 1 | 2026-10-07 | 2026-10-07 |
+| noa | 28 | 10 | 0 | 18 | 0 | 2 | 0 | 1 | 2026-10-07 | 2026-10-07 |
 | promo-bioenergie (autre groupe, lecture) | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 2026-10-07 | 2026-10-07 |
 | promo-dechets (autre groupe, lecture) | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 2026-10-07 | 2026-10-07 |
 | promo-eau (autre groupe, lecture) | 2 | 1 | 0 | 0 | 0 | 0 | 0 | 2 | 2026-10-06 | 2026-10-07 |
@@ -22,15 +22,15 @@ Relevé le 07/10/2026 16:43 depuis le journal des requêtes du serveur et les re
 | `read_page` | 77 |
 | `register_deal` | 40 |
 | `search_dataroom` | 33 |
-| `submit_url` | 28 |
+| `submit_url` | 33 |
 | `dataroom_status` | 22 |
+| `submit_document` | 18 |
 | `workstream_status` | 18 |
-| `submit_document` | 17 |
+| `register_target` | 12 |
 | `find_deals` | 11 |
-| `register_target` | 11 |
+| `note_gap` | 10 |
 | `audit_dataroom` | 9 |
 | `lookup_deal` | 8 |
-| `note_gap` | 7 |
 | `list_documents` | 6 |
 | `list_targets` | 6 |
 | `read_table` | 4 |
