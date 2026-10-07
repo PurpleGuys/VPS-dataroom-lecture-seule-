@@ -1820,7 +1820,7 @@
     "La grille : au multiple de Clean Earth (9,8x), 2,26 Md€ en central, 0,00 en défavorable, 5,03 Md€ en favorable ; à 8x, 2,51 Md€ ; à 12x, 2,09 Md€ en central.",
     "Le calibrage : Clean Earth ne passerait plus. Quatre multiples circulent pour lui : 19,3x sur l'EBITDA 2025 publié par le vendeur (reconstitué, onglet Booster §E), 15,0x sur l'EBITDA 2026E avant synergies, 9,8x publié après synergies (non recalculable : 9,4x avec les chiffres publiés), et 18,6x l'EBITDA ajusté des douze derniers mois selon Enviri (document à verser).",
     "Les critères de cible : actifs de traitement (pas de collecte seule), géographie des boosters (États-Unis, Asie), PFAS et nouveaux polluants, taille compatible avec la grille, et pas de doublon de concurrence en Europe, où Veolia est déjà numéro un (présentation Clean Earth p.9).",
-    "L'univers : 6 cibles sourcées, toutes détenues par des fonds entrés entre 2023 et 2025 (Cibles §C). 4 ont une valeur publiée ; 3 tiennent dans la marge centrale au multiple retenu (12,81x, médiane du secteur avant synergies). Heritage-Crystal Clean : 1 021 M€ à 12,8x, tient dans 94 % des futurs (oui au central) ; Arcwood Environmental : prix non publié ; Triumvirate Environmental : 1 531 M€ à 12,8x, tient dans 73 % des futurs (oui au central) ; GFL Environmental Services : 4 982 M€ à 12,8x, tient dans 0 % des futurs ; NG Group : 800 M€ à 12,8x, tient dans 97 % des futurs (oui au central) ; Enviracore Services : prix non publié.",
+    "L'univers : 7 cibles sourcées, toutes détenues par des fonds entrés entre 2023 et 2025 (Cibles §C). 4 ont une valeur publiée ; 3 tiennent dans la marge centrale au multiple retenu (12,81x, médiane du secteur avant synergies). Heritage-Crystal Clean : 1 021 M€ à 12,8x, tient dans 94 % des futurs (oui au central) ; Arcwood Environmental : prix non publié ; Triumvirate Environmental : 1 531 M€ à 12,8x, tient dans 73 % des futurs (oui au central) ; GFL Environmental Services : 4 982 M€ à 12,8x, tient dans 0 % des futurs ; NG Group : 800 M€ à 12,8x, tient dans 97 % des futurs (oui au central) ; Enviracore Services : prix non publié ; Enviracore Services : prix non publié.",
     "La valeur de chaque cible est la dernière publiée (la transaction qui a fait entrer le fonds), pas un prix de vente d'aujourd'hui : un fonds qui sort vend plus cher qu'il n'a acheté. La probabilité est donc un plafond."
    ],
    "open": [
@@ -1839,7 +1839,7 @@
     ],
     [
      "Quelles cibles regardez-vous ?",
-     "6 cibles réelles, détenues par des fonds : Heritage-Crystal Clean : 1 021 M€ à 12,8x, tient dans 94 % des futurs (oui au central) ; Arcwood Environmental : prix non publié ; Triumvirate Environmental : 1 531 M€ à 12,8x, tient dans 73 % des futurs (oui au central) ; GFL Environmental Services : 4 982 M€ à 12,8x, tient dans 0 % des futurs ; NG Group : 800 M€ à 12,8x, tient dans 97 % des futurs (oui au central) ; Enviracore Services : prix non publié. Au multiple médian du secteur (12,81x), 3 tiennent dans la marge centrale, la plus grande pour 1 531 M€. Les valeurs sont celles de l'entrée du fonds : un vendeur demandera plus."
+     "7 cibles réelles, détenues par des fonds : Heritage-Crystal Clean : 1 021 M€ à 12,8x, tient dans 94 % des futurs (oui au central) ; Arcwood Environmental : prix non publié ; Triumvirate Environmental : 1 531 M€ à 12,8x, tient dans 73 % des futurs (oui au central) ; GFL Environmental Services : 4 982 M€ à 12,8x, tient dans 0 % des futurs ; NG Group : 800 M€ à 12,8x, tient dans 97 % des futurs (oui au central) ; Enviracore Services : prix non publié ; Enviracore Services : prix non publié. Au multiple médian du secteur (12,81x), 3 tiennent dans la marge centrale, la plus grande pour 1 531 M€. Les valeurs sont celles de l'entrée du fonds : un vendeur demandera plus."
     ],
     [
      "Et si Veolia veut quand même une cible de 3 Md€ ?",
@@ -2147,6 +2147,14 @@
      "prix non publié",
      "Seaside Equity Partners (fonds, depuis 2024) ; T7 — enviracore-lancement-2025-09-30.html",
      ""
+    ],
+    [
+     "calcul",
+     "Cible : Enviracore Services",
+     "",
+     "prix non publié",
+     "Seaside Equity Partners (fonds lower middle market, depuis le 30/09/2025) ; T8 — bizwire-2025-9-30-seaside-equity-partners-la",
+     ""
     ]
    ]
   }
@@ -2156,7 +2164,7 @@
   "Lire les 10-K 2025 d'Enviri et de Clean Harbors, désormais dans la dataroom, et en tirer les chiffres des rôles 4 et 5 (passifs environnementaux de Clean Earth, marges et levier de Clean Harbors). Reste à verser : le 10-Q du T1 2026 d'Enviri et le communiqué de vente du 20 novembre 2025.",
   "Avant le 7 octobre : montrer la dataroom comme « sources chargées et lues », et noter dans gaps.md ce qui manque encore.",
   "Rédiger la page d'annexe sur les outils d'IA : dataroom MCP (recherche, registre, contrôles), Claude pour construire le classeur et ces dossiers, LibreOffice pour le recalcul. Aucun chiffre produit par le modèle de langage.",
-  "Noter les 6 cibles de l'onglet Cibles §C (cellules jaunes) et chercher une valeur sourcée pour celles qui n'en ont pas.",
+  "Noter les 7 cibles de l'onglet Cibles §C (cellules jaunes) et chercher une valeur sourcée pour celles qui n'en ont pas.",
   "Chacun ouvre son rôle avec l'outil workstream_status de la dataroom pour voir ses chiffres et ce qui manque."
  ],
  "register": [

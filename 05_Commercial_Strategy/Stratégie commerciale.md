@@ -7,13 +7,14 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 118 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 121 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/ambitions-veolia-spain.pdf.md|In Spain, Veolia displays strong ambitions to support ecological transformation by putting expertise and innovation at the service of territories]]
 - [[05_Commercial_Strategy/annual-resultats-2025.pdf.md|Full year 2025 results]]
 - [[05_Commercial_Strategy/arcwood-rebrand-2025-03-18.html.md|Heritage Environmental Services Rebrands to Arcwood Environmental (18 March 2025)]]
 - [[05_Commercial_Strategy/bic-us-ecology-republic-2022.html.md|US Ecology joins Republic Services (BIC Magazine, reprise du communiqué du 9 février 2022)]]
+- [[05_Commercial_Strategy/boomer-about-2026-10-07.html.md|Boomer Environmental — About (consulté le 7 octobre 2026)]]
 - [[05_Commercial_Strategy/clean-harbors-enviroserve-2026-08-12.html.md|Clean Harbors to Acquire EnviroServe for $470 Million (12 August 2026, Business Wire, copie Stock Titan)]]
 - [[05_Commercial_Strategy/clean-harbors-enviroserve-esh-2026-10-05.html.md|Clean Harbors Completes Acquisitions of EnviroServe and ES&H (5 October 2026, Business Wire, copie Stock Titan)]]
 - [[05_Commercial_Strategy/clean-harbors-hepaco-2024-03-25.html.md|Clean Harbors Completes Acquisition of HEPACO (25 March 2024)]]
@@ -26,6 +27,8 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/cp-veolia-devoile-un-projet-majeur-visant-a-eliminer-progressivement-le-charbon-en-pologne-pour-soutenir-la-decarbonation-europeenne-et-renforcer-la-resilience-energetique-a-poznan_0.pdf.md|Veolia unveils a major project to phase out coal in Poland to support European decarbonization and strengthen energy resilience in Poznań]]
 - [[05_Commercial_Strategy/crystal-clean-jfl-2023-07-19.html.md|Heritage-Crystal Clean, Inc. to be Acquired by J.F. Lehman & Company for $1.2 Billion (19 July 2023)]]
 - [[05_Commercial_Strategy/crystal-clean-jfl-2023-10-17.html.md|J.F. Lehman & Company Completes Acquisition of Heritage-Crystal Clean, Inc. (17 October 2023)]]
+- [[05_Commercial_Strategy/emi-entretien-2019-01-31.html.md|Environmental Management Services: From a Garage Startup to Nationwide Coverage (Made Possible By, 31 January 2019)]]
+- [[05_Commercial_Strategy/enviracore-boomer-2025-10-01.html.md|Enviracore Services Acquires Oklahoma City-based Boomer Environmental as First Platform Investment (1 October 2025, Business Wire via Yahoo Finance)]]
 - [[05_Commercial_Strategy/enviracore-eci-acquisition-2025-10-01.html.md|User]]
 - [[05_Commercial_Strategy/enviracore-emi-2026-05-08.html.md|Enviracore Services Acquires Environmental Management, LLC (8 May 2026, Business Wire via Yahoo Finance)]]
 - [[05_Commercial_Strategy/enviracore-lancement-2025-09-30.html.md|Seaside Equity Partners Launches Environmental Services Platform, Enviracore Services (30 September 2025, Business Wire via Yahoo Finance)]]
