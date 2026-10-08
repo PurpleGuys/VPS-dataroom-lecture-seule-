@@ -1026,24 +1026,14 @@ tiles_html = "".join(f'<div class="tile"><p class="t-label">{esc(a)}</p><p class
                      for a, b, c in tiles)
 
 page = f"""<title>Dossiers du sujet 2</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
 <style>
-/* Layout : une note d'analyste — synthèse chiffrée en tête, puis un dossier par rôle, texte à gauche, chiffres sourcés à droite. */
-:root {{
-  --bg: #F5F7F9; --surface: #FFFFFF; --fg: #16212C; --muted: #5A6875; --line: #D8DEE4;
-  --accent: #1E5A8E; --accent-soft: #E3EDF6; --flag: #9A5B00;
-  --display: "IBM Plex Sans Condensed", "Arial Narrow", Arial, sans-serif;
-  --body: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
-  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+/* Layout : une note d'analyste — synthèse chiffrée en tête, puis un dossier par rôle, texte à gauche, chiffres sourcés à droite.
+   Couleurs et polices : celles d'is42 (dataroom.is42, voir src/dataroom/is42.py), rebranchées sur les noms de cette page. */
+:root, :root[data-theme] {{
+  --bg: var(--paper, #eeebe4); --surface: var(--paper, #eeebe4); --fg: var(--ink, #151512); --muted: var(--mut, #6b6860);
+  --line: var(--hair, #15151224); --accent: var(--ink, #151512); --accent-soft: var(--paper-2, #e6e2da); --flag: var(--ink, #151512);
+  --display: var(--sans, Arial, sans-serif); --body: var(--sans, Arial, sans-serif);
 }}
-@media (prefers-color-scheme: dark) {{ :root:not([data-theme="light"]) {{
-  --bg: #0E141A; --surface: #151D25; --fg: #E4E9EE; --muted: #96A3AF; --line: #27323D;
-  --accent: #82B4E3; --accent-soft: #1A2B3B; --flag: #E2AA5F; color-scheme: dark; }} }}
-:root[data-theme="dark"] {{
-  --bg: #0E141A; --surface: #151D25; --fg: #E4E9EE; --muted: #96A3AF; --line: #27323D;
-  --accent: #82B4E3; --accent-soft: #1A2B3B; --flag: #E2AA5F; color-scheme: dark; }}
 * {{ box-sizing: border-box; }}
 body {{ background: var(--bg); color: var(--fg); font: 15px/1.6 var(--body); }}
 .wrap {{ max-width: 1120px; margin: 0 auto; padding-inline: 20px; padding-block: 32px 64px; }}
@@ -1058,19 +1048,20 @@ h1 {{ font-size: 2.1rem; font-weight: 700; letter-spacing: -0.01em; }}
 .course .two > div {{ min-width: 0; }}
 .course p + p {{ margin-top: 12px; }}
 .tiles {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-top: 18px; }}
-.tile {{ border-top: 3px solid var(--accent); background: var(--bg); padding: 12px 14px; }}
+.tile {{ border-top: 1px solid var(--ink); background: transparent; padding: 12px 0; }}
 .tile p {{ margin: 0; }}
 .t-label {{ font: 500 .72rem/1.3 var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }}
-.t-val {{ font: 600 1.9rem/1.2 var(--display); font-variant-numeric: tabular-nums; margin-top: 4px !important; }}
+.t-val {{ font: 500 1.7rem/1.2 var(--mono); letter-spacing: -.02em; font-variant-numeric: tabular-nums; margin-top: 4px !important; }}
 .t-note {{ font-size: .82rem; color: var(--muted); }}
-nav.roles {{ position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line);
+nav.roles {{ position: sticky; top: var(--bar-h, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line);
   margin-top: 28px; padding-block: 10px; display: flex; flex-wrap: wrap; gap: 6px; }}
 nav.roles a {{ display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--fg); font: 500 .9rem/1 var(--display);
   padding: 7px 12px 7px 7px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }}
-nav.roles a span {{ display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--accent);
+nav.roles a span {{ display: inline-grid; place-items: center; width: 22px; height: 22px; background: var(--ink);
   color: var(--surface); font: 600 .78rem/1 var(--mono); }}
 nav.roles a:hover, nav.roles a:focus-visible {{ border-color: var(--accent); outline: none; }}
-.role {{ margin-top: 40px; scroll-margin-top: 70px; }}
+.role {{ margin-top: 40px; scroll-margin-top: 130px; }}
+body .role .answer {{ border-left-color: var(--ink); }}
 .role-head {{ display: flex; gap: 16px; align-items: flex-start; }}
 .role-n {{ font: 700 2.6rem/1 var(--display); color: var(--accent); min-width: 1.2ch; }}
 .role-head h2 {{ font-size: 1.6rem; font-weight: 700; }}
@@ -1176,14 +1167,20 @@ tr.calc td:first-child {{ font-style: italic; }}
   d'après sa publication et signalé comme non encore versé. Les hypothèses du groupe sont dans l'onglet Hypothèses du classeur.</p>
 </div>
 """
+try:   # lancé par « dataroom livrables », le script tourne dans l'environnement du serveur : l'habillage is42 est là
+    from dataroom import is42 as _is42
+except ImportError:  # ailleurs, la page reste lisible avec ses polices système
+    _is42 = None
+if _is42:
+    page = _is42.head() + _is42.bar("livrables") + page
 OUT.write_text(page, encoding="utf-8")
 # Version autonome pour le vault (servie telle quelle par Caddy) : doctype, charset, et le classeur en lien.
 head, body = page.split('<div class="wrap">', 1)
 body = body.replace('<span style="font-family:var(--mono)">modele-greenup-2027.xlsx</span>',
                     '<a href="modele-greenup-2027.xlsx" style="font-family:var(--mono)">modele-greenup-2027.xlsx</a>', 1)
 standalone = ('<!doctype html>\n<html lang="fr">\n<head>\n<meta charset="utf-8">\n'
-              '<meta name="viewport" content="width=device-width, initial-scale=1">\n' + head +
-              '<style>body{margin:0}</style>\n</head>\n<body>\n<div class="wrap">' + body + '\n</body>\n</html>\n')
+              '<meta name="viewport" content="width=device-width, initial-scale=1">\n' + head.replace(_is42.bar("livrables") if _is42 else "\0", "") +
+              '<style>body{margin:0}</style>\n</head>\n<body>\n' + (_is42.bar("livrables") if _is42 else "") + '<div class="wrap">' + body + '\n</body>\n</html>\n')
 OUT_RANGE = OUT.with_name("fourchette-capacite.md")
 rank_txt = "\n".join(f"{i + 1}. {n} — amplitude {fr(v, 0)} M€" for i, (n, v) in enumerate(rank[:5]))
 OUT_RANGE.write_text(f"""# Fourchette de capacité d'acquisition — GreenUp 2027

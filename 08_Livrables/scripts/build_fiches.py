@@ -35,20 +35,18 @@ PAGE = """<!doctype html>
 <meta name="robots" content="noindex, nofollow">
 <title>Fiches d'oral — sujet 2</title>
 <style>
-  :root { --ground: #F4F5F2; --panel: #FBFCFA; --ink: #1A211D; --muted: #6E7873; --rule: #DDE1DB; --accent: #1F6F50; }
-  @media (prefers-color-scheme: dark) { :root { --ground: #131815; --panel: #1A201C; --ink: #E4E9E5; --muted: #97A29C; --rule: #2B332E; --accent: #6FBF95; } }
-  body { margin: 0; background: var(--ground); color: var(--ink); font: 15px/1.5 "IBM Plex Sans", system-ui, sans-serif; }
-  header { padding: 1rem 1.2rem .6rem; border-bottom: 1px solid var(--rule); background: var(--panel); position: sticky; top: 0; z-index: 2; }
+  body { margin: 0; background: var(--ground, #eeebe4); color: var(--ink, #151512); font: 15px/1.5 var(--sans, system-ui, sans-serif); }
+  header.fiches { padding: 1rem 1.2rem .6rem; border-bottom: 1px solid var(--rule); background: var(--panel); position: sticky; top: var(--bar-h, 0px); z-index: 2; }
   h1 { margin: 0 0 .3rem; font-size: 1.15rem; }
   .bar { display: flex; flex-wrap: wrap; gap: .5rem .9rem; align-items: center; font-size: .85rem; color: var(--muted); }
   .bar button, .bar label { font: inherit; cursor: pointer; }
   .bar button { border: 1px solid var(--rule); background: var(--panel); color: var(--ink); border-radius: 4px; padding: .25rem .6rem; }
-  .bar button.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .bar button.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: .8rem; padding: 1rem 1.2rem 3rem; }
   .card { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: .8rem .9rem; cursor: pointer; min-height: 7rem;
           display: flex; flex-direction: column; gap: .4rem; outline: none; }
   .card:focus-visible { box-shadow: 0 0 0 2px var(--accent); }
-  .card .tag { font-size: .72rem; color: var(--muted); font-family: "IBM Plex Mono", ui-monospace, monospace; }
+  body .card .tag { font: 400 .68rem/1.3 var(--mono, ui-monospace, monospace); letter-spacing: .04em; color: var(--faint, #9a978d); border: 0; padding: 0; white-space: normal; }
   .card .front { font-weight: 600; }
   .card .back { color: var(--ink); border-top: 1px dashed var(--rule); padding-top: .4rem; display: none; font-size: .92rem; }
   .card.open .back { display: block; }
@@ -56,11 +54,11 @@ PAGE = """<!doctype html>
   .card.question .front::before { content: "Q · "; color: var(--accent); }
   .hidden { display: none !important; }
   .count { margin-left: auto; }
-  @media (max-width: 720px) { .grid { padding: .8rem; grid-template-columns: 1fr; } }
+  @media (max-width: 720px) { .grid { padding: .8rem; grid-template-columns: 1fr; } header.fiches { position: static; } }
 </style>
 </head>
 <body>
-<header>
+<header class="fiches">
   <h1>Fiches d'oral — sujet 2, capacité financière</h1>
   <div class="bar">
     <span>Rôle :</span>
@@ -129,5 +127,10 @@ PAGE = """<!doctype html>
 buttons = '<button type="button" data-role="all" class="on">tous</button>' + "".join(
     f'<button type="button" data-role="{r["n"]}" title="{esc(r["name"])}">{r["n"]}</button>' for r in DATA["roles"])
 page = PAGE.replace("__ROLE_BUTTONS__", buttons).replace("__CARDS__", json.dumps(cards, ensure_ascii=False).replace("</", "<\\/"))
+try:   # l'habillage is42 de la dataroom, quand le script tourne dans l'environnement du serveur
+    from dataroom import is42 as _is42
+    page = _is42.apply(page, "livrables")
+except ImportError:
+    pass
 OUT.write_text(page, encoding="utf-8")
 print("écrit", OUT, len(cards), "fiches")
