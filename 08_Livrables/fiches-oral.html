@@ -6,20 +6,18 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Fiches d'oral — sujet 2</title>
 <style>
-  :root { --ground: #F4F5F2; --panel: #FBFCFA; --ink: #1A211D; --muted: #6E7873; --rule: #DDE1DB; --accent: #1F6F50; }
-  @media (prefers-color-scheme: dark) { :root { --ground: #131815; --panel: #1A201C; --ink: #E4E9E5; --muted: #97A29C; --rule: #2B332E; --accent: #6FBF95; } }
-  body { margin: 0; background: var(--ground); color: var(--ink); font: 15px/1.5 "IBM Plex Sans", system-ui, sans-serif; }
-  header { padding: 1rem 1.2rem .6rem; border-bottom: 1px solid var(--rule); background: var(--panel); position: sticky; top: 0; z-index: 2; }
+  body { margin: 0; background: var(--ground, #eeebe4); color: var(--ink, #151512); font: 15px/1.5 var(--sans, system-ui, sans-serif); }
+  header.fiches { padding: 1rem 1.2rem .6rem; border-bottom: 1px solid var(--rule); background: var(--panel); position: sticky; top: var(--bar-h, 0px); z-index: 2; }
   h1 { margin: 0 0 .3rem; font-size: 1.15rem; }
   .bar { display: flex; flex-wrap: wrap; gap: .5rem .9rem; align-items: center; font-size: .85rem; color: var(--muted); }
   .bar button, .bar label { font: inherit; cursor: pointer; }
   .bar button { border: 1px solid var(--rule); background: var(--panel); color: var(--ink); border-radius: 4px; padding: .25rem .6rem; }
-  .bar button.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .bar button.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: .8rem; padding: 1rem 1.2rem 3rem; }
   .card { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: .8rem .9rem; cursor: pointer; min-height: 7rem;
           display: flex; flex-direction: column; gap: .4rem; outline: none; }
   .card:focus-visible { box-shadow: 0 0 0 2px var(--accent); }
-  .card .tag { font-size: .72rem; color: var(--muted); font-family: "IBM Plex Mono", ui-monospace, monospace; }
+  body .card .tag { font: 400 .68rem/1.3 var(--mono, ui-monospace, monospace); letter-spacing: .04em; color: var(--faint, #9a978d); border: 0; padding: 0; white-space: normal; }
   .card .front { font-weight: 600; }
   .card .back { color: var(--ink); border-top: 1px dashed var(--rule); padding-top: .4rem; display: none; font-size: .92rem; }
   .card.open .back { display: block; }
@@ -27,11 +25,194 @@
   .card.question .front::before { content: "Q · "; color: var(--accent); }
   .hidden { display: none !important; }
   .count { margin-left: auto; }
-  @media (max-width: 720px) { .grid { padding: .8rem; grid-template-columns: 1fr; } }
+  @media (max-width: 720px) { .grid { padding: .8rem; grid-template-columns: 1fr; } header.fiches { position: static; } }
 </style>
-</head>
-<body>
-<header>
+<link rel="icon" href="/visualisation/assets/favicon.svg" type="image/svg+xml"><link rel="icon" href="/visualisation/assets/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/visualisation/assets/apple-touch-icon.png"><link rel="preload" href="/visualisation/assets/archivo.woff2" as="font" type="font/woff2" crossorigin><meta name="theme-color" content="#eeebe4" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0c0c0d" media="(prefers-color-scheme: dark)"><style>/* is42 — le système de design d'Answer is 42, appliqué à la dataroom.
+ *
+ * Les lois sont celles d'is42.fr, reprises telles quelles : un module de 42 px ; une échelle qui double
+ * la suite de Fibonacci (6 · 10 · 16 · 26 · 42 · 68 · 110…, rapport qui tend vers φ) et dont on prend
+ * toute valeur au lieu de la choisir ; un seul pigment, l'outremer, et un seul accent pigmenté par
+ * écran ; des neutres chauds (le mur) sous une œuvre froide ; des angles vifs ; Archivo seule, Plex Mono
+ * pour les cotes ; des durées en φ. Ici, l'accent va à la chose à prouver : la réponse, la sélection,
+ * la valeur surlignée sur sa page.
+ */
+@font-face { font-family: "Archivo"; font-style: normal; font-weight: 400 900; font-stretch: 62% 125%; font-display: swap;
+             src: url("/visualisation/assets/archivo.woff2") format("woff2"), local("Archivo"); }
+@font-face { font-family: "IBM Plex Mono"; font-style: normal; font-weight: 400; font-display: swap;
+             src: url("/visualisation/assets/plex-mono-400.woff2") format("woff2"), local("IBM Plex Mono"); }
+@font-face { font-family: "IBM Plex Mono"; font-style: normal; font-weight: 500; font-display: swap;
+             src: url("/visualisation/assets/plex-mono-500.woff2") format("woff2"), local("IBM Plex Mono Medium"); }
+
+:root {
+  /* l'échelle : 2 × Fibonacci, puis ses intermédiaires — aucune autre valeur */
+  --s1: 6px; --s2: 8px; --s3: 10px; --s4: 13px; --s5: 16px; --s6: 20px; --s7: 26px; --s8: 33px;
+  --s9: 42px; --s10: 53px; --s11: 68px; --s12: 86px; --s13: 110px; --s14: 140px; --s15: 178px; --s16: 288px;
+  --module: var(--s9); --phi: 1.618;
+  --d1: .1s; --d2: .162s; --d3: .262s; --ease: cubic-bezier(.2, .6, .2, 1);
+  --maxw: 1240px; --pad: clamp(var(--s5), 4vw, var(--s11)); --measure: 64ch; --bar-h: var(--s10);
+  --sans: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", "SFMono-Regular", ui-monospace, Menlo, monospace;
+
+  --paper: #eeebe4; --paper-2: #e6e2da; --ink: #151512; --mut: #6b6860; --faint: #9a978d;
+  --hair: #15151224; --hair-2: #1515124d; --pig: #1a22c4; --pig-fg: #eeebe4;
+  --room: #141413; --room-fg: #eeebe4; --room-mut: #a5a299; --room-hair: #ffffff29;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0c0c0d; --paper-2: #131315; --ink: #eceae3; --mut: #8f8c84; --faint: #63615b;
+    --hair: #ffffff21; --hair-2: #ffffff47; --pig: #6169ff; --pig-fg: #0c0c0d;
+    --room: #eeebe4; --room-fg: #151512; --room-mut: #6b6860; --room-hair: #15151224; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0c0c0d; --paper-2: #131315; --ink: #eceae3; --mut: #8f8c84; --faint: #63615b;
+  --hair: #ffffff21; --hair-2: #ffffff47; --pig: #6169ff; --pig-fg: #0c0c0d;
+  --room: #eeebe4; --room-fg: #151512; --room-mut: #6b6860; --room-hair: #15151224; color-scheme: dark;
+}
+
+/* Les noms qu'emploient les pages de la dataroom, rebranchés sur les jetons. L'ancien accent vert devient
+ * l'encre : le pigment n'est pas une couleur de décoration, il est réservé à ce qu'il faut regarder. */
+:root, :root[data-theme] {
+  --ground: var(--paper); --panel: var(--paper); --sunken: var(--paper-2); --muted: var(--mut); --rule: var(--hair);
+  --edge: var(--hair-2); --edge-hi: var(--ink);
+  --accent: var(--ink); --accent-soft: var(--paper-2); --warn: var(--ink); --warn-soft: var(--paper-2);
+  --bad: var(--ink); --bad-soft: var(--paper-2); --todo: var(--paper-2); --todo-ink: var(--ink);
+  --display: var(--sans); --body: var(--sans); --ui: var(--sans); --data: var(--mono);
+  --line: var(--ink); --veolia: var(--ink); --sector: var(--faint);
+  --band: color-mix(in srgb, var(--ink) 10%, transparent);
+  --mark: color-mix(in srgb, var(--ink) 12%, transparent);
+}
+
+*, *::before, *::after { box-sizing: border-box; border-radius: 0 !important; }   /* angles vifs */
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--bar-h) + var(--s5)); }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans);
+       -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+::selection { background: var(--pig); color: var(--pig-fg); }
+:focus-visible { outline: 2px solid var(--pig) !important; outline-offset: 3px; }
+input, button, select, textarea { font: inherit; color: inherit; }
+input[type="range"], input[type="checkbox"], input[type="radio"] { accent-color: var(--pig); }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; transition: color var(--d2) var(--ease); }
+a:hover { color: var(--ink); }
+h1, h2, h3, h4 { font-family: var(--sans); text-wrap: balance; }
+code, kbd, samp, pre { font-family: var(--mono); }
+
+/* ---------------------------------------------------------------- les pièces communes */
+.is42-anno { font: 400 var(--s4)/var(--s6) var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--faint); }
+.is42-display { font-family: var(--sans); font-weight: 800; font-stretch: 112%; text-transform: uppercase;
+                letter-spacing: -.045em; line-height: .86; text-wrap: balance; margin: 0; }
+.is42-btn { display: inline-flex; align-items: center; gap: var(--s4); font: 400 var(--s4)/1 var(--mono); letter-spacing: .06em;
+            text-transform: uppercase; padding: var(--s4) var(--s7); border: 1px solid var(--ink); background: var(--ink);
+            color: var(--paper); text-decoration: none; cursor: pointer;
+            transition: background var(--d2) var(--ease), border-color var(--d2) var(--ease), color var(--d2) var(--ease); }
+.is42-btn:hover { background: var(--pig); border-color: var(--pig); color: var(--pig-fg); }
+.is42-btn.out { background: transparent; color: var(--ink); border-color: var(--hair-2); }
+.is42-btn.out:hover { border-color: var(--ink); color: var(--ink); background: transparent; }
+
+/* ---------------------------------------------------------------- la barre : la même sur chaque page */
+.is42-bar { position: sticky; top: 0; z-index: 40; height: var(--bar-h); border-bottom: 1px solid var(--hair);
+            background: color-mix(in srgb, var(--paper) 92%, transparent); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+.is42-bar .in { height: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad); display: flex; align-items: center; gap: var(--s7); }
+.is42-bar.wide .in { max-width: none; }
+.is42-brand { display: flex; align-items: center; gap: var(--s3); text-decoration: none; color: var(--ink); flex: none; }
+.is42-brand svg { width: var(--s6); height: var(--s6); display: block; transition: transform var(--d3) var(--ease); }
+.is42-brand:hover svg { transform: rotate(30deg); }
+.is42-brand b { font: 800 var(--s5)/1 var(--sans); font-stretch: 108%; text-transform: uppercase; letter-spacing: -.03em; }
+.is42-brand span { font: 400 var(--s3)/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--faint); }
+.is42-nav { display: flex; gap: var(--s6); margin-left: auto; }
+.is42-nav a { font: 400 var(--s4)/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--mut);
+              text-decoration: none; padding: var(--s2) 0; border-bottom: 1px solid transparent; white-space: nowrap; }
+.is42-nav a:hover { color: var(--ink); }
+.is42-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--ink); }
+.is42-tools { display: flex; align-items: center; gap: var(--s3); flex: none; }
+.is42-square { width: var(--s8); height: var(--s8); display: grid; place-items: center; border: 1px solid var(--hair-2);
+               background: transparent; color: var(--mut); cursor: pointer; padding: 0; font: 400 var(--s5)/1 var(--mono);
+               transition: color var(--d2) var(--ease), border-color var(--d2) var(--ease); }
+.is42-square:hover { color: var(--ink); border-color: var(--ink); }
+.is42-menu { display: none; position: relative; }
+.is42-menu summary { list-style: none; }
+.is42-menu summary::-webkit-details-marker { display: none; }
+.is42-menu .sheet { position: fixed; top: var(--bar-h); left: 0; right: 0; background: var(--paper); border-bottom: 1px solid var(--hair);
+                    padding: var(--s3) var(--pad) var(--s6); display: grid; }
+.is42-menu .sheet a { font: 400 var(--s4)/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--mut);
+                      text-decoration: none; padding: var(--s5) 0; border-bottom: 1px solid var(--hair); display: flex; justify-content: space-between; }
+.is42-menu .sheet a[aria-current="page"] { color: var(--ink); }
+.is42-menu .sheet a::after { content: "↗"; color: var(--faint); }
+@media (max-width: 1080px) {
+  .is42-nav { display: none; }
+  .is42-menu { display: block; }
+  .is42-tools { margin-left: auto; }
+}
+@media (max-width: 420px) { .is42-brand span { display: none; } }
+
+/* ---------------------------------------------------------------- la couche « application »
+ * Les pages de la dataroom partagent leurs noms de classes (réponse, panneaux, tuiles, étiquettes, boutons,
+ * tableaux). Préfixées par body, ces règles l'emportent sur celles de chaque page pour la forme — la mise en
+ * page reste à la page. */
+body .wrap { max-width: var(--maxw); }
+body h1 { font: 800 clamp(var(--s7), 4vw, var(--s9))/1 var(--sans); font-stretch: 110%; text-transform: uppercase; letter-spacing: -.035em; }
+body h2 { font: 400 var(--s4)/var(--s6) var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--mut); }
+body .sub, body .note, body .legend { color: var(--mut); }
+body .sub a { color: var(--ink); }
+body .answer { background: transparent; border: 0; border-left: 2px solid var(--pig); padding: var(--s3) 0 var(--s3) var(--s7);
+               margin: var(--s9) 0 var(--s8); box-shadow: none; }
+body .answer p { font: 700 clamp(var(--s6), 2.4vw, var(--s7))/1.3 var(--sans); letter-spacing: -.015em; }
+body .answer b { font-family: var(--mono); font-weight: 500; color: var(--ink); letter-spacing: 0; }
+body .answer .odds, body .answer .more { color: var(--mut); }
+body .panel, body .control, body .card, body .tile, body .callout, body .tbl, body .target, body .verdict {
+  background: transparent; border-color: var(--hair); box-shadow: none; }
+body .panel, body .control, body .card { border: 1px solid var(--hair); }
+body .tile { border: 1px solid var(--hair); }
+body .tile .v, body .verdict .p { font-family: var(--mono); font-weight: 500; letter-spacing: -.01em; }
+body .tile.bind { border-color: var(--ink); }
+body .tile.bad .v { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+body .presets button, body .btn, body .control .btn, body button.btn, body .bar button, body .phead .btn {
+  font: 400 var(--s3)/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; padding: var(--s3) var(--s4);
+  border: 1px solid var(--hair-2); background: transparent; color: var(--ink); text-decoration: none; cursor: pointer;
+  transition: border-color var(--d2) var(--ease), background var(--d2) var(--ease), color var(--d2) var(--ease); }
+body .presets button:hover, body .btn:hover, body .bar button:hover { border-color: var(--ink); }
+body .presets button[aria-pressed="true"], body .btn[aria-pressed="true"], body .bar button.on, body .btn.primary {
+  background: var(--ink); border-color: var(--ink); color: var(--paper); }
+body .tag { font: 400 var(--s3)/1 var(--mono); letter-spacing: .04em; padding: 3px var(--s1); background: transparent; white-space: nowrap;
+            border: 1px solid var(--hair-2); color: var(--mut); }
+body .tag.ok { border-color: var(--ink); color: var(--ink); }
+body table { font-family: var(--sans); }
+body th { font: 400 var(--s3)/1.3 var(--mono) !important; letter-spacing: .06em; text-transform: uppercase; color: var(--faint) !important;
+          background: transparent !important; border-bottom: 1px solid var(--hair-2) !important; }
+body td { border-bottom-color: var(--hair) !important; }
+body td.num, body .num { font-family: var(--mono); }
+body .tbl { border: 0; border-top: 1px solid var(--ink); }
+body input[type="search"], body input[type="text"], body input[type="password"], body .search, body select {
+  border: 1px solid var(--hair-2); background: transparent; color: var(--ink); }
+body input[type="search"]:focus, body .search:focus { border-color: var(--ink); }
+body .todo { background: var(--paper-2); color: var(--ink); border-left: 2px solid var(--ink); }
+
+/* ---------------------------------------------------------------- la preuve en un clic (templates/proof.js) */
+.proof .phl .hl { background: color-mix(in srgb, var(--pig) 22%, transparent) !important; outline: 2px solid var(--pig) !important; }
+/* la valeur trouvée sur sa page : pigment dans la visionneuse (la chose à regarder), soulignée ailleurs */
+.proof mark { background: var(--pig) !important; color: var(--pig-fg) !important; padding: 0 .15em; }
+mark { background: transparent; color: var(--ink); font-weight: 600; box-shadow: inset 0 -2px 0 var(--ink); padding: 0 .05em; }
+#pmodal { background: color-mix(in srgb, var(--paper) 72%, transparent) !important; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.pwin { border: 1px solid var(--ink) !important; box-shadow: none !important; }
+.proof .pbox { background: var(--paper-2) !important; }
+.proof .psheet { box-shadow: 0 0 0 1px var(--hair-2) !important; }
+.phead .btn, .phead button, .phead a.btn { font: 400 var(--s3)/1 var(--mono) !important; letter-spacing: .06em; text-transform: uppercase;
+                                           padding: var(--s2) var(--s4) !important; border: 1px solid var(--hair-2) !important;
+                                           background: transparent !important; color: var(--ink) !important; }
+.phead .btn:hover, .phead button:hover { border-color: var(--ink) !important; }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+@media print { .is42-bar { display: none !important; } }
+</style><script>(function(){try{var t=localStorage.getItem("is42-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script></head>
+<body><header class="is42-bar"><div class="in"><a class="is42-brand" href="/visualisation/hub.html" aria-label="Dataroom, accueil"><svg viewBox="0 0 42 42" aria-hidden="true" focusable="false"><g stroke="currentColor" stroke-width="7" stroke-linecap="butt"><line x1="0" y1="21" x2="42" y2="21"/><line x1="10.5" y1="2.81" x2="31.5" y2="39.19"/><line x1="31.5" y1="2.81" x2="10.5" y2="39.19"/></g></svg><b>Dataroom</b><span>is42</span></a><nav class="is42-nav" aria-label="Pages de la dataroom"><a href="/visualisation/index.html">Carte</a><a href="/visualisation/relecture.html">Relecture</a><a href="/visualisation/simulateur.html">Simulateur</a><a href="/visualisation/cibles.html">Cibles</a><a href="/visualisation/rapport.html">Rapport</a><a href="/visualisation/fourchette.html">Fourchette</a><a href="/visualisation/hub.html#livrables" aria-current="page">Livrables</a></nav><div class="is42-tools"><button type="button" class="is42-square" id="is42-theme" aria-label="Changer de thème">&#9728;</button><details class="is42-menu"><summary class="is42-square" aria-label="Menu">&#8801;</summary><nav class="sheet" aria-label="Pages de la dataroom"><a href="/visualisation/hub.html">Accueil</a><a href="/visualisation/index.html">Carte</a><a href="/visualisation/relecture.html">Relecture</a><a href="/visualisation/simulateur.html">Simulateur</a><a href="/visualisation/cibles.html">Cibles</a><a href="/visualisation/rapport.html">Rapport</a><a href="/visualisation/fourchette.html">Fourchette</a><a href="/visualisation/hub.html#livrables" aria-current="page">Livrables</a></nav></details></div></div></header><script>(function(){var b=document.getElementById("is42-theme");if(!b)return;
+function cur(){var t=document.documentElement.getAttribute("data-theme");if(t)return t;
+return window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}
+function label(){var d=cur()==="dark";b.textContent=d?"\u263E":"\u2600";b.setAttribute("aria-label",d?"Passer au thème clair":"Passer au thème sombre")}
+b.addEventListener("click",function(){var n=cur()==="dark"?"light":"dark";document.documentElement.setAttribute("data-theme",n);
+try{localStorage.setItem("is42-theme",n)}catch(e){}label()});label();
+document.querySelectorAll(".is42-menu .sheet a").forEach(function(a){a.addEventListener("click",function(){var d=a.closest("details");if(d)d.open=false})});
+})();</script>
+<header class="fiches">
   <h1>Fiches d'oral — sujet 2, capacité financière</h1>
   <div class="bar">
     <span>Rôle :</span>

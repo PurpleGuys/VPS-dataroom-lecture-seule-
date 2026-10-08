@@ -1,6 +1,6 @@
 # Annexe — sources et chiffres cités
 
-Généré le 2026-10-07 depuis la dataroom : 620 chiffres (0 relus par un tiers), 40 opérations (0 relues), 186 documents citables.
+Généré le 2026-10-08 depuis la dataroom : 620 chiffres (0 relus par un tiers), 40 opérations (0 relues), 186 documents citables.
 Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date de consultation. « non relu » signifie qu'un seul membre a lu la page.
 
 ## 1. Chiffres, par rôle
