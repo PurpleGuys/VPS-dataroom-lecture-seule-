@@ -1,218 +1,185 @@
-> Écrit par l'API Claude (claude-opus-5-5) le 10/10/2026 18:51, 0.34 $, à partir des fiches de pages et du registre. À relire, contredire et réécrire par le membre qui défend le rôle : rien ici n'est signé.
->
-> Réponse tronquée par la limite de longueur.
-
-# Analyse du rôle 6 — Cibles, puis synthèse
+> Écrit par l'API Claude (claude-opus-5-5) le 10/10/2026 19:11, 0.34 $, à partir des fiches de pages et du registre. À relire, contredire et réécrire par le membre qui défend le rôle : rien ici n'est signé.
 
 ## Ce que la dataroom établit
 
-**1. L'opération de calibrage : Clean Earth**
+**Le point d'étalonnage : Clean Earth**
 
-- **Valeur d'entreprise :** 3,0 Md USD [F46], soit environ 2,6 Md EUR [F47].
-- **Prix payé à la clôture du 1er juin 2026 :** 2 989 M USD, soit 2 542 M EUR (veolia_finance_amendment_urd_2025.pdf p.46) [D2].
-- **Effet sur l'endettement financier net :** 2 778 M EUR [F76]. Ce montant se compose de 2 542 M€ de prix et de 225 M€ de dettes IFRS 16 (veolia-amendement-deu-2025-s1-2026.pdf p.12).
-- **Le multiple de 9,8x est un multiple après synergies en régime de croisière, sur l'EBITDA 2026e [F48].** Les synergies atteignent 120 M USD en année 4 [F49]. La montée en charge est de 50, 75, puis 100 M USD les années 1 à 3 (veolia_clean_earth_investor_presentation.pdf p.15). Elle coûte environ 90 M USD de mise en œuvre [F50].
-- **Ce que la clôture implique pour fin 2027 :** l'opération a été clôturée en juin 2026. Fin 2027, l'EBITDA de Clean Earth ne portera donc qu'une partie des synergies. Le multiple réellement supporté par le levier à cette date est supérieur à 9,8x.
-- **Données du vendeur (Enviri) pour reconstituer un multiple avant synergies :**
-  - chiffre d'affaires du segment : 973,9 M USD [F209] ;
-  - résultat opérationnel : 91,7 M USD [F211] ;
-  - dépréciation : 39 778 k USD [F213] ;
-  - amortissement : 23 644 k USD [F214].
-- **Historique :** Harsco avait payé Clean Earth 625 M USD pour environ 65 M USD d'EBITDA 2019 (harsco-clean-earth-acquisition-2019.html p.1).
+Clean Earth est déjà acquis [T1]. La grille s'en sert pour fixer la taille et le multiple, pas comme cible.
 
-**2. Le cadre financier dans lequel s'inscrit l'enveloppe**
+- **Valeur d'entreprise à l'annonce** : 3,0 Md USD [F46], soit environ 2,6 Md EUR [F47].
+- **Prix décaissé** : 2 989 M USD, soit 2 542 M EUR, à la clôture du 1er juin 2026 [D2] (veolia-amendement-deu-2025-s1-2026.pdf p.46).
+- **Effet sur la dette nette** : 2 778 M EUR [F76]. Ce montant comprend le prix de 2 542 M EUR et 225 M EUR de dettes IFRS 16 (veolia-amendement-deu-2025-s1-2026.pdf p.12).
+- **Multiple** : 9,8x la VE / EBITDA 2026e, après synergies en régime de croisière [F48].
+- **Synergies** : 120 M USD à l'année 4 [F49], pour 90 M USD de coûts de mise en œuvre [F50]. La montée en charge est de 50, puis 75, puis 100 M USD sur les années 1 à 3 (veolia_clean_earth_investor_presentation.pdf p.15).
+- **Repère historique** : en 2019, Harsco avait payé Clean Earth 625 M USD pour 65 M USD d'EBITDA ajusté (harsco-clean-earth-acquisition-2019.html p.1). Le ratio 625 / 65 donne environ 9,6x avant synergies.
 
-| Élément | Valeur | Source |
+**Les multiples de marché disponibles dans les déchets dangereux et les services**
+
+| Opération | Multiple publié | Ratio calculable (termes cités) |
 |---|---|---|
-| Plafond de levier dette nette / EBITDA | ≤ 3x fin 2027 | pr-wts-050725.pdf p.1 ; veolia_clean_earth_investor_presentation.pdf p.16 |
-| Levier attendu en 2026 avec Clean Earth | « égal ou légèrement supérieur à 3x » | annual-resultats-2025.pdf p.5 |
-| Levier publié fin 2025 | 2,8x | credit_opinion-veolia-environnement-sa-04may2026.pdf p.6 |
-| Endettement financier net au 30/06/2026 | 24 548 M€ | veolia-amendement-deu-2025-s1-2026.pdf p.14 |
-| Endettement financier net au 31/12/2025 | 19 657 M€ | finance_veolia_urd_2025_en.pdf p.351 |
-| EBITDA 2025 | 7 050 M€ | finance_veolia_2025_full_year_results_presentation_0.pdf p.30 |
+| HEPACO (Clean Harbors, 2024) | 7,1x après synergies [F483] | 400 [F478] / 36 [F479] ≈ 11,1x avant synergies |
+| ES&H (Clean Harbors, 2026) | 8,7x après synergies (clean-harbors-q2-2026 p.1) | — |
+| EnviroServe + ES&H | 8,9x après synergies [F607] | EnviroServe seul : 470 [F601] / 27 [F602] ≈ 17,4x avant synergies |
+| US Ecology (Republic, 2022) | non publié | 2,2 Md [F525] / 156 M [F527] ≈ 14,1x (12 mois glissants, avant synergies) |
+| Covanta (EQT, 2021) | non publié | 5,3 Md [F484] / 460 à 480 M [F486][F487] ≈ 11,0x à 11,5x |
+| Cleanaway (proposition EQT) | environ 20x l'EBIT FY26 | 9,4 Md AUD / 892,6 M AUD d'EBITDA (cleanaway p.25, p.35) ≈ 10,5x |
+| Enviropacific (Veolia, 2026) | 5,8x (finance_veolia_q1_2026 p.11) | — |
+| Tuck-ins Veolia 2025 | environ 9x [F472] | — |
+| Tuck-ins Veolia Espagne | environ 7,4x [F445] | — |
+| Rachat des 30 % de WTS | environ 11x [F473] | — |
 
-- **Ordre de grandeur, pas le ratio publié :** 24 548 / 7 050 ≈ 3,5x. Ce calcul rapporte une dette de juin 2026 à un EBITDA 2025 qui n'intègre pas Clean Earth. Il ne reproduit donc pas le ratio de Veolia. Il montre seulement qu'au 30/06/2026 il n'existe pas de marge avant cessions.
-- **La notation est une seconde contrainte, peut-être plus serrée que le plafond de 3x :**
-  - Moody's prévoit un FFO / dette nette de 18,5 % en 2026 et de 19,5 % en 2027. Son seuil de dégradation se situe « sous la fourchette haute des 10 % » (credit_opinion-veolia-environnement-sa-04may2026.pdf p.2).
-  - S&P attend un FFO / dette de 20 à 22 % sur 2026-2028 (ratingsdirect_tearsheet…apr-27-2026.pdf p.1).
-- **Critères d'investissement de Veolia pour les tuck-ins :** TRI au moins égal au WACC + 4 %, retour sur investissement en moins de 7 ans (finance_ve_investorday_en.pdf p.32).
+Les multiples après synergies payés par les acquéreurs stratégiques se situent entre 7x et 9x. Avant synergies, les mêmes actifs se paient entre 11x et 17x. **Le 9,8x de Clean Earth est un multiple après synergies de l'année 4** : il ne s'applique pas tel quel à une cible tierce mesurée sur son EBITDA autonome.
 
-**3. Les multiples de transaction disponibles (déchets dangereux et services)**
+**L'univers de cibles, classé par accessibilité**
 
-| Opération | Multiple | Base | Source |
-|---|---|---|---|
-| HEPACO | 7,1x | après synergies [F483] | — |
-| HEPACO | 400 / 36 ≈ 11,1x | avant synergies [F478]/[F479] | — |
-| ES&H | 8,7x | après synergies | clean-harbors-q2-2026-2026-07-29.html p.1 |
-| EnviroServe | environ 9x | après synergies | clean-harbors-enviroserve-2026-08-12.html p.1 |
-| EnviroServe + ES&H | 8,9x | combiné après synergies [F607] | — |
-| Tuck-ins Veolia 2025 | environ 9x | — [F472] | — |
-| Tuck-ins Espagne | environ 7,4x | — [F445] | — |
-| Enviropacific | 5,8x | VE / EBITDA ajusté | finance_veolia_q1_2026_results_presentation.pdf p.11 |
-| Rachat de 30 % de WTS | environ 11x | — [F473] | — |
-| US Ecology | 2,2 / 0,156 ≈ 14,1x | EBITDA 12 mois, avant synergies [F525]/[F527] | — |
-| Covanta | 5,3 / 0,48 ≈ 11,0x à 5,3 / 0,46 ≈ 11,5x | — [F484]/[F486]/[F487] | — |
-| Groupe Flamme (Séché) | 300 / 20 = 15x | EBE 2024, prix des titres | seche_environnement_deu_2025_fr.pdf p.308 |
+*Hors de portée par la taille*
+- GFL Environmental Services : 8,0 Md CAD [F613][T5].
+- Cleanaway : environ 9,4 Md AUD pour le groupe entier, segment dangereux non vendu séparément, groupe en voie de rachat par EQT [T13][D43].
 
-**Conclusion sur les multiples :** après synergies, les comparables se situent entre 7 et 9x. Avant synergies, ils dépassent 11x pour les actifs de traitement cotés. Le 9,8x de Clean Earth se situe dans le haut de la fourchette après synergies.
+*Indisponibles ou hors sujet*
+- Groupe Flamme : promis à Séché pour environ 300 M EUR [T21][D50].
+- Activités déchets dangereux France de SUEZ (ex-SARPI) : Veolia a dû les céder au titre des engagements Veolia-Suez [T22].
+- AVR : incinérateur d'ordures ménagères, pas une cible déchets dangereux [T20].
+- Currenta : aucun processus de cession identifié [T24].
+- Envisol : rachetée par Geotec en 03/2025 (geotec-cbinsights-profile.html p.1). Voir les contradictions.
 
-**4. L'univers de cibles : ce qui reste réellement disponible**
+*Tranche 1 à 2 Md€, valeur connue mais ancienne ou partielle*
+- Heritage-Crystal Clean : environ 1,2 Md USD en 2023, base non précisée [F609][T2].
+- Triumvirate : 1,8 Md USD de valorisation après investissement de Berkshire, ce n'est pas un prix à 100 % [F612][T4].
+- NG Group : 800 M EUR pour le seul pôle Fortum [F611][T6].
+- Augean : environ 390 M GBP en titres, en 2021 [T18][D53].
+- Greenthesis : environ 340 M EUR de valorisation implicite, pour 42 M EUR d'EBITDA et 173 M EUR de chiffre d'affaires (alla-tedesca-patrizia… p.1). Si cette valeur est une valeur d'entreprise, le ratio 340 / 42 donne environ 8,1x.
 
-*Cibles de taille comparable à l'enveloppe (1 à 2 Md€)*
+*Taille significative, sans prix*
+- Onterris (ex-Montrose) : 169 084 k USD d'EBITDA ajusté FY2025, 277 065 k USD de dette long terme et 11 223 k USD de trésorerie (montrose-8k p.11, p.9). Revue stratégique en cours [T10].
+- Arcwood : incinération et PFAS, plus de 2 000 salariés, aucun prix publié [T3] (arcwood-rebrand-2025-03-18.html p.1).
 
-- **Taux de change implicite à la clôture de Clean Earth :** 2 989 / 2 542 ≈ 1,176 USD pour 1 EUR (p.46). Les conversions ci-dessous sont indicatives.
-- **Heritage-Crystal Clean :** environ 1,2 Md USD en 2023 [F609] [T2], soit environ 1,02 Md€ à ce taux. La base n'est pas précisée. La société est détenue par J.F. Lehman depuis le 17/10/2023 [D33].
-- **Triumvirate :** 1,8 Md USD [F612] [T4], soit environ 1,53 Md€. C'est une valorisation après investissement, pas un prix pour 100 %. Berkshire n'est entré qu'en 02/2025 [D36], ce qui rend une cession avant fin 2027 peu probable.
-- **Arcwood :** aucun prix publié [T3]. On sait seulement qu'elle compte plus de 2 000 salariés et qu'elle est détenue par EQT depuis janvier 2024 (arcwood-rebrand-2025-03-18.html p.1).
-- **NG Group :** 800 M EUR [F611] [T6]. Ce montant ne couvre que le pôle Fortum, pas le groupe combiné.
+*Tuck-ins*
+- Enviracore, Chemtron, Tradebe, Enva, Indaver : non chiffrés [T7][T8][T12][T16][T17][T19].
+- Seaside, propriétaire d'Enviracore, vise des plateformes de 3 à 15 M USD d'EBITDA [F616][F617]. Enviracore relève donc de l'ordre de grandeur d'un tuck-in.
 
-*Cibles hors de portée ou non à vendre*
+*Peu pertinentes*
+- Perma-Fix : 61,7 M USD de chiffre d'affaires 2025, niche nucléaire [T11].
+- Quest : 1,8 M USD d'EBITDA ajusté au T1 2026, pas de capacité de traitement dangereux mentionnée [T15].
+- Daiseki : comparable de valorisation plutôt que cible [T14].
 
-- **GFL Environmental Services :** 8,0 Md CAD [F613], soit 8,0 / 1,6058 ≈ 4,98 Md€ [F615]. C'est une borne haute [T5].
-- **Cleanaway :** environ 9,4 Md AUD pour l'ensemble du groupe, qui est en cours de rachat par EQT [D43] [T13].
-- **Daiseki :** comparable de valorisation, pas une cible [T14].
+**Le cadre de levier de Veolia**
 
-*Petites cibles (tuck-ins)*
-
-- **Enviracore :** les critères de Seaside visent des plateformes de 3 à 15 M USD d'EBITDA [F616] [F617] [T7] [T8].
-- **Chemtron :** pas de valeur publiée [T12].
-- **Perma-Fix :** chiffre d'affaires 2025 de 61,7 M$, activité de niche nucléaire [T11].
-- **Quest :** EBITDA ajusté T1 2026 de 1,8 M$ [T15].
-- **Onterris :** une revue stratégique est en cours, sans aucun chiffre [T10].
-
-*Déjà pris par des concurrents*
-
-- **Clean Harbors** a acquis EnviroServe [D31], ES&H [D32], Terra Nova [D41] et Depot Connect, pour environ 130 M USD (clean-harbors-10-k-2025.pdf p.70).
-- **Séché** a acquis Flamme [D50], ainsi qu'Hidronor et La Filippa pour 214,6 M€ [D51].
-
-*Absentes de la grille alors qu'elles figurent dans les opérations*
-
-- **Augean :** environ 390 M£ de capital en 2021, détenue par des fonds [D53].
-- **Enva :** rachetée par I Squared en 2023, sans prix [D55].
-- **Greenthesis :** environ 340 M€ de valeur attribuée pour 40 % [D57].
-- **Koentec :** environ 500 M USD [D48].
-- **Contract Resources :** 377 M AUD de VE [D49].
+- **Dette nette** : 24 548 M EUR au 30/06/2026, contre 19 657 M EUR fin 2025 (veolia-2026-first-half-results.pdf p.11).
+- **Plafond GreenUp** : dette nette / EBITDA ≤ 3x fin 2027 (pr-wts-050725.pdf p.1).
+- **Levier attendu en 2026** : égal ou légèrement supérieur à 3x avec Clean Earth (annual-resultats-2025.pdf p.5).
+- **Rythme habituel des tuck-ins déchets dangereux** : environ 0,3 à 0,4 Md€ par an (pr-hazardous-waste-treatment-veolia.pdf p.2 ; veoliaslides_9m_2025_0.pdf p.13).
 
 ## Contradictions entre documents
 
-1. **Taille de Clean Earth.** Les montants publiés diffèrent selon la source et la date :
+1. **Montant de Clean Earth.** Le rapport compare la capacité d'acquisition à « Clean Earth lui-même (2,8 Md€) ».
+   - 2 778 M EUR est l'effet sur la dette [F76], pas le prix.
+   - Le prix est de 2 542 M EUR [D2] ; la valeur d'entreprise annoncée est d'environ 2,6 Md EUR [F47].
+   - L'écart 2 778 − 2 542 = 236 M EUR correspond pour l'essentiel aux 225 M EUR d'IFRS 16 (veolia-amendement-deu-2025-s1-2026.pdf p.12).
+   - Comparer une enveloppe de dette à l'effet dette est défendable, mais il faut l'écrire. Les sources donnent aussi 3,04 Md USD [D46], « plus de 3,0 Md USD » [F216] et 2 989 M USD.
 
-| Montant | Source |
-|---|---|
-| 3,0 Md USD | [F46] |
-| 2 989 M USD | p.46 |
-| 3,04 Md USD | [D46], communiqué Enviri |
-| « plus de 3,0 Md USD » | [F216] |
-| 2,6 Md€ | [F47] |
-| 2 542 M€ | [D2] |
-| 2 644 M€ d'engagement d'achat au 31/12/2025 | finance_veolia_consolidated_financial_statements_31-12-25.pdf p.18 |
-| 2 778 M€ d'effet sur la dette | [F76] |
+2. **Calendrier des cessions.** C'est le point qui touche directement la recommandation.
+   - « Plus de 2 Md€ d'ici mi-2028 » (finance_veolia_q1_2026 p.11).
+   - « 2 Md€ sur 2026-2028 » (finance_veolia_2025_full_year_results p.11).
+   - « Plus de 2 Md€ dans les deux ans après la clôture de Clean Earth », soit vers juin 2028, et ailleurs un « programme de cessions » de 3 Md€ (annual-resultats-2025.pdf p.5).
+   - Moody's retient environ 2 Md€ « fin 2027 » (credit_opinion 04may2026 p.6).
+   - Si l'encaissement court jusqu'à mi-2028, la clause « une cible de 1 à 2 Md€ une fois les cessions encaissées » tombe **après** l'horizon fin 2027.
 
-   - **Le rapport retient « 2,8 Md€ », c'est-à-dire l'effet sur la dette**, IFRS 16 comprise. Ce n'est ni la VE ni le prix. Pour mesurer l'impact sur le levier, c'est la bonne grandeur, mais elle doit être nommée ainsi.
-   - **Le signe diffère :** −2 778 en [F76], +2 778 en p.12.
+3. **EBITDA de référence pour le levier.**
+   - Moody's attend plus de 8 Md€ en 2027 (credit_opinion 2dec2025 p.7).
+   - S&P attend 7,2 à 7,4 Md€ d'EBITDA ajusté, mais seulement en 2028, à partir de 6,5 Md€ en 2025 (ratingsdirect apr-27-2026 p.1). Le chiffre publié 2025 est de 7 050 M€ (FY2025 p.30).
+   - Les définitions diffèrent. L'enveloppe sous 3x varie fortement selon la base retenue.
+   - La présentation S1 2026 affiche à la fois 3 352 et 3 552 M EUR d'EBITDA (veolia_finance_presentation_h1_2026_results.pdf p.24).
 
-2. **Calendrier des synergies de Clean Earth.** « Année 4 » [F49], « 2027 » (finance_veolia_2025_full_year_results_presentation_0.pdf p.11), « d'ici 2030 » (même document p.29) et « 2030 » chez S&P. Ce point détermine l'EBITDA réellement disponible fin 2027.
+4. **Valeur des activités déchets dangereux France de Suez.** Le registre indique 690 M€ (2022) [T22]. L'URD 2022 indique 439 M€ pour « cession d'actifs de déchets dangereux en France » (ve_urd_2022_en.pdf p.369, p.371).
 
-3. **Programme de cessions.** Le montant et l'échéance varient :
-   - plus de 2 Md€ « d'ici mi-2028 » (finance_veolia_q1_2026_results_presentation.pdf p.11) ;
-   - « 2026-2028 » (FY2025 p.11) ;
-   - « dans les deux ans après la clôture » (annual-resultats-2025.pdf p.5) ;
-   - environ 2 Md€ « fin 2027 » selon Moody's (p.6) ;
-   - « 3 Md€ » sur la même page annual-resultats-2025.pdf p.5.
+5. **Envisol.**
+   - Le registre la présente comme cible, avec un chiffre d'affaires d'environ 8 M€ [T9].
+   - La fiche légale donne 5,505 M€ de chiffre d'affaires en 2023 et 43 salariés en 2022 (envisol-fiche-legale-jde.html p.1).
+   - CB Insights donne 8,1 M€ et 70 salariés, et indique son rachat par Geotec le 13/03/2025 (geotec-cbinsights-profile.html p.1).
+   - Si ce rachat est confirmé, ce n'est plus une cible disponible.
 
-   **Si l'échéance est mi-2028, la condition « après encaissement des cessions » de la recommandation tombe au-delà de l'horizon fin 2027.**
+6. **GFL Environmental Services : devise.** La valeur est de 8,0 Md **CAD** et la participation conservée de 1,7 Md CAD (gfl-es-latham p.1). Un autre article donne 8 Md **USD** et environ 1,7 Md USD, soit 44 % (gfl-es-canadian-lawyer p.1).
 
-4. **EBITDA de référence.**
-   - Moody's : plus de 8 Md€ en 2027 (credit_opinion_veolia-environnement-2dec2025.pdf p.7).
-   - S&P : 7,2 à 7,4 Md€ d'EBITDA ajusté en 2028, à partir de 6,5 Md€ en 2025, contre 7 050 M€ publiés par Veolia.
-   - L'EBITDA S1 2026 apparaît à 3 352 dans le titre et 3 552 dans le graphique (veolia_finance_presentation_h1_2026_results.pdf p.24).
+7. **Greenthesis : date.** L'opération est datée du 22/10/2024 [D57] et « 2024 » [T23]. La fiche de page la date d'« annonce 10/2026 », avec des chiffres FY2025. La date et la base (VE ou titres) sont à trancher.
 
-   **L'enveloppe sous 3x dépend directement de la définition retenue.**
+8. **Multiple EnviroServe.** Environ 9x en 08/2026 (clean-harbors-enviroserve-2026-08-12 p.1), 8,9x combiné en 10/2026 [F607]. L'écart est mineur.
 
-5. **GFL Environmental Services.** 8,0 Md CAD [F613] contre 8 Md USD (gfl-es-canadian-lawyer-2025.html p.1). La participation conservée est de 1,7 Md CAD [F614] dans une source, 1,7 Md USD dans l'autre.
+9. **Écarts mineurs sur d'autres opérations.**
+   - Hidronor + La Filippa : effet dette de 230 M€ annoncé en 01/2026, puis 224 M€ au 30/06/2026 (Séché p.158 et fr0000039109 p.24).
+   - ECO : 605 M SGD [D42], puis 608 M SGD (seche_deu_2025 p.223).
+   - Plus-value Fortum : 110 M€, puis 180 M€ (fortum-summa 2024-07-18 et 2024-11-29).
 
-6. **Multiple d'EnviroServe.** L'annonce d'août indique environ 9x « combiné » (p.1 du 12/08). La finalisation indique 8,9x [F607]. [D31] date EnviroServe au 05/10/2026, alors que [F601] la date à 08/2026 : la première date correspond à la finalisation, la seconde à l'annonce.
-
-7. **Envisol [T9].** La société est présentée comme cible, alors que Geotec l'a rachetée en 03/2025 (geotec-cbinsights-profile.html p.1).
-   - Chiffre d'affaires : 8,1 M€ selon cette source, contre 5,505 M€ en 2023 dans la fiche légale (envisol-fiche-legale-jde.html p.1).
-   - Effectif : 70 salariés contre 43.
-   - La fiche légale signale un risque de défaillance élevé.
-
-8. **Montants des tuck-ins 2025 de Veolia.** 174 M€ au S1, 300 M€, 0,4 Md€ à 9 mois, 230 M€, 247 M€ et 370 M€ [F471]. Les périmètres diffèrent (États-Unis seuls ou États-Unis, Brésil et Japon ; investissement financier net ou VE).
-
-9. **Plus-value Fortum.** Environ 110 M€ en juillet, environ 180 M€ en novembre 2024 (fortum-summa pages p.1). La seconde est une estimation réalisée, sans conséquence sur la valeur de 800 M€.
-
-10. **Prix d'ECO (Séché).** Environ 605 M SGD [D42] contre 608 M SGD (seche_environnement_deu_2025_fr.pdf p.223).
-
-11. **Effectif de Clean Earth.** 2 100 (finance_veolia_urd_2025_en.pdf p.7), 2 500 (rapport intégré p.15), 2 600 (veolia-2026-first-half-results.pdf p.4).
-
-12. **Doublon de cible.** [T7] et [T8] portent sur la même société, Enviracore, avec deux justifications différentes.
+10. **Montant des tuck-ins 2025 de Veolia.** Selon la source et la période : 370 M€ [F471], environ 300 M€ (S1), environ 0,4 Md€ (9M), 230 M€ (9M, États-Unis), 247 M€ (États-Unis, FY), plus 85 M€ (Zeeklite). La « fourchette » des tuck-ins citée dans la recommandation n'est donc pas définie de façon unique.
 
 ## Ce qui manque encore
 
-- **Dette nette et EBITDA prévisionnels fin 2027** sur la base du covenant de 3x. Sans ces deux chiffres, l'enveloppe de 2,3 Md€ ne peut pas être vérifiée à partir de la dataroom. Il faut les reprendre du modèle (onglets de capacité) et les rapprocher de Moody's p.2 (tableau 2021-2027F).
-- **Mécanique de calcul du rapport, à documenter :**
-  - l'EBITDA de la cible entre-t-il dans le dénominateur, avant ou après synergies, et sur combien de mois en 2027 ?
-  - **Incohérence apparente :** 3 000 − 511 = 2 489 M€, alors que la marge annoncée est d'environ 2,3 Md€ (rapport). L'écart suggère que l'EBITDA acquis est compté, mais ce n'est pas écrit.
-- **Hypothèses implicites des voies de financement, aucune n'étant sourcée :**
-  - 22 / 511 ≈ 4,3 % de coupon hybride. Aucun coupon d'hybride Veolia ne figure dans la dataroom. Le seul repère est l'hybride de Séché à 5,87 % (seche…p.190). Veolia vient par ailleurs de rembourser 850 M€ de titres super-subordonnés le 09/02/2026 (veolia-amendement-deu-2025-s1-2026.pdf p.14).
-  - 73 / 730 = 10x de multiple de cession. Aucun multiple de sortie du programme de cessions n'est publié.
-  - Le seuil de 6,7x et la dilution de 2,4 %.
-  - La distribution de 1 000 futurs et les probabilités de 97 %, 60 % et 12 % : ce sont des sorties du modèle, impossibles à vérifier ici.
-- **Traitement des hybrides dans le ratio publié et par les agences.** La part de crédit capitaux propres n'est pas documentée. Il faut la chercher dans les rapports S&P et Moody's complets.
-- **Prix d'Arcwood :** aucune donnée. Il faudrait une estimation fondée sur l'EBITDA (presse spécialisée, documents de financement d'EQT en janvier 2024, notation de la dette d'acquisition si elle existe).
-- **EBITDA des cibles de 1 à 2 Md€.** Il manque pour Heritage-Crystal Clean, Triumvirate et NG Group combiné. Sans EBITDA, la grille ne peut pas appliquer de multiple.
-- **Notation qualitative (traitement, géographie, PFAS, concurrence, passifs)**, cellules jaunes de Cibles §C : non remplie.
-  - Pour la rubrique concurrence, un repère : environ 22 installations commerciales de combustion de déchets dangereux en service aux États-Unis (us-epa-2026-interim-guidance…p.71), face aux 6 incinérateurs RCRA de Veolia après Clean Earth (pr-veolia-clean-earth-060126.pdf p.2). Les deux catégories ne sont pas nécessairement identiques. Le rachat d'un incinérateur comme Arcwood soulève une question antitrust à instruire.
-  - Pour les passifs : Clean Harbors fournit des ordres de grandeur, avec 230,7 M$ de passifs environnementaux (clean-harbors-10-k-2025.pdf p.43). Rien n'est disponible pour les cibles.
-- **Sens de « bas de la fourchette »** dans la recommandation : à préciser. S'agit-il de la fourchette de multiples (environ 7,4x à 9x selon [F445] et [F472]) ou de la fourchette de montants ?
+- **Les chiffres de sortie du modèle ne sont rattachés à aucune ligne du registre.** C'est le cas de 2,3 Md€, 2,15 Md€, 1,33 à 3,07 Md€, des probabilités de 97 / 60 / 12 %, de 511 M€, 22 M€, 730 M€, 73 M€, 2,4 % et 6,7x.
+  - **Coupon des hybrides.** Les 22 M€ sur 511 M€ supposent un coupon que la dataroom ne donne pas pour Veolia. On dispose du coût moyen de financement de 3,83 % (FY2025 p.30) et, chez Séché, d'un hybride à 5,87 % (seche_deu_2025 p.190).
+  - **Multiple de cession.** Les 73 M€ d'EBITDA perdus sur 730 M€ de cessions impliquent un multiple que le document ne source pas.
+  - **Dilution.** Les 2,4 % exigent une capitalisation. La dataroom donne les deux facteurs (29,38 € [F597] et 741 723 437 actions [F598], dont 10 438 730 autodétenues [F600]), mais pas le produit. Il faut savoir si les actions autodétenues sont exclues.
+  - **Scénario défavorable « rien ».** Les hypothèses (EBITDA, cessions, change) ne sont pas exposées.
+- **Arcwood** : il faut un prix ou un EBITDA. À chercher dans le communiqué EQT de janvier 2024 ou dans la presse financière (PE Hub, Reuters). Sans cette donnée, la grille ne peut pas répondre (point ouvert confirmé).
+- **Onterris** : il manque la capitalisation boursière et une dette nette à date pour obtenir une valeur d'entreprise. L'EBITDA est connu (montrose-8k p.11) ; le cours est à trouver dans le 8-K ou le communiqué de revue stratégique du 05/08/2026.
+- **Heritage-Crystal Clean, Triumvirate, Augean, NG Group, Greenthesis** : pas d'EBITDA récent. Aucune ne peut être placée sur la grille de multiples sans le 10-K 2022 de Heritage-Crystal Clean, les comptes Companies House d'Augean et les comptes NG Group 2025.
+- **EBITDA autonome de Clean Earth 2025** : il n'est pas publié directement. On a les composantes : résultat opérationnel de 91,7 M USD [F211], dépréciation de 39 778 k USD [F213], amortissement de 23 644 k USD [F214]. Il faut un rapprochement Enviri ou Veolia pour passer du 9,8x après synergies au multiple avant synergies.
+- **Notation qualitative des cibles** (traitement, géographie, PFAS, concurrence, passifs) : elle reste à faire par le groupe (cellules jaunes de Cibles §C). Seuls des repères de passifs environnementaux sont disponibles, et uniquement chez Clean Harbors (clean-harbors-10-k-2025 p.43).
+- **Encaissements de cessions réalisés en 2026** : seuls 73 M€ de cessions financières figurent au S1 2026 (veolia_finance_amendment_urd_2025 p.27). Il n'existe aucun échéancier des 2 Md€.
 
 ## Réponses aux questions du rôle
 
-Aucune question formelle n'est posée. Voici la confrontation de la réponse du rapport et la recommandation amendée.
+Aucune question n'est posée. Voici la confrontation de la réponse du rapport.
 
-**Ce qui tient dans la réponse du rapport**
+**1. Le multiple d'application est probablement trop favorable.**
+- Appliquer 9,8x à une cible revient à lui prêter des synergies d'année 4 [F48][F49].
+- À fin 2027, les synergies de Clean Earth elles-mêmes ne seront qu'à 75 M USD (année 2), et non 120 (veolia_clean_earth_investor_presentation.pdf p.15).
+- Pour la dette, c'est l'EBITDA autonome qui compte : les comparables montrent 11x à 17x avant synergies (tableau ci-dessus).
+- L'enveloppe exprimée en VE peut donc être juste, mais l'EBITDA « acheté » serait plus faible que ne le suppose le rapport.
 
-- **L'ordre de grandeur, une enveloppe propre inférieure à la taille de Clean Earth, est cohérent avec la dataroom :**
-  - dette nette de 24 548 M€ au 30/06/2026 ;
-  - guidance de levier 2026 « égal ou légèrement supérieur à 3x » ;
-  - FFO / dette nette prévu par Moody's à 18,5 % puis 19,5 %.
-- **« Rien dans le scénario défavorable » est plausible** si les cessions glissent à mi-2028.
+**2. Le seuil de 6,7x « sans financement » est sous presque tous les comparables.** Seul Enviropacific, à 5,8x, s'y trouve. HEPACO est à 7,1x après synergies [F483]. Une cible de 3 Md€ sans financement complémentaire est donc irréaliste, ce qui va dans le sens du rapport.
 
-**Ce qu'il faut corriger ou préciser**
+**3. La recommandation est à amender sur le calendrier.** Les cessions ne seront pas nécessairement encaissées avant fin 2027 (contradiction 2). D'ici fin 2027, la proposition calibrée est la suivante :
+- poursuivre les tuck-ins au rythme observé de 0,3 à 0,4 Md€ par an, à 7x à 9x [F445][F472] ;
+- envisager une opération de 1 à 2 Md€ seulement si l'encaissement des cessions est documenté avant fin 2027, sinon la reporter à 2028.
 
-1. **Nommer correctement le montant de 2,8 Md€.** Il s'agit de l'effet sur la dette de Clean Earth [F76], pas de sa VE (2,6 Md€ [F47]) ni de son prix (2 542 M€ [D2]).
-2. **Expliciter les limites du multiple de 9,8x.** C'est un multiple après synergies en année 4, alors que fin 2027 correspond à l'année 2 environ. Une cible payée « au multiple de Clean Earth » mobilisera donc plus de capacité que ne le suggère le calcul si l'EBITDA de 2027 retenu est celui avant synergies. Les comparables après synergies se situent entre 7,1x [F483] et 8,9x [F607]. Un test de sensibilité à 8x et à 11x, cette dernière valeur approchant les multiples avant synergies, serait plus robuste que le seul 9,8x.
-3. **Reformuler la condition d'encaissement des cessions.** Si l'échéance est mi-2028 (Q1 2026 p.11), « après encaissement » signifie concrètement qu'il n'y aura pas de cible de 1 à 2 Md€ avant fin 2027. Il faut l'écrire ainsi, plutôt que de laisser entendre une fenêtre en 2027.
-4. **Restreindre l'univers réel de 1 à 2 Md€ à trois noms, dont aucun n'est vendeur certain :**
-   - Heritage-Crystal Clean, environ 1,02 Md€ indicatifs, détenue par un fonds depuis fin 2023 ;
-   - Triumvirate, environ 1,53 Md€ indicatifs, valorisation après investissement d'un fonds entré en 2025 ;
-   - Arcwood, sans prix.
-   - **NG Group** n'est pas valorisé dans son ensemble.
-   - **Envisol** doit sortir de la grille, car déjà rachetée.
-   - **EnviroServe et ES&H** sont prises par Clean Harbors.
-   - **Augean et Enva** devraient y entrer à titre exploratoire.
-5. **Recommandation amendée :**
-   - **D'ici fin 2027 :** tuck-ins uniquement, dans la limite des multiples déjà pratiqués par Veolia (environ 7,4x à environ 9x [F445] [F472]) et des critères TRI et délai de retour (investor day p.32). En volume, l'ordre de grandeur des tuck-ins de 2025 sert de repère : 247 à 370 M€ selon le périmètre [F471].
-   - **Une cible de 1 à 2 Md€** seulement après encaissement documenté d'une part substantielle des cessions et un ratio FFO / dette nette compatible avec les seuils de Moody's.
-   - **Financer une cible de 3 Md€** par hybrides ou augmentation de capital reste un scénario. Il ne devient une option que si ses hypothèses (coupon d'environ 4,3 %, cession à 10x) sont sourcées.
+**4. Cibles à instruire en priorité.** Ce sont celles dont la taille tombe dans 1 à 2 Md€ et qui sont détenues par des fonds proches d'un horizon de sortie :
+- Heritage-Crystal Clean [T2] ;
+- Triumvirate [T4] ;
+- Augean [T18] ;
+- Enva [T19] ;
+- Onterris, en revue stratégique [T10].
+
+Aucune ne peut être chiffrée aujourd'hui.
 
 ## Chiffres à enregistrer (libellé, valeur, unité, période, fichier p.N)
 
 | Libellé | Valeur | Unité | Période | Source |
 |---|---|---|---|---|
-| Clean Earth : effet sur l'endettement financier net, dont dettes IFRS 16 | 2 778 dont 225 | M EUR | S1 2026 | veolia-amendement-deu-2025-s1-2026.pdf p.12 |
-| Clean Earth : prix d'acquisition | 2 989 / 2 542 | M USD / M EUR | 01/06/2026 | veolia_finance_amendment_urd_2025.pdf p.46 |
-| Taux implicite (2 989 / 2 542) | ≈ 1,176 | USD pour 1 EUR | 06/2026 | p.46 (ratio) |
-| Clean Earth : synergies années 1 à 3 | 50 / 75 / 100 | M USD | années 1-3 | veolia_clean_earth_investor_presentation.pdf p.15 |
-| Clean Earth (Harsco) : prix / EBITDA 2019 | 625 / 65 | M USD | 2019 | harsco-clean-earth-acquisition-2019.html p.1 |
+| Clean Earth : prix décaissé | 2 542 | M EUR | 01/06/2026 | veolia-amendement-deu-2025-s1-2026.pdf p.46 |
+| Clean Earth : effet sur la dette nette | 2 778 | M EUR | S1 2026 | [F76] |
+| Clean Earth : dettes IFRS 16 reprises | 225 | M EUR | S1 2026 | veolia-amendement-deu-2025-s1-2026.pdf p.12 |
+| Clean Earth : synergies, année 2 | 75 | M USD | Year 2 | veolia_clean_earth_investor_presentation.pdf p.15 |
 | ES&H : multiple après synergies | 8,7 | x | 07/2026 | clean-harbors-q2-2026-2026-07-29.html p.1 |
-| EnviroServe : multiple après synergies | environ 9 | x | 08/2026 | clean-harbors-enviroserve-2026-08-12.html p.1 |
-| HEPACO : multiple avant synergies (400 / 36) | ≈ 11,1 | x | FY2023 | [F478]/[F479] |
-| US Ecology : multiple sur 12 mois (2 200 / 156) | ≈ 14,1 | x | 12 mois à 09/2021 | [F525]/[F527] |
-| Covanta : multiple (5 300 / 480 à 5 300 / 460) | ≈ 11,0 à 11,5 | x | 2021e | [F484]/[F486]/[F487] |
-| Groupe Flamme : prix / EBE 2024 | 300 / 20 | M EUR | 2024 | seche_environnement_deu_2025_fr.pdf p.308 |
-| Enviropacific : multiple VE / EBITDA ajusté | 5,8 | x | FY2025 | finance_veolia_q1_2026_results_presentation.pdf p.11 |
-| Hidronor + La Filippa : effet sur la dette nette de Séché | environ 230 | M EUR | 01/2026 | seche_environnement_deu_2025_fr.pdf p.158 |
-| GFL Environmental Services en EUR (8,0 / 1,6058) | ≈ 4,98 | Md EUR | 01/2025 (taux 10/2026) | [F613]/[F615] |
-| Programme de cessions, échéance | plus de 2, d'ici mi-2028 | Md EUR | 2026-2028 | finance
+| EnviroServe : multiple après synergies | ≈ 9 | x | 08/2026 | clean-harbors-enviroserve-2026-08-12.html p.1 |
+| Enviropacific : VE / EBITDA ajusté | 5,8 | x | FY2025 | finance_veolia_q1_2026_results_presentation.pdf p.11 |
+| Greenthesis : EBITDA | 42 | M EUR | FY2025 | alla-tedesca-patrizia… p.1 |
+| Greenthesis : chiffre d'affaires | 173 | M EUR | FY2025 | alla-tedesca-patrizia… p.1 |
+| Montrose / Onterris : EBITDA ajusté | 169 084 | k USD | FY2025 | montrose-8k-fy2025-results.pdf p.11 |
+| Montrose / Onterris : dette long terme hors part courante | 277 065 | k USD | 31/12/2025 | montrose-8k-fy2025-results.pdf p.9 |
+| Cleanaway : EBITDA sous-jacent | 892,6 | M AUD | FY2026 | cleanaway-fy26-results-presentation.pdf p.35 |
+| Envisol : chiffre d'affaires (au rachat par Geotec) | 8,1 | M EUR | 03/2025 | geotec-cbinsights-profile.html p.1 |
+| Suez : déchets dangereux France cédés | 439 | M EUR | 30/11/2022 | ve_urd_2022_en.pdf p.369 |
+| Programme de cessions, échéance | > 2 | Md EUR | d'ici mi-2028 | finance_veolia_q1_2026_results_presentation.pdf p.11 |
+| Hidronor + La Filippa : prix, compléments de prix compris | 214,6 | M EUR | S1 2026 | fr0000039109_20261007_11.pdf p.38 |
+| Arcwood : salariés | > 2 000 | salariés | 03/2025 | arcwood-rebrand-2025-03-18.html p.1 |
+
+## Ce que le membre doit vérifier avant de signer
+
+1. **Base du « 2,8 Md€ ».** Écrire explicitement « effet dette 2 778 M€ [F76] » ou « prix 2 542 M€ [D2] », et non « Clean Earth lui-même ».
+2. **Multiple de 9,8x.** Le justifier ou le remplacer par un multiple sur l'EBITDA autonome, en citant les comparables avant synergies. Sinon, signaler que l'enveloppe est optimiste.
+3. **Date d'encaissement des cessions retenue par le modèle.** Si c'est mi-2028, réécrire la dernière phrase de la recommandation (contradiction 2).
+4. **Hypothèses derrière 22 M€, 73 M€ et 2,4 %.** Faire sourcer le coupon, le multiple de cession et la capitalisation, y compris le traitement des 10,4 M d'actions autodétenues [F600].
+5. **EBITDA 2027 du modèle.** Vérifier lequel est utilisé (publié, Moody's ou S&P) et que le plafond de 3x est bien calculé sur l'EBITDA publié.
+6. **Univers de cibles.** Retirer Envisol si le rachat par Geotec est confirmé. Corriger la valeur Suez déchets dangereux France (690 ou 439 M€). Fusionner les deux lignes Enviracore [T7][T8].
+7. **Dates à trancher.** Greenthesis (2024 ou 2026) et devise de GFL Environmental Services (CAD ou USD).
+8. **Arcwood.** Ne pas la faire figurer dans une conclusion chiffrée tant qu'aucune valeur n'est sourcée.
