@@ -8,6 +8,7 @@ doc_type: permit
 target: Remondis
 folder: 02_Permits_Regulatory
 language: fr
+ocr: true
 added_by: dataroom-bearer
 ---
 
