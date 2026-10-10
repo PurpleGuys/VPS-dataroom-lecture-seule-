@@ -14,3 +14,5 @@ added_by: dataroom-bearer
 ![[05_Commercial_Strategy/25-06-cp-flamme.pdf]]
 
 Communiqué du 6 juin 2025 : Groupe Flamme (incinération de déchets dangereux en Hauts-de-France, CA ~100 M€ et EBE ~20 M€ exercice clos 30/09/2024, p. 2) ; prix de l'ordre de 300 M€ pour 100 % des titres, sous réserve de l'Autorité de la concurrence (p. 3).
+
+Cible : [[Targets/Projet FLAMMES]]
