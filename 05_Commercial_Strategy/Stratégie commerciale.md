@@ -7,7 +7,7 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 159 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 161 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/1183.pdf.md|Waste statistics — Statistics Explained]]
@@ -19,6 +19,8 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/annual-resultats-2025.pdf.md|Full year 2025 results]]
 - [[05_Commercial_Strategy/arcwood-rebrand-2025-03-18.html.md|Heritage Environmental Services Rebrands to Arcwood Environmental (18 March 2025)]]
 - [[05_Commercial_Strategy/bic-us-ecology-republic-2022.html.md|US Ecology joins Republic Services (BIC Magazine, reprise du communiqué du 9 février 2022)]]
+- [[05_Commercial_Strategy/bodacc_b_pdf_unitaire_20230247_01083.pdf.md|BODACC B n° 247 du 22 décembre 2023, annonce n° 1083 — MTF (RCS Valenciennes 400 449 864)]]
+- [[05_Commercial_Strategy/bodacc_c_pdf_unitaire_20260074_03499.pdf.md|BODACC C n° 74 du 17 avril 2026, annonce n° 3499 — MTF, dépôt des comptes de l'exercice clos le 30 septembre 2025]]
 - [[05_Commercial_Strategy/boomer-about-2026-10-07.html.md|Boomer Environmental — About (consulté le 7 octobre 2026)]]
 - [[05_Commercial_Strategy/capacity_assessment_-report.pdf.md|National Capacity Assessment Report Pursuant to CERCLA Section 104(c)(9) — January 24, 2025 (EPA 530-R-25-007)]]
 - [[05_Commercial_Strategy/clean-harbors-enviroserve-2026-08-12.html.md|Clean Harbors to Acquire EnviroServe for $470 Million (12 August 2026, Business Wire, copie Stock Titan)]]

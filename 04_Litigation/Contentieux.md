@@ -7,7 +7,7 @@ generated: true
 
 # Contentieux
 
-Rubrique de [[Targets/Veolia|Veolia]] — 12 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 13 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[04_Litigation/21-246_-_21-dcc71-note_dagrement_de_repreneur_.pdf.md|Note d'agrément de repreneur — 21-246 / 21-DCC-71 (SARP / Suez RV OSIS)]]
@@ -20,5 +20,6 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[04_Litigation/flint-residents-reach-25m-settlement-engineers-water-crisis-case-flint-residents-reach-25.html.md|Flint residents reach $25M settlement with engineers in water crisis case]]
 - [[04_Litigation/m9969-veolia-suez-decision.pdf.md|Décision M.9969 — VEOLIA / SUEZ]]
 - [[04_Litigation/m_9969_8630670_8547_3.pdf.md|Cas M.9969 – VEOLIA / SUEZ — Décision sur la mise en œuvre des engagements – Approbation du repreneur (Activité Cédée Déchets Dangereux)]]
+- [[04_Litigation/pdf.pdf.md|Affaire M.10759 – GIP / Meridiam / Veolia (Hazardous Waste Business) — décision de la Commission C(2022) 7937 final du 28 octobre 2022]]
 - [[04_Litigation/veolia-files-delaware-lawsuit-seeking-recovery-of-pfas-treatment-costs-from-alleged-pollut.html.md|Veolia Files Delaware Lawsuit Seeking Recovery Of PFAS Treatment Costs From Alleged Polluters]]
 - [[04_Litigation/veolia-north-america-reaches-53-million-settlement-state-michigan-and-veolia-north-america.html.md|Veolia North America Reaches $53 Million Settlement with the State of Michigan and individual claimants to end all pending litigation]]

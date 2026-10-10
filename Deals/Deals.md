@@ -7,7 +7,7 @@ generated: true
 
 # Deals
 
-Rubrique de [[Targets/Veolia|Veolia]] — 50 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 58 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[Deals/D20 New England Disposal Technologies, Bio-Med Innovations, Ingenium, Cham.md|D20 · New England Disposal Technologies, Bio-Med Innovations, Ingenium, Chameleon Industries Group]]
@@ -17,6 +17,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[Deals/D34 Arcwood Environmental (ex-Heritage Environmental Services déchets dang.md|D34 · Arcwood Environmental (ex-Heritage Environmental Services : déchets dangereux, incinération, États-Unis)]]
 - [[Deals/D44 Clean Earth, Inc.md|D44 · Clean Earth, Inc.]] · 2019-06-28
 - [[Deals/D45 Stericycle Environmental Solutions business (ESOL).md|D45 · Stericycle Environmental Solutions business (ESOL)]] · 2020-04-06
+- [[Deals/D53 Augean plc (déchets dangereux, Royaume-Uni).md|D53 · Augean plc (déchets dangereux, Royaume-Uni)]] · 2021-09-22
 - [[Deals/D29 Covanta (valorisation énergétique des déchets, États-Unis).md|D29 · Covanta (valorisation énergétique des déchets, États-Unis)]] · 2021-11-30
 - [[Deals/D1 Suez.md|D1 · Suez]] · 2021-12-14
 - [[Deals/D23 Actifs d'Integrated Waste Services (IWS).md|D23 · Actifs d'Integrated Waste Services (IWS)]] · 2022-01-17
@@ -27,6 +28,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[Deals/D10 Dernières activités déchets dangereux cédées à Suez (SARPI).md|D10 · Dernières activités déchets dangereux cédées à Suez (SARPI)]] · 2023-01-27
 - [[Deals/D15 Activités O&M eau industrielle de WTS.md|D15 · Activités O&M eau industrielle de WTS]] · 2023-02-15
 - [[Deals/D18 Advanced Solutions (filiales opérationnelles).md|D18 · Advanced Solutions (filiales opérationnelles)]] · 2023-02-23
+- [[Deals/D55 Enva (déchets dangereux et spéciaux, Royaume-Uni et Irlande).md|D55 · Enva (déchets dangereux et spéciaux, Royaume-Uni et Irlande)]] · 2023-04-21
 - [[Deals/D7 Concessions d'eau italiennes (Latium, Sicile).md|D7 · Concessions d'eau italiennes (Latium, Sicile)]] · 2023-10-16
 - [[Deals/D33 Heritage-Crystal Clean (huiles usagées, déchets dangereux et non dange.md|D33 · Heritage-Crystal Clean (huiles usagées, déchets dangereux et non dangereux, États-Unis)]] · 2023-10-17
 - [[Deals/D13 U.S. Industrial Technologies.md|D13 · U.S. Industrial Technologies]] · 2023-10-31
@@ -37,21 +39,27 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[Deals/D42 ECO Industrial Environmental Engineering Pte Ltd.md|D42 · ECO Industrial Environmental Engineering Pte Ltd]] · 2024-07-18
 - [[Deals/D17 Veolia North America Regeneration Services.md|D17 · Veolia North America Regeneration Services]] · 2024-08-01
 - [[Deals/D16 Lydec.md|D16 · Lydec]] · 2024-09-04
+- [[Deals/D57 Greenthesis (40 %).md|D57 · Greenthesis (40 %)]] · 2024-10-22
 - [[Deals/D27 Stericycle (déchets médicaux, États-Unis).md|D27 · Stericycle (déchets médicaux, États-Unis)]] · 2024-11-04
 - [[Deals/D35 Fortum Recycling and Waste, réuni à NG Group (déchets municipaux et in.md|D35 · Fortum Recycling and Waste, réuni à NG Group (déchets municipaux et industriels, traitement des déchets dangereux, pays nordiques)]] · 2024-11-29
 - [[Deals/D11 Danubius.md|D11 · Danubius]] · 2025-01-06
+- [[Deals/D56 Gruppo Ecosistem (participation majoritaire).md|D56 · Gruppo Ecosistem (participation majoritaire)]] · 2025-01-24
 - [[Deals/D36 Triumvirate Environmental (déchets dangereux et réglementés, États-Uni.md|D36 · Triumvirate Environmental (déchets dangereux et réglementés, États-Unis)]] · 2025-02-04
 - [[Deals/D37 GFL Environmental Services (services environnementaux cédés par GFL, C.md|D37 · GFL Environmental Services (services environnementaux cédés par GFL, Canada et États-Unis)]] · 2025-03-03
 - [[Deals/D49 Contract Resources Group Pty Limited (100%).md|D49 · Contract Resources Group Pty Limited (100%)]] · 2025-03-20
 - [[Deals/D14 30 % de Water Technologies and Solutions (WTS).md|D14 · 30 % de Water Technologies and Solutions (WTS)]] · 2025-05-07
 - [[Deals/D19 Zeeklite Co. LTD.md|D19 · Zeeklite Co. LTD]] · 2025-05-30
 - [[Deals/D50 Groupe Flamme (A.R.F. et filiales, Flamme Environnement et filiales, F.md|D50 · Groupe Flamme (A.R.F. et filiales, Flamme Environnement et filiales, Flamme Assainissement et filiale)]] · 2025-06-06
+- [[Deals/D52 Renewi plc (100 % du capital émis et à émettre).md|D52 · Renewi plc (100 % du capital émis et à émettre)]] · 2025-06-06
 - [[Deals/D38 Enviracore Services (plateforme de services environnementaux intervent.md|D38 · Enviracore Services (plateforme de services environnementaux : intervention d'urgence, nettoyage industriel, eaux usées, États-Unis)]] · 2025-09-30
 - [[Deals/D40 Boomer Environmental (intervention d'urgence, nettoyage industriel, tr.md|D40 · Boomer Environmental (intervention d'urgence, nettoyage industriel, transport et traitement d'eaux usées, Oklahoma et Arkansas)]] · 2025-10-01
 - [[Deals/D48 Koentec (Korea Environmental Technology Co. Ltd.), 100%.md|D48 · Koentec (Korea Environmental Technology Co. Ltd.), 100%]] · 2026-01-15
+- [[Deals/D54 Urbaser (hors activités en Argentine).md|D54 · Urbaser (hors activités en Argentine)]] · 2026-02-12
+- [[Deals/D51 Hidronor (Chili, avec sa filiale Greendot) et La Filippa (Italie, Ligu.md|D51 · Hidronor (Chili, avec sa filiale Greendot) et La Filippa (Italie, Ligurie) — 100 % chacune]] · 2026-02-27
 - [[Deals/D4 Enviropacific Services.md|D4 · Enviropacific Services]] · 2026-03-31
 - [[Deals/D39 Environmental Management, LLC (EMI déchets dangereux, transport et éli.md|D39 · Environmental Management, LLC (EMI : déchets dangereux, transport et élimination de déchets réglementés, intervention d'urgence, Oklahoma)]] · 2026-05-08
 - [[Deals/D41 Terra Nova Solutions.md|D41 · Terra Nova Solutions]] · 2026-05-14
+- [[Deals/D58 Soltec (Ireland) Ltd (participation majoritaire).md|D58 · Soltec (Ireland) Ltd (participation majoritaire)]] · 2026-05-27
 - [[Deals/D2 Clean Earth.md|D2 · Clean Earth]] · 2026-06-01
 - [[Deals/D46 Clean Earth (100%).md|D46 · Clean Earth (100%)]] · 2026-06-01
 - [[Deals/D3 Participations du Groupe en France.md|D3 · Participations du Groupe en France]] · 2026-06-30
