@@ -7,13 +7,14 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 162 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 165 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/1183.pdf.md|Waste statistics — Statistics Explained]]
 - [[05_Commercial_Strategy/25-06-cp-flamme.pdf.md|Signature d'une promesse unilatérale d'achat en vue de l'acquisition du Groupe Flamme]]
 - [[05_Commercial_Strategy/26-01_hidronor-lafilippa-vf.pdf.md|Séché Environnement annonce deux opérations de croissance externe majeures au Chili et en Italie]]
 - [[05_Commercial_Strategy/27-billion-dollars-strategic-hazardous-waste-treatment-capacity-27-billion-at-stake-why.html.md|$27 Billion at Stake: Why Hazardous Waste Treatment Capacity Is Strategic]]
+- [[05_Commercial_Strategy/63802-enr-top-200-environmental-firms-assessing-market-give-and-take-enr-top-200-environme.html.md|ENR Top 200 Environmental Firms: Assessing Market Give and Take]]
 - [[05_Commercial_Strategy/alla-tedesca-patrizia-il-40-di-greenthesis-2643263-alla-tedesca-patrizia-il-40-di-greenth.html.md|Alla tedesca Patrizia il 40% di Greenthesis]]
 - [[05_Commercial_Strategy/ambitions-veolia-spain.pdf.md|In Spain, Veolia displays strong ambitions to support ecological transformation by putting expertise and innovation at the service of territories]]
 - [[05_Commercial_Strategy/annual-resultats-2025.pdf.md|Full year 2025 results]]
@@ -67,7 +68,9 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/inauguration-gln-veoliaxenagas-en.pdf.md|World first: Veolia, Enagás and Barcelona City Council inaugurate the first urban cold recovery network from an LNG terminal]]
 - [[05_Commercial_Strategy/kinderhook-chemtron-2019-08-16.html.md|Kinderhook Acquires Chemtron Corporation, a Leading Hazardous and Non-hazardous Waste Management Provider]]
 - [[05_Commercial_Strategy/meag-acquires-49-78-stake-in-south-east-london-efw-plant-meag-acquires-49.78-stake-in-sou.html.md|MEAG acquires 49.78% stake in south-east London EfW plant]]
+- [[05_Commercial_Strategy/new-report-shows-hazardous-waste-management-critical-input-us-economic-growth-new-report-s.html.md|New Report Shows Hazardous Waste Management is a Critical Input to US Economic Growth]]
 - [[05_Commercial_Strategy/panel-statement-2021-19.pdf.md|Panel Statement 2021/19 - Offers by Antwerp Management Limited (MSIP) and Eleia Limited for Augean plc]]
+- [[05_Commercial_Strategy/pfas-waste-management-pfas-waste-management-market-worth-2.98-billion-in-2031.html.md|PFAS Waste Management Market worth $2.98 billion in 2031]]
 - [[05_Commercial_Strategy/platinum-equity-to-sell-global-environmental-services-business-urbaser-to-blackstone-and-e.html.md|Platinum Equity to Sell Global Environmental Services Business Urbaser to Blackstone and EQT for $6.6 Billion]]
 - [[05_Commercial_Strategy/pr-2023-finance-guidance.pdf.md|Long term financial guidances 2024 - 2027]]
 - [[05_Commercial_Strategy/pr-2024-annual-results-veolia.pdf.md|2024 ANNUAL RESULTS]]
