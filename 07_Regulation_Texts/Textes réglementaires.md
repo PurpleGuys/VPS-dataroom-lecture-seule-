@@ -7,9 +7,13 @@ generated: true
 
 # Textes réglementaires
 
-Rubrique de [[Targets/Veolia|Veolia]] — 9 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 13 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
+- [[07_Regulation_Texts/eu-dec-2018-1147-bat-waste-treatment.pdf.md|Commission Implementing Decision (EU) 2018/1147 of 10 August 2018 establishing best available techniques (BAT) conclusions for waste treatment, under Directive 2010/75/EU of the European Parliament and of the Council]]
+- [[07_Regulation_Texts/eu-dec-2019-2010-bat-waste-incineration.pdf.md|Commission Implementing Decision (EU) 2019/2010 of 12 November 2019 establishing the best available techniques (BAT) conclusions, under Directive 2010/75/EU of the European Parliament and of the Council, for waste incineration]]
+- [[07_Regulation_Texts/eu-dir-2008-98-waste-framework-consolidated-2025-10-16.pdf.md|Directive 2008/98/EC of the European Parliament and of the Council of 19 November 2008 on waste and repealing certain Directives (texte consolidé 02008L0098 — 16.10.2025)]]
+- [[07_Regulation_Texts/eu-dir-2020-2184-drinking-water.pdf.md|Directive (EU) 2020/2184 of the European Parliament and of the Council of 16 December 2020 on the quality of water intended for human consumption (recast)]]
 - [[07_Regulation_Texts/eu-dir-2024-1785-ied2.pdf.md|Directive (EU) 2024/1785 of the European Parliament and of the Council of 24 April 2024 amending Directive 2010/75/EU on industrial emissions (integrated pollution prevention and control) and Council Directive 1999/31/EC on the landfill of waste]]
 - [[07_Regulation_Texts/eu-ema-2026-02-echa-pfas-universal-restriction-next-steps.pdf.md|Next steps in the ECHA assessment of the PFAS universal restriction proposal under REACH]]
 - [[07_Regulation_Texts/eu-reg-2024-1157-waste-shipments.pdf.md|Regulation (EU) 2024/1157 of the European Parliament and of the Council of 11 April 2024 on shipments of waste, amending Regulations (EU) No 1257/2013 and (EU) 2020/1056 and repealing Regulation (EC) No 1013/2006]]

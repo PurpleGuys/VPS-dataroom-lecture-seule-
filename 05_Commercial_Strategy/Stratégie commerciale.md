@@ -7,7 +7,7 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 141 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 143 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/1183.pdf.md|Waste statistics — Statistics Explained]]
@@ -132,6 +132,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/pr-wts-050725.pdf.md|Veolia acquires CDPQ’s 30% stake in Water Technologies and Solutions, achieving full ownership to accelerate value creation]]
 - [[05_Commercial_Strategy/press-release-hassyan-05132024.pdf.md|Veolia wins $320 million water technology contract for world’s most energy-efficient desalination plant, enhancing water security in UAE]]
 - [[05_Commercial_Strategy/press-release-results-q1-2024.pdf.md|KEY FIGURES AT 31 MARCH 2024]]
+- [[05_Commercial_Strategy/pulse2-clean-harbors-terra-nova-2026-05-14.html.md|Clean Harbors: $225 Million Acquisition Of Terra Nova Solutions Expands Waste Services Footprint]]
 - [[05_Commercial_Strategy/rule-2-7-announcement-regarding-the-recommended-final-cash-acquisition-of-renewi-by-macquarie.pdf.md|Recommended final cash acquisition of Renewi plc by Earth Bidco B.V. (Rule 2.7 announcement)]]
 - [[05_Commercial_Strategy/scheme-effective.pdf.md|Recommended final cash acquisition of Renewi plc by Earth Bidco B.V. - Scheme Effective]]
 - [[05_Commercial_Strategy/seaside-cbinsights-profile.html.md|Seaside Equity Partners Portfolio Investments, Seaside Equity Partners Funds, Seaside Equity Partners Exits]]
@@ -146,6 +147,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/veolia-ambitions-middle-east.pdf.md|Veolia boosts its activities in the Middle East, targeting 50 % growth by 2030]]
 - [[05_Commercial_Strategy/veolia-contract-water-cucuta-colombia-073026.pdf.md|Veolia renforce son leadership en Amérique latine avec un contrat majeur dans l'eau en Colombie pour moderniser les infrastructures hydriques de Cúcuta]]
 - [[05_Commercial_Strategy/veolia-cp-approbation-suez-2021.pdf.md|La Commission européenne approuve l'acquisition de Suez par Veolia]]
+- [[05_Commercial_Strategy/veolia-hazardous-waste-us-report-2026.pdf.md|Hazardous waste management: A hidden input to US economic growth]]
 - [[05_Commercial_Strategy/veolia-q1-key-figures-05062026.pdf.md|First quarter 2026 Key Figures]]
 - [[05_Commercial_Strategy/veolia-sets-bold-growth-goals-in-the-united-states-boosting-its-ecological-solutions-to-ensure-economic-growth-and-public-health-improvement.pdf.md|Veolia sets bold growth goals in the United States, boosting its ecological solutions to ensure economic growth and public health improvement]]
 - [[05_Commercial_Strategy/version-eng-infopresse.pdf.md|Veolia launches two new and unique dialogue initiatives with stakeholders at the heart of environmental security]]
