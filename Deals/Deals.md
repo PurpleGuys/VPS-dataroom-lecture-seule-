@@ -7,7 +7,7 @@ generated: true
 
 # Deals
 
-Rubrique de [[Targets/Veolia|Veolia]] — 58 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 59 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[Deals/D20 New England Disposal Technologies, Bio-Med Innovations, Ingenium, Cham.md|D20 · New England Disposal Technologies, Bio-Med Innovations, Ingenium, Chameleon Industries Group]]
@@ -47,6 +47,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[Deals/D36 Triumvirate Environmental (déchets dangereux et réglementés, États-Uni.md|D36 · Triumvirate Environmental (déchets dangereux et réglementés, États-Unis)]] · 2025-02-04
 - [[Deals/D37 GFL Environmental Services (services environnementaux cédés par GFL, C.md|D37 · GFL Environmental Services (services environnementaux cédés par GFL, Canada et États-Unis)]] · 2025-03-03
 - [[Deals/D49 Contract Resources Group Pty Limited (100%).md|D49 · Contract Resources Group Pty Limited (100%)]] · 2025-03-20
+- [[Deals/D59 Louis Schroll (groupe Schroll collecte, tri et recyclage de déchets, A.md|D59 · Louis Schroll (groupe Schroll : collecte, tri et recyclage de déchets, Alsace, Lorraine, Belfort)]] · 2025-04-30
 - [[Deals/D14 30 % de Water Technologies and Solutions (WTS).md|D14 · 30 % de Water Technologies and Solutions (WTS)]] · 2025-05-07
 - [[Deals/D19 Zeeklite Co. LTD.md|D19 · Zeeklite Co. LTD]] · 2025-05-30
 - [[Deals/D50 Groupe Flamme (A.R.F. et filiales, Flamme Environnement et filiales, F.md|D50 · Groupe Flamme (A.R.F. et filiales, Flamme Environnement et filiales, Flamme Assainissement et filiale)]] · 2025-06-06

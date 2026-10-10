@@ -7,7 +7,7 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 170 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 172 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/1183.pdf.md|Waste statistics — Statistics Explained]]
@@ -19,7 +19,9 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/ambitions-veolia-spain.pdf.md|In Spain, Veolia displays strong ambitions to support ecological transformation by putting expertise and innovation at the service of territories]]
 - [[05_Commercial_Strategy/amitie-franco-allemande-recyclage-franco-allemand-amitie-franco-allemande-recyclage-franc.html.md|Amitié franco-allemande, recyclage franco-allemand — entretien avec Philippe Girard, Remondis France]]
 - [[05_Commercial_Strategy/annual-resultats-2025.pdf.md|Full year 2025 results]]
+- [[05_Commercial_Strategy/antwerp-indaver-site-d-anvers-incineration-de-dechets-dangereux-en-fours-rotatifs.html.md|Indaver — site d'Anvers : incinération de déchets dangereux en fours rotatifs]]
 - [[05_Commercial_Strategy/arcwood-rebrand-2025-03-18.html.md|Heritage Environmental Services Rebrands to Arcwood Environmental (18 March 2025)]]
+- [[05_Commercial_Strategy/beseitigung-und-verwertung-gefaehrlicher-abfaelle-unter-knappen-kapazitaeten-beseitigung-u.html.md|Beseitigung und Verwertung gefährlicher Abfälle unter knappen Kapazitäten (sonderabfall-wissen.de)]]
 - [[05_Commercial_Strategy/bic-us-ecology-republic-2022.html.md|US Ecology joins Republic Services (BIC Magazine, reprise du communiqué du 9 février 2022)]]
 - [[05_Commercial_Strategy/bodacc_b_pdf_unitaire_20230247_01083.pdf.md|BODACC B n° 247 du 22 décembre 2023, annonce n° 1083 — MTF (RCS Valenciennes 400 449 864)]]
 - [[05_Commercial_Strategy/bodacc_c_pdf_unitaire_20260074_03499.pdf.md|BODACC C n° 74 du 17 avril 2026, annonce n° 3499 — MTF, dépôt des comptes de l'exercice clos le 30 septembre 2025]]
