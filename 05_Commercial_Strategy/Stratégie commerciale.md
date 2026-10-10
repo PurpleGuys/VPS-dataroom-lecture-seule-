@@ -7,12 +7,14 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 149 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 154 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/1183.pdf.md|Waste statistics — Statistics Explained]]
 - [[05_Commercial_Strategy/25-06-cp-flamme.pdf.md|Signature d'une promesse unilatérale d'achat en vue de l'acquisition du Groupe Flamme]]
 - [[05_Commercial_Strategy/26-01_hidronor-lafilippa-vf.pdf.md|Séché Environnement annonce deux opérations de croissance externe majeures au Chili et en Italie]]
+- [[05_Commercial_Strategy/27-billion-dollars-strategic-hazardous-waste-treatment-capacity-27-billion-at-stake-why.html.md|$27 Billion at Stake: Why Hazardous Waste Treatment Capacity Is Strategic]]
+- [[05_Commercial_Strategy/alla-tedesca-patrizia-il-40-di-greenthesis-2643263-alla-tedesca-patrizia-il-40-di-greenth.html.md|Alla tedesca Patrizia il 40% di Greenthesis]]
 - [[05_Commercial_Strategy/ambitions-veolia-spain.pdf.md|In Spain, Veolia displays strong ambitions to support ecological transformation by putting expertise and innovation at the service of territories]]
 - [[05_Commercial_Strategy/annual-resultats-2025.pdf.md|Full year 2025 results]]
 - [[05_Commercial_Strategy/arcwood-rebrand-2025-03-18.html.md|Heritage Environmental Services Rebrands to Arcwood Environmental (18 March 2025)]]
@@ -29,9 +31,11 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/cp-deep-dive-water-water-technologies.pdf.md|Veolia steps up its pace in Water Technologies to grow 3x faster than the market]]
 - [[05_Commercial_Strategy/cp-lapouyade-181125.pdf.md|Veolia deploys for the first time in France an innovative electricity flexibility solution at a waste recovery site]]
 - [[05_Commercial_Strategy/cp-post-ag-ve-2026-gb.pdf.md|Combined Shareholders’ General Meeting, April 23, 2026]]
+- [[05_Commercial_Strategy/cp-suez-reprend-essentiel-activites-secteur-dechets-dangereux-france-fr-30nov2022.pdf.md|SUEZ reprend l'essentiel de ses activités dans le secteur des déchets dangereux en France]]
 - [[05_Commercial_Strategy/cp-veolia-devoile-un-projet-majeur-visant-a-eliminer-progressivement-le-charbon-en-pologne-pour-soutenir-la-decarbonation-europeenne-et-renforcer-la-resilience-energetique-a-poznan_0.pdf.md|Veolia unveils a major project to phase out coal in Poland to support European decarbonization and strengthen energy resilience in Poznań]]
 - [[05_Commercial_Strategy/crystal-clean-jfl-2023-07-19.html.md|Heritage-Crystal Clean, Inc. to be Acquired by J.F. Lehman & Company for $1.2 Billion (19 July 2023)]]
 - [[05_Commercial_Strategy/crystal-clean-jfl-2023-10-17.html.md|J.F. Lehman & Company Completes Acquisition of Heritage-Crystal Clean, Inc. (17 October 2023)]]
+- [[05_Commercial_Strategy/download-handler.pdf.md|The cost of PFAS pollution for our society — Final report]]
 - [[05_Commercial_Strategy/emi-entretien-2019-01-31.html.md|Environmental Management Services: From a Garage Startup to Nationwide Coverage (Made Possible By, 31 January 2019)]]
 - [[05_Commercial_Strategy/enr-veolia-clean-earth-2025-11-21.html.md|Global Giant Veolia Aims $3B Deal to Buy US Waste Firm Clean Earth]]
 - [[05_Commercial_Strategy/enva-announces-agreement-to-be-acquired-by-i-squared-capital-from-exponent-enva-announces.html.md|Enva announces agreement to be acquired by I Squared Capital from Exponent]]
@@ -52,6 +56,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/geotec-cbinsights-profile.html.md|Geotec - Products, Competitors, Financials, Employees, Headquarters Locations]]
 - [[05_Commercial_Strategy/gfl-es-canadian-lawyer-2025.html.md|GFL finalizes $8 billion sale of Environmental Services Unit (Canadian Lawyer, 9 January 2025)]]
 - [[05_Commercial_Strategy/gfl-es-latham-2025-01-07.html.md|Latham & Watkins Advises GFL Environmental Inc. on Sale of Environmental Services Business (7 January 2025)]]
+- [[05_Commercial_Strategy/gfl-secure-acquisition-2026-04-13.pdf.md|GFL Environmental and SECURE Waste Infrastructure announce acquisition by GFL further expanding and densifying GFL's Western Canadian footprint]]
 - [[05_Commercial_Strategy/harsco-clean-earth-acquisition-2019.html.md|Harsco Enters into Definitive Agreement to Acquire Clean Earth, Accelerating Its Transformation to a Global Market Leader of Environmental Solutions]]
 - [[05_Commercial_Strategy/harsco-stericycle-esol-acquisition-2020.html.md|Harsco Advances Transformation with Agreement to Acquire Stericycle's Environmental Solutions Business]]
 - [[05_Commercial_Strategy/inauguration-gln-veoliaxenagas-en.pdf.md|World first: Veolia, Enagás and Barcelona City Council inaugurate the first urban cold recovery network from an LNG terminal]]

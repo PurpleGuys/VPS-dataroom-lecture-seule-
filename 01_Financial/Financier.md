@@ -7,7 +7,7 @@ generated: true
 
 # Financier
 
-Rubrique de [[Targets/Veolia|Veolia]] — 70 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 72 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[01_Financial/26-06_cp-bn-s1-26.pdf.md|Résultats consolidés au 30 juin 2026 - Communiqué de presse]]
@@ -64,8 +64,10 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[01_Financial/ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf.md|Standard & Poor's Ratings Direct - Veolia Environnement SA - April 2026]]
 - [[01_Financial/ratingsdirect_update_veoliaenvironnements.a._3485780_nov-25-2025.pdf.md|Standard & Poor's Ratings Direct - Veolia Environnement SA - November 2025]]
 - [[01_Financial/report-human-resources-social-performance-2025-veolia_0.pdf.md|Human resources and social performance 2025 report]]
+- [[01_Financial/republic-services-fy2025-results.html.md|Republic Services, Inc. Reports Fourth Quarter and Full-Year 2025 Results; Provides 2026 Full-Year Financial Guidance]]
 - [[01_Financial/results_comments_q1_2024.pdf.md|Operating &amp; Financial Review - Consolidated Financial Statements at March 31, 2024]]
 - [[01_Financial/seche_environnement_deu_2025_fr.pdf.md|Document d'enregistrement universel 2025]]
+- [[01_Financial/seche_environnement_rfs_2026_fr_amf.pdf.md|Amendement du document d'enregistrement universel 2025 - Rapport financier semestriel 2026]]
 - [[01_Financial/slidesq12024_def_0.pdf.md|Q1 2024 Results - Presentation]]
 - [[01_Financial/ve_notice_and_information_brochure_for_2024_combined_general_meeting.pdf.md|Notice and information brochure for the 2024 Combined General Meeting]]
 - [[01_Financial/ve_urd_2022_en.pdf.md|URD 2022 - Veolia Environment]]
