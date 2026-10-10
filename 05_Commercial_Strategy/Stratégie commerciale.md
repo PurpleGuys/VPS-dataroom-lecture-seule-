@@ -7,7 +7,7 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 157 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 159 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/1183.pdf.md|Waste statistics — Statistics Explained]]
@@ -63,6 +63,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/harsco-stericycle-esol-acquisition-2020.html.md|Harsco Advances Transformation with Agreement to Acquire Stericycle's Environmental Solutions Business]]
 - [[05_Commercial_Strategy/inauguration-gln-veoliaxenagas-en.pdf.md|World first: Veolia, Enagás and Barcelona City Council inaugurate the first urban cold recovery network from an LNG terminal]]
 - [[05_Commercial_Strategy/kinderhook-chemtron-2019-08-16.html.md|Kinderhook Acquires Chemtron Corporation, a Leading Hazardous and Non-hazardous Waste Management Provider]]
+- [[05_Commercial_Strategy/meag-acquires-49-78-stake-in-south-east-london-efw-plant-meag-acquires-49.78-stake-in-sou.html.md|MEAG acquires 49.78% stake in south-east London EfW plant]]
 - [[05_Commercial_Strategy/panel-statement-2021-19.pdf.md|Panel Statement 2021/19 - Offers by Antwerp Management Limited (MSIP) and Eleia Limited for Augean plc]]
 - [[05_Commercial_Strategy/platinum-equity-to-sell-global-environmental-services-business-urbaser-to-blackstone-and-e.html.md|Platinum Equity to Sell Global Environmental Services Business Urbaser to Blackstone and EQT for $6.6 Billion]]
 - [[05_Commercial_Strategy/pr-2023-finance-guidance.pdf.md|Long term financial guidances 2024 - 2027]]
@@ -142,6 +143,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/press-release-hassyan-05132024.pdf.md|Veolia wins $320 million water technology contract for world’s most energy-efficient desalination plant, enhancing water security in UAE]]
 - [[05_Commercial_Strategy/press-release-results-q1-2024.pdf.md|KEY FIGURES AT 31 MARCH 2024]]
 - [[05_Commercial_Strategy/pulse2-clean-harbors-terra-nova-2026-05-14.html.md|Clean Harbors: $225 Million Acquisition Of Terra Nova Solutions Expands Waste Services Footprint]]
+- [[05_Commercial_Strategy/rapid_evidence_assessment_of_pfas_incineration_and_alternative_remediation_methods_-_report.pdf.md|Rapid evidence assessment of PFAS incineration and alternative remediation methods — Chief Scientist Group report, September 2025]]
 - [[05_Commercial_Strategy/rule-2-7-announcement-regarding-the-recommended-final-cash-acquisition-of-renewi-by-macquarie.pdf.md|Recommended final cash acquisition of Renewi plc by Earth Bidco B.V. (Rule 2.7 announcement)]]
 - [[05_Commercial_Strategy/scheme-effective.pdf.md|Recommended final cash acquisition of Renewi plc by Earth Bidco B.V. - Scheme Effective]]
 - [[05_Commercial_Strategy/seaside-cbinsights-profile.html.md|Seaside Equity Partners Portfolio Investments, Seaside Equity Partners Funds, Seaside Equity Partners Exits]]
