@@ -7,7 +7,7 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 131 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 137 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/25-06-cp-flamme.pdf.md|Signature d'une promesse unilatérale d'achat en vue de l'acquisition du Groupe Flamme]]
@@ -30,6 +30,8 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/crystal-clean-jfl-2023-07-19.html.md|Heritage-Crystal Clean, Inc. to be Acquired by J.F. Lehman & Company for $1.2 Billion (19 July 2023)]]
 - [[05_Commercial_Strategy/crystal-clean-jfl-2023-10-17.html.md|J.F. Lehman & Company Completes Acquisition of Heritage-Crystal Clean, Inc. (17 October 2023)]]
 - [[05_Commercial_Strategy/emi-entretien-2019-01-31.html.md|Environmental Management Services: From a Garage Startup to Nationwide Coverage (Made Possible By, 31 January 2019)]]
+- [[05_Commercial_Strategy/enr-veolia-clean-earth-2025-11-21.html.md|Global Giant Veolia Aims $3B Deal to Buy US Waste Firm Clean Earth]]
+- [[05_Commercial_Strategy/enva-announces-agreement-to-be-acquired-by-i-squared-capital-from-exponent-enva-announces.html.md|Enva announces agreement to be acquired by I Squared Capital from Exponent]]
 - [[05_Commercial_Strategy/enviracore-boomer-2025-10-01.html.md|Enviracore Services Acquires Oklahoma City-based Boomer Environmental as First Platform Investment (1 October 2025, Business Wire via Yahoo Finance)]]
 - [[05_Commercial_Strategy/enviracore-eci-acquisition-2025-10-01.html.md|User]]
 - [[05_Commercial_Strategy/enviracore-emi-2026-05-08.html.md|Enviracore Services Acquires Environmental Management, LLC (8 May 2026, Business Wire via Yahoo Finance)]]
@@ -49,6 +51,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/harsco-clean-earth-acquisition-2019.html.md|Harsco Enters into Definitive Agreement to Acquire Clean Earth, Accelerating Its Transformation to a Global Market Leader of Environmental Solutions]]
 - [[05_Commercial_Strategy/harsco-stericycle-esol-acquisition-2020.html.md|Harsco Advances Transformation with Agreement to Acquire Stericycle's Environmental Solutions Business]]
 - [[05_Commercial_Strategy/inauguration-gln-veoliaxenagas-en.pdf.md|World first: Veolia, Enagás and Barcelona City Council inaugurate the first urban cold recovery network from an LNG terminal]]
+- [[05_Commercial_Strategy/panel-statement-2021-19.pdf.md|Panel Statement 2021/19 - Offers by Antwerp Management Limited (MSIP) and Eleia Limited for Augean plc]]
 - [[05_Commercial_Strategy/pr-2023-finance-guidance.pdf.md|Long term financial guidances 2024 - 2027]]
 - [[05_Commercial_Strategy/pr-2024-annual-results-veolia.pdf.md|2024 ANNUAL RESULTS]]
 - [[05_Commercial_Strategy/pr-2024-half-year-results-veolia-080124.pdf.md|2024 HALF-YEAR RESULTS]]
@@ -125,6 +128,8 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/pr-wts-050725.pdf.md|Veolia acquires CDPQ’s 30% stake in Water Technologies and Solutions, achieving full ownership to accelerate value creation]]
 - [[05_Commercial_Strategy/press-release-hassyan-05132024.pdf.md|Veolia wins $320 million water technology contract for world’s most energy-efficient desalination plant, enhancing water security in UAE]]
 - [[05_Commercial_Strategy/press-release-results-q1-2024.pdf.md|KEY FIGURES AT 31 MARCH 2024]]
+- [[05_Commercial_Strategy/rule-2-7-announcement-regarding-the-recommended-final-cash-acquisition-of-renewi-by-macquarie.pdf.md|Recommended final cash acquisition of Renewi plc by Earth Bidco B.V. (Rule 2.7 announcement)]]
+- [[05_Commercial_Strategy/scheme-effective.pdf.md|Recommended final cash acquisition of Renewi plc by Earth Bidco B.V. - Scheme Effective]]
 - [[05_Commercial_Strategy/seaside-cbinsights-profile.html.md|Seaside Equity Partners Portfolio Investments, Seaside Equity Partners Funds, Seaside Equity Partners Exits]]
 - [[05_Commercial_Strategy/seaside-criteres-2026-10-07.html.md|Seaside Equity Partners — Investment Criteria (consulté le 7 octobre 2026)]]
 - [[05_Commercial_Strategy/seaside-portefeuille-2026-10-07.html.md|Seaside Equity Partners — Portfolio (consulté le 7 octobre 2026)]]
@@ -140,4 +145,5 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/veolia-q1-key-figures-05062026.pdf.md|First quarter 2026 Key Figures]]
 - [[05_Commercial_Strategy/veolia-sets-bold-growth-goals-in-the-united-states-boosting-its-ecological-solutions-to-ensure-economic-growth-and-public-health-improvement.pdf.md|Veolia sets bold growth goals in the United States, boosting its ecological solutions to ensure economic growth and public health improvement]]
 - [[05_Commercial_Strategy/version-eng-infopresse.pdf.md|Veolia launches two new and unique dialogue initiatives with stakeholders at the heart of environmental security]]
+- [[05_Commercial_Strategy/winning-bid-made-in-battle-to-acquire-waste-management-company-3394815-winning-bid-made-in.html.md|Winning bid made in battle to acquire waste management company]]
 - [[05_Commercial_Strategy/wm-stericycle-2024-06-03.html.md|WM to Acquire Stericycle for $7.2 Billion (3 June 2024)]]

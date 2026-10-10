@@ -7,7 +7,7 @@ generated: true
 
 # Financier
 
-Rubrique de [[Targets/Veolia|Veolia]] — 59 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 61 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[01_Financial/26-06_cp-bn-s1-26.pdf.md|Résultats consolidés au 30 juin 2026 - Communiqué de presse]]
@@ -48,7 +48,9 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[01_Financial/finance_veolia_urd_2023.pdf.md|URD 2023 - Veolia Environnement]]
 - [[01_Financial/finance_veolia_urd_2025_en.pdf.md|Universal registration document 2025 - Veolia Environnement]]
 - [[01_Financial/finance_veolia_urd_amendment_07-31-2025.pdf.md|Amendment of the 2024 URD including the half-yearly financial review as of June 30th 2025]]
+- [[01_Financial/indaver_dzr_2025_en.pdf.md|Indaver inside out - Sustainability Report 2025]]
 - [[01_Financial/main_represented_figures_2021_veolia_pro_forma.pdf.md|Main represented figures for the 12 months-ended December 31, 2021]]
+- [[01_Financial/onterris-8k-q2-2026-strategic-review.pdf.md|Onterris, Inc. — Form 8-K (August 5, 2026), Exhibit 99.1: Onterris Reports Second Quarter Results, Updates Full-Year 2026 Guidance, and Announces Board-led Strategic Review Process]]
 - [[01_Financial/operating_and_financial_review_consolidated_financial_statements_q1_2026.pdf.md|Operating and financial review - Consolidated financial statements as of March 31st 2026]]
 - [[01_Financial/rapport-de-gestion-va-t3_2025_0.pdf.md|Operating and financial review - Consolidated financial statements at September 30th, 2025]]
 - [[01_Financial/ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf.md|Standard & Poor's Ratings Direct - Veolia Environnement SA - April 2026]]
