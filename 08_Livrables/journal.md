@@ -5,7 +5,7 @@ Généré depuis le journal des requêtes du serveur et les registres ; rien n'e
 
 ## 2026-10-10
 
-- **compte partagé (dataroom-bearer)** : 10 deal(s) (D41, D42, D43, D44, D45, D46, D47, D48, D49, D50); 6 cible(s) (T10, T11, T12, T13, T14, T15); 109 document(s) versé(s); 15 manque(s) noté(s); 103 recherche(s), 0 page(s) lue(s).
+- **compte partagé (dataroom-bearer)** : 10 deal(s) (D41, D42, D43, D44, D45, D46, D47, D48, D49, D50); 6 cible(s) (T10, T11, T12, T13, T14, T15); 111 document(s) versé(s); 15 manque(s) noté(s); 109 recherche(s), 3 page(s) lue(s); 8 enregistrement(s) sans trace au registre.
 
 ## 2026-10-07
 
