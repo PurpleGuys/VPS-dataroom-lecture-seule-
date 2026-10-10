@@ -7,7 +7,7 @@ generated: true
 
 # Financier
 
-Rubrique de [[Targets/Veolia|Veolia]] — 72 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 73 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[01_Financial/26-06_cp-bn-s1-26.pdf.md|Résultats consolidés au 30 juin 2026 - Communiqué de presse]]
@@ -60,6 +60,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[01_Financial/onterris-8k-q2-2026-strategic-review.pdf.md|Onterris, Inc. — Form 8-K (August 5, 2026), Exhibit 99.1: Onterris Reports Second Quarter Results, Updates Full-Year 2026 Guidance, and Announces Board-led Strategic Review Process]]
 - [[01_Financial/operating_and_financial_review_consolidated_financial_statements_q1_2026.pdf.md|Operating and financial review - Consolidated financial statements as of March 31st 2026]]
 - [[01_Financial/perma-fix-annual-report-2025.pdf.md|Perma-Fix Environmental Services, Inc. — Annual Report 2025]]
+- [[01_Financial/quest-resource-q1-2026-results.pdf.md|Quest Resource Holding Corporation Reports First Quarter 2026 Financial Results]]
 - [[01_Financial/rapport-de-gestion-va-t3_2025_0.pdf.md|Operating and financial review - Consolidated financial statements at September 30th, 2025]]
 - [[01_Financial/ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf.md|Standard & Poor's Ratings Direct - Veolia Environnement SA - April 2026]]
 - [[01_Financial/ratingsdirect_update_veoliaenvironnements.a._3485780_nov-25-2025.pdf.md|Standard & Poor's Ratings Direct - Veolia Environnement SA - November 2025]]
