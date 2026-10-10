@@ -7,7 +7,7 @@ generated: true
 
 # Deals
 
-Rubrique de [[Targets/Veolia|Veolia]] — 49 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 50 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[Deals/D20 New England Disposal Technologies, Bio-Med Innovations, Ingenium, Cham.md|D20 · New England Disposal Technologies, Bio-Med Innovations, Ingenium, Chameleon Industries Group]]
@@ -45,6 +45,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[Deals/D49 Contract Resources Group Pty Limited (100%).md|D49 · Contract Resources Group Pty Limited (100%)]] · 2025-03-20
 - [[Deals/D14 30 % de Water Technologies and Solutions (WTS).md|D14 · 30 % de Water Technologies and Solutions (WTS)]] · 2025-05-07
 - [[Deals/D19 Zeeklite Co. LTD.md|D19 · Zeeklite Co. LTD]] · 2025-05-30
+- [[Deals/D50 Groupe Flamme (A.R.F. et filiales, Flamme Environnement et filiales, F.md|D50 · Groupe Flamme (A.R.F. et filiales, Flamme Environnement et filiales, Flamme Assainissement et filiale)]] · 2025-06-06
 - [[Deals/D38 Enviracore Services (plateforme de services environnementaux intervent.md|D38 · Enviracore Services (plateforme de services environnementaux : intervention d'urgence, nettoyage industriel, eaux usées, États-Unis)]] · 2025-09-30
 - [[Deals/D40 Boomer Environmental (intervention d'urgence, nettoyage industriel, tr.md|D40 · Boomer Environmental (intervention d'urgence, nettoyage industriel, transport et traitement d'eaux usées, Oklahoma et Arkansas)]] · 2025-10-01
 - [[Deals/D48 Koentec (Korea Environmental Technology Co. Ltd.), 100%.md|D48 · Koentec (Korea Environmental Technology Co. Ltd.), 100%]] · 2026-01-15
