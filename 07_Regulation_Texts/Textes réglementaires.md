@@ -7,7 +7,7 @@ generated: true
 
 # Textes réglementaires
 
-Rubrique de [[Targets/Veolia|Veolia]] — 18 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 19 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[07_Regulation_Texts/5267.pdf.md|Contrôle des concentrations]]
@@ -23,6 +23,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[07_Regulation_Texts/faq-seuils_adlc.pdf.md|Modalités d'application de l'article 24 de la loi n° 2026-403 de simplification de la vie économique portant relèvement des seuils de notification — Foire aux questions]]
 - [[07_Regulation_Texts/fr-bofip-res-tca-000259-tgap-dechets-2026.html.md|RES - Taxes sur le chiffre d'affaires - Taxe générale sur les activités polluantes - Tarifs applicables aux déchets non dangereux dont la réception est admise dans une installation de stockage ou de traitement thermique de déchets dangereux]]
 - [[07_Regulation_Texts/fr-loi-2025-188-pfas-aida.html.md|Loi n° 2025-188 du 27/02/25 visant à protéger la population des risques liés aux substances perfluoroalkylées et polyfluoroalkylées]]
+- [[07_Regulation_Texts/les-echanges-transfrontieres-de-dechets-faisant-lobjet-dune-notification-prealable-en-2022.html.md|Les échanges transfrontières de déchets faisant l'objet d'une notification préalable en 2022]]
 - [[07_Regulation_Texts/us-epa-2025-09-17-cercla-pfoa-pfos-retain.html.md|Trump EPA Announces Next Steps on Regulatory PFOA and PFOS Cleanup Efforts, Provides Update on Liability and Passive Receiver Issues]]
 - [[07_Regulation_Texts/us-epa-2026-interim-guidance-pfas-destruction-disposal.pdf.md|Interim Guidance on the Destruction and Disposal of Perfluoroalkyl and Polyfluoroalkyl Substances and Materials Containing Perfluoroalkyl and Polyfluoroalkyl Substances—2026 Version]]
 - [[07_Regulation_Texts/us-epa-pfas-npdwr-status-2026.html.md|Per- and Polyfluoroalkyl Substances (PFAS) — PFAS National Primary Drinking Water Regulation]]
