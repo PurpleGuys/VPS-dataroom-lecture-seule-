@@ -7,7 +7,7 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 161 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 162 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/1183.pdf.md|Waste statistics — Statistics Explained]]
@@ -63,6 +63,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/gfl-secure-acquisition-2026-04-13.pdf.md|GFL Environmental and SECURE Waste Infrastructure announce acquisition by GFL further expanding and densifying GFL's Western Canadian footprint]]
 - [[05_Commercial_Strategy/harsco-clean-earth-acquisition-2019.html.md|Harsco Enters into Definitive Agreement to Acquire Clean Earth, Accelerating Its Transformation to a Global Market Leader of Environmental Solutions]]
 - [[05_Commercial_Strategy/harsco-stericycle-esol-acquisition-2020.html.md|Harsco Advances Transformation with Agreement to Acquire Stericycle's Environmental Solutions Business]]
+- [[05_Commercial_Strategy/hazardous-waste-generation-in-the-eu-27-signal-hazardous-waste-generation-in-the-eu-27-si.html.md|Hazardous waste generation in the EU-27 (Signal)]]
 - [[05_Commercial_Strategy/inauguration-gln-veoliaxenagas-en.pdf.md|World first: Veolia, Enagás and Barcelona City Council inaugurate the first urban cold recovery network from an LNG terminal]]
 - [[05_Commercial_Strategy/kinderhook-chemtron-2019-08-16.html.md|Kinderhook Acquires Chemtron Corporation, a Leading Hazardous and Non-hazardous Waste Management Provider]]
 - [[05_Commercial_Strategy/meag-acquires-49-78-stake-in-south-east-london-efw-plant-meag-acquires-49.78-stake-in-sou.html.md|MEAG acquires 49.78% stake in south-east London EfW plant]]
