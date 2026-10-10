@@ -1820,7 +1820,7 @@
     "La grille : au multiple de Clean Earth (9,8x), 2,26 Md€ en central, 0,00 en défavorable, 5,03 Md€ en favorable ; à 8x, 2,51 Md€ ; à 12x, 2,09 Md€ en central.",
     "Le calibrage : Clean Earth ne passerait plus. Quatre multiples circulent pour lui : 19,3x sur l'EBITDA 2025 publié par le vendeur (reconstitué, onglet Booster §E), 15,0x sur l'EBITDA 2026E avant synergies, 9,8x publié après synergies (non recalculable : 9,4x avec les chiffres publiés), et 18,6x l'EBITDA ajusté des douze derniers mois selon Enviri (document à verser).",
     "Les critères de cible : actifs de traitement (pas de collecte seule), géographie des boosters (États-Unis, Asie), PFAS et nouveaux polluants, taille compatible avec la grille, et pas de doublon de concurrence en Europe, où Veolia est déjà numéro un (présentation Clean Earth p.9).",
-    "L'univers : 13 cibles sourcées, toutes détenues par des fonds entrés entre 2023 et 2025 (Cibles §C). 4 ont une valeur publiée ; 3 tiennent dans la marge centrale au multiple retenu (12,81x, médiane du secteur avant synergies). Heritage-Crystal Clean : 1 021 M€ à 12,8x, tient dans 94 % des futurs (oui au central) ; Arcwood Environmental : prix non publié ; Triumvirate Environmental : 1 531 M€ à 12,8x, tient dans 73 % des futurs (oui au central) ; GFL Environmental Services : 4 982 M€ à 12,8x, tient dans 0 % des futurs ; NG Group : 800 M€ à 12,8x, tient dans 97 % des futurs (oui au central) ; Enviracore Services : prix non publié ; Enviracore Services : prix non publié ; Envisol : prix non publié ; Onterris (ex-Montrose Environmental Group) : prix non publié ; Perma-Fix Environmental Services : prix non publié ; Chemtron Corporation : prix non publié ; Cleanaway — Oils & Technical Services and Health Services : prix non publié ; Daiseki Co., Ltd. : prix non publié.",
+    "L'univers : 14 cibles sourcées, toutes détenues par des fonds entrés entre 2023 et 2025 (Cibles §C). 4 ont une valeur publiée ; 3 tiennent dans la marge centrale au multiple retenu (12,81x, médiane du secteur avant synergies). Heritage-Crystal Clean : 1 021 M€ à 12,8x, tient dans 94 % des futurs (oui au central) ; Arcwood Environmental : prix non publié ; Triumvirate Environmental : 1 531 M€ à 12,8x, tient dans 73 % des futurs (oui au central) ; GFL Environmental Services : 4 982 M€ à 12,8x, tient dans 0 % des futurs ; NG Group : 800 M€ à 12,8x, tient dans 97 % des futurs (oui au central) ; Enviracore Services : prix non publié ; Enviracore Services : prix non publié ; Envisol : prix non publié ; Onterris (ex-Montrose Environmental Group) : prix non publié ; Perma-Fix Environmental Services : prix non publié ; Chemtron Corporation : prix non publié ; Cleanaway — Oils & Technical Services and Health Services : prix non publié ; Daiseki Co., Ltd. : prix non publié ; Quest Resource Holding Corporation : prix non publié.",
     "La valeur de chaque cible est la dernière publiée (la transaction qui a fait entrer le fonds), pas un prix de vente d'aujourd'hui : un fonds qui sort vend plus cher qu'il n'a acheté. La probabilité est donc un plafond."
    ],
    "open": [
@@ -1839,7 +1839,7 @@
     ],
     [
      "Quelles cibles regardez-vous ?",
-     "13 cibles réelles, détenues par des fonds : Heritage-Crystal Clean : 1 021 M€ à 12,8x, tient dans 94 % des futurs (oui au central) ; Arcwood Environmental : prix non publié ; Triumvirate Environmental : 1 531 M€ à 12,8x, tient dans 73 % des futurs (oui au central) ; GFL Environmental Services : 4 982 M€ à 12,8x, tient dans 0 % des futurs ; NG Group : 800 M€ à 12,8x, tient dans 97 % des futurs (oui au central) ; Enviracore Services : prix non publié ; Enviracore Services : prix non publié ; Envisol : prix non publié ; Onterris (ex-Montrose Environmental Group) : prix non publié ; Perma-Fix Environmental Services : prix non publié ; Chemtron Corporation : prix non publié ; Cleanaway — Oils & Technical Services and Health Services : prix non publié ; Daiseki Co., Ltd. : prix non publié. Au multiple médian du secteur (12,81x), 3 tiennent dans la marge centrale, la plus grande pour 1 531 M€. Les valeurs sont celles de l'entrée du fonds : un vendeur demandera plus."
+     "14 cibles réelles, détenues par des fonds : Heritage-Crystal Clean : 1 021 M€ à 12,8x, tient dans 94 % des futurs (oui au central) ; Arcwood Environmental : prix non publié ; Triumvirate Environmental : 1 531 M€ à 12,8x, tient dans 73 % des futurs (oui au central) ; GFL Environmental Services : 4 982 M€ à 12,8x, tient dans 0 % des futurs ; NG Group : 800 M€ à 12,8x, tient dans 97 % des futurs (oui au central) ; Enviracore Services : prix non publié ; Enviracore Services : prix non publié ; Envisol : prix non publié ; Onterris (ex-Montrose Environmental Group) : prix non publié ; Perma-Fix Environmental Services : prix non publié ; Chemtron Corporation : prix non publié ; Cleanaway — Oils & Technical Services and Health Services : prix non publié ; Daiseki Co., Ltd. : prix non publié ; Quest Resource Holding Corporation : prix non publié. Au multiple médian du secteur (12,81x), 3 tiennent dans la marge centrale, la plus grande pour 1 531 M€. Les valeurs sont celles de l'entrée du fonds : un vendeur demandera plus."
     ],
     [
      "Et si Veolia veut quand même une cible de 3 Md€ ?",
@@ -2203,16 +2203,24 @@
      "prix non publié",
      "Listed (TSE Prime: 9793) ; T14 — print.pdf",
      ""
+    ],
+    [
+     "calcul",
+     "Cible : Quest Resource Holding Corporation",
+     "",
+     "prix non publié",
+     "Listed (Nasdaq: QRHC) ; T15 — FINAL-QRHC-1Q26-Earnings-Release-5-7-26.pdf",
+     ""
     ]
    ]
   }
  ],
  "todo": [
-  "Relire en croisé les 620 chiffres du registre (0 relus) et les 49 opérations (0 relues).",
+  "Relire en croisé les 620 chiffres du registre (0 relus) et les 50 opérations (0 relues).",
   "Lire les 10-K 2025 d'Enviri et de Clean Harbors, désormais dans la dataroom, et en tirer les chiffres des rôles 4 et 5 (passifs environnementaux de Clean Earth, marges et levier de Clean Harbors). Reste à verser : le 10-Q du T1 2026 d'Enviri et le communiqué de vente du 20 novembre 2025.",
   "Avant le 7 octobre : montrer la dataroom comme « sources chargées et lues », et noter dans gaps.md ce qui manque encore.",
   "Rédiger la page d'annexe sur les outils d'IA : dataroom MCP (recherche, registre, contrôles), Claude pour construire le classeur et ces dossiers, LibreOffice pour le recalcul. Aucun chiffre produit par le modèle de langage.",
-  "Noter les 13 cibles de l'onglet Cibles §C (cellules jaunes) et chercher une valeur sourcée pour celles qui n'en ont pas.",
+  "Noter les 14 cibles de l'onglet Cibles §C (cellules jaunes) et chercher une valeur sourcée pour celles qui n'en ont pas.",
   "Chacun ouvre son rôle avec l'outil workstream_status de la dataroom pour voir ses chiffres et ce qui manque."
  ],
  "register": [
