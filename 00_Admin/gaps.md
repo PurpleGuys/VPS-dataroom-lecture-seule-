@@ -14,6 +14,7 @@ it matters, and what we used instead. Keep one `##` section per target so
   notices and published tariffs where they exist.
 - **Environmental liability provisions per site** — only the aggregate provision is
   published. Per-site exposure is inferred from permit conditions and incident records.
+- **Sources officielles refusées à la capture (HTTP 403/404) : communiqué de l'AG du Michigan du 21/02/2025 (transaction Flint 53 M$) ; article Michigan Advance du 29/04/2025 (jugement final de la juge Levy) ; jugement et stipulation DTSC c. Veolia ES Technical Solutions (LA Superior Court 22STCV11603, pénalité de 275 000 $, Azusa/San Diego) et page projet DTSC Azusa ; article Waste Dive du 13/08/2026 (procès PFAS Delaware) ; communiqué EPA Victoria du 01/11/2024 (amendes transport de déchets prioritaires).** — Ces pièces documentent le passif contentieux et les sanctions déchets dangereux de Veolia aux États-Unis et en Australie. Remplacées par le communiqué Veolia NA (53 M$), l'article Bridge Michigan (25 M$), l'article WHYY (PFAS) et le communiqué EPA 2019 sur Azusa ; le jugement DTSC de 275 000 $ reste sans pièce citable dans la data room. *(signalé par dataroom-bearer)*
 
 ## (add a section per target)
 
@@ -26,6 +27,8 @@ it matters, and what we used instead. Keep one `##` section per target so
 ## Clean Earth
 
 - **Comptes d'Enviri, vendeur de Clean Earth : 10-K 2025, 10-Q du T1 2026, communiqué de vente du 20/11/2025** — Rôles 5 et 6. Ils donnent les passifs environnementaux de Clean Earth (activité abandonnée chez Enviri) et le multiple côté vendeur (18,6x l'EBITDA ajusté des 12 derniers mois selon Enviri, contre 9,8x après synergies selon Veolia). investors.enviri.com et sec.gov renvoient 403 au serveur : à télécharger depuis un navigateur et à verser à la main. *(signalé par dataroom-bearer)*
+- **Avis public ADEM du 10/01/2023 (projet d'ordonnance sur consentement, pénalité de 9 200 $, site Clean Earth of Alabama à Glencoe) refusé à la capture (HTTP 404) ; PDF du dossier de renouvellement de permis ADEM 2025 trop volumineux (51 Mo) ; aucune source publique trouvée sur les passifs environnementaux conservés ou indemnisés dans la cession Clean Earth (communiqué Enviri du 04/05/2026 muet sur ce point).** — Ces éléments mesurent le passif hérité par Veolia avec Clean Earth. Remplacés par l'avis HTML ADEM de renouvellement de permis (20/06/2025) et les sanctions EPA Région 4, Washington Ecology et EGLE ; la répartition contractuelle des passifs reste à chercher dans le contrat de cession (proxy DEFM14A d'Enviri). *(signalé par dataroom-bearer)*
+- **Sources primaires Enviri sur la valorisation côté vendeur : transcription de l'appel du 21/11/2025 (investors.enviri.com, 403), communiqué Harsco 2019 en PDF (gcs-web, 403), 8-K du 20/11/2025 et 10-Q T1 2026 d'Enviri (sec.gov, 403 ; aucun miroir trouvé). L'EBITDA de Clean Earth sous-jacent au multiple vendeur n'est publié dans aucun document versé.** — Le multiple vendeur (environ 18x l'EBITDA des douze derniers mois) ne repose que sur l'article ENR citant le PDG, alors que Veolia affiche 9,8x l'EBITDA 2026e post-synergies. À défaut, on utilise le communiqué Enviri (3,04 Md$), ENR, le communiqué T1 2026 (EBITDA ajusté 33 M$) et le 10-K 2025 déjà présent. *(signalé par dataroom-bearer)*
 
 ## Enviracore Services
 
@@ -47,3 +50,11 @@ it matters, and what we used instead. Keep one `##` section per target so
 - **Conditions de la promesse unilatérale d'achat du 5 juin 2025 (conditions suspensives, date butoir, indemnité de rupture, clause sur les remèdes)** — Elles fixent ce que Séché peut accepter comme cessions avant de pouvoir renoncer, donc le scénario « abandon ». Non publiées : seuls le prix (~300 M€) et la condition d'autorisation ADLC sont connus. *(signalé par dataroom-bearer)*
 - **Implantation des 9 agences de Flamme Assainissement (France et Belgique) et localisation des plates-formes de tri et regroupement de Séché dans le Nord** — Nécessaire pour mesurer les chevauchements locaux (assainissement, collecte et transit de DD), terrain des cessions ciblées du précédent 21-DCC-71. Non publiée ; seul le pôle (24 % du CA 2024, 9 agences) est connu. *(signalé par dataroom-bearer)*
 - **Preuve versée de l'incinérateur de déchets dangereux de Veolia/SARPI à Courrières (SOTRENOR), concurrent direct de Flamme dans les Hauts-de-France** — La plaquette SARPI (novembre 2017) a été lue en ligne mais le serveur la refuse (HTTP 404) ; elle reste citable par son URL : https://www.sarpi.veolia.com/sites/g/files/dvc2626/files/document/2019/07/SOTRENOR_Plaquette.pdf. Capacité autorisée de Courrières non trouvée. *(signalé par dataroom-bearer)*
+
+## Terra Nova Solutions
+
+- **Communiqué primaire de Clean Harbors sur Terra Nova (8-K sur ir.cleanharbors.com, Business Wire, gcs-web : tous en 403) et article Waste Dive identifiant le vendeur (403).** — Comparable récent (mai 2026) avec multiple publié de 11,8x post-synergies ; la ligne repose sur la reprise Pulse 2.0 du communiqué, de rang presse, et le vendeur (Crescentia Capital) n'est attesté que par Waste Dive non capturé. *(signalé par dataroom-bearer)*
+
+## Republic Services
+
+- **10-K 2025 et communiqué résultats 2025 de Republic en PDF (investor.republicservices.com et gcs-web, 403) ; prix de l'acquisition des actifs de désorption thermique TD*X (Texas, 2026) non publié.** — Le segment Environmental Solutions (1 766 M$ de CA, marge 21,1 %) est documenté via une copie Finviz du communiqué, sans pagination ; la stratégie d'acquisition de Republic en déchets dangereux reste non chiffrée. *(signalé par dataroom-bearer)*
