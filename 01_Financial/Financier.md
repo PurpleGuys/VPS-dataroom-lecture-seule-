@@ -7,15 +7,17 @@ generated: true
 
 # Financier
 
-Rubrique de [[Targets/Veolia|Veolia]] — 61 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 63 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[01_Financial/26-06_cp-bn-s1-26.pdf.md|Résultats consolidés au 30 juin 2026 - Communiqué de presse]]
 - [[01_Financial/bce-taux-eur-cad-2026-10-06.html.md|ECB euro reference exchange rate: Canadian dollar (CAD)]]
 - [[01_Financial/clean-harbors-10-k-2025.pdf.md|Clean Harbors, Inc. — Form 10-K, fiscal year ended December 31, 2025]]
+- [[01_Financial/cleanaway-fy26-results-presentation.pdf.md|CLEANAWAY FY26 Financial Results]]
 - [[01_Financial/credit_opinion-veolia-environnement-sa-04may2026.pdf.md|Moody's Credit Opinion - Veolia Environnement SA - May 2026]]
 - [[01_Financial/credit_opinion_moodys_veolia-environnement-sa_22apr2025.pdf.md|Moody's Credit Opinion - Veolia Environnement SA - April 2025]]
 - [[01_Financial/credit_opinion_veolia-environnement-2dec2025.pdf.md|Moody's Credit Opinion - Veolia Environnement SA - December 2025]]
+- [[01_Financial/daiseki-integrated-report-2025.pdf.md|Integrated Report 2025]]
 - [[01_Financial/deep_dive_veolia_in_the_us_presentation-eng.pdf.md|Deep Dive Energy Veolia in the USA]]
 - [[01_Financial/en_master_greenup_strategy-day_v270324.pdf.md|Strategy Day - Green Up Presentation]]
 - [[01_Financial/enviri-10-k-2025.pdf.md|Enviri Corporation — Form 10-K, fiscal year ended December 31, 2025]]

@@ -7,9 +7,10 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 137 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 141 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
+- [[05_Commercial_Strategy/1183.pdf.md|Waste statistics — Statistics Explained]]
 - [[05_Commercial_Strategy/25-06-cp-flamme.pdf.md|Signature d'une promesse unilatérale d'achat en vue de l'acquisition du Groupe Flamme]]
 - [[05_Commercial_Strategy/26-01_hidronor-lafilippa-vf.pdf.md|Séché Environnement annonce deux opérations de croissance externe majeures au Chili et en Italie]]
 - [[05_Commercial_Strategy/ambitions-veolia-spain.pdf.md|In Spain, Veolia displays strong ambitions to support ecological transformation by putting expertise and innovation at the service of territories]]
@@ -17,10 +18,12 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/arcwood-rebrand-2025-03-18.html.md|Heritage Environmental Services Rebrands to Arcwood Environmental (18 March 2025)]]
 - [[05_Commercial_Strategy/bic-us-ecology-republic-2022.html.md|US Ecology joins Republic Services (BIC Magazine, reprise du communiqué du 9 février 2022)]]
 - [[05_Commercial_Strategy/boomer-about-2026-10-07.html.md|Boomer Environmental — About (consulté le 7 octobre 2026)]]
+- [[05_Commercial_Strategy/capacity_assessment_-report.pdf.md|National Capacity Assessment Report Pursuant to CERCLA Section 104(c)(9) — January 24, 2025 (EPA 530-R-25-007)]]
 - [[05_Commercial_Strategy/clean-harbors-enviroserve-2026-08-12.html.md|Clean Harbors to Acquire EnviroServe for $470 Million (12 August 2026, Business Wire, copie Stock Titan)]]
 - [[05_Commercial_Strategy/clean-harbors-enviroserve-esh-2026-10-05.html.md|Clean Harbors Completes Acquisitions of EnviroServe and ES&H (5 October 2026, Business Wire, copie Stock Titan)]]
 - [[05_Commercial_Strategy/clean-harbors-hepaco-2024-03-25.html.md|Clean Harbors Completes Acquisition of HEPACO (25 March 2024)]]
 - [[05_Commercial_Strategy/clean-harbors-q2-2026-2026-07-29.html.md|Clean Harbors Announces Second-Quarter 2026 Financial Results (29 July 2026, Business Wire, copie Stock Titan)]]
+- [[05_Commercial_Strategy/cleanaway-eqt-proposal-2026-08-13.pdf.md|Cleanaway receives a non-binding proposal from EQT Infrastructure, grants exclusive due diligence and confirms intention to recommend; provides FY27 outlook]]
 - [[05_Commercial_Strategy/cp-cession-lydec-en.pdf.md|Morocco: Veolia signs an agreement to divest its stake in Lydec]]
 - [[05_Commercial_Strategy/cp-deep-dive-water-micropollutants-pfas.pdf.md|Veolia targets 1 B€ in revenue by 2030 in the fight against micropollutants &amp; launches a pioneering PFAS integrated treatment offer]]
 - [[05_Commercial_Strategy/cp-deep-dive-water-water-technologies.pdf.md|Veolia steps up its pace in Water Technologies to grow 3x faster than the market]]
@@ -52,6 +55,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/harsco-stericycle-esol-acquisition-2020.html.md|Harsco Advances Transformation with Agreement to Acquire Stericycle's Environmental Solutions Business]]
 - [[05_Commercial_Strategy/inauguration-gln-veoliaxenagas-en.pdf.md|World first: Veolia, Enagás and Barcelona City Council inaugurate the first urban cold recovery network from an LNG terminal]]
 - [[05_Commercial_Strategy/panel-statement-2021-19.pdf.md|Panel Statement 2021/19 - Offers by Antwerp Management Limited (MSIP) and Eleia Limited for Augean plc]]
+- [[05_Commercial_Strategy/platinum-equity-to-sell-global-environmental-services-business-urbaser-to-blackstone-and-e.html.md|Platinum Equity to Sell Global Environmental Services Business Urbaser to Blackstone and EQT for $6.6 Billion]]
 - [[05_Commercial_Strategy/pr-2023-finance-guidance.pdf.md|Long term financial guidances 2024 - 2027]]
 - [[05_Commercial_Strategy/pr-2024-annual-results-veolia.pdf.md|2024 ANNUAL RESULTS]]
 - [[05_Commercial_Strategy/pr-2024-half-year-results-veolia-080124.pdf.md|2024 HALF-YEAR RESULTS]]
