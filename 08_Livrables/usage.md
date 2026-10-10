@@ -1,11 +1,11 @@
 # Usage de la dataroom — membre par membre
 
-Relevé le 10/10/2026 18:21 depuis le journal des requêtes du serveur et les registres. 1189 appel(s) en tout. Une identité partagée (`dataroom-bearer`) ne désigne personne : c'est le token commun, utilisé avant les tokens personnels.
+Relevé le 10/10/2026 18:23 depuis le journal des requêtes du serveur et les registres. 1210 appel(s) en tout. Une identité partagée (`dataroom-bearer`) ne désigne personne : c'est le token commun, utilisé avant les tokens personnels.
 
 | Membre | Appels | Recherches | Pages lues | Écritures | Relectures | Chiffres ajoutés | Lignes relues | Jours actifs | Premier | Dernier |
 |---|---|---|---|---|---|---|---|---|---|---|
 | benjamin | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 2026-10-07 | 2026-10-07 |
-| `dataroom-bearer` (partagé) | 1140 | 183 | 81 | 873 | 0 | 683 | 0 | 7 | 2026-09-22 | 2026-10-10 |
+| `dataroom-bearer` (partagé) | 1161 | 203 | 81 | 873 | 0 | 683 | 0 | 7 | 2026-09-22 | 2026-10-10 |
 | ethan | 3 | 3 | 0 | 0 | 0 | 0 | 0 | 2 | 2026-10-06 | 2026-10-07 |
 | kevin | 6 | 5 | 0 | 0 | 0 | 0 | 0 | 1 | 2026-10-07 | 2026-10-07 |
 | membre5 | 7 | 7 | 0 | 0 | 0 | 0 | 0 | 1 | 2026-10-07 | 2026-10-07 |
@@ -22,17 +22,17 @@ Relevé le 10/10/2026 18:21 depuis le journal des requêtes du serveur et les re
 | `submit_document` | 87 |
 | `read_page` | 77 |
 | `submit_url` | 74 |
-| `search_dataroom` | 62 |
+| `search_dataroom` | 65 |
 | `register_deal` | 50 |
-| `list_documents` | 34 |
-| `dataroom_status` | 29 |
+| `list_documents` | 44 |
+| `dataroom_status` | 31 |
 | `note_gap` | 25 |
 | `workstream_status` | 24 |
 | `register_target` | 18 |
+| `lookup_deal` | 14 |
 | `find_deals` | 13 |
-| `lookup_deal` | 12 |
+| `list_targets` | 11 |
 | `audit_dataroom` | 9 |
-| `list_targets` | 8 |
 | `list_gaps` | 5 |
 | `search_news` | 4 |
 | `read_table` | 4 |
@@ -41,9 +41,9 @@ Relevé le 10/10/2026 18:21 depuis le journal des requêtes du serveur et les re
 | `lookup_figure` | 2 |
 | `capacite` | 2 |
 | `correct_row` | 2 |
+| `list_inbox` | 2 |
 | `find_figures` | 1 |
 | `suggest_figures` | 1 |
 | `cite` | 1 |
-| `list_inbox` | 1 |
 
 « Chiffres ajoutés » et « Lignes relues » viennent des registres (`added_by`, `checked_by`), pas du journal : ce sont les lignes qui ont survécu à l'application de la boîte de réception.
