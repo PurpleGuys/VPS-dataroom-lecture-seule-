@@ -7,9 +7,10 @@ generated: true
 
 # Contentieux
 
-Rubrique de [[Targets/Veolia|Veolia]] — 16 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 17 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
+- [[04_Litigation/0001104659-26-088210.pdf.md|Antero Midstream Announces Second Quarter 2026 Financial and Operating Results (Form 8-K, Exhibit 99.1)]]
 - [[04_Litigation/11_07_2019_remondis_dsd-bundeskartellamt-prohibits-remondis-dsd-merger-11-july-2019.html.md|Bundeskartellamt prohibits Remondis/DSD merger (11 July 2019)]]
 - [[04_Litigation/21-246_-_21-dcc71-note_dagrement_de_repreneur_.pdf.md|Note d'agrément de repreneur — 21-246 / 21-DCC-71 (SARP / Suez RV OSIS)]]
 - [[04_Litigation/22-180-publique-decision-22dcc216.pdf.md|Décision n° 22-DCC-216 du 14 novembre 2022 relative à la prise de contrôle exclusif d'actifs détenus par Veolia par la société Séché Environnement]]

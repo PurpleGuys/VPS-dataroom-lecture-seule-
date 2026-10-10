@@ -7,7 +7,7 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 172 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 174 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/1183.pdf.md|Waste statistics — Statistics Explained]]
@@ -74,6 +74,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/meag-acquires-49-78-stake-in-south-east-london-efw-plant-meag-acquires-49.78-stake-in-sou.html.md|MEAG acquires 49.78% stake in south-east London EfW plant]]
 - [[05_Commercial_Strategy/new-report-shows-hazardous-waste-management-critical-input-us-economic-growth-new-report-s.html.md|New Report Shows Hazardous Waste Management is a Critical Input to US Economic Growth]]
 - [[05_Commercial_Strategy/panel-statement-2021-19.pdf.md|Panel Statement 2021/19 - Offers by Antwerp Management Limited (MSIP) and Eleia Limited for Augean plc]]
+- [[05_Commercial_Strategy/pfas-testing-latest-veolia-testing-shows-successful-destruction-up-to-99.9999-of-9-targe.html.md|Latest Veolia testing shows successful destruction up to 99.9999 % of 9 target PFAS in the UK]]
 - [[05_Commercial_Strategy/pfas-waste-management-pfas-waste-management-market-worth-2.98-billion-in-2031.html.md|PFAS Waste Management Market worth $2.98 billion in 2031]]
 - [[05_Commercial_Strategy/platinum-equity-to-sell-global-environmental-services-business-urbaser-to-blackstone-and-e.html.md|Platinum Equity to Sell Global Environmental Services Business Urbaser to Blackstone and EQT for $6.6 Billion]]
 - [[05_Commercial_Strategy/pr-2023-finance-guidance.pdf.md|Long term financial guidances 2024 - 2027]]
@@ -155,6 +156,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/pulse2-clean-harbors-terra-nova-2026-05-14.html.md|Clean Harbors: $225 Million Acquisition Of Terra Nova Solutions Expands Waste Services Footprint]]
 - [[05_Commercial_Strategy/rapid_evidence_assessment_of_pfas_incineration_and_alternative_remediation_methods_-_report.pdf.md|Rapid evidence assessment of PFAS incineration and alternative remediation methods — Chief Scientist Group report, September 2025]]
 - [[05_Commercial_Strategy/remondis-closes-veolia-and-suez-deal-remondis-closes-veolia-and-suez-deal-australia-accc.html.md|REMONDIS closes Veolia and Suez deal (Australia, ACCC undertakings)]]
+- [[05_Commercial_Strategy/remondis-oise-industrie-et-commerce.html.md|Remondis Oise — Industrie et commerce : collecte de déchets industriels et dangereux dans l'Oise]]
 - [[05_Commercial_Strategy/rule-2-7-announcement-regarding-the-recommended-final-cash-acquisition-of-renewi-by-macquarie.pdf.md|Recommended final cash acquisition of Renewi plc by Earth Bidco B.V. (Rule 2.7 announcement)]]
 - [[05_Commercial_Strategy/scheme-effective.pdf.md|Recommended final cash acquisition of Renewi plc by Earth Bidco B.V. - Scheme Effective]]
 - [[05_Commercial_Strategy/seaside-cbinsights-profile.html.md|Seaside Equity Partners Portfolio Investments, Seaside Equity Partners Funds, Seaside Equity Partners Exits]]
