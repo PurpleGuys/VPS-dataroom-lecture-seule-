@@ -7,7 +7,7 @@ generated: true
 
 # Financier
 
-Rubrique de [[Targets/Veolia|Veolia]] — 63 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 64 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[01_Financial/26-06_cp-bn-s1-26.pdf.md|Résultats consolidés au 30 juin 2026 - Communiqué de presse]]
@@ -23,6 +23,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[01_Financial/enviri-10-k-2025.pdf.md|Enviri Corporation — Form 10-K, fiscal year ended December 31, 2025]]
 - [[01_Financial/enviri-q1-2026-results.html.md|Enviri Corporation Reports First Quarter 2026 Results]]
 - [[01_Financial/envisol-fiche-legale-jde.html.md|ENVISOL]]
+- [[01_Financial/fceco081543_20260409.pdf.md|Résultats annuels 2025 - SUEZ est en ordre de marche pour accélérer sa croissance durable]]
 - [[01_Financial/finance_2024_full_year_results_presentation.pdf.md|2024 Full year results - Presentation]]
 - [[01_Financial/finance_amendment_to_the_2023_universal_resgistration_document_08-01-24.pdf.md|Amendment of the 2023 URD including the half-yearly financial review as of June 30th 2024]]
 - [[01_Financial/finance_annual_results_2023_presentation.pdf.md|2023 annual results - Presentation]]

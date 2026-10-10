@@ -5,7 +5,7 @@ Généré depuis le journal des requêtes du serveur et les registres ; rien n'e
 
 ## 2026-10-10
 
-- **compte partagé (dataroom-bearer)** : 66 document(s) versé(s); 48 recherche(s), 0 page(s) lue(s).
+- **compte partagé (dataroom-bearer)** : 76 document(s) versé(s); 1 manque(s) noté(s); 51 recherche(s), 0 page(s) lue(s).
 
 ## 2026-10-07
 

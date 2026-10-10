@@ -7,7 +7,7 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 144 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 147 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/1183.pdf.md|Waste statistics — Statistics Explained]]
@@ -47,6 +47,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/eqt-covanta-2021-07-14.html.md|EQT Infrastructure to acquire Covanta for USD 5.3 billion (14 July 2021)]]
 - [[05_Commercial_Strategy/fortum-summa-2024-11-29.html.md|Fortum completes the divestment of its recycling and waste business (29 November 2024)]]
 - [[05_Commercial_Strategy/fortum-summa-ng-group-2024-07-18.html.md|Summa Equity through NG Group acquires Fortum Recycling and Waste (18 July 2024)]]
+- [[05_Commercial_Strategy/gaw-capital-koentec-2026-01-15.html.md|Gaw Capital Acquires Korea's Leading Waste Management Firm Koentec as First Waste Management Infrastructure Investment]]
 - [[05_Commercial_Strategy/geotec-cbinsights-acquisitions.html.md|Geotec Stock Price, Funding, Valuation, Revenue & Financial Statements]]
 - [[05_Commercial_Strategy/geotec-cbinsights-profile.html.md|Geotec - Products, Competitors, Financials, Employees, Headquarters Locations]]
 - [[05_Commercial_Strategy/gfl-es-canadian-lawyer-2025.html.md|GFL finalizes $8 billion sale of Environmental Services Unit (Canadian Lawyer, 9 January 2025)]]
@@ -138,7 +139,9 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/seaside-cbinsights-profile.html.md|Seaside Equity Partners Portfolio Investments, Seaside Equity Partners Funds, Seaside Equity Partners Exits]]
 - [[05_Commercial_Strategy/seaside-criteres-2026-10-07.html.md|Seaside Equity Partners — Investment Criteria (consulté le 7 octobre 2026)]]
 - [[05_Commercial_Strategy/seaside-portefeuille-2026-10-07.html.md|Seaside Equity Partners — Portfolio (consulté le 7 octobre 2026)]]
+- [[05_Commercial_Strategy/seche-eco-singapore-acquisition-2024-06-17.pdf.md|Acquisition of ECO, Singapore's Leading Hazardous Waste Company]]
 - [[05_Commercial_Strategy/stakeholders-assembly-water-reuse-water-security-060526.pdf.md|Veolia’s Stakeholders Assembly calls for accelerated uptake of water reuse to strengthen water security]]
+- [[05_Commercial_Strategy/suez-strengthening-industrial-waste-recovery-business-acquisition-gruppo-ecosistem-major-p.html.md|SUEZ is strengthening its industrial waste recovery business with the acquisition of Gruppo Ecosistem, a major player in Italy’s waste sector | SUEZ]]
 - [[05_Commercial_Strategy/tradebe-refuerza-su-presencia-en-reino-unido-yentra-en-el-mercado-irlandes-mediante-la-adq.html.md|Tradebe refuerza su presencia en Reino Unido y entra en el mercado irlandés mediante la adquisición de una participación mayoritaria en Soltec]]
 - [[05_Commercial_Strategy/triumvirate-berkshire-2025-02-04.html.md|Triumvirate Environmental valued at $1.8 billion after investment (Reuters, 4 February 2025)]]
 - [[05_Commercial_Strategy/veolia-2023-annual-results-02292024.pdf.md|2023 ANNUAL RESULTS]]
