@@ -7,7 +7,7 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 143 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 144 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/1183.pdf.md|Waste statistics — Statistics Explained]]
@@ -139,6 +139,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/seaside-criteres-2026-10-07.html.md|Seaside Equity Partners — Investment Criteria (consulté le 7 octobre 2026)]]
 - [[05_Commercial_Strategy/seaside-portefeuille-2026-10-07.html.md|Seaside Equity Partners — Portfolio (consulté le 7 octobre 2026)]]
 - [[05_Commercial_Strategy/stakeholders-assembly-water-reuse-water-security-060526.pdf.md|Veolia’s Stakeholders Assembly calls for accelerated uptake of water reuse to strengthen water security]]
+- [[05_Commercial_Strategy/tradebe-refuerza-su-presencia-en-reino-unido-yentra-en-el-mercado-irlandes-mediante-la-adq.html.md|Tradebe refuerza su presencia en Reino Unido y entra en el mercado irlandés mediante la adquisición de una participación mayoritaria en Soltec]]
 - [[05_Commercial_Strategy/triumvirate-berkshire-2025-02-04.html.md|Triumvirate Environmental valued at $1.8 billion after investment (Reuters, 4 February 2025)]]
 - [[05_Commercial_Strategy/veolia-2023-annual-results-02292024.pdf.md|2023 ANNUAL RESULTS]]
 - [[05_Commercial_Strategy/veolia-2026-first-half-results.pdf.md|2026 first-half results]]
