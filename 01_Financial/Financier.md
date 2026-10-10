@@ -7,7 +7,7 @@ generated: true
 
 # Financier
 
-Rubrique de [[Targets/Veolia|Veolia]] — 73 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 77 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[01_Financial/26-06_cp-bn-s1-26.pdf.md|Résultats consolidés au 30 juin 2026 - Communiqué de presse]]
@@ -25,7 +25,10 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[01_Financial/enviri-q1-2026-results.html.md|Enviri Corporation Reports First Quarter 2026 Results]]
 - [[01_Financial/envisol-fiche-legale-jde.html.md|ENVISOL]]
 - [[01_Financial/fcbwr166807_20260309.pdf.md|Séché Environnement: 2025 Consolidated Results]]
+- [[01_Financial/fcbwr168355_20260623.pdf.md|Veolia Environnement — Final terms of its offering of €400 million non-dilutive cash-settled convertible bonds due 2032 (press release, June 23, 2026)]]
 - [[01_Financial/fceco081543_20260409.pdf.md|Résultats annuels 2025 - SUEZ est en ordre de marche pour accélérer sa croissance durable]]
+- [[01_Financial/final_terms_2030_notes_08-31-2026.pdf.md|Final Terms — €650,000,000 3.678 per cent. Notes due 2 September 2030]]
+- [[01_Financial/final_terms_2034_notes_08-31-2026.pdf.md|Final Terms — €500,000,000 4.088 per cent. Notes due 2 September 2034]]
 - [[01_Financial/finance_2024_full_year_results_presentation.pdf.md|2024 Full year results - Presentation]]
 - [[01_Financial/finance_amendment_to_the_2023_universal_resgistration_document_08-01-24.pdf.md|Amendment of the 2023 URD including the half-yearly financial review as of June 30th 2024]]
 - [[01_Financial/finance_annual_results_2023_presentation.pdf.md|2023 annual results - Presentation]]
@@ -74,6 +77,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[01_Financial/ve_urd_2022_en.pdf.md|URD 2022 - Veolia Environment]]
 - [[01_Financial/veolia-amendement-deu-2025-s1-2026.pdf.md|Veolia — Amendement au DEU 2025 (rapport financier semestriel au 30 juin 2026)]]
 - [[01_Financial/veolia_2024_urd.pdf.md|URD 2024 - Veolia Environnement]]
+- [[01_Financial/veolia_2nd_supplement_to_2026_base_prospectus_2026-08-25.pdf.md|Supplement no. 2 dated 25 August 2026 to the Base Prospectus dated 30 March 2026 — Euro 22,000,000,000 Euro Medium Term Note Programme]]
 - [[01_Financial/veolia_clean_earth_investor_presentation.pdf.md|Acquisition of Clean Earth - Presentation]]
 - [[01_Financial/veolia_finance_2022_full_year_results_0.pdf.md|2022 Full year results - Presentation]]
 - [[01_Financial/veolia_finance_amendment_urd_2025.pdf.md|Amendment of the 2025 URD including the half-yearly financial review as of June 30th 2026]]

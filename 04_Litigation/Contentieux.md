@@ -7,7 +7,7 @@ generated: true
 
 # Contentieux
 
-Rubrique de [[Targets/Veolia|Veolia]] — 15 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 16 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[04_Litigation/11_07_2019_remondis_dsd-bundeskartellamt-prohibits-remondis-dsd-merger-11-july-2019.html.md|Bundeskartellamt prohibits Remondis/DSD merger (11 July 2019)]]
@@ -17,6 +17,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[04_Litigation/26-032-publique-decision-26dcc59.pdf.md|Décision n° 26-DCC-59 du 2 mars 2026 relative à la création d'une entreprise commune de plein exercice par les sociétés Ortec Expansion et Paprec Group]]
 - [[04_Litigation/7799.pdf.md|Feu vert sous conditions au rachat de Suez RV OSIS par SARP, filiale de Veolia]]
 - [[04_Litigation/concentrations-la-commission-autorise-lacquisition-de-suez-par-veolia-sous-conditions-2021.html.md|Concentrations : la Commission autorise l'acquisition de Suez par Veolia, sous conditions]]
+- [[04_Litigation/controle-des-concentrations-en-cours-d-examen-autorite-de-la-concurrence-operations-de-c.html.md|Autorité de la concurrence — Opérations de concentration en cours d'examen (dont Séché Environnement / Groupe MTF, notifiée le 28/05/2026)]]
 - [[04_Litigation/delaware-drinking-water-pfas-veolia-lawsuit-delaware-s-drinking-water-supplier-veolia-file.html.md|Delaware's drinking water supplier Veolia files suit against 9 companies for PFAS contamination]]
 - [[04_Litigation/epa-and-veolia-settle-court-1-million-environmental-fund-supreme-court-orders-1-million-f.html.md|Supreme Court orders $1 million for landfill breaches]]
 - [[04_Litigation/flint-residents-reach-25m-settlement-engineers-water-crisis-case-flint-residents-reach-25.html.md|Flint residents reach $25M settlement with engineers in water crisis case]]

@@ -1,12 +1,12 @@
 # Usage de la dataroom — membre par membre
 
-Relevé le 10/10/2026 19:33 depuis le journal des requêtes du serveur et les registres. 1337 appel(s) en tout. Une identité partagée (`dataroom-bearer`) ne désigne personne : c'est le token commun, utilisé avant les tokens personnels.
+Relevé le 10/10/2026 19:35 depuis le journal des requêtes du serveur et les registres. 1342 appel(s) en tout. Une identité partagée (`dataroom-bearer`) ne désigne personne : c'est le token commun, utilisé avant les tokens personnels.
 
 | Membre | Appels | Recherches | Pages lues | Écritures | Relectures | Chiffres ajoutés | Lignes relues | Jours actifs | Premier | Dernier |
 |---|---|---|---|---|---|---|---|---|---|---|
 | benjamin | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 2026-10-07 | 2026-10-07 |
 | `claude-api` (partagé) | 0 | 0 | 0 | 0 | 0 | 50 | 0 | 0 | — | — |
-| `dataroom-bearer` (partagé) | 1288 | 258 | 100 | 926 | 0 | 703 | 0 | 7 | 2026-09-22 | 2026-10-10 |
+| `dataroom-bearer` (partagé) | 1293 | 261 | 100 | 928 | 0 | 703 | 0 | 7 | 2026-09-22 | 2026-10-10 |
 | ethan | 3 | 3 | 0 | 0 | 0 | 0 | 0 | 2 | 2026-10-06 | 2026-10-07 |
 | kevin | 6 | 5 | 0 | 0 | 0 | 0 | 0 | 1 | 2026-10-07 | 2026-10-07 |
 | membre5 | 7 | 7 | 0 | 0 | 0 | 0 | 0 | 1 | 2026-10-07 | 2026-10-07 |
@@ -23,14 +23,14 @@ Relevé le 10/10/2026 19:33 depuis le journal des requêtes du serveur et les re
 | `search_dataroom` | 98 |
 | `submit_document` | 98 |
 | `read_page` | 96 |
-| `submit_url` | 86 |
+| `submit_url` | 88 |
 | `register_deal` | 58 |
 | `list_documents` | 48 |
 | `dataroom_status` | 32 |
 | `note_gap` | 32 |
 | `register_target` | 30 |
 | `workstream_status` | 24 |
-| `lookup_deal` | 20 |
+| `lookup_deal` | 23 |
 | `find_deals` | 15 |
 | `list_targets` | 14 |
 | `search_news` | 9 |
