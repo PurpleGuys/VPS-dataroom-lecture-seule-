@@ -63,3 +63,23 @@ it matters, and what we used instead. Keep one `##` section per target so
 ## Republic Services
 
 - **10-K 2025 et communiqué résultats 2025 de Republic en PDF (investor.republicservices.com et gcs-web, 403) ; prix de l'acquisition des actifs de désorption thermique TD*X (Texas, 2026) non publié.** — Le segment Environmental Solutions (1 766 M$ de CA, marge 21,1 %) est documenté via une copie Finviz du communiqué, sans pagination ; la stratégie d'acquisition de Republic en déchets dangereux reste non chiffrée. *(signalé par dataroom-bearer)*
+
+## GSB Sonderabfall-Entsorgung Bayern
+
+- **Actionnariat, comptes et éventuel processus de cession de GSB (incinérateur de déchets dangereux de Baar-Ebenhausen, 200 000 t/an)** — Le site gsb-mbh.de refuse la connexion (certificat TLS invalide) et l'article EUWID du 08/01/2026 (211 700 t traitées en 2025) est payant ; sans propriétaire ni chiffres, GSB reste une piste non qualifiée (cible inscrite avec une interview de 2022 pour seule source). *(signalé par dataroom-bearer)*
+
+## Currenta
+
+- **Périmètre, chiffres et éventuelle mise en vente des activités déchets de Currenta (incinérateurs de déchets dangereux des parcs chimiques du Bas-Rhin)** — Aucune source ouverte trouvée sur une cession des activités environnement par Macquarie ; seul le communiqué LANXESS de 2020 (40 % pour 780 M€ de fonds propres, tout Currenta) est disponible. La piste de cession allemande citée dans le cahier des charges n'est donc pas confirmée. *(signalé par dataroom-bearer)*
+
+## Tradebe
+
+- **Comptes consolidés de Tradebe (EBITDA, dette nette) et ventilation par métier ; aucun signe de processus de cession** — Les documents d'information MARF (programme de billets de trésorerie) sur bolsasymercados.es renvoient une page HTML au lieu du PDF ; seul le CA agrégé 2025 (>830 M€, communiqué Soltec) est sourcé, ce qui ne permet pas de dimensionner une offre sous la contrainte de 3x. *(signalé par dataroom-bearer)*
+
+## Renewi
+
+- **Comptes FY2024 de Renewi (EBITDA, dette nette, poids de Mineralz & Water) pour transformer le prix de 707 M£ en valeur d'entreprise et en multiple** — Le PDF des résultats FY2024 sur renewi.com renvoie une erreur 403 ; la ligne D (Renewi/Macquarie) reste en valeur des fonds propres, non comparable aux VE de la grille. *(signalé par dataroom-bearer)*
+
+## Augean
+
+- **Chiffres récents d'Augean (CA, EBITDA, dette) depuis le rachat par Ancala/Fiera en 2021, et valeur d'entreprise de l'opération de 2021** — Société retirée de la cote ; seuls le prix par action (372p) et la valeur des fonds propres (~390 M£, presse) sont sourcés. L'annonce Rule 2.7 finale d'Eleia n'a pas pu être capturée (pages RNS tronquées ou payantes). *(signalé par dataroom-bearer)*
