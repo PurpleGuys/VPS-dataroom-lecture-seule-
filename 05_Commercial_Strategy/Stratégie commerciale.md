@@ -7,7 +7,7 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 156 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 157 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/1183.pdf.md|Waste statistics — Statistics Explained]]
@@ -25,6 +25,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/clean-harbors-enviroserve-esh-2026-10-05.html.md|Clean Harbors Completes Acquisitions of EnviroServe and ES&H (5 October 2026, Business Wire, copie Stock Titan)]]
 - [[05_Commercial_Strategy/clean-harbors-hepaco-2024-03-25.html.md|Clean Harbors Completes Acquisition of HEPACO (25 March 2024)]]
 - [[05_Commercial_Strategy/clean-harbors-q2-2026-2026-07-29.html.md|Clean Harbors Announces Second-Quarter 2026 Financial Results (29 July 2026, Business Wire, copie Stock Titan)]]
+- [[05_Commercial_Strategy/cleanaway-contract-resources-2025-03-20.pdf.md|Strategic and complementary acquisition of Contract Resources]]
 - [[05_Commercial_Strategy/cleanaway-eqt-proposal-2026-08-13.pdf.md|Cleanaway receives a non-binding proposal from EQT Infrastructure, grants exclusive due diligence and confirms intention to recommend; provides FY27 outlook]]
 - [[05_Commercial_Strategy/cleanaway-eqt-update-2026-09-14.pdf.md|Update in relation to EQT Infrastructure proposal]]
 - [[05_Commercial_Strategy/cp-cession-lydec-en.pdf.md|Morocco: Veolia signs an agreement to divest its stake in Lydec]]
