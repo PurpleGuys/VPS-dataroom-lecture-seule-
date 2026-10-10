@@ -7,7 +7,7 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 175 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 176 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/1183.pdf.md|Waste statistics — Statistics Explained]]
@@ -183,5 +183,6 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/veolia-sets-bold-growth-goals-in-the-united-states-boosting-its-ecological-solutions-to-ensure-economic-growth-and-public-health-improvement.pdf.md|Veolia sets bold growth goals in the United States, boosting its ecological solutions to ensure economic growth and public health improvement]]
 - [[05_Commercial_Strategy/veolia_finance_deep_dive_waste_to_value_06-25-2025_en.pdf.md|Deep Dive: Waste to Value — Focus on Innovation and Hazardous Waste (25 June 2025)]]
 - [[05_Commercial_Strategy/version-eng-infopresse.pdf.md|Veolia launches two new and unique dialogue initiatives with stakeholders at the heart of environmental security]]
+- [[05_Commercial_Strategy/wastedive-hazardous-waste-volumes-2033-2026-09-23.html.md|Hazardous waste volumes may grow 4M tons by 2033 due to manufacturing]]
 - [[05_Commercial_Strategy/winning-bid-made-in-battle-to-acquire-waste-management-company-3394815-winning-bid-made-in.html.md|Winning bid made in battle to acquire waste management company]]
 - [[05_Commercial_Strategy/wm-stericycle-2024-06-03.html.md|WM to Acquire Stericycle for $7.2 Billion (3 June 2024)]]
