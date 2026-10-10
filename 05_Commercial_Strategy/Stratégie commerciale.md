@@ -7,7 +7,7 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 154 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 156 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/1183.pdf.md|Waste statistics — Statistics Explained]]
@@ -26,6 +26,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/clean-harbors-hepaco-2024-03-25.html.md|Clean Harbors Completes Acquisition of HEPACO (25 March 2024)]]
 - [[05_Commercial_Strategy/clean-harbors-q2-2026-2026-07-29.html.md|Clean Harbors Announces Second-Quarter 2026 Financial Results (29 July 2026, Business Wire, copie Stock Titan)]]
 - [[05_Commercial_Strategy/cleanaway-eqt-proposal-2026-08-13.pdf.md|Cleanaway receives a non-binding proposal from EQT Infrastructure, grants exclusive due diligence and confirms intention to recommend; provides FY27 outlook]]
+- [[05_Commercial_Strategy/cleanaway-eqt-update-2026-09-14.pdf.md|Update in relation to EQT Infrastructure proposal]]
 - [[05_Commercial_Strategy/cp-cession-lydec-en.pdf.md|Morocco: Veolia signs an agreement to divest its stake in Lydec]]
 - [[05_Commercial_Strategy/cp-deep-dive-water-micropollutants-pfas.pdf.md|Veolia targets 1 B€ in revenue by 2030 in the fight against micropollutants &amp; launches a pioneering PFAS integrated treatment offer]]
 - [[05_Commercial_Strategy/cp-deep-dive-water-water-technologies.pdf.md|Veolia steps up its pace in Water Technologies to grow 3x faster than the market]]
@@ -60,6 +61,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/harsco-clean-earth-acquisition-2019.html.md|Harsco Enters into Definitive Agreement to Acquire Clean Earth, Accelerating Its Transformation to a Global Market Leader of Environmental Solutions]]
 - [[05_Commercial_Strategy/harsco-stericycle-esol-acquisition-2020.html.md|Harsco Advances Transformation with Agreement to Acquire Stericycle's Environmental Solutions Business]]
 - [[05_Commercial_Strategy/inauguration-gln-veoliaxenagas-en.pdf.md|World first: Veolia, Enagás and Barcelona City Council inaugurate the first urban cold recovery network from an LNG terminal]]
+- [[05_Commercial_Strategy/kinderhook-chemtron-2019-08-16.html.md|Kinderhook Acquires Chemtron Corporation, a Leading Hazardous and Non-hazardous Waste Management Provider]]
 - [[05_Commercial_Strategy/panel-statement-2021-19.pdf.md|Panel Statement 2021/19 - Offers by Antwerp Management Limited (MSIP) and Eleia Limited for Augean plc]]
 - [[05_Commercial_Strategy/platinum-equity-to-sell-global-environmental-services-business-urbaser-to-blackstone-and-e.html.md|Platinum Equity to Sell Global Environmental Services Business Urbaser to Blackstone and EQT for $6.6 Billion]]
 - [[05_Commercial_Strategy/pr-2023-finance-guidance.pdf.md|Long term financial guidances 2024 - 2027]]
