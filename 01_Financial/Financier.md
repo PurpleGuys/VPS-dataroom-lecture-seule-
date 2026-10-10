@@ -7,9 +7,10 @@ generated: true
 
 # Financier
 
-Rubrique de [[Targets/Veolia|Veolia]] — 56 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 59 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
+- [[01_Financial/26-06_cp-bn-s1-26.pdf.md|Résultats consolidés au 30 juin 2026 - Communiqué de presse]]
 - [[01_Financial/bce-taux-eur-cad-2026-10-06.html.md|ECB euro reference exchange rate: Canadian dollar (CAD)]]
 - [[01_Financial/clean-harbors-10-k-2025.pdf.md|Clean Harbors, Inc. — Form 10-K, fiscal year ended December 31, 2025]]
 - [[01_Financial/credit_opinion-veolia-environnement-sa-04may2026.pdf.md|Moody's Credit Opinion - Veolia Environnement SA - May 2026]]
@@ -18,6 +19,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[01_Financial/deep_dive_veolia_in_the_us_presentation-eng.pdf.md|Deep Dive Energy Veolia in the USA]]
 - [[01_Financial/en_master_greenup_strategy-day_v270324.pdf.md|Strategy Day - Green Up Presentation]]
 - [[01_Financial/enviri-10-k-2025.pdf.md|Enviri Corporation — Form 10-K, fiscal year ended December 31, 2025]]
+- [[01_Financial/enviri-q1-2026-results.html.md|Enviri Corporation Reports First Quarter 2026 Results]]
 - [[01_Financial/envisol-fiche-legale-jde.html.md|ENVISOL]]
 - [[01_Financial/finance_2024_full_year_results_presentation.pdf.md|2024 Full year results - Presentation]]
 - [[01_Financial/finance_amendment_to_the_2023_universal_resgistration_document_08-01-24.pdf.md|Amendment of the 2023 URD including the half-yearly financial review as of June 30th 2024]]
@@ -53,6 +55,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[01_Financial/ratingsdirect_update_veoliaenvironnements.a._3485780_nov-25-2025.pdf.md|Standard & Poor's Ratings Direct - Veolia Environnement SA - November 2025]]
 - [[01_Financial/report-human-resources-social-performance-2025-veolia_0.pdf.md|Human resources and social performance 2025 report]]
 - [[01_Financial/results_comments_q1_2024.pdf.md|Operating &amp; Financial Review - Consolidated Financial Statements at March 31, 2024]]
+- [[01_Financial/seche_environnement_deu_2025_fr.pdf.md|Document d'enregistrement universel 2025]]
 - [[01_Financial/slidesq12024_def_0.pdf.md|Q1 2024 Results - Presentation]]
 - [[01_Financial/ve_notice_and_information_brochure_for_2024_combined_general_meeting.pdf.md|Notice and information brochure for the 2024 Combined General Meeting]]
 - [[01_Financial/ve_urd_2022_en.pdf.md|URD 2022 - Veolia Environment]]

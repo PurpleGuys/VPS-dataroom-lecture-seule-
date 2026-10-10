@@ -7,9 +7,11 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 126 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 129 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
+- [[05_Commercial_Strategy/25-06-cp-flamme.pdf.md|Signature d'une promesse unilatérale d'achat en vue de l'acquisition du Groupe Flamme]]
+- [[05_Commercial_Strategy/26-01_hidronor-lafilippa-vf.pdf.md|Séché Environnement annonce deux opérations de croissance externe majeures au Chili et en Italie]]
 - [[05_Commercial_Strategy/ambitions-veolia-spain.pdf.md|In Spain, Veolia displays strong ambitions to support ecological transformation by putting expertise and innovation at the service of territories]]
 - [[05_Commercial_Strategy/annual-resultats-2025.pdf.md|Full year 2025 results]]
 - [[05_Commercial_Strategy/arcwood-rebrand-2025-03-18.html.md|Heritage Environmental Services Rebrands to Arcwood Environmental (18 March 2025)]]
@@ -43,6 +45,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/geotec-cbinsights-profile.html.md|Geotec - Products, Competitors, Financials, Employees, Headquarters Locations]]
 - [[05_Commercial_Strategy/gfl-es-canadian-lawyer-2025.html.md|GFL finalizes $8 billion sale of Environmental Services Unit (Canadian Lawyer, 9 January 2025)]]
 - [[05_Commercial_Strategy/gfl-es-latham-2025-01-07.html.md|Latham & Watkins Advises GFL Environmental Inc. on Sale of Environmental Services Business (7 January 2025)]]
+- [[05_Commercial_Strategy/harsco-clean-earth-acquisition-2019.html.md|Harsco Enters into Definitive Agreement to Acquire Clean Earth, Accelerating Its Transformation to a Global Market Leader of Environmental Solutions]]
 - [[05_Commercial_Strategy/inauguration-gln-veoliaxenagas-en.pdf.md|World first: Veolia, Enagás and Barcelona City Council inaugurate the first urban cold recovery network from an LNG terminal]]
 - [[05_Commercial_Strategy/pr-2023-finance-guidance.pdf.md|Long term financial guidances 2024 - 2027]]
 - [[05_Commercial_Strategy/pr-2024-annual-results-veolia.pdf.md|2024 ANNUAL RESULTS]]
