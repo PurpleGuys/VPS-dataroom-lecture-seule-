@@ -7,7 +7,7 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 147 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 149 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/1183.pdf.md|Waste statistics — Statistics Explained]]
@@ -140,6 +140,8 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/seaside-criteres-2026-10-07.html.md|Seaside Equity Partners — Investment Criteria (consulté le 7 octobre 2026)]]
 - [[05_Commercial_Strategy/seaside-portefeuille-2026-10-07.html.md|Seaside Equity Partners — Portfolio (consulté le 7 octobre 2026)]]
 - [[05_Commercial_Strategy/seche-eco-singapore-acquisition-2024-06-17.pdf.md|Acquisition of ECO, Singapore's Leading Hazardous Waste Company]]
+- [[05_Commercial_Strategy/seche-environnement-declare-sa-flamme-a-un-nordiste-511629-seche-environnement-declare-sa.html.md|Séché Environnement déclare sa flamme à un nordiste]]
+- [[05_Commercial_Strategy/seche-environnement-signature-dune-promesse-unilaterale-dachat-en-vue-de-la_666081-seche-e.html.md|Séché Environnement : Signature d'une promesse unilatérale d'achat en vue de l'acquisition du Groupe Flamme]]
 - [[05_Commercial_Strategy/stakeholders-assembly-water-reuse-water-security-060526.pdf.md|Veolia’s Stakeholders Assembly calls for accelerated uptake of water reuse to strengthen water security]]
 - [[05_Commercial_Strategy/suez-strengthening-industrial-waste-recovery-business-acquisition-gruppo-ecosistem-major-p.html.md|SUEZ is strengthening its industrial waste recovery business with the acquisition of Gruppo Ecosistem, a major player in Italy’s waste sector | SUEZ]]
 - [[05_Commercial_Strategy/tradebe-refuerza-su-presencia-en-reino-unido-yentra-en-el-mercado-irlandes-mediante-la-adq.html.md|Tradebe refuerza su presencia en Reino Unido y entra en el mercado irlandés mediante la adquisición de una participación mayoritaria en Soltec]]

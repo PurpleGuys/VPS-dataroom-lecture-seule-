@@ -7,10 +7,11 @@ generated: true
 
 # Financier
 
-Rubrique de [[Targets/Veolia|Veolia]] — 64 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 70 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[01_Financial/26-06_cp-bn-s1-26.pdf.md|Résultats consolidés au 30 juin 2026 - Communiqué de presse]]
+- [[01_Financial/avr-annual-report-2024-resolve-web-1.pdf.md|AVR Annual Report 2024 - Resolve]]
 - [[01_Financial/bce-taux-eur-cad-2026-10-06.html.md|ECB euro reference exchange rate: Canadian dollar (CAD)]]
 - [[01_Financial/clean-harbors-10-k-2025.pdf.md|Clean Harbors, Inc. — Form 10-K, fiscal year ended December 31, 2025]]
 - [[01_Financial/cleanaway-fy26-results-presentation.pdf.md|CLEANAWAY FY26 Financial Results]]
@@ -23,6 +24,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[01_Financial/enviri-10-k-2025.pdf.md|Enviri Corporation — Form 10-K, fiscal year ended December 31, 2025]]
 - [[01_Financial/enviri-q1-2026-results.html.md|Enviri Corporation Reports First Quarter 2026 Results]]
 - [[01_Financial/envisol-fiche-legale-jde.html.md|ENVISOL]]
+- [[01_Financial/fcbwr166807_20260309.pdf.md|Séché Environnement: 2025 Consolidated Results]]
 - [[01_Financial/fceco081543_20260409.pdf.md|Résultats annuels 2025 - SUEZ est en ordre de marche pour accélérer sa croissance durable]]
 - [[01_Financial/finance_2024_full_year_results_presentation.pdf.md|2024 Full year results - Presentation]]
 - [[01_Financial/finance_amendment_to_the_2023_universal_resgistration_document_08-01-24.pdf.md|Amendment of the 2023 URD including the half-yearly financial review as of June 30th 2024]]
@@ -51,10 +53,13 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[01_Financial/finance_veolia_urd_2023.pdf.md|URD 2023 - Veolia Environnement]]
 - [[01_Financial/finance_veolia_urd_2025_en.pdf.md|Universal registration document 2025 - Veolia Environnement]]
 - [[01_Financial/finance_veolia_urd_amendment_07-31-2025.pdf.md|Amendment of the 2024 URD including the half-yearly financial review as of June 30th 2025]]
+- [[01_Financial/fr0000039109_20261007_11.pdf.md|2026 Rapport financier semestriel — Amendement du Document d'enregistrement universel 2025]]
 - [[01_Financial/indaver_dzr_2025_en.pdf.md|Indaver inside out - Sustainability Report 2025]]
 - [[01_Financial/main_represented_figures_2021_veolia_pro_forma.pdf.md|Main represented figures for the 12 months-ended December 31, 2021]]
+- [[01_Financial/montrose-8k-fy2025-results.pdf.md|Montrose Environmental Group, Inc. — Form 8-K (February 25, 2026), Exhibit 99.1: Fourth Quarter and Full-Year 2025 Results]]
 - [[01_Financial/onterris-8k-q2-2026-strategic-review.pdf.md|Onterris, Inc. — Form 8-K (August 5, 2026), Exhibit 99.1: Onterris Reports Second Quarter Results, Updates Full-Year 2026 Guidance, and Announces Board-led Strategic Review Process]]
 - [[01_Financial/operating_and_financial_review_consolidated_financial_statements_q1_2026.pdf.md|Operating and financial review - Consolidated financial statements as of March 31st 2026]]
+- [[01_Financial/perma-fix-annual-report-2025.pdf.md|Perma-Fix Environmental Services, Inc. — Annual Report 2025]]
 - [[01_Financial/rapport-de-gestion-va-t3_2025_0.pdf.md|Operating and financial review - Consolidated financial statements at September 30th, 2025]]
 - [[01_Financial/ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf.md|Standard & Poor's Ratings Direct - Veolia Environnement SA - April 2026]]
 - [[01_Financial/ratingsdirect_update_veoliaenvironnements.a._3485780_nov-25-2025.pdf.md|Standard & Poor's Ratings Direct - Veolia Environnement SA - November 2025]]
@@ -73,4 +78,5 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[01_Financial/veolia_finance_presentation_h1_2026_results.pdf.md|2026 half-year results - Presentation]]
 - [[01_Financial/veolia_finance_q1_results_2023.pdf.md|Presentation of Q1 results as of March 31st 2023]]
 - [[01_Financial/veolia_moodys_spo_march_2025.pdf.md|Moody's Second Party Opinion, March 2025]]
+- [[01_Financial/veolia_optional_redemption_notice_2026-09-12.pdf.md|Notice to holders of the €500,000,000 Undated Deeply Subordinated Fixed Rate Resettable Notes (ISIN FR0013445335)]]
 - [[01_Financial/veoliaslides_9m_2025_0.pdf.md|9M 2025 Key figures presentation]]
