@@ -7,7 +7,7 @@ generated: true
 
 # Permis et réglementaire
 
-Rubrique de [[Targets/Veolia|Veolia]] — 22 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 23 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[02_Permits_Regulatory/0006503322-georisques-fiche-installation-classee-sarp-industries-limay-0006503322.html.md|Géorisques — fiche installation classée SARP Industries, Limay (0006503322)]]
@@ -23,6 +23,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[02_Permits_Regulatory/deq-oklahoma-emi-guthrie.html.md|Oklahoma DEQ — Hazardous Waste Management Facilities: Environmental Management, Inc]]
 - [[02_Permits_Regulatory/dnslzmsu2xa484a1spdppfw6ifa7w0s9.pdf.md|Rapport de l'Inspection des installations classées — Visite d'inspection du 31/03/2026 — TREDI, Salaise-sur-Sanne]]
 - [[02_Permits_Regulatory/dreal-arf-chauny-inspection-2023-03-07.pdf.md|Rapport de l'inspection des installations classées — ARF Chauny (AIOT 0005100154), visite du 07/03/2023]]
+- [[02_Permits_Regulatory/dreal-arf-vendeuil-inspection-2023-07-03.pdf.md|Rapport de l'inspection des installations classées — ARF Vendeuil (AIOT 0005103993), visite du 03/07/2023]]
 - [[02_Permits_Regulatory/ec-m11032-veolia-hofmann.pdf.md|Commission européenne — décision M.11032 Veolia / Hofmann Group (renvoi à l'Allemagne, art. 4(4))]]
 - [[02_Permits_Regulatory/emi-guthrie-sam-gov-profile.html.md|Environmental Management INC: $37M in Federal Contracts, Guthrie, OK]]
 - [[02_Permits_Regulatory/fr-icpe-rubrique-2770-aida.html.md|2770. Installation de traitement thermique de déchets dangereux, à l'exclusion des installations visées aux rubriques 2792 et 2793 et des installations de combustion …]]
