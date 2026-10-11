@@ -7,7 +7,7 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 188 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 189 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/1183.pdf.md|Waste statistics — Statistics Explained]]
@@ -47,6 +47,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/crystal-clean-jfl-2023-07-19.html.md|Heritage-Crystal Clean, Inc. to be Acquired by J.F. Lehman & Company for $1.2 Billion (19 July 2023)]]
 - [[05_Commercial_Strategy/crystal-clean-jfl-2023-10-17.html.md|J.F. Lehman & Company Completes Acquisition of Heritage-Crystal Clean, Inc. (17 October 2023)]]
 - [[05_Commercial_Strategy/download-handler.pdf.md|The cost of PFAS pollution for our society — Final report]]
+- [[05_Commercial_Strategy/drieat-sarpi-limay-css-2023-01-30.pdf.md|SARPI-Veolia Limay — présentation à la commission de suivi de site (30 janvier 2023)]]
 - [[05_Commercial_Strategy/emi-entretien-2019-01-31.html.md|Environmental Management Services: From a Garage Startup to Nationwide Coverage (Made Possible By, 31 January 2019)]]
 - [[05_Commercial_Strategy/enr-veolia-clean-earth-2025-11-21.html.md|Global Giant Veolia Aims $3B Deal to Buy US Waste Firm Clean Earth]]
 - [[05_Commercial_Strategy/enva-announces-agreement-to-be-acquired-by-i-squared-capital-from-exponent-enva-announces.html.md|Enva announces agreement to be acquired by I Squared Capital from Exponent]]
