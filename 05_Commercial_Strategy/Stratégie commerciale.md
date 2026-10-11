@@ -7,7 +7,7 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 176 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 184 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/1183.pdf.md|Waste statistics — Statistics Explained]]
@@ -21,11 +21,14 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/annual-resultats-2025.pdf.md|Full year 2025 results]]
 - [[05_Commercial_Strategy/antwerp-indaver-site-d-anvers-incineration-de-dechets-dangereux-en-fours-rotatifs.html.md|Indaver — site d'Anvers : incinération de déchets dangereux en fours rotatifs]]
 - [[05_Commercial_Strategy/arcwood-rebrand-2025-03-18.html.md|Heritage Environmental Services Rebrands to Arcwood Environmental (18 March 2025)]]
+- [[05_Commercial_Strategy/arf-sister-companies.html.md|ARF and its sister companies (Groupe Flamme)]]
 - [[05_Commercial_Strategy/beseitigung-und-verwertung-gefaehrlicher-abfaelle-unter-knappen-kapazitaeten-beseitigung-u.html.md|Beseitigung und Verwertung gefährlicher Abfälle unter knappen Kapazitäten (sonderabfall-wissen.de)]]
 - [[05_Commercial_Strategy/bic-us-ecology-republic-2022.html.md|US Ecology joins Republic Services (BIC Magazine, reprise du communiqué du 9 février 2022)]]
 - [[05_Commercial_Strategy/bodacc_b_pdf_unitaire_20230247_01083.pdf.md|BODACC B n° 247 du 22 décembre 2023, annonce n° 1083 — MTF (RCS Valenciennes 400 449 864)]]
 - [[05_Commercial_Strategy/bodacc_c_pdf_unitaire_20260074_03499.pdf.md|BODACC C n° 74 du 17 avril 2026, annonce n° 3499 — MTF, dépôt des comptes de l'exercice clos le 30 septembre 2025]]
 - [[05_Commercial_Strategy/boomer-about-2026-10-07.html.md|Boomer Environmental — About (consulté le 7 octobre 2026)]]
+- [[05_Commercial_Strategy/canalfm-recyclage-des-vallees-2022-11-10.html.md|Le groupe Flamme va-t-il perdre le traitement du tri sélectif en Sambre-Avesnois ? (10/11/2022)]]
+- [[05_Commercial_Strategy/canalfm-recyclage-des-vallees-fermeture.html.md|Hautmont : quel avenir pour les salariés de Recyclage des Vallées ?]]
 - [[05_Commercial_Strategy/capacity_assessment_-report.pdf.md|National Capacity Assessment Report Pursuant to CERCLA Section 104(c)(9) — January 24, 2025 (EPA 530-R-25-007)]]
 - [[05_Commercial_Strategy/clean-harbors-enviroserve-2026-08-12.html.md|Clean Harbors to Acquire EnviroServe for $470 Million (12 August 2026, Business Wire, copie Stock Titan)]]
 - [[05_Commercial_Strategy/clean-harbors-enviroserve-esh-2026-10-05.html.md|Clean Harbors Completes Acquisitions of EnviroServe and ES&H (5 October 2026, Business Wire, copie Stock Titan)]]
@@ -57,6 +60,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/envisol-cfnews-geotec-buildup.html.md|Géotec renforce son pôle environnement | CFNEWS]]
 - [[05_Commercial_Strategy/envisol-plassart-geostatistics-2013.pdf.md|Contaminated sites and soil geostatistics: advanced technology in characterisation and rehabilitation (Envisol)]]
 - [[05_Commercial_Strategy/eqt-covanta-2021-07-14.html.md|EQT Infrastructure to acquire Covanta for USD 5.3 billion (14 July 2021)]]
+- [[05_Commercial_Strategy/flamme-assainissement-agences.html.md|Flamme Assainissement — site officiel : agences et services]]
 - [[05_Commercial_Strategy/fortum-summa-2024-11-29.html.md|Fortum completes the divestment of its recycling and waste business (29 November 2024)]]
 - [[05_Commercial_Strategy/fortum-summa-ng-group-2024-07-18.html.md|Summa Equity through NG Group acquires Fortum Recycling and Waste (18 July 2024)]]
 - [[05_Commercial_Strategy/french-recycling-company-schroll-taken-over-by-germanys-remondis-050525-remondis-acquires.html.md|Remondis acquires an 80 per cent stake in the French recycling firm Schroll]]
@@ -166,6 +170,10 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/seche-environnement-declare-sa-flamme-a-un-nordiste-511629-seche-environnement-declare-sa.html.md|Séché Environnement déclare sa flamme à un nordiste]]
 - [[05_Commercial_Strategy/seche-environnement-planifie-rachat-groupe-flamme-seche-environnement-planifie-le-rachat-d.html.md|Séché Environnement planifie le rachat du groupe Flamme]]
 - [[05_Commercial_Strategy/seche-environnement-signature-dune-promesse-unilaterale-dachat-en-vue-de-la_666081-seche-e.html.md|Séché Environnement : Signature d'une promesse unilatérale d'achat en vue de l'acquisition du Groupe Flamme]]
+- [[05_Commercial_Strategy/seche-implantations-2018.pdf.md|Séché Environnement — Carte des implantations (juillet 2018)]]
+- [[05_Commercial_Strategy/seche-tredi-hombourg.html.md|Trédi Hombourg — page du site (Séché Environnement)]]
+- [[05_Commercial_Strategy/seche-tredi-saint-vulbas.html.md|Trédi Saint-Vulbas — page du site (Séché Environnement)]]
+- [[05_Commercial_Strategy/seche-tredi-strasbourg.html.md|Trédi Strasbourg — page du site (Séché Environnement)]]
 - [[05_Commercial_Strategy/stakeholders-assembly-water-reuse-water-security-060526.pdf.md|Veolia’s Stakeholders Assembly calls for accelerated uptake of water reuse to strengthen water security]]
 - [[05_Commercial_Strategy/suez-strengthening-industrial-waste-recovery-business-acquisition-gruppo-ecosistem-major-p.html.md|SUEZ is strengthening its industrial waste recovery business with the acquisition of Gruppo Ecosistem, a major player in Italy’s waste sector | SUEZ]]
 - [[05_Commercial_Strategy/tradebe-refuerza-su-presencia-en-reino-unido-yentra-en-el-mercado-irlandes-mediante-la-adq.html.md|Tradebe refuerza su presencia en Reino Unido y entra en el mercado irlandés mediante la adquisición de una participación mayoritaria en Soltec]]

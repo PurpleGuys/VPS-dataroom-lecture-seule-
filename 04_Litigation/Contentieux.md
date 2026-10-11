@@ -7,13 +7,15 @@ generated: true
 
 # Contentieux
 
-Rubrique de [[Targets/Veolia|Veolia]] — 17 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 19 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[04_Litigation/0001104659-26-088210.pdf.md|Antero Midstream Announces Second Quarter 2026 Financial and Operating Results (Form 8-K, Exhibit 99.1)]]
 - [[04_Litigation/11_07_2019_remondis_dsd-bundeskartellamt-prohibits-remondis-dsd-merger-11-july-2019.html.md|Bundeskartellamt prohibits Remondis/DSD merger (11 July 2019)]]
+- [[04_Litigation/17-dcc-40-paprec-coved.pdf.md|Décision n° 17-DCC-40 du 29 mars 2017 relative à la prise de contrôle exclusif de la société Coved par le groupe Paprec]]
 - [[04_Litigation/21-246_-_21-dcc71-note_dagrement_de_repreneur_.pdf.md|Note d'agrément de repreneur — 21-246 / 21-DCC-71 (SARP / Suez RV OSIS)]]
 - [[04_Litigation/22-180-publique-decision-22dcc216.pdf.md|Décision n° 22-DCC-216 du 14 novembre 2022 relative à la prise de contrôle exclusif d'actifs détenus par Veolia par la société Séché Environnement]]
+- [[04_Litigation/23-dcc-159-seche-veolia.pdf.md|Décision n° 23-DCC-159 du 16 août 2023 relative à la prise de contrôle exclusif d'actifs détenus par Veolia par la société Séché Environnement]]
 - [[04_Litigation/25-020-publique-decision-25dcc93.pdf.md|Décision 25-DCC-93 du 25 avril 2025 relative à la prise de contrôle exclusif de la société Louis Schroll par la société Remondis]]
 - [[04_Litigation/26-032-publique-decision-26dcc59.pdf.md|Décision n° 26-DCC-59 du 2 mars 2026 relative à la création d'une entreprise commune de plein exercice par les sociétés Ortec Expansion et Paprec Group]]
 - [[04_Litigation/7799.pdf.md|Feu vert sous conditions au rachat de Suez RV OSIS par SARP, filiale de Veolia]]
