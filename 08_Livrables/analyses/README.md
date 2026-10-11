@@ -2,6 +2,7 @@
 
 Une lecture par rôle de ce que la dataroom établit, contredit ou ignore. À discuter, jamais à signer.
 
+- [flammes-actifs.md](flammes-actifs.md) — Écrit par l'API Claude (claude-opus-5-5) le 11/10/2026 20:52, 0.46 $, à partir des fiches de pages et du registre. À relire, contredire et r
 - [questions-16-octobre.md](questions-16-octobre.md) — Écrit par l'API Claude (claude-opus-5-5) le 10/10/2026 19:11, 0.49 $, à partir des fiches de pages et du registre. À relire, contredire et r
 - [role-1.md](role-1.md) — Écrit par l'API Claude (claude-opus-5-5) le 10/10/2026 18:51, 0.43 $, à partir des fiches de pages et du registre. À relire, contredire et r
 - [role-2.md](role-2.md) — Écrit par l'API Claude (claude-opus-5-5) le 10/10/2026 18:51, 0.50 $, à partir des fiches de pages et du registre. À relire, contredire et r
