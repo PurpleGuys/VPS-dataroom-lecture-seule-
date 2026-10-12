@@ -1,12 +1,12 @@
 # Usage de la dataroom — membre par membre
 
-Relevé le 12/10/2026 11:36 depuis le journal des requêtes du serveur et les registres. 1422 appel(s) en tout. Une identité partagée (`dataroom-bearer`) ne désigne personne : c'est le token commun, utilisé avant les tokens personnels.
+Relevé le 12/10/2026 11:38 depuis le journal des requêtes du serveur et les registres. 1425 appel(s) en tout. Une identité partagée (`dataroom-bearer`) ne désigne personne : c'est le token commun, utilisé avant les tokens personnels.
 
 | Membre | Appels | Recherches | Pages lues | Écritures | Relectures | Chiffres ajoutés | Lignes relues | Jours actifs | Premier | Dernier |
 |---|---|---|---|---|---|---|---|---|---|---|
 | benjamin | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 2026-10-07 | 2026-10-07 |
 | `claude-api` (partagé) | 0 | 0 | 0 | 0 | 0 | 50 | 0 | 0 | — | — |
-| `dataroom-bearer` (partagé) | 1373 | 289 | 104 | 973 | 0 | 705 | 0 | 8 | 2026-09-22 | 2026-10-11 |
+| `dataroom-bearer` (partagé) | 1376 | 291 | 105 | 973 | 0 | 705 | 0 | 9 | 2026-09-22 | 2026-10-12 |
 | ethan | 3 | 3 | 0 | 0 | 0 | 0 | 0 | 2 | 2026-10-06 | 2026-10-07 |
 | kevin | 6 | 5 | 0 | 0 | 0 | 0 | 0 | 1 | 2026-10-07 | 2026-10-07 |
 | membre5 | 7 | 7 | 0 | 0 | 0 | 0 | 0 | 1 | 2026-10-07 | 2026-10-07 |
@@ -23,12 +23,12 @@ Relevé le 12/10/2026 11:36 depuis le journal des requêtes du serveur et les re
 | `search_dataroom` | 113 |
 | `submit_document` | 112 |
 | `submit_url` | 107 |
-| `read_page` | 100 |
+| `read_page` | 101 |
 | `register_deal` | 60 |
 | `list_documents` | 49 |
 | `note_gap` | 42 |
 | `dataroom_status` | 33 |
-| `lookup_deal` | 32 |
+| `lookup_deal` | 33 |
 | `register_target` | 30 |
 | `workstream_status` | 24 |
 | `find_deals` | 15 |
@@ -39,9 +39,9 @@ Relevé le 12/10/2026 11:36 depuis le journal des requêtes du serveur et les re
 | `correct_row` | 5 |
 | `read_table` | 4 |
 | `review_queue` | 4 |
+| `lookup_figure` | 3 |
 | `find_deal_candidates` | 3 |
 | `link_note` | 3 |
-| `lookup_figure` | 2 |
 | `capacite` | 2 |
 | `list_inbox` | 2 |
 | `find_figures` | 1 |
