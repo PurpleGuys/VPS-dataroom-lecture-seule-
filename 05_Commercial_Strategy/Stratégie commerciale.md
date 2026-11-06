@@ -7,7 +7,7 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 189 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 192 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/1183.pdf.md|Waste statistics — Statistics Explained]]
@@ -91,6 +91,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/pr-bpifrane-veolia-031725.pdf.md|Veolia welcomes Bpifrance and its French fund Lac1 to its capital]]
 - [[05_Commercial_Strategy/pr-caixa-veolia-030425.pdf.md|Veolia adds a major strategic ally: CriteriaCaixa to acquire a 5% stake in the company]]
 - [[05_Commercial_Strategy/pr-data-centers-new-offer-041426.pdf.md|Veolia unveils a next-generation integrated offering to revolutionize the future of the data-center industry]]
+- [[05_Commercial_Strategy/pr-desalination-contracts-middle-east-110526.pdf.md|Desalination: Veolia strengthens its position as a global leader with major contracts in the Middle East]]
 - [[05_Commercial_Strategy/pr-destruction-europe-pfas-veolia.pdf.md|Veolia announces a major technological breakthrough with the launch in Europe of a new patented technology, Drop®, effective to achieve up to 99.9999% destruction of targeted PFAS]]
 - [[05_Commercial_Strategy/pr-eng-appointments-bd-veolia.pdf.md|Appointments to Veolia’s Board of Directors]]
 - [[05_Commercial_Strategy/pr-epidemio-veolia-073025.pdf.md|Veolia heads a groundbreaking wastewater epidemiological surveillance across Europe]]
@@ -104,6 +105,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/pr-pfas-france-04112024.pdf.md|Veolia carries out an unprecedented campaign to detect regulated PFAS in drinking water and deploys its action plan]]
 - [[05_Commercial_Strategy/pr-pfas-veolia-stanton-ribbon-cutting-061825.pdf.md|Veolia Opens One of the Largest PFAS Treatment Plants in the U.S., Delivering High-Quality Drinking Water to Over 100,000 Delaware Residents]]
 - [[05_Commercial_Strategy/pr-post-gm-veolia-04242025.pdf.md|Combined Shareholders’ General Meeting, April 24, 2025]]
+- [[05_Commercial_Strategy/pr-q3-results-veolia-110526.pdf.md|Nine month 2026 key figures]]
 - [[05_Commercial_Strategy/pr-results-campaign-detect-pfas-drinking-water-veolia-090424.pdf.md|Veolia concludes its campaign to detect PFAS in drinking water in France and strengthens its solution offering]]
 - [[05_Commercial_Strategy/pr-sade-closing-03042024.pdf.md|Veolia closes the sale of its subsidiary SADE-CGTH to NGE]]
 - [[05_Commercial_Strategy/pr-saudi-arabia-veolia-strategic-agreements-20260901.pdf.md|Saudi Arabia: Veolia signs three strategic agreements to accelerate the Kingdom's environmental security]]
@@ -126,6 +128,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/pr-veolia-clean-earth-112125.pdf.md|Veolia to build a major hazardous waste US player with the acquisition of Clean Earth and unlock further international growth]]
 - [[05_Commercial_Strategy/pr-veolia-czech-karvina-coal-exit-03232026.pdf.md|Veolia Drives the Czech Coal Exit with a Multi-Energy Transformation in Karviná]]
 - [[05_Commercial_Strategy/pr-veolia-desalination-seawater-morocco-102924.pdf.md|The Kingdom of Morocco and Veolia join forces for the largest seawater desalination project in Africa]]
+- [[05_Commercial_Strategy/pr-veolia-divestitures-1105.26.pdf.md|Veolia accelerates its growth-focused portfolio transformation with €570M in divestments already signed in 2026 under its €2bn plan]]
 - [[05_Commercial_Strategy/pr-veolia-ecothermal-grid-11252025.pdf.md|Veolia Ambitions to Lead European District Heating by 2030 and Launches New Offer in Urban Energy]]
 - [[05_Commercial_Strategy/pr-veolia-elabe-2nd-barometer-ecological-transformation-04222024.pdf.md|Veolia and Elabe present the 2nd edition of the global barometer of ecological transformation]]
 - [[05_Commercial_Strategy/pr-veolia-enviropacific-acquisition-032426.pdf.md|Veolia strengthens its leadership in PFAS treatment in Australia with AUD 220M acquisition of the country's major soil remediation player]]

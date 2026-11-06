@@ -7,7 +7,7 @@ generated: true
 
 # Financier
 
-Rubrique de [[Targets/Veolia|Veolia]] — 78 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 80 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[01_Financial/26-06_cp-bn-s1-26.pdf.md|Résultats consolidés au 30 juin 2026 - Communiqué de presse]]
@@ -47,10 +47,12 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[01_Financial/finance_ve_operating_and_financial_review_q12023.pdf.md|Operating and financial review Q1 2023]]
 - [[01_Financial/finance_ve_operating_review_q3_2023.pdf.md|Operating &amp; financial review Q3 2023]]
 - [[01_Financial/finance_veolia_2025_full_year_results_presentation_0.pdf.md|2025 full year results - Presentation]]
+- [[01_Financial/finance_veolia_9m_2026_key_figures_presentation.pdf.md|9M 2026 key figures - Presentation]]
 - [[01_Financial/finance_veolia_amendment_urd_2022.pdf.md|Amendment of the 2022 URD including the financial review as of June 30th 2023]]
 - [[01_Financial/finance_veolia_consolidated_financial_statements_31-12-25.pdf.md|Consolidated financial statements at December 31st 2025]]
 - [[01_Financial/finance_veolia_operating_and_financial_review_2025.pdf.md|Operating and financial review - Consolidated financial statements at December 31st 2025]]
 - [[01_Financial/finance_veolia_operating_and_financing_review_q1_2025.pdf.md|Operating and financial review - Consolidated financial statements as of March 31st 2025]]
+- [[01_Financial/finance_veolia_operating_financial_review_q3_2026.pdf.md|Operating and financial review - Consolidated financial statements at September 30th 2026]]
 - [[01_Financial/finance_veolia_presentation_hf_results_2025.pdf.md|2025 half-year results - Presentation]]
 - [[01_Financial/finance_veolia_q1_2026_results_presentation.pdf.md|Q1 2026 key figures - Presentation]]
 - [[01_Financial/finance_veolia_q1_presentation_2025.pdf.md|Q1 results 2025 - Presentation]]
