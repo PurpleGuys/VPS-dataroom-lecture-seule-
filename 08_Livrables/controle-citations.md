@@ -41,7 +41,7 @@
 - rôle 6 (Cibles, puis synthèse) : 108 — F46, F47, F48, F49, F50, F76, F77, F209, F210, F211, F212, F213, F214, F215, F216, F443, F444, F445, F471, F472 …
 
 ## Ce que la méthode du rapport mesure
-- corps du rapport : 102 caractères  espaces compris  pour 50 000 demandés
+- corps du rapport : 102 caractères, espaces compris, pour 50 000 demandés
 - Annexe I : commentée nulle part dans le texte
 - Annexe II : commentée nulle part dans le texte
 - Annexe III : commentée nulle part dans le texte
