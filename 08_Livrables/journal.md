@@ -51,11 +51,11 @@ Généré depuis le journal des requêtes du serveur et les registres ; rien n'e
 
 ## 2026-10-02
 
-- **compte partagé (dataroom-bearer)** : 114 chiffre(s) ajouté(s) (F130, F131, F132, F133, F134, F135, F136, F137…); 1 cible(s) (T1); 7 document(s) versé(s); 1 manque(s) noté(s); 13 recherche(s), 0 page(s) lue(s); 4 enregistrement(s) sans trace au registre.
+- **compte partagé (dataroom-bearer)** : 113 chiffre(s) ajouté(s) (F130, F131, F132, F133, F134, F135, F136, F138…); 1 cible(s) (T1); 7 document(s) versé(s); 1 manque(s) noté(s); 13 recherche(s), 0 page(s) lue(s); 5 enregistrement(s) sans trace au registre.
 
 ## 2026-10-01
 
-- **compte partagé (dataroom-bearer)** : 111 chiffre(s) ajouté(s) (F23, F8, F11, F26, F20, F16, F14, F6…); 4 document(s) versé(s); 2 manque(s) noté(s); 10 recherche(s), 0 page(s) lue(s); 17 enregistrement(s) sans trace au registre.
+- **compte partagé (dataroom-bearer)** : 105 chiffre(s) ajouté(s) (F23, F8, F11, F26, F20, F16, F14, F6…); 4 document(s) versé(s); 2 manque(s) noté(s); 10 recherche(s), 0 page(s) lue(s); 23 enregistrement(s) sans trace au registre.
 
 ## 2026-09-23
 
