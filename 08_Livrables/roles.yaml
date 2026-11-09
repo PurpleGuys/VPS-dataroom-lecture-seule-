@@ -18,11 +18,11 @@ relecture: {}
 # La page de couverture (méthode du rapport, § 5.2) : prénom et NOM de chaque auteur, le nom du responsable
 # (tuteur ou professeur référent), l'intitulé de la formation, l'entreprise, l'année en cours. Le logo de
 # l'EDHEC se dépose dans 08_Livrables/scripts/logo-edhec.png. Un champ vide bloque la version finale.
-auteurs:
-  ethan: ""      # « Prénom NOM », tel qu'il doit s'imprimer
-  kevin: ""
-  noa: ""
-  benjamin: ""
+auteurs:                 # « Prénom NOM », tel qu'il doit s'imprimer, dans l'ordre de la couverture
+  noa: "Noa ROZAK"
+  armand: "Armand MARIN"
+  kevin: "Kevin TU"
+  ethan: "Ethan PETROVIC"
 encadrant: ""
 formation: "EDHEC Business School — BBA 3 — Capstone Innovations in Finance"
 entreprise: "Veolia Environnement"

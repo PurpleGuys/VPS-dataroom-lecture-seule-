@@ -15,6 +15,9 @@ HERE = Path(__file__).parent
 DATA = Path(sys.argv[1]) if len(sys.argv) > 1 else HERE.parent / "simulateur-data.json"
 HIST = Path(sys.argv[2]) if len(sys.argv) > 2 else HERE.parent / "fourchette-historique.json"
 KEYS = ["MAXACQB", "BIND27", "HEAD27", "HEADSP27", "LEV26", "LEV27", "EB27", "NFD27", "RATIO26", "WHICH27"]
+# Ce sur quoi repose la version publiée : la date d'arrêté des données du modèle. À changer avec le point de départ.
+DATA_CUTOFF = ("données arrêtées au 30/09/2026 (rapport du T3 2026 de Veolia, publié le 05/11/2026) : dette de départ au 30/09, "
+               "cash-flow du T4 2025 reproduit, 570 M€ de cessions signées à 10,4x, croissance organique publiée à fin septembre")
 
 data = json.loads(DATA.read_text(encoding="utf-8"))
 cols = {c["name"]: c for c in data["columns"]}
@@ -35,6 +38,7 @@ snapshot = {
     "distribution": {k: data["distribution"][k] for k in ("MAXACQB", "BIND27", "LEV26", "LEV27") if k in data["distribution"]},
     "probabilities": data["probabilities"],
     "factor_weight": data.get("factor_weight"),
+    "note": DATA_CUTOFF,
 }
 
 

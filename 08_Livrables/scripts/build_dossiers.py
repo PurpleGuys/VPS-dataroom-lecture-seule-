@@ -237,13 +237,15 @@ CE_NET_Y = mv("Cessions", "… soit, en années")
 CAL = [cell("Cessions", f"C{r}") for r in range(32, 36)]
 FCF_H2 = mv("Pont de dette", "Cash-flow libre net S2 2025")
 DROP_H2 = mv("Pont de dette", "Baisse de la dette au S2 2025")
+FCF_Q4 = mv("Pont de dette", "Cash-flow libre net T4 2025")
+DROP_Q4 = mv("Pont de dette", "Baisse de la dette au T4 2025")
 RESID25 = mv("Pont de dette", "Flux non détaillés")
 CE_GAP = mv("Pont de dette", "Clean Earth : effet sur la dette moins")
 MINOR25 = mv("Pont de dette", "dont au moins")
 _wv = WB["Vérifications"]
 checks_ok = next(_wv[f"F{c.row}"].value for c in _wv["B"] if c.value == "Statut global des contrôles bloquants")
 SPENT = {k: mv("Cessions", lab) for k, lab in [("s24", "Sorties nettes 2024"), ("s25", "Sorties nettes 2025"),
-         ("sH1", "Sorties nettes S1 2026"), ("cum", "Sorties nettes cumulées"), ("vs", "… face à l'enveloppe boosters")]}
+         ("sH1", "Sorties nettes 9M 2026"), ("cum", "Sorties nettes cumulées")]}
 MAXDEBT_TGT = mv("Levier", "Dette maximale fin 2027 si l'objectif"); MAXDEBT_MOD = mv("Levier", "Dette maximale fin 2027 à l'EBITDA du modèle")
 PERHALF = mv("Levier", "Dette libérée par 0,5")
 FFO25 = mv("Levier", "FFO 2025 implicite"); FFOREQ = mv("Levier", "FFO requis en 2026"); FFOGAP = mv("Levier", "Marge de FFO en 2026")
@@ -414,7 +416,7 @@ f = dict(
     ev=R("Clean Earth : valeur d'entreprise", "annonce 11/2025", "Md USD"), mult=R("Clean Earth : multiple", "2026e"),
     syn=R("Clean Earth : synergies de coûts", "année 4"),
     sites=R("Clean Earth : sites spécialisés", "annonce 11/2025"), permits=R("Clean Earth : permis", "annonce 11/2025"),
-    boost4=R("GreenUp : investissements nets de croissance 2024-2027 dans les boosters", "2024-2027"),
+    boost4=R("GreenUp : investissements nets de croissance 2024-2027", "2024-2027"),
     strong2=R("GreenUp : à investir dans les strongholds", "2024-2027"), rot4=R("Rotation d'actifs déjà réalisée", "2024-2025e"),
     rot85=R("Rotation d'actifs totale GreenUp", "2024-2028"), nfi24=R("Pont de dette 2024 : investissements financiers nets des cessions", "FY2024"),
     nfi25=R("Pont de dette 2025 : investissements financiers", "FY2025"), nfih1=R("Pont de dette S1 2026 : investissements financiers", "S1 2026"),
@@ -449,6 +451,26 @@ f = dict(
     mo_f26=R("Moody's : FFO / dette nette ajustée prévu", "2026F"), mo_f27=R("Moody's : FFO / dette nette ajustée prévu", "2027F"),
     urd_gross=R("Sous-total des emprunts", "31/12/2025"),
 )
+# Le T3 2026 (publié le 05/11/2026) et les chiffres versés pour corriger l'audit du 09/11.
+f.update(dict(
+    nfdq3=R("Endettement financier net (groupe), après Clean Earth", "30/09/2026"),
+    nfdq325=R("Endettement financier net (groupe)", "30/09/2025"), levq325=R("Ratio de levier publié", "30/09/2025"),
+    ebq325=R("EBITDA (groupe)", "9M 2025"), ebq326=R("EBITDA (groupe)", "9M 2026"),
+    g9m=R("Croissance organique de l'EBITDA (groupe)", "9M 2026"),
+    nfcf9m25=R("Cash-flow libre net avant", "9M 2025"), nfcf9m26=R("Cash-flow libre net avant", "9M 2026"),
+    divt9m=R("Pont de dette 9M 2026 : dividendes versés", "9M 2026"),
+    nfi9m=R("Pont de dette 9M 2026 : investissements financiers", "9M 2026"),
+    ce_nfd9m=R("Clean Earth : effet sur l'endettement", "9M 2026"),
+    hyb_rep=R("Pont de dette 9M 2026 : remboursement de dette hybride", "9M 2026"),
+    sign570=R("Programme de cessions : montant déjà signé", "au 05/11/2026"),
+    mdisp=R("Programme de cessions : multiple moyen", "au 05/11/2026"),
+    closed9m=R("Cessions réalisées", "9M 2026"), rook=R("Cession de 20 % de Rookery South", "25/09/2026"),
+    lev_guid=R("Guidance 2026 confirmée au T3 : ratio de levier", "31/12/2026"),
+    lev_traj=R("Trajectoire de levier présentée au T3", "2027"),
+    hw_eb24=R("Déchets dangereux (booster) : EBITDA", "FY2024"), hw_eb25=R("Déchets dangereux (booster) : EBITDA", "FY2025"),
+    hw_g25=R("Déchets dangereux (booster) : croissance de l'EBITDA", "FY2025"),
+    growth_net=R("GreenUp : croissance, montant net par an", "2024-2027"),
+))
 HYB_SHARE = mv("Levier", "Part des hybrides dans l'écart")
 SEG_EB27 = mv("Segments", "EBITDA 2027 « au rythme", "E"); CE_EBREC = mv("Booster", "EBITDA 2025 recalculé"); CE_EBGAP = mv("Booster", "Écart entre l'EBITDA de Veolia")
 M_REC = mv("Booster", "Multiple sur l'EBITDA 2025 reconstitué"); CE_MREC = mv("Booster", "Marge d'EBITDA 2025 recalculée")
@@ -459,18 +481,20 @@ ROLES.append(role(
     1, "Périmètre et sources", "Le registre, et si l'enveloppe annoncée était brute ou nette des cessions.",
     f"<strong>Nette.</strong> GreenUp annonce environ {P(f['rot'])} Md€ par an de rotation <em>nette</em> d'actifs : "
     f"{P(f['tlo'])} à {P(f['thi'])} Md€ de tuck-ins, moins environ {P(f['dcont'])} Md€ de cessions. "
-    f"Clean Earth ({fr(-N(f['ce_nfd']) / 1000, 2)} Md€ de dette en plus) vaut {fr(CE_YEARS, 1)} années "
+    f"Clean Earth ({fr(N(f['ce_nfd9m']) / 1000, 2)} Md€ de dette en plus) vaut {fr(CE_YEARS, 1)} années "
     f"de cette enveloppe ; c'est le programme de cessions de plus de {P(f['prog'])} Md€ qui le ramène dedans. "
-    f"Les {P(f['boost4'])} Md€ d'investissements de croissance dans les boosters sont eux aussi annoncés <em>nets</em> (GreenUp p.44) : "
-    f"au 30 juin 2026, les sorties nettes d'acquisitions depuis 2024 atteignent {fr(SPENT['cum'], 2)} Md€, soit {fr(SPENT['vs'], 2)} Md€ de plus.",
+    f"Les {P(f['boost4'])} Md€ d'investissements nets de croissance de GreenUp (p.44) couvrent boosters et strongholds "
+    f"(dont {P(f['strong2'])} Md€ pour les strongholds) et comprennent l'investissement organique (« croissance : {P(f['growth_net'])} Md€ "
+    f"par an, net », résultats 2024 p.34) : ce n'est pas un plafond d'acquisitions. Au 30 septembre 2026, les investissements financiers "
+    f"nets des cessions cumulés depuis 2024 atteignent {fr(SPENT['cum'], 2)} Md€ ; ils ne se comparent pas à cette enveloppe.",
     table([
-        row_fig("GreenUp : investissements nets de croissance, boosters", f["boost4"]),
+        row_fig("GreenUp : investissements nets de croissance, boosters et strongholds", f["boost4"]),
+        row_fig("GreenUp : croissance nette par an, organique compris", f["growth_net"]),
         row_fig("GreenUp : strongholds", f["strong2"]),
         row_fig("Investissements financiers nets des cessions (entrée)", f["nfi24"]),
         row_fig("Investissements financiers nets des cessions", f["nfi25"]),
-        row_fig("Investissements financiers nets des cessions", f["nfih1"]),
-        row_calc("Sorties nettes cumulées 2024 → 30/06/2026", fr(SPENT['cum'], 2, "Md EUR"), "somme des trois ponts, signe inversé"),
-        row_calc("… face aux 4 Md€ de l'enveloppe boosters", fr(SPENT['vs'], 2, "Md EUR"), "positif : enveloppe nette dépassée"),
+        row_fig("Investissements financiers nets des cessions", f["nfi9m"]),
+        row_calc("Sorties nettes cumulées 2024 → 30/09/2026", fr(SPENT['cum'], 2, "Md EUR"), "somme des trois ponts, signe inversé"),
         row_fig("Rotation déjà réalisée selon Veolia (brut)", f["rot4"]), row_fig("Rotation totale prévue (brut)", f["rot85"]),
         row_fig("Part des acquisitions dans les boosters", f["pctB"]), row_fig("Part des acquisitions hors d'Europe", f["pctX"]),
         row_fig("Rotation nette d'actifs annoncée", f["rot"]), row_fig("Tuck-ins, bas de fourchette", f["tlo"]),
@@ -479,7 +503,7 @@ ROLES.append(role(
         row_fig("Investissements nets annoncés", f["netcap"]), row_fig("dont maintenance", f["maint"]),
         row_fig("dont croissance sur contrats", f["grow"]), row_fig("moins cessions industrielles (au plus)", f["inddisp"]),
         row_fig("Rotation d'actifs sur 4 ans (brut)", f["rot8"]),
-        row_fig("Clean Earth : effet sur la dette", f["ce_nfd"]), row_fig("Programme de cessions (au moins)", f["prog"]),
+        row_fig("Clean Earth : effet sur la dette", f["ce_nfd9m"]), row_fig("Programme de cessions (au moins)", f["prog"]),
         row_calc("Clean Earth net du programme", fr(CE_NET, 2, "Md EUR"), f"{fr(CE_NET_Y, 1)} année d'enveloppe nette"),
     ]),
     [
@@ -492,8 +516,9 @@ ROLES.append(role(
         f"Placer Clean Earth : {fr(CE_YEARS, 1)} années d'enveloppe nette en une opération. Net du programme de cessions, "
         f"il en reste {fr(CE_NET, 2)} Md€, soit {fr(CE_NET_Y, 1)} année.",
         f"Reconstituer ce qui est sorti : {fr(-SPENT['s24'], 2)} Md€ rentrés en 2024 (cessions SADE, RGS, Lydec, Haikou), "
-        f"{fr(SPENT['s25'], 2)} Md€ sortis en 2025 (minoritaires WTS, déchets dangereux), {fr(SPENT['sH1'], 2)} Md€ au S1 2026 (Clean Earth). "
-        f"Cumul net : {fr(SPENT['cum'], 2)} Md€, contre une enveloppe boosters de {P(f['boost4'])} Md€ sur quatre ans.",
+        f"{fr(SPENT['s25'], 2)} Md€ sortis en 2025 (minoritaires WTS, déchets dangereux), {fr(SPENT['sH1'], 2)} Md€ sur neuf mois 2026 "
+        f"(Clean Earth, Enviropacific, moins Rookery). Cumul net : {fr(SPENT['cum'], 2)} Md€. Il ne se compare pas aux {P(f['boost4'])} Md€ "
+        "de GreenUp, qui comptent aussi l'investissement organique et les strongholds.",
         "Le registre : chaque chiffre a son fichier, sa page, son URL et sa date de consultation, et un contrôle automatique "
         "vérifie que la valeur figure bien sur la page citée.",
     ],
@@ -508,7 +533,8 @@ ROLES.append(role(
          f"{P(f['thi'])} Md€ de tuck-ins moins {P(f['dcont'])} Md€ de cessions donnent les {P(f['rot'])} Md€ annoncés. "
          "Veolia applique la même convention aux investissements industriels."),
         ("Les 4 Md€ annoncés étaient-ils bruts ou nets des cessions ?",
-         f"Nets : la diapositive d'allocation du capital parle de « net growth investments » pour les boosters. Le brut, Veolia l'appelle "
+         f"Nets : la diapositive d'allocation du capital parle de « net growth investments », pour les boosters et les strongholds réunis "
+         f"(dont {P(f['strong2'])} Md€ pour les strongholds), investissement organique compris. Le brut, Veolia l'appelle "
          f"« rotation d'actifs » : {P(f['rot4'])} Md€ déjà faits, {P(f['rot85'])} Md€ au total avec Clean Earth et le plan de cessions."),
         ("Les 8 Md€ de rotation ne contredisent-ils pas les 0,5 Md€ par an ?",
          "Non : les 8 Md€ sont un montant brut (achats et ventes additionnés) sur quatre ans, les 0,5 Md€ un solde annuel."),
@@ -522,9 +548,10 @@ ROLES.append(role(
 ROLES.append(role(
     2, "La contrainte", "La position de départ, la définition du levier propre à Veolia, et le calcul jusqu'au plafond.",
     f"Veolia mesure son levier comme <strong>dette financière nette de clôture (IFRS 16 incluse) sur EBITDA (IFRS 16 inclus)</strong>, "
-    f"hybrides exclus. La définition redonne les ratios publiés. Au 30 juin 2026, le ratio mécanique de {x(LMECH)} surestime : "
-    f"corrigé de Clean Earth en année pleine et de la saisonnalité, on est à {x(LSEAS)}. Le modèle donne {x(LEV26)} fin 2026, "
-    f"dans la guidance, et {x(LEV27)} fin 2027, soit {fr(HEAD / 1000, 2)} Md€ de marge sous 3x. "
+    f"hybrides exclus. La définition redonne les ratios publiés. Au 30 septembre 2026, le ratio mécanique de {x(LMECH)} surestime : "
+    f"corrigé de Clean Earth en année pleine et de la saisonnalité, on est à {x(LSEAS)}. Veolia annonce un levier « égal ou légèrement "
+    f"supérieur à 3x » fin 2026 et un retour à {P(f['lev_traj'])}x au plus en 2027. Le modèle donne {x(LEV26)} fin 2026 "
+    f"et {x(LEV27)} fin 2027, soit {fr(HEAD / 1000, 2)} Md€ de marge sous 3x. "
     f"<strong>Mais la vraie limite est celle des agences</strong> : S&P abaisse la note si FFO / dette ajustée ne reste pas au-dessus de "
     f"{P(f['sptrig'])} %, Moody's si le ratio passe sous « {esc(f['motrig']['value'])} ». Au pic de dette ajustée de 2026 "
     f"(~{P(f['mond26'])} Md€), tenir 18 % demande {fr(FFOREQ / 1000, 1)} Md€ de FFO, soit le FFO 2025 ({fr(FFO25 / 1000, 1)} Md€) : "
@@ -540,11 +567,17 @@ ROLES.append(role(
         row_fig("Dette financière nette", f["nfd24"]), row_fig("EBITDA", f["eb24"]), row_fig("Levier publié", f["lev24"]),
         row_fig("Dette financière nette", f["nfd25"]), row_fig("EBITDA", f["eb25"]), row_fig("Levier publié", f["lev25"]),
         row_calc("Levier recalculé 2025", x(mv("Levier", "Levier recalculé 2025")), "DFN / EBITDA"),
+        row_fig("Dette au 30/09/2026, Clean Earth inclus", f["nfdq3"]), row_fig("Dette au 30/09/2025", f["nfdq325"]),
+        row_fig("Levier publié au 30/09/2025", f["levq325"]),
+        row_fig("EBITDA, neuf mois", f["ebq325"]), row_fig("EBITDA, neuf mois", f["ebq326"]),
+        row_calc("EBITDA glissant 12 mois au 30/09/2026", fr(LTM, 0, "M EUR"), "2025 − 9M 2025 + 9M 2026"),
+        row_calc("① Levier mécanique", x(LMECH), "toute la dette, quatre mois d'EBITDA de Clean Earth"),
+        row_calc("② Pro forma Clean Earth 12 mois", x(LPF), "+ 8 mois d'EBITDA de Clean Earth"),
+        row_calc("③ Corrigé de la saisonnalité", x(LSEAS), "− la baisse de dette du T4 2025"),
+        row_fig("Guidance de levier fin 2026 : égal ou légèrement supérieur à", f["lev_guid"]),
+        row_fig("Trajectoire 2027 : au plus", f["lev_traj"]),
+        row_fig("Remboursement d'hybride du 12/09/2026", f["hyb_rep"]),
         row_fig("Dette au 30/06/2026, Clean Earth inclus", f["nfdh1"]), row_fig("Dette au 30/06/2025", f["nfdh125"]),
-        row_calc("EBITDA glissant 12 mois au 30/06/2026", fr(LTM, 0, "M EUR"), "2025 − S1 2025 + S1 2026"),
-        row_calc("① Levier mécanique", x(LMECH), "toute la dette, un mois d'EBITDA de Clean Earth"),
-        row_calc("② Pro forma Clean Earth 12 mois", x(LPF), "+ 11 mois d'EBITDA de Clean Earth"),
-        row_calc("③ Corrigé de la saisonnalité", x(LSEAS), "− la baisse de dette du S2 2025"),
         row_fig("Levier publié hors Clean Earth", f["q1"]),
         row_calc("Dette maximale fin 2027 si l'objectif ≥ 8 Md€ est atteint", fr(MAXDEBT_TGT, 0, "M EUR"), "3 × 8 000"),
         row_calc("Dette maximale fin 2027 à l'EBITDA du modèle", fr(MAXDEBT_MOD, 0, "M EUR"), "3 × EBITDA 2027 central"),
@@ -590,13 +623,14 @@ ROLES.append(role(
         f"Prendre la définition dans le DEU 2025 (p.355) et la tester : elle redonne {P(f['lev24'])}x pour 2024 et {P(f['lev25'])}x pour 2025.",
         f"Les {P(f['hyb'])} Md€ d'hybrides sont des capitaux propres en IFRS (IAS 32.11). L'hybride vert de 2025 a réduit la dette "
         f"nette de {P(f['hybg'])} M€ : c'est un levier sur le ratio, pas sur l'économie.",
-        f"Au 30 juin 2026, trois lectures : {x(LMECH)} mécanique, {x(LPF)} avec douze mois de Clean Earth, {x(LSEAS)} en retirant "
-        f"la saisonnalité (la dette baisse de {fr(DROP_H2, 0)} M€ au second semestre). Seule la troisième se compare à un ratio de décembre.",
+        f"Au 30 septembre 2026, trois lectures : {x(LMECH)} mécanique, {x(LPF)} avec douze mois de Clean Earth, {x(LSEAS)} en retirant "
+        f"la saisonnalité (la dette a baissé de {fr(DROP_Q4, 0)} M€ au quatrième trimestre 2025). Seule la troisième se compare à un ratio de décembre.",
         f"Le plafond en euros : si l'objectif de 8 Md€ est atteint, la dette ne peut pas dépasser {fr(MAXDEBT_TGT / 1000, 0)} Md€ fin 2027 ; "
-        f"la dette de juin 2026 ({P(f['nfdh1'])} M€) est déjà au-dessus. Chaque 0,5 Md€ d'EBITDA en plus libère {fr(PERHALF / 1000, 1)} Md€ : "
+        f"la dette de septembre 2026 ({P(f['nfdq3'])} M€) est déjà au-dessus. Chaque 0,5 Md€ d'EBITDA en plus libère {fr(PERHALF / 1000, 1)} Md€ : "
         "la capacité dépend plus de l'EBITDA que de n'importe quelle décision d'allocation.",
-        f"Fin 2026, le modèle donne {x(LEV26)} (dette {fr(NFD26, 0)} M€, EBITDA {fr(EB26, 0)} M€). Il retombe dans la guidance sans "
-        "réglage : c'est le test de calibrage.",
+        f"Fin 2026, le modèle donne {x(LEV26)} (dette {fr(NFD26, 0)} M€, EBITDA {fr(EB26, 0)} M€). Il faut pour cela que la dette baisse "
+        f"de {fr(N(f['nfdq3']) - NFD26, 0)} M€ au seul quatrième trimestre, contre {fr(DROP_Q4, 0)} M€ au T4 2025 : ce n'est pas un test "
+        "de calibrage, c'est une cible, que Veolia annonce « égale ou légèrement supérieure à 3x ».",
         f"Fin 2027 : {x(LEV27)}, marge de {fr(HEAD, 0)} M€ sous 3x. Avec la moitié des hybrides en dette, le ratio passe à {x(D50)} "
         f"et la marge disparaît ; avec tous les hybrides, {x(D100)}.",
         f"Les agences, publiées par Veolia elle-même sur sa page « Debt and ratings » : Moody's (Baa1 stable, mai 2026) mesure FFO / dette "
@@ -625,8 +659,8 @@ ROLES.append(role(
         "Le change sur la dette en dollars n'est pas modélisé.",
     ],
     [
-        ("Pourquoi ne pas citer 3,39x au 30 juin ?",
-         f"Parce qu'il rapporte toute la dette de Clean Earth à un seul mois de son EBITDA, et une dette de juin, toujours plus haute, à un "
+        (f"Pourquoi ne pas citer {x(LMECH)} au 30 septembre ?",
+         f"Parce qu'il rapporte toute la dette de Clean Earth à quatre mois de son EBITDA, et une dette de septembre, toujours plus haute, à un "
          f"plafond qui se mesure en décembre. Corrigé des deux, on est à {x(LSEAS)}."),
         ("Quel est le vrai plafond : 3x ou les agences ?",
          f"Les deux, à des dates différentes. Veolia s'engage à garder BBB / Baa1, et S&P abaisse la note sous 18 % de FFO / dette. "
@@ -658,9 +692,10 @@ ROLES.append(role(
          f"Depuis le tableau de flux du DEU (p.362-363) : capacité d'autofinancement avant BFR, moins impôts et intérêts payés, plus "
          f"remboursements d'actifs financiers opérationnels et dividendes reçus : {fr(FFO_REC, 0)} M€ contre {P(f['mo_ffo25'])} publiés, "
          f"écart {pct(FFO_GAP_PCT)}. Même lecture en 2024 à moins de 2 % près : c'est un contrôle bloquant du classeur."),
-        ("Pourquoi votre fin 2026 est-il crédible ?",
-         f"Il n'utilise que la guidance de croissance (+{P(f['g_lo'])} à +{P(f['g_hi'])} %), le second semestre 2025 reproduit et la moitié des cessions signées : "
-         f"il tombe à {x(LEV26)}, ce que Veolia annonce."),
+        ("Votre fin 2026 est-il crédible ?",
+         f"Il n'utilise que la croissance publiée à fin septembre (+{P(f['g9m'])} %, dans la guidance de +{P(f['g_lo'])} à +{P(f['g_hi'])} %), "
+         f"le quatrième trimestre 2025 reproduit et la moitié des cessions signées non encaissées : il donne {x(LEV26)}, face à un levier "
+         "que Veolia annonce « égal ou légèrement supérieur à 3x ». L'écart tient au quatrième trimestre, publié en février 2027."),
     ],
     "Levier, Pont de dette, Échéancier",
 ))
@@ -679,11 +714,14 @@ ROLES.append(role(
         row_fig("Cash-flow libre net", f["nfcf24"]), row_fig("Cash-flow libre net", f["nfcf25"]),
         row_fig("Cash-flow libre net, S1", f["nfcfh125"]), row_fig("Cash-flow libre net, S1", f["nfcfh126"]),
         row_calc("Cash-flow libre net du S2 2025", fr(FCF_H2, 0, "M EUR"), "année − S1"),
+        row_fig("Cash-flow libre net, neuf mois", f["nfcf9m25"]), row_fig("Cash-flow libre net, neuf mois", f["nfcf9m26"]),
+        row_calc("Cash-flow libre net du T4 2025", fr(FCF_Q4, 0, "M EUR"), "année − neuf mois"),
         row_fig("Variation du BFR, S1", f["wcr"]), row_fig("Investissements nets", f["capex"]),
-        row_fig("Dividende versé aux actionnaires", f["div"]), row_fig("Dividendes versés, minoritaires compris", f["divt"]),
-        row_fig("Programme de cessions (au moins)", f["prog"]), row_fig("Cessions réalisées", f["closed"]),
-        row_fig("Signatures attendues", f["sign"]),
-        row_calc("Calendrier central S2 2026 / 2027 / S1 2028", " / ".join(fr(v, 2) for v in CAL[1:]) + f"{NB}Md EUR",
+        row_fig("Dividende versé aux actionnaires", f["div"]), row_fig("Dividendes versés, minoritaires compris", f["divt9m"]),
+        row_fig("Programme de cessions (au moins)", f["prog"]), row_fig("Cessions réalisées", f["closed9m"]),
+        row_fig("Cessions déjà signées", f["sign570"]), row_fig("… à un multiple moyen d'EBITDA de", f["mdisp"]),
+        row_fig("dont déjà encaissée : 20 % de Rookery South", f["rook"]),
+        row_calc("Calendrier central T4 2026 / 2027 / S1 2028", " / ".join(fr(v, 2) for v in CAL[1:]) + f"{NB}Md EUR",
                  "hypothèses s26 et s27"),
         row_fig("Guidance croissance organique EBITDA, bas", f["g_lo"]), row_fig("… haut", f["g_hi"]),
         row_calc("Cash-flow libre net 2027 (modèle)", fr(FCF27, 0, "M EUR"), "conversion moyenne 2024-2025"),
@@ -697,10 +735,12 @@ ROLES.append(role(
         row_calc("Rythme passé de cessions", fr(SOLD_PY, 0, "M EUR / an"), f"2 Md€ demandent {fr(NEED_YEARS, 1)} ans à ce rythme, ou {fr(NEED_AVG, 0)} opérations moyennes"),
     ]),
     [
-        f"La saisonnalité d'abord : le premier semestre consomme du cash (BFR {P(f['wcr'])} M€), le second en rend "
-        f"({fr(FCF_H2, 0)} M€ en 2025). Toute analyse en juin doit en tenir compte.",
-        f"Le calendrier : {P(f['closed'])} Md€ encaissés, environ {P(f['sign'])} Md€ de signatures attendues en 2026, "
-        "le solde d'ici mi-2028. Signer n'est pas encaisser : le scénario central encaisse la moitié des signatures en 2026 et la moitié du reste en 2027.",
+        f"La saisonnalité d'abord : le premier semestre consomme du cash (BFR {P(f['wcr'])} M€), la fin d'année en rend "
+        f"({fr(FCF_H2, 0)} M€ au second semestre 2025, dont {fr(FCF_Q4, 0)} M€ au seul quatrième trimestre). À fin septembre 2026, "
+        f"le cash-flow libre net est encore de {P(f['nfcf9m26'])} M€ : le reste de l'année repose sur le quatrième trimestre.",
+        f"Le calendrier : {P(f['closed9m'])} Md€ encaissés sur neuf mois, dont Rookery ({P(f['rook'])} M€) ; {P(f['sign570'])} M€ signés "
+        f"au 5 novembre, à {P(f['mdisp'])}x l'EBITDA ; le solde d'ici mi-2028. Signer n'est pas encaisser : le scénario central encaisse "
+        "la moitié des cessions signées non encaissées au quatrième trimestre 2026 et la moitié du reste en 2027.",
         "Ce que vaut chaque levier sur la marge 2027 : " + ", ".join(f"{esc(k)} {fr(v, 0)}" for k, v in ELAST.items()) + " (M€ pour +100 M€).",
         "Le classement : " + "; ".join(f"{i + 1}. {esc(n)} ({fr(v, 0)} M€)" for i, (n, v) in enumerate(rank[:6])) + ".",
         f"Les combinaisons : tout défavorable donne {fr(UNF, 0)} M€, tout favorable {fr(FAV, 0)} M€. La réponse dépend moins du "
@@ -763,7 +803,7 @@ ROLES.append(role(
     f"Côté segments, la croissance vient des Amériques (EBITDA organique +{P(f['am_g'])} %) et de Water Technologies (+{P(f['wt_g'])} %), "
     f"pas de l'Europe (+{P(f['eu_g'])} %) : au rythme de 2025, l'EBITDA 2027 atteindrait {fr(SEG_EB27 / 1000, 2)} Md€, l'objectif tient. "
     f"Chez Clean Harbors, le comparable direct, la marge est de {P(f['clh_m'])} % ; chez Clean Earth vu par son vendeur, "
-    f"{pct(CE_MREC)} sur un EBITDA 2025 reconstitué de {fr(CE_EBREC, 0)} M$, un tiers sous les {P(f['ceeb'])} M$ 2026E de Veolia. "
+    f"{pct(CE_MREC)} sur un EBITDA 2025 reconstitué de {fr(CE_EBREC, 0)} M$, {pct(1 - CE_EBREC / N(f['ceeb']), 0)} sous les {P(f['ceeb'])} M$ 2026E de Veolia. "
     f"<strong>Les 8 Md€ sont d'abord un plan de coûts</strong> : l'efficacité promise ({P(f['gu_eff'])} M€ par an, GreenUp p.58) couvre "
     f"{pct(EFF_SHARE, 0)} de l'écart entre la base 2023 ({P(f['gu_base'])} Md€) et l'objectif ; en 2025, les {P(f['eff25'])} M€ de gains "
     f"d'efficacité expliquent {pct(EFF_SHARE_Y, 0)} de la croissance organique de l'EBITDA (+{P(f['org25'])} %, soit ~{fr(ORG_M, 0)} M€), "
@@ -794,6 +834,8 @@ ROLES.append(role(
         row_fig("Espagne : tuck-ins intégrés en deux ans", f["es_n"]), row_fig("Espagne : valeur d'entreprise des tuck-ins", f["es_ev"]),
         row_fig("Espagne : multiple moyen des tuck-ins", f["es_mult"]),
         row_fig("Boosters : EBITDA", f["boost_eb"]), row_fig("Boosters : croissance organique de l'EBITDA", f["boost_g"]),
+        row_fig("Déchets dangereux : EBITDA", f["hw_eb24"]), row_fig("Déchets dangereux : EBITDA", f["hw_eb25"]),
+        row_fig("Déchets dangereux : croissance organique de l'EBITDA", f["hw_g25"]),
         row_calc("EBITDA 2027 si chaque segment garde son rythme de 2025", fr(SEG_EB27, 0, "M EUR"), "onglet Segments §C"),
         row_fig("Clean Harbors : chiffre d'affaires", f["clh_rev"]), row_fig("Clean Harbors : EBITDA ajusté", f["clh_eb"]),
         row_fig("Clean Harbors : marge", f["clh_m"]),
@@ -821,13 +863,14 @@ ROLES.append(role(
         "donnent l'historique de la cible). Republic Services n'est comparable que par sa filiale US Ecology.",
     ],
     [
-        "Les comptes de Clean Harbors et d'Enviri ne se téléchargent pas depuis le serveur (refus 403) : à verser à la main.",
+        "Les 10-Q récents (Enviri au T2 2026, Clean Harbors au T3 2026) ne sont pas versés : sec.gov refuse le serveur, à verser à la main.",
         "La base organique 2024 (périmètre et change constants) n'est pas publiée : les 428 M€ de croissance organique 2025 sont "
         "calculés sur l'EBITDA 2024 publié, à quelques millions près.",
         "Le multiple des tuck-ins espagnols est imprimé « c.7.4x » (présentation 2025, p.19) : l'audit le signale hors page tant "
         "qu'un relecteur ne l'a pas confirmé.",
         "Aucune valeur de marché des pairs (capitalisation, VE) n'est dans la dataroom.",
-        "L'EBITDA déchets dangereux de Veolia seul en 2024, base de l'ambition de +10 %, n'est pas publié.",
+        f"L'EBITDA du métier déchets dangereux est publié pour 2024 et 2025 ({P(f['hw_eb24'])} et {P(f['hw_eb25'])} M€, "
+        "présentation 2025, annexe 5), pas à fin septembre 2026 : la décélération de 2026 ne se lit qu'en chiffre d'affaires.",
     ],
     [
         ("D'où viennent exactement les 8 Md€ ?",
@@ -846,14 +889,15 @@ ROLES.append(role(
          "comptes 10-K audités. Mais son EBITDA est « ajusté » selon sa définition, et il porte ses propres passifs environnementaux : "
          "comparer les marges demande la même base."),
         ("L'objectif de 9 Mt est-il une révision à la baisse ?",
-         "Le chiffre baisse et le libellé perd « et polluants ». Le DEU ne l'explique pas : c'est une question à poser, pas à trancher."),
+         "Le DEU 2025 l'explique en note (p.226) : effet de périmètre de la cession de RGS aux États-Unis. C'est un ajustement de "
+         "périmètre, pas un renoncement ; reste la disparition de « et polluants » dans le libellé, à poser comme question."),
     ],
     "Segments, Pont EBITDA, Booster",
 ))
 
 ROLES.append(role(
     5, "Le coût ESG", "Ce qu'une acquisition ajoute en passif et en exposition.",
-    f"Veolia porte {P(f['cl26'])} M€ de provisions de fermeture et post-fermeture ({x(PROV_X)} d'EBITDA), en hausse de "
+    f"Veolia porte {P(f['cl26'])} M€ de provisions de fermeture et post-fermeture ({x(N(f['cl26']) / N(f['eb25']))} l'EBITDA 2025), en hausse de "
     f"{fr(N(f['cl26']) - N(f['cl25']), 0)} M€ au S1 2026, dont "
     f"+{fr(N(f['am_cl26']) - N(f['am_cl25']), 0)} M€ dans le segment où est entré Clean Earth. "
     f"Mais <strong>{pct(GW_PCT, 0)} du prix de Clean Earth est encore du goodwill</strong> : l'affectation du prix n'est pas faite, "
@@ -886,7 +930,8 @@ ROLES.append(role(
         f"Lu en dette élargie (provisions de fermeture comprises), le levier de 2027 gagne environ {x(N(f['cl26']) / EB27)}.",
     ],
     [
-        "Les passifs environnementaux propres à Clean Earth sont dans les comptes d'Enviri (activité cédée) : à verser à la main.",
+        "Les passifs environnementaux d'Enviri sont publiés pour le groupe entier (10-K 2025, dans la dataroom), pas pour Clean Earth seul : "
+        "le 10-Q d'Enviri du T2 2026 reste à verser.",
         f"Les garanties reçues passent de {P(f['gar25'])} à {P(f['gar26'])} M€, sans être attribuées à Clean Earth.",
         "La dataroom ne contient aucun rapport d'agence sur le traitement des provisions environnementales.",
     ],
@@ -921,13 +966,14 @@ ROLES.append(role(
     f"Fin 2027, la marge centrale permet une acquisition d'environ <strong>{fr(MAXACQ / 1000, 1)} Md€</strong> au multiple de Clean Earth "
     f"(médiane des 1 000 futurs tirés : {fr(ACQ_P50 / 1000, 2)} Md€ ; 80 % entre {fr(ACQ_P10 / 1000, 2)} et {fr(ACQ_P90 / 1000, 2)} Md€ ; "
     f"probabilité de pouvoir acheter 1 Md€ : {pct(P_ACQ1, 0)}, 2 Md€ : {pct(P_ACQ2, 0)}, 3 Md€ : {pct(P_ACQ3, 0)}), "
-    f"moins que Clean Earth lui-même ({fr(-N(f['ce_nfd']) / 1000, 1)} Md€). Dans le scénario défavorable, "
+    f"moins que Clean Earth lui-même ({fr(N(f['ce_nfd9m']) / 1000, 1)} Md€ de dette). Dans le scénario défavorable, "
     f"rien. Une cible de {fr(FIN_S / 1000, 0)} Md€ à {fr(FIN_M, 1)}x laisserait {fr(FIN_GAP3, 0)} M€ à trouver sous 3x fin 2027 : "
     f"{fr(FIN_HYB, 0)} M€ d'hybrides ({fr(FIN_HYB_COST, 0)} M€ de coupon par an), ou {fr(FIN_DISP, 0)} M€ de cessions accélérées "
     f"({fr(FIN_DISP_COST, 0)} M€ d'EBITDA perdu par an), ou une augmentation de capital diluant de {pct(FIN_EQ_DIL, 1)} ; sans financement, "
     f"elle ne tient que payée moins de {fr(BK_MTUCK_C4, 1)}x. "
-    "Recommandation proposée : pas de nouvelle grande opération avant l'encaissement du programme de cessions ; des tuck-ins "
-    "au bas de la fourchette en 2027 ; une cible de 1 à 2 Md€ seulement une fois les cessions encaissées.",
+    f"Recommandation proposée : des tuck-ins au bas de la fourchette tant que le levier publié reste au-dessus de 3x ; une cible de "
+    f"1 à 2 Md€ seulement quand les cessions signées auront dépassé les {P(f['sign570'])} M€ d'aujourd'hui vers les {P(f['prog'])} Md€ "
+    "annoncés et que les comptes 2026 auront confirmé le retour vers 3x. Le programme ne sera encaissé qu'à mi-2028, après l'horizon du sujet.",
     table([
         row_calc(f"Acquisition max. à {fr(g[0], 1)}x : défavorable / central / favorable",
                  " / ".join(fr(v / 1000, 2) for v in g[1:]) + f"{NB}Md EUR", "marge / (1 − 3 / multiple)")
@@ -1020,7 +1066,7 @@ tiles = [
     ("Marge sous 3x fin 2027", fr(HEAD / 1000, 2, "Md€"), f"défavorable {fr(UNF / 1000, 2)} · favorable {fr(FAV / 1000, 2)}"),
     ("Marge sous 18 % S&P fin 2027", fr(HEADSP27 / 1000, 2, "Md€"), f"FFO / dette ajustée {pct(RATIO26)} en 2026, {pct(RATIO27)} en 2027"),
     ("Acquisition max. fin 2027", fr(MAXACQB / 1000, 2, "Md€"), f"sous la contrainte qui mord : {esc(WHICH27.split(' : ')[0])}"),
-    ("Sorties nettes depuis 2024", fr(SPENT["cum"], 2, "Md€"), f"enveloppe boosters annoncée : {P(f['boost4'])} Md€, nets"),
+    ("Sorties nettes depuis 2024", fr(SPENT["cum"], 2, "Md€"), "investissements financiers nets des cessions, au 30/09/2026"),
 ]
 tiles_html = "".join(f'<div class="tile"><p class="t-label">{esc(a)}</p><p class="t-val">{b}</p><p class="t-note">{esc(c)}</p></div>'
                      for a, b, c in tiles)
@@ -1182,12 +1228,22 @@ standalone = ('<!doctype html>\n<html lang="fr">\n<head>\n<meta charset="utf-8">
               '<meta name="viewport" content="width=device-width, initial-scale=1">\n' + head.replace(_is42.bar("livrables") if _is42 else "\0", "") +
               '<style>body{margin:0}</style>\n</head>\n<body>\n' + (_is42.bar("livrables") if _is42 else "") + '<div class="wrap">' + body + '\n</body>\n</html>\n')
 OUT_RANGE = OUT.with_name("fourchette-capacite.md")
+try:
+    _hist = __import__("json").loads(OUT.with_name("fourchette-historique.json").read_text(encoding="utf-8")).get("versions", [])
+except (OSError, ValueError):
+    _hist = []
+_version_line = ""
+if _hist:
+    _v = _hist[-1]
+    _version_line = (f"\nVersion {_v.get('version')} du {_v.get('date')}" + (f", {_v['note']}" if _v.get("note") else "") + "."
+                     + (f" La version {_hist[-2].get('version')} du {_hist[-2].get('date')} reste dans fourchette-historique.json." if len(_hist) > 1 else ""))
 rank_txt = "\n".join(f"{i + 1}. {n} — amplitude {fr(v, 0)} M€" for i, (n, v) in enumerate(rank[:5]))
 OUT_RANGE.write_text(f"""# Fourchette de capacité d'acquisition — GreenUp 2027
 
 Périmètre « capacité financière », pour les groupes des trois autres périmètres. Généré depuis le classeur
 `modele-greenup-2027.xlsx` (contrôles bloquants : {checks_ok}) le {__import__('datetime').date.today().isoformat()}.
 Chaque chiffre d'entrée vient de `00_Admin/register.csv` ; les hypothèses sont dans l'onglet Hypothèses.
+{_version_line}
 
 ## Le nombre à respecter
 
@@ -1196,7 +1252,7 @@ Chaque chiffre d'entrée vient de `00_Admin/register.csv` ; les hypothèses sont
 | Marge de dette sous le levier ≤ 3x (M EUR) | {fr(UNF, 0)} | {fr(HEAD, 0)} | {fr(FAV, 0)} |
 | Marge de dette sous le seuil S&P 18 % FFO / dette ajustée (M EUR) | {fr(HEADSP27_UNF, 0)} | {fr(HEADSP27, 0)} | {fr(traj("Marge de dette fin 2027 sous le seuil", FAVC), 0)} |
 | Contrainte qui mord en premier | {WHICH27_UNF.split(' : ')[0]} | {WHICH27.split(' : ')[0]} | {traj("Contrainte qui mord", FAVC).split(' : ')[0]} |
-| Acquisition maximale au multiple de Clean Earth ({P(f['mult'])}x), M EUR | {fr(traj("Acquisition maximale fin 2027 sous la contrainte", UNFC), 0)} | {fr(MAXACQB, 0)} | {fr(traj("Acquisition maximale fin 2027 sous la contrainte", FAVC), 0)} |
+| Acquisition maximale au multiple des tuck-ins du scénario (central : celui de Clean Earth, {P(f['mult'])}x), M EUR | {fr(traj("Acquisition maximale fin 2027 sous la contrainte", UNFC), 0)} | {fr(MAXACQB, 0)} | {fr(traj("Acquisition maximale fin 2027 sous la contrainte", FAVC), 0)} |
 
 Lecture : une acquisition ajoute son prix à la dette et seulement prix ÷ multiple à l'EBITDA ; elle tient tant que
 prix ≤ marge ÷ (1 − 3 ÷ multiple). Au multiple de Clean Earth, 1 Md€ de marge vaut environ {fr(1000 / (1 - 3 / N(f['mult'])) / 1000, 2)} Md€ d'acquisition.
@@ -1206,7 +1262,7 @@ prix ≤ marge ÷ (1 − 3 ÷ multiple). Au multiple de Clean Earth, 1 Md€ de 
 - Levier fin 2026 (définition Veolia) : {x(LEV26)} dans le scénario central — guidance « égal ou légèrement supérieur à 3x ».
 - Levier fin 2027 : {x(LEV27)} (engagement ≤ 3x).
 - FFO / dette ajustée (mesure des agences) : {pct(RATIO26)} fin 2026 (Moody's attend {P(f['mo26lo'])}-{P(f['mo26hi'])} %), {pct(RATIO27)} fin 2027 ; S&P abaisse la note sous {P(f['sptrig'])} %.
-- Sorties nettes d'acquisitions depuis 2024 : {fr(SPENT['cum'], 2)} Md€, pour une enveloppe boosters annoncée de {P(f['boost4'])} Md€ nets.
+- Sorties nettes d'investissements financiers depuis 2024 : {fr(SPENT['cum'], 2)} Md€ au 30/09/2026 (à ne pas comparer aux {P(f['boost4'])} Md€ de GreenUp, organique et strongholds compris).
 
 ## Ce qui fait bouger la fourchette (une hypothèse à la fois, marge sous 3x)
 
@@ -1235,7 +1291,7 @@ QUESTIONS_FOR = {
     "Part du reste du programme encaissée en 2027": [4],
     "Croissance organique de l'EBITDA en 2027": [18, 19, 11],
     "Tuck-ins payés en 2027": [14, 15],
-    "Cash-flow libre net du S2 2026": [],
+    "Cash-flow libre net du T4 2026": [],
     "Conversion cash-flow libre net / EBITDA en 2027": [20],
     "Croissance organique de l'EBITDA en 2026": [18, 11],
     "Part des synergies réalisée en 2027": [10],
@@ -1243,16 +1299,16 @@ QUESTIONS_FOR = {
     "EBITDA de Clean Earth en année pleine": [10],
     "Croissance du dividende versé en 2027": [6],
     "Multiple VE / EBITDA des tuck-ins": [14, 15],
-    "Part des signatures 2026 encaissée avant le 31/12/2026": [4],
+    "Part des cessions signées non encaissées qui l'est avant le 31/12/2026": [4],
     "FFO (mesure des agences) en % de l'EBITDA": [2, 21],
 }
 _fcf_h1_26 = R("Cash-flow libre net avant investissements financiers et dividendes", "S1 2026")
 _fcf_h1_25 = R("Cash-flow libre net avant investissements financiers et dividendes", "S1 2025")
 _fcf_fy25 = R("Cash-flow libre net (net free cash flow)", "FY2025")
 TO_ADD = {
-    "Cash-flow libre net du S2 2026": f"Quel cash-flow libre net attendez-vous au second semestre 2026, après {P(_fcf_h1_26)} M€ au "
-        f"premier ({_fcf_h1_26['id']}) ? En 2025, le second semestre avait apporté {fr(N(_fcf_fy25) - N(_fcf_h1_25), 0)} M€ "
-        f"({_fcf_fy25['id']} − {_fcf_h1_25['id']}) : est-ce la bonne référence avec Clean Earth consolidé ?",
+    "Cash-flow libre net du T4 2026": f"Quel cash-flow libre net attendez-vous au quatrième trimestre 2026, après {P(f['nfcf9m26'])} M€ "
+        f"sur neuf mois ({f['nfcf9m26']['id']}) ? En 2025, le quatrième trimestre avait apporté {fr(N(_fcf_fy25) - N(f['nfcf9m25']), 0)} M€ "
+        f"({_fcf_fy25['id']} − {f['nfcf9m25']['id']}) : est-ce la bonne référence, avec Clean Earth consolidé et le BFR du Moyen-Orient ?",
 }
 unknown = [lab for lab, _ in rank if lab not in QUESTIONS_FOR]
 assert not unknown, f"hypothèse sans correspondance de questions : {unknown}"

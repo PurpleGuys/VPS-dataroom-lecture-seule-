@@ -18,10 +18,11 @@ FIXED_INPUTS = ["fx", "minDiv", "mTuck", "tuckH2", "other", "months", "synC", "c
 # Constantes : nom dans les gabarits -> ce qu'elles sont (la cellule d'Entrées est fixée par build_model.py).
 CONSTS = {
     "eb25": "EBITDA 2025 du groupe (M EUR)",
-    "sign26": "Signatures de cessions attendues en 2026 (Md EUR)",
-    "nfdh126": "Dette financière nette au 30/06/2026, Clean Earth inclus (M EUR)",
+    "sign26": "Cessions déjà signées au 05/11/2026, Rookery comprise (M EUR)",
+    "rook": "dont déjà encaissé au 30/09/2026 : 20 % de Rookery South (M EUR)",
+    "nfdq326": "Dette financière nette au 30/09/2026, Clean Earth inclus (M EUR)",
     "prog": "Programme de cessions d'ici mi-2028, au moins (Md EUR)",
-    "closed": "Cessions réalisées au S1 2026 (Md EUR)",
+    "closed": "Cessions réalisées sur neuf mois 2026 (Md EUR)",
     "divsh26": "Dividende versé aux actionnaires en 2026 (M EUR)",
     "tgt": "Objectif GreenUp : EBITDA 2027, au moins (Md EUR)",
     "synRR": "Clean Earth : synergies de coûts en année 4 (M USD)",
@@ -35,11 +36,11 @@ CONSTS = {
 CALC = [
     ("A26", "EBITDA organique 2026 (hors Clean Earth, hors cessions)", "={eb25}*(1+{g26})", "M EUR", "M", False),
     ("CE26", "Clean Earth en 2026 (mois consolidés)", "={ceEb}*{months}/12/{fx}", "M EUR", "M", False),
-    ("D26", "Cessions encaissées au S2 2026", "={sign26}*{s26}*1000", "M EUR", "M", False),
+    ("D26", "Cessions encaissées au T4 2026", "=({sign26}-{rook})*{s26}", "M EUR", "M", False),
     ("DE26", "EBITDA cédé en 2026 (année pleine, prudent)", "=-{D26}/{mDisp}", "M EUR", "M", False),
     ("EB26", "EBITDA 2026", "={A26}+{CE26}+{DE26}", "M EUR", "M", True),
     ("NFD26", "Dette financière nette au 31/12/2026",
-     "={nfdh126}-{fcfH2}+{tuckH2}*1000-{D26}+{other}", "M EUR", "M", True),
+     "={nfdq326}-{fcfQ4}+{tuckH2}*1000-{D26}+{other}", "M EUR", "M", True),
     ("LEV26", "Levier fin 2026", "={NFD26}/{EB26}", "x", "x", True),
     ("LEV26PF", "Levier fin 2026, Clean Earth pro forma 12 mois",
      "={NFD26}/({EB26}+{ceEb}*(12-{months})/12/{fx})", "x", "x", False),
@@ -49,7 +50,7 @@ CALC = [
     ("SYN27", "Synergies Clean Earth réalisées", "={synRR}*{syn}/{fx}", "M EUR", "M", False),
     ("TE27", "EBITDA apporté par les tuck-ins 2027", "={tuck}*1000/{mTuck}", "M EUR", "M", False),
     ("D27", "Cessions encaissées en 2027",
-     "=({sign26}*(1-{s26})+MAX(0,{prog}-{closed}-{sign26})*{s27})*1000", "M EUR", "M", False),
+     "=({sign26}-{rook})*(1-{s26})+MAX(0,({prog}-{closed})*1000-({sign26}-{rook}))*{s27}", "M EUR", "M", False),
     ("DE27", "EBITDA cédé en 2027 (année pleine, prudent)", "=-{D27}/{mDisp}", "M EUR", "M", False),
     ("EB27", "EBITDA 2027", "={B27}+{SYN27}+{TE27}+{DE27}", "M EUR", "M", True),
     ("FCF27", "Cash-flow libre net 2027", "={conv}*{EB27}-{synC}/{fx}", "M EUR", "M", False),
@@ -102,7 +103,7 @@ N_DRAWS = 1000
 # deux hypothèses exposées : hypothèse du groupe, cellule jaune de l'onglet Simulation (0 = indépendance).
 FACTOR_WEIGHT = 0.4
 FACTOR_LOADINGS = {
-    "g26": 1, "g27": 1, "ceEb": 1, "syn": 1, "fcfH2": 1, "conv": 1, "gDiv": 0,
+    "g26": 1, "g27": 1, "ceEb": 1, "syn": 1, "fcfQ4": 1, "conv": 1, "gDiv": 0,
     "s26": 1, "s27": 1, "mDisp": 1, "tuck": 0, "ffo": 1, "mTuck": 1,
 }
 CORRELATIONS: list = []   # remplacé par le facteur commun ; gardé pour la compatibilité des exports
