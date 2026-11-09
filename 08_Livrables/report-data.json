@@ -1,7 +1,7 @@
 {
  "generated": "2026-11-09",
  "checks": "OK",
- "n_figures": 720,
+ "n_figures": 741,
  "title": "GreenUp 2027 : combien Veolia peut-elle encore acheter sans dépasser ses engagements de levier ?",
  "subtitle": "Capstone Innovations in Finance — sujet 2, périmètre « capacité financière »",
  "thread": "Veolia annonce des enveloppes nettes. Clean Earth en est sorti ; le programme de cessions de plus de 2 Md€ d'ici mi-2028 l'y ramène. Si ce programme est encaissé à temps, il reste fin 2027 environ 1,6 Md€ de marge sous 3x, soit une acquisition d'environ 2,3 Md€ au multiple de Clean Earth. Cette marge dépend d'abord du calendrier des cessions, de la croissance organique de 2027 et des tuck-ins. Elle disparaît si tout tourne mal en même temps, ou si l'on compte la moitié des hybrides en dette. Le seuil des agences (FFO / dette ajustée ≥ 18 % chez S&P) est la contrainte de 2026 : 19,3 % dans le scénario central, dans l'attente de Moody's ; fin 2027 il laisse 4,3 Md€ et c'est le 3x qui mord. Le booster déchets dangereux tient son objectif de volume révisé, pas l'initial, et sa croissance est surtout achetée. Le passif environnemental de Clean Earth n'est pas encore visible dans les comptes.",
@@ -2312,7 +2312,7 @@
   }
  ],
  "todo": [
-  "Relire en croisé les 720 chiffres du registre (0 relus) et les 60 opérations (0 relues).",
+  "Relire en croisé les 741 chiffres du registre (0 relus) et les 61 opérations (0 relues).",
   "Lire les 10-K 2025 d'Enviri et de Clean Harbors, désormais dans la dataroom, et en tirer les chiffres des rôles 4 et 5 (passifs environnementaux de Clean Earth, marges et levier de Clean Harbors). Reste à verser : le 10-Q du T1 2026 d'Enviri et le communiqué de vente du 20 novembre 2025.",
   "Avant le 7 octobre : montrer la dataroom comme « sources chargées et lues », et noter dans gaps.md ce qui manque encore.",
   "Rédiger la page d'annexe sur les outils d'IA : dataroom MCP (recherche, registre, contrôles), Claude pour construire le classeur et ces dossiers, LibreOffice pour le recalcul. Aucun chiffre produit par le modèle de langage.",
@@ -8798,6 +8798,195 @@
    "annonce 11/2024",
    "rule-2-7-announcement-regarding-the-recommended-final-cash-acquisition-of-renewi-by-macquarie.pdf, p. 15, https://macquarie.com/assets/macq/about/company/macquarie-asset-management/project-earth/rule-2-7-announcement-regarding-the-recommended-final-cash-acquisition-of-renewi-by-macquarie.pdf (consulté le 2026-10-10)",
    "6",
+   ""
+  ],
+  [
+   "F721",
+   "Endettement financier net (groupe), après Clean Earth",
+   "25,423 M EUR",
+   "30/09/2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "2",
+   ""
+  ],
+  [
+   "F722",
+   "EBITDA (groupe)",
+   "5,404 M EUR",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "2",
+   ""
+  ],
+  [
+   "F723",
+   "EBITDA (groupe)",
+   "5,080 M EUR",
+   "9M 2025",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "2",
+   ""
+  ],
+  [
+   "F724",
+   "Croissance organique de l'EBITDA (groupe), à périmètre et change constants",
+   "5.1 %",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 5, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "3",
+   ""
+  ],
+  [
+   "F725",
+   "Guidance 2026 confirmée au T3 : ratio de levier fin 2026, Clean Earth inclus, égal ou légèrement supérieur à",
+   "3 x",
+   "31/12/2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 21, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "2",
+   ""
+  ],
+  [
+   "F726",
+   "Trajectoire de levier présentée au T3 : légèrement au-dessus de 3x fin 2026, retour en 2027 à au plus",
+   "3 x",
+   "2027",
+   "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 26, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06)",
+   "2",
+   ""
+  ],
+  [
+   "F727",
+   "Cash-flow libre net avant investissements financiers et dividendes",
+   "-200 M EUR",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "3",
+   ""
+  ],
+  [
+   "F728",
+   "Cash-flow libre net avant investissements financiers et dividendes",
+   "-205 M EUR",
+   "9M 2025",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "3",
+   ""
+  ],
+  [
+   "F729",
+   "Pont de dette 9M 2026 : investissements financiers nets des cessions",
+   "-2,859 M EUR",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "3",
+   ""
+  ],
+  [
+   "F730",
+   "Clean Earth : effet sur l'endettement financier net (prix et dette IFRS 16 compris)",
+   "2,804 M EUR",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 5, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "2",
+   ""
+  ],
+  [
+   "F731",
+   "Pont de dette 9M 2026 : dividendes versés (total, minoritaires compris)",
+   "1,464 M EUR",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "3",
+   ""
+  ],
+  [
+   "F732",
+   "Pont de dette 9M 2026 : remboursement de dette hybride (titres super-subordonnés, 12/09/2026)",
+   "-500 M EUR",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "2",
+   ""
+  ],
+  [
+   "F733",
+   "Pont de dette 9M 2026 : augmentation de capital Sequoia 2026 (actionnariat salarié), montant net",
+   "+340 M EUR",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "3",
+   ""
+  ],
+  [
+   "F734",
+   "Pont de dette 9M 2026 : réduction de capital par annulation d'actions auto-détenues (rachat)",
+   "-432 M EUR",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "3",
+   ""
+  ],
+  [
+   "F735",
+   "Pont de dette 9M 2026 : change et ajustements de juste valeur (principalement dollar)",
+   "-210 M EUR",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "3",
+   ""
+  ],
+  [
+   "F736",
+   "Programme de cessions : montant déjà signé",
+   "570 M EUR",
+   "au 05/11/2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 3, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "3",
+   ""
+  ],
+  [
+   "F737",
+   "Programme de cessions : multiple moyen d'EBITDA des cessions signées",
+   "10.4 x",
+   "au 05/11/2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 3, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "3",
+   ""
+  ],
+  [
+   "F738",
+   "Cessions réalisées sur neuf mois (rotation d'actifs GreenUp)",
+   "0.2 Md EUR",
+   "9M 2026",
+   "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 14, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06)",
+   "3",
+   ""
+  ],
+  [
+   "F739",
+   "Cession de 20 % de Rookery South Limited (mise en équivalence) : prix en euros",
+   "101 M EUR",
+   "25/09/2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 7, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "3",
+   ""
+  ],
+  [
+   "F740",
+   "Endettement financier net (groupe)",
+   "19,925 M EUR",
+   "30/09/2025",
+   "rapport-de-gestion-va-t3_2025_0.pdf, p. 5, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/11/Rapport%20de%20gestion%20VA-T3_2025_0.pdf (consulté le 2026-09-22)",
+   "2",
+   ""
+  ],
+  [
+   "F741",
+   "Ratio de levier publié",
+   "3.0 x",
+   "30/09/2025",
+   "rapport-de-gestion-va-t3_2025_0.pdf, p. 5, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/11/Rapport%20de%20gestion%20VA-T3_2025_0.pdf (consulté le 2026-09-22)",
+   "2",
    ""
   ]
  ]
