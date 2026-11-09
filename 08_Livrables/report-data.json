@@ -1,7 +1,7 @@
 {
  "generated": "2026-11-09",
  "checks": "OK",
- "n_figures": 855,
+ "n_figures": 849,
  "title": "GreenUp 2027 : combien Veolia peut-elle encore acheter sans dépasser ses engagements de levier ?",
  "subtitle": "Capstone Innovations in Finance — sujet 2, périmètre « capacité financière »",
  "thread": "Veolia annonce des enveloppes nettes. Clean Earth en est sorti ; le programme de cessions de plus de 2 Md€ d'ici mi-2028 l'y ramène. Si ce programme est encaissé à temps, il reste fin 2027 environ 0,2 Md€ de marge sous 3x, soit une acquisition d'environ 0,2 Md€ au multiple de Clean Earth. Cette marge dépend d'abord du calendrier des cessions, de la croissance organique de 2027 et des tuck-ins. Elle disparaît si tout tourne mal en même temps, ou si l'on compte la moitié des hybrides en dette. Le seuil des agences (FFO / dette ajustée ≥ 18 % chez S&P) est la contrainte de 2026 : 18,5 % dans le scénario central, dans l'attente de Moody's ; fin 2027 il laisse 2,9 Md€ et c'est le 3x qui mord. Le booster déchets dangereux tient son objectif de volume révisé, pas l'initial, et sa croissance est surtout achetée. Le passif environnemental de Clean Earth n'est pas encore visible dans les comptes.",
@@ -2440,7 +2440,7 @@
   }
  ],
  "todo": [
-  "Relire en croisé les 855 chiffres du registre (0 relus) et les 61 opérations (0 relues).",
+  "Relire en croisé les 849 chiffres du registre (0 relus) et les 61 opérations (0 relues).",
   "Lire les 10-K 2025 d'Enviri et de Clean Harbors, désormais dans la dataroom, et en tirer les chiffres des rôles 4 et 5 (passifs environnementaux de Clean Earth, marges et levier de Clean Harbors). Reste à verser : le 10-Q du T1 2026 d'Enviri et le communiqué de vente du 20 novembre 2025.",
   "Avant le 7 octobre : montrer la dataroom comme « sources chargées et lues », et noter dans gaps.md ce qui manque encore.",
   "Rédiger la page d'annexe sur les outils d'IA : dataroom MCP (recherche, registre, contrôles), Claude pour construire le classeur et ces dossiers, LibreOffice pour le recalcul. Aucun chiffre produit par le modèle de langage.",
@@ -9550,15 +9550,6 @@
    ""
   ],
   [
-   "F790",
-   "Séché Environnement : provisions pour suivi trentenaire",
-   "44,7 M EUR",
-   "30/06/2026",
-   "seche_environnement_rfs_2026_fr_amf.pdf, p. 50, https://www.groupe-seche.com/uploads/2026/10/seche_environnement_rfs_2026_fr_amf.pdf (consulté le 2026-10-10)",
-   "5",
-   ""
-  ],
-  [
    "F791",
    "Clean Harbors : montant non actualisé des passifs de fermeture et post-fermeture (airspace non encore consommé compris)",
    "349,186 k USD",
@@ -9712,33 +9703,6 @@
    ""
   ],
   [
-   "F808",
-   "Séché Environnement : chiffre d'affaires contributif",
-   "1 152,0 M EUR",
-   "FY2025",
-   "seche_environnement_deu_2025_fr.pdf, p. 143, https://www.groupe-seche.com/uploads/2026/03/seche_environnement_deu_2025_fr.pdf (consulté le 2026-10-10)",
-   "4",
-   ""
-  ],
-  [
-   "F809",
-   "Séché Environnement : chiffre d'affaires publié (consolidé)",
-   "1 253,5 M EUR",
-   "FY2025",
-   "seche_environnement_deu_2025_fr.pdf, p. 143, https://www.groupe-seche.com/uploads/2026/03/seche_environnement_deu_2025_fr.pdf (consulté le 2026-10-10)",
-   "4",
-   ""
-  ],
-  [
-   "F810",
-   "Séché Environnement : effet de périmètre sur les provisions pour suivi trentenaire (Hidronor et La Filippa)",
-   "20,5 M EUR",
-   "S1 2026",
-   "seche_environnement_rfs_2026_fr_amf.pdf, p. 50, https://www.groupe-seche.com/uploads/2026/10/seche_environnement_rfs_2026_fr_amf.pdf (consulté le 2026-10-10)",
-   "5",
-   ""
-  ],
-  [
    "F811",
    "Déchets dangereux (booster) : chiffre d'affaires",
    "4,217 M EUR",
@@ -9820,15 +9784,6 @@
    ""
   ],
   [
-   "F820",
-   "Séché Environnement : provisions pour suivi trentenaire",
-   "23,8 M EUR",
-   "31/12/2025",
-   "seche_environnement_rfs_2026_fr_amf.pdf, p. 50, https://www.groupe-seche.com/uploads/2026/10/seche_environnement_rfs_2026_fr_amf.pdf (consulté le 2026-10-10)",
-   "5",
-   ""
-  ],
-  [
    "F821",
    "Goodwill (groupe) : part du dollar américain dans l'effet de change",
    "171 M EUR",
@@ -9853,15 +9808,6 @@
    "S1 2026",
    "veolia_finance_amendment_urd_2025.pdf, p. 53, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_Amendment_URD_2025.pdf (consulté le 2026-09-22)",
    "5",
-   ""
-  ],
-  [
-   "F824",
-   "Séché Environnement : excédent brut d'exploitation (EBE)",
-   "225,4 M EUR",
-   "FY2025",
-   "seche_environnement_deu_2025_fr.pdf, p. 143, https://www.groupe-seche.com/uploads/2026/03/seche_environnement_deu_2025_fr.pdf (consulté le 2026-10-10)",
-   "4",
    ""
   ],
   [
