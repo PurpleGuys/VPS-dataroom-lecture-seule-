@@ -1,0 +1,898 @@
+[
+ {
+  "text": "Remerciements",
+  "level": 1,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "Sommaire",
+  "level": 1,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "Introduction",
+  "level": 1,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "GreenUp lie la croissance de Veolia à un plafond de levier",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "Le groupe a mesuré la marge de dette sous ce plafond, du 30 septembre 2026 à fin 2027",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "La marge finance des tuck-ins, pas une nouvelle plateforme",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "1. GreenUp annonce des enveloppes nettes, qui ne plafonnent pas les acquisitions",
+  "level": 1,
+  "annex": false,
+  "label": "",
+  "role": 1
+ },
+ {
+  "text": "1.1 Les enveloppes sont nettes ; le levier, pas l'enveloppe, borne les acquisitions",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "1.2 L'allocation du capital de GreenUp raisonne en soldes nets de cessions",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "1.2.1 La page d'allocation du capital présente deux soldes nets",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "1.2.2 Les investissements nets de croissance réunissent boosters et strongholds",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "1.2.3 La croissance nette inclut l'investissement organique",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "1.3 La rotation d'actifs additionne achats et ventes : c'est le chiffre brut",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "1.4 Les sorties nettes depuis 2024 ne se comparent pas à l'enveloppe de croissance",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "1.5 Clean Earth compte quatre chiffres, et le levier retient l'effet sur la dette",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "1.6 Le programme de cessions compense la plus grande part de Clean Earth, en partie après 2027",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "1.7 Chaque chiffre renvoie à un fichier, une page et une date de consultation",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "1.8 Ce que nous n'avons pas pu établir",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "2. Le plafond de levier que s'impose Veolia mord avant les seuils des agences",
+  "level": 1,
+  "annex": false,
+  "label": "",
+  "role": 2
+ },
+ {
+  "text": "2.1 Le levier dépasse le plafond en septembre 2026 et ne laisse qu'une marge mince fin 2027",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "2.2 La définition de Veolia redonne exactement ses ratios publiés",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "2.3 Au 30 septembre 2026, aucune lecture du levier ne descend sous le plafond",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "2.4 Finir 2026 au niveau annoncé exige un quatrième trimestre hors norme",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "2.5 Le remboursement d'un hybride alourdit le levier de Veolia plus que la dette ajustée de Moody's",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "2.6 Les seuils des agences laissent plus de marge que le plafond de Veolia fin 2027",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "2.7 Le refinancement renchérit la dette sans limiter la capacité",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "2.8 Ce que nous n'avons pas pu établir",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "3. Une marge mince fin 2027, portée par l'EBITDA et les cessions plutôt que par le cash-flow libre net",
+  "level": 1,
+  "annex": false,
+  "label": "",
+  "role": 3
+ },
+ {
+  "text": "3.1 Fin 2027, la marge sous le plafond reste mince et tient d'abord au calendrier des cessions",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "3.2 Le cash-flow libre net ne couvre pas l'ensemble des dividendes",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "3.2.1 Le quatrième trimestre fait l'essentiel du cash-flow de l'année",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "3.2.2 Les dividendes absorbent ce que le cash-flow dégage",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "3.3 Du 30 septembre 2026 à fin 2027, la dette baisse par le quatrième trimestre et par les cessions",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "3.4 Les cessions comptent par leur date plus que par leur multiple",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "3.4.1 Un programme plus long que l'horizon du sujet",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "3.4.2 Le modèle traite la date d'encaissement comme la première inconnue",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "3.5 Le calendrier des cessions et la croissance de 2027 font le plus bouger la marge",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "3.5.1 Une hypothèse à la fois, cinq facteurs peuvent effacer la marge",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "3.5.2 Sur 1 000 futurs tirés, le plafond cède dans une forte minorité de cas",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "3.6 L'efficacité soutient la croissance de l'EBITDA et reste l'hypothèse la plus fragile",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "3.6.1 Un plan d'efficacité tenu jusqu'ici",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "3.6.2 Des gains bruts face à une croissance nette",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "3.7 Ce que nous n'avons pas pu établir",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4. Le booster déchets dangereux achète sa croissance plus qu'il ne la génère",
+  "level": 1,
+  "annex": false,
+  "label": "",
+  "role": 4
+ },
+ {
+  "text": "4.1 Le booster croît d'abord par acquisitions, payées à un prix que seules les synergies compensent",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.2 L'objectif de volume a baissé avec le périmètre, et Veolia le dépasse déjà",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.3 En valeur, l'organique ralentit et le périmètre prend le relais",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.3.1 En 2024 et 2025, le métier a crû par lui-même",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.3.2 En 2026, le périmètre fait l'essentiel de la croissance",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.3.3 L'investissement organique pèse peu face aux acquisitions",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.4 Vu du vendeur, l'EBITDA de Clean Earth est plus bas que le budget de Veolia",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.4.1 Le multiple publié par Veolia repose sur des synergies élevées",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.4.2 Les comptes d'Enviri montrent un EBITDA plus bas et une croissance lente",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.4.3 Les premiers mois consolidés sont cohérents avec le budget, sans le prouver",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.5 Clean Harbors, seul comparable direct, paie des prix du même ordre que Veolia",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.5.1 Clean Harbors allie une marge élevée à un levier faible",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.5.2 Avant synergies, Clean Earth se paie au niveau de ses pairs américains",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.5.3 Les autres noms ne sont pas comparables ou restent à chiffrer",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.6 Les comparables valident les hypothèses centrales du modèle, pas sa borne basse sur Clean Earth",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.7 Ce que nous n'avons pas pu établir",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5. Les passifs environnementaux d'une acquisition fixent le coût de la diligence, pas la capacité d'achat",
+  "level": 1,
+  "annex": false,
+  "label": "",
+  "role": 5
+ },
+ {
+  "text": "5.1 Un passif repris se compte en dizaines de millions et reste hors de la dette financière nette",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.2 Les provisions de fermeture de Veolia sont stables, sauf au semestre de Clean Earth",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.2.1 Un stock dominé par la réhabilitation de sites",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.2.2 Une hausse au premier semestre 2026 que Veolia n'attribue pas",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.3 Clean Earth est entré dans les comptes avant que ses passifs soient évalués à leur juste valeur",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.3.1 Un prix connu, des passifs encore provisoires",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.3.2 Ce que l'affectation du prix changera",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.3.3 Des sites autorisés et des garanties à suivre",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.4 Les pairs donnent un ordre de grandeur, pas une mesure du passif de Clean Earth",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.4.1 Clean Harbors porte un passif comparable à celui de Veolia",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.4.2 Enviri fournit une borne haute, sans actualisation",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.5 L'exposition hors bilan tient aux contentieux, aux PFAS et aux limites de l'assurance",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.5.1 Veolia et les agences nomment le risque",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.5.2 Des sanctions sur les sites, un passé qui peut ressurgir",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.5.3 Les PFAS sont un marché pour Veolia et un passif possible pour un centre de traitement",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.5.4 L'assurance ne couvre pas tout",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.6 La taxonomie classe une part du capex déchets dangereux comme verte, sans mesurer le passif",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.7 Les provisions restent hors du levier de Veolia, et Moody's ne leur consacre aucune ligne",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.8 Ce que nous n'avons pas pu établir",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6. Jusqu'à fin 2027, Veolia peut acheter des tuck-ins, pas une nouvelle plateforme",
+  "level": 1,
+  "annex": false,
+  "label": "",
+  "role": 6
+ },
+ {
+  "text": "6.1 La marge de 2027 finance une petite acquisition, et aucune dans le scénario défavorable",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.2 Clean Earth fixe l'étalon : un multiple après synergies, un prix porté en entier par la dette",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.3 La marge, bien plus que le multiple, borne la taille d'une cible",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.3.1 Une acquisition consomme de la marge à proportion de son prix",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.3.2 Le multiple déplace peu le résultat, la marge beaucoup",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.3.3 Avant synergies, le secteur paie plus cher que le multiple de Clean Earth",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.4 Le troisième trimestre confirme le plafond et place la fin des cessions après l'horizon",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.4.1 Les cessions sont signées, pas encaissées",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.4.2 La dette doit baisser au seul quatrième trimestre",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.4.3 Le plafond devient l'engagement courant",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.4.4 Le booster s'achète plus qu'il ne se construit",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.4.5 Les critères publiés placent l'Europe hors des priorités d'acquisition",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.5 Les cibles réelles se réduisent à des plateformes américaines hors de portée ou sans prix, et à des tuck-ins",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.5.1 Aux États-Unis, les deux plateformes chiffrées dépassent la marge",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.5.2 En Asie et en Océanie, des repères de prix plus que des cibles",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.5.3 En Europe, des cibles hors de la priorité publiée",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.5.4 Les autres cibles sont trop grandes, hors sujet ou déjà prises",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.6 Une cible plus grande demande un financement que la politique du groupe écarte",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.7 Notre lecture : des tuck-ins d'abord, une plateforme seulement après de nouvelles signatures",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.7.1 Les cessions financent la prudence, les actionnaires en portent le coût",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.7.2 Six seuils observables nous feraient changer d'avis",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.7.3 Veolia confirme GreenUp, notre modèle laisse une marge mince",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.8 Ce que nous n'avons pas pu établir",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "7. Des tuck-ins jusqu'à fin 2027, une plateforme américaine seulement après de nouvelles cessions signées",
+  "level": 1,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "7.1 Nous recommandons des tuck-ins, une plateforme sous conditions et aucune opération de la taille de Clean Earth",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "7.2 La marge de 2027 se partage entre tuck-ins et plateforme",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "7.3 La prudence se paie en EBITDA cédé, et actionnaires comme agences en portent l'effet",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "7.4 Veolia confirme GreenUp ; notre modèle place l'EBITDA 2027 juste sous l'objectif",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "7.5 Des seuils observables nous feraient changer d'avis",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "7.6 Ce que nous n'avons pas pu établir",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "Conclusion",
+  "level": 1,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "La capacité restante finance des tuck-ins, pas une plateforme",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "Le levier, et non l'enveloppe de GreenUp, borne les achats de Veolia",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "La marge permet des tuck-ins et interdit une seconde opération de la taille de Clean Earth",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "Un chiffre se lit sur sa page, une marge se lit en probabilités",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "Bibliographie",
+  "level": 1,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "Glossaire",
+  "level": 1,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "Annexe I — Registre des chiffres cités",
+  "level": 1,
+  "annex": true,
+  "label": "Annexe I",
+  "role": 0
+ },
+ {
+  "text": "Annexe II — Opérations citées",
+  "level": 1,
+  "annex": true,
+  "label": "Annexe II",
+  "role": 0
+ },
+ {
+  "text": "Annexe III — Cibles citées",
+  "level": 1,
+  "annex": true,
+  "label": "Annexe III",
+  "role": 0
+ },
+ {
+  "text": "Annexe IV — La fourchette de capacité pour les autres périmètres",
+  "level": 1,
+  "annex": true,
+  "label": "Annexe IV",
+  "role": 0
+ },
+ {
+  "text": "Claude a construit l'outil et recopié l'essentiel des chiffres, page par page",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "Les choix restent ceux du groupe, et l'outil a été contredit après lecture",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "Le compte partagé porte la quasi-totalité de l'usage de la dataroom",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "Annexe V — Outils d'intelligence artificielle utilisés",
+  "level": 1,
+  "annex": true,
+  "label": "Annexe V",
+  "role": 0
+ },
+ {
+  "text": "Table des annexes",
+  "level": 1,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "Contrôle des citations et de la méthode (retiré de la version finale)",
+  "level": 1,
+  "annex": false,
+  "label": "",
+  "role": 0
+ }
+]

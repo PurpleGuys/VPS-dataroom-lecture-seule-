@@ -2,51 +2,325 @@
 
 | Section | Pages | Mots | Cible |
 |---|---|---|---|
-| role-1.md | 4 | 36 | 6-9 |
-| role-2.md | 8 | 45 | 6-9 |
-| role-3.md | 5 | 39 | 6-9 |
-| role-4.md | 6 | 44 | 6-9 |
-| role-5.md | 3 | 36 | 6-9 |
-| role-6.md | 8 | 29 | 6-9 |
-| total | 50 | 254 | 50-60 |
+| role-1.md | 6 | 1562 | 6-9 |
+| role-2.md | 6 | 1627 | 6-9 |
+| role-3.md | 7 | 1602 | 6-9 |
+| role-4.md | 7 | 1616 | 6-9 |
+| role-5.md | 6 | 1619 | 6-9 |
+| role-6.md | 7 | 1581 | 6-9 |
+| corps, du sommaire à la première annexe | 58 | 11971 | 50-60 |
+| document entier, annexes et contrôle compris | 80 | | — |
 
 ## Jetons inconnus (0)
 - aucun
 
-## Lignes citées que personne n'a relues (0)
-- aucune
+## Lignes citées que personne n'a relues (279)
+- role-1.md : F2 — GreenUp : rotation NETTE d'actifs, environ
+- role-1.md : F745 — GreenUp : croissance, montant net par an (investissements organiques, priorité aux boosters, plus acquisitions petites et moyennes, moins cessions)
+- role-1.md : F129 — GreenUp : investissements nets de croissance 2024-2027, boosters et strongholds réunis (« 2 x Impact 2023 »)
+- role-1.md : F130 — GreenUp : à investir dans les strongholds
+- role-1.md : F6 — Plafond GreenUp : dette financière nette / EBITDA ≤
+- role-1.md : F32 — Rotation d'actifs sur 4 ans : plus de
+- role-1.md : F730 — Clean Earth : effet sur l'endettement financier net (prix et dette IFRS 16 compris)
+- role-1.md : F25 — Programme de cessions, à réaliser d'ici mi-2028 : plus de
+- role-1.md : F7 — GreenUp : investissements nets par an
+- role-1.md : F24 — GreenUp : capex de croissance discrétionnaire, bas de fourchette
+- role-1.md : F9 — GreenUp : capex de croissance discrétionnaire, haut de fourchette
+- role-1.md : F5 — GreenUp : tuck-ins, bas de fourchette
+- role-1.md : F21 — GreenUp : tuck-ins, haut de fourchette
+- role-1.md : F18 — GreenUp : cessions continues d'actifs non stratégiques, environ
+- role-1.md : F725 — Guidance 2026 confirmée au T3 : ratio de levier fin 2026, Clean Earth inclus, égal ou légèrement supérieur à
+- role-1.md : F726 — Trajectoire de levier présentée au T3 : légèrement au-dessus de 3x fin 2026, retour en 2027 à au plus
+- role-1.md : F782 — Rotation d'actifs GreenUp : acquisitions de l'année
+- role-1.md : F785 — Rotation d'actifs GreenUp : cessions de l'année
+- role-1.md : F138 — Pont de dette 2024 : investissements financiers nets des cessions (entrée nette)
+- role-1.md : F783 — Rotation d'actifs GreenUp : acquisitions de l'année
+- role-1.md : F786 — Rotation d'actifs GreenUp : cessions de l'année
+- role-1.md : F64 — Pont de dette 2025 : investissements financiers nets des cessions
+- role-1.md : F784 — Rotation d'actifs GreenUp : acquisitions de l'année
+- role-1.md : F738 — Cessions réalisées sur neuf mois (rotation d'actifs GreenUp)
+- role-1.md : F729 — Pont de dette 9M 2026 : investissements financiers nets des cessions
+- role-1.md : F77 — Enviropacific Services : effet sur l'endettement financier net
+- role-1.md : F40 — Clean Earth : prix d'acquisition
+- role-1.md : F41 — Clean Earth : prix d'acquisition
+- role-1.md : F46 — Clean Earth : valeur d'entreprise
+- role-1.md : F47 — Clean Earth : valeur d'entreprise (équivalent), environ
+- role-1.md : F216 — Enviri : prix de cession de Clean Earth à Veolia, plus de
+- role-1.md : F766 — Clean Earth : dette IFRS 16 reprise (comprise dans l'effet sur l'endettement)
+- role-1.md : F787 — Clean Earth : mois consolidés dans les comptes à fin septembre 2026
+- role-1.md : F132 — Cessions nouvelles d'actifs matures dans les 2 ans après la clôture de Clean Earth, plus de
+- role-1.md : D61 — Rookery South Limited : 20 % du capital (usine de valorisation énergétique au nord de Londres)
+- role-1.md : F739 — Cession de 20 % de Rookery South Limited (mise en équivalence) : prix en euros
+- role-1.md : F736 — Programme de cessions : montant déjà signé
+- role-1.md : F737 — Programme de cessions : multiple moyen d'EBITDA des cessions signées
+- role-2.md : F721 — Endettement financier net (groupe), après Clean Earth
+- role-2.md : F6 — Plafond GreenUp : dette financière nette / EBITDA ≤
+- role-2.md : F725 — Guidance 2026 confirmée au T3 : ratio de levier fin 2026, Clean Earth inclus, égal ou légèrement supérieur à
+- role-2.md : F726 — Trajectoire de levier présentée au T3 : légèrement au-dessus de 3x fin 2026, retour en 2027 à au plus
+- role-2.md : F163 — S&P : seuil de dégradation, FFO / dette ajustés durablement sous
+- role-2.md : F23 — Endettement financier net (groupe)
+- role-2.md : F17 — EBITDA (groupe)
+- role-2.md : F20 — Ratio de levier publié
+- role-2.md : F8 — Endettement financier net (groupe)
+- role-2.md : F3 — EBITDA (groupe)
+- role-2.md : F16 — Ratio de levier publié
+- role-2.md : F741 — Ratio de levier publié
+- role-2.md : F723 — EBITDA (groupe)
+- role-2.md : F722 — EBITDA (groupe)
+- role-2.md : F787 — Clean Earth : mois consolidés dans les comptes à fin septembre 2026
+- role-2.md : F51 — Clean Earth : EBITDA (ajusté, post IFRS 16)
+- role-2.md : F730 — Clean Earth : effet sur l'endettement financier net (prix et dette IFRS 16 compris)
+- role-2.md : F731 — Pont de dette 9M 2026 : dividendes versés (total, minoritaires compris)
+- role-2.md : F29 — Cash-flow libre net (net free cash flow)
+- role-2.md : F740 — Endettement financier net (groupe)
+- role-2.md : F25 — Programme de cessions, à réaliser d'ici mi-2028 : plus de
+- role-2.md : F732 — Pont de dette 9M 2026 : remboursement de dette hybride (titres super-subordonnés, 12/09/2026)
+- role-2.md : F251 — Moody's : ajustement titres hybrides (50 % en dette)
+- role-2.md : F562 — Hybrides : encours hors coupons
+- role-2.md : F769 — Notation Standard & Poor's (court terme / long terme), confirmée, perspective stable
+- role-2.md : F770 — Notation Moody's (court terme / long terme), confirmée, perspective stable
+- role-2.md : F152 — Moody's : seuil de dégradation, FFO / dette nette sous (libellé publié)
+- role-2.md : F164 — S&P : FFO / dette ajustés attendu, bas de fourchette
+- role-2.md : F165 — S&P : FFO / dette ajustés attendu, haut de fourchette
+- role-2.md : F244 — Moody's : FFO / dette nette ajustée prévu
+- role-2.md : F245 — Moody's : FFO / dette nette ajustée prévu
+- role-2.md : F256 — Moody's : dette nette ajustée (Exhibit 13)
+- role-2.md : F151 — Moody's : dette nette ajustée, pic attendu, environ
+- role-2.md : F261 — Moody's : FFO (funds from operations)
+- role-2.md : F147 — Moody's : FFO / dette nette ajustée
+- role-2.md : F830 — Liquidité du groupe, lignes de crédit confirmées non tirées comprises
+- role-2.md : F835 — Lignes de crédit confirmées non tirées, sans covenants restrictifs (comprises dans la liquidité du groupe)
+- role-2.md : F768 — Liquidité nette (groupe), après dettes courantes
+- role-2.md : F411 — Liquidités nettes des dettes courantes et découverts
+- role-2.md : F776 — Taux de financement du groupe (coût de la dette)
+- role-2.md : F828 — Taux de financement du groupe (coût de la dette)
+- role-2.md : F779 — Émission obligataire d'août 2026 (1,15 Md€, deux tranches) : coupon moyen
+- role-2.md : F279 — Souche EMTN Series 43, échéance 14/01/2027 : nominal
+- role-2.md : F280 — Souche EMTN Series 43, échéance 14/01/2027 : taux
+- role-2.md : F283 — Souche EMTN Series 23, échéance 02/04/2027 : nominal
+- role-2.md : F284 — Souche EMTN Series 23, échéance 02/04/2027 : taux
+- role-2.md : F281 — Souche EMTN Series 29 (PEO), échéance 30/03/2027 : nominal
+- role-2.md : F282 — Souche EMTN Series 29 (PEO), échéance 30/03/2027 : taux
+- role-2.md : F736 — Programme de cessions : montant déjà signé
+- role-2.md : F738 — Cessions réalisées sur neuf mois (rotation d'actifs GreenUp)
+- role-3.md : F721 — Endettement financier net (groupe), après Clean Earth
+- role-3.md : F725 — Guidance 2026 confirmée au T3 : ratio de levier fin 2026, Clean Earth inclus, égal ou légèrement supérieur à
+- role-3.md : F726 — Trajectoire de levier présentée au T3 : légèrement au-dessus de 3x fin 2026, retour en 2027 à au plus
+- role-3.md : F70 — Cash-flow libre net avant investissements financiers et dividendes
+- role-3.md : F728 — Cash-flow libre net avant investissements financiers et dividendes
+- role-3.md : F29 — Cash-flow libre net (net free cash flow)
+- role-3.md : F727 — Cash-flow libre net avant investissements financiers et dividendes
+- role-3.md : F28 — Cash-flow libre net avant investissements financiers et dividendes
+- role-3.md : F760 — Variation du BFR opérationnel
+- role-3.md : F761 — Variation du BFR opérationnel
+- role-3.md : F74 — Dividende versé aux actionnaires, approuvé par l'AG du 23 avril 2026
+- role-3.md : F731 — Pont de dette 9M 2026 : dividendes versés (total, minoritaires compris)
+- role-3.md : F15 — Dividende versé au titre de 2024
+- role-3.md : F336 — Tableau de flux : dividendes versés
+- role-3.md : F89 — Guidance 2026 : croissance du résultat net courant, au moins
+- role-3.md : F12 — Objectif GreenUp : EBITDA ≥
+- role-3.md : F25 — Programme de cessions, à réaliser d'ici mi-2028 : plus de
+- role-3.md : F736 — Programme de cessions : montant déjà signé
+- role-3.md : F737 — Programme de cessions : multiple moyen d'EBITDA des cessions signées
+- role-3.md : F30 — Cessions réalisées (Mexique, Belgique)
+- role-3.md : F738 — Cessions réalisées sur neuf mois (rotation d'actifs GreenUp)
+- role-3.md : F735 — Pont de dette 9M 2026 : change et ajustements de juste valeur (principalement dollar)
+- role-3.md : F775 — Part de la dette financière nette à taux fixe
+- role-3.md : F724 — Croissance organique de l'EBITDA (groupe), à périmètre et change constants
+- role-3.md : F87 — Guidance 2026 : croissance organique de l'EBITDA, bas de fourchette
+- role-3.md : F88 — Guidance 2026 : croissance organique de l'EBITDA, haut de fourchette
+- role-3.md : F420 — GreenUp : gains d'efficacité par an
+- role-3.md : F641 — Gains d'efficacité annuels
+- role-3.md : F424 — Gains d'efficacité annuels
+- role-3.md : F759 — Gains d'efficacité opérationnelle bruts, neuf mois
+- role-3.md : F756 — Pont d'EBITDA 9M 2026 : croissance et performance (prix, productivité, efficacité, volumes, synergies)
+- role-3.md : F757 — Pont d'EBITDA 9M 2026 : prix de l'énergie et des recyclats
+- role-4.md : F34 — Déchets dangereux traités
+- role-4.md : F35 — Objectif : déchets dangereux traités en 2027
+- role-4.md : F36 — Objectif GreenUp initial : déchets dangereux et polluants traités en 2027
+- role-4.md : F744 — Déchets dangereux (booster) : croissance de l'EBITDA à périmètre et change constants
+- role-4.md : F801 — Déchets dangereux (métier) : croissance de l'EBITDA à périmètre et change constants
+- role-4.md : F748 — Déchets dangereux (métier) : croissance organique du chiffre d'affaires, à périmètre et change constants
+- role-4.md : F653 — Déchets dangereux Veolia : croissance du chiffre d'affaires à périmètre et change constants
+- role-4.md : F747 — Déchets dangereux (métier) : chiffre d'affaires
+- role-4.md : F746 — Déchets dangereux (métier) : chiffre d'affaires
+- role-4.md : F788 — Déchets dangereux (métier) : croissance tuck-ins compris, hors Clean Earth, à périmètre et change constants
+- role-4.md : F48 — Clean Earth : multiple VE / EBITDA 2026e après synergies en régime de croisière
+- role-4.md : F40 — Clean Earth : prix d'acquisition
+- role-4.md : F51 — Clean Earth : EBITDA (ajusté, post IFRS 16)
+- role-4.md : F483 — HEPACO (Clean Harbors) : multiple après synergies
+- role-4.md : F607 — EnviroServe et ES&H (Clean Harbors) : multiple combiné après synergies
+- role-4.md : F737 — Programme de cessions : multiple moyen d'EBITDA des cessions signées
+- role-4.md : F742 — Déchets dangereux (booster) : EBITDA
+- role-4.md : F743 — Déchets dangereux (booster) : EBITDA
+- role-4.md : F647 — Déchets dangereux Veolia : chiffre d'affaires
+- role-4.md : F814 — Déchets dangereux (métier) : variation du chiffre d'affaires à change constant, effet de périmètre compris
+- role-4.md : F762 — Investissements dans les projets de traitement de déchets dangereux (compris dans les investissements industriels nets)
+- role-4.md : F784 — Rotation d'actifs GreenUp : acquisitions de l'année
+- role-4.md : F216 — Enviri : prix de cession de Clean Earth à Veolia, plus de
+- role-4.md : F209 — Enviri : chiffre d'affaires du segment Clean Earth
+- role-4.md : F210 — Enviri : chiffre d'affaires du segment Clean Earth
+- role-4.md : F212 — Enviri : résultat opérationnel du segment Clean Earth
+- role-4.md : F211 — Enviri : résultat opérationnel du segment Clean Earth
+- role-4.md : F52 — Clean Earth : chiffre d'affaires
+- role-4.md : F213 — Enviri : dépréciation du segment Clean Earth
+- role-4.md : F214 — Enviri : amortissement du segment Clean Earth
+- role-4.md : F754 — Effet de périmètre sur le chiffre d'affaires du groupe (Clean Earth et Enviropacific)
+- role-4.md : F755 — Effet de périmètre sur l'EBITDA du groupe (Clean Earth et Enviropacific)
+- role-4.md : F787 — Clean Earth : mois consolidés dans les comptes à fin septembre 2026
+- role-4.md : F224 — Clean Harbors : chiffre d'affaires direct total
+- role-4.md : F225 — Clean Harbors : EBITDA ajusté total
+- role-4.md : F226 — Clean Harbors : marge d'EBITDA ajusté
+- role-4.md : F222 — Clean Harbors : EBITDA ajusté Environmental Services
+- role-4.md : F220 — Clean Harbors : chiffre d'affaires direct Environmental Services
+- role-4.md : F478 — HEPACO (Clean Harbors) : prix d'acquisition
+- role-4.md : F479 — HEPACO (Clean Harbors) : EBITDA ajusté 2023, environ
+- role-4.md : F601 — EnviroServe (Clean Harbors) : prix d'acquisition
+- role-4.md : F608 — ES&H (Clean Harbors) : prix d'acquisition
+- role-4.md : F602 — EnviroServe (Clean Harbors) : EBITDA ajusté annuel attendu, environ
+- role-4.md : F525 — US Ecology (Republic Services) : valeur totale, dette nette comprise, environ
+- role-4.md : F527 — US Ecology (Republic Services) : EBITDA ajusté 12 mois
+- role-4.md : F529 — US Ecology (Republic Services) : synergies attendues
+- role-4.md : F736 — Programme de cessions : montant déjà signé
+- role-4.md : F604 — EnviroServe (Clean Harbors) : synergies de coûts attendues, environ
+- role-4.md : F49 — Clean Earth : synergies de coûts en régime de croisière, année 4
+- role-4.md : F25 — Programme de cessions, à réaliser d'ici mi-2028 : plus de
+- role-4.md : F484 — Covanta (EQT) : valeur de la transaction, dette comprise
+- role-4.md : F474 — Stericycle (WM) : valeur d'entreprise, environ
+- role-4.md : F12 — Objectif GreenUp : EBITDA ≥
+- role-5.md : F44 — Provisions de fermeture et post-fermeture (réhabilitation, démantèlement)
+- role-5.md : F3 — EBITDA (groupe)
+- role-5.md : F239 — Clean Harbors : passifs environnementaux totaux
+- role-5.md : F224 — Clean Harbors : chiffre d'affaires direct total
+- role-5.md : F209 — Enviri : chiffre d'affaires du segment Clean Earth
+- role-5.md : F99 — Provisions de fermeture et post-fermeture (total)
+- role-5.md : F100 — Provisions de fermeture et post-fermeture (total)
+- role-5.md : F42 — Provisions pour réhabilitation de sites
+- role-5.md : F101 — Provisions de fermeture, dont Amériques, Asie-Pacifique, Afrique Moyen-Orient
+- role-5.md : F102 — Provisions de fermeture, dont Amériques, Asie-Pacifique, Afrique Moyen-Orient
+- role-5.md : F107 — Désactualisation des provisions de fermeture et post-fermeture
+- role-5.md : F40 — Clean Earth : prix d'acquisition
+- role-5.md : F41 — Clean Earth : prix d'acquisition
+- role-5.md : F730 — Clean Earth : effet sur l'endettement financier net (prix et dette IFRS 16 compris)
+- role-5.md : F766 — Clean Earth : dette IFRS 16 reprise (comprise dans l'effet sur l'endettement)
+- role-5.md : F98 — Clean Earth : goodwill préliminaire (affectation du prix non réalisée au 30/06/2026)
+- role-5.md : F127 — Clean Earth : sites spécialisés
+- role-5.md : F128 — Clean Earth : permis
+- role-5.md : F815 — Clean Earth (10-K d'Enviri) : centres de traitement autorisés RCRA Part B (TSDF)
+- role-5.md : F225 — Clean Harbors : EBITDA ajusté total
+- role-5.md : F218 — Enviri : passifs environnementaux, part courante
+- role-5.md : F219 — Enviri : passifs environnementaux, part non courante
+- role-5.md : F817 — Clean Harbors : montant non actualisé des passifs de dépollution (remedial)
+- role-5.md : F238 — Clean Harbors : passifs de dépollution (remedial)
+- role-5.md : F772 — Ambition de chiffre d'affaires dans le traitement des PFAS et des micropolluants
+- role-5.md : F491 — Taxonomie 2025 : capex total
+- role-5.md : F492 — Taxonomie 2025 : capex éligible
+- role-5.md : F493 — Taxonomie 2025 : capex éligible et aligné
+- role-5.md : F499 — Taxonomie 2025 : part du capex éligible et aligné
+- role-5.md : F507 — Taxonomie 2025, collecte et traitement des déchets pour l'économie circulaire (déchets dangereux compris) : capex éligible
+- role-5.md : F508 — Taxonomie 2025, collecte et traitement des déchets pour l'économie circulaire (déchets dangereux compris) : capex éligible et aligné
+- role-5.md : F511 — Taxonomie 2025, collecte et traitement des déchets dangereux, prévention de la pollution (PPC 2.1, 2.2) : capex éligible
+- role-5.md : F512 — Taxonomie 2025, collecte et traitement des déchets dangereux, prévention de la pollution (PPC 2.1, 2.2) : capex éligible et aligné
+- role-5.md : F721 — Endettement financier net (groupe), après Clean Earth
+- role-5.md : F56 — Engagement de levier du groupe : ≤
+- role-6.md : F726 — Trajectoire de levier présentée au T3 : légèrement au-dessus de 3x fin 2026, retour en 2027 à au plus
+- role-6.md : F48 — Clean Earth : multiple VE / EBITDA 2026e après synergies en régime de croisière
+- role-6.md : F730 — Clean Earth : effet sur l'endettement financier net (prix et dette IFRS 16 compris)
+- role-6.md : T4 — Triumvirate Environmental
+- role-6.md : T2 — Heritage-Crystal Clean
+- role-6.md : F736 — Programme de cessions : montant déjà signé
+- role-6.md : F737 — Programme de cessions : multiple moyen d'EBITDA des cessions signées
+- role-6.md : F25 — Programme de cessions, à réaliser d'ici mi-2028 : plus de
+- role-6.md : F51 — Clean Earth : EBITDA (ajusté, post IFRS 16)
+- role-6.md : F40 — Clean Earth : prix d'acquisition
+- role-6.md : F41 — Clean Earth : prix d'acquisition
+- role-6.md : F478 — HEPACO (Clean Harbors) : prix d'acquisition
+- role-6.md : F479 — HEPACO (Clean Harbors) : EBITDA ajusté 2023, environ
+- role-6.md : F601 — EnviroServe (Clean Harbors) : prix d'acquisition
+- role-6.md : F602 — EnviroServe (Clean Harbors) : EBITDA ajusté annuel attendu, environ
+- role-6.md : F738 — Cessions réalisées sur neuf mois (rotation d'actifs GreenUp)
+- role-6.md : F721 — Endettement financier net (groupe), après Clean Earth
+- role-6.md : F725 — Guidance 2026 confirmée au T3 : ratio de levier fin 2026, Clean Earth inclus, égal ou légèrement supérieur à
+- role-6.md : F6 — Plafond GreenUp : dette financière nette / EBITDA ≤
+- role-6.md : T3 — Arcwood Environmental
+- role-6.md : T12 — Chemtron Corporation
+- role-6.md : T7 — Enviracore Services
+- role-6.md : T6 — NG Group
+- role-6.md : T5 — GFL Environmental Services
+- role-6.md : F609 — Heritage-Crystal Clean (J.F. Lehman) : valorisation de la transaction, environ
+- role-6.md : F612 — Triumvirate Environmental (Berkshire Partners) : valorisation après investissement
+- role-6.md : D38 — Enviracore Services (plateforme de services environnementaux : intervention d'urgence, nettoyage industriel, eaux usées, États-Unis)
+- role-6.md : F616 — Seaside Equity Partners : EBITDA visé pour une plateforme (fonds Flagship), bas
+- role-6.md : F617 — Seaside Equity Partners : EBITDA visé pour une plateforme (fonds Flagship), haut
+- role-6.md : F575 — Hybride octobre 2020, première tranche remboursée en février 2026 : nominal
+- role-6.md : F732 — Pont de dette 9M 2026 : remboursement de dette hybride (titres super-subordonnés, 12/09/2026)
+- role-6.md : F733 — Pont de dette 9M 2026 : augmentation de capital Sequoia 2026 (actionnariat salarié), montant net
+- role-6.md : F734 — Pont de dette 9M 2026 : réduction de capital par annulation d'actions auto-détenues (rachat)
+- role-6.md : F5 — GreenUp : tuck-ins, bas de fourchette
+- role-6.md : F21 — GreenUp : tuck-ins, haut de fourchette
+- role-6.md : F471 — Tuck-ins 2025 (États-Unis, Brésil, Japon) : montant
+- role-6.md : F472 — Tuck-ins 2025 (États-Unis, Brésil, Japon) : multiple moyen VE / EBITDA, environ
+- role-6.md : F87 — Guidance 2026 : croissance organique de l'EBITDA, bas de fourchette
+- role-6.md : F88 — Guidance 2026 : croissance organique de l'EBITDA, haut de fourchette
+- role-6.md : F420 — GreenUp : gains d'efficacité par an
+- recommandation.md : F726 — Trajectoire de levier présentée au T3 : légèrement au-dessus de 3x fin 2026, retour en 2027 à au plus
+- recommandation.md : F48 — Clean Earth : multiple VE / EBITDA 2026e après synergies en régime de croisière
+- recommandation.md : T4 — Triumvirate Environmental
+- recommandation.md : T2 — Heritage-Crystal Clean
+- recommandation.md : F5 — GreenUp : tuck-ins, bas de fourchette
+- recommandation.md : F21 — GreenUp : tuck-ins, haut de fourchette
+- recommandation.md : F40 — Clean Earth : prix d'acquisition
+- recommandation.md : F51 — Clean Earth : EBITDA (ajusté, post IFRS 16)
+- recommandation.md : F737 — Programme de cessions : multiple moyen d'EBITDA des cessions signées
+- recommandation.md : F163 — S&P : seuil de dégradation, FFO / dette ajustés durablement sous
+- recommandation.md : F12 — Objectif GreenUp : EBITDA ≥
+- recommandation.md : F87 — Guidance 2026 : croissance organique de l'EBITDA, bas de fourchette
+- recommandation.md : F88 — Guidance 2026 : croissance organique de l'EBITDA, haut de fourchette
+- recommandation.md : F736 — Programme de cessions : montant déjà signé
+- recommandation.md : F25 — Programme de cessions, à réaliser d'ici mi-2028 : plus de
+- outils-ia.md : F98 — Clean Earth : goodwill préliminaire (affectation du prix non réalisée au 30/06/2026)
+- outils-ia.md : F41 — Clean Earth : prix d'acquisition
+- outils-ia.md : F129 — GreenUp : investissements nets de croissance 2024-2027, boosters et strongholds réunis (« 2 x Impact 2023 »)
+- introduction.md : F12 — Objectif GreenUp : EBITDA ≥
+- introduction.md : F6 — Plafond GreenUp : dette financière nette / EBITDA ≤
+- introduction.md : F730 — Clean Earth : effet sur l'endettement financier net (prix et dette IFRS 16 compris)
+- introduction.md : F25 — Programme de cessions, à réaliser d'ici mi-2028 : plus de
+- introduction.md : F725 — Guidance 2026 confirmée au T3 : ratio de levier fin 2026, Clean Earth inclus, égal ou légèrement supérieur à
+- introduction.md : F726 — Trajectoire de levier présentée au T3 : légèrement au-dessus de 3x fin 2026, retour en 2027 à au plus
+- introduction.md : F721 — Endettement financier net (groupe), après Clean Earth
+- introduction.md : F48 — Clean Earth : multiple VE / EBITDA 2026e après synergies en régime de croisière
+- conclusion.md : F726 — Trajectoire de levier présentée au T3 : légèrement au-dessus de 3x fin 2026, retour en 2027 à au plus
+- conclusion.md : F12 — Objectif GreenUp : EBITDA ≥
+- conclusion.md : F5 — GreenUp : tuck-ins, bas de fourchette
+- conclusion.md : F21 — GreenUp : tuck-ins, haut de fourchette
+- conclusion.md : F736 — Programme de cessions : montant déjà signé
 
 ## Lignes citées contestées (0)
 - aucune
 
 ## Passages encore à rédiger
-- role-1.md : 4
-- role-2.md : 5
-- role-3.md : 5
-- role-4.md : 4
-- role-5.md : 4
-- role-6.md : 4
-- recommandation.md : 1
-- outils-ia.md : 1
-- remerciements.md : 1
-- introduction.md : 3
-- conclusion.md : 1
+- aucun
 
 ## Chiffres du registre jamais cités par leur rôle
-- rôle 1 (Périmètre et sources) : 31 — F2, F18, F32, F90, F91, F92, F129, F130, F131, F132, F133, F134, F135, F136, F137, F138, F654, F659, F661, F662 …
-- rôle 2 (La contrainte) : 298 — F1, F3, F6, F8, F10, F11, F12, F14, F16, F17, F19, F20, F22, F23, F26, F51, F55, F56, F57, F66 …
-- rôle 3 (Capacité et sensibilité) : 162 — F4, F5, F7, F9, F13, F15, F21, F24, F25, F27, F28, F29, F30, F31, F53, F64, F65, F67, F68, F69 …
-- rôle 4 (L'écart et les comparables) : 161 — F33, F34, F35, F36, F37, F38, F39, F40, F41, F52, F54, F58, F59, F60, F61, F62, F63, F93, F94, F95 …
-- rôle 5 (Le coût ESG) : 80 — F42, F43, F44, F45, F98, F99, F100, F101, F102, F103, F104, F105, F106, F107, F108, F109, F127, F128, F218, F219 …
-- rôle 6 (Cibles, puis synthèse) : 117 — F46, F47, F48, F49, F50, F76, F77, F209, F210, F211, F212, F213, F214, F215, F216, F443, F444, F445, F471, F472 …
+- rôle 1 (Périmètre et sources) : 18 — F90, F91, F92, F131, F133, F134, F135, F136, F137, F654, F659, F661, F662, F672, F685, F750, F825, F848
+- rôle 2 (La contrainte) : 254 — F1, F10, F11, F12, F14, F19, F22, F26, F55, F56, F57, F66, F71, F78, F82, F140, F142, F144, F145, F146 …
+- rôle 3 (Capacité et sensibilité) : 137 — F4, F5, F7, F9, F13, F21, F24, F27, F31, F53, F64, F65, F67, F68, F69, F72, F73, F75, F79, F80 …
+- rôle 4 (L'écart et les comparables) : 136 — F33, F37, F38, F39, F41, F54, F58, F59, F60, F61, F62, F63, F93, F94, F95, F96, F97, F160, F161, F162 …
+- rôle 5 (Le coût ESG) : 54 — F43, F45, F103, F104, F105, F106, F108, F109, F237, F488, F489, F490, F494, F495, F496, F497, F498, F500, F501, F502 …
+- rôle 6 (Cibles, puis synthèse) : 106 — F46, F47, F49, F50, F76, F77, F209, F210, F211, F212, F213, F214, F215, F216, F443, F444, F445, F473, F474, F475 …
 
 ## Ce que la méthode du rapport mesure
-- corps du rapport : 102 caractères, espaces compris, pour 50 000 demandés
-- Annexe I : commentée nulle part dans le texte
-- Annexe II : commentée nulle part dans le texte
-- Annexe III : commentée nulle part dans le texte
+- corps du rapport : 71 348 caractères, espaces compris, pour 50 000 demandés
+- role-1.md : 36 phrase(s) sur 129 au-delà de 12 mots
+- role-2.md : 53 phrase(s) sur 131 au-delà de 12 mots
+- role-3.md : 44 phrase(s) sur 131 au-delà de 12 mots
+- role-4.md : 38 phrase(s) sur 129 au-delà de 12 mots
+- role-5.md : 51 phrase(s) sur 126 au-delà de 12 mots
+- role-6.md : 48 phrase(s) sur 110 au-delà de 12 mots
+- recommandation.md : 19 phrase(s) sur 51 au-delà de 12 mots
+- outils-ia.md : 17 phrase(s) sur 35 au-delà de 12 mots
+- remerciements.md : 2 phrase(s) sur 6 au-delà de 12 mots
+- introduction.md : 19 phrase(s) sur 51 au-delà de 12 mots
+- conclusion.md : 12 phrase(s) sur 33 au-delà de 12 mots
 - couverture : le logo de l'EDHEC (08_Livrables/scripts/logo-edhec.png) manque
 - couverture : le nom du responsable (roles.yaml : encadrant) manque
-- remerciements : à écrire
-- introduction : à écrire
-- conclusion : à écrire

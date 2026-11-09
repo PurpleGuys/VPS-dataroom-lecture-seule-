@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-09",
+ "generated": "2026-11-10",
  "model": "modele-greenup-2027.xlsx",
  "roots": [
   "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",
@@ -245,6 +245,7 @@
    "Marge sous 3x fin 2027 si l'efficacité 2026-2027 n'est pas livrée du tout, en M EUR"
   ],
   "F46": [
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Clean Earth : multiple du prix sur l'EBITDA 2025 publié par le vendeur (reconstitué)",
    "Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)"
   ],
@@ -471,12 +472,15 @@
    "Objectifs financiers annoncés et tenus depuis 2020 (Impact 2023, guidance 2025)"
   ],
   "F211": [
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Clean Earth : multiple du prix sur l'EBITDA 2025 publié par le vendeur (reconstitué)"
   ],
   "F213": [
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Clean Earth : multiple du prix sur l'EBITDA 2025 publié par le vendeur (reconstitué)"
   ],
   "F214": [
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Clean Earth : multiple du prix sur l'EBITDA 2025 publié par le vendeur (reconstitué)"
   ],
   "F256": [
@@ -613,6 +617,7 @@
    "Multiples payés par Veolia, après synergies : du moins cher au plus cher (Cibles §D)"
   ],
   "F472": [
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Multiples payés par Veolia, après synergies : du moins cher au plus cher (Cibles §D)"
   ],
   "F473": [
@@ -635,18 +640,25 @@
    "Multiples payés par Veolia, après synergies : du moins cher au plus cher (Cibles §D)"
   ],
   "F478": [
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Secteur, avant synergies : du moins cher au plus cher (Cibles §E)",
    "Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)"
   ],
   "F479": [
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Secteur, avant synergies : du moins cher au plus cher (Cibles §E)",
    "Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)"
   ],
+  "F483": [
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)"
+  ],
   "F484": [
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Secteur, avant synergies : du moins cher au plus cher (Cibles §E)",
    "Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)"
   ],
   "F486": [
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Secteur, avant synergies : du moins cher au plus cher (Cibles §E)",
    "Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)"
   ],
@@ -661,10 +673,12 @@
    "Taxonomie 2025 : déchets dangereux, part du capex aligné du groupe"
   ],
   "F525": [
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Secteur, avant synergies : du moins cher au plus cher (Cibles §E)",
    "Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)"
   ],
   "F527": [
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Secteur, avant synergies : du moins cher au plus cher (Cibles §E)",
    "Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)"
   ],
@@ -714,12 +728,17 @@
    "Objectifs financiers annoncés et tenus depuis 2020 (Impact 2023, guidance 2025)"
   ],
   "F601": [
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Secteur, avant synergies : du moins cher au plus cher (Cibles §E)",
    "Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)"
   ],
   "F602": [
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)",
    "Secteur, avant synergies : du moins cher au plus cher (Cibles §E)",
    "Clean Earth avant synergies, écart au plus cher du secteur (x EBITDA)"
+  ],
+  "F607": [
+   "Hypothèses qui font basculer au moins une conclusion à l'intérieur de leurs bornes (Financement §D)"
   ],
   "F721": [
    "Probabilité que Veolia tienne fin 2027 ses deux plafonds (3x et seuil S&P), sur 1 000 futurs tirés",

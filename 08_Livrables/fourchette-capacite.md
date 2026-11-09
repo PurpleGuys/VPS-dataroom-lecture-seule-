@@ -1,7 +1,7 @@
 # Fourchette de capacité d'acquisition — GreenUp 2027
 
 Périmètre « capacité financière », pour les groupes des trois autres périmètres. Généré depuis le classeur
-`modele-greenup-2027.xlsx` (contrôles bloquants : OK) le 2026-11-09.
+`modele-greenup-2027.xlsx` (contrôles bloquants : OK) le 2026-11-10.
 Chaque chiffre d'entrée vient de `00_Admin/register.csv` ; les hypothèses sont dans l'onglet Hypothèses.
 
 Version 2 du 2026-11-09, données arrêtées au 30/09/2026 (rapport du T3 2026 de Veolia, publié le 05/11/2026) : dette de départ au 30/09, cash-flow du T4 2025 reproduit, 570 M€ de cessions signées à 10,4x, croissance organique publiée à fin septembre. La version 1 du 2026-10-06 reste dans fourchette-historique.json.
@@ -12,7 +12,7 @@ Version 2 du 2026-11-09, données arrêtées au 30/09/2026 (rapport du T3 2026 d
 |---|---|---|---|
 | Marge de dette sous le levier ≤ 3x (M EUR) | −1 802 | 159 | 2 280 |
 | Marge de dette sous le seuil S&P 18 % FFO / dette ajustée (M EUR) | −742 | 2 870 | 6 154 |
-| Contrainte qui mord en premier | Veolia | Veolia | Veolia |
+| Contrainte qui mord en premier | levier ≤ 3x | levier ≤ 3x | levier ≤ 3x |
 | Acquisition maximale au multiple des tuck-ins du scénario (central : celui de Clean Earth, 9,8x), M EUR | 0 | 229 | 3 835 |
 
 Lecture : une acquisition ajoute son prix à la dette et seulement prix ÷ multiple à l'EBITDA ; elle tient tant que

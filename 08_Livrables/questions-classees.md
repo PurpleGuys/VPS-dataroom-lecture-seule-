@@ -1,6 +1,6 @@
 # Questions pour Veolia, classées par ce que la réponse déplacerait
 
-Généré le 09/11/2026 depuis le classeur (onglet Sensibilité, classement). **Amplitude** : écart de la marge
+Généré le 10/11/2026 depuis le classeur (onglet Sensibilité, classement). **Amplitude** : écart de la marge
 sous 3x fin 2027 entre la borne basse et la borne haute de l'hypothèse, toutes les autres à leur base (M€).
 Les numéros renvoient à `questions-veolia.md`. Une réponse de Veolia vaut ce qu'elle resserre : commencer par le haut.
 
@@ -20,7 +20,7 @@ Les numéros renvoient à `questions-veolia.md`. Une réponse de Veolia vaut ce 
 | 12 | Part des cessions signées non encaissées qui l'est avant le 31/12/2026 | 7 | 4 / −4 | Q4 |
 | 13 | FFO (mesure des agences) en % de l'EBITDA | 0 | 0 / 0 | Q2, Q21 |
 
-## Ordre proposé pour la séance du 16 octobre
+## Ordre proposé pour les questions à Veolia
 
 Q4 → Q18 → Q19 → Q11 → Q14 → Q15 → Q20 → Q10 → Q5 → Q6 → Q2 → Q21 ; puis les questions de méthode (Q16, Q17) si le temps le permet.
 Les questions de définition et de périmètre (Q1, Q3, Q7, Q8, Q9, Q12, Q13) ne déplacent pas

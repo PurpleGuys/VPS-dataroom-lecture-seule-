@@ -14,7 +14,7 @@
     "EB27": 7981.43050727668,
     "NFD27": 22373.6168524571,
     "RATIO26": 0.193486847370753,
-    "WHICH27": "Veolia : levier ≤ 3x",
+    "WHICH27": "levier ≤ 3x (plafond de Veolia)",
     "mTuck": 9.8,
     "cap": 3.0
    },
@@ -28,7 +28,7 @@
     "EB27": 7883.71364092582,
     "NFD27": 24186.095252532,
     "RATIO26": 0.181305946341446,
-    "WHICH27": "Veolia : levier ≤ 3x",
+    "WHICH27": "levier ≤ 3x (plafond de Veolia)",
     "mTuck": 11.0,
     "cap": 3.0
    },
@@ -42,7 +42,7 @@
     "EB27": 8089.00008587041,
     "NFD27": 20776.2851459462,
     "RATIO26": 0.200538418773713,
-    "WHICH27": "Veolia : levier ≤ 3x",
+    "WHICH27": "levier ≤ 3x (plafond de Veolia)",
     "mTuck": 7.4,
     "cap": 3.0
    },
@@ -110,7 +110,7 @@
     "EB27": 7932.49945556721,
     "NFD27": 23638.3713429899,
     "RATIO26": 0.185408234630076,
-    "WHICH27": "Veolia : levier ≤ 3x",
+    "WHICH27": "levier ≤ 3x (plafond de Veolia)",
     "mTuck": 9.8,
     "cap": 3.0
    },
@@ -124,7 +124,7 @@
     "EB27": 7887.74364092582,
     "NFD27": 25464.731052532,
     "RATIO26": 0.174015256175662,
-    "WHICH27": "Veolia : levier ≤ 3x",
+    "WHICH27": "levier ≤ 3x (plafond de Veolia)",
     "mTuck": 11.0,
     "cap": 3.0
    },
@@ -138,7 +138,7 @@
     "EB27": 8097.33341920375,
     "NFD27": 22011.6018126129,
     "RATIO26": 0.193302894966149,
-    "WHICH27": "Veolia : levier ≤ 3x",
+    "WHICH27": "levier ≤ 3x (plafond de Veolia)",
     "mTuck": 7.4,
     "cap": 3.0
    },
