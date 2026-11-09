@@ -5,9 +5,16 @@ relu_par:
 # Rôle 1 — Périmètre et sources
 
 <!-- Le registre, et si l'enveloppe annoncée était brute ou nette des cessions.
-Citer un chiffre par son jeton : [F12] s'imprime « valeur unité (F12) » avec sa source en annexe A ;
-[D3] pour une opération, [T1] pour une cible. Un jeton inconnu est signalé par le contrôle des citations.
-Les titres ## et ### structurent la section ; 6 à 9 pages. Chiffres du registre pour ce rôle (16) :
+Citer un chiffre par son jeton : [F12] s'imprime avec sa valeur et porte sa source en note de bas de page
+(la méthode du rapport veut des notes à la place des parenthèses) ; [D3] pour une opération, [T1] pour une cible.
+Un jeton inconnu est signalé par le contrôle des citations ; une ligne non relue bloque la version finale.
+Mise en page (méthode EDHEC, BBA 3, 2025-2026) : le titre « # » ci-dessus devient le titre de la partie, numéroté
+par le générateur (1, 2, …) — l'habiller : dire ce que la partie démontre, jamais « analyse » ni « résultats ».
+Les titres ## et ### deviennent les sous-parties 1.1 et 1.1.1. Les termes du glossaire s'écrivent tels quels,
+le générateur les met en italique. Citations recopiées exactement, entre « », coupes par points de suspension.
+Chaque annexe utilisée doit être commentée dans le texte (« voir l'annexe I »).
+Écriture (§ 6.1) : phrases de douze mots, une idée par phrase, l'essentiel en tête, sujet-verbe-complément, forme
+active ; passé composé ou présent, jamais de passé simple. 6 à 9 pages. Chiffres du registre pour ce rôle (16) :
   [F2] GreenUp : rotation NETTE d'actifs — 0.5 Md EUR / an (2024-2027)
   [F18] GreenUp : cessions continues d'actifs non stratégiques — 0.5 Md EUR (2024-2027)
   [F32] Rotation d'actifs sur 4 ans : plus de — 8 Md EUR (2024-2027)

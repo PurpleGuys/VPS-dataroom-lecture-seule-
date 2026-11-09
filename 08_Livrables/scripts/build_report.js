@@ -1,70 +1,150 @@
-// Le rapport Word : une section par rôle, la prose du groupe avec chaque jeton [F12] résolu
-// contre le registre, les annexes, et (hors version finale) le contrôle des citations.
-// Lit rapport-sujet-2.data.json (dataroom report) ou, à défaut, report-data.json
-// (build_dossiers.py). N'écrit aucun chiffre lui-même : une valeur vient du registre ou
-// le jeton est marqué inconnu.
+// Le rapport Word du sujet 2, mis en page selon la « Méthodologie du rapport » de l'EDHEC
+// (BBA3, 2025-2026), appliquée à la lettre :
+//   page de couverture (logo, formation, entreprise, titre, prénoms et NOMS, année, responsable),
+//   page blanche, remerciements, sommaire paginé qui est la page 1, introduction, parties numérotées
+//   (1, 1.1, 1.1.1) aux titres « habillés », conclusion, bibliographie raisonnée, glossaire des termes
+//   en italique dans le texte, table des annexes en dernière page numérotée, annexes paginées à part
+//   en chiffres romains. Times New Roman 12, titres en gras 12 avec un seul retour avant et après,
+//   interligne 1,5, marges de 2,5 cm, texte justifié ; les notes de bas de page remplacent les
+//   parenthèses : chaque chiffre cité par son jeton [F12] porte sa source en note.
+// Lit rapport-sujet-2.data.json (dataroom report) ou, à défaut, report-data.json (build_dossiers.py).
+// N'écrit aucun chiffre lui-même : une valeur vient du registre ou le jeton est marqué inconnu.
+// Écrit, à côté du .docx, la liste ordonnée des titres (…headings.json) : dataroom report la
+// confronte au PDF pour numéroter le sommaire et la table des annexes au second passage.
 "use strict";
 const fs = require("fs");
 const path = require("path");
 const {
   Document, Packer, Paragraph, TextRun, HeadingLevel, Table, TableRow, TableCell, WidthType,
-  AlignmentType, PageBreak, TableOfContents, Footer, PageNumber, ShadingType, LevelFormat, BorderStyle,
-  ExternalHyperlink,
+  AlignmentType, PageBreak, Footer, PageNumber, ShadingType, LevelFormat, BorderStyle,
+  ExternalHyperlink, FootnoteReferenceRun, ImageRun, NumberFormat, Tab, TabStopType, LeaderType,
 } = require("docx");
 
 const DATA = JSON.parse(fs.readFileSync(process.argv[2] || path.join(__dirname, "report-data.json"), "utf8"));
 const OUT = process.argv[3] || "/home/ubuntu/capstone-livrables/rapport-sujet-2.docx";
+const HEADINGS_OUT = OUT.replace(/\.docx$/i, "") + ".headings.json";
 const FINAL = process.argv.includes("--final") || DATA.final === true;
 const TEXTS = DATA.texts || {};
 const CONTROLS = DATA.controls || null;
-const TEXT_WIDTH = 9026; // A4, marges de 2,54 cm
+const COVER = DATA.cover || {};
+const PAGINATION = DATA.pagination || {};
+const TOC_PAGES = new Map((PAGINATION.toc || []).map((h) => [h.text, h.page]));
+const ANNEX_PAGES = new Map((PAGINATION.annexes || []).map((h) => [h.text, h.page]));
+const GLOSSARY = DATA.glossary || [];
+const NOTES = DATA.notes || {};   // la note de bas de page de chaque jeton, écrite par report.py
 // L'édition web du même rapport (dataroom rapport-web) : chaque chiffre y ouvre sa page source, surlignée.
 const WEB = DATA.web_edition || "https://dataroom.is42.fr:8443/visualisation/rapport.html";
 
-const bodyFont = { font: "Arial", size: 22 };
-const smallFont = { font: "Arial", size: 18 };
-const HEADINGS = [HeadingLevel.HEADING_1, HeadingLevel.HEADING_2, HeadingLevel.HEADING_3];
+// ---- la méthode, en chiffres (twips : 1 cm = 567 ; tailles en demi-points : 12 pt = 24)
+const FONT = "Times New Roman";
+const BODY = 24;                       // « Times New Roman 12 »
+const SMALL = 20;                      // 10 pt : tableaux, notes de bas de page, légendes
+const LINE = 360;                      // « interligne 1,5 »
+const MARGIN = 1417;                   // « 2,5 cm pour toutes les marges »
+const PAGE_W = 11906, PAGE_H = 16838;  // A4
+const TEXT_WIDTH = PAGE_W - 2 * MARGIN; // 9072
+const RETURN = 360;                    // « un seul retour avant et après » un titre : une ligne à 1,5
+
+const bodyFont = { font: FONT, size: BODY };
+const smallFont = { font: FONT, size: SMALL };
+const HEADING_LEVELS = [HeadingLevel.HEADING_1, HeadingLevel.HEADING_2, HeadingLevel.HEADING_3];
 const numberingRefs = new Set(["numbers", "numbers2", "role1", "role2", "role3", "role4", "role5", "role6"]);
 let dynamicLists = 0;
 
+// ---- notes de bas de page : une par chiffre cité, dans l'ordre du texte
+const footnotes = {};
+let footnoteId = 0;
+function footnote(text) {
+  footnotes[++footnoteId] = { children: [new Paragraph({ spacing: { after: 0, line: 240 }, alignment: AlignmentType.LEFT,
+    children: [new TextRun({ text, ...smallFont })] })] };
+  return new FootnoteReferenceRun(footnoteId);
+}
+
+// ---- le glossaire : ses termes apparaissent en italique dans le texte (§ 4.7)
+const glossaryRegex = (() => {
+  if (!GLOSSARY.length) return null;
+  const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const variants = [];
+  for (const { term } of GLOSSARY) {
+    variants.push(esc(term));
+    if (term[0] === term[0].toLowerCase()) variants.push(esc(term[0].toUpperCase() + term.slice(1)));
+  }
+  variants.sort((a, b) => b.length - a.length);
+  return new RegExp("(?<![\\p{L}\\p{N}-])(" + variants.join("|") + ")(?![\\p{L}\\p{N}-])", "gu");
+})();
+function textRuns(text, fmt, italicizeGlossary) {
+  if (!italicizeGlossary || !glossaryRegex || fmt.italics) return [new TextRun({ text, ...fmt })];
+  const out = [];
+  let last = 0;
+  for (const m of text.matchAll(glossaryRegex)) {
+    if (m.index > last) out.push(new TextRun({ text: text.slice(last, m.index), ...fmt }));
+    out.push(new TextRun({ text: m[0], ...fmt, italics: true }));
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) out.push(new TextRun({ text: text.slice(last), ...fmt }));
+  return out;
+}
+
+// ---- paragraphes
 function p(text, opts = {}) {
   return new Paragraph({
-    spacing: { after: 120, line: 300 },
+    spacing: { after: 0, line: LINE },
+    alignment: AlignmentType.JUSTIFIED,
     ...opts.para,
     children: [new TextRun({ text, ...bodyFont, ...opts.run })],
   });
 }
 function runs(parts, para = {}) {
-  return new Paragraph({ spacing: { after: 120, line: 300 }, ...para, children: parts.map((x) => new TextRun({ ...bodyFont, ...x })) });
+  return new Paragraph({ spacing: { after: 0, line: LINE }, alignment: AlignmentType.JUSTIFIED, ...para,
+    children: parts.map((x) => new TextRun({ ...bodyFont, ...x })) });
 }
-function h(text, level) {
-  return new Paragraph({ heading: level, spacing: { before: 240, after: 120 }, children: [new TextRun({ text, font: "Arial" })] });
+function blank() {
+  return new Paragraph({ spacing: { after: 0, line: LINE }, children: [] });
 }
 function bullets(items) {
-  return items.map((t) => new Paragraph({ numbering: { reference: "bullets", level: 0 }, spacing: { after: 80 },
-    children: [new TextRun({ text: t, ...bodyFont })] }));
+  return items.map((t) => new Paragraph({ numbering: { reference: "bullets", level: 0 }, spacing: { after: 0, line: LINE },
+    alignment: AlignmentType.JUSTIFIED, children: [new TextRun({ text: t, ...bodyFont })] }));
 }
 function numbered(items, ref) {
   numberingRefs.add(ref);
-  return items.map((t) => new Paragraph({ numbering: { reference: ref, level: 0 }, spacing: { after: 80 },
-    children: [new TextRun({ text: t, ...bodyFont })] }));
+  return items.map((t) => new Paragraph({ numbering: { reference: ref, level: 0 }, spacing: { after: 0, line: LINE },
+    alignment: AlignmentType.JUSTIFIED, children: [new TextRun({ text: t, ...bodyFont })] }));
 }
+// Un passage à écrire, ou une aide générée : visible, sur fond jaune, jamais dans la version finale.
 function placeholder(text) {
   return new Paragraph({
-    spacing: { before: 160, after: 160 },
+    spacing: { before: 120, after: 120, line: LINE },
     shading: { type: ShadingType.CLEAR, color: "auto", fill: "FFF2A8" },
     children: [new TextRun({ text, ...bodyFont, italics: true })],
   });
 }
+function caption(text) {
+  return new Paragraph({ spacing: { before: 60, after: RETURN, line: 240 }, alignment: AlignmentType.LEFT,
+    children: [new TextRun({ text, ...smallFont, italics: true })] });
+}
+const pageBreak = () => new Paragraph({ children: [new PageBreak()] });
+
+// ---- titres : en gras, taille 12, un seul retour avant et après ; chaque titre est noté pour le sommaire
+const HEADINGS = [];
+function heading(text, level, opts = {}) {
+  HEADINGS.push({ text, level, annex: !!opts.annex, label: opts.label || "", role: opts.role || 0, toc: opts.toc !== false });
+  return new Paragraph({
+    heading: HEADING_LEVELS[level - 1], keepNext: true, keepLines: true, pageBreakBefore: !!opts.newPage,
+    spacing: { before: RETURN, after: RETURN, line: LINE }, alignment: AlignmentType.LEFT,
+    children: [new TextRun({ text, ...bodyFont, bold: true, color: "000000" })],
+  });
+}
+
+// ---- tableaux
 function cell(content, width, opts = {}) {
   const children = Array.isArray(content)
-    ? inlineRuns(content, smallFont)
+    ? inlineRuns(content, smallFont, { glossary: false })
     : [new TextRun({ text: String(content == null ? "" : content), ...smallFont, bold: !!opts.head })];
   return new TableCell({
     width: { size: width, type: WidthType.DXA },
     shading: opts.head ? { type: ShadingType.CLEAR, color: "auto", fill: "E7E6E6" } : undefined,
     margins: { top: 40, bottom: 40, left: 80, right: 80 },
-    children: [new Paragraph({ spacing: { after: 0 }, alignment: opts.right ? AlignmentType.RIGHT : AlignmentType.LEFT, children })],
+    children: [new Paragraph({ spacing: { after: 0, line: 240 }, alignment: opts.right ? AlignmentType.RIGHT : AlignmentType.LEFT, children })],
   });
 }
 function table(headers, rows, widths, rightCols = []) {
@@ -85,48 +165,65 @@ function evenWidths(n) {
   widths[n - 1] += TEXT_WIDTH - base * n;
   return widths;
 }
-const pageBreak = () => new Paragraph({ children: [new PageBreak()] });
 
 // ---- la prose du groupe : runs et blocs
-// Un jeton résolu s'imprime « valeur unité (F12) » ; « † » après l'identifiant quand personne
-// n'a relu la ligne ; un jeton inconnu reste visible, en rouge sur jaune.
-function inlineRuns(inlines, base = bodyFont) {
+// Un jeton résolu s'imprime « valeur unité » suivi d'un appel de note ; la note donne l'identifiant
+// du registre, la source (fichier, page, URL, date de consultation) et dit si la ligne a été relue.
+// Un jeton inconnu reste visible, en rouge sur jaune. Les termes du glossaire passent en italique.
+function inlineRuns(inlines, base = bodyFont, opts = {}) {
+  const glossary = opts.glossary !== false;
   const out = [];
   for (const r of inlines || []) {
     const fmt = { ...base, bold: !!r.bold, italics: !!r.italic };
-    if (r.kind === "text") out.push(new TextRun({ text: r.text, ...fmt }));
-    else if (r.kind === "code") out.push(new TextRun({ text: r.text, ...fmt, font: "Consolas" }));
+    if (r.kind === "text") out.push(...textRuns(r.text, fmt, glossary));
+    else if (r.kind === "code") out.push(new TextRun({ text: r.text, ...fmt, font: "Courier New" }));
     else if (r.kind === "link") out.push(new ExternalHyperlink({ link: r.url, children: [new TextRun({ text: r.text, ...fmt, style: "Hyperlink" })] }));
     else if (r.kind === "wikilink") out.push(new TextRun({ text: r.text, ...fmt, italics: true }));
     else if (r.kind === "token") {
       if (r.status !== "ok") out.push(new TextRun({ text: `[${r.id} ?]`, ...fmt, bold: true, color: "C00000", highlight: "yellow" }));
       else {
         out.push(new TextRun({ text: `${r.value}${r.unit ? " " + r.unit : ""}`, ...fmt }));
-        out.push(new TextRun({ text: ` (${r.id}${r.checked ? "" : "†"})`, ...smallFont, color: "777777", bold: false, italics: !!r.italic }));
+        out.push(footnote(NOTES[r.id] || `${r.id} — ${r.cite || r.file || "source au registre"}${r.checked ? "" : " ; ligne non relue par un second lecteur"}.`));
       }
     }
   }
   return out;
 }
+function plain(inlines) {
+  return (inlines || []).map((r) => (r.kind === "token" ? (r.status === "ok" ? `${r.value}${r.unit ? " " + r.unit : ""}` : `[${r.id} ?]`) : r.text)).join("").trim();
+}
+// Les blocs d'un fichier texte. `part` numérote les sous-parties (1.1, 1.1.1) ; sans lui (introduction,
+// conclusion, remerciements) les sous-titres restent sans numéro, comme la méthode le permet.
 function renderBlocks(blocks, opts = {}) {
-  const baseLevel = opts.baseLevel || 1;
+  const part = opts.part || 0;
+  const counters = [0, 0];
   const out = [];
   for (const b of blocks || []) {
     if (b.kind === "heading") {
-      const level = Math.min(3, Math.max(baseLevel + 1, baseLevel + b.level - 1));
-      out.push(new Paragraph({ heading: HEADINGS[level - 1], spacing: { before: 240, after: 120 }, children: inlineRuns(b.inlines, { font: "Arial" }) }));
+      const level = Math.min(3, Math.max(2, b.level));
+      let number = "";
+      if (part) {
+        if (level === 2) { counters[0] += 1; counters[1] = 0; number = `${part}.${counters[0]} `; }
+        else { counters[1] += 1; number = `${part}.${counters[0] || 1}.${counters[1]} `; }
+      }
+      out.push(heading(number + plain(b.inlines), level));
     } else if (b.kind === "paragraph") {
-      out.push(new Paragraph({ spacing: { after: 120, line: 300 }, children: inlineRuns(b.inlines) }));
+      out.push(new Paragraph({ spacing: { after: 0, line: LINE }, alignment: AlignmentType.JUSTIFIED, children: inlineRuns(b.inlines) }));
+      out.push(blank());
     } else if (b.kind === "quote") {
-      out.push(new Paragraph({ spacing: { after: 120, line: 300 }, indent: { left: 540 },
-        border: { left: { style: BorderStyle.SINGLE, size: 6, color: "BBBBBB", space: 8 } },
-        children: inlineRuns(b.inlines, { ...bodyFont, italics: true }) }));
+      // Une citation recopiée exactement, entre guillemets français (§ 5.6) ; le retrait la signale.
+      const text = plain(b.inlines);
+      const open = /^[«"“]/.test(text), close = /[»"”]$/.test(text);
+      out.push(new Paragraph({ spacing: { after: 0, line: LINE }, alignment: AlignmentType.JUSTIFIED, indent: { left: 567, right: 567 },
+        children: [...(open ? [] : [new TextRun({ text: "« ", ...bodyFont })]), ...inlineRuns(b.inlines, bodyFont, { glossary: false }), ...(close ? [] : [new TextRun({ text: " »", ...bodyFont })])] }));
+      out.push(blank());
     } else if (b.kind === "list") {
       let ref = "bullets";
       if (b.ordered) { ref = `list${dynamicLists++}`; numberingRefs.add(ref); }
       for (const item of b.items) {
-        out.push(new Paragraph({ numbering: { reference: ref, level: 0 }, spacing: { after: 80 }, children: inlineRuns(item) }));
+        out.push(new Paragraph({ numbering: { reference: ref, level: 0 }, spacing: { after: 0, line: LINE }, alignment: AlignmentType.JUSTIFIED, children: inlineRuns(item) }));
       }
+      out.push(blank());
     } else if (b.kind === "todo") {
       if (!FINAL) out.push(placeholder(b.text));
     } else if (b.kind === "table" && b.rows.length) {
@@ -138,7 +235,7 @@ function renderBlocks(blocks, opts = {}) {
         rows: b.rows.map((row, i) => new TableRow({ tableHeader: i === 0,
           children: pad(row).map((c, j) => cell(c, widths[j], { head: i === 0 })) })),
       }));
-      out.push(new Paragraph({ spacing: { after: 120 }, children: [] }));
+      out.push(blank());
     }
   }
   return out;
@@ -147,161 +244,299 @@ function prose(key) {
   const t = TEXTS[key];
   return t && t.has_prose ? t : null;
 }
-
-const children = [];
-
-// ---- page de titre
-children.push(
-  new Paragraph({ spacing: { before: 2400, after: 240 }, alignment: AlignmentType.CENTER,
-    children: [new TextRun({ text: DATA.title, font: "Arial", size: 40, bold: true })] }),
-  new Paragraph({ spacing: { after: 600 }, alignment: AlignmentType.CENTER,
-    children: [new TextRun({ text: DATA.subtitle, font: "Arial", size: 26, color: "555555" })] }),
-  p("Rapport écrit — remise le 25 novembre 2026", { para: { alignment: AlignmentType.CENTER } }),
-  p("Groupe : [[prénoms et noms, un par rôle]]", { para: { alignment: AlignmentType.CENTER }, run: { italics: true } }),
-  p(`${FINAL ? "Rapport" : "Squelette"} généré le ${DATA.generated} depuis la dataroom du groupe (${DATA.n_figures} chiffres sourcés ; contrôles du classeur : ${DATA.checks}). ` +
-    "Chaque chiffre cité renvoie à l'annexe A : fichier, page, URL, date de consultation." +
-    (FINAL ? "" : " Les passages surlignés sont à rédiger par l'auteur de la section ; « † » après un identifiant : ligne que personne n'a encore relue."),
-    { para: { alignment: AlignmentType.CENTER, spacing: { before: 1200 } }, run: { ...smallFont, color: "555555" } }),
-  new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 240 }, children: [
-    new TextRun({ text: "Édition vérifiable, où chaque chiffre ouvre sa page source : ", ...smallFont, color: "555555" }),
-    new ExternalHyperlink({ link: WEB, children: [new TextRun({ text: WEB, ...smallFont, style: "Hyperlink" })] }),
-  ] }),
-  pageBreak(),
-  h("Sommaire", HeadingLevel.HEADING_1),
-  new TableOfContents("Sommaire", { hyperlink: true, headingStyleRange: "1-2" }),
-  pageBreak(),
-);
-
-// ---- réponse en une page
-children.push(h("La réponse en une page", HeadingLevel.HEADING_1), p(DATA.thread));
-children.push(table(["Indicateur", "Valeur", "Ce qu'il faut en lire"],
-  DATA.tiles.map((t) => [t[0], t[1], t[2]]), [3200, 1600, 4226], [1]));
-const reco = prose("recommandation");
-if (reco) children.push(h("La recommandation", HeadingLevel.HEADING_2), ...renderBlocks(reco.blocks, { baseLevel: 2 }));
-else if (!FINAL) children.push(placeholder("[À rédiger] 08_Livrables/texte/recommandation.md : ce que nous recommandons, ce que cela coûte et à qui, ce qui nous ferait changer d'avis."));
-children.push(pageBreak());
-
-// ---- les questions du cours
-children.push(h("Les quatre questions de recherche de Veolia, et où le rapport y répond", HeadingLevel.HEADING_1));
-children.push(...numbered(DATA.research_questions, "numbers"));
-children.push(h("Le chantier « capacité » en cinq blocs", HeadingLevel.HEADING_2));
-children.push(...numbered(DATA.capacity_blocks, "numbers2"));
-children.push(pageBreak());
-
-// ---- une section par rôle
-for (const role of DATA.roles) {
-  const text = prose(`role-${role.n}`);
-  const signed = TEXTS[`role-${role.n}`] && TEXTS[`role-${role.n}`].meta ? TEXTS[`role-${role.n}`].meta.signe_par : "";
-  children.push(h(`Rôle ${role.n} — ${role.name}`, HeadingLevel.HEADING_1));
-  children.push(p(role.brief, { run: { italics: true, color: "555555" } }));
-  if (signed) children.push(p(`Section signée par : ${signed}`, { run: { italics: true, color: "555555" } }));
-  else if (!FINAL) children.push(placeholder(`[Section signée par : ______ ] — ${role.tabs ? "dans le classeur : " + role.tabs : ""}`));
-  if (text) {
-    children.push(...renderBlocks(text.blocks, { baseLevel: 1 }));
-  } else if (!FINAL) {
-    children.push(h("Réponse (générée depuis le classeur, à réécrire)", HeadingLevel.HEADING_2), p(role.answer));
-    children.push(h("Raisonnement (généré)", HeadingLevel.HEADING_2), ...numbered(role.reasoning, `role${role.n}`));
-    children.push(placeholder(`[À rédiger] 08_Livrables/texte/role-${role.n}.md : 6 à 9 pages, chaque chiffre cité par son jeton [F…] du registre.`));
-  }
-  children.push(h("Chiffres cités", HeadingLevel.HEADING_2));
-  children.push(table(["ID", "Chiffre", "Période", "Valeur", "Source (fichier, page)", "Relu par"],
-    role.figures.map((f) => [f[0], f[1], f[2], f[3], f[4], f[5] || "—"]), [900, 3000, 1000, 1300, 2126, 700], [3]));
-  if (!FINAL) {
-    children.push(h("Ce que nous n'avons pas pu établir", HeadingLevel.HEADING_2), ...bullets(role.open));
-    children.push(h("Questions probables du jury", HeadingLevel.HEADING_2));
-    for (const [q, a] of role.qa) {
-      children.push(runs([{ text: q, bold: true }]));
-      children.push(p(a));
-    }
-  }
-  children.push(pageBreak());
+function signature(key) {
+  const meta = TEXTS[key] && TEXTS[key].meta ? TEXTS[key].meta : {};
+  const signed = (meta.signe_par || "").trim(), read = (meta.relu_par || "").trim();
+  if (!signed) return null;
+  return `Partie rédigée par ${signed}${read ? `, relue par ${read}` : ""}.`;
+}
+// Une entrée du sommaire ou de la table des annexes : le titre, des points de conduite, la page.
+function tocLine(text, page, level) {
+  return new Paragraph({
+    spacing: { after: 0, line: LINE }, alignment: AlignmentType.LEFT,
+    indent: level > 1 ? { left: 567 * (level - 1) } : undefined,
+    tabStops: [{ type: TabStopType.RIGHT, position: TEXT_WIDTH, leader: LeaderType.DOT }],
+    children: [new TextRun({ children: [text, new Tab(), page || ""], ...bodyFont, bold: level === 1 })],
+  });
 }
 
-// ---- la fourchette
-children.push(h("La fourchette de capacité, pour les autres périmètres", HeadingLevel.HEADING_1));
-children.push(p("Le nombre que les groupes « technologies de l'eau », « déchets dangereux » et « bioénergie » doivent respecter, dans ses trois scénarios et sous ses deux plafonds."));
-children.push(table(["Fin 2027", "Défavorable", "Central", "Favorable"], DATA.range_rows, [4226, 1600, 1600, 1600], [1, 2, 3]));
-if (!FINAL) children.push(h("Ce qu'il reste à faire avant la remise", HeadingLevel.HEADING_2), ...bullets(DATA.todo));
-children.push(pageBreak());
+// =================================================================== I. Pages liminaires, sans numéro
+const front = [];
 
-// ---- annexe A : le registre
-children.push(h("Annexe A — Registre des chiffres cités", HeadingLevel.HEADING_1));
-children.push(p(`${DATA.register.length} chiffres, chacun avec le fichier joint, la page, l'URL d'origine et la date de consultation. « Relu par » vide : un seul membre a lu la page.`, { run: smallFont }));
-children.push(table(["ID", "Chiffre", "Valeur", "Période", "Citation", "Rôle", "Relu"],
-  DATA.register.map((r) => [r[0], r[1], r[2], r[3], r[4], r[5], r[6] || "—"]), [600, 2400, 1000, 900, 3326, 400, 400], [2]));
+// ---- page de couverture (§ 5.2) : logo, formation, entreprise, titre, prénoms et NOMS, année, responsable
+const center = (children, spacing) => new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 0, line: LINE, ...spacing }, children });
+if (COVER.logo && fs.existsSync(COVER.logo)) {
+  const type = /\.jpe?g$/i.test(COVER.logo) ? "jpg" : "png";
+  front.push(center([new ImageRun({ type, data: fs.readFileSync(COVER.logo), transformation: { width: 220, height: 80 } })], { before: 0, after: 240 }));
+} else if (!FINAL) {
+  front.push(placeholder("[Logo de l'EDHEC : déposer 08_Livrables/scripts/logo-edhec.png]"));
+}
+front.push(center([new TextRun({ text: COVER.formation || "EDHEC Business School", ...bodyFont })], { after: 0 }));
+front.push(center([new TextRun({ text: `Rapport réalisé pour ${COVER.entreprise || "Veolia Environnement"}`, ...bodyFont })], { after: 1800 }));
+front.push(center([new TextRun({ text: DATA.title, font: FONT, size: 40, bold: true })], { after: 240 }));
+front.push(center([new TextRun({ text: DATA.subtitle, font: FONT, size: 26 })], { after: 1800 }));
+if (COVER.auteurs && COVER.auteurs.length) {
+  for (const name of COVER.auteurs) front.push(center([new TextRun({ text: name, ...bodyFont })]));
+} else if (!FINAL) {
+  front.push(placeholder("[Prénom et NOM de chaque auteur : roles.yaml, clé « auteurs »]"));
+}
+front.push(center([new TextRun({ text: COVER.annee || "Année 2026-2027", ...bodyFont })], { before: 600 }));
+front.push(center([new TextRun({ text: COVER.encadrant ? `Responsable : ${COVER.encadrant}` : "", ...bodyFont })], { before: 240 }));
+if (!COVER.encadrant && !FINAL) front.push(placeholder("[Nom du responsable : roles.yaml, clé « encadrant »]"));
+if (!FINAL) {
+  front.push(center([new TextRun({ text: `Squelette généré le ${DATA.generated} depuis la dataroom du groupe (${DATA.n_figures} chiffres sourcés ; contrôles du classeur : ${DATA.checks}). `
+    + "Les passages surlignés sont à rédiger par l'auteur de la partie ; les notes de bas de page disent quelles lignes du registre n'ont pas été relues.", ...smallFont, color: "555555" })], { before: 600, line: 240 }));
+  front.push(center([new TextRun({ text: "Édition vérifiable, où chaque chiffre ouvre sa page source : ", ...smallFont, color: "555555" }),
+    new ExternalHyperlink({ link: WEB, children: [new TextRun({ text: WEB, ...smallFont, style: "Hyperlink" })] })], { line: 240 }));
+}
+// ---- la page blanche qui suit la couverture (§ 5.3)
+front.push(pageBreak(), blank(), pageBreak());
+// ---- remerciements (§ 5.3) : sobres, écrits par le groupe
+front.push(heading("Remerciements", 1, { toc: false }));
+const thanks = prose("remerciements");
+if (thanks) front.push(...renderBlocks(thanks.blocks));
+else if (!FINAL) front.push(placeholder("[À rédiger] 08_Livrables/texte/remerciements.md : des remerciements sobres, à Veolia et aux personnes qui ont éclairé le travail."));
+
+// =================================================================== II. Le corps, numéroté à partir du sommaire
+const body = [];
+// ---- le sommaire (§ 5.4), page 1 : rempli au second passage, quand le PDF a donné ses pages
+const tocMarker = body.length;
+body.push(heading("Sommaire", 1, { toc: false }));
+// (les entrées sont insérées à la fin, quand tous les titres sont connus)
+
+// ---- introduction (§ 4.3) : rédigée en dernier par le groupe ; situe le cadre, présente la mission, annonce les résultats et le plan
+body.push(heading("Introduction", 1, { newPage: true }));
+const intro = prose("introduction");
+if (intro) body.push(...renderBlocks(intro.blocks));
+else if (!FINAL) {
+  body.push(placeholder("[À rédiger en dernier] 08_Livrables/texte/introduction.md : le cadre (Veolia, GreenUp 2027, le sujet 2), la mission du groupe, les résultats annoncés, le plan. Ci-dessous, la matière générée depuis le classeur, à réécrire :"));
+  body.push(p(DATA.thread), blank());
+  body.push(runs([{ text: "Les quatre questions de recherche de Veolia", bold: true }]));
+  body.push(...numbered(DATA.research_questions, "numbers"), blank());
+  body.push(runs([{ text: "Le chantier « capacité » en cinq blocs", bold: true }]));
+  body.push(...numbered(DATA.capacity_blocks, "numbers2"));
+}
+
+// ---- le développement : une partie numérotée par rôle, puis la recommandation (§ 4.2, § 4.4)
+let part = 0;
+for (const role of DATA.roles) {
+  part += 1;
+  const key = `role-${role.n}`;
+  const text = prose(key);
+  const title = (TEXTS[key] && TEXTS[key].title) || role.name;
+  body.push(heading(`${part}. ${title}`, 1, { role: role.n , newPage: true }));
+  const signed = signature(key);
+  if (signed) body.push(p(signed, { run: { italics: true } }), blank());
+  else if (!FINAL) body.push(placeholder(`[Partie rédigée par : ______ — frontmatter signe_par / relu_par de texte/${key}.md] ${role.tabs ? "Dans le classeur : " + role.tabs : ""}`));
+  if (!FINAL) body.push(p(role.brief, { run: { italics: true, color: "555555" } }), blank());
+  if (text) {
+    body.push(...renderBlocks(text.blocks, { part }));
+  } else if (!FINAL) {
+    body.push(placeholder(`[À rédiger] 08_Livrables/texte/${key}.md : 6 à 9 pages, chaque chiffre cité par son jeton [F…] du registre ; des titres habillés (ce que la partie démontre), jamais « analyse » ou « résultats ».`));
+    body.push(runs([{ text: "Réponse générée depuis le classeur, à réécrire", bold: true }]), p(role.answer), blank());
+    body.push(runs([{ text: "Raisonnement généré", bold: true }]), ...numbered(role.reasoning, `role${role.n}`), blank());
+  }
+  if (!FINAL) {
+    body.push(runs([{ text: "Chiffres du registre pour cette partie", bold: true }]));
+    body.push(table(["ID", "Chiffre", "Période", "Valeur", "Source (fichier, page)", "Relu par"],
+      role.figures.map((f) => [f[0], f[1], f[2], f[3], f[4], f[5] || "—"]), [900, 3000, 1000, 1300, 2172, 700], [3]));
+    body.push(caption(`Aide à la rédaction, retirée de la version finale : les ${role.figures.length} lignes du registre attribuées au rôle ${role.n}.`));
+    body.push(runs([{ text: "Ce que nous n'avons pas pu établir", bold: true }]), ...bullets(role.open), blank());
+    body.push(runs([{ text: "Questions probables du jury", bold: true }]));
+    for (const [q, a] of role.qa) { body.push(runs([{ text: q, bold: true }])); body.push(p(a)); }
+  }
+}
+// ---- la recommandation, dernière partie du développement
+part += 1;
+const reco = prose("recommandation");
+const recoTitle = (TEXTS.recommandation && TEXTS.recommandation.title) || "Ce que nous recommandons";
+body.push(heading(`${part}. ${recoTitle}`, 1, { newPage: true }));
+const recoSigned = signature("recommandation");
+if (recoSigned) body.push(p(recoSigned, { run: { italics: true } }), blank());
+if (reco) body.push(...renderBlocks(reco.blocks, { part }));
+else if (!FINAL) body.push(placeholder("[À rédiger] 08_Livrables/texte/recommandation.md : ce que nous recommandons, ce que cela coûte et à qui, ce qui nous ferait changer d'avis. Chiffres par jeton."));
+body.push(table(["Indicateur", "Valeur", "Ce qu'il faut en lire"], DATA.tiles.map((t) => [t[0], t[1], t[2]]), [3200, 1600, 4272], [1]));
+body.push(caption(`Tableau ${part}.1 — Les indicateurs de la réponse, calculés dans le classeur du groupe à partir des chiffres du registre (${DATA.n_figures} lignes sourcées).`));
+
+// ---- conclusion (§ 4.5) : les points forts à retenir
+body.push(heading("Conclusion", 1, { newPage: true }));
+const concl = prose("conclusion");
+if (concl) body.push(...renderBlocks(concl.blocks));
+else if (!FINAL) {
+  body.push(placeholder("[À rédiger] 08_Livrables/texte/conclusion.md : les points forts à retenir, la réponse en trois phrases, ce que le groupe retient de la méthode."));
+  body.push(runs([{ text: "Ce qu'il reste à faire avant la remise", bold: true }]), ...bullets(DATA.todo));
+}
+
+// ---- bibliographie raisonnée (§ 4.6, § 5.7.3) : les documents cités, par type de source, puis par auteur
+body.push(heading("Bibliographie", 1, { newPage: true }));
+const biblio = DATA.bibliography || [];
+if (biblio.length) {
+  body.push(p("Les documents cités dans ce rapport, classés par type de source puis par ordre alphabétique d'auteur. Chaque référence donne la date de consultation ; les pages citées figurent dans les notes de bas de page et à l'annexe I."), blank());
+  for (const group of biblio) {
+    body.push(runs([{ text: group.category, bold: true }]));
+    for (const entry of group.entries) {
+      body.push(new Paragraph({ spacing: { after: 0, line: LINE }, alignment: AlignmentType.LEFT, indent: { left: 567, hanging: 567 },
+        children: [new TextRun({ text: entry, ...bodyFont })] }));
+    }
+    body.push(blank());
+  }
+} else if (!FINAL) {
+  body.push(placeholder("La bibliographie se remplit d'elle-même : chaque document dont une ligne du registre est citée par jeton y prend sa place, par type de source puis par auteur."));
+}
+
+// ---- glossaire (§ 4.7) : les termes techniques et sigles, en italique dans le texte, définis ici par ordre alphabétique
+body.push(heading("Glossaire", 1, { newPage: true }));
+if (GLOSSARY.length) {
+  body.push(p("Les termes techniques, expressions étrangères et sigles employés dans le rapport ; ils apparaissent en italique dans le texte."), blank());
+  for (const { term, definition } of GLOSSARY) {
+    body.push(new Paragraph({ spacing: { after: 0, line: LINE }, alignment: AlignmentType.JUSTIFIED, indent: { left: 567, hanging: 567 },
+      children: [new TextRun({ text: term, ...bodyFont, bold: true }), new TextRun({ text: ` : ${definition}`, ...bodyFont })] }));
+  }
+} else if (!FINAL) {
+  body.push(placeholder("Le glossaire se remplit d'elle-même des termes définis dans report.py (GLOSSARY) que le texte emploie."));
+}
+
+// =================================================================== III. Les annexes, paginées à part en chiffres romains (§ 5.8)
+// Chaque annexe est numérotée, titrée, légendée ; le texte doit la commenter (le contrôle le vérifie).
+const annexes = [];
+const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
+let annexNo = 0;
+function annex(title, children, legend) {
+  const label = `Annexe ${ROMAN[annexNo++] || annexNo}`;
+  const text = `${label} — ${title}`;
+  if (annexes.length) annexes.push(pageBreak());
+  annexes.push(heading(text, 1, { annex: true, label }));
+  annexes.push(caption(legend));
+  annexes.push(...children);
+}
+// Les identifiants cités dans la prose, dans l'ordre de lecture : l'annexe I ne reprend qu'eux.
+const citedIds = new Set();
+(function walk(node) {
+  if (Array.isArray(node)) node.forEach(walk);
+  else if (node && typeof node === "object") {
+    if (node.kind === "token" && node.status === "ok") citedIds.add(String(node.id).split("-")[0]);
+    for (const k of ["blocks", "inlines", "items", "rows"]) if (node[k]) walk(node[k]);
+  }
+})(Object.values(TEXTS));
+const citedRows = DATA.register.filter((r) => citedIds.has(String(r[0])));
+annex("Registre des chiffres cités", [
+  ...(citedRows.length
+    ? [table(["ID", "Chiffre", "Valeur", "Période", "Citation", "Rôle", "Relu"],
+        citedRows.map((r) => [r[0], r[1], r[2], r[3], r[4], r[5], r[6] || "—"]), [600, 2200, 1000, 900, 3172, 600, 600], [2])]
+    : [FINAL ? p("Aucun chiffre cité.") : placeholder(`Aucun chiffre encore cité par jeton : l'annexe se remplira des lignes citées parmi les ${DATA.register.length} du registre.`)]),
+], `${citedRows.length} chiffres cités dans le texte, sur ${DATA.register.length} au registre du groupe (00_Admin/registre.csv), chacun avec le fichier joint, la page, l'URL d'origine et la date de consultation. « Relu » vide : un seul membre a lu la page.`);
 if (DATA.cited_deals && DATA.cited_deals.length) {
-  children.push(h("Opérations citées (deals.csv)", HeadingLevel.HEADING_2));
-  children.push(table(["ID", "Opération", "Montant", "Devise", "Source", "Relecture"],
-    DATA.cited_deals.map((d) => [d[0], d[1], d[2], d[3], d[4], d[5]]), [600, 2600, 1000, 700, 3126, 1000], [2]));
+  annex("Opérations citées", [
+    table(["ID", "Opération", "Montant", "Devise", "Source", "Relecture"],
+      DATA.cited_deals.map((d) => [d[0], d[1], d[2], d[3], d[4], d[5]]), [600, 2600, 1000, 700, 3172, 1000], [2]),
+  ], "Les opérations du registre deals.csv citées dans le texte par leur jeton [D…].");
 }
 if (DATA.cited_targets && DATA.cited_targets.length) {
-  children.push(h("Cibles citées (targets.csv)", HeadingLevel.HEADING_2));
-  children.push(table(["ID", "Cible", "Valeur estimée", "Devise", "Source", "Relecture"],
-    DATA.cited_targets.map((t) => [t[0], t[1], t[2], t[3], t[4], t[5]]), [600, 2600, 1000, 700, 3126, 1000], [2]));
+  annex("Cibles citées", [
+    table(["ID", "Cible", "Valeur estimée", "Devise", "Source", "Relecture"],
+      DATA.cited_targets.map((t) => [t[0], t[1], t[2], t[3], t[4], t[5]]), [600, 2600, 1000, 700, 3172, 1000], [2]),
+  ], "Les cibles du registre targets.csv citées dans le texte par leur jeton [T…].");
 }
-children.push(pageBreak());
-
-// ---- annexe B : outils d'IA
-children.push(h("Annexe B — Outils d'intelligence artificielle utilisés", HeadingLevel.HEADING_1));
-// Les phrases de l'annexe IA sont comptées depuis les registres par report.py (annex.ai_tools_facts) :
-// elles disent ce qui s'est passé le jour de la génération. Sans elles (squelette lancé à la main), rien
-// n'est affirmé sur la relecture.
+annex("La fourchette de capacité pour les autres périmètres", [
+  p("Le nombre que les groupes « technologies de l'eau », « déchets dangereux » et « bioénergie » doivent respecter, dans ses trois scénarios et sous ses deux plafonds."), blank(),
+  table(["Fin 2027", "Défavorable", "Central", "Favorable"], DATA.range_rows, [4272, 1600, 1600, 1600], [1, 2, 3]),
+], "Source : classeur du groupe (onglet Fourchette), calculé à partir des chiffres du registre.");
 const AI_FACTS = (DATA.ai_facts && DATA.ai_facts.length) ? DATA.ai_facts.filter((f) => !f.startsWith("[[")) : [
   "Dataroom : un serveur MCP privé au groupe, qui indexe les documents publics versés dans le vault et ne sait que chercher, lire une page et citer (fichier, page, URL, date de consultation). Il ne calcule rien et ne résume rien.",
   "Claude (Anthropic), via Claude Code : a construit le serveur, le registre, les contrôles automatiques, le générateur du classeur Excel et celui de ce rapport.",
   "[Provenance et relecture des lignes du registre : générer le rapport par « dataroom report » pour les compter.]",
 ];
-children.push(...bullets(AI_FACTS));
 const ia = prose("outils-ia");
-if (ia) children.push(...renderBlocks(ia.blocks, { baseLevel: 1 }));
-else if (!FINAL) children.push(placeholder("[À rédiger] 08_Livrables/texte/outils-ia.md : ce que le groupe a décidé sans l'outil, les cas où l'outil a été contredit après lecture, puis un tableau membre / outil / usage / période."));
+annex("Outils d'intelligence artificielle utilisés", [
+  ...bullets(AI_FACTS), blank(),
+  ...(ia ? renderBlocks(ia.blocks) : (!FINAL ? [placeholder("[À rédiger] 08_Livrables/texte/outils-ia.md : ce que le groupe a décidé sans l'outil, les cas où l'outil a été contredit après lecture, puis un tableau membre / outil / usage / période.")] : [])),
+], "Annexe demandée par le cours : les outils, ce qu'ils ont fait, ce que le groupe a vérifié lui-même. Les phrases comptées le sont depuis les registres, le jour de la génération.");
 
-// ---- contrôle des citations (jamais dans la version finale)
+// ---- la table des annexes (§ 5.8), dernière page numérotée du corps
+body.push(heading("Table des annexes", 1, { newPage: true }));
+for (const h of HEADINGS.filter((x) => x.annex)) body.push(tocLine(h.text, ANNEX_PAGES.get(h.text) || "", 1));
+
+// ---- le sommaire, maintenant que tous les titres sont connus : parties et sous-parties, puis les annexes en un mot
+const tocEntries = HEADINGS.filter((h) => h.toc && !h.annex && h.level <= 2).map((h) => tocLine(h.text, TOC_PAGES.get(h.text) || "", h.level));
+const firstAnnex = HEADINGS.find((h) => h.annex);
+if (firstAnnex) tocEntries.push(tocLine("Annexes (paginées à part, en chiffres romains)", ANNEX_PAGES.get(firstAnnex.text) || "", 1));
+body.splice(tocMarker + 1, 0, ...tocEntries);
+
+// =================================================================== IV. Contrôle des citations (jamais dans la version finale)
+const controls = [];
 if (CONTROLS && !FINAL) {
-  children.push(pageBreak(), h("Contrôle des citations (retiré de la version finale)", HeadingLevel.HEADING_1));
+  controls.push(heading("Contrôle des citations et de la méthode (retiré de la version finale)", 1, { toc: false }));
   const files = Object.keys(CONTROLS.words || {});
   if (files.length) {
     const [lo, hi] = CONTROLS.pages_per_role || [6, 9];
-    children.push(table(["Section", "Pages (PDF)", "Mots", "Cible", "À rédiger"],
+    controls.push(table(["Fichier", "Pages (PDF)", "Mots", "Caractères", "Cible pages", "À rédiger"],
       files.map((f) => [f, CONTROLS.pages && CONTROLS.pages[f] != null ? CONTROLS.pages[f] : "—", CONTROLS.words[f],
-        f.startsWith("role-") ? `${lo}-${hi}` : "—", CONTROLS.todos[f] || 0]), [3026, 1500, 1500, 1500, 1500], [1, 2, 4]));
-    if (CONTROLS.pages_total) children.push(p(`Total : ${CONTROLS.pages_total} pages (cible ${(CONTROLS.pages_total_target || [50, 60]).join("-")}).`, { run: smallFont }));
+        CONTROLS.chars && CONTROLS.chars[f] != null ? CONTROLS.chars[f] : "—",
+        f.startsWith("role-") ? `${lo}-${hi}` : "—", CONTROLS.todos[f] || 0]), [2772, 1200, 1100, 1300, 1300, 1400], [1, 2, 3, 5]));
+    const target = (CONTROLS.pages_total_target || [50, 60]).join("-");
+    controls.push(caption(`Total : ${CONTROLS.pages_total || "—"} pages (cible ${target}) ; ${CONTROLS.chars_total || 0} caractères espaces compris dans le corps (la méthode en demande ${(DATA.method && DATA.method.chars_min) || 50000} au minimum).`));
   }
   const list = (title, items, fmt) => {
-    children.push(h(title, HeadingLevel.HEADING_2));
-    children.push(...(items.length ? bullets(items.map(fmt)) : [p("aucun", { run: { italics: true } })]));
+    controls.push(runs([{ text: title, bold: true }]));
+    controls.push(...(items.length ? bullets(items.map(fmt)) : [p("aucun", { run: { italics: true } })]), blank());
   };
+  list(`Ce que la méthode du rapport ferait souligner (${(CONTROLS.warnings || []).length})`, CONTROLS.warnings || [], (x) => x);
   list(`Jetons inconnus (${CONTROLS.unknown.length})`, CONTROLS.unknown, (x) => `${x[0]} : [${x[1]}] ne correspond à aucune ligne des registres`);
   list(`Lignes citées que personne n'a relues (${CONTROLS.unread.length})`, CONTROLS.unread, (x) => `${x[0]} : ${x[1]} — ${x[2]}`);
   list(`Lignes citées contestées (${CONTROLS.disputed.length})`, CONTROLS.disputed, (x) => `${x[0]} : ${x[1]} — ${x[2]}`);
   list("Fichiers absents ou vides", [...(CONTROLS.missing || []), ...(CONTROLS.empty || [])], (x) => x);
+  list("Pages liminaires à écrire", [...(CONTROLS.cover_missing || []).map((x) => `couverture : ${x}`), ...(CONTROLS.front_missing || [])], (x) => x);
   const uncited = Object.entries(CONTROLS.uncited || {});
   list("Chiffres du registre jamais cités par leur rôle", uncited, ([role, ids]) => `rôle ${role} : ${ids.length}${ids.length ? " — " + ids.slice(0, 20).join(", ") + (ids.length > 20 ? " …" : "") : ""}`);
 }
 
+// =================================================================== le document
+const pageProps = (pageNumbers) => ({ page: { size: { width: PAGE_W, height: PAGE_H }, margin: { top: MARGIN, right: MARGIN, bottom: MARGIN, left: MARGIN }, ...(pageNumbers ? { pageNumbers } : {}) } });
+const numberFooter = () => new Footer({ children: [new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 0 },
+  children: [new TextRun({ children: [PageNumber.CURRENT], ...smallFont })] })] });
+const textFooter = (text) => new Footer({ children: [new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 0 },
+  children: [new TextRun({ text, ...smallFont, color: "777777" })] })] });
+const headingStyle = (id, name, level) => ({
+  id, name, basedOn: "Normal", next: "Normal", quickFormat: true,
+  run: { font: FONT, size: BODY, bold: true, color: "000000", italics: false },
+  paragraph: { spacing: { before: RETURN, after: RETURN, line: LINE }, outlineLevel: level, keepNext: true },
+});
+
+const sections = [
+  { properties: pageProps(null), footers: { default: textFooter("") }, children: front },
+  { properties: pageProps({ start: 1, formatType: NumberFormat.DECIMAL }), footers: { default: numberFooter() }, children: body },
+  { properties: pageProps({ start: 1, formatType: NumberFormat.UPPER_ROMAN }), footers: { default: numberFooter() }, children: annexes },
+];
+if (controls.length) sections.push({ properties: pageProps(null), footers: { default: textFooter("Contrôle — hors version finale") }, children: controls });
+
 const doc = new Document({
   creator: "Groupe sujet 2",
   title: DATA.title,
-  styles: { default: { document: { run: bodyFont } } },
+  styles: {
+    default: { document: { run: bodyFont, paragraph: { spacing: { line: LINE, after: 0 }, alignment: AlignmentType.JUSTIFIED } } },
+    paragraphStyles: [
+      headingStyle("Heading1", "Heading 1", 0),
+      headingStyle("Heading2", "Heading 2", 1),
+      headingStyle("Heading3", "Heading 3", 2),
+      { id: "FootnoteText", name: "Footnote Text", basedOn: "Normal", run: { font: FONT, size: SMALL }, paragraph: { spacing: { line: 240, after: 0 }, alignment: AlignmentType.LEFT } },
+    ],
+  },
+  footnotes,
   numbering: {
     config: [
-      { reference: "bullets", levels: [{ level: 0, format: LevelFormat.BULLET, text: "•", alignment: AlignmentType.LEFT,
-        style: { paragraph: { indent: { left: 540, hanging: 270 } } } }] },
+      { reference: "bullets", levels: [{ level: 0, format: LevelFormat.BULLET, text: "–", alignment: AlignmentType.LEFT,
+        style: { paragraph: { indent: { left: 567, hanging: 283 } } } }] },
       ...[...numberingRefs].map((ref) => ({
         reference: ref, levels: [{ level: 0, format: LevelFormat.DECIMAL, text: "%1.", alignment: AlignmentType.LEFT,
-          style: { paragraph: { indent: { left: 540, hanging: 360 } } } }],
+          style: { paragraph: { indent: { left: 567, hanging: 360 } } } }],
       })),
     ],
   },
-  sections: [{
-    properties: { page: { margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 } } },
-    footers: { default: new Footer({ children: [new Paragraph({ alignment: AlignmentType.CENTER,
-      children: [new TextRun({ children: ["Page ", PageNumber.CURRENT], ...smallFont, color: "777777" })] })] }) },
-    children,
-  }],
+  sections,
 });
 
 Packer.toBuffer(doc).then((buf) => {
   fs.writeFileSync(OUT, buf);
-  console.log("écrit", OUT, Math.round(buf.length / 1024), "Ko" + (FINAL ? " (version finale)" : ""));
+  fs.writeFileSync(HEADINGS_OUT, JSON.stringify(HEADINGS.map(({ text, level, annex, label, role }) => ({ text, level, annex, label, role })), null, 1));
+  console.log("écrit", OUT, Math.round(buf.length / 1024), "Ko", `(${HEADINGS.length} titres, ${footnoteId} notes)` + (FINAL ? " (version finale)" : ""));
 });
