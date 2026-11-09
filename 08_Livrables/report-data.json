@@ -1,7 +1,7 @@
 {
  "generated": "2026-11-09",
  "checks": "OK",
- "n_figures": 852,
+ "n_figures": 855,
  "title": "GreenUp 2027 : combien Veolia peut-elle encore acheter sans dépasser ses engagements de levier ?",
  "subtitle": "Capstone Innovations in Finance — sujet 2, périmètre « capacité financière »",
  "thread": "Veolia annonce des enveloppes nettes. Clean Earth en est sorti ; le programme de cessions de plus de 2 Md€ d'ici mi-2028 l'y ramène. Si ce programme est encaissé à temps, il reste fin 2027 environ 0,2 Md€ de marge sous 3x, soit une acquisition d'environ 0,2 Md€ au multiple de Clean Earth. Cette marge dépend d'abord du calendrier des cessions, de la croissance organique de 2027 et des tuck-ins. Elle disparaît si tout tourne mal en même temps, ou si l'on compte la moitié des hybrides en dette. Le seuil des agences (FFO / dette ajustée ≥ 18 % chez S&P) est la contrainte de 2026 : 18,5 % dans le scénario central, dans l'attente de Moody's ; fin 2027 il laisse 2,9 Md€ et c'est le 3x qui mord. Le booster déchets dangereux tient son objectif de volume révisé, pas l'initial, et sa croissance est surtout achetée. Le passif environnemental de Clean Earth n'est pas encore visible dans les comptes.",
@@ -2440,7 +2440,7 @@
   }
  ],
  "todo": [
-  "Relire en croisé les 852 chiffres du registre (0 relus) et les 61 opérations (0 relues).",
+  "Relire en croisé les 855 chiffres du registre (0 relus) et les 61 opérations (0 relues).",
   "Lire les 10-K 2025 d'Enviri et de Clean Harbors, désormais dans la dataroom, et en tirer les chiffres des rôles 4 et 5 (passifs environnementaux de Clean Earth, marges et levier de Clean Harbors). Reste à verser : le 10-Q du T1 2026 d'Enviri et le communiqué de vente du 20 novembre 2025.",
   "Avant le 7 octobre : montrer la dataroom comme « sources chargées et lues », et noter dans gaps.md ce qui manque encore.",
   "Rédiger la page d'annexe sur les outils d'IA : dataroom MCP (recherche, registre, contrôles), Claude pour construire le classeur et ces dossiers, LibreOffice pour le recalcul. Aucun chiffre produit par le modèle de langage.",
@@ -10114,6 +10114,33 @@
    "2027",
    "ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf, p. 4, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/04/RatingsDirect_TearSheet_VeoliaEnvironnementS.A._3552186_Apr-27-2026.pdf (consulté le 2026-10-02)",
    "2",
+   ""
+  ],
+  [
+   "F853",
+   "Enviri : marge d'EBITDA ajusté du segment Clean Earth",
+   "16.1 %",
+   "T1 2025",
+   "enviri-q1-2026-results.html, p. 1, https://www.enviri.com/enviri-corporation-reports-first-quarter-2026-results/ (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F854",
+   "Enviri : marge d'EBITDA ajusté du segment Clean Earth",
+   "14.6 %",
+   "T1 2026",
+   "enviri-q1-2026-results.html, p. 1, https://www.enviri.com/enviri-corporation-reports-first-quarter-2026-results/ (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F855",
+   "Enviri : EBITDA ajusté du segment Clean Earth",
+   "38 M USD",
+   "T1 2025",
+   "enviri-q1-2026-results.html, p. 1, https://www.enviri.com/enviri-corporation-reports-first-quarter-2026-results/ (consulté le 2026-10-10)",
+   "6",
    ""
   ]
  ]

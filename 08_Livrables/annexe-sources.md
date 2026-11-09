@@ -1,6 +1,6 @@
 # Annexe — sources et chiffres cités
 
-Généré le 2026-11-09 depuis la dataroom : 852 chiffres (0 relus par un tiers), 61 opérations (0 relues), 359 documents citables.
+Généré le 2026-11-09 depuis la dataroom : 855 chiffres (0 relus par un tiers), 61 opérations (0 relues), 359 documents citables.
 Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date de consultation. « non relu » signifie qu'un seul membre a lu la page.
 
 ## 1. Chiffres, par rôle
@@ -768,7 +768,7 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F821 | Goodwill (groupe) : part du dollar américain dans l'effet de change | 171 M EUR | S1 2026 | veolia_finance_amendment_urd_2025.pdf, p. 53, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_Amendment_URD_2025.pdf (consulté le 2026-09-22) | non relu |
 | F823 | Goodwill (groupe) : effet de change total sur le semestre | 256 M EUR | S1 2026 | veolia_finance_amendment_urd_2025.pdf, p. 53, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_Amendment_URD_2025.pdf (consulté le 2026-09-22) | non relu |
 
-### Rôle 6 — Cibles, puis synthèse (114 chiffres, 0 relus)
+### Rôle 6 — Cibles, puis synthèse (117 chiffres, 0 relus)
 
 | ID | Chiffre | Valeur | Période | Citation | Relecture |
 |---|---|---|---|---|---|
@@ -886,6 +886,9 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F812 | Enviri : EBITDA ajusté du segment Clean Earth | 33 M USD | T1 2026 | enviri-q1-2026-results.html, https://www.enviri.com/enviri-corporation-reports-first-quarter-2026-results/ (consulté le 2026-10-10) | non relu |
 | F816 | Enviri : résultat opérationnel du segment Clean Earth | 16 M USD | T1 2026 | enviri-q1-2026-results.html, https://www.enviri.com/enviri-corporation-reports-first-quarter-2026-results/ (consulté le 2026-10-10) | non relu |
 | F822 | Onterris (ex-Montrose Environmental Group) : EBITDA ajusté consolidé | 116.2 M USD | FY2025 | montrose-8k-fy2025-results.pdf, p. 4, https://ir.onterris.com/sec-filings/all-sec-filings/content/0001193125-26-071772/0001193125-26-071772.pdf (consulté le 2026-10-10) | non relu |
+| F853 | Enviri : marge d'EBITDA ajusté du segment Clean Earth | 16.1 % | T1 2025 | enviri-q1-2026-results.html, https://www.enviri.com/enviri-corporation-reports-first-quarter-2026-results/ (consulté le 2026-10-10) | non relu |
+| F854 | Enviri : marge d'EBITDA ajusté du segment Clean Earth | 14.6 % | T1 2026 | enviri-q1-2026-results.html, https://www.enviri.com/enviri-corporation-reports-first-quarter-2026-results/ (consulté le 2026-10-10) | non relu |
+| F855 | Enviri : EBITDA ajusté du segment Clean Earth | 38 M USD | T1 2025 | enviri-q1-2026-results.html, https://www.enviri.com/enviri-corporation-reports-first-quarter-2026-results/ (consulté le 2026-10-10) | non relu |
 
 ## 2. Opérations (registre des deals)
 
@@ -1320,7 +1323,7 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 ## 4. Outils d'intelligence artificielle utilisés
 
 - Dataroom : un serveur MCP (Model Context Protocol) privé au groupe, qui indexe les documents publics versés dans le vault et ne sait que chercher, lire une page et citer (fichier, page, URL, date de consultation). Il ne calcule rien ; il garde pour chaque ligne du registre qui l'a saisie et qui l'a relue. Les résumés de pages que l'API Claude a écrits pour la recherche sont signalés comme tels dans chaque résultat et ne sont jamais cités.
-- Le registre compte 852 chiffres et 61 opérations. 813 lignes y ont été saisies par Claude (Anthropic) à travers le compte partagé du serveur, en recopiant le nombre imprimé sur une page indexée dont le fichier et le numéro sont cités ; 100 lignes par l'API Claude (lecture de chaque page du vault, sous l'identité claude-api, avec un contrôle automatique que le nombre et sa citation sont sur la page) ; 0 ligne par les membres du groupe avec leur compte personnel. 0 ligne sur 913 ont été relues sur la page citée par un membre autre que leur auteur ; 913 ne l'ont pas encore été. Le rapport signale d'un « † » chaque chiffre cité qui n'a pas de second lecteur.
+- Le registre compte 855 chiffres et 61 opérations. 816 lignes y ont été saisies par Claude (Anthropic) à travers le compte partagé du serveur, en recopiant le nombre imprimé sur une page indexée dont le fichier et le numéro sont cités ; 100 lignes par l'API Claude (lecture de chaque page du vault, sous l'identité claude-api, avec un contrôle automatique que le nombre et sa citation sont sur la page) ; 0 ligne par les membres du groupe avec leur compte personnel. 0 ligne sur 916 ont été relues sur la page citée par un membre autre que leur auteur ; 916 ne l'ont pas encore été. Le rapport signale d'un « † » chaque chiffre cité qui n'a pas de second lecteur.
 - Claude, via Claude Code, a aussi construit le serveur, les contrôles automatiques (`audit_dataroom`), le générateur du classeur Excel (`build_model.py`), celui des dossiers et celui de ce rapport. Le classeur ne contient que des formules ; ses entrées sont les lignes du registre.
 - LibreOffice (recalcul sans interface) : recalcule le classeur après chaque génération et signale toute erreur de formule ; aucune valeur calculée n'est saisie à la main.
 - Règle tenue : aucun nombre n'a été inventé. Chaque nombre du registre est recopié d'une page publique citée ; chaque nombre du classeur est une formule sur ces lignes, et le texte du rapport les cite par renvoi, avec leur source en note. Les quelques calculs écrits dans le texte, une différence ou un ratio, citent chacun leurs termes dans la même phrase ; Claude les a écrits en rédigeant la première version, et un second passage de Claude, chargé de contredire, les a tous refaits.
