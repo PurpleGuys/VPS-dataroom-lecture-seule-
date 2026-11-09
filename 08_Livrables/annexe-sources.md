@@ -1,11 +1,11 @@
 # Annexe — sources et chiffres cités
 
-Généré le 2026-11-09 depuis la dataroom : 756 chiffres (0 relus par un tiers), 61 opérations (0 relues), 359 documents citables.
+Généré le 2026-11-09 depuis la dataroom : 789 chiffres (0 relus par un tiers), 61 opérations (0 relues), 359 documents citables.
 Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date de consultation. « non relu » signifie qu'un seul membre a lu la page.
 
 ## 1. Chiffres, par rôle
 
-### Rôle 1 — Périmètre et sources (24 chiffres, 0 relus)
+### Rôle 1 — Périmètre et sources (29 chiffres, 0 relus)
 
 | ID | Chiffre | Valeur | Période | Citation | Relecture |
 |---|---|---|---|---|---|
@@ -33,8 +33,13 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F685 | Remondis/DSD : parts de marché cumulées dans le calcin de verre, bas de fourchette | 40 % | annonce 07/2019 | 11_07_2019_remondis_dsd-bundeskartellamt-prohibits-remondis-dsd-merger-11-july-2019.html, https://www.bundeskartellamt.de/SharedDocs/Meldung/EN/Pressemitteilungen/2019/11_07_2019_Remondis_DSD.html (consulté le 2026-10-10) | non relu |
 | F745 | GreenUp : croissance, montant net par an (investissements organiques, priorité aux boosters, plus acquisitions petites et moyennes, moins cessions) | 1 Md EUR / an | 2024-2027 | finance_2024_full_year_results_presentation.pdf, p. 34, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/02/Finance_2024_full_year_results_presentation.pdf (consulté le 2026-09-22) | non relu |
 | F750 | Chiffre d'affaires (groupe) | 33,310 M EUR | 9M 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 14, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F782 | Rotation d'actifs GreenUp : acquisitions de l'année | 0.6 Md EUR | 2024 | finance_veolia_9m_2026_key_figures_presentation.pdf, p. 14, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06) | non relu |
+| F783 | Rotation d'actifs GreenUp : acquisitions de l'année | 2.4 Md EUR | 2025 | finance_veolia_9m_2026_key_figures_presentation.pdf, p. 14, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06) | non relu |
+| F784 | Rotation d'actifs GreenUp : acquisitions de l'année | 3.0 Md EUR | 9M 2026 | finance_veolia_9m_2026_key_figures_presentation.pdf, p. 14, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06) | non relu |
+| F785 | Rotation d'actifs GreenUp : cessions de l'année | 1.0 Md EUR | 2024 | finance_veolia_9m_2026_key_figures_presentation.pdf, p. 14, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06) | non relu |
+| F786 | Rotation d'actifs GreenUp : cessions de l'année | 0.1 Md EUR | 2025 | finance_veolia_9m_2026_key_figures_presentation.pdf, p. 14, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06) | non relu |
 
-### Rôle 2 — La contrainte (269 chiffres, 0 relus)
+### Rôle 2 — La contrainte (281 chiffres, 0 relus)
 
 | ID | Chiffre | Valeur | Période | Citation | Relecture |
 |---|---|---|---|---|---|
@@ -307,8 +312,20 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F732 | Pont de dette 9M 2026 : remboursement de dette hybride (titres super-subordonnés, 12/09/2026) | -500 M EUR | 9M 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 19, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
 | F740 | Endettement financier net (groupe) | 19,925 M EUR | 30/09/2025 | rapport-de-gestion-va-t3_2025_0.pdf, p. 5, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/11/Rapport%20de%20gestion%20VA-T3_2025_0.pdf (consulté le 2026-09-22) | non relu |
 | F741 | Ratio de levier publié | 3.0 x | 30/09/2025 | rapport-de-gestion-va-t3_2025_0.pdf, p. 5, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/11/Rapport%20de%20gestion%20VA-T3_2025_0.pdf (consulté le 2026-09-22) | non relu |
+| F764 | Pont de dette 9M 2026 : intérêts payés (IFRIC 12 et IFRS 16 compris) | 707 M EUR | 9M 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 19, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F767 | Trésorerie (groupe) | 9,104 M EUR | 30/09/2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 7, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F768 | Liquidité nette (groupe), après dettes courantes | 4,087 M EUR | 30/09/2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 7, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F769 | Notation Standard & Poor's (court terme / long terme), confirmée, perspective stable | A-2/BBB  | 27/04/2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 7, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F770 | Notation Moody's (court terme / long terme), confirmée, perspective stable | P-2/Baa1  | 04/05/2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 7, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F773 | Remboursement d'un emprunt obligataire senior arrivé à échéance | 750 M EUR | 09/06/2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 7, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F774 | Remboursement obligataire senior de novembre 2026 | 650 M EUR | 11/2026 | finance_veolia_9m_2026_key_figures_presentation.pdf, p. 33, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06) | non relu |
+| F775 | Part de la dette financière nette à taux fixe | 78 % | 30/09/2026 | finance_veolia_9m_2026_key_figures_presentation.pdf, p. 33, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06) | non relu |
+| F776 | Taux de financement du groupe (coût de la dette) | 3.82 % | 30/09/2026 | finance_veolia_9m_2026_key_figures_presentation.pdf, p. 26, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06) | non relu |
+| F777 | Émission obligataire de janvier 2026 (2,5 Md€, trois tranches) : coupon moyen | 3.583 % | 01/2026 | finance_veolia_9m_2026_key_figures_presentation.pdf, p. 33, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06) | non relu |
+| F778 | Émission obligataire d'avril 2026 (1 Md€, deux tranches) : coupon moyen | 3.906 % | 04/2026 | finance_veolia_9m_2026_key_figures_presentation.pdf, p. 33, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06) | non relu |
+| F779 | Émission obligataire d'août 2026 (1,15 Md€, deux tranches) : coupon moyen | 3.856 % | 08/2026 | finance_veolia_9m_2026_key_figures_presentation.pdf, p. 33, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06) | non relu |
 
-### Rôle 3 — Capacité et sensibilité (144 chiffres, 0 relus)
+### Rôle 3 — Capacité et sensibilité (153 chiffres, 0 relus)
 
 | ID | Chiffre | Valeur | Période | Citation | Relecture |
 |---|---|---|---|---|---|
@@ -456,8 +473,17 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F738 | Cessions réalisées sur neuf mois (rotation d'actifs GreenUp) | 0.2 Md EUR | 9M 2026 | finance_veolia_9m_2026_key_figures_presentation.pdf, p. 14, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06) | non relu |
 | F739 | Cession de 20 % de Rookery South Limited (mise en équivalence) : prix en euros | 101 M EUR | 25/09/2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 7, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
 | F756 | Pont d'EBITDA 9M 2026 : croissance et performance (prix, productivité, efficacité, volumes, synergies) | +303 M EUR | 9M 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 16, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F757 | Pont d'EBITDA 9M 2026 : prix de l'énergie et des recyclats | -74 M EUR | 9M 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 16, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F758 | Synergies Water Technologies comprises dans l'EBITDA | 30 M EUR | 9M 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 16, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F759 | Gains d'efficacité opérationnelle bruts, neuf mois | 294 M EUR | 9M 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 5, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F760 | Variation du BFR opérationnel | -1,488 M EUR | 9M 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 19, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F761 | Variation du BFR opérationnel | -1,272 M EUR | 9M 2025 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 19, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F763 | Investissements industriels nets (nouveaux actifs financiers opérationnels compris) | -2,578 M EUR | 9M 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 19, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F765 | Pont de dette 9M 2026 : impôts payés | 525 M EUR | 9M 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 19, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F780 | Water Technologies : synergies cumulées | 50 M EUR | au 30/09/2026 | finance_veolia_9m_2026_key_figures_presentation.pdf, p. 12, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06) | non relu |
+| F781 | Water Technologies : objectif de synergies cumulées fin 2027 | 90 M EUR | fin 2027 | finance_veolia_9m_2026_key_figures_presentation.pdf, p. 12, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06) | non relu |
 
-### Rôle 4 — L'écart et les comparables (145 chiffres, 0 relus)
+### Rôle 4 — L'écart et les comparables (149 chiffres, 0 relus)
 
 | ID | Chiffre | Valeur | Période | Citation | Relecture |
 |---|---|---|---|---|---|
@@ -606,8 +632,12 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F753 | Déchets dangereux Europe : croissance à périmètre et change constants, troisième trimestre seul | 6.2 % | T3 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 13, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
 | F754 | Effet de périmètre sur le chiffre d'affaires du groupe (Clean Earth et Enviropacific) | +383 M EUR | 9M 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 15, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
 | F755 | Effet de périmètre sur l'EBITDA du groupe (Clean Earth et Enviropacific) | +73 M EUR | 9M 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 16, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F762 | Investissements dans les projets de traitement de déchets dangereux (compris dans les investissements industriels nets) | 192 M EUR | 9M 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 19, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F771 | Chiffre d'affaires de Veolia aux États-Unis, pro forma Clean Earth (Water Technologies compris, année 2025) | 6.3 Md USD | pro forma FY2025 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 7, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F787 | Clean Earth : mois consolidés dans les comptes à fin septembre 2026 | 4 mois | 9M 2026 | finance_veolia_9m_2026_key_figures_presentation.pdf, p. 23, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06) | non relu |
+| F788 | Déchets dangereux (métier) : croissance tuck-ins compris, hors Clean Earth, à périmètre et change constants | +6.3 % | 9M 2026 | finance_veolia_9m_2026_key_figures_presentation.pdf, p. 21, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06) | non relu |
 
-### Rôle 5 — Le coût ESG (66 chiffres, 0 relus)
+### Rôle 5 — Le coût ESG (69 chiffres, 0 relus)
 
 | ID | Chiffre | Valeur | Période | Citation | Relecture |
 |---|---|---|---|---|---|
@@ -677,6 +707,9 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F587 | Impact 2023 : plastiques transformés réalisés | 465 kt | FY2023 | finance_annual_results_2023_presentation.pdf, p. 35, https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/02/Finance_Annual_results_2023_presentation.pdf (consulté le 2026-09-22) | non relu |
 | F588 | Impact 2023 : part de femmes nommées parmi les 500 cadres dirigeants, visée | 50 % | 2020-2023 | finance_annual_results_2023_presentation.pdf, p. 36, https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/02/Finance_Annual_results_2023_presentation.pdf (consulté le 2026-09-22) | non relu |
 | F589 | Impact 2023 : part de femmes nommées parmi les 500 cadres dirigeants, réalisée | 30.7 % | 2020-2023 | finance_annual_results_2023_presentation.pdf, p. 36, https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/02/Finance_Annual_results_2023_presentation.pdf (consulté le 2026-09-22) | non relu |
+| F766 | Clean Earth : dette IFRS 16 reprise (comprise dans l'effet sur l'endettement) | 226 M EUR | 01/06/2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 5, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F772 | Ambition de chiffre d'affaires dans le traitement des PFAS et des micropolluants | 1 Md EUR | 2030 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 7, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F789 | PPA Suez : amortissement des actifs réévalués, exclu de l'EBIT courant | 120 M EUR | 9M 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
 
 ### Rôle 6 — Cibles, puis synthèse (108 chiffres, 0 relus)
 
@@ -1224,7 +1257,7 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 ## 4. Outils d'intelligence artificielle utilisés
 
 - Dataroom : un serveur MCP (Model Context Protocol) privé au groupe, qui indexe les documents publics versés dans le vault et ne sait que chercher, lire une page et citer (fichier, page, URL, date de consultation). Il ne calcule rien ; il garde pour chaque ligne du registre qui l'a saisie et qui l'a relue. Les résumés de pages que l'API Claude a écrits pour la recherche sont signalés comme tels dans chaque résultat et ne sont jamais cités.
-- Le registre compte 756 chiffres et 61 opérations. 717 lignes y ont été saisies par Claude (Anthropic) à travers le compte partagé du serveur, en recopiant le nombre imprimé sur une page indexée dont le fichier et le numéro sont cités ; 100 lignes par l'API Claude (lecture de chaque page du vault, sous l'identité claude-api, avec un contrôle automatique que le nombre et sa citation sont sur la page) ; 0 ligne par les membres du groupe avec leur compte personnel. 0 ligne sur 817 ont été relues sur la page citée par un membre autre que leur auteur ; 817 ne l'ont pas encore été. Le rapport signale d'un « † » chaque chiffre cité qui n'a pas de second lecteur.
+- Le registre compte 789 chiffres et 61 opérations. 750 lignes y ont été saisies par Claude (Anthropic) à travers le compte partagé du serveur, en recopiant le nombre imprimé sur une page indexée dont le fichier et le numéro sont cités ; 100 lignes par l'API Claude (lecture de chaque page du vault, sous l'identité claude-api, avec un contrôle automatique que le nombre et sa citation sont sur la page) ; 0 ligne par les membres du groupe avec leur compte personnel. 0 ligne sur 850 ont été relues sur la page citée par un membre autre que leur auteur ; 850 ne l'ont pas encore été. Le rapport signale d'un « † » chaque chiffre cité qui n'a pas de second lecteur.
 - Claude, via Claude Code, a aussi construit le serveur, les contrôles automatiques (`audit_dataroom`), le générateur du classeur Excel (`build_model.py`), celui des dossiers et celui de ce rapport. Le classeur ne contient que des formules ; ses entrées sont les lignes du registre.
 - LibreOffice (recalcul sans interface) : recalcule le classeur après chaque génération et signale toute erreur de formule ; aucune valeur calculée n'est saisie à la main.
 - Règle tenue : aucun nombre n'a été inventé ni calculé par un modèle de langage. Chaque nombre du registre est recopié d'une page publique citée ; chaque nombre du classeur est une formule sur ces lignes.
