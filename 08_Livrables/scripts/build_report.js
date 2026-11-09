@@ -167,7 +167,8 @@ function evenWidths(n) {
 }
 
 // ---- la prose du groupe : runs et blocs
-// Un jeton résolu s'imprime « valeur unité » suivi d'un appel de note ; la note donne l'identifiant
+// Un jeton résolu s'imprime « valeur unité » en notation française (25 423 M€, 5,1 %), suivi d'un appel de note.
+// [M:…] est un résultat du classeur du groupe : sa note dit quel onglet et quelle version. Pour les autres, la note donne l'identifiant
 // du registre, la source (fichier, page, URL, date de consultation) et dit si la ligne a été relue.
 // Un jeton inconnu reste visible, en rouge sur jaune. Les termes du glossaire passent en italique.
 function inlineRuns(inlines, base = bodyFont, opts = {}) {
@@ -182,7 +183,7 @@ function inlineRuns(inlines, base = bodyFont, opts = {}) {
     else if (r.kind === "token") {
       if (r.status !== "ok") out.push(new TextRun({ text: `[${r.id} ?]`, ...fmt, bold: true, color: "C00000", highlight: "yellow" }));
       else {
-        out.push(new TextRun({ text: `${r.value}${r.unit ? " " + r.unit : ""}`, ...fmt }));
+        out.push(new TextRun({ text: r.display || `${r.value}${r.unit ? " " + r.unit : ""}`, ...fmt }));
         out.push(footnote(NOTES[r.id] || `${r.id} — ${r.cite || r.file || "source au registre"}${r.checked ? "" : " ; ligne non relue par un second lecteur"}.`));
       }
     }
@@ -190,7 +191,7 @@ function inlineRuns(inlines, base = bodyFont, opts = {}) {
   return out;
 }
 function plain(inlines) {
-  return (inlines || []).map((r) => (r.kind === "token" ? (r.status === "ok" ? `${r.value}${r.unit ? " " + r.unit : ""}` : `[${r.id} ?]`) : r.text)).join("").trim();
+  return (inlines || []).map((r) => (r.kind === "token" ? (r.status === "ok" ? (r.display || `${r.value}${r.unit ? " " + r.unit : ""}`) : `[${r.id} ?]`) : r.text)).join("").trim();
 }
 // Les blocs d'un fichier texte. `part` numérote les sous-parties (1.1, 1.1.1) ; sans lui (introduction,
 // conclusion, remerciements) les sous-titres restent sans numéro, comme la méthode le permet.
