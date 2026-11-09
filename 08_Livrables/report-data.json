@@ -1,7 +1,7 @@
 {
  "generated": "2026-11-09",
  "checks": "OK",
- "n_figures": 745,
+ "n_figures": 756,
  "title": "GreenUp 2027 : combien Veolia peut-elle encore acheter sans dépasser ses engagements de levier ?",
  "subtitle": "Capstone Innovations in Finance — sujet 2, périmètre « capacité financière »",
  "thread": "Veolia annonce des enveloppes nettes. Clean Earth en est sorti ; le programme de cessions de plus de 2 Md€ d'ici mi-2028 l'y ramène. Si ce programme est encaissé à temps, il reste fin 2027 environ 0,2 Md€ de marge sous 3x, soit une acquisition d'environ 0,2 Md€ au multiple de Clean Earth. Cette marge dépend d'abord du calendrier des cessions, de la croissance organique de 2027 et des tuck-ins. Elle disparaît si tout tourne mal en même temps, ou si l'on compte la moitié des hybrides en dette. Le seuil des agences (FFO / dette ajustée ≥ 18 % chez S&P) est la contrainte de 2026 : 18,5 % dans le scénario central, dans l'attente de Moody's ; fin 2027 il laisse 2,9 Md€ et c'est le 3x qui mord. Le booster déchets dangereux tient son objectif de volume révisé, pas l'initial, et sa croissance est surtout achetée. Le passif environnemental de Clean Earth n'est pas encore visible dans les comptes.",
@@ -2440,7 +2440,7 @@
   }
  ],
  "todo": [
-  "Relire en croisé les 745 chiffres du registre (0 relus) et les 61 opérations (0 relues).",
+  "Relire en croisé les 756 chiffres du registre (0 relus) et les 61 opérations (0 relues).",
   "Lire les 10-K 2025 d'Enviri et de Clean Harbors, désormais dans la dataroom, et en tirer les chiffres des rôles 4 et 5 (passifs environnementaux de Clean Earth, marges et levier de Clean Harbors). Reste à verser : le 10-Q du T1 2026 d'Enviri et le communiqué de vente du 20 novembre 2025.",
   "Avant le 7 octobre : montrer la dataroom comme « sources chargées et lues », et noter dans gaps.md ce qui manque encore.",
   "Rédiger la page d'annexe sur les outils d'IA : dataroom MCP (recherche, registre, contrôles), Claude pour construire le classeur et ces dossiers, LibreOffice pour le recalcul. Aucun chiffre produit par le modèle de langage.",
@@ -9151,6 +9151,105 @@
    "2024-2027",
    "finance_2024_full_year_results_presentation.pdf, p. 34, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/02/Finance_2024_full_year_results_presentation.pdf (consulté le 2026-09-22)",
    "1",
+   ""
+  ],
+  [
+   "F746",
+   "Déchets dangereux (métier) : chiffre d'affaires",
+   "3,566 M EUR",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 14, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "4",
+   ""
+  ],
+  [
+   "F747",
+   "Déchets dangereux (métier) : chiffre d'affaires",
+   "3,126 M EUR",
+   "9M 2025",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 14, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "4",
+   ""
+  ],
+  [
+   "F748",
+   "Déchets dangereux (métier) : croissance organique du chiffre d'affaires, à périmètre et change constants",
+   "2.6 %",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 14, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "4",
+   ""
+  ],
+  [
+   "F749",
+   "Déchets dangereux (métier) : part du chiffre d'affaires du groupe",
+   "10.7 %",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 14, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "4",
+   ""
+  ],
+  [
+   "F750",
+   "Chiffre d'affaires (groupe)",
+   "33,310 M EUR",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 14, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "1",
+   ""
+  ],
+  [
+   "F751",
+   "Déchets dangereux Europe : chiffre d'affaires",
+   "1,800 M EUR",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 13, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "4",
+   ""
+  ],
+  [
+   "F752",
+   "Déchets dangereux Europe : croissance à périmètre et change constants",
+   "+1.9 %",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 13, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "4",
+   ""
+  ],
+  [
+   "F753",
+   "Déchets dangereux Europe : croissance à périmètre et change constants, troisième trimestre seul",
+   "6.2 %",
+   "T3 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 13, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "4",
+   ""
+  ],
+  [
+   "F754",
+   "Effet de périmètre sur le chiffre d'affaires du groupe (Clean Earth et Enviropacific)",
+   "+383 M EUR",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 15, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "4",
+   ""
+  ],
+  [
+   "F755",
+   "Effet de périmètre sur l'EBITDA du groupe (Clean Earth et Enviropacific)",
+   "+73 M EUR",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 16, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "4",
+   ""
+  ],
+  [
+   "F756",
+   "Pont d'EBITDA 9M 2026 : croissance et performance (prix, productivité, efficacité, volumes, synergies)",
+   "+303 M EUR",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 16, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "3",
    ""
   ]
  ]

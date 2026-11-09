@@ -1,11 +1,11 @@
 # Annexe — sources et chiffres cités
 
-Généré le 2026-11-09 depuis la dataroom : 745 chiffres (0 relus par un tiers), 61 opérations (0 relues), 359 documents citables.
+Généré le 2026-11-09 depuis la dataroom : 756 chiffres (0 relus par un tiers), 61 opérations (0 relues), 359 documents citables.
 Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date de consultation. « non relu » signifie qu'un seul membre a lu la page.
 
 ## 1. Chiffres, par rôle
 
-### Rôle 1 — Périmètre et sources (23 chiffres, 0 relus)
+### Rôle 1 — Périmètre et sources (24 chiffres, 0 relus)
 
 | ID | Chiffre | Valeur | Période | Citation | Relecture |
 |---|---|---|---|---|---|
@@ -32,6 +32,7 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F672 | Remondis/DSD : parts de marché cumulées dans le calcin de verre, haut de fourchette | 60 % | annonce 07/2019 | 11_07_2019_remondis_dsd-bundeskartellamt-prohibits-remondis-dsd-merger-11-july-2019.html, https://www.bundeskartellamt.de/SharedDocs/Meldung/EN/Pressemitteilungen/2019/11_07_2019_Remondis_DSD.html (consulté le 2026-10-10) | non relu |
 | F685 | Remondis/DSD : parts de marché cumulées dans le calcin de verre, bas de fourchette | 40 % | annonce 07/2019 | 11_07_2019_remondis_dsd-bundeskartellamt-prohibits-remondis-dsd-merger-11-july-2019.html, https://www.bundeskartellamt.de/SharedDocs/Meldung/EN/Pressemitteilungen/2019/11_07_2019_Remondis_DSD.html (consulté le 2026-10-10) | non relu |
 | F745 | GreenUp : croissance, montant net par an (investissements organiques, priorité aux boosters, plus acquisitions petites et moyennes, moins cessions) | 1 Md EUR / an | 2024-2027 | finance_2024_full_year_results_presentation.pdf, p. 34, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/02/Finance_2024_full_year_results_presentation.pdf (consulté le 2026-09-22) | non relu |
+| F750 | Chiffre d'affaires (groupe) | 33,310 M EUR | 9M 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 14, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
 
 ### Rôle 2 — La contrainte (269 chiffres, 0 relus)
 
@@ -307,7 +308,7 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F740 | Endettement financier net (groupe) | 19,925 M EUR | 30/09/2025 | rapport-de-gestion-va-t3_2025_0.pdf, p. 5, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/11/Rapport%20de%20gestion%20VA-T3_2025_0.pdf (consulté le 2026-09-22) | non relu |
 | F741 | Ratio de levier publié | 3.0 x | 30/09/2025 | rapport-de-gestion-va-t3_2025_0.pdf, p. 5, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/11/Rapport%20de%20gestion%20VA-T3_2025_0.pdf (consulté le 2026-09-22) | non relu |
 
-### Rôle 3 — Capacité et sensibilité (143 chiffres, 0 relus)
+### Rôle 3 — Capacité et sensibilité (144 chiffres, 0 relus)
 
 | ID | Chiffre | Valeur | Période | Citation | Relecture |
 |---|---|---|---|---|---|
@@ -454,8 +455,9 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F737 | Programme de cessions : multiple moyen d'EBITDA des cessions signées | 10.4 x | au 05/11/2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 3, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
 | F738 | Cessions réalisées sur neuf mois (rotation d'actifs GreenUp) | 0.2 Md EUR | 9M 2026 | finance_veolia_9m_2026_key_figures_presentation.pdf, p. 14, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06) | non relu |
 | F739 | Cession de 20 % de Rookery South Limited (mise en équivalence) : prix en euros | 101 M EUR | 25/09/2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 7, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F756 | Pont d'EBITDA 9M 2026 : croissance et performance (prix, productivité, efficacité, volumes, synergies) | +303 M EUR | 9M 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 16, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
 
-### Rôle 4 — L'écart et les comparables (136 chiffres, 0 relus)
+### Rôle 4 — L'écart et les comparables (145 chiffres, 0 relus)
 
 | ID | Chiffre | Valeur | Période | Citation | Relecture |
 |---|---|---|---|---|---|
@@ -595,6 +597,15 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F742 | Déchets dangereux (booster) : EBITDA | 609 M EUR | FY2024 | finance_veolia_2025_full_year_results_presentation_0.pdf, p. 41, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22) | non relu |
 | F743 | Déchets dangereux (booster) : EBITDA | 686 M EUR | FY2025 | finance_veolia_2025_full_year_results_presentation_0.pdf, p. 41, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22) | non relu |
 | F744 | Déchets dangereux (booster) : croissance de l'EBITDA à périmètre et change constants | +13.0 % | FY2025 | finance_veolia_2025_full_year_results_presentation_0.pdf, p. 41, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22) | non relu |
+| F746 | Déchets dangereux (métier) : chiffre d'affaires | 3,566 M EUR | 9M 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 14, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F747 | Déchets dangereux (métier) : chiffre d'affaires | 3,126 M EUR | 9M 2025 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 14, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F748 | Déchets dangereux (métier) : croissance organique du chiffre d'affaires, à périmètre et change constants | 2.6 % | 9M 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 14, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F749 | Déchets dangereux (métier) : part du chiffre d'affaires du groupe | 10.7 % | 9M 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 14, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F751 | Déchets dangereux Europe : chiffre d'affaires | 1,800 M EUR | 9M 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 13, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F752 | Déchets dangereux Europe : croissance à périmètre et change constants | +1.9 % | 9M 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 13, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F753 | Déchets dangereux Europe : croissance à périmètre et change constants, troisième trimestre seul | 6.2 % | T3 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 13, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F754 | Effet de périmètre sur le chiffre d'affaires du groupe (Clean Earth et Enviropacific) | +383 M EUR | 9M 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 15, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
+| F755 | Effet de périmètre sur l'EBITDA du groupe (Clean Earth et Enviropacific) | +73 M EUR | 9M 2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 16, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
 
 ### Rôle 5 — Le coût ESG (66 chiffres, 0 relus)
 
@@ -1213,7 +1224,7 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 ## 4. Outils d'intelligence artificielle utilisés
 
 - Dataroom : un serveur MCP (Model Context Protocol) privé au groupe, qui indexe les documents publics versés dans le vault et ne sait que chercher, lire une page et citer (fichier, page, URL, date de consultation). Il ne calcule rien ; il garde pour chaque ligne du registre qui l'a saisie et qui l'a relue. Les résumés de pages que l'API Claude a écrits pour la recherche sont signalés comme tels dans chaque résultat et ne sont jamais cités.
-- Le registre compte 745 chiffres et 61 opérations. 706 lignes y ont été saisies par Claude (Anthropic) à travers le compte partagé du serveur, en recopiant le nombre imprimé sur une page indexée dont le fichier et le numéro sont cités ; 100 lignes par l'API Claude (lecture de chaque page du vault, sous l'identité claude-api, avec un contrôle automatique que le nombre et sa citation sont sur la page) ; 0 ligne par les membres du groupe avec leur compte personnel. 0 ligne sur 806 ont été relues sur la page citée par un membre autre que leur auteur ; 806 ne l'ont pas encore été. Le rapport signale d'un « † » chaque chiffre cité qui n'a pas de second lecteur.
+- Le registre compte 756 chiffres et 61 opérations. 717 lignes y ont été saisies par Claude (Anthropic) à travers le compte partagé du serveur, en recopiant le nombre imprimé sur une page indexée dont le fichier et le numéro sont cités ; 100 lignes par l'API Claude (lecture de chaque page du vault, sous l'identité claude-api, avec un contrôle automatique que le nombre et sa citation sont sur la page) ; 0 ligne par les membres du groupe avec leur compte personnel. 0 ligne sur 817 ont été relues sur la page citée par un membre autre que leur auteur ; 817 ne l'ont pas encore été. Le rapport signale d'un « † » chaque chiffre cité qui n'a pas de second lecteur.
 - Claude, via Claude Code, a aussi construit le serveur, les contrôles automatiques (`audit_dataroom`), le générateur du classeur Excel (`build_model.py`), celui des dossiers et celui de ce rapport. Le classeur ne contient que des formules ; ses entrées sont les lignes du registre.
 - LibreOffice (recalcul sans interface) : recalcule le classeur après chaque génération et signale toute erreur de formule ; aucune valeur calculée n'est saisie à la main.
 - Règle tenue : aucun nombre n'a été inventé ni calculé par un modèle de langage. Chaque nombre du registre est recopié d'une page publique citée ; chaque nombre du classeur est une formule sur ces lignes.
