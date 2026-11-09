@@ -42,9 +42,6 @@
 
 ## Ce que la méthode du rapport mesure
 - corps du rapport : 102 caractères  espaces compris  pour 50 000 demandés
-- recommandation.md : 0 phrase(s) sur 1 au-delà de 12 mots
-- introduction.md : 1 phrase(s) sur 1 au-delà de 12 mots
-- conclusion.md : 0 phrase(s) sur 1 au-delà de 12 mots
 - Annexe I : commentée nulle part dans le texte
 - Annexe II : commentée nulle part dans le texte
 - Annexe III : commentée nulle part dans le texte
