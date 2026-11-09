@@ -1,11 +1,11 @@
 # Annexe — sources et chiffres cités
 
-Généré le 2026-11-09 depuis la dataroom : 741 chiffres (0 relus par un tiers), 61 opérations (0 relues), 359 documents citables.
+Généré le 2026-11-09 depuis la dataroom : 745 chiffres (0 relus par un tiers), 61 opérations (0 relues), 359 documents citables.
 Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date de consultation. « non relu » signifie qu'un seul membre a lu la page.
 
 ## 1. Chiffres, par rôle
 
-### Rôle 1 — Périmètre et sources (22 chiffres, 0 relus)
+### Rôle 1 — Périmètre et sources (23 chiffres, 0 relus)
 
 | ID | Chiffre | Valeur | Période | Citation | Relecture |
 |---|---|---|---|---|---|
@@ -15,7 +15,7 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F90 | GreenUp : investissements de maintenance | 1.9 Md EUR / an | 2024-2027 | en_master_greenup_strategy-day_v270324.pdf, p. 63, https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/03/EN_Master_GreenUp_Strategy%20day_V270324.pdf (consulté le 2026-09-22) | non relu |
 | F91 | GreenUp : croissance sur contrats existants | 1.5 Md EUR / an | 2024-2027 | en_master_greenup_strategy-day_v270324.pdf, p. 63, https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/03/EN_Master_GreenUp_Strategy%20day_V270324.pdf (consulté le 2026-09-22) | non relu |
 | F92 | GreenUp : cessions industrielles, moins de | 0.3 Md EUR / an | 2024-2027 | en_master_greenup_strategy-day_v270324.pdf, p. 63, https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/03/EN_Master_GreenUp_Strategy%20day_V270324.pdf (consulté le 2026-09-22) | non relu |
-| F129 | GreenUp : investissements nets de croissance 2024-2027 dans les boosters (« 2 x Impact 2023 ») | 4 Md EUR | 2024-2027 | en_master_greenup_strategy-day_v270324.pdf, p. 44, https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/03/EN_Master_GreenUp_Strategy%20day_V270324.pdf (consulté le 2026-09-22) | non relu |
+| F129 | GreenUp : investissements nets de croissance 2024-2027, boosters et strongholds réunis (« 2 x Impact 2023 ») | 4 Md EUR | 2024-2027 | en_master_greenup_strategy-day_v270324.pdf, p. 44, https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/03/EN_Master_GreenUp_Strategy%20day_V270324.pdf (consulté le 2026-09-22) | non relu |
 | F130 | GreenUp : à investir dans les strongholds | 2 Md EUR | 2024-2027 | en_master_greenup_strategy-day_v270324.pdf, p. 44, https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/03/EN_Master_GreenUp_Strategy%20day_V270324.pdf (consulté le 2026-09-22) | non relu |
 | F131 | Rotation d'actifs déjà réalisée depuis le début de GreenUp, environ | 4 Md EUR | 2024-2025e | veolia_clean_earth_investor_presentation.pdf, p. 17, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/11/Veolia_Clean_Earth_Investor_Presentation.pdf (consulté le 2026-09-22) | non relu |
 | F132 | Cessions nouvelles d'actifs matures dans les 2 ans après la clôture de Clean Earth, plus de | 2 Md EUR | 2026-2028 | veolia_clean_earth_investor_presentation.pdf, p. 17, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/11/Veolia_Clean_Earth_Investor_Presentation.pdf (consulté le 2026-09-22) | non relu |
@@ -31,6 +31,7 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F662 | Cession RGS : effet sur le chiffre d'affaires | -135 M EUR | FY2024 | finance_2024_full_year_results_presentation.pdf, p. 24, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/02/Finance_2024_full_year_results_presentation.pdf (consulté le 2026-09-22) | non relu |
 | F672 | Remondis/DSD : parts de marché cumulées dans le calcin de verre, haut de fourchette | 60 % | annonce 07/2019 | 11_07_2019_remondis_dsd-bundeskartellamt-prohibits-remondis-dsd-merger-11-july-2019.html, https://www.bundeskartellamt.de/SharedDocs/Meldung/EN/Pressemitteilungen/2019/11_07_2019_Remondis_DSD.html (consulté le 2026-10-10) | non relu |
 | F685 | Remondis/DSD : parts de marché cumulées dans le calcin de verre, bas de fourchette | 40 % | annonce 07/2019 | 11_07_2019_remondis_dsd-bundeskartellamt-prohibits-remondis-dsd-merger-11-july-2019.html, https://www.bundeskartellamt.de/SharedDocs/Meldung/EN/Pressemitteilungen/2019/11_07_2019_Remondis_DSD.html (consulté le 2026-10-10) | non relu |
+| F745 | GreenUp : croissance, montant net par an (investissements organiques, priorité aux boosters, plus acquisitions petites et moyennes, moins cessions) | 1 Md EUR / an | 2024-2027 | finance_2024_full_year_results_presentation.pdf, p. 34, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/02/Finance_2024_full_year_results_presentation.pdf (consulté le 2026-09-22) | non relu |
 
 ### Rôle 2 — La contrainte (269 chiffres, 0 relus)
 
@@ -454,7 +455,7 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F738 | Cessions réalisées sur neuf mois (rotation d'actifs GreenUp) | 0.2 Md EUR | 9M 2026 | finance_veolia_9m_2026_key_figures_presentation.pdf, p. 14, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06) | non relu |
 | F739 | Cession de 20 % de Rookery South Limited (mise en équivalence) : prix en euros | 101 M EUR | 25/09/2026 | finance_veolia_operating_financial_review_q3_2026.pdf, p. 7, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06) | non relu |
 
-### Rôle 4 — L'écart et les comparables (133 chiffres, 0 relus)
+### Rôle 4 — L'écart et les comparables (136 chiffres, 0 relus)
 
 | ID | Chiffre | Valeur | Période | Citation | Relecture |
 |---|---|---|---|---|---|
@@ -591,6 +592,9 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F653 | Déchets dangereux Veolia : croissance du chiffre d'affaires à périmètre et change constants | +7.1 % | FY2024 | finance_2024_full_year_results_presentation.pdf, p. 10, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/02/Finance_2024_full_year_results_presentation.pdf (consulté le 2026-09-22) | non relu |
 | F657 | Déchets dangereux Europe : croissance du chiffre d'affaires | +9.5 % | FY2024 | finance_2024_full_year_results_presentation.pdf, p. 22, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/02/Finance_2024_full_year_results_presentation.pdf (consulté le 2026-09-22) | non relu |
 | F665 | Déchets dangereux : croissance du chiffre d'affaires | +7.1 % | FY2024 | finance_2024_full_year_results_presentation.pdf, p. 22, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/02/Finance_2024_full_year_results_presentation.pdf (consulté le 2026-09-22) | non relu |
+| F742 | Déchets dangereux (booster) : EBITDA | 609 M EUR | FY2024 | finance_veolia_2025_full_year_results_presentation_0.pdf, p. 41, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22) | non relu |
+| F743 | Déchets dangereux (booster) : EBITDA | 686 M EUR | FY2025 | finance_veolia_2025_full_year_results_presentation_0.pdf, p. 41, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22) | non relu |
+| F744 | Déchets dangereux (booster) : croissance de l'EBITDA à périmètre et change constants | +13.0 % | FY2025 | finance_veolia_2025_full_year_results_presentation_0.pdf, p. 41, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22) | non relu |
 
 ### Rôle 5 — Le coût ESG (66 chiffres, 0 relus)
 
@@ -1209,7 +1213,7 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 ## 4. Outils d'intelligence artificielle utilisés
 
 - Dataroom : un serveur MCP (Model Context Protocol) privé au groupe, qui indexe les documents publics versés dans le vault et ne sait que chercher, lire une page et citer (fichier, page, URL, date de consultation). Il ne calcule rien ; il garde pour chaque ligne du registre qui l'a saisie et qui l'a relue. Les résumés de pages que l'API Claude a écrits pour la recherche sont signalés comme tels dans chaque résultat et ne sont jamais cités.
-- Le registre compte 741 chiffres et 61 opérations. 702 lignes y ont été saisies par Claude (Anthropic) à travers le compte partagé du serveur, en recopiant le nombre imprimé sur une page indexée dont le fichier et le numéro sont cités ; 100 lignes par l'API Claude (lecture de chaque page du vault, sous l'identité claude-api, avec un contrôle automatique que le nombre et sa citation sont sur la page) ; 0 ligne par les membres du groupe avec leur compte personnel. 0 ligne sur 802 ont été relues sur la page citée par un membre autre que leur auteur ; 802 ne l'ont pas encore été. Le rapport signale d'un « † » chaque chiffre cité qui n'a pas de second lecteur.
+- Le registre compte 745 chiffres et 61 opérations. 706 lignes y ont été saisies par Claude (Anthropic) à travers le compte partagé du serveur, en recopiant le nombre imprimé sur une page indexée dont le fichier et le numéro sont cités ; 100 lignes par l'API Claude (lecture de chaque page du vault, sous l'identité claude-api, avec un contrôle automatique que le nombre et sa citation sont sur la page) ; 0 ligne par les membres du groupe avec leur compte personnel. 0 ligne sur 806 ont été relues sur la page citée par un membre autre que leur auteur ; 806 ne l'ont pas encore été. Le rapport signale d'un « † » chaque chiffre cité qui n'a pas de second lecteur.
 - Claude, via Claude Code, a aussi construit le serveur, les contrôles automatiques (`audit_dataroom`), le générateur du classeur Excel (`build_model.py`), celui des dossiers et celui de ce rapport. Le classeur ne contient que des formules ; ses entrées sont les lignes du registre.
 - LibreOffice (recalcul sans interface) : recalcule le classeur après chaque génération et signale toute erreur de formule ; aucune valeur calculée n'est saisie à la main.
 - Règle tenue : aucun nombre n'a été inventé ni calculé par un modèle de langage. Chaque nombre du registre est recopié d'une page publique citée ; chaque nombre du classeur est une formule sur ces lignes.

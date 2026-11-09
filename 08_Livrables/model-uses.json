@@ -24,8 +24,6 @@
   "F27",
   "F28",
   "F29",
-  "F30",
-  "F31",
   "F32",
   "F33",
   "F34",
@@ -202,8 +200,8 @@
   "F270",
   "F271",
   "F271-543e",
-  "F272",
   "F272-40a3",
+  "F272",
   "F273",
   "F274",
   "F276-facd",
@@ -416,7 +414,19 @@
   "F601",
   "F602",
   "F607",
-  "F615"
+  "F615",
+  "F721",
+  "F722",
+  "F723",
+  "F724",
+  "F728",
+  "F729",
+  "F731",
+  "F736",
+  "F737",
+  "F738",
+  "F739",
+  "F740"
  ],
  "lookups": [
   {
@@ -474,6 +484,12 @@
    "unit": ""
   },
   {
+   "id": "F728",
+   "prefix": "Cash-flow libre net avant",
+   "period": "9M 2025",
+   "unit": ""
+  },
+  {
    "id": "F3",
    "prefix": "EBITDA (groupe)",
    "period": "FY2025",
@@ -483,6 +499,12 @@
    "id": "F17",
    "prefix": "EBITDA (groupe)",
    "period": "FY2024",
+   "unit": ""
+  },
+  {
+   "id": "F724",
+   "prefix": "Croissance organique de l'EBITDA (groupe)",
+   "period": "9M 2026",
    "unit": ""
   },
   {
@@ -498,9 +520,27 @@
    "unit": ""
   },
   {
-   "id": "F31",
-   "prefix": "Signatures de cessions attendues",
-   "period": "2026",
+   "id": "F731",
+   "prefix": "Pont de dette 9M 2026 : dividendes versés",
+   "period": "9M 2026",
+   "unit": ""
+  },
+  {
+   "id": "F736",
+   "prefix": "Programme de cessions : montant déjà signé",
+   "period": "au 05/11/2026",
+   "unit": ""
+  },
+  {
+   "id": "F739",
+   "prefix": "Cession de 20 % de Rookery South",
+   "period": "25/09/2026",
+   "unit": ""
+  },
+  {
+   "id": "F737",
+   "prefix": "Programme de cessions : multiple moyen",
+   "period": "au 05/11/2026",
    "unit": ""
   },
   {
@@ -585,6 +625,30 @@
    "id": "F11",
    "prefix": "Endettement financier net (groupe), après Clean Earth",
    "period": "30/06/2026",
+   "unit": ""
+  },
+  {
+   "id": "F721",
+   "prefix": "Endettement financier net (groupe), après Clean Earth",
+   "period": "30/09/2026",
+   "unit": ""
+  },
+  {
+   "id": "F740",
+   "prefix": "Endettement financier net (groupe)",
+   "period": "30/09/2025",
+   "unit": ""
+  },
+  {
+   "id": "F723",
+   "prefix": "EBITDA (groupe)",
+   "period": "9M 2025",
+   "unit": ""
+  },
+  {
+   "id": "F722",
+   "prefix": "EBITDA (groupe)",
+   "period": "9M 2026",
    "unit": ""
   },
   {
@@ -1668,14 +1732,14 @@
    "unit": ""
   },
   {
-   "id": "F30",
+   "id": "F738",
    "prefix": "Cessions réalisées",
-   "period": "S1 2026",
+   "period": "9M 2026",
    "unit": ""
   },
   {
    "id": "F129",
-   "prefix": "GreenUp : investissements nets de croissance 2024-2027 dans les boosters",
+   "prefix": "GreenUp : investissements nets de croissance 2024-2027",
    "period": "2024-2027",
    "unit": ""
   },
@@ -1725,6 +1789,12 @@
    "id": "F75",
    "prefix": "Pont de dette S1 2026 : investissements financiers",
    "period": "S1 2026",
+   "unit": ""
+  },
+  {
+   "id": "F729",
+   "prefix": "Pont de dette 9M 2026 : investissements financiers",
+   "period": "9M 2026",
    "unit": ""
   },
   {

@@ -95,6 +95,103 @@
    },
    "factor_weight": 0.4,
    "version": 1
+  },
+  {
+   "date": "2026-11-09",
+   "generated": "09/11/2026 19:49",
+   "model": "modele-greenup-2027.xlsx",
+   "central": {
+    "MAXACQB": 229.330122408073,
+    "BIND27": 159.127023711724,
+    "HEAD27": 159.127023711724,
+    "HEADSP27": 2869.70918555761,
+    "LEV26": 3.17990867491601,
+    "LEV27": 2.97993986326718,
+    "EB27": 7932.49945556721,
+    "NFD27": 23638.3713429899,
+    "RATIO26": 0.185408234630076,
+    "WHICH27": "Veolia : levier ≤ 3x",
+    "mTuck": 9.8,
+    "cap": 3.0
+   },
+   "unfavourable": {
+    "MAXACQB": 0,
+    "BIND27": -1801.50012975456,
+    "HEAD27": -1801.50012975456,
+    "HEADSP27": -742.291077891856,
+    "LEV26": 3.22258097000687,
+    "LEV27": 3.22839232761159,
+    "EB27": 7887.74364092582,
+    "NFD27": 25464.731052532,
+    "RATIO26": 0.174015256175662,
+    "WHICH27": "Veolia : levier ≤ 3x",
+    "mTuck": 11.0,
+    "cap": 3.0
+   },
+   "favourable": {
+    "MAXACQB": 3835.2155665881,
+    "BIND27": 2280.39844499833,
+    "HEAD27": 2280.39844499833,
+    "HEADSP27": 6154.48538705933,
+    "LEV26": 3.14198840016337,
+    "LEV27": 2.71837661524594,
+    "EB27": 8097.33341920375,
+    "NFD27": 22011.6018126129,
+    "RATIO26": 0.193302894966149,
+    "WHICH27": "Veolia : levier ≤ 3x",
+    "mTuck": 7.4,
+    "cap": 3.0
+   },
+   "distribution": {
+    "MAXACQB": {
+     "mean": 435.737340341625,
+     "p5": 0.0,
+     "p10": 0.0,
+     "p50": 238.135147628069,
+     "p90": 1233.37554484877,
+     "p95": 1495.64948008475
+    },
+    "BIND27": {
+     "mean": 191.486124509345,
+     "p5": -557.83007677526,
+     "p10": -414.959517477224,
+     "p50": 160.523387771143,
+     "p90": 858.047214041598,
+     "p95": 1038.94629328259
+    },
+    "LEV26": {
+     "mean": 3.18015366369877,
+     "p5": 3.13561860808389,
+     "p10": 3.14533295243282,
+     "p50": 3.17929416981943,
+     "p90": 3.21700793240315,
+     "p95": 3.22428479729528
+    },
+    "LEV27": {
+     "mean": 2.97622619125121,
+     "p5": 2.87107554464312,
+     "p10": 2.89260224960377,
+     "p50": 2.97984087578041,
+     "p90": 3.05225909633732,
+     "p95": 3.07049624880437
+    }
+   },
+   "probabilities": {
+    "La marge contraignante fin 2027 est positive (3x ET seuil S&P tenus)": 0.633,
+    "Le levier fin 2027 reste sous le plafond (marge 3x > 0)": 0.633,
+    "Le ratio FFO / dette reste au-dessus du seuil S&P fin 2027": 1.0,
+    "Le ratio FFO / dette passe sous le seuil S&P fin 2026 (risque de dégradation)": 0.166,
+    "C'est le seuil des agences qui mord en premier fin 2027 (et non le 3x)": 0.0,
+    "Le levier fin 2026 dépasse 3,1x": 1.0,
+    "Veolia peut acheter au moins 1 Md€ fin 2027 sans franchir la contrainte qui mord": 0.16,
+    "… au moins 2 Md€": 0.003,
+    "… au moins 3 Md€": 0.0,
+    "L'EBITDA 2027 atteint l'objectif de 8 Md€": 0.321,
+    "Futurs (sur l'ensemble des tirages) où la marge contraignante devient négative": 367.0
+   },
+   "factor_weight": 0.4,
+   "note": "données arrêtées au 30/09/2026 (rapport du T3 2026 de Veolia, publié le 05/11/2026) : dette de départ au 30/09, cash-flow du T4 2025 reproduit, 570 M€ de cessions signées à 10,4x, croissance organique publiée à fin septembre",
+   "version": 2
   }
  ]
 }
