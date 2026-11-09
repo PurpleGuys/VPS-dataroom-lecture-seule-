@@ -1,5 +1,7 @@
 > Écrit par l'API Claude (claude-opus-5-5) le 10/10/2026 18:51, 0.43 $, à partir des fiches de pages et du registre. À relire, contredire et réécrire par le membre qui défend le rôle : rien ici n'est signé.
 
+> Analyse écrite en octobre 2026, avant les résultats du troisième trimestre et la fourchette version 2 du 9 novembre 2026 : ses chiffres de capacité, quand elle en cite, sont ceux de la fourchette version 1.
+
 # Analyse du rôle 1 : périmètre et sources
 
 ## Ce que la dataroom établit

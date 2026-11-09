@@ -2,81 +2,81 @@
 signe_par:
 relu_par:
 ---
-# Rôle 2 — La contrainte
+# Rôle 2 — Le plafond de levier que s'impose Veolia mord avant les seuils des agences
 
-<!-- La position de départ, la définition du levier propre à Veolia, et le calcul jusqu'au plafond.
-Citer un chiffre par son jeton : [F12] s'imprime avec sa valeur et porte sa source en note de bas de page
-(la méthode du rapport veut des notes à la place des parenthèses) ; [D3] pour une opération, [T1] pour une cible.
-Un jeton inconnu est signalé par le contrôle des citations ; une ligne non relue bloque la version finale.
-Mise en page (méthode EDHEC, BBA 3, 2025-2026) : le titre « # » ci-dessus devient le titre de la partie, numéroté
-par le générateur (1, 2, …) — l'habiller : dire ce que la partie démontre, jamais « analyse » ni « résultats ».
-Les titres ## et ### deviennent les sous-parties 1.1 et 1.1.1. Les termes du glossaire s'écrivent tels quels,
-le générateur les met en italique. Citations recopiées exactement, entre « », coupes par points de suspension.
-Chaque annexe utilisée doit être commentée dans le texte (« voir l'annexe I »).
-Écriture (§ 6.1) : phrases de douze mots, une idée par phrase, l'essentiel en tête, sujet-verbe-complément, forme
-active ; passé composé ou présent, jamais de passé simple. 6 à 9 pages. Chiffres du registre pour ce rôle (207) :
-  [F1] EBITDA (groupe) — 3 552 M EUR (S1 2026)
-  [F3] EBITDA (groupe) — 7,050 M EUR (FY2025)
-  [F6] Plafond GreenUp : dette financière nette / EBITDA ≤ — 3 x (2024-2027)
-  [F8] Endettement financier net (groupe) — 19,657 M EUR (31/12/2025)
-  [F10] Dettes hybrides (titres super-subordonnés), hors coupons — 4.1 Md EUR (30/06/2026)
-  [F11] Endettement financier net (groupe), après Clean Earth — 24 548 M EUR (30/06/2026)
-  [F12] Objectif GreenUp : EBITDA ≥ — 8 Md EUR (2027)
-  [F14] Ratio de levier publié, hors Clean Earth — 2.92 x (31/03/2026)
-  [F16] Ratio de levier publié — 2.79 x (FY2025)
-  [F17] EBITDA (groupe) — 6,788 M EUR (FY2024)
-  [F19] EBITDA (groupe) — 3 367 M EUR (S1 2025)
-  [F20] Ratio de levier publié — 2.63 x (FY2024)
-  [F22] Guidance levier 2026 : égal ou légèrement supérieur à, avec Clean Eart — 3 x (2026)
-  [F23] Endettement financier net (groupe) — 17,819 M EUR (31/12/2024)
-  [F26] Trésorerie (groupe) — 9 332 M EUR (30/06/2026)
-  [F51] Clean Earth : EBITDA (ajusté, post IFRS 16) — 200 M USD (2026E)
-  [F55] Engagement de levier du groupe : autour ou légèrement au-dessus de, se — 3 x (2026)
-  [F56] Engagement de levier du groupe : ≤ — 3 x (2027)
-  [F57] Guidance : levier égal ou légèrement supérieur à 3x en fin d'année, Cl — 3 x (31/12/2026)
-  [F66] Pont de dette 2025 : émission de la première obligation hybride verte  — 497 M EUR (FY2025)
-  [F71] Endettement financier net (groupe) — 20,764 M EUR (30/06/2025)
-  [F78] Pont de dette S1 2026 : effet de change et de juste valeur (défavorabl — -260 M EUR (S1 2026)
-  [F82] Pont de dette S1 2026 : retraitement des passifs financiers (PPA Suez) — -21 M EUR (S1 2026)
-  [F140] Pont de dette 2024 : remboursement de dette hybride — -203 M EUR (FY2024)
-  [F142] Pont de dette 2024 : effet de change et de juste valeur (défavorable) — -157 M EUR (FY2024)
-  [F144] Maturité moyenne de la dette financière nette — 6.5 années (31/12/2025)
-  [F145] Maturité moyenne de la dette financière nette — 7.1 années (31/12/2024)
-  [F146] Part de la dette financière nette à taux fixe après couverture — 85 % (31/12/2025)
-  [F147] Moody's : FFO / dette nette ajustée — 20.3 % (FY2025)
-  [F148] Moody's : FFO / dette nette ajustée attendu, bas de fourchette — 18 % (2026F)
-  [F149] Moody's : FFO / dette nette ajustée attendu, haut de fourchette — 19 % (2026F)
-  [F150] Moody's : dette nette ajustée — 25.4 Md EUR (FY2025)
-  [F151] Moody's : dette nette ajustée, pic attendu, environ — 29 Md EUR (2026F)
-  [F152] Moody's : seuil de dégradation, FFO / dette nette sous (libellé publié — high teens % (2026-2027)
-  [F153] Moody's : condition de relèvement, FFO / dette nette dans (libellé pub — low-to-mid 20s % (2026-2027)
-  [F154] Moody's : FFO / dette nette ajustée — 19.6 % (FY2023)
-  [F155] Moody's : FFO / dette nette ajustée — 21.3 % (FY2024)
-  [F156] Moody's : RCF / dette nette ajustée — 15.0 % (FY2025)
-  [F157] Moody's : dette / EBITDA ajustés (grille de notation) — 5.1 x (FY2025)
-  [F158] Moody's : levier net selon la définition de Veolia — 2.8 x (FY2025)
--->
+## Le levier dépasse le plafond en septembre 2026 et ne laisse qu'une marge mince fin 2027
 
-## Réponse
+Au 30 septembre 2026, la dette atteint [F721] pour un EBITDA glissant de [M:L.ltm]. Le levier mécanique ressort ainsi à [M:L.levMech]. Avec une année pleine de Clean Earth, il vaut [M:L.levPF]. Corrigé de la saisonnalité, il vaut encore [M:L.levSeas]. Aucune de ces lectures ne descend sous [F6], le plafond fixé par GreenUp.
 
-[À rédiger] En un paragraphe : la réponse du rôle, avec ses chiffres clés cités par jeton.
+Veolia annonce un levier égal ou légèrement supérieur à [F725] fin 2026. Elle vise ensuite un retour à [F726] au plus en 2027. Notre modèle donne [M:LEV26] fin 2026, puis [M:LEV27] fin 2027. La marge de dette sous le plafond n'est alors que de [M:HEAD27] fin 2027. Dans le scénario défavorable, elle devient négative, à [M:HEAD27@def]. Le levier fin 2027 reste sous le plafond dans [M:P.tenir3x] des simulations. Le chemin de 2026 est lui-même étroit. Pour finir l'année à [M:NFD26], la dette doit fortement baisser au seul quatrième trimestre.
 
-## La définition de Veolia et les ratios publiés
+Fin 2027, les agences laissent davantage de marge. S&P pourrait dégrader Veolia si son ratio FFO sur dette ajustée passait durablement sous [F163]. Sur une base proche de Moody's, le modèle obtient [M:RATIO26] fin 2026 et [M:RATIO27] fin 2027. Fin 2027, la marge sous le seuil de S&P atteint [M:HEADSP27]. Le risque d'agence se concentre sur 2026. Fin 2026, le ratio passe sous le seuil de S&P dans [M:P.sp26] des simulations. Dans les trois scénarios, la première contrainte à mordre fin 2027 reste [M:WHICH27]. L'annexe IV présente la fourchette de capacité qui en découle, scénario par scénario.
 
-[À rédiger]
+## La définition de Veolia redonne exactement ses ratios publiés
 
-## Trois lectures du 30 juin 2026
+Le levier de Veolia rapporte la dette financière nette de clôture à l'EBITDA. Les deux termes intègrent la norme IFRS 16 sur les loyers. Le rapport du troisième trimestre 2026 précise que ces définitions n'ont pas changé.
 
-[À rédiger]
+Le ratio retient la dette de clôture, et non une dette moyenne. Une acquisition payée en juin pèse donc en entier sur la dette de décembre. Elle n'apporte pourtant à l'EBITDA que ses mois consolidés. Pour Clean Earth en 2026, ce sont [M:H.months].
 
-## Les seuils des agences et le pont du FFO
+Les hybrides restent hors de cette dette. Veolia les inscrit en capitaux propres, en application de la norme IAS 32.
 
-[À rédiger]
+Nous avons testé cette définition sur les deux derniers exercices. Pour 2024, une dette de [F23] rapportée à un EBITDA de [F17] donne [M:L.lev24c]. C'est exactement le ratio publié, [F20]. Pour 2025, une dette de [F8] rapportée à [F3] donne [M:L.lev25c], là encore le ratio publié, [F16].
 
-## Le mur de refinancement face aux liquidités
+Le ratio publié varie aussi selon la saison. Il vaut [F741] au 30 septembre 2025, puis [F16] au 31 décembre. Un ratio de septembre se lit donc plus haut qu'un ratio de décembre.
 
-[À rédiger]
+## Au 30 septembre 2026, aucune lecture du levier ne descend sous le plafond
+
+La dette financière nette atteint [F721] au 30 septembre 2026. L'EBITDA des neuf premiers mois passe de [F723] en 2025 à [F722] en 2026. Ajoutée à l'EBITDA 2025, [F3], cette progression donne un EBITDA glissant de [M:L.ltm].
+
+Nous en tirons trois lectures du levier. La lecture mécanique rapporte la dette à cet EBITDA glissant et donne [M:L.levMech]. Elle compte toute la dette de Clean Earth, mais seulement [F787] de son EBITDA. La lecture pro forma ajoute l'EBITDA des mois manquants, [M:L.cePF], et donne [M:L.levPF]. Cet ajout part des [F51] d'EBITDA attendus de Clean Earth pour 2026. La troisième lecture corrige aussi la saisonnalité. Elle retire de la dette sa baisse du quatrième trimestre 2025, [M:L.seas], et donne [M:L.levSeas]. Seule cette dernière lecture se compare à un ratio de fin d'année. Même ainsi, le levier reste au-dessus de [F6].
+
+De [F8] à [F721], la hausse doit près de la moitié à Clean Earth, [F730]. Les dividendes des neuf mois, [F731], dépassent le cash-flow libre net de 2025, [F29].
+
+## Finir 2026 au niveau annoncé exige un quatrième trimestre hors norme
+
+Avec l'EBITDA 2026 du modèle, [M:EB26], un levier de [F725] correspond à environ 22,5 Md€ de dette. C'est loin des [F721] du 30 septembre, et il ne reste qu'un trimestre. Or la dette n'a baissé que de [M:PD.dropQ4] au quatrième trimestre 2025, de [F740] à [F8]. Le cash-flow libre net de ce trimestre a pourtant atteint [M:PD.fcfQ4]. Les autres flux du trimestre en ont absorbé l'essentiel.
+
+Le modèle reprend au quatrième trimestre 2026 le cash-flow libre net de celui de 2025, [M:H.fcfQ4]. Il suppose que [M:H.s26] des cessions signées non encore encaissées le seront avant le 31 décembre. Cela représente [M:D26]. Le modèle fixe à [M:H.tuckH2] les tuck-ins du quatrième trimestre, et à [M:H.other] les autres flux. Il n'y prévoit pas non plus de dividende. La dette tombe alors à [M:NFD26] et le levier à [M:LEV26].
+
+Passer de [F721] à [M:NFD26] demande une baisse d'environ 1,6 Md€ en un seul trimestre. Notre lecture : ce levier de fin 2026 est une cible, pas un résultat de calage. Il suppose un quatrième trimestre aussi généreux qu'en 2025, sans ses autres sorties de trésorerie.
+
+Le cash-flow du trimestre pèse plus que le calendrier des cessions. Limité à [M:H.fcfQ4@bas], il porte le levier de fin 2026 à [M:LEV26@fcfQ4-bas]. La marge de fin 2027 devient alors négative, à [M:HEAD27@fcfQ4-bas]. Sans nouvelle cession encaissée d'ici le 31 décembre, le levier ne monte qu'à [M:LEV26@s26-bas]. Veolia annonce des produits de cession à venir, sans les dater. Son programme de plus de [F25] doit être livré d'ici la mi-2028. Cette échéance dépasse l'horizon de notre sujet.
+
+## Le remboursement d'un hybride alourdit le levier de Veolia plus que la dette ajustée de Moody's
+
+Le 12 septembre 2026, Veolia a remboursé un hybride. Le pont des neuf mois l'inscrit pour [F732].
+
+Pour Veolia, le remboursement ajoute tout son montant à la dette financière nette. Pour Moody's, l'effet est moitié moindre. L'agence compte la moitié des hybrides en dette : [F251] sur [F562] fin 2025. Le remboursement efface cette moitié, mais la trésorerie versée accroît sa dette nette. Le modèle garde l'écart de dette de fin 2025 entre Moody's et Veolia. Il compte donc encore la moitié du titre remboursé. Notre test d'agence est ainsi un peu prudent.
+
+## Les seuils des agences laissent plus de marge que le plafond de Veolia fin 2027
+
+Les deux agences ont confirmé leur note au printemps 2026, avec une perspective stable. Leur seuil de dégradation ne porte pas sur le levier de Veolia. Il porte sur le FFO rapporté à une dette ajustée, propre à chaque agence. Le tableau suivant compare leurs grilles.
+
+| Repère | S&P | Moody's |
+|---|---|---|
+| Note confirmée en 2026 | [F769], le 27 avril | [F770], le 4 mai |
+| Seuil de dégradation du ratio FFO sur dette | durablement sous [F163] | sous [F152] |
+| Ratio attendu par l'agence | environ [F164] à [F165] sur 2026-2028 | [F244] en 2026, [F245] en 2027 |
+| Dette ajustée de référence | définition propre, non reprise ici | [F256] fin 2025, pic d'environ [F151] en 2026 |
+
+Pour Moody's, le test se fait sur ses propres chiffres. Son FFO 2025, [F261], rapporté à sa dette nette ajustée, [F256], donne [F147]. Cette dette ajustée, [F256], dépasse de 5 747 M€ la dette financière nette publiée, [F8]. Pour 2026, Moody's attend un ratio de [F244]. Notre lecture : ce niveau touche la zone de son seuil. La marge de Veolia y est étroite.
+
+Pour S&P, nous n'avons pas repris la dette ajustée propre à l'agence. Le modèle approche donc son ratio sur la base de Moody's. Il ajoute à sa dette financière nette l'écart constaté chez Moody's fin 2025. Il estime le FFO à [M:H.ffo] de l'EBITDA. Le ratio ressort à [M:RATIO26], le niveau même que prévoit Moody's pour 2026. Fin 2027, il remonte à [M:RATIO27]. Notre lecture : appliquer le seuil de S&P à cette base est prudent. S&P attend en effet environ [F164] à [F165] sur sa propre base.
+
+La marge de dette sous le seuil de S&P vaut [M:HEADSP26] fin 2026. Le ratio passe pourtant sous ce seuil dans [M:P.sp26] des simulations. Fin 2027, il reste au-dessus dans [M:P.sp27] des simulations. Or le seuil de S&P vise un ratio durablement trop bas. Un simple creux en 2026 ne remplit pas cette condition, selon notre lecture. Fin 2027, la marge sous ce seuil atteint [M:HEADSP27], contre [M:HEAD27] sous le plafond de Veolia. Le seuil des agences mord le premier dans [M:P.agences] des simulations.
+
+## Le refinancement renchérit la dette sans limiter la capacité
+
+Veolia juge ses besoins de 2026 couverts par ses émissions de l'année. La liquidité reste solide, mais elle a baissé. Elle atteint [F830], dont [F835] de lignes de crédit confirmées non tirées, sans covenant restrictif. La liquidité nette des dettes courantes vaut [F768], contre [F411] fin 2025.
+
+Veolia juge son taux de financement stable sur un an. Il vaut [F776] au 30 septembre 2026, contre [F828] un an plus tôt. Veolia prévoit toutefois un coût de la dette en hausse en 2026 et 2027. Elle l'attribue aux acquisitions.
+
+Aux taux des émissions de 2026, la plupart des échéances obligataires de 2027 se refinanceraient plus cher. Nous retenons comme taux de refinancement le coupon moyen de l'émission d'août 2026. Refinancées à [F779], les souches de [F279] à [F280] et de [F283] à [F284] coûteraient 49,1 M€ de plus par an. La souche de mars 2027, [F281] à [F282], coûterait au contraire moins cher. Ce surcoût pèse sur le FFO, donc sur le ratio des agences. Il touche peu le levier de Veolia. Notre lecture : le refinancement ne borne pas la capacité, il en relève le coût.
 
 ## Ce que nous n'avons pas pu établir
 
-- [À rédiger]
+- Nous n'avons trouvé aucun levier publié au 30 septembre 2026. Nos trois lectures de cette date sont des calculs du groupe.
+- Nous ignorons combien de mois de Clean Earth le ratio de fin 2026 retiendra. Le modèle en compte [M:H.months] et donne [M:LEV26]. Sur une année pleine, il donne [M:LEV26PF].
+- L'EBITDA de Clean Earth retenu, [F51], est une prévision de Veolia. Un EBITDA plus faible relèverait nos lectures pro forma.
+- Nous n'avons pas repris la dette ajustée ni le FFO propres à S&P.
+- Veolia a signé [F736] de cessions et en a réalisé [F738] sur neuf mois. Nous ne savons pas comment ces montants s'emboîtent, ni quand les cessions signées seront encaissées.

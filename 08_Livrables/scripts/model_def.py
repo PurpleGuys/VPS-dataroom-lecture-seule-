@@ -73,7 +73,9 @@ CALC = [
     ("RATIO27", "FFO / dette ajustée fin 2027", "={FFO27}/{ADJ27}", "%", "%", True),
     ("HEADSP27", "Marge de dette fin 2027 sous le seuil S&P 18 %", "={FFO27}/({sptrig}/100)-{ADJ27}", "M EUR", "M", True),
     ("BIND27", "Marge contraignante fin 2027 (la plus petite des deux)", "=MIN({HEAD27},{HEADSP27})", "M EUR", "M", True),
-    ("WHICH27", "Contrainte qui mord en premier", '=IF({HEADSP27}<{HEAD27},"agences : FFO / dette ≥ 18 %","Veolia : levier ≤ 3x")', "", None, True),
+    # Le libellé nomme la contrainte (et à qui elle appartient), pas seulement son auteur : « Veolia » n'est pas une contrainte.
+    ("WHICH27", "Contrainte qui mord en premier",
+     '=IF({HEADSP27}<{HEAD27},"FFO / dette ajustée ≥ 18 % (seuil des agences)","levier ≤ 3x (plafond de Veolia)")', "", None, True),
     ("MAXACQB", "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple des tuck-ins",
      "=IF({mTuck}>{cap},MAX(0,{BIND27})/(1-{cap}/{mTuck}),0)", "M EUR", "M", True),
 ]

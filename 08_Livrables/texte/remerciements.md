@@ -4,9 +4,8 @@ relu_par:
 ---
 # Remerciements
 
-<!-- Méthode du rapport (EDHEC, BBA 3, 2025-2026), § 5.3 : la page de couverture est suivie d'une page blanche,
-puis des remerciements. Ils sont sobres : les personnes de Veolia et de l'EDHEC qui ont éclairé le travail,
-nommées avec leur fonction, en quelques lignes. Aucun chiffre, aucun jeton. Cette page n'est pas numérotée :
-la numérotation commence au sommaire, qui est la page 1. -->
+Nous remercions l'équipe de Veolia qui a posé ce sujet. Il touche au cœur du plan GreenUp. Les publications de Veolia ont fourni l'essentiel de nos sources.
 
-[À rédiger] Quelques lignes sobres : à qui le groupe doit quoi.
+Nous remercions l'EDHEC Business School pour le cadre du capstone Innovations in Finance. Ce cadre nous a permis d'appliquer l'analyse financière à une question réelle d'entreprise.
+
+Nous remercions enfin l'encadrant de notre capstone.

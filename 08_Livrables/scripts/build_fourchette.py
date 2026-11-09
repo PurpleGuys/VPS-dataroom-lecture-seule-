@@ -42,19 +42,49 @@ snapshot = {
 }
 
 
+def binding(label):
+    """La contrainte qui mord, quel que soit son libellé dans le classeur : « 3x » (le plafond de levier de Veolia)
+    ou « agences » (le seuil FFO / dette ajustée de 18 %). Anciens libellés : « Veolia : levier ≤ 3x », « agences : … »."""
+    if not isinstance(label, str):
+        return label
+    return "agences" if ("18 %" in label or "agences" in label.casefold() or "FFO" in label) else "3x"
+
+
 def signature(s):
-    """Ce qui fait une nouvelle version : les nombres publiés, arrondis à ce qui se lit."""
+    """Ce qui fait une nouvelle version : les nombres publiés, arrondis à ce qui se lit, et la contrainte qui mord
+    (laquelle, pas son libellé : reformuler un libellé ne publie pas une nouvelle version)."""
     def r(v):
         return round(v, 0) if isinstance(v, float) and abs(v) >= 10 else round(v, 3) if isinstance(v, float) else v
-    return json.dumps({k: {kk: r(vv) for kk, vv in s[k].items()} for k in ("central", "unfavourable", "favourable")}
+    return json.dumps({k: {kk: (binding(vv) if kk == "WHICH27" else r(vv)) for kk, vv in s[k].items()}
+                       for k in ("central", "unfavourable", "favourable")}
                       | {"p": {k: r(v) for k, v in s["probabilities"].items()},
                          "d": {k: {kk: r(vv) for kk, vv in v.items()} for k, v in s["distribution"].items()}}, sort_keys=True)
 
 
+# Le libellé de la contrainte suit celui du classeur dans toutes les versions publiées : c'est un libellé, pas un
+# nombre publié (les nombres d'une version ne changent jamais ; la page de la fourchette affiche celui-ci).
+LABELS = {binding(c["outputs"].get("WHICH27")): c["outputs"]["WHICH27"] for c in data["columns"] if c["outputs"].get("WHICH27")}
+
+
+def relabel(version):
+    changed = 0
+    for k in ("central", "unfavourable", "favourable"):
+        old = (version.get(k) or {}).get("WHICH27")
+        new = LABELS.get(binding(old))
+        if old and new and new != old:
+            version[k]["WHICH27"] = new
+            changed = 1
+    return changed
+
+
 history = json.loads(HIST.read_text(encoding="utf-8")) if HIST.exists() else {"versions": []}
 versions = history.get("versions", [])
+relabeled = sum(relabel(v) for v in versions)
 if versions and signature(versions[-1]) == signature(snapshot):
-    print(f"fourchette inchangée (version {len(versions)} du {versions[-1]['date']})")
+    if relabeled:
+        HIST.write_text(json.dumps(history, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"fourchette inchangée (version {len(versions)} du {versions[-1]['date']})"
+          + (f" ; libellé de la contrainte qui mord repris du classeur dans {relabeled} version(s)" if relabeled else ""))
     sys.exit(0)
 snapshot["version"] = len(versions) + 1
 versions.append(snapshot)

@@ -21,7 +21,7 @@ const {
 } = require("docx");
 
 const DATA = JSON.parse(fs.readFileSync(process.argv[2] || path.join(__dirname, "report-data.json"), "utf8"));
-const OUT = process.argv[3] || "/home/ubuntu/capstone-livrables/rapport-sujet-2.docx";
+const OUT = process.argv[3] || "rapport-sujet-2.docx";
 const HEADINGS_OUT = OUT.replace(/\.docx$/i, "") + ".headings.json";
 const FINAL = process.argv.includes("--final") || DATA.final === true;
 const TEXTS = DATA.texts || {};
@@ -33,12 +33,13 @@ const ANNEX_PAGES = new Map((PAGINATION.annexes || []).map((h) => [h.text, h.pag
 const GLOSSARY = DATA.glossary || [];
 const NOTES = DATA.notes || {};   // la note de bas de page de chaque jeton, écrite par report.py
 // L'édition web du même rapport (dataroom rapport-web) : chaque chiffre y ouvre sa page source, surlignée.
-const WEB = DATA.web_edition || "https://dataroom.is42.fr:8443/visualisation/rapport.html";
+const WEB = DATA.web_edition || "https://dataroom.is42.fr/visualisation/rapport.html";
 
 // ---- la méthode, en chiffres (twips : 1 cm = 567 ; tailles en demi-points : 12 pt = 24)
 const FONT = "Times New Roman";
 const BODY = 24;                       // « Times New Roman 12 »
-const SMALL = 20;                      // 10 pt : tableaux, notes de bas de page, légendes
+const SMALL = 20;                      // 10 pt : tableaux, légendes
+const NOTE = 18;                       // 9 pt : notes de bas de page
 const LINE = 360;                      // « interligne 1,5 »
 const MARGIN = 1417;                   // « 2,5 cm pour toutes les marges »
 const PAGE_W = 11906, PAGE_H = 16838;  // A4
@@ -51,12 +52,48 @@ const HEADING_LEVELS = [HeadingLevel.HEADING_1, HeadingLevel.HEADING_2, HeadingL
 const numberingRefs = new Set(["numbers", "numbers2", "role1", "role2", "role3", "role4", "role5", "role6"]);
 let dynamicLists = 0;
 
-// ---- notes de bas de page : une par chiffre cité, dans l'ordre du texte
+// ---- notes de bas de page : une par source et par partie, à sa première citation dans la partie
 const footnotes = {};
 let footnoteId = 0;
+let noted = new Set();   // les groupes de sources déjà annotés dans la partie en cours
+let groups = new Map();
+let modelVersionShown = false;  // la version de la fourchette, dite dans la première note du modèle  // groupe -> { ids, unread, rest } : une note par page de document (ou par onglet du classeur) et par partie
+const PARA_AFTER = 120;  // 6 pt entre deux paragraphes : pas de ligne vide, la méthode ne veut qu'un retour autour des titres
+function refOf(id) { const R = DATA.refs || {}; return R[id] || R[String(id).split("-")[0]] || ""; }
+function noteKey(r) {
+  if (r.rowkind === "model") return "M|" + String(NOTES[r.id] || r.id).replace(/^\S+ — /, "");
+  return "R|" + (r.file || r.id) + "#" + (r.page || "");
+}
+function collectGroups(blocks) {
+  groups = new Map();
+  const visit = (x) => {
+    if (Array.isArray(x)) { x.forEach(visit); return; }
+    if (!x || typeof x !== "object") return;
+    if (x.kind === "token" && x.status === "ok") {
+      const key = noteKey(x);
+      const g = groups.get(key) || { ids: [], unread: false, model: x.rowkind === "model" };
+      if (!g.ids.includes(x.id)) g.ids.push(x.id);
+      if (!x.checked && x.rowkind !== "model") g.unread = true;
+      groups.set(key, g);
+    }
+    for (const k of ["inlines", "items", "rows"]) if (x[k]) visit(x[k]);
+  };
+  visit(blocks);
+}
+function groupNote(key, r) {
+  const g = groups.get(key) || { ids: [r.id], unread: !r.checked, model: r.rowkind === "model" };
+  if (g.model) {
+    // la version de la fourchette n'est dite qu'une fois : dans la première note du modèle
+    let text = `${g.ids.join(", ")} — ${key.slice(2)}`;
+    if (!modelVersionShown && DATA.model_version) { text = text.replace(/\.$/, "") + ` ; ${DATA.model_version}, valable pour toutes les notes du modèle.`; modelVersionShown = true; }
+    return text;
+  }
+  const ref = refOf(g.ids[0]) || String(NOTES[g.ids[0]] || r.cite || r.file || "source au registre").replace(/^\S+ — /, "").replace(/ ; non relue\.$|\.$/, "");
+  return `${g.ids.join(", ")} — ${ref}${g.unread ? (g.ids.length > 1 ? " ; non relues" : " ; non relue") : ""}.`;
+}
 function footnote(text) {
   footnotes[++footnoteId] = { children: [new Paragraph({ spacing: { after: 0, line: 240 }, alignment: AlignmentType.LEFT,
-    children: [new TextRun({ text, ...smallFont })] })] };
+    children: [new TextRun({ text, font: FONT, size: NOTE })] })] };
   return new FootnoteReferenceRun(footnoteId);
 }
 
@@ -184,7 +221,11 @@ function inlineRuns(inlines, base = bodyFont, opts = {}) {
       if (r.status !== "ok") out.push(new TextRun({ text: `[${r.id} ?]`, ...fmt, bold: true, color: "C00000", highlight: "yellow" }));
       else {
         out.push(new TextRun({ text: r.display || `${r.value}${r.unit ? " " + r.unit : ""}`, ...fmt }));
-        out.push(footnote(NOTES[r.id] || `${r.id} — ${r.cite || r.file || "source au registre"}${r.checked ? "" : " ; ligne non relue par un second lecteur"}.`));
+        const key = noteKey(r);
+        if (!noted.has(key)) {
+          noted.add(key);
+          out.push(footnote(groupNote(key, r)));
+        }
       }
     }
   }
@@ -197,6 +238,8 @@ function plain(inlines) {
 // conclusion, remerciements) les sous-titres restent sans numéro, comme la méthode le permet.
 function renderBlocks(blocks, opts = {}) {
   const part = opts.part || 0;
+  noted = new Set();   // chaque partie redonne la source de ses chiffres
+  collectGroups(blocks);
   const counters = [0, 0];
   const out = [];
   for (const b of blocks || []) {
@@ -207,24 +250,23 @@ function renderBlocks(blocks, opts = {}) {
         if (level === 2) { counters[0] += 1; counters[1] = 0; number = `${part}.${counters[0]} `; }
         else { counters[1] += 1; number = `${part}.${counters[0] || 1}.${counters[1]} `; }
       }
-      out.push(heading(number + plain(b.inlines), level));
+      // dans une annexe, les sous-titres restent hors du sommaire : il ne liste que le corps (§ 5.4)
+      out.push(heading(number + plain(b.inlines), level, opts.inAnnex ? { toc: false } : {}));
     } else if (b.kind === "paragraph") {
-      out.push(new Paragraph({ spacing: { after: 0, line: LINE }, alignment: AlignmentType.JUSTIFIED, children: inlineRuns(b.inlines) }));
-      out.push(blank());
+      out.push(new Paragraph({ spacing: { after: PARA_AFTER, line: LINE }, alignment: AlignmentType.JUSTIFIED, children: inlineRuns(b.inlines) }));
     } else if (b.kind === "quote") {
       // Une citation recopiée exactement, entre guillemets français (§ 5.6) ; le retrait la signale.
       const text = plain(b.inlines);
       const open = /^[«"“]/.test(text), close = /[»"”]$/.test(text);
-      out.push(new Paragraph({ spacing: { after: 0, line: LINE }, alignment: AlignmentType.JUSTIFIED, indent: { left: 567, right: 567 },
+      out.push(new Paragraph({ spacing: { after: PARA_AFTER, line: LINE }, alignment: AlignmentType.JUSTIFIED, indent: { left: 567, right: 567 },
         children: [...(open ? [] : [new TextRun({ text: "« ", ...bodyFont })]), ...inlineRuns(b.inlines, bodyFont, { glossary: false }), ...(close ? [] : [new TextRun({ text: " »", ...bodyFont })])] }));
-      out.push(blank());
     } else if (b.kind === "list") {
       let ref = "bullets";
       if (b.ordered) { ref = `list${dynamicLists++}`; numberingRefs.add(ref); }
-      for (const item of b.items) {
-        out.push(new Paragraph({ numbering: { reference: ref, level: 0 }, spacing: { after: 0, line: LINE }, alignment: AlignmentType.JUSTIFIED, children: inlineRuns(item) }));
-      }
-      out.push(blank());
+      b.items.forEach((item, i) => {
+        out.push(new Paragraph({ numbering: { reference: ref, level: 0 }, spacing: { after: i === b.items.length - 1 ? PARA_AFTER : 0, line: LINE },
+          alignment: AlignmentType.JUSTIFIED, children: inlineRuns(item) }));
+      });
     } else if (b.kind === "todo") {
       if (!FINAL) out.push(placeholder(b.text));
     } else if (b.kind === "table" && b.rows.length) {
@@ -236,7 +278,7 @@ function renderBlocks(blocks, opts = {}) {
         rows: b.rows.map((row, i) => new TableRow({ tableHeader: i === 0,
           children: pad(row).map((c, j) => cell(c, widths[j], { head: i === 0 })) })),
       }));
-      out.push(blank());
+      out.push(new Paragraph({ spacing: { after: PARA_AFTER, line: 240 }, children: [] }));
     }
   }
   return out;
@@ -254,7 +296,7 @@ function signature(key) {
 // Une entrée du sommaire ou de la table des annexes : le titre, des points de conduite, la page.
 function tocLine(text, page, level) {
   return new Paragraph({
-    spacing: { after: 0, line: LINE }, alignment: AlignmentType.LEFT,
+    spacing: { after: level === 1 ? 60 : 0, line: 276 }, alignment: AlignmentType.LEFT,
     indent: level > 1 ? { left: 567 * (level - 1) } : undefined,
     tabStops: [{ type: TabStopType.RIGHT, position: TEXT_WIDTH, leader: LeaderType.DOT }],
     children: [new TextRun({ children: [text, new Tab(), page || ""], ...bodyFont, bold: level === 1 })],
@@ -275,7 +317,9 @@ if (COVER.logo && fs.existsSync(COVER.logo)) {
 front.push(center([new TextRun({ text: COVER.formation || "EDHEC Business School", ...bodyFont })], { after: 0 }));
 front.push(center([new TextRun({ text: `Rapport réalisé pour ${COVER.entreprise || "Veolia Environnement"}`, ...bodyFont })], { after: 1800 }));
 front.push(center([new TextRun({ text: DATA.title, font: FONT, size: 40, bold: true })], { after: 240 }));
-front.push(center([new TextRun({ text: DATA.subtitle, font: FONT, size: 26 })], { after: 1800 }));
+front.push(center([new TextRun({ text: DATA.subtitle, font: FONT, size: 26 })], { after: DATA.edition ? 240 : 1800 }));
+// Deux éditions du même rapport : la courte, conforme au cahier des charges, et la longue, remise en complément.
+if (DATA.edition) front.push(center([new TextRun({ text: DATA.edition === "longue" ? "Version longue" : "Version courte", ...bodyFont, italics: true })], { after: 1560 }));
 if (COVER.auteurs && COVER.auteurs.length) {
   for (const name of COVER.auteurs) front.push(center([new TextRun({ text: name, ...bodyFont })]));
 } else if (!FINAL) {
@@ -285,8 +329,14 @@ front.push(center([new TextRun({ text: COVER.annee || "Année 2026-2027", ...bod
 front.push(center([new TextRun({ text: COVER.encadrant ? `Responsable : ${COVER.encadrant}` : "", ...bodyFont })], { before: 240 }));
 if (!COVER.encadrant && !FINAL) front.push(placeholder("[Nom du responsable : roles.yaml, clé « encadrant »]"));
 if (!FINAL) {
-  front.push(center([new TextRun({ text: `Squelette généré le ${DATA.generated} depuis la dataroom du groupe (${DATA.n_figures} chiffres sourcés ; contrôles du classeur : ${DATA.checks}). `
-    + "Les passages surlignés sont à rédiger par l'auteur de la partie ; les notes de bas de page disent quelles lignes du registre n'ont pas été relues.", ...smallFont, color: "555555" })], { before: 600, line: 240 }));
+  // brouillon ou squelette selon l'état réel du texte ; date à la française (« 9 novembre 2026 »)
+  const todoCount = Object.values((CONTROLS && CONTROLS.todos) || {}).reduce((a, b) => a + (b || 0), 0);
+  const MONTHS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+  const iso = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(DATA.generated || ""));
+  const when = iso ? `${Number(iso[3])} ${MONTHS[Number(iso[2]) - 1]} ${iso[1]}` : String(DATA.generated || "");
+  front.push(center([new TextRun({ text: `${todoCount ? "Squelette" : "Brouillon à relire,"} généré le ${when} depuis la dataroom du groupe : ${DATA.n_figures} chiffres sourcés, contrôles du classeur ${DATA.checks}. `
+    + (todoCount ? "Les passages surlignés sont à rédiger par l'auteur de la partie ; les notes" : "Les notes")
+    + " de bas de page disent quelles lignes du registre n'ont pas encore été relues.", ...smallFont, color: "555555" })], { before: 600, line: 240 }));
   front.push(center([new TextRun({ text: "Édition vérifiable, où chaque chiffre ouvre sa page source : ", ...smallFont, color: "555555" }),
     new ExternalHyperlink({ link: WEB, children: [new TextRun({ text: WEB, ...smallFont, style: "Hyperlink" })] })], { line: 240 }));
 }
@@ -329,7 +379,9 @@ for (const role of DATA.roles) {
   const signed = signature(key);
   if (signed) body.push(p(signed, { run: { italics: true } }), blank());
   else if (!FINAL) body.push(placeholder(`[Partie rédigée par : ______ — frontmatter signe_par / relu_par de texte/${key}.md] ${role.tabs ? "Dans le classeur : " + role.tabs : ""}`));
-  if (!FINAL) body.push(p(role.brief, { run: { italics: true, color: "555555" } }), blank());
+  // Une partie rédigée se lit seule : les aides générées (consigne, chiffres du rôle, questions du jury)
+  // ne s'impriment qu'à côté d'une partie encore vide.
+  if (!FINAL && !text) body.push(p(role.brief, { run: { italics: true, color: "555555" } }), blank());
   if (text) {
     body.push(...renderBlocks(text.blocks, { part }));
   } else if (!FINAL) {
@@ -337,7 +389,7 @@ for (const role of DATA.roles) {
     body.push(runs([{ text: "Réponse générée depuis le classeur, à réécrire", bold: true }]), p(role.answer), blank());
     body.push(runs([{ text: "Raisonnement généré", bold: true }]), ...numbered(role.reasoning, `role${role.n}`), blank());
   }
-  if (!FINAL) {
+  if (!FINAL && !text) {
     body.push(runs([{ text: "Chiffres du registre pour cette partie", bold: true }]));
     body.push(table(["ID", "Chiffre", "Période", "Valeur", "Source (fichier, page)", "Relu par"],
       role.figures.map((f) => [f[0], f[1], f[2], f[3], f[4], f[5] || "—"]), [900, 3000, 1000, 1300, 2172, 700], [3]));
@@ -422,10 +474,11 @@ const citedIds = new Set();
 const citedRows = DATA.register.filter((r) => citedIds.has(String(r[0])));
 annex("Registre des chiffres cités", [
   ...(citedRows.length
-    ? [table(["ID", "Chiffre", "Valeur", "Période", "Citation", "Rôle", "Relu"],
-        citedRows.map((r) => [r[0], r[1], r[2], r[3], r[4], r[5], r[6] || "—"]), [600, 2200, 1000, 900, 3172, 600, 600], [2])]
+    ? [table(["ID", "Chiffre", "Valeur", "Période", "Source (voir la bibliographie)", "Rôle", "Relu"],
+        citedRows.map((r) => [r[0], r[1], (DATA.displays || {})[r[0]] || r[2], r[3], (DATA.refs || {})[r[0]] || r[4], r[5], r[6] || "—"]),
+        [600, 2900, 1100, 1000, 2272, 600, 600], [2])]
     : [FINAL ? p("Aucun chiffre cité.") : placeholder(`Aucun chiffre encore cité par jeton : l'annexe se remplira des lignes citées parmi les ${DATA.register.length} du registre.`)]),
-], `${citedRows.length} chiffres cités dans le texte, sur ${DATA.register.length} au registre du groupe (00_Admin/registre.csv), chacun avec le fichier joint, la page, l'URL d'origine et la date de consultation. « Relu » vide : un seul membre a lu la page.`);
+], `${citedRows.length} chiffres cités dans le texte, sur ${DATA.register.length} au registre du groupe. Chaque source renvoie à la bibliographie, qui donne le titre, l'adresse et la date de consultation ; le registre garde le fichier joint. « Relu » vide : un seul membre a lu la page.`);
 if (DATA.cited_deals && DATA.cited_deals.length) {
   annex("Opérations citées", [
     table(["ID", "Opération", "Montant", "Devise", "Source", "Relecture"],
@@ -441,16 +494,16 @@ if (DATA.cited_targets && DATA.cited_targets.length) {
 annex("La fourchette de capacité pour les autres périmètres", [
   p("Le nombre que les groupes « technologies de l'eau », « déchets dangereux » et « bioénergie » doivent respecter, dans ses trois scénarios et sous ses deux plafonds."), blank(),
   table(["Fin 2027", "Défavorable", "Central", "Favorable"], DATA.range_rows, [4272, 1600, 1600, 1600], [1, 2, 3]),
-], "Source : classeur du groupe (onglet Fourchette), calculé à partir des chiffres du registre.");
+], `Source : classeur du groupe, modele-greenup-2027.xlsx${DATA.model_version ? ", " + DATA.model_version : ""}, calculé à partir des chiffres du registre.`);
 const AI_FACTS = (DATA.ai_facts && DATA.ai_facts.length) ? DATA.ai_facts.filter((f) => !f.startsWith("[[")) : [
-  "Dataroom : un serveur MCP privé au groupe, qui indexe les documents publics versés dans le vault et ne sait que chercher, lire une page et citer (fichier, page, URL, date de consultation). Il ne calcule rien et ne résume rien.",
+  "Dataroom : un serveur MCP construit par le groupe pour le sujet, qui indexe les documents publics versés dans le vault et ne sait que chercher, lire une page et citer (fichier, page, URL, date de consultation). Il ne calcule rien et ne résume rien.",
   "Claude (Anthropic), via Claude Code : a construit le serveur, le registre, les contrôles automatiques, le générateur du classeur Excel et celui de ce rapport.",
   "[Provenance et relecture des lignes du registre : générer le rapport par « dataroom report » pour les compter.]",
 ];
 const ia = prose("outils-ia");
 annex("Outils d'intelligence artificielle utilisés", [
   ...bullets(AI_FACTS), blank(),
-  ...(ia ? renderBlocks(ia.blocks) : (!FINAL ? [placeholder("[À rédiger] 08_Livrables/texte/outils-ia.md : ce que le groupe a décidé sans l'outil, les cas où l'outil a été contredit après lecture, puis un tableau membre / outil / usage / période.")] : [])),
+  ...(ia ? renderBlocks(ia.blocks, { inAnnex: true }) : (!FINAL ? [placeholder("[À rédiger] 08_Livrables/texte/outils-ia.md : ce que le groupe a décidé sans l'outil, les cas où l'outil a été contredit après lecture, puis un tableau membre / outil / usage / période.")] : [])),
 ], "Annexe demandée par le cours : les outils, ce qu'ils ont fait, ce que le groupe a vérifié lui-même. Les phrases comptées le sont depuis les registres, le jour de la génération.");
 
 // ---- la table des annexes (§ 5.8), dernière page numérotée du corps
@@ -469,13 +522,15 @@ if (CONTROLS && !FINAL) {
   controls.push(heading("Contrôle des citations et de la méthode (retiré de la version finale)", 1, { toc: false }));
   const files = Object.keys(CONTROLS.words || {});
   if (files.length) {
+    // l'édition longue est la version de référence : les cibles de pages ne valent que pour la courte
+    const longEdition = DATA.edition === "longue";
     const [lo, hi] = CONTROLS.pages_per_role || [6, 9];
     controls.push(table(["Fichier", "Pages (PDF)", "Mots", "Caractères", "Cible pages", "À rédiger"],
       files.map((f) => [f, CONTROLS.pages && CONTROLS.pages[f] != null ? CONTROLS.pages[f] : "—", CONTROLS.words[f],
         CONTROLS.chars && CONTROLS.chars[f] != null ? CONTROLS.chars[f] : "—",
-        f.startsWith("role-") ? `${lo}-${hi}` : "—", CONTROLS.todos[f] || 0]), [2772, 1200, 1100, 1300, 1300, 1400], [1, 2, 3, 5]));
+        f.startsWith("role-") && !longEdition ? `${lo}-${hi}` : "—", CONTROLS.todos[f] || 0]), [2772, 1200, 1100, 1300, 1300, 1400], [1, 2, 3, 5]));
     const target = (CONTROLS.pages_total_target || [50, 60]).join("-");
-    controls.push(caption(`Total : ${CONTROLS.pages_total || "—"} pages (cible ${target}) ; ${CONTROLS.chars_total || 0} caractères espaces compris dans le corps (la méthode en demande ${(DATA.method && DATA.method.chars_min) || 50000} au minimum).`));
+    controls.push(caption(`Corps du rapport, du sommaire à la première annexe : ${CONTROLS.pages_body || "—"} pages ${longEdition ? "(édition de référence, sans cible de pages)" : `(cible ${target})`} ; document entier : ${CONTROLS.pages_total || "—"} pages ; ${CONTROLS.chars_total || 0} caractères espaces compris dans le corps (la méthode en demande ${(DATA.method && DATA.method.chars_min) || 50000} au minimum).`));
   }
   const list = (title, items, fmt) => {
     controls.push(runs([{ text: title, bold: true }]));
@@ -483,7 +538,10 @@ if (CONTROLS && !FINAL) {
   };
   list(`Ce que la méthode du rapport ferait souligner (${(CONTROLS.warnings || []).length})`, CONTROLS.warnings || [], (x) => x);
   list(`Jetons inconnus (${CONTROLS.unknown.length})`, CONTROLS.unknown, (x) => `${x[0]} : [${x[1]}] ne correspond à aucune ligne des registres`);
-  list(`Lignes citées que personne n'a relues (${CONTROLS.unread.length})`, CONTROLS.unread, (x) => `${x[0]} : ${x[1]} — ${x[2]}`);
+  const unreadBy = {};
+  for (const [f, id] of CONTROLS.unread) (unreadBy[f] = unreadBy[f] || []).push(id);
+  list(`Lignes citées que personne n'a relues (${CONTROLS.unread.length})`, Object.entries(unreadBy),
+    ([f, ids]) => `${f} : ${ids.length} ligne(s) — ${ids.slice(0, 40).join(", ")}${ids.length > 40 ? " …" : ""}`);
   list(`Lignes citées contestées (${CONTROLS.disputed.length})`, CONTROLS.disputed, (x) => `${x[0]} : ${x[1]} — ${x[2]}`);
   list("Fichiers absents ou vides", [...(CONTROLS.missing || []), ...(CONTROLS.empty || [])], (x) => x);
   list("Pages liminaires à écrire", [...(CONTROLS.cover_missing || []).map((x) => `couverture : ${x}`), ...(CONTROLS.front_missing || [])], (x) => x);
@@ -519,7 +577,7 @@ const doc = new Document({
       headingStyle("Heading1", "Heading 1", 0),
       headingStyle("Heading2", "Heading 2", 1),
       headingStyle("Heading3", "Heading 3", 2),
-      { id: "FootnoteText", name: "Footnote Text", basedOn: "Normal", run: { font: FONT, size: SMALL }, paragraph: { spacing: { line: 240, after: 0 }, alignment: AlignmentType.LEFT } },
+      { id: "FootnoteText", name: "Footnote Text", basedOn: "Normal", run: { font: FONT, size: NOTE }, paragraph: { spacing: { line: 240, after: 0 }, alignment: AlignmentType.LEFT } },
     ],
   },
   footnotes,

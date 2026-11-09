@@ -4,26 +4,36 @@ relu_par:
 ---
 # Introduction
 
-<!-- Méthode du rapport, § 4.3 : l'introduction s'écrit en dernier. Elle situe le cadre (Veolia, le plan GreenUp 2027,
-le sujet 2 et le périmètre « capacité financière »), présente la mission confiée au groupe, annonce les résultats
-et le plan : les sept parties, dans l'ordre où le lecteur les trouvera. Le titre « Introduction » reste générique,
-comme la méthode le permet ; ses sous-titres ne sont pas numérotés.
-Chaque chiffre se cite par son jeton ([F12], [D3], [T1]) : il s'imprime avec sa valeur et porte sa source en note
-de bas de page, comme la méthode le demande à la place des parenthèses. Les termes du glossaire s'écrivent tels
-quels : le générateur les met en italique.
-Règles d'écriture (§ 6.1) : phrases de douze mots, une idée par phrase, l'essentiel en tête de phrase, sens premier
-des mots, sujet-verbe-complément, forme active, ponctuation juste ; passé composé ou présent, jamais de passé simple
-ni d'imparfait pour une action achevée. Les citations se recopient exactement, entre guillemets « », avec des points
-de suspension pour les coupes. -->
+## GreenUp lie la croissance de Veolia à un plafond de levier
 
-## Le cadre
+Veolia conduit son plan stratégique GreenUp de 2024 à 2027. Le plan vise un EBITDA d'au moins [F12] en 2027. Il veut accélérer les boosters, dont le traitement des déchets dangereux, et consolider les strongholds. Il fixe aussi un levier d'au plus [F6], avec le maintien des notations.
 
-[À rédiger]
+Le 1er juin 2026, Veolia a acquis Clean Earth auprès d'Enviri. Cette activité américaine de déchets dangereux a pesé [F730] sur la dette financière nette. Veolia l'a adossée à un programme de cessions de plus de [F25]. Ce programme doit être livré d'ici la mi-2028.
 
-## La mission confiée au groupe
+Le 5 novembre 2026, Veolia a publié ses résultats des neuf premiers mois. Elle vise un levier égal ou légèrement supérieur à [F725] fin 2026. Elle annonce ensuite un retour à [F726] au plus en 2027. Le plafond du plan est ainsi devenu l'engagement courant de Veolia.
 
-[À rédiger]
+Le sujet 2 du capstone Innovations in Finance de l'EDHEC s'inscrit dans ce cadre. Posé par Veolia, il porte sur l'écart aux objectifs de GreenUp. Il demande quelles orientations et quelles acquisitions peuvent le combler. Chaque groupe en traite un périmètre. Le nôtre est la capacité financière. Nous cherchons combien Veolia peut encore acheter sans dépasser ses engagements de levier. Notre fourchette de capacité sert aussi de borne aux groupes des autres périmètres. L'annexe IV la reproduit.
 
-## Les résultats et le plan
+## Le groupe a mesuré la marge de dette sous ce plafond, du 30 septembre 2026 à fin 2027
 
-[À rédiger]
+Notre mission consiste à traduire l'engagement de levier en montant d'acquisitions. Une acquisition ajoute son prix à la dette et son EBITDA au dénominateur du levier. La capacité d'achat se mesure donc en marge de dette sous le plafond. Nous partons de la dette du 30 septembre 2026, [F721]. Nous projetons ensuite la dette jusqu'au 31 décembre 2027, l'horizon du sujet.
+
+Notre méthode suit trois étapes. D'abord, chaque chiffre cité renvoie à un fichier, une page et une date de consultation. Ensuite, le modèle du groupe projette la dette et l'EBITDA. Il en tire trois scénarios et mille futurs simulés. Enfin, nous confrontons la réponse aux seuils des agences, aux comparables et aux cibles réelles.
+
+## La marge finance des tuck-ins, pas une nouvelle plateforme
+
+Fin 2027, notre scénario central laisse une marge de dette de [M:HEAD27] sous le plafond. Elle s'entend après [M:H.tuck] de tuck-ins en 2027. Au multiple de Clean Earth, [F48], elle finance une acquisition supplémentaire de [M:MAXACQB]. Dans le scénario défavorable, elle devient négative, à [M:HEAD27@def]. Le plafond ne tient que dans [M:P.tenir3x] des futurs simulés.
+
+Cette marge vient de la croissance de l'EBITDA et des cessions. Sur une année pleine, le cash-flow libre net couvre le dividende de Veolia. Il ne couvre pas l'ensemble des dividendes. Le calendrier des cessions pèse le plus sur la marge. Or le programme se termine après l'horizon du sujet.
+
+Les plateformes américaines chiffrées dépassent la marge dans la plupart des futurs. Enfin, notre modèle place l'EBITDA 2027 à [M:EB27]. C'est moins que l'objectif d'au moins [F12], que Veolia confirme avec sa trajectoire GreenUp.
+
+Le rapport suit sept parties, annoncées ici sous leur titre.
+
+1. GreenUp annonce des enveloppes nettes, qui ne plafonnent pas les acquisitions.
+2. Le plafond de levier que s'impose Veolia mord avant les seuils des agences.
+3. Une marge mince fin 2027, portée par l'EBITDA et les cessions plutôt que par le cash-flow libre net.
+4. Le booster déchets dangereux achète sa croissance plus qu'il ne la génère.
+5. Les passifs environnementaux d'une acquisition fixent le coût de la diligence, pas la capacité d'achat.
+6. Jusqu'à fin 2027, Veolia peut acheter des tuck-ins, pas une nouvelle plateforme.
+7. Des tuck-ins jusqu'à fin 2027, une plateforme américaine seulement après de nouvelles cessions signées.

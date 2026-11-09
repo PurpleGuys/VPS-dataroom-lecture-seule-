@@ -1066,7 +1066,7 @@ put(ws, f"B{r}", lecture("Lecture : il y a de quoi vendre — au multiple centra
     Fx(f'COUNTIF(C{E1}:C{E1 + 16},">=500")'), " pays à plus de 500 M€. Le risque n'est pas l'existence des actifs mais le rythme : "
     "depuis 2022, Veolia a cédé ", t_num(C['soldN'], 0), " activités de ", t_m(C['soldAvg']), " en moyenne ; ", t_md(C['progM'], 0),
     " en deux ans, c'est ", t_num(f"{C['needYears']}/2", 1), " fois le rythme passé. C'est pour cela que s26 et s27 sont les "
-    "hypothèses qui comptent, et que la question du calendrier est posée le 16 octobre."), color=GREY, italic=True, wrap=True)
+    "hypothèses qui comptent, et que le calendrier des encaissements est la question à faire préciser par Veolia."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 58; r += 1
 widths(ws, {"A": 4, "B": 60, "C": 16, "D": 14, "E": 50})
 
@@ -1601,8 +1601,25 @@ CONCL = [
     ("C3", "Le 3x mord avant les agences", lambda c: f"{TJ}!{c}{ROW['HEADSP27']}-{TJ}!{c}{ROW['HEAD27']}"),
     ("C4", "Cible de la taille étudiée possible sous 3x (au multiple des tuck-ins)", lambda c: f"{TJ}!{c}{ROW['HEAD27']}-{FN['S']}*(1-{HY('cap')}/{TJ}!{c}{IN['mTuck']})"),
 ]
-header(ws, r, ["", "Hypothèse", "Base"] + [f"{k} : {lab}" for k, lab, _ in CONCL] + ["", "Réf."], start=1); r += 1
+header(ws, r, ["", "Hypothèse", "Base"] + [f"{k} : {lab}" for k, lab, _ in CONCL] + ["Domaine possible", "Réf."], start=1); r += 1
 INV = {"mDisp", "mTuck"}
+# Le domaine possible de chaque hypothèse — ce qu'elle peut valoir, pas sa fourchette : une part reste entre 0 et 100 %,
+# une croissance ne descend pas sous −100 %, un EBITDA, un montant payé ou un multiple n'est pas négatif, et un multiple
+# ne dépasse pas le plus haut que le classeur relève (Cibles §D-§E, cellule mHi plus bas). Un seuil hors de ce domaine
+# n'est pas un chiffre à citer : aucune valeur possible de l'hypothèse ne renverse la conclusion. Une hypothèse absente
+# d'ici n'a pas de domaine borné : son seuil s'affiche toujours.
+DOMAIN = {
+    "g26": ("{v}<-1", "−100 % ou plus"), "g27": ("{v}<-1", "−100 % ou plus"), "gDiv": ("{v}<-1", "−100 % ou plus"),
+    "syn": ("OR({v}<0,{v}>1)", "de 0 à 100 %"), "s26": ("OR({v}<0,{v}>1)", "de 0 à 100 %"),
+    "s27": ("OR({v}<0,{v}>1)", "de 0 à 100 %"), "ffo": ("OR({v}<0,{v}>1)", "de 0 à 100 %"),
+    "conv": ("{v}>1", "100 % au plus"), "ceEb": ("{v}<0", "positif ou nul"), "tuck": ("{v}<0", "positif ou nul"),
+    "mDisp": ("OR({v}<=0,{v}>{mHi})", None), "mTuck": ("OR({v}<=0,{v}>{mHi})", None),
+}
+SHOWN = {"%": t_pct, "x": t_x, "M EUR": lambda e: t_m(e, 0, "M€"), "M USD": lambda e: t_m(e, 0, "M$"),
+         "Md EUR": lambda e: t_m(e, 2, "Md€")}
+HOLD_OUT = "hors domaine : même à sa borne la plus défavorable, la conclusion tient"
+FALSE_OUT = "hors domaine : même à sa borne la plus favorable, la conclusion reste fausse"
+BK_VERDICTS = []   # (cellule du verdict, gabarit) : le gabarit attend l'adresse de mHi, connue plus bas
 BK0 = r
 for code in VARIED:
     lo_col = next(c for c, n, d, s in cols if d == code and s == "Bas")
@@ -1621,20 +1638,36 @@ for code in VARIED:
         value = f"1/{star}" if code in INV else star
         num_col = L(11 + k)
         put(ws, f"{num_col}{r}", f'=IF(ABS(({mh})-({ml}))<1E-9,"",{value})', color=GREY, nf='0.0000')
-        shown = {"%": t_pct, "x": t_x}.get(unit, lambda e: t_num(e, 2 if unit == "Md EUR" else 0))(f"{num_col}{r}")
-        put(ws, f"{col}{r}", f'=IF({num_col}{r}="","sans effet",IF(AND(({ml})>=0,({mh})>=0),"tient partout (seuil "&{shown}&")",'
-                              f'IF(AND(({ml})<0,({mh})<0),"faux partout (il faudrait "&{shown}&")","bascule à "&{shown})))')
+        shown = SHOWN.get(unit, lambda e: t_m(e, 0, unit) if unit else t_num(e, 0))(f"{num_col}{r}")
+        hold, false = f'"tient partout (seuil "&{shown}&")"', f'"faux partout (il faudrait "&{shown}&")"'
+        if code in DOMAIN:
+            out = DOMAIN[code][0].replace("{v}", f"{num_col}{r}")
+            hold, false = f'IF({out},"{HOLD_OUT}",{hold})', f'IF({out},"{FALSE_OUT}",{false})'
+        BK_VERDICTS.append((f"{col}{r}", f'=IF({num_col}{r}="","sans effet",IF(AND(({ml})>=0,({mh})>=0),{hold},'
+                                         f'IF(AND(({ml})<0,({mh})<0),{false},"bascule à "&{shown})))'))
+    dom_text = DOMAIN.get(code, (None, "sans borne"))[1]
+    if dom_text:
+        put(ws, f"H{r}", dom_text, color=GREY)
+    else:
+        BK_VERDICTS.append((f"H{r}", lecture("plus de 0x, au plus ", t_x("{mHi}"))))
     put(ws, f"I{r}", "inverse du multiple" if code in INV else "", color=GREY)
     put(ws, f"J{r}", f'=IF(COUNTIF(D{r}:G{r},"bascule*")>0,1,0)', color=GREY, nf=NF_I)
     r += 1
 BK1 = r - 1
-put(ws, f"B{r}", "Lecture : « bascule à x » = la conclusion change de signe entre les bornes basse et haute de l'hypothèse, au point x ; "
-    "« hors fourchette » = elle tient sur toute la plage, et le seuil (affiché pour mémoire) est en dehors. C'est la liste des hypothèses "
-    "qu'il faut défendre à l'oral, et de nulle autre.", color=GREY, italic=True, wrap=True)
-ws.merge_cells(f"B{r}:H{r}"); ws.row_dimensions[r].height = 44; r += 1
+put(ws, f"B{r}", "Lecture : « bascule à x » = la conclusion change de signe entre les bornes basse et haute de l'hypothèse, au point x : "
+    "c'est la liste des hypothèses qu'il faut défendre à l'oral, et de nulle autre. « tient partout (seuil x) » et « faux partout "
+    "(il faudrait x) » = la conclusion ne change pas sur la fourchette ; x est hors des bornes, mais une valeur possible. « hors "
+    "domaine » = le seuil calculé sort des valeurs que l'hypothèse peut prendre (colonne H) : aucune valeur possible ne renverse la "
+    "conclusion, qui tient même à la borne la plus défavorable, ou reste fausse même à la plus favorable. « sans effet » = "
+    "l'hypothèse n'entre pas dans la conclusion.", color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:H{r}"); ws.row_dimensions[r].height = 72; r += 1
 put(ws, f"B{r}", "Hypothèses qui font basculer au moins une conclusion dans leurs bornes", bold=True)
 put(ws, f"C{r}", f"=SUM(J{BK0}:J{BK1})", nf=NF_I, bold=True)
 FN["nFragile"] = f"{q('Financement')}!$C${r}"; r += 1
+put(ws, f"B{r}", "Domaine des multiples : au plus le multiple VE / EBITDA le plus élevé du classeur (Cibles §D-§E)")
+MHI_ROW = r; FN["mHi"] = f"$C${r}"; r += 1   # la formule s'écrit une fois l'onglet Cibles construit
+for ref, tpl in BK_VERDICTS:
+    put(ws, ref, tpl.replace("{mHi}", FN["mHi"]), color=GREY if ref.startswith("H") else BLACK)
 for k, (cid, lab, _m) in enumerate(CONCL):
     put(ws, f"{L(11 + k)}{BK0 - 1}", f"{cid} (valeur)", bold=True, fill=HEAD, color=GREY)
 FN["bk0"], FN["bk1"] = BK0, BK1
@@ -1947,7 +1980,7 @@ for k in (0, 0.25, 0.5, 0.75, 1):
 put(ws, f"B{r}", lecture("Lecture : chaque euro d'efficacité non livré coûte ", t_num(HY('cap'), 0), " euros de capacité d'endettement "
     "(plafond × EBITDA) et ne rapporte rien en cash-flow en face. Sans efficacité en 2026-2027, la marge sous 3x ",
     t_if(f"{PB['head27k0']}<0", ["disparaît (", t_m(PB['head27k0']), ")"], ["tombe à ", t_m(PB['head27k0'])]),
-    " : la question à poser à Veolia le 16 octobre est moins « combien achèterez-vous ? » que « les ", t_m(PB['effPlan']),
+    " : la question à poser à Veolia est moins « combien achèterez-vous ? » que « les ", t_m(PB['effPlan']),
     " d'efficacité par an sont-ils sécurisés ? »."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:F{r}"); ws.row_dimensions[r].height = 44; r += 1
 r += 1
@@ -2113,7 +2146,7 @@ line(ws, r, None, "Actifs totaux du segment", f"={E('Enviri : actifs totaux du s
      E("Enviri : actifs totaux du segment Clean Earth", "31/12/2025")[1], NF_M1, store=B); r += 1
 put(ws, f"B{r}", lecture("Lecture : sur l'EBITDA que le vendeur publie, le prix ressort à ", t_x(B['mRec']), " ; le ", t_x(ce_mult),
     " de Veolia repose sur un EBITDA 2026E ", t_pct(B['ceEbGap'], 0), " plus haut, plus ", t_m(syn_rr, 0, "M$"),
-    " de synergies. C'est le pont à faire expliquer le 16 octobre."), color=GREY, italic=True, wrap=True)
+    " de synergies. C'est le pont à faire expliquer par Veolia."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:E{r}"); ws.row_dimensions[r].height = 30; r += 1
 put(ws, f"B{r}", "Cellules jaunes à remplir uniquement depuis un document versé dans la dataroom (fichier + page).",
     color=GREY, italic=True)
@@ -2255,7 +2288,7 @@ put(ws, f"B{r}", lecture("Lecture : ", t_pct(TX['cxAlignedShare'], 0), " du cape
     "porte la plus grande part. Les déchets dangereux sont une petite ligne (", t_md(f"F{TX['hw']}", 1), " alignés) mais ",
     t_if(f"G{TX['hw']}>=MAX(G{T0}:G{T1})", "la mieux alignée de toutes", ["alignée à ", t_pct(f"G{TX['hw']}", 0)]),
     ". Ce que la taxonomie ne dit pas, et que la question 3 du cours demande : l'impact par euro (tonnes traitées, CO2 évité, m³ "
-    "économisés par M€ investi). Veolia publie ses KPI au niveau du groupe, pas par booster : c'est une question pour le 16 octobre, "
+    "économisés par M€ investi). Veolia publie ses KPI au niveau du groupe, pas par booster : c'est une question à poser à Veolia, "
     "pas un calcul."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:I{r}"); ws.row_dimensions[r].height = 58; r += 1
 widths(ws, {"C": 14, "D": 16, "E": 14, "F": 16, "G": 14, "H": 16, "I": 40})
@@ -2380,18 +2413,82 @@ put(ws, f"B{r}", lecture("Lecture : avant synergies, le secteur paie de ", t_x(K
     " ; à ", t_x(K['mPub']), " après synergies, il est dans la norme. Une petite cible se paie cher avant synergies : ce sont les "
     "synergies qui ramènent le prix sous 10x. Stericycle n'a pas d'EBITDA publié dans son communiqué."), color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:H{r}"); ws.row_dimensions[r].height = 58; r += 2
+# Financement §D : la borne haute du domaine des multiples, le plus haut multiple VE / EBITDA que le classeur relève
+# (Veolia, Clean Earth recalculé, secteur avant et après synergies).
+put(sheets["Financement"], f"C{MHI_ROW}", f"=MAX({q('Cibles')}!$C${M0}:$C${M1},{q('Cibles')}!$E${S0}:$F${S1})", nf='0.0"x"')
 
 put(ws, f"A{r}", "C", bold=True); put(ws, f"B{r}", "L'univers de cibles, noté (00_Admin/targets.csv : une ligne par cible, sourcée)", bold=True); r += 1
 put(ws, f"B{r}", "Chaque cible est confrontée aux 1 000 futurs de l'onglet Simulation : elle « tient » dans un tirage si son prix n'excède pas "
     "marge contraignante / (1 − 3 / multiple) dans ce tirage. Valeurs = dernière valeur publiée (année dans Propriétaire).", color=GREY, italic=True); r += 1
 TARGETS_CSV = admin_file("targets.csv")
 TARGETS = list(csv.DictReader(TARGETS_CSV.open(encoding="utf-8"))) if TARGETS_CSV.exists() else []
+# La valeur publiée d'une cible est écrite dans targets.csv telle que la source l'imprime : un nombre seul dont l'échelle
+# et la devise sont dans la colonne currency (« 3.0 » + « Md USD »), ou une phrase (« de l'ordre de 300 M€ pour 100 % des
+# titres », « approximately $6.6 billion (€5.6 billion) » + « USD »). On en lit le premier montant qui porte une échelle
+# (M ou Md) et dont la devise s'accorde avec la colonne currency ; rien n'est estimé, rien n'est arrondi.
+_SCALE_WORD = {"milliard": "Md", "milliards": "Md", "miliardi": "Md", "billion": "Md", "billions": "Md", "bn": "Md",
+               "md": "Md", "mds": "Md", "mrd": "Md", "million": "M", "millions": "M", "milioni": "M", "mln": "M",
+               "mio": "M", "mn": "M", "m": "M"}
+_CUR_WORD = {"€": "EUR", "eur": "EUR", "euro": "EUR", "euros": "EUR", "di euro": "EUR", "£": "GBP", "gbp": "GBP",
+             "livre": "GBP", "livres": "GBP", "livre sterling": "GBP", "livres sterling": "GBP", "pound": "GBP",
+             "pounds": "GBP", "us$": "USD", "usd": "USD", "a$": "AUD", "au$": "AUD", "aud": "AUD", "c$": "CAD",
+             "ca$": "CAD", "cad": "CAD", "$": "$", "dollar": "$", "dollars": "$", "de dollars": "$"}
+_AMOUNT = re.compile(
+    r"(?P<pre>US\$|AU?\$|CA?\$|[$€£])?\s?(?<![\d.,])"
+    r"(?P<num>\d{1,3}(?:[ \u00a0\u202f]\d{3})+(?:[.,]\d+)?|\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:[.,]\d+)?)"
+    r"\s?(?P<scale>milliards?|miliardi|billions?|bn|mds?|mrd|millions?|milioni|mln|mio|mn|m)\.?"
+    r"(?:\s?(?P<post>€|\$|£|d['’]\s?euros?|de dollars|di euro|euros?|eur|usd|gbp|aud|cad|dollars?|livres?(?: sterling)?|pounds?))?"
+    r"(?![a-zà-ÿ])", re.IGNORECASE)
+
+
+def _amount_number(text):
+    """« 9.4 », « 6,6 », « 1,200 » (anglais), « 1 200,5 » (français) → nombre."""
+    s = re.sub(r"[ \u00a0\u202f]", "", text)
+    if re.fullmatch(r"\d{1,3}(?:,\d{3})+(?:\.\d+)?", s):
+        return float(s.replace(",", ""))
+    return float(s.replace(",", "."))
+
+
+def published_value(text, unit):
+    """(valeur, échelle « M » ou « Md », devise) d'une valeur publiée de targets.csv, ou None s'il n'y en a pas."""
+    text = (text or "").strip()
+    parts = (unit or "").split()
+    col_scale = _SCALE_WORD.get(parts[0].lower()) if len(parts) == 2 else None
+    col_cur = parts[-1].upper() if parts else None
+    if not text:
+        return None
+    if re.fullmatch(r"[\d \u00a0\u202f.,]+", text):          # un nombre seul : l'échelle est dans la colonne currency
+        return (_amount_number(text), col_scale, col_cur) if col_scale else None
+    for m in _AMOUNT.finditer(text):
+        sym = (m.group("pre") or m.group("post") or "").lower().replace("’", "'").replace("d'", "").strip()
+        cur = _CUR_WORD.get(sym)
+        if cur is None or col_cur is None or cur == col_cur or (cur == "$" and col_cur.endswith("D")):
+            return (_amount_number(m.group("num")), _SCALE_WORD[m.group("scale").lower()],
+                    col_cur or ("USD" if cur == "$" else cur))
+    return None
+
+
+PUBLISHED = {t["id"]: published_value(t.get("ev_estimate"), t.get("currency")) for t in TARGETS}
 line(ws, r, "mRet", "Multiple payé retenu pour une cible (avant synergies) — jugement du groupe", f"={K['secMed']}", "x",
      "par défaut : médiane du secteur (§E) ; une cible peut avoir le sien (colonne J)", '0.0"x"', True, store=K)
 ws[f"C{r}"].fill = YELLOW; r += 1
 cad, i_cad = E("Taux de référence BCE : dollars canadiens pour un euro", "06/10/2026")
 line(ws, r, "cad", "Dollars canadiens pour un euro (BCE)", f"={cad}", "CAD / EUR", i_cad, '0.0000', store=K); r += 1
-put(ws, f"B{r}", "Le dollar américain est converti au taux de l'hypothèse fx (Hypothèses), celui de Clean Earth à la clôture.",
+RATES = {"EUR": "1", "USD": HY("fx"), "CAD": K["cad"]}
+# Une autre devise de valeur publiée (livre, dollar australien…) se convertit dès que son taux de référence BCE est au
+# registre, sur une seule ligne d'unité « GBP pour 1 EUR » : la ligne apparaît ici au prochain passage de la chaîne.
+FX_NAMES = {"GBP": "Livres sterling", "AUD": "Dollars australiens", "CHF": "Francs suisses", "JPY": "Yens"}
+for _cur in sorted({p[2] for p in PUBLISHED.values() if p and p[2] and p[2] not in RATES}):
+    _hits = [x for x in rows if x["unit"].strip() == f"{_cur} pour 1 EUR"]
+    if len(_hits) == 1:
+        USED.append({"id": _hits[0]["id"], "prefix": _hits[0]["label"], "period": _hits[0]["period"], "unit": _hits[0]["unit"]})
+        line(ws, r, f"fx{_cur}", f"{FX_NAMES.get(_cur, _cur)} pour un euro (BCE)", f"={q('Entrées')}!$C${ENTREE_ROW[_hits[0]['id']]}",
+             f"{_cur} / EUR", _hits[0]["id"], '0.0000', store=K); r += 1
+        RATES[_cur] = K[f"fx{_cur}"]
+_UNCONVERTED = sorted({p[2] for p in PUBLISHED.values() if p and p[2] and p[2] not in RATES})
+put(ws, f"B{r}", "Le dollar américain est converti au taux de l'hypothèse fx (Hypothèses), celui de Clean Earth à la clôture."
+    + (f" Une valeur publiée en {', '.join(_UNCONVERTED)} reste dans sa devise, sans conversion ni confrontation à la grille, "
+       "tant que son taux de référence BCE n'est pas au registre." if _UNCONVERTED else ""),
     color=GREY, italic=True); r += 2
 CRIT = [("Traitement", "actifs de traitement (incinération, TSDF), pas de collecte seule"),
         ("Géographie", "États-Unis ou zone où Veolia veut croître en déchets dangereux"),
@@ -2428,16 +2525,13 @@ for t in TARGETS:
         continue
     put(ws, f"B{r}", t["name"]); put(ws, f"C{r}", t["country"]); put(ws, f"D{r}", t["activity"])
     put(ws, f"E{r}", t.get("owner", ""))
-    unit = (t.get("currency") or "").split()
-    scale, cur = (SCALE.get(unit[0]), unit[1]) if len(unit) == 2 else (None, unit[0] if unit else "")
-    try:
-        v = float((t.get("ev_estimate") or "").replace(",", ""))
-    except ValueError:
-        v = None
-    if v is not None:
-        put(ws, f"F{r}", v, color=BLUE, nf="#,##0.0"); put(ws, f"G{r}", t["currency"], color=GREY)
+    pub = PUBLISHED.get(t["id"])
+    if pub is not None:
+        v, sc, cur = pub
+        scale = SCALE.get(sc)
+        put(ws, f"F{r}", v, color=BLUE, nf="#,##0.0"); put(ws, f"G{r}", f"{sc} {cur}" if cur else sc, color=GREY)
         put(ws, f"H{r}", {"enterprise_value": "VE", "equity_value": "fonds propres", "other": "valorisation"}.get(t.get("ev_basis"), t.get("ev_basis", "")), color=GREY)
-        rate = {"EUR": "1", "USD": HY("fx"), "CAD": K["cad"]}.get(cur)
+        rate = RATES.get(cur)
         if scale and rate:
             put(ws, f"I{r}", f"=F{r}*{scale}/{rate}", nf=NF_M)
         else:
@@ -2458,6 +2552,7 @@ for t in TARGETS:
 GR1 = r - 1
 r += 1
 line(ws, r, "tN", "Cibles sourcées (hors étalon)", f"=COUNTA(B{CE_ROW + 1}:B{GR1})", "", "targets.csv", NF_I, store=K); r += 1
+line(ws, r, "tPub", "… dont avec un prix publié, dans sa devise", f"=COUNT(F{CE_ROW + 1}:F{GR1})", "", "", NF_I, store=K); r += 1
 line(ws, r, "tValued", "… dont avec une valeur publiée convertie en euros", f"=COUNT(I{CE_ROW + 1}:I{GR1})", "", "", NF_I, store=K); r += 1
 line(ws, r, "tFit", "… dont qui tiennent dans la marge centrale", f'=COUNTIF(K{CE_ROW + 1}:K{GR1},"oui")', "", "", NF_I, True, store=K); r += 1
 line(ws, r, "tBestP", "Meilleure probabilité de tenir parmi les cibles", f"=MAX(L{CE_ROW + 1}:L{GR1})", "", "", "0%", store=K); r += 1

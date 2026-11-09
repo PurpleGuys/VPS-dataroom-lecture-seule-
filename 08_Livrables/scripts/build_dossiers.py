@@ -23,6 +23,15 @@ DEALS = list(csv.DictReader(admin_file("deals.csv").open(encoding="utf-8"))) if 
 WB = load_workbook(os.environ.get("DATAROOM_MODEL") or LIV / "modele-greenup-2027.xlsx", data_only=True)
 OUT = LIV / "dossiers-sujet-2.html"
 NB = " "
+# Les jalons du cours encore à venir : seuls ceux qui ne sont pas passés s'affichent, pour qu'aucun dossier régénéré
+# ne propose une date échue (brouillon visé le 13/11, remise le 25/11, soutenance le 02/12/2026).
+import datetime as _dt
+JALONS = [(_dt.date(2026, 11, 13), "brouillon complet", "le brouillon"), (_dt.date(2026, 11, 25), "remise", "la remise"),
+          (_dt.date(2026, 12, 2), "soutenance", "la soutenance")]
+_MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+def jour(d):
+    return f"{'1er' if d.day == 1 else d.day} {_MOIS[d.month - 1]}"
+A_VENIR = [j for j in JALONS if j[0] >= _dt.date.today()]
 
 
 def fig(prefix, period, unit=None):
@@ -89,6 +98,54 @@ def shown(r):
     return fr(v, d) + ("x" if unit == "x" else NB + unit)
 
 
+# Une valeur du registre telle qu'un lecteur français l'attend (« 7,050 » imprimé à l'anglaise ne doit pas se lire
+# sept virgule zéro cinq) : 19 657 M€, 0,5 Md€/an, 2,8x, 5,1 % — espace fine insécable (U+202F) entre les milliers et
+# avant l'unité. Même logique que french_number() et display_value() de src/dataroom/report.py, que les scripts du vault
+# n'importent pas.
+UNITS_FR = {"M EUR": "M€", "Md EUR": "Md€", "k EUR": "k€", "EUR": "€", "M USD": "M$", "Md USD": "Md$", "USD": "$",
+            "M GBP": "M£", "GBP": "£", "Md GBP": "Md£", "Md EUR / an": "Md€/an", "M EUR / an": "M€/an",
+            "Md EUR par an": "Md€/an", "% / an": "%/an"}
+
+
+def _group(integer):
+    out = ""
+    while len(integer) > 3:
+        out = NB + integer[-3:] + out
+        integer = integer[:-3]
+    return integer + out
+
+
+def french_number(value):
+    """« 25,423 » → « 25 423 », « 5.1 » → « 5,1 », « -200 » → « −200 » ; un texte (« Baa1 Stable ») reste tel quel."""
+    v = (value or "").strip()
+    compact = v.replace("\u202f", "").replace("\xa0", "").replace(" ", "")
+    m = re.fullmatch(r"([-+−]?)(\d{1,3}(?:,\d{3})+)(\.\d+)?", compact)          # 25,423 ou 1,234.5
+    if m:
+        sign, integer, dec = m.group(1), m.group(2).replace(",", ""), (m.group(3) or "")[1:]
+    else:
+        m = re.fullmatch(r"([-+−]?)(\d+)(?:[.,](\d+))?", compact)              # 5.1, 0.2, -200, 3,8, 24548
+        if not m or (" " in v and not re.fullmatch(r"[-+−]?\d{1,3}(?: \d{3})+(?:,\d+)?", v)):
+            return v
+        sign, integer, dec = m.group(1), m.group(2), m.group(3) or ""
+    sign = "−" if sign in ("-", "−") else sign
+    return sign + _group(integer) + ("," + dec if dec else "")
+
+
+def display_value(value, unit):
+    """« valeur unité » en notation française : 25 423 M€, 5,1 %, 10,4x, A-2/BBB."""
+    unit = (unit or "").strip()
+    if unit == "année" and re.fullmatch(r"\d{4}", str(value).strip()):
+        return str(value).strip()   # une année ne se groupe pas : 2019, pas 2 019
+    number = french_number(value)
+    if not unit or not re.search(r"\d", number) or re.search(r"[A-Za-z]", number):
+        return number
+    if unit == "x":
+        return number + "x"
+    if unit == "%":
+        return number + NB + "%"
+    return number + NB + UNITS_FR.get(unit, unit)
+
+
 def N(r):
     return parse(r["value"])[0]
 
@@ -133,8 +190,9 @@ def table(rows):
 
 
 def plain(s):
-    """HTML → text, for the Word report."""
-    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", str(s)))).strip()
+    """HTML → text, for the Word report. Les espaces insécables (U+00A0, U+202F : milliers, avant % et les unités)
+    restent insécables : sans elles, le PDF coupe « 24 » et « % des futurs » sur deux lignes."""
+    return re.sub(r"[^\S\u00a0\u202f]+", " ", html.unescape(re.sub(r"<[^>]+>", "", str(s)))).strip()
 
 
 REPORT_ROLES: list = []
@@ -199,6 +257,10 @@ HEADSP27_UNF = traj("Marge de dette fin 2027 sous le seuil", UNFC); HEADSP26_UNF
 RATIO26 = traj("FFO / dette ajustée fin 2026"); RATIO27 = traj("FFO / dette ajustée fin 2027")
 ADJ26 = traj("Dette nette ajustée par les agences fin 2026")
 WHICH27 = traj("Contrainte qui mord"); WHICH27_UNF = traj("Contrainte qui mord", UNFC)
+WHICH27_FAV = traj("Contrainte qui mord", FAVC)
+def constraint(label):
+    """La contrainte qui mord, en bref pour un tableau : « levier ≤ 3x (plafond de Veolia) » → « levier ≤ 3x »."""
+    return str(label or "").split(" (")[0]
 BIND27 = traj("Marge contraignante"); MAXACQB = traj("Acquisition maximale fin 2027 sous la contrainte")
 UNF = mv("Cibles", "Marge de manœuvre fin 2027", "C"); FAV = mv("Cibles", "Marge de manœuvre fin 2027", "E")
 _wc = WB["Cibles"]
@@ -268,7 +330,8 @@ M_SEC_TOP = next(_wc[f"B{c.row}"].value for c in _wc["E"] if c.value == M_SEC_MA
 CE_VS_SEC_TXT = (f"Clean Earth avant synergies dépasse de {x(CE_VS_SEC)} le plus cher du secteur" if CE_VS_SEC > 0 else
                  f"Clean Earth avant synergies reste {x(-CE_VS_SEC)} sous le plus cher du secteur ({M_SEC_TOP})")
 M_RET = mv("Cibles", "Multiple payé retenu")
-T_N = mv("Cibles", "Cibles sourcées"); T_VAL = mv("Cibles", "… dont avec une valeur publiée")
+T_N = mv("Cibles", "Cibles sourcées"); T_PUB = mv("Cibles", "… dont avec un prix publié")
+T_VAL = mv("Cibles", "… dont avec une valeur publiée convertie")
 T_FIT = mv("Cibles", "… dont qui tiennent dans la marge centrale"); T_BESTP = mv("Cibles", "Meilleure probabilité de tenir")
 T_MAXFIT = mv("Cibles", "La plus grande cible qui tient")
 _t0 = next(c.row for c in _wc["B"] if c.value == "Cible") + 1
@@ -286,6 +349,32 @@ for _r in range(_t0, _t0 + 60):
                     "benchmark": _name.startswith("Clean Earth")})
 CANDIDATES = [t for t in TARGETS if not t["benchmark"]]
 assert len(CANDIDATES) == T_N, (len(CANDIDATES), T_N)
+TARGET_UNITS = {"M EUR": "M€", "Md EUR": "Md€", "M USD": "M$", "Md USD": "Md$", "M GBP": "M£", "Md GBP": "Md£"}
+
+
+def published(t):
+    """La valeur publiée d'une cible, dans sa devise (« 390 M£ », « 9,4 Md AUD »), ou None."""
+    v = t["value"]
+    if not isinstance(v, (int, float)) or isinstance(v, bool):
+        return None
+    return fr(v, 0 if float(v).is_integer() or abs(v) >= 100 else 1) + NB + TARGET_UNITS.get(t["unit"] or "", t["unit"] or "")
+
+
+# Les cibles dont le prix est publié dans une devise que le registre ne sait pas convertir (pas de taux BCE) : ni en
+# euros, ni confrontées à la grille, ce qui n'est pas « prix non publié ».
+UNCONVERTED = [t for t in CANDIDATES if t["ev_eur"] is None and published(t)]
+UNCONVERTED_CUR = sorted({(t["unit"] or "").split()[-1] for t in UNCONVERTED if t["unit"]})
+UNCONVERTED_NAMES = " et ".join(t["name"].split(" — ")[0] for t in UNCONVERTED)
+# Le texte de la valeur telle que la source l'imprime (targets.csv) : il dit sa portée (« pour l'ensemble d'Urbaser »).
+PRINTED = {t["id"]: (t.get("ev_estimate") or "").strip() for t in csv.DictReader(admin_file("targets.csv").open(encoding="utf-8"))} \
+    if admin_file("targets.csv").exists() else {}
+
+
+def printed(t):
+    """« imprimé : … » quand la valeur publiée est une phrase et non un nombre seul."""
+    text = PRINTED.get(str(t["ref"] or "").split(" — ")[0], "")
+    return f" ; imprimé : « {text} »" if text and not re.fullmatch(r"[\d .,]+", text) else ""
+assert T_PUB == T_VAL + len(UNCONVERTED), (T_PUB, T_VAL, len(UNCONVERTED))
 # Pari 1 : la capacité en probabilités (onglet Distribution, 1 000 futurs tirés)
 _wd = WB["Distribution"]
 def dist(key, col="F"):
@@ -315,6 +404,45 @@ def bascule(code, col):
     row = next(c.row for c in _wf["A"] if c.value == code)
     return _wf[f"{col}{row}"].value
 BK_MTUCK_C4 = bascule("mTuck", "N"); BK_G26_C4 = bascule("g26", "N"); BK_FRAGILE = fin_row("Hypothèses qui font basculer", "C")
+# Le tableau des seuils tel que le classeur l'écrit (Financement §D) : une ligne par hypothèse, un verdict par conclusion
+# (« bascule à x », « tient partout (seuil x) », « faux partout (il faudrait x) », « hors domaine : … », « sans effet »).
+_bk_head = next(c.row for c in _wf["B"] if c.value == "Hypothèse" and _wf[f"C{c.row}"].value == "Base")
+BK_CONCL = [str(_wf[f"{col}{_bk_head}"].value or "").split(" : ", 1)[-1] for col in "DEFG"]
+BK_ROWS = []
+for _r in range(_bk_head + 1, _wf.max_row + 1):
+    if not _wf[f"A{_r}"].value:
+        break
+    BK_ROWS.append((_wf[f"A{_r}"].value, str(_wf[f"B{_r}"].value or ""), [str(_wf[f"{col}{_r}"].value or "") for col in "DEFG"]))
+def bk_verdict(code, i):
+    return next(v[i] for c, _lab, v in BK_ROWS if c == code)
+def _low(lab):
+    return lab[0].lower() + lab[1:] if lab[1:2].islower() else lab
+BK_FLIPS = {}   # conclusion → les hypothèses qui la renversent sans sortir de leurs bornes, avec leur seuil
+for _code, _lab, _v in BK_ROWS:
+    for _i, _s in enumerate(_v):
+        if _s.startswith("bascule à "):
+            BK_FLIPS.setdefault(BK_CONCL[_i], []).append(f"{_low(_lab)} (seuil {_s[len('bascule à '):]})")
+assert sum(1 for _c, _lab, _v in BK_ROWS if any(s.startswith("bascule à ") for s in _v)) == BK_FRAGILE, BK_FRAGILE
+MTUCK_C4 = bk_verdict("mTuck", 3)
+MTUCK_C4_TXT = (f"elle ne tient que payée moins de {fr(BK_MTUCK_C4, 1)}x" if MTUCK_C4.startswith(("faux partout", "bascule à"))
+                else "elle ne tient à aucun multiple possible" if MTUCK_C4.startswith("hors domaine") and "fausse" in MTUCK_C4
+                else "elle tient à tout multiple de la fourchette")
+
+
+def bk_answer():
+    """« Quelle hypothèse ferait tomber vos conclusions ? », lu dans Financement §D."""
+    n, src = int(BK_FRAGILE or 0), "onglet Financement §D, chaque seuil vérifié en le remettant dans le moteur"
+    if not n:
+        text = f"Aucune, prise seule et dans ses bornes : aucun seuil ne tombe dans la fourchette d'une hypothèse ({src})."
+    else:
+        who = "Ce sont elles" if n > 1 else "C'est elle"
+        text = (f"{n} hypothèse{'s' if n > 1 else ''}, chacune seule et dans ses bornes, {'peuvent' if n > 1 else 'peut'} renverser "
+                f"une conclusion ({src}). " + " ; ".join(f"« {c} » : {', '.join(items)}" for c, items in BK_FLIPS.items())
+                + f". {who} qu'il faut défendre à l'oral.")
+    if bk_verdict("g26", 3).startswith("faux partout") and MTUCK_C4.startswith("faux partout"):
+        text += (f" Pour une cible de {fr(FIN_S / 1000, 0)} Md€, il faudrait une croissance 2026 de {pct(BK_G26_C4, 1)} "
+                 f"ou un multiple sous {fr(BK_MTUCK_C4, 1)}x.")
+    return text
 TAX_ALIGNED = mv("ESG", "Part du capex éligible et aligné, recalculée"); TAX_HW_SHARE = mv("ESG", "Déchets dangereux (PPC) : part du capex aligné")
 TAX_HW_RATE = mv("ESG", "Déchets dangereux (PPC) : capex aligné / éligible"); TAX_NONELIG = mv("ESG", "Capex non éligible")
 PEER_GAP_SUEZ = mv("Levier", "Écart de FFO / dette nette entre Veolia et Suez"); PEER_GAP_HERA = mv("Levier", "Écart entre Veolia et le mieux noté")
@@ -666,7 +794,7 @@ ROLES.append(role(
          f"Les deux, à des dates différentes. Veolia s'engage à garder BBB / Baa1, et S&P abaisse la note sous 18 % de FFO / dette. "
          f"Au pic de dette de 2026, ce seuil demande {fr(FFOREQ / 1000, 1)} Md€ de FFO pour {fr(FFO25 / 1000, 1)} Md€ générés en 2025 : "
          f"c'est 2026 qui est tendu, et c'est pour cela que les cessions sont annoncées dans les deux ans. Fin 2027, avec un FFO qui suit "
-         f"l'EBITDA, le ratio remonte à {pct(RATIO27)} et c'est le 3x de Veolia qui limite la capacité ({WHICH27.split(' : ')[0]} dans le modèle)."),
+         f"l'EBITDA, le ratio remonte à {pct(RATIO27)} et c'est le 3x de Veolia qui limite la capacité (contrainte qui mord dans le modèle : {constraint(WHICH27)})."),
         ("D'où vient l'écart de 5,7 Md€ entre la dette des agences et la dette publiée ?",
          f"De la réconciliation que Moody's publie : la dette brute est la même ({P(f['mo_rep'])} M€), Moody's y ajoute pensions, "
          f"titrisation, retraitements et la moitié des hybrides ({P(f['mo_hyb'])} M€), puis retient moins de trésorerie "
@@ -692,7 +820,7 @@ ROLES.append(role(
          f"Depuis le tableau de flux du DEU (p.362-363) : capacité d'autofinancement avant BFR, moins impôts et intérêts payés, plus "
          f"remboursements d'actifs financiers opérationnels et dividendes reçus : {fr(FFO_REC, 0)} M€ contre {P(f['mo_ffo25'])} publiés, "
          f"écart {pct(FFO_GAP_PCT)}. Même lecture en 2024 à moins de 2 % près : c'est un contrôle bloquant du classeur."),
-        ("Votre fin 2026 est-il crédible ?",
+        ("Votre scénario de fin 2026 est-il crédible ?",
          f"Il n'utilise que la croissance publiée à fin septembre (+{P(f['g9m'])} %, dans la guidance de +{P(f['g_lo'])} à +{P(f['g_hi'])} %), "
          f"le quatrième trimestre 2025 reproduit et la moitié des cessions signées non encaissées : il donne {x(LEV26)}, face à un levier "
          "que Veolia annonce « égal ou légèrement supérieur à 3x ». L'écart tient au quatrième trimestre, publié en février 2027."),
@@ -946,7 +1074,7 @@ ROLES.append(role(
          f"soit {pct(TAX_ALIGNED, 0)} ; l'eau en porte {P(f['tax_water'])} Md€, les déchets dangereux {P(f['tax_hw'])} Md€ — "
          f"{pct(TAX_HW_SHARE, 0)} du capex aligné du groupe, mais la ligne la mieux alignée ({pct(TAX_HW_RATE, 0)} de l'éligible). "
          f"Ce que le DEU ne donne pas : l'impact par euro (tonnes traitées, CO2 évité, m³ économisés par M€ investi), publié au niveau "
-         f"du groupe seulement. C'est la question 3 du cours, et une question pour Veolia le 16 octobre."),
+         f"du groupe seulement. C'est la question 3 du cours, et une question à poser à Veolia."),
         ("Pourquoi 81 % de goodwill est-il un sujet ESG ?",
          "Parce que tant que le prix n'est pas affecté, un passif environnemental découvert plus tard viendra réduire l'actif net acquis "
          "et gonfler le goodwill, sans que personne l'ait vu à l'achat."),
@@ -957,7 +1085,7 @@ ROLES.append(role(
 
 def target_line(t):
     if t["ev_eur"] is None:
-        return f"{t['name']} : prix non publié"
+        return f"{t['name']} : " + (f"{published(t)} publiés, devise non convertie" if published(t) else "prix non publié")
     return (f"{t['name']} : {fr(t['ev_eur'], 0)}{NB}M€ à {fr(t['mult'], 1)}x, tient dans {pct(t['p'], 0)} des futurs"
             + (" (oui au central)" if t["fits"] == "oui" else ""))
 
@@ -970,7 +1098,7 @@ ROLES.append(role(
     f"rien. Une cible de {fr(FIN_S / 1000, 0)} Md€ à {fr(FIN_M, 1)}x laisserait {fr(FIN_GAP3, 0)} M€ à trouver sous 3x fin 2027 : "
     f"{fr(FIN_HYB, 0)} M€ d'hybrides ({fr(FIN_HYB_COST, 0)} M€ de coupon par an), ou {fr(FIN_DISP, 0)} M€ de cessions accélérées "
     f"({fr(FIN_DISP_COST, 0)} M€ d'EBITDA perdu par an), ou une augmentation de capital diluant de {pct(FIN_EQ_DIL, 1)} ; sans financement, "
-    f"elle ne tient que payée moins de {fr(BK_MTUCK_C4, 1)}x. "
+    f"{MTUCK_C4_TXT}. "
     f"Recommandation proposée : des tuck-ins au bas de la fourchette tant que le levier publié reste au-dessus de 3x ; une cible de "
     f"1 à 2 Md€ seulement quand les cessions signées auront dépassé les {P(f['sign570'])} M€ d'aujourd'hui vers les {P(f['prog'])} Md€ "
     "annoncés et que les comptes 2026 auront confirmé le retour vers 3x. Le programme ne sera encaissé qu'à mi-2028, après l'horizon du sujet.",
@@ -996,8 +1124,10 @@ ROLES.append(role(
         row_calc("Secteur, avant synergies", f"{x(M_SEC_MIN)} à {x(M_SEC_MAX)}", "communiqués des acquéreurs, 05_Commercial_Strategy"),
         row_calc("Secteur, médiane avant synergies", x(M_SEC_MED), "multiple payé retenu pour les cibles"),
         row_calc("Clean Earth avant synergies face au plus cher du secteur", x(CE_VS_SEC), "positif = au-dessus"),
-    ] + [row_calc(f"Cible : {t['name']}", "prix non publié" if t["ev_eur"] is None else
-                  f"{fr(t['ev_eur'], 0)}{NB}M€ ; {pct(t['p'], 0)} des futurs", f"{t['owner']} ; {t['ref']}") for t in CANDIDATES]),
+    ] + [row_calc(f"Cible : {t['name']}",
+                  (f"{published(t)} publiés, devise non convertie" if published(t) else "prix non publié") if t["ev_eur"] is None else
+                  f"{fr(t['ev_eur'], 0)}{NB}M€ ; {pct(t['p'], 0)} des futurs",
+                  f"{t['owner'] or 'propriétaire non renseigné'} ; {t['ref']}{printed(t)}") for t in CANDIDATES]),
     [
         "La formule : une acquisition ajoute son prix à la dette mais seulement prix / multiple à l'EBITDA. Elle tient sous 3x tant que "
         "prix ≤ marge / (1 − 3 / multiple).",
@@ -1011,15 +1141,24 @@ ROLES.append(role(
         "Les critères de cible : actifs de traitement (pas de collecte seule), géographie des boosters (États-Unis, Asie), PFAS et nouveaux "
         "polluants, taille compatible avec la grille, et pas de doublon de concurrence en Europe, où Veolia est déjà numéro un "
         "(présentation Clean Earth p.9).",
-        f"L'univers : {T_N} cibles sourcées, toutes détenues par des fonds entrés entre 2023 et 2025 (Cibles §C). "
-        f"{T_VAL} ont une valeur publiée ; {T_FIT} {'tiennent' if T_FIT > 1 else 'tient'} dans la marge centrale au multiple retenu "
+        f"L'univers : {T_N} cibles sourcées, aux propriétaires variés : fonds d'investissement, sociétés cotées, groupes familiaux "
+        "ou industriels (colonne Propriétaire de Cibles §C). "
+        f"{T_PUB} ont un prix publié, dont {T_VAL} {'convertis' if T_VAL > 1 else 'converti'} en euros"
+        + (f" (pas de taux de change au registre pour {' et '.join(UNCONVERTED_CUR)})" if UNCONVERTED_CUR else "")
+        + f" ; {T_FIT} {'tiennent' if T_FIT > 1 else 'tient'} dans la marge centrale au multiple retenu "
         f"({x(M_RET)}, médiane du secteur avant synergies). " + " ; ".join(target_line(t) for t in CANDIDATES) + ".",
-        "La valeur de chaque cible est la dernière publiée (la transaction qui a fait entrer le fonds), pas un prix de vente "
-        "d'aujourd'hui : un fonds qui sort vend plus cher qu'il n'a acheté. La probabilité est donc un plafond.",
+        "La valeur de chaque cible est la dernière publiée (une transaction ou une offre, souvent celle qui a fait entrer le "
+        "propriétaire actuel), pas un prix de vente d'aujourd'hui : un propriétaire qui vend demande en général plus qu'il n'a payé. "
+        "La probabilité est donc un plafond.",
     ],
     [
         "La notation qualitative (traitement, géographie, PFAS, concurrence, passifs) est au groupe : cellules jaunes de Cibles §C.",
         "Arcwood (incinération, PFAS) n'a pas de prix publié : la grille ne peut pas répondre pour elle sans une estimation sourcée.",
+    ] + ([
+        f"{UNCONVERTED_NAMES} : prix {'publiés' if len(UNCONVERTED) > 1 else 'publié'} en {' et '.join(UNCONVERTED_CUR)}, sans taux "
+        f"de change de {'ces devises' if len(UNCONVERTED_CUR) > 1 else 'cette devise'} au registre : ni conversion en euros ni "
+        "confrontation à la grille tant que le taux de référence BCE n'y est pas versé.",
+    ] if UNCONVERTED else []) + [
         "La recommandation est une proposition du modèle : au groupe de la défendre ou de l'amender.",
     ],
     [
@@ -1033,19 +1172,17 @@ ROLES.append(role(
          f"HEPACO ressort à {P(f['hep_m'])}x après synergies, EnviroServe et ES&H à {P(f['env_post'])}x. {CE_VS_SEC_TXT} : "
          f"les synergies « achètent » {x(M_SPREAD)} de multiple. D'où la grille : 8x, 9,8x, 12x."),
         ("Quelles cibles regardez-vous ?",
-         f"{T_N} cibles réelles, détenues par des fonds : " + " ; ".join(target_line(t) for t in CANDIDATES)
+         f"{T_N} cibles réelles, aux propriétaires variés (fonds, sociétés cotées, groupes familiaux ou industriels) : "
+         + " ; ".join(target_line(t) for t in CANDIDATES)
          + f". Au multiple médian du secteur ({x(M_RET)}), {T_FIT} {'tiennent' if T_FIT > 1 else 'tient'} dans la marge centrale"
          + (f", la plus grande pour {fr(T_MAXFIT, 0)}{NB}M€" if T_MAXFIT else "")
-         + ". Les valeurs sont celles de l'entrée du fonds : un vendeur demandera plus."),
+         + ". Chaque valeur est la dernière publiée, souvent celle de l'entrée du propriétaire actuel : un vendeur demandera plus."),
         ("Et si Veolia veut quand même une cible de 3 Md€ ?",
          f"Le menu de financement (onglet Financement) le chiffre : il manque {fr(FIN_GAP3, 0)} M€ sous 3x fin 2027, rien sous le seuil S&P. "
          f"Les hybrides comblent l'écart pour {fr(FIN_HYB_COST, 0)} M€ de coupon par an, mais les agences n'en retiennent que la moitié ; "
          f"des cessions accélérées demandent {fr(FIN_DISP, 0)} M€ et coûtent {fr(FIN_DISP_COST, 0)} M€ d'EBITDA récurrent ; du capital, "
          f"{pct(FIN_EQ_DIL, 1)} de dilution. La vraie question est le prix accepté pour la taille."),
-        ("Quelle hypothèse ferait tomber vos conclusions ?",
-         f"Aucune seule, dans ses bornes : {fr(BK_FRAGILE, 0)} hypothèse ne renverse une conclusion sans sortir de sa fourchette (onglet "
-         f"Financement §D, chaque seuil vérifié en le remettant dans le moteur). Pour une cible de 3 Md€, il faudrait une croissance 2026 "
-         f"de {pct(BK_G26_C4, 1)} ou un multiple sous {fr(BK_MTUCK_C4, 1)}x."),
+        ("Quelle hypothèse ferait tomber vos conclusions ?", bk_answer()),
         ("Quel multiple retenez-vous ?",
          "Pour la capacité, celui de Clean Earth après synergies, parce que c'est le seul qu'un acheteur comme Veolia ait publié. Plus le "
          f"multiple monte, plus la taille possible baisse : à {fr(grid[10][0], 0)}x, {fr(grid[10][2] / 1000, 2)} Md€. Pour noter une cible "
@@ -1060,18 +1197,27 @@ ROLES.append(role(
 
 nav = "".join(f'<a href="#role-{n}"><span>{n}</span>{esc(t)}</a>' for n, t in
               [(1, "Périmètre"), (2, "Contrainte"), (3, "Capacité"), (4, "Écart"), (5, "ESG"), (6, "Cibles")])
+# La fourchette publiée pour la promo (build_fourchette.py tourne avant ce script) : sa version et sa date, plutôt
+# qu'une date annoncée qui vieillit.
+try:
+    _hv = __import__("json").loads(OUT.with_name("fourchette-historique.json").read_text(encoding="utf-8")).get("versions", [])
+except (OSError, ValueError):
+    _hv = []
+FOURCHETTE_PUBLIEE = (f" (version {_hv[-1].get('version')} du {_dt.date.fromisoformat(_hv[-1]['date']).strftime('%d/%m/%Y')}, "
+                      "fourchette-capacite.md)") if _hv and _hv[-1].get("date") else ""
 tiles = [
     ("Levier fin 2026", x(LEV26), "guidance : égal ou légèrement au-dessus de 3x"),
     ("Levier fin 2027", x(LEV27), "engagement : au plus 3x"),
     ("Marge sous 3x fin 2027", fr(HEAD / 1000, 2, "Md€"), f"défavorable {fr(UNF / 1000, 2)} · favorable {fr(FAV / 1000, 2)}"),
     ("Marge sous 18 % S&P fin 2027", fr(HEADSP27 / 1000, 2, "Md€"), f"FFO / dette ajustée {pct(RATIO26)} en 2026, {pct(RATIO27)} en 2027"),
-    ("Acquisition max. fin 2027", fr(MAXACQB / 1000, 2, "Md€"), f"sous la contrainte qui mord : {esc(WHICH27.split(' : ')[0])}"),
+    ("Acquisition max. fin 2027", fr(MAXACQB / 1000, 2, "Md€"), f"sous la contrainte qui mord : {WHICH27}"),
     ("Sorties nettes depuis 2024", fr(SPENT["cum"], 2, "Md€"), "investissements financiers nets des cessions, au 30/09/2026"),
 ]
 tiles_html = "".join(f'<div class="tile"><p class="t-label">{esc(a)}</p><p class="t-val">{b}</p><p class="t-note">{esc(c)}</p></div>'
                      for a, b, c in tiles)
 
-page = f"""<title>Dossiers du sujet 2</title>
+page = f"""<meta name="robots" content="noindex, nofollow">
+<title>Dossiers du sujet 2</title>
 <style>
 /* Layout : une note d'analyste — synthèse chiffrée en tête, puis un dossier par rôle, texte à gauche, chiffres sourcés à droite.
    Couleurs et polices : celles d'is42 (dataroom.is42, voir src/dataroom/is42.py), rebranchées sur les noms de cette page. */
@@ -1184,10 +1330,9 @@ tr.calc td:first-child {{ font-style: italic; }}
         <li>Traduire l'engagement en nombre, et lire les seuils de dégradation des agences, « la vraie limite » → rôle 2, Levier §B'.</li>
         <li>Les trois sources de capacité : cash-flow libre, cessions, marge de levier → rôle 3, Trajectoire.</li>
         <li>La sensibilité : prouver quel paramètre bouge le plus la réponse → rôle 3, Sensibilité.</li>
-      </ol><p class="brief">Ce chantier publie sa fourchette début novembre ; les autres groupes se calent dessus.</p></div>
+      </ol><p class="brief">Ce chantier publie sa fourchette{FOURCHETTE_PUBLIEE} ; les autres groupes se calent dessus.</p></div>
     </div>
-    <p><strong>Jalons</strong> : 7 octobre, sources chargées et lues (la dataroom est l'objet à montrer) · 16 octobre, questions à Veolia ·
-    17 novembre, brouillon complet · 25 novembre, remise · 2 décembre, soutenance.
+    {f"<p><strong>Jalons à venir</strong> : {' · '.join(f'{jour(d)}, {nom}' for d, nom, _ in A_VENIR)}." if A_VENIR else "<p>"}
     <strong>Règle sur l'IA</strong> : elle construit l'outil qui calcule, elle ne calcule pas ; une page d'annexe décrit les outils utilisés.
     C'est exactement la construction retenue ici : les chiffres sont saisis depuis les documents, le classeur calcule, ce dossier lit le classeur.</p>
   </section>
@@ -1200,10 +1345,13 @@ tr.calc td:first-child {{ font-style: italic; }}
       <li>Lire les 10-K 2025 d'Enviri et de Clean Harbors, désormais dans la dataroom, et en tirer les chiffres des rôles 4 et 5
       (passifs environnementaux de Clean Earth, marges et levier de Clean Harbors). Reste à verser : le 10-Q du T1 2026 d'Enviri et le
       communiqué de vente du 20 novembre 2025.</li>
-      <li>Avant le 7 octobre : montrer la dataroom comme « sources chargées et lues », et noter dans gaps.md ce qui manque encore.</li>
+      <li>{f"Avant {A_VENIR[0][2]} du {jour(A_VENIR[0][0])}" if A_VENIR else "Au fil de l'eau"} : noter dans gaps.md ce qui manque encore à la dataroom.</li>
       <li>Rédiger la page d'annexe sur les outils d'IA : dataroom MCP (recherche, registre, contrôles), Claude pour construire le classeur
       et ces dossiers, LibreOffice pour le recalcul. Aucun chiffre produit par le modèle de langage.</li>
-      <li>Noter les {T_N} cibles de l'onglet Cibles §C (cellules jaunes) et chercher une valeur sourcée pour celles qui n'en ont pas.</li>
+      <li>Noter les {T_N} cibles de l'onglet Cibles §C (cellules jaunes) et chercher une valeur sourcée pour les {T_N - T_PUB} qui n'en ont pas{
+        (f" ; verser au registre {'les taux' if len(UNCONVERTED_CUR) > 1 else 'le taux'} de référence BCE "
+         f"({' et '.join(UNCONVERTED_CUR)} pour 1 EUR) qui {'convertiront' if len(UNCONVERTED_CUR) > 1 else 'convertira'} "
+         + esc(UNCONVERTED_NAMES)) if UNCONVERTED else ""}.</li>
       <li>Chacun ouvre son rôle avec l'outil <span style="font-family:var(--mono)">workstream_status</span> de la dataroom pour voir
       ses chiffres et ce qui manque.</li>
     </ul>
@@ -1251,7 +1399,7 @@ Chaque chiffre d'entrée vient de `00_Admin/register.csv` ; les hypothèses sont
 |---|---|---|---|
 | Marge de dette sous le levier ≤ 3x (M EUR) | {fr(UNF, 0)} | {fr(HEAD, 0)} | {fr(FAV, 0)} |
 | Marge de dette sous le seuil S&P 18 % FFO / dette ajustée (M EUR) | {fr(HEADSP27_UNF, 0)} | {fr(HEADSP27, 0)} | {fr(traj("Marge de dette fin 2027 sous le seuil", FAVC), 0)} |
-| Contrainte qui mord en premier | {WHICH27_UNF.split(' : ')[0]} | {WHICH27.split(' : ')[0]} | {traj("Contrainte qui mord", FAVC).split(' : ')[0]} |
+| Contrainte qui mord en premier | {constraint(WHICH27_UNF)} | {constraint(WHICH27)} | {constraint(WHICH27_FAV)} |
 | Acquisition maximale au multiple des tuck-ins du scénario (central : celui de Clean Earth, {P(f['mult'])}x), M EUR | {fr(traj("Acquisition maximale fin 2027 sous la contrainte", UNFC), 0)} | {fr(MAXACQB, 0)} | {fr(traj("Acquisition maximale fin 2027 sous la contrainte", FAVC), 0)} |
 
 Lecture : une acquisition ajoute son prix à la dette et seulement prix ÷ multiple à l'EBITDA ; elle tient tant que
@@ -1283,7 +1431,7 @@ _range_rows = []
 for line in OUT_RANGE.read_text(encoding="utf-8").splitlines():
     if line.startswith("| ") and not line.startswith("|---") and "Défavorable" not in line:
         _range_rows.append([c.strip() for c in line.strip("|").split("|")])
-# ------------------------------------------------------------------ les questions du 16 octobre, classées
+# ------------------------------------------------------------------ les questions pour Veolia, classées
 # Ce que chaque réponse de Veolia déplacerait : l'amplitude de la marge sous 3x fin 2027 entre les bornes de
 # l'hypothèse (Sensibilité, classement), et les questions de questions-veolia.md qui la visent. Le lien
 # hypothèse → questions est une lecture du groupe, écrite ici ; les nombres viennent du classeur.
@@ -1333,7 +1481,7 @@ Les numéros renvoient à `questions-veolia.md`. Une réponse de Veolia vaut ce 
 |---:|---|---:|---:|---|
 """ + "\n".join(_q_rows) + f"""
 
-## Ordre proposé pour la séance du 16 octobre
+## Ordre proposé pour les questions à Veolia
 
 {" → ".join(f"Q{n}" for n in _q_order)} ; puis les questions de méthode (Q16, Q17) si le temps le permet.
 Les questions de définition et de périmètre ({", ".join(f"Q{n}" for n in range(1, 22) if n not in _seen and n not in (16, 17))}) ne déplacent pas
@@ -1358,7 +1506,7 @@ OUT.with_name("report-data.json").write_text(_json.dumps({
     "range_rows": _range_rows,
     "roles": REPORT_ROLES,
     "todo": _todo,
-    "register": [[r["id"], r["label"], f"{r['value']} {r['unit']}".strip(), r["period"],
+    "register": [[r["id"], r["label"], display_value(r["value"], r["unit"]), r["period"],
                   f"{Path(r['file']).name}, p. {r['page']}, {r['source_url']} (consulté le {r['date_consulted']})",
                   r.get("workstream", ""), r.get("checked_by", "")] for r in REG],
 }, ensure_ascii=False, indent=1), encoding="utf-8")
