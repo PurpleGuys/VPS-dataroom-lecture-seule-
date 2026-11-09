@@ -5,7 +5,7 @@ Généré depuis le journal des requêtes du serveur et les registres ; rien n'e
 
 ## 2026-11-09
 
-- **compte partagé (dataroom-bearer)** : 21 chiffre(s) ajouté(s) (F721, F722, F723, F724, F725, F726, F727, F728…); 1 deal(s) (D61); 25 recherche(s), 112 page(s) lue(s).
+- **compte partagé (dataroom-bearer)** : 25 chiffre(s) ajouté(s) (F721, F722, F723, F724, F725, F726, F727, F728…); 1 deal(s) (D61); 25 recherche(s), 115 page(s) lue(s).
 
 ## 2026-11-03
 
@@ -51,7 +51,7 @@ Généré depuis le journal des requêtes du serveur et les registres ; rien n'e
 
 ## 2026-10-02
 
-- **compte partagé (dataroom-bearer)** : 115 chiffre(s) ajouté(s) (F129, F130, F131, F132, F133, F134, F135, F136…); 1 cible(s) (T1); 7 document(s) versé(s); 1 manque(s) noté(s); 13 recherche(s), 0 page(s) lue(s); 3 enregistrement(s) sans trace au registre.
+- **compte partagé (dataroom-bearer)** : 114 chiffre(s) ajouté(s) (F130, F131, F132, F133, F134, F135, F136, F137…); 1 cible(s) (T1); 7 document(s) versé(s); 1 manque(s) noté(s); 13 recherche(s), 0 page(s) lue(s); 4 enregistrement(s) sans trace au registre.
 
 ## 2026-10-01
 
