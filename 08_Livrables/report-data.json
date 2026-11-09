@@ -1,7 +1,7 @@
 {
  "generated": "2026-11-09",
  "checks": "OK",
- "n_figures": 789,
+ "n_figures": 852,
  "title": "GreenUp 2027 : combien Veolia peut-elle encore acheter sans dépasser ses engagements de levier ?",
  "subtitle": "Capstone Innovations in Finance — sujet 2, périmètre « capacité financière »",
  "thread": "Veolia annonce des enveloppes nettes. Clean Earth en est sorti ; le programme de cessions de plus de 2 Md€ d'ici mi-2028 l'y ramène. Si ce programme est encaissé à temps, il reste fin 2027 environ 0,2 Md€ de marge sous 3x, soit une acquisition d'environ 0,2 Md€ au multiple de Clean Earth. Cette marge dépend d'abord du calendrier des cessions, de la croissance organique de 2027 et des tuck-ins. Elle disparaît si tout tourne mal en même temps, ou si l'on compte la moitié des hybrides en dette. Le seuil des agences (FFO / dette ajustée ≥ 18 % chez S&P) est la contrainte de 2026 : 18,5 % dans le scénario central, dans l'attente de Moody's ; fin 2027 il laisse 2,9 Md€ et c'est le 3x qui mord. Le booster déchets dangereux tient son objectif de volume révisé, pas l'initial, et sa croissance est surtout achetée. Le passif environnemental de Clean Earth n'est pas encore visible dans les comptes.",
@@ -2440,7 +2440,7 @@
   }
  ],
  "todo": [
-  "Relire en croisé les 789 chiffres du registre (0 relus) et les 61 opérations (0 relues).",
+  "Relire en croisé les 852 chiffres du registre (0 relus) et les 61 opérations (0 relues).",
   "Lire les 10-K 2025 d'Enviri et de Clean Harbors, désormais dans la dataroom, et en tirer les chiffres des rôles 4 et 5 (passifs environnementaux de Clean Earth, marges et levier de Clean Harbors). Reste à verser : le 10-Q du T1 2026 d'Enviri et le communiqué de vente du 20 novembre 2025.",
   "Avant le 7 octobre : montrer la dataroom comme « sources chargées et lues », et noter dans gaps.md ce qui manque encore.",
   "Rédiger la page d'annexe sur les outils d'IA : dataroom MCP (recherche, registre, contrôles), Claude pour construire le classeur et ces dossiers, LibreOffice pour le recalcul. Aucun chiffre produit par le modèle de langage.",
@@ -9547,6 +9547,573 @@
    "9M 2026",
    "finance_veolia_operating_financial_review_q3_2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
    "5",
+   ""
+  ],
+  [
+   "F790",
+   "Séché Environnement : provisions pour suivi trentenaire",
+   "44,7 M EUR",
+   "30/06/2026",
+   "seche_environnement_rfs_2026_fr_amf.pdf, p. 50, https://www.groupe-seche.com/uploads/2026/10/seche_environnement_rfs_2026_fr_amf.pdf (consulté le 2026-10-10)",
+   "5",
+   ""
+  ],
+  [
+   "F791",
+   "Clean Harbors : montant non actualisé des passifs de fermeture et post-fermeture (airspace non encore consommé compris)",
+   "349,186 k USD",
+   "31/12/2025",
+   "clean-harbors-10-k-2025.pdf, p. 76, https://www.sec.gov/Archives/edgar/data/822818/000082281826000009/clh-20251231.htm (consulté le 2026-10-02)",
+   "5",
+   ""
+  ],
+  [
+   "F792",
+   "Capex engagés en 2025 dans les projets de traitement de déchets dangereux",
+   "206 M EUR",
+   "FY2025",
+   "finance_veolia_urd_2025_en.pdf, p. 226, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F793",
+   "Enviri : chiffre d'affaires du segment Clean Earth",
+   "226 M USD",
+   "T1 2026",
+   "enviri-q1-2026-results.html, p. 1, https://www.enviri.com/enviri-corporation-reports-first-quarter-2026-results/ (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F794",
+   "Immobilisations corporelles (groupe) : variations de périmètre du semestre, principalement Clean Earth",
+   "260 M EUR",
+   "S1 2026",
+   "veolia_finance_amendment_urd_2025.pdf, p. 55, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_Amendment_URD_2025.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F795",
+   "Déchets dangereux (métier) : chiffre d'affaires",
+   "2,229 M EUR",
+   "S1 2026",
+   "veolia_finance_presentation_h1_2026_results.pdf, p. 21, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_presentation_H1_2026_results.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F796",
+   "Indaver : chiffre d'affaires (imprimé en milliards d'euros à virgule décimale, valeur lue en M EUR)",
+   "1,043 M EUR",
+   "FY2025",
+   "indaver_dzr_2025_en.pdf, p. 5, https://indaver.com/fileadmin/Indavercom-files/Downloads/sustainability_report/INDAVER_DZR_2025_EN.pdf (consulté le 2026-10-10)",
+   "4",
+   ""
+  ],
+  [
+   "F797",
+   "Déchets dangereux : croissance annuelle moyenne de l'EBITDA visée par GreenUp 2024-2027, environ (communiqué de juin 2025)",
+   "+10 % / an",
+   "2024-2027",
+   "pr-hazardous-waste-treatment-veolia.pdf, p. 2, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/06/pr-hazardous-waste-treatment-veolia.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F798",
+   "Indaver : EBITDA",
+   "188 M EUR",
+   "FY2025",
+   "indaver_dzr_2025_en.pdf, p. 5, https://indaver.com/fileadmin/Indavercom-files/Downloads/sustainability_report/INDAVER_DZR_2025_EN.pdf (consulté le 2026-10-10)",
+   "4",
+   ""
+  ],
+  [
+   "F799",
+   "Clean Earth : entrée de périmètre en droits d'usage (IFRS 16)",
+   "226 M EUR",
+   "S1 2026",
+   "veolia_finance_amendment_urd_2025.pdf, p. 56, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_Amendment_URD_2025.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F800",
+   "Assurance responsabilité civile générale (programme international) : couverture initiale par sinistre, hors États-Unis et Canada",
+   "75 M EUR",
+   "2025",
+   "finance_veolia_urd_2025_en.pdf, p. 75, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F801",
+   "Déchets dangereux (métier) : croissance de l'EBITDA à périmètre et change constants",
+   "+7.2 %",
+   "S1 2026",
+   "veolia_finance_presentation_h1_2026_results.pdf, p. 21, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_presentation_H1_2026_results.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F802",
+   "Engagements donnés liés au périmètre : garanties de passif",
+   "119 M EUR",
+   "30/06/2026",
+   "veolia-amendement-deu-2025-s1-2026.pdf, p. 46, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_amendement_DEU_2025.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F803",
+   "Déchets dangereux Veolia : capacité mondiale de traitement annuelle",
+   "8,7 Mt",
+   "06/2025",
+   "pr-hazardous-waste-treatment-veolia.pdf, p. 3, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/06/pr-hazardous-waste-treatment-veolia.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F804",
+   "Clean Earth : entrée de périmètre en autres immobilisations incorporelles",
+   "213 M EUR",
+   "S1 2026",
+   "veolia_finance_amendment_urd_2025.pdf, p. 54, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_Amendment_URD_2025.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F805",
+   "Déchets dangereux (booster) : hausse du chiffre d'affaires à périmètre et change constants",
+   "+3.8 %",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 41, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F806",
+   "Onterris (ex-Montrose Environmental Group) : chiffre d'affaires",
+   "830.5 M USD",
+   "FY2025",
+   "montrose-8k-fy2025-results.pdf, p. 4, https://ir.onterris.com/sec-filings/all-sec-filings/content/0001193125-26-071772/0001193125-26-071772.pdf (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F807",
+   "Terra Nova Solutions (Clean Harbors) : multiple implicite après synergies, selon Pulse 2.0",
+   "11.8 x",
+   "05/2026",
+   "pulse2-clean-harbors-terra-nova-2026-05-14.html, p. 1, https://pulse2.com/clean-harbors-225-million-acquisition-of-terra-nova-solutions-expands-waste-services-footprint/amp/ (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F808",
+   "Séché Environnement : chiffre d'affaires contributif",
+   "1 152,0 M EUR",
+   "FY2025",
+   "seche_environnement_deu_2025_fr.pdf, p. 143, https://www.groupe-seche.com/uploads/2026/03/seche_environnement_deu_2025_fr.pdf (consulté le 2026-10-10)",
+   "4",
+   ""
+  ],
+  [
+   "F809",
+   "Séché Environnement : chiffre d'affaires publié (consolidé)",
+   "1 253,5 M EUR",
+   "FY2025",
+   "seche_environnement_deu_2025_fr.pdf, p. 143, https://www.groupe-seche.com/uploads/2026/03/seche_environnement_deu_2025_fr.pdf (consulté le 2026-10-10)",
+   "4",
+   ""
+  ],
+  [
+   "F810",
+   "Séché Environnement : effet de périmètre sur les provisions pour suivi trentenaire (Hidronor et La Filippa)",
+   "20,5 M EUR",
+   "S1 2026",
+   "seche_environnement_rfs_2026_fr_amf.pdf, p. 50, https://www.groupe-seche.com/uploads/2026/10/seche_environnement_rfs_2026_fr_amf.pdf (consulté le 2026-10-10)",
+   "5",
+   ""
+  ],
+  [
+   "F811",
+   "Déchets dangereux (booster) : chiffre d'affaires",
+   "4,217 M EUR",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 41, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F812",
+   "Enviri : EBITDA ajusté du segment Clean Earth",
+   "33 M USD",
+   "T1 2026",
+   "enviri-q1-2026-results.html, p. 1, https://www.enviri.com/enviri-corporation-reports-first-quarter-2026-results/ (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F813",
+   "Déchets dangereux Veolia : capacité de traitement nouvelle ouverte d'ici 2027 (ambition GreenUp 2024-2027)",
+   "285 kt",
+   "2027",
+   "pr-hazardous-waste-treatment-veolia.pdf, p. 2, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/06/pr-hazardous-waste-treatment-veolia.pdf (consulté le 2026-09-22)",
+   "4",
+   ""
+  ],
+  [
+   "F814",
+   "Déchets dangereux (métier) : variation du chiffre d'affaires à change constant, effet de périmètre compris",
+   "14.9 %",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 14, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "4",
+   ""
+  ],
+  [
+   "F815",
+   "Clean Earth (10-K d'Enviri) : centres de traitement autorisés RCRA Part B (TSDF)",
+   "19 sites",
+   "31/12/2025",
+   "enviri-10-k-2025.pdf, p. 17, https://www.sec.gov/Archives/edgar/data/45876/000004587626000010/nvri-20251231.htm (consulté le 2026-10-02)",
+   "5",
+   ""
+  ],
+  [
+   "F816",
+   "Enviri : résultat opérationnel du segment Clean Earth",
+   "16 M USD",
+   "T1 2026",
+   "enviri-q1-2026-results.html, p. 1, https://www.enviri.com/enviri-corporation-reports-first-quarter-2026-results/ (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F817",
+   "Clean Harbors : montant non actualisé des passifs de dépollution (remedial)",
+   "130,449 k USD",
+   "31/12/2025",
+   "clean-harbors-10-k-2025.pdf, p. 77, https://www.sec.gov/Archives/edgar/data/822818/000082281826000009/clh-20251231.htm (consulté le 2026-10-02)",
+   "5",
+   ""
+  ],
+  [
+   "F818",
+   "Clean Harbors : coûts centraux (Corporate Costs), à déduire de l'EBITDA ajusté des segments",
+   "311,291 k USD",
+   "FY2025",
+   "clean-harbors-10-k-2025.pdf, p. 93, https://www.sec.gov/Archives/edgar/data/822818/000082281826000009/clh-20251231.htm (consulté le 2026-10-02)",
+   "4",
+   ""
+  ],
+  [
+   "F819",
+   "Engagements donnés liés au périmètre : garanties de passif",
+   "120 M EUR",
+   "31/12/2025",
+   "veolia-amendement-deu-2025-s1-2026.pdf, p. 46, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_amendement_DEU_2025.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F820",
+   "Séché Environnement : provisions pour suivi trentenaire",
+   "23,8 M EUR",
+   "31/12/2025",
+   "seche_environnement_rfs_2026_fr_amf.pdf, p. 50, https://www.groupe-seche.com/uploads/2026/10/seche_environnement_rfs_2026_fr_amf.pdf (consulté le 2026-10-10)",
+   "5",
+   ""
+  ],
+  [
+   "F821",
+   "Goodwill (groupe) : part du dollar américain dans l'effet de change",
+   "171 M EUR",
+   "S1 2026",
+   "veolia_finance_amendment_urd_2025.pdf, p. 53, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_Amendment_URD_2025.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F822",
+   "Onterris (ex-Montrose Environmental Group) : EBITDA ajusté consolidé",
+   "116.2 M USD",
+   "FY2025",
+   "montrose-8k-fy2025-results.pdf, p. 4, https://ir.onterris.com/sec-filings/all-sec-filings/content/0001193125-26-071772/0001193125-26-071772.pdf (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F823",
+   "Goodwill (groupe) : effet de change total sur le semestre",
+   "256 M EUR",
+   "S1 2026",
+   "veolia_finance_amendment_urd_2025.pdf, p. 53, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_Amendment_URD_2025.pdf (consulté le 2026-09-22)",
+   "5",
+   ""
+  ],
+  [
+   "F824",
+   "Séché Environnement : excédent brut d'exploitation (EBE)",
+   "225,4 M EUR",
+   "FY2025",
+   "seche_environnement_deu_2025_fr.pdf, p. 143, https://www.groupe-seche.com/uploads/2026/03/seche_environnement_deu_2025_fr.pdf (consulté le 2026-10-10)",
+   "4",
+   ""
+  ],
+  [
+   "F825",
+   "Part des capitaux employés de Veolia appelée à tourner pendant GreenUp",
+   "25 %",
+   "2024-2027",
+   "annual-resultats-2025.pdf, p. 5, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/02/annual-resultats-2025.pdf (consulté le 2026-09-22)",
+   "1",
+   ""
+  ],
+  [
+   "F826",
+   "S&P, prévision annuelle : FFO / dette ajustés, bas de fourchette",
+   "20 %",
+   "2027",
+   "ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf, p. 4, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/04/RatingsDirect_TearSheet_VeoliaEnvironnementS.A._3552186_Apr-27-2026.pdf (consulté le 2026-10-02)",
+   "2",
+   ""
+  ],
+  [
+   "F827",
+   "Capex de croissance discrétionnaire (groupe)",
+   "-604 M EUR",
+   "FY2025",
+   "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 32, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_2025_full_year_results_presentation_0.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F828",
+   "Taux de financement du groupe (coût de la dette)",
+   "3.83 %",
+   "30/09/2025",
+   "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 26, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06)",
+   "2",
+   ""
+  ],
+  [
+   "F829",
+   "S&P, prévision annuelle : FFO / dette ajustés, haut de fourchette",
+   "22 %",
+   "2028",
+   "ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf, p. 4, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/04/RatingsDirect_TearSheet_VeoliaEnvironnementS.A._3552186_Apr-27-2026.pdf (consulté le 2026-10-02)",
+   "2",
+   ""
+  ],
+  [
+   "F830",
+   "Liquidité du groupe, lignes de crédit confirmées non tirées comprises",
+   "14.9 Md EUR",
+   "30/09/2026",
+   "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 33, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06)",
+   "2",
+   ""
+  ],
+  [
+   "F831",
+   "S&P, prévision annuelle : FFO / dette ajustés, bas de fourchette",
+   "19 %",
+   "2026",
+   "ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf, p. 4, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/04/RatingsDirect_TearSheet_VeoliaEnvironnementS.A._3552186_Apr-27-2026.pdf (consulté le 2026-10-02)",
+   "2",
+   ""
+  ],
+  [
+   "F832",
+   "S&P, prévision annuelle : FFO / dette ajustés, haut de fourchette",
+   "20 %",
+   "2026",
+   "ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf, p. 4, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/04/RatingsDirect_TearSheet_VeoliaEnvironnementS.A._3552186_Apr-27-2026.pdf (consulté le 2026-10-02)",
+   "2",
+   ""
+  ],
+  [
+   "F833",
+   "Répartition des gains du plan d'efficacité du groupe sur neuf mois : opérations",
+   "68 %",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 16, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "3",
+   ""
+  ],
+  [
+   "F834",
+   "Obligations senior émises le 26/08/2026 (deux tranches) : montant total",
+   "1.15 Md EUR",
+   "08/2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 7, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "2",
+   ""
+  ],
+  [
+   "F835",
+   "Lignes de crédit confirmées non tirées, sans covenants restrictifs (comprises dans la liquidité du groupe)",
+   "5.8 Md EUR",
+   "30/09/2026",
+   "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 33, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06)",
+   "2",
+   ""
+  ],
+  [
+   "F836",
+   "Objectif annuel 2026 du plan d'efficacité récurrent du groupe : plus de",
+   "350 M EUR",
+   "2026",
+   "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06)",
+   "3",
+   ""
+  ],
+  [
+   "F837",
+   "Obligations senior émises le 14/01/2026 (trois tranches) : montant total",
+   "2.5 Md EUR",
+   "01/2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 7, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "2",
+   ""
+  ],
+  [
+   "F838",
+   "S&P, prévision annuelle : FFO / dette ajustés, bas de fourchette",
+   "21 %",
+   "2028",
+   "ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf, p. 4, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/04/RatingsDirect_TearSheet_VeoliaEnvironnementS.A._3552186_Apr-27-2026.pdf (consulté le 2026-10-02)",
+   "2",
+   ""
+  ],
+  [
+   "F839",
+   "Crédit syndiqué multidevises : montant non tiré (groupe)",
+   "4,500 M EUR",
+   "30/09/2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 7, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "2",
+   ""
+  ],
+  [
+   "F840",
+   "Dettes courantes, découverts bancaires et autres éléments de trésorerie passive compris (déduites de la liquidité nette)",
+   "10,805 M EUR",
+   "30/09/2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 7, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "2",
+   ""
+  ],
+  [
+   "F841",
+   "Capex de croissance discrétionnaire (groupe)",
+   "-285 M EUR",
+   "S1 2026",
+   "veolia_finance_presentation_h1_2026_results.pdf, p. 28, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_presentation_H1_2026_results.pdf (consulté le 2026-09-22)",
+   "3",
+   ""
+  ],
+  [
+   "F842",
+   "Répartition des gains du plan d'efficacité du groupe sur neuf mois : frais généraux et administratifs (SG&A)",
+   "10 %",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 16, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "3",
+   ""
+  ],
+  [
+   "F843",
+   "Hybride ex-Suez (ISIN FR0013445335) remboursé à sa première date de call : année d'émission initiale par Suez S.A. (12 septembre 2019)",
+   "2019 année",
+   "12/09/2026",
+   "veolia_optional_redemption_notice_2026-09-12.pdf, p. 1, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/09/Veolia_optional_redemption_notice_2026-09-12.pdf (consulté le 2026-10-10)",
+   "2",
+   ""
+  ],
+  [
+   "F844",
+   "Pont de dette 9M 2026 : autres flux, dont hybride, Sequoia et annulation d'actions",
+   "1,034 M EUR",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "3",
+   ""
+  ],
+  [
+   "F845",
+   "PPA Suez : amortissement des actifs réévalués, exclu de l'EBIT courant",
+   "125 M EUR",
+   "9M 2025",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "3",
+   ""
+  ],
+  [
+   "F846",
+   "Lignes de crédit bilatérales : montant non tiré (groupe)",
+   "1,289 M EUR",
+   "30/09/2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 7, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "2",
+   ""
+  ],
+  [
+   "F847",
+   "Obligations senior émises le 10/04/2026 (deux tranches) : montant total",
+   "1 Md EUR",
+   "04/2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 7, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "2",
+   ""
+  ],
+  [
+   "F848",
+   "Cessions d'actifs au titre de la rotation GreenUp : montant total (dont plus de 2 Md€ dans les deux ans suivant la clôture de Clean Earth)",
+   "3 Md EUR",
+   "2024-2028",
+   "annual-resultats-2025.pdf, p. 5, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/02/annual-resultats-2025.pdf (consulté le 2026-09-22)",
+   "1",
+   ""
+  ],
+  [
+   "F849",
+   "Taux de rétention des gains d'efficacité nets (groupe)",
+   "56 %",
+   "9M 2026",
+   "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 24, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06)",
+   "3",
+   ""
+  ],
+  [
+   "F850",
+   "Abondement (tap) du 19/06/2026 sur la souche senior d'avril 2036 : montant",
+   "275 M EUR",
+   "06/2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 7, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "2",
+   ""
+  ],
+  [
+   "F851",
+   "Répartition des gains du plan d'efficacité du groupe sur neuf mois : achats",
+   "22 %",
+   "9M 2026",
+   "finance_veolia_operating_financial_review_q3_2026.pdf, p. 16, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf (consulté le 2026-11-06)",
+   "3",
+   ""
+  ],
+  [
+   "F852",
+   "S&P, prévision annuelle : FFO / dette ajustés, haut de fourchette",
+   "21 %",
+   "2027",
+   "ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf, p. 4, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/04/RatingsDirect_TearSheet_VeoliaEnvironnementS.A._3552186_Apr-27-2026.pdf (consulté le 2026-10-02)",
+   "2",
    ""
   ]
  ]
