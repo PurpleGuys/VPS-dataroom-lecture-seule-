@@ -7,7 +7,7 @@ generated: true
 
 # Deals
 
-Rubrique de [[Targets/Veolia|Veolia]] — 60 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 61 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[Deals/D20 New England Disposal Technologies, Bio-Med Innovations, Ingenium, Cham.md|D20 · New England Disposal Technologies, Bio-Med Innovations, Ingenium, Chameleon Industries Group]]
@@ -68,5 +68,6 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[Deals/D60 SELCHP Energy from Waste facility (Londres sud-est), participation de .md|D60 · SELCHP Energy from Waste facility (Londres sud-est), participation de 49,78 %]] · 2026-07-21
 - [[Deals/D43 Cleanaway Waste Management Limited (100%).md|D43 · Cleanaway Waste Management Limited (100%)]] · 2026-08-13
 - [[Deals/D47 SECURE Waste Infrastructure Corp. (100%).md|D47 · SECURE Waste Infrastructure Corp. (100%)]] · 2026-09-01
+- [[Deals/D61 Rookery South Limited 20 % du capital (usine de valorisation énergétiq.md|D61 · Rookery South Limited : 20 % du capital (usine de valorisation énergétique au nord de Londres)]] · 2026-09-25
 - [[Deals/D31 EnviroServe (services environnementaux, transport et traitement de déc.md|D31 · EnviroServe (services environnementaux, transport et traitement de déchets dangereux, États-Unis)]] · 2026-10-05
 - [[Deals/D32 ES&H (intervention d'urgence et services environnementaux, golfe du Me.md|D32 · ES&H (intervention d'urgence et services environnementaux, golfe du Mexique)]] · 2026-10-05
