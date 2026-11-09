@@ -115,8 +115,11 @@ code, kbd, samp, pre { font-family: var(--mono); }
 .is42-bar .in { height: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad); display: flex; align-items: center; gap: var(--s7); }
 .is42-bar.wide .in { max-width: none; }
 .is42-brand { display: flex; align-items: center; gap: var(--s3); text-decoration: none; color: var(--ink); flex: none; }
-.is42-brand svg { width: var(--s6); height: var(--s6); display: block; transition: transform var(--d3) var(--ease); }
-.is42-brand:hover svg { transform: rotate(30deg); }
+/* La marque est Ascii au repos : le logo, à l'encre. Au survol il s'éveille (ascii-flat.css : les yeux s'ouvrent,
+ * un salut) et prend le pigment, sa seule couleur ; plus de rotation libre, le logo ne tourne que par pas de 60°.
+ * 26 px : la version plate ne descend pas sous 24. */
+.is42-brand svg { width: var(--s7); height: var(--s7); display: block; transition: color var(--d2) var(--ease); }
+.is42-brand:hover svg, .is42-brand:focus-visible svg { color: var(--pig); }
 .is42-brand b { font: 800 var(--s5)/1 var(--sans); font-stretch: 108%; text-transform: uppercase; letter-spacing: -.03em; }
 .is42-brand span { font: 400 var(--s3)/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--faint); }
 .is42-nav { display: flex; gap: var(--s6); margin-left: auto; }
@@ -201,10 +204,77 @@ mark { background: transparent; color: var(--ink); font-weight: 600; box-shadow:
                                            background: transparent !important; color: var(--ink) !important; }
 .phead .btn:hover, .phead button:hover { border-color: var(--ink) !important; }
 
+/* ---------------------------------------------------------------- Ascii (templates/ascii, README du pack)
+ * Toujours en ligne, dans le composant qui porte l'état, aligné sur sa ligne de base ; jamais en coin de page. Les
+ * tailles sont celles de sa charte (§6) — 120 px pour un état, 180 px pour une réaction —, deux valeurs que l'échelle
+ * n'a pas : ici la charte du personnage l'emporte. Le moteur cadre comme le pack (60 U, Ascii posé au sol à 15 % du
+ * bas) : ce sol est la ligne de base de la scène, et sa phrase s'y aligne comme du texte. Quand le composant est trop
+ * étroit pour les deux côte à côte, la phrase passe dessous, sur une ligne, sous l'ombre. La version plate (sans
+ * WebGL, ou quand on préfère moins de mouvement) tient dans le module, 42 px : sa ligne de base est le bas du logo. */
+.ascii { display: flex; flex-wrap: wrap; align-items: flex-end; align-items: last baseline; column-gap: var(--s5); row-gap: 0; }
+.ascii[hidden] { display: none; }
+.ascii-scene { --ascii-taille: 120px; flex: none; position: relative; width: var(--ascii-taille); height: var(--ascii-taille);
+               opacity: 0; transition: opacity var(--d3) var(--ease); }
+.ascii-scene.reaction { --ascii-taille: 180px; }
+.ascii-scene.est-pret { opacity: 1; }
+/* la ligne de base : un retour à la ligne sans corps, posé à la hauteur du sol (le moteur et sa pose sont hors flux) */
+.ascii-scene::after { content: "\200b"; display: block; font-size: 0; line-height: 0; padding-top: calc(var(--ascii-taille) * .85); }
+/* La clé vient d'avant-gauche : l'ombre portée file à droite, au-delà du cadre carré. Le corps tient dans 15–85 % de la
+ * largeur (42 U sur 60) ; au-delà, l'ombre s'efface au lieu d'être tranchée par le bord du canvas. */
+.ascii-scene canvas { position: absolute; top: 0; left: 0;
+                      -webkit-mask-image: linear-gradient(to right, #000 87%, transparent); mask-image: linear-gradient(to right, #000 87%, transparent); }
+.ascii-scene.est-plat { width: var(--s9); height: var(--s9); color: var(--pig); }
+.ascii-scene.est-plat::after { padding-top: 0; }
+.ascii-scene.est-plat svg { display: block; width: 100%; height: 100%; }
+/* La parole : une ligne, Plex Mono 13 px, encre sur papier avec filet (README §6). */
+.ascii-ligne { flex: 0 1 auto; min-width: 0; margin: 0; padding: var(--s1) var(--s3);
+               font: 400 var(--s4)/1.45 var(--mono); letter-spacing: 0; text-transform: none; text-align: left;
+               color: var(--ink); background: var(--paper); border: 1px solid var(--hair); }
+.ascii-ligne:empty { display: none; }
+.ascii-dit { display: flex; min-width: 0; }   /* la région annoncée qui reçoit une ligne-bouton */
+button.ascii-ligne { cursor: pointer; transition: border-color var(--d2) var(--ease); }
+button.ascii-ligne:hover { border-color: var(--ink); }
+/* Dans la preuve : pendant que la page se charge, Ascii lit, au milieu de la feuille encore vide. */
+.proof .pwait { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; z-index: 1; }
+.proof .pwait[hidden] { display: none; }
+.proof .pbox.charge .psheet { visibility: hidden; }
+
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
-@media print { .is42-bar { display: none !important; } }
+@media print { .is42-bar { display: none !important; } .ascii-scene { display: none !important; } }
+
+/* Ascii plat — le logo qui s'éveille, et le loader par pas de 60°.
+ * Usage : coller ascii-flat.svg en ligne (<svg …>) ; la couleur du corps = currentColor.
+ *   <a class="logo ascii-eveil">…svg…</a>      → les yeux s'ouvrent au survol / focus
+ *   <span class="ascii-loader">…svg…</span>    → le logo tourne par pas de 60°
+ *   <svg class="ascii-plat est-content">        → variante yeux contents ; est-ferme → yeux fermés
+ */
+.ascii-plat { display: inline-block; vertical-align: middle; overflow: visible; }
+.ascii-plat .ascii-yeux-arcs, .ascii-plat .ascii-yeux-traits { display: none; }
+.ascii-plat.est-content .ascii-yeux-points, .ascii-plat.est-ferme .ascii-yeux-points { display: none; }
+.ascii-plat.est-content .ascii-yeux-arcs { display: inline; }
+.ascii-plat.est-ferme .ascii-yeux-traits { display: inline; }
+
+/* 1. Logo d'en-tête : au repos c'est le logo ; les yeux s'ouvrent au survol. */
+.ascii-eveil .ascii-yeux { opacity: 0; transform: scale(0.4); transform-origin: 21px 20px; transform-box: view-box;
+  transition: opacity 162ms cubic-bezier(.2,.7,.2,1), transform 262ms cubic-bezier(.2,.7,.2,1); }
+.ascii-eveil:hover .ascii-yeux, .ascii-eveil:focus-visible .ascii-yeux { opacity: 1; transform: scale(1); }
+.ascii-eveil:hover .ascii-corps { animation: ascii-salut 420ms cubic-bezier(.2,.7,.2,1) 1; transform-origin: 21px 21px; transform-box: view-box; }
+@keyframes ascii-salut { 0% { transform: rotate(0deg); } 40% { transform: rotate(-6deg); } 100% { transform: rotate(0deg); } }
+
+/* 2. Loader : rotation par pas de 60° (la symétrie du logo), sans visage. */
+.ascii-loader .ascii-yeux { display: none; }
+.ascii-loader .ascii-plat { animation: ascii-pas 620ms cubic-bezier(.2,.7,.2,1) infinite; transform-origin: 21px 21px; transform-box: view-box; }
+@keyframes ascii-pas { 0% { transform: rotate(0deg); } 84% { transform: rotate(60deg); } 100% { transform: rotate(60deg); } }
+
+/* 3. Clignement en boucle (optionnel, pour une icône « en vie »). */
+.ascii-vivant .ascii-yeux-points { animation: ascii-cligne 4.2s linear infinite; transform-origin: 21px 20px; transform-box: view-box; }
+@keyframes ascii-cligne { 0%, 93%, 100% { transform: scaleY(1); } 95%, 98% { transform: scaleY(0.08); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ascii-eveil .ascii-yeux, .ascii-eveil:hover .ascii-corps, .ascii-loader .ascii-plat, .ascii-vivant .ascii-yeux-points { animation: none; transition: none; }
+}
 </style><script>(function(){try{var t=localStorage.getItem("is42-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script></head>
-<body><header class="is42-bar"><div class="in"><a class="is42-brand" href="/visualisation/hub.html" aria-label="Dataroom, accueil"><svg viewBox="0 0 42 42" aria-hidden="true" focusable="false"><g stroke="currentColor" stroke-width="7" stroke-linecap="butt"><line x1="0" y1="21" x2="42" y2="21"/><line x1="10.5" y1="2.81" x2="31.5" y2="39.19"/><line x1="31.5" y1="2.81" x2="10.5" y2="39.19"/></g></svg><b>Dataroom</b><span>is42</span></a><nav class="is42-nav" aria-label="Pages de la dataroom"><a href="/visualisation/index.html">Carte</a><a href="/visualisation/relecture.html">Relecture</a><a href="/visualisation/simulateur.html">Simulateur</a><a href="/visualisation/cibles.html">Cibles</a><a href="/visualisation/rapport.html">Rapport</a><a href="/visualisation/fourchette.html">Fourchette</a><a href="/visualisation/hub.html#livrables" aria-current="page">Livrables</a></nav><div class="is42-tools"><button type="button" class="is42-square" id="is42-theme" aria-label="Changer de thème">&#9728;</button><details class="is42-menu"><summary class="is42-square" aria-label="Menu">&#8801;</summary><nav class="sheet" aria-label="Pages de la dataroom"><a href="/visualisation/hub.html">Accueil</a><a href="/visualisation/index.html">Carte</a><a href="/visualisation/relecture.html">Relecture</a><a href="/visualisation/simulateur.html">Simulateur</a><a href="/visualisation/cibles.html">Cibles</a><a href="/visualisation/rapport.html">Rapport</a><a href="/visualisation/fourchette.html">Fourchette</a><a href="/visualisation/hub.html#livrables" aria-current="page">Livrables</a></nav></details></div></div></header><script>(function(){var b=document.getElementById("is42-theme");if(!b)return;
+<body><header class="is42-bar"><div class="in"><a class="is42-brand ascii-eveil" href="/visualisation/hub.html" aria-label="Dataroom, accueil"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42" width="42" height="42" class="ascii-plat" aria-hidden="true"><g class="ascii-corps" stroke="currentColor" stroke-width="7" stroke-linecap="butt"><line x1="0" y1="21" x2="42" y2="21"/><line x1="10.5" y1="2.81" x2="31.5" y2="39.19"/><line x1="31.5" y1="2.81" x2="10.5" y2="39.19"/></g><g class="ascii-yeux" fill="var(--ascii-papier, #EEEBE4)"><g class="ascii-yeux-points"><circle cx="18" cy="20" r="1.85"/><circle cx="24" cy="20" r="1.85"/></g><g class="ascii-yeux-arcs" fill="none" stroke="var(--ascii-papier, #EEEBE4)" stroke-width="1.1" stroke-linecap="round"><path d="M16.6 21.2 A1.5 1.5 0 0 1 19.4 21.2"/><path d="M22.6 21.2 A1.5 1.5 0 0 1 25.4 21.2"/></g><g class="ascii-yeux-traits" fill="none" stroke="var(--ascii-papier, #EEEBE4)" stroke-width="1.1" stroke-linecap="round"><line x1="16.5" y1="20" x2="19.5" y2="20"/><line x1="22.5" y1="20" x2="25.5" y2="20"/></g></g></svg><b>Dataroom</b><span>is42</span></a><nav class="is42-nav" aria-label="Pages de la dataroom"><a href="/visualisation/index.html">Carte</a><a href="/visualisation/relecture.html">Relecture</a><a href="/visualisation/simulateur.html">Simulateur</a><a href="/visualisation/cibles.html">Cibles</a><a href="/visualisation/rapport.html">Rapport</a><a href="/visualisation/fourchette.html">Fourchette</a><a href="/visualisation/hub.html#livrables" aria-current="page">Livrables</a></nav><div class="is42-tools"><button type="button" class="is42-square" id="is42-theme" aria-label="Changer de thème">&#9728;</button><details class="is42-menu"><summary class="is42-square" aria-label="Menu">&#8801;</summary><nav class="sheet" aria-label="Pages de la dataroom"><a href="/visualisation/hub.html">Accueil</a><a href="/visualisation/index.html">Carte</a><a href="/visualisation/relecture.html">Relecture</a><a href="/visualisation/simulateur.html">Simulateur</a><a href="/visualisation/cibles.html">Cibles</a><a href="/visualisation/rapport.html">Rapport</a><a href="/visualisation/fourchette.html">Fourchette</a><a href="/visualisation/hub.html#livrables" aria-current="page">Livrables</a></nav></details></div></div></header><script>(function(){var b=document.getElementById("is42-theme");if(!b)return;
 function cur(){var t=document.documentElement.getAttribute("data-theme");if(t)return t;
 return window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}
 function label(){var d=cur()==="dark";b.textContent=d?"\u263E":"\u2600";b.setAttribute("aria-label",d?"Passer au thème clair":"Passer au thème sombre")}

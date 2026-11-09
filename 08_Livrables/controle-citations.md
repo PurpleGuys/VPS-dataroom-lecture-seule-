@@ -3,12 +3,12 @@
 | Section | Pages | Mots | Cible |
 |---|---|---|---|
 | role-1.md | 3 | 36 | 6-9 |
-| role-2.md | 7 | 45 | 6-9 |
+| role-2.md | 8 | 45 | 6-9 |
 | role-3.md | 4 | 39 | 6-9 |
 | role-4.md | 5 | 44 | 6-9 |
 | role-5.md | 3 | 36 | 6-9 |
-| role-6.md | 7 | 29 | 6-9 |
-| total | 111 | 242 | 50-60 |
+| role-6.md | 8 | 29 | 6-9 |
+| total | 47 | 254 | 50-60 |
 
 ## Jetons inconnus (0)
 - aucun
@@ -28,6 +28,9 @@
 - role-6.md : 4
 - recommandation.md : 1
 - outils-ia.md : 1
+- remerciements.md : 1
+- introduction.md : 3
+- conclusion.md : 1
 
 ## Chiffres du registre jamais cités par leur rôle
 - rôle 1 (Périmètre et sources) : 22 — F2, F18, F32, F90, F91, F92, F129, F130, F131, F132, F133, F134, F135, F136, F137, F138, F654, F659, F661, F662 …
@@ -36,3 +39,18 @@
 - rôle 4 (L'écart et les comparables) : 133 — F33, F34, F35, F36, F37, F38, F39, F40, F41, F52, F54, F58, F59, F60, F61, F62, F63, F93, F94, F95 …
 - rôle 5 (Le coût ESG) : 66 — F42, F43, F44, F45, F98, F99, F100, F101, F102, F103, F104, F105, F106, F107, F108, F109, F127, F128, F218, F219 …
 - rôle 6 (Cibles, puis synthèse) : 108 — F46, F47, F48, F49, F50, F76, F77, F209, F210, F211, F212, F213, F214, F215, F216, F443, F444, F445, F471, F472 …
+
+## Ce que la méthode du rapport mesure
+- corps du rapport : 102 caractères  espaces compris  pour 50 000 demandés
+- recommandation.md : 0 phrase(s) sur 1 au-delà de 12 mots
+- introduction.md : 1 phrase(s) sur 1 au-delà de 12 mots
+- conclusion.md : 0 phrase(s) sur 1 au-delà de 12 mots
+- Annexe I : commentée nulle part dans le texte
+- Annexe II : commentée nulle part dans le texte
+- Annexe III : commentée nulle part dans le texte
+- couverture : le logo de l'EDHEC (08_Livrables/scripts/logo-edhec.png) manque
+- couverture : les prénoms et NOMS des auteurs (roles.yaml : auteurs) manque
+- couverture : le nom du responsable (roles.yaml : encadrant) manque
+- remerciements : à écrire
+- introduction : à écrire
+- conclusion : à écrire
