@@ -2475,17 +2475,24 @@ ws[f"C{r}"].fill = YELLOW; r += 1
 cad, i_cad = E("Taux de référence BCE : dollars canadiens pour un euro", "06/10/2026")
 line(ws, r, "cad", "Dollars canadiens pour un euro (BCE)", f"={cad}", "CAD / EUR", i_cad, '0.0000', store=K); r += 1
 RATES = {"EUR": "1", "USD": HY("fx"), "CAD": K["cad"]}
+RATE_IDS = {"USD": "hypothèse fx", "CAD": i_cad}   # la ligne du registre qui convertit chaque devise, recopiée en colonne T
+_FX_DUP = []                                        # devises qui ont plusieurs taux de référence au registre : bloquant
 # Une autre devise de valeur publiée (livre, dollar australien…) se convertit dès que son taux de référence BCE est au
 # registre, sur une seule ligne d'unité « GBP pour 1 EUR » : la ligne apparaît ici au prochain passage de la chaîne.
 FX_NAMES = {"GBP": "Livres sterling", "AUD": "Dollars australiens", "CHF": "Francs suisses", "JPY": "Yens"}
 for _cur in sorted({p[2] for p in PUBLISHED.values() if p and p[2] and p[2] not in RATES}):
     _hits = [x for x in rows if x["unit"].strip() == f"{_cur} pour 1 EUR"]
+    if len(_hits) > 1:
+        _FX_DUP.append(_cur)   # deux taux pour une devise : on ne choisit pas en silence, le contrôle bloque
     if len(_hits) == 1:
+        RATE_IDS[_cur] = _hits[0]["id"]
         USED.append({"id": _hits[0]["id"], "prefix": _hits[0]["label"], "period": _hits[0]["period"], "unit": _hits[0]["unit"]})
         line(ws, r, f"fx{_cur}", f"{FX_NAMES.get(_cur, _cur)} pour un euro (BCE)", f"={q('Entrées')}!$C${ENTREE_ROW[_hits[0]['id']]}",
              f"{_cur} / EUR", _hits[0]["id"], '0.0000', store=K); r += 1
         RATES[_cur] = K[f"fx{_cur}"]
 _UNCONVERTED = sorted({p[2] for p in PUBLISHED.values() if p and p[2] and p[2] not in RATES})
+line(ws, r, "fxDup", "Devises qui ont plusieurs taux de référence BCE au registre", len(_FX_DUP), "",
+     ", ".join(_FX_DUP) or "aucune", NF_I, store=K); r += 1
 put(ws, f"B{r}", "Le dollar américain est converti au taux de l'hypothèse fx (Hypothèses), celui de Clean Earth à la clôture."
     + (f" Une valeur publiée en {', '.join(_UNCONVERTED)} reste dans sa devise, sans conversion ni confrontation à la grille, "
        "tant que son taux de référence BCE n'est pas au registre." if _UNCONVERTED else ""),
@@ -2547,7 +2554,10 @@ for t in TARGETS:
         put(ws, f"{col}{r}", None, fill=YELLOW, nf="0", align="center")
     put(ws, f"S{r}", f'=IF(COUNT(N{r}:R{r})=0,"",SUMPRODUCT($N${WROW}:$R${WROW},N{r}:R{r})/SUMPRODUCT($N${WROW}:$R${WROW}*(N{r}:R{r}<>"")))',
         nf="0.0", bold=True)
-    put(ws, f"T{r}", t["id"] + " — " + (t.get("file") or t.get("source_url") or "").split("/")[-1][:44], color=GREY)
+    _conv = ""
+    if pub is not None and pub[2] and pub[2] != "EUR" and pub[2] in RATES:
+        _conv = f" ; taux {RATE_IDS.get(pub[2], pub[2])}"
+    put(ws, f"T{r}", t["id"] + " — " + (t.get("file") or t.get("source_url") or "").split("/")[-1][:44] + _conv, color=GREY)
     r += 1
 GR1 = r - 1
 r += 1
@@ -2584,6 +2594,8 @@ checks = [
     ("Levier fin 2026 central face à la guidance « égal ou légèrement supérieur à 3x » (lecture : 3,0x à 3,15x)", T["LEV26"], 3.075, 0.075, NF_X,
      "Info"),
     ("Change implicite de Clean Earth plausible (1,05 à 1,30)", HY("fx"), 1.175, 0.125, '0.0000', "Bloquant"),
+    ("Une seule ligne de taux de référence BCE par devise", K["fxDup"], 0, 0.5, NF_I, "Bloquant"),
+    ("Toute valeur publiée d'une cible est convertie en euros", K["tValued"], K["tPub"], 0.5, NF_I, "Info"),
     ("Enveloppe nette annoncée = haut de la fourchette implicite", C["netHi"], C["netAnn"], 0.001, NF_D2, "Bloquant"),
     ("Investissements financiers nets 2024 : deck Clean Earth (−0,4 Md€) = communiqué (+397 M€)",
      f"-{E('Investissements financiers nets 2024', 'FY2024')[0]}*1000",

@@ -190,6 +190,15 @@ if t0:
                   "USD": {"value": inputs.get("fx", {}).get("active"), "label": "hypothèse fx (Hypothèses)", "sources": inputs.get("fx", {}).get("sources", [])},
                   "CAD": {"value": cad, "label": "taux de référence BCE", "sources": [s for s in [source(str(cad_ref or "").split()[0])] if s]}},
     }
+    # Toute autre devise dont le classeur porte un taux de référence BCE (livre, dollar australien…), avec sa source
+    for rr in range(1, cib.max_row + 1):
+        lab, unit = cib[f"B{rr}"].value, str(cib[f"D{rr}"].value or "")
+        if isinstance(lab, str) and lab.endswith("pour un euro (BCE)") and unit.endswith(" / EUR"):
+            cur = unit.split(" / ")[0].strip()
+            if cur and cur not in target_params["rates"]:
+                ref = str(cib[f"E{rr}"].value or "").split()[0] if cib[f"E{rr}"].value else ""
+                target_params["rates"][cur] = {"value": num(cib[f"C{rr}"].value), "label": "taux de référence BCE",
+                                               "sources": [s for s in [source(ref)] if s]}
     for r in range(t0 + 1, cib.max_row + 1):
         name = cib[f"B{r}"].value
         if not isinstance(name, str) or not name.strip():

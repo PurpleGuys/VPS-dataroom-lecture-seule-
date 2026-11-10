@@ -1,6 +1,6 @@
 # Annexe — sources et chiffres cités
 
-Généré le 2026-11-10 depuis la dataroom : 849 chiffres (0 relus par un tiers), 61 opérations (0 relues), 361 documents citables.
+Généré le 2026-11-10 depuis la dataroom : 851 chiffres (0 relus par un tiers), 61 opérations (0 relues), 361 documents citables.
 Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date de consultation. « non relu » signifie qu'un seul membre a lu la page.
 
 ## 1. Chiffres, par rôle
@@ -762,7 +762,7 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F821 | Goodwill (groupe) : part du dollar américain dans l'effet de change | 171 M€ | S1 2026 | veolia_finance_amendment_urd_2025.pdf, p. 53, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_Amendment_URD_2025.pdf (consulté le 2026-09-22) | non relu |
 | F823 | Goodwill (groupe) : effet de change total sur le semestre | 256 M€ | S1 2026 | veolia_finance_amendment_urd_2025.pdf, p. 53, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_Amendment_URD_2025.pdf (consulté le 2026-09-22) | non relu |
 
-### Rôle 6 — Cibles, puis synthèse (117 chiffres, 0 relus)
+### Rôle 6 — Cibles, puis synthèse (119 chiffres, 0 relus)
 
 | ID | Chiffre | Valeur | Période | Citation | Relecture |
 |---|---|---|---|---|---|
@@ -883,6 +883,8 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F853 | Enviri : marge d'EBITDA ajusté du segment Clean Earth | 16,1 % | T1 2025 | enviri-q1-2026-results.html, https://www.enviri.com/enviri-corporation-reports-first-quarter-2026-results/ (consulté le 2026-10-10) | non relu |
 | F854 | Enviri : marge d'EBITDA ajusté du segment Clean Earth | 14,6 % | T1 2026 | enviri-q1-2026-results.html, https://www.enviri.com/enviri-corporation-reports-first-quarter-2026-results/ (consulté le 2026-10-10) | non relu |
 | F855 | Enviri : EBITDA ajusté du segment Clean Earth | 38 M$ | T1 2025 | enviri-q1-2026-results.html, https://www.enviri.com/enviri-corporation-reports-first-quarter-2026-results/ (consulté le 2026-10-10) | non relu |
+| F856 | Taux de référence BCE du 13/08/2026 : dollars australiens pour un euro | 1,6356 AUD pour 1 EUR | 13/08/2026 | bce-taux-de-reference-2026-08-13.pdf, p. 1, https://www.ecb.europa.eu/stats/exchange/eurofxref/shared/pdf/2026/08/20260813.pdf (consulté le 2026-11-10) | non relu |
+| F857 | Taux de référence BCE du 22/09/2021 : livres sterling pour un euro | 0,86000 GBP pour 1 EUR | 22/09/2021 | bce-taux-de-reference-2021-09-22.pdf, p. 1, https://www.ecb.europa.eu/stats/exchange/eurofxref/shared/pdf/2021/09/20210922.pdf (consulté le 2026-11-10) | non relu |
 
 ## 2. Opérations (registre des deals)
 
@@ -1319,7 +1321,7 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 ## 4. Outils d'intelligence artificielle utilisés
 
 - Dataroom : un serveur MCP (Model Context Protocol) construit par le groupe pour le sujet, qui indexe les documents publics versés dans le vault et ne sait que chercher, lire une page et citer (fichier, page, URL, date de consultation). Il ne calcule rien ; il garde pour chaque ligne du registre qui l'a saisie et qui l'a relue. Les résumés de pages que l'API Claude a écrits pour la recherche sont signalés comme tels dans chaque résultat et ne sont jamais cités.
-- Le registre compte 849 chiffres et 61 opérations. 810 lignes y ont été saisies par Claude (Anthropic) à travers le compte partagé du serveur, en recopiant le nombre imprimé sur une page indexée dont le fichier et le numéro sont cités ; 100 lignes par l'API Claude (lecture de chaque page du vault, sous l'identité claude-api, avec un contrôle automatique que le nombre et sa citation sont sur la page) ; 0 ligne par les membres du groupe avec leur compte personnel. 0 ligne sur 910 ont été relues sur la page citée par un membre autre que leur auteur ; 910 ne l'ont pas encore été. Dans le rapport, la note de bas de page de chaque chiffre cité qui n'a pas de second lecteur le dit : « non relue ».
+- Le registre compte 851 chiffres et 61 opérations. 812 lignes y ont été saisies par Claude (Anthropic) à travers le compte partagé du serveur, en recopiant le nombre imprimé sur une page indexée dont le fichier et le numéro sont cités ; 100 lignes par l'API Claude (lecture de chaque page du vault, sous l'identité claude-api, avec un contrôle automatique que le nombre et sa citation sont sur la page) ; 0 ligne par les membres du groupe avec leur compte personnel. 0 ligne sur 912 ont été relues sur la page citée par un membre autre que leur auteur ; 912 ne l'ont pas encore été. Dans le rapport, la note de bas de page de chaque chiffre cité qui n'a pas de second lecteur le dit : « non relue ».
 - Claude, via Claude Code, a aussi construit le serveur, les contrôles automatiques (`audit_dataroom`), le générateur du classeur Excel (`build_model.py`), celui des dossiers et celui de ce rapport. Le classeur ne contient que des formules ; ses entrées sont les lignes du registre.
 - LibreOffice (recalcul sans interface) : recalcule le classeur après chaque génération et signale toute erreur de formule ; aucune valeur calculée n'est saisie à la main.
 - Règle tenue : aucun nombre n'a été inventé. Chaque nombre du registre est recopié d'une page publique citée ; chaque nombre du classeur est une formule sur ces lignes, et le texte du rapport les cite par renvoi, avec leur source en note. Les quelques calculs écrits dans le texte, une différence ou un ratio, citent chacun leurs termes dans la même phrase ; Claude les a écrits en rédigeant la première version, et un second passage de Claude, chargé de contredire, les a tous refaits.
