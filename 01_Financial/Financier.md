@@ -7,14 +7,16 @@ generated: true
 
 # Financier
 
-Rubrique de [[Targets/Veolia|Veolia]] — 82 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 84 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[01_Financial/26-06_cp-bn-s1-26.pdf.md|Résultats consolidés au 30 juin 2026 - Communiqué de presse]]
 - [[01_Financial/3be5252f013cce13f20dfd70494b824e1ec6ea960efa8d39779f01822dc3a794.pdf.md|226C1006 — Déclaration de franchissement de seuils (article L. 233-7 du code de commerce) — VEOLIA ENVIRONNEMENT]]
 - [[01_Financial/avr-annual-report-2024-resolve-web-1.pdf.md|AVR Annual Report 2024 - Resolve]]
 - [[01_Financial/bce-taux-de-reference-2021-09-22.pdf.md|Euro Foreign Exchange Reference Rates, 22 September 2021]]
+- [[01_Financial/bce-taux-de-reference-2026-04-30.pdf.md|Euro foreign exchange reference rates, 30 April 2026]]
 - [[01_Financial/bce-taux-de-reference-2026-08-13.pdf.md|Euro Foreign Exchange Reference Rates, 13 August 2026]]
+- [[01_Financial/bce-taux-de-reference-2026-08-31.pdf.md|Euro foreign exchange reference rates, 31 August 2026]]
 - [[01_Financial/bce-taux-eur-cad-2026-10-06.html.md|ECB euro reference exchange rate: Canadian dollar (CAD)]]
 - [[01_Financial/clean-harbors-10-k-2025.pdf.md|Clean Harbors, Inc. — Form 10-K, fiscal year ended December 31, 2025]]
 - [[01_Financial/cleanaway-fy26-results-presentation.pdf.md|CLEANAWAY FY26 Financial Results]]

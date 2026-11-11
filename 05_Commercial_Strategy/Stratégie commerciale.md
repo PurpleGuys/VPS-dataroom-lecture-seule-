@@ -7,10 +7,11 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 192 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 196 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/1183.pdf.md|Waste statistics — Statistics Explained]]
+- [[05_Commercial_Strategy/20260831_noble_securities_mbr_pl_ra.pdf.md|Mo-BRUK SA – dalsza poprawa wyników i akwizycje (raport analityczny)]]
 - [[05_Commercial_Strategy/25-06-cp-flamme.pdf.md|Signature d'une promesse unilatérale d'achat en vue de l'acquisition du Groupe Flamme]]
 - [[05_Commercial_Strategy/26-01_hidronor-lafilippa-vf.pdf.md|Séché Environnement annonce deux opérations de croissance externe majeures au Chili et en Italie]]
 - [[05_Commercial_Strategy/27-billion-dollars-strategic-hazardous-waste-treatment-capacity-27-billion-at-stake-why.html.md|$27 Billion at Stake: Why Hazardous Waste Treatment Capacity Is Strategic]]
@@ -76,6 +77,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/hazardous-waste-generation-in-the-eu-27-signal-hazardous-waste-generation-in-the-eu-27-si.html.md|Hazardous waste generation in the EU-27 (Signal)]]
 - [[05_Commercial_Strategy/inauguration-gln-veoliaxenagas-en.pdf.md|World first: Veolia, Enagás and Barcelona City Council inaugurate the first urban cold recovery network from an LNG terminal]]
 - [[05_Commercial_Strategy/kinderhook-chemtron-2019-08-16.html.md|Kinderhook Acquires Chemtron Corporation, a Leading Hazardous and Non-hazardous Waste Management Provider]]
+- [[05_Commercial_Strategy/lassila-and-tikanoja-plc-interim-report-january-september-2026-lassila-tikanoja-plc-int.html.md|Lassila & Tikanoja Plc: Interim Report January–September 2026 - Inderes]]
 - [[05_Commercial_Strategy/meag-acquires-49-78-stake-in-south-east-london-efw-plant-meag-acquires-49.78-stake-in-sou.html.md|MEAG acquires 49.78% stake in south-east London EfW plant]]
 - [[05_Commercial_Strategy/new-report-shows-hazardous-waste-management-critical-input-us-economic-growth-new-report-s.html.md|New Report Shows Hazardous Waste Management is a Critical Input to US Economic Growth]]
 - [[05_Commercial_Strategy/panel-statement-2021-19.pdf.md|Panel Statement 2021/19 - Offers by Antwerp Management Limited (MSIP) and Eleia Limited for Augean plc]]
@@ -182,6 +184,8 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/seche-tredi-strasbourg.html.md|Trédi Strasbourg — page du site (Séché Environnement)]]
 - [[05_Commercial_Strategy/seche-triadis-etampes.html.md|Triadis Services Étampes (Séché Environnement)]]
 - [[05_Commercial_Strategy/seche-triadis-rouen.html.md|Triadis Services Rouen (Séché Environnement)]]
+- [[05_Commercial_Strategy/sk-group-is-said-to-consider-selling-stake-in-malaysian-waste-firm-cenviro-sk-group-is-sai.html.md|SK Group is said to consider selling stake in Malaysian waste firm Cenviro]]
+- [[05_Commercial_Strategy/soiltech-asa-lists-euronext-soiltech-asa-lists-on-euronext.html.md|Soiltech ASA lists on Euronext]]
 - [[05_Commercial_Strategy/stakeholders-assembly-water-reuse-water-security-060526.pdf.md|Veolia’s Stakeholders Assembly calls for accelerated uptake of water reuse to strengthen water security]]
 - [[05_Commercial_Strategy/suez-strengthening-industrial-waste-recovery-business-acquisition-gruppo-ecosistem-major-p.html.md|SUEZ is strengthening its industrial waste recovery business with the acquisition of Gruppo Ecosistem, a major player in Italy’s waste sector | SUEZ]]
 - [[05_Commercial_Strategy/tradebe-refuerza-su-presencia-en-reino-unido-yentra-en-el-mercado-irlandes-mediante-la-adq.html.md|Tradebe refuerza su presencia en Reino Unido y entra en el mercado irlandés mediante la adquisición de una participación mayoritaria en Soltec]]
