@@ -428,7 +428,9 @@
   "F739",
   "F740",
   "F856",
-  "F857"
+  "F857",
+  "F858",
+  "F859"
  ],
  "lookups": [
   {
@@ -3166,6 +3168,18 @@
    "prefix": "Taux de référence BCE du 22/09/2021 : livres sterling pour un euro",
    "period": "22/09/2021",
    "unit": "GBP pour 1 EUR"
+  },
+  {
+   "id": "F859",
+   "prefix": "Taux de référence BCE du 30/04/2026 : couronnes norvégiennes pour un euro",
+   "period": "30/04/2026",
+   "unit": "NOK pour 1 EUR"
+  },
+  {
+   "id": "F858",
+   "prefix": "Taux de référence BCE du 31/08/2026 : zlotys pour un euro",
+   "period": "31/08/2026",
+   "unit": "PLN pour 1 EUR"
   },
   {
    "id": "F27",
