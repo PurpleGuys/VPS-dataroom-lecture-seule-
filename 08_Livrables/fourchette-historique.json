@@ -193,5 +193,1419 @@
    "note": "données arrêtées au 30/09/2026 (rapport du T3 2026 de Veolia, publié le 05/11/2026) : dette de départ au 30/09, cash-flow du T4 2025 reproduit, 570 M€ de cessions signées à 10,4x, croissance organique publiée à fin septembre",
    "version": 2
   }
- ]
+ ],
+ "horizon": {
+  "years": [
+   2028,
+   2029,
+   2030
+  ],
+  "label": "Prolongation exploratoire, hors engagements GreenUp",
+  "cap_note": "Le plafond de levier n'est un engagement de Veolia que pour 2027 : au-delà, il est prolongé par hypothèse. Le seuil des agences est publié pour 2026-2028 : au-delà, il est prolongé par hypothèse.",
+  "reading": "Chaque année se lit seule : la capacité de fin d'année suppose que rien d'autre que les tuck-ins de l'hypothèse n'a été acheté avant. Les capacités de deux années ne s'additionnent pas.",
+  "metrics": [
+   {
+    "key": "EB",
+    "label": "EBITDA",
+    "kind": "M"
+   },
+   {
+    "key": "FCF",
+    "label": "Cash-flow libre net",
+    "kind": "M"
+   },
+   {
+    "key": "DIV",
+    "label": "Dividendes versés",
+    "kind": "M"
+   },
+   {
+    "key": "NFD",
+    "label": "Dette financière nette en fin d'année",
+    "kind": "M"
+   },
+   {
+    "key": "LEV",
+    "label": "Levier en fin d'année",
+    "kind": "x"
+   },
+   {
+    "key": "HEAD",
+    "label": "Marge sous le plafond (prolongé par hypothèse)",
+    "kind": "M"
+   },
+   {
+    "key": "HEADSP",
+    "label": "Marge sous le seuil S&P",
+    "kind": "M"
+   },
+   {
+    "key": "BIND",
+    "label": "Marge contraignante",
+    "kind": "M"
+   },
+   {
+    "key": "WHICH",
+    "label": "Contrainte qui mord en premier",
+    "kind": null
+   },
+   {
+    "key": "MAXACQ",
+    "label": "Acquisition maximale sous la contrainte qui mord",
+    "kind": "M"
+   }
+  ],
+  "keys": {
+   "2028": {
+    "B": "B28",
+    "SYN": "SYN28",
+    "TE": "TE28",
+    "D": "D28",
+    "DE": "DE28",
+    "EB": "EB28",
+    "FCF": "FCF28",
+    "DIV": "DIV28",
+    "NFD": "NFD28",
+    "LEV": "LEV28",
+    "HEAD": "HEAD28",
+    "ADJ": "ADJ28",
+    "FFO": "FFO28",
+    "RATIO": "RATIO28",
+    "HEADSP": "HEADSP28",
+    "BIND": "BIND28",
+    "WHICH": "WHICH28",
+    "MAXACQ": "MAXACQ28"
+   },
+   "2029": {
+    "B": "B29",
+    "SYN": "SYN29",
+    "TE": "TE29",
+    "D": "D29",
+    "DE": "DE29",
+    "EB": "EB29",
+    "FCF": "FCF29",
+    "DIV": "DIV29",
+    "NFD": "NFD29",
+    "LEV": "LEV29",
+    "HEAD": "HEAD29",
+    "ADJ": "ADJ29",
+    "FFO": "FFO29",
+    "RATIO": "RATIO29",
+    "HEADSP": "HEADSP29",
+    "BIND": "BIND29",
+    "WHICH": "WHICH29",
+    "MAXACQ": "MAXACQ29"
+   },
+   "2030": {
+    "B": "B30",
+    "SYN": "SYN30",
+    "TE": "TE30",
+    "D": "D30",
+    "DE": "DE30",
+    "EB": "EB30",
+    "FCF": "FCF30",
+    "DIV": "DIV30",
+    "NFD": "NFD30",
+    "LEV": "LEV30",
+    "HEAD": "HEAD30",
+    "ADJ": "ADJ30",
+    "FFO": "FFO30",
+    "RATIO": "RATIO30",
+    "HEADSP": "HEADSP30",
+    "BIND": "BIND30",
+    "WHICH": "WHICH30",
+    "MAXACQ": "MAXACQ30"
+   }
+  },
+  "assumptions": [
+   {
+    "key": "croissance",
+    "label": "Croissance organique de l'EBITDA : celle de 2027 reconduite chaque année (mêmes bornes, même tirage)",
+    "source": "hypothèses de 2027 reconduites (onglet Hypothèses) : g27",
+    "inputs": [
+     "g27"
+    ],
+    "consts": [],
+    "refs": [],
+    "sources": []
+   },
+   {
+    "key": "synergies",
+    "label": "Synergies Clean Earth : la montée linéaire supposée pour 2027 se poursuit jusqu'au régime de croisière publié, sans le dépasser",
+    "source": "hypothèses de 2027 reconduites (onglet Hypothèses) : syn, fx ; registre : [F49], [F40], [F41]",
+    "inputs": [
+     "syn",
+     "fx"
+    ],
+    "consts": [
+     "synRR"
+    ],
+    "refs": [
+     "F49",
+     "F40",
+     "F41"
+    ],
+    "sources": [
+     {
+      "id": "F49",
+      "label": "Clean Earth : synergies de coûts en régime de croisière, année 4",
+      "value": "120",
+      "unit": "M USD",
+      "period": "année 4",
+      "file": "01_Financial/veolia_clean_earth_investor_presentation.pdf",
+      "page": "13",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/11/Veolia_Clean_Earth_Investor_Presentation.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F40",
+      "label": "Clean Earth : prix d'acquisition",
+      "value": "2 989",
+      "unit": "M USD",
+      "period": "01/06/2026",
+      "file": "01_Financial/veolia-amendement-deu-2025-s1-2026.pdf",
+      "page": "46",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_amendement_DEU_2025.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F41",
+      "label": "Clean Earth : prix d'acquisition",
+      "value": "2 542",
+      "unit": "M EUR",
+      "period": "01/06/2026",
+      "file": "01_Financial/veolia-amendement-deu-2025-s1-2026.pdf",
+      "page": "46",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_amendement_DEU_2025.pdf",
+      "checked_by": ""
+     }
+    ]
+   },
+   {
+    "key": "couts",
+    "label": "Coûts de mise en œuvre des synergies : la même part annuelle qu'en 2027, sur les quatre années publiées",
+    "source": "hypothèses de 2027 reconduites (onglet Hypothèses) : synC, fx ; registre : [F50], [F40], [F41]",
+    "inputs": [
+     "synC",
+     "fx"
+    ],
+    "consts": [],
+    "refs": [
+     "F50",
+     "F40",
+     "F41"
+    ],
+    "sources": [
+     {
+      "id": "F50",
+      "label": "Clean Earth : coûts de mise en œuvre attendus des synergies",
+      "value": "90",
+      "unit": "M USD",
+      "period": "année 1-4",
+      "file": "01_Financial/veolia_clean_earth_investor_presentation.pdf",
+      "page": "13",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/11/Veolia_Clean_Earth_Investor_Presentation.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F40",
+      "label": "Clean Earth : prix d'acquisition",
+      "value": "2 989",
+      "unit": "M USD",
+      "period": "01/06/2026",
+      "file": "01_Financial/veolia-amendement-deu-2025-s1-2026.pdf",
+      "page": "46",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_amendement_DEU_2025.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F41",
+      "label": "Clean Earth : prix d'acquisition",
+      "value": "2 542",
+      "unit": "M EUR",
+      "period": "01/06/2026",
+      "file": "01_Financial/veolia-amendement-deu-2025-s1-2026.pdf",
+      "page": "46",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_amendement_DEU_2025.pdf",
+      "checked_by": ""
+     }
+    ]
+   },
+   {
+    "key": "tuckins",
+    "label": "Tuck-ins : le rythme et le multiple de 2027 reconduits chaque année (l'enveloppe GreenUp s'arrête en 2027 : aucun engagement au-delà)",
+    "source": "hypothèses de 2027 reconduites (onglet Hypothèses) : tuck, mTuck ; registre : [F5], [F21], [F48]",
+    "inputs": [
+     "tuck",
+     "mTuck"
+    ],
+    "consts": [],
+    "refs": [
+     "F5",
+     "F21",
+     "F48"
+    ],
+    "sources": [
+     {
+      "id": "F5",
+      "label": "GreenUp : tuck-ins, bas de fourchette",
+      "value": "0.5",
+      "unit": "Md EUR",
+      "period": "2024-2027",
+      "file": "01_Financial/en_master_greenup_strategy-day_v270324.pdf",
+      "page": "63",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/03/EN_Master_GreenUp_Strategy%20day_V270324.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F21",
+      "label": "GreenUp : tuck-ins, haut de fourchette",
+      "value": "1.0",
+      "unit": "Md EUR",
+      "period": "2024-2027",
+      "file": "01_Financial/en_master_greenup_strategy-day_v270324.pdf",
+      "page": "63",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/03/EN_Master_GreenUp_Strategy%20day_V270324.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F48",
+      "label": "Clean Earth : multiple VE / EBITDA 2026e après synergies en régime de croisière",
+      "value": "9.8",
+      "unit": "x",
+      "period": "2026e",
+      "file": "01_Financial/veolia_clean_earth_investor_presentation.pdf",
+      "page": "3",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/11/Veolia_Clean_Earth_Investor_Presentation.pdf",
+      "checked_by": ""
+     }
+    ]
+   },
+   {
+    "key": "cessions",
+    "label": "Cessions : le solde du programme publié est encaissé en 2028 (ce que 2027 n'a pas encaissé) ; aucune cession supposée ensuite",
+    "source": "hypothèses de 2027 reconduites (onglet Hypothèses) : s27, mDisp ; registre : [F25], [F738], [F736], [F739], [F737]",
+    "inputs": [
+     "s27",
+     "mDisp"
+    ],
+    "consts": [
+     "prog",
+     "closed",
+     "sign26",
+     "rook"
+    ],
+    "refs": [
+     "F25",
+     "F738",
+     "F736",
+     "F739",
+     "F737"
+    ],
+    "sources": [
+     {
+      "id": "F25",
+      "label": "Programme de cessions, à réaliser d'ici mi-2028 : plus de",
+      "value": "2",
+      "unit": "Md EUR",
+      "period": "2026-2028",
+      "file": "01_Financial/veolia-amendement-deu-2025-s1-2026.pdf",
+      "page": "29",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_amendement_DEU_2025.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F738",
+      "label": "Cessions réalisées sur neuf mois (rotation d'actifs GreenUp)",
+      "value": "0.2",
+      "unit": "Md EUR",
+      "period": "9M 2026",
+      "file": "01_Financial/finance_veolia_9m_2026_key_figures_presentation.pdf",
+      "page": "14",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F736",
+      "label": "Programme de cessions : montant déjà signé",
+      "value": "570",
+      "unit": "M EUR",
+      "period": "au 05/11/2026",
+      "file": "01_Financial/finance_veolia_operating_financial_review_q3_2026.pdf",
+      "page": "3",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F739",
+      "label": "Cession de 20 % de Rookery South Limited (mise en équivalence) : prix en euros",
+      "value": "101",
+      "unit": "M EUR",
+      "period": "25/09/2026",
+      "file": "01_Financial/finance_veolia_operating_financial_review_q3_2026.pdf",
+      "page": "7",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F737",
+      "label": "Programme de cessions : multiple moyen d'EBITDA des cessions signées",
+      "value": "10.4",
+      "unit": "x",
+      "period": "au 05/11/2026",
+      "file": "01_Financial/finance_veolia_operating_financial_review_q3_2026.pdf",
+      "page": "3",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf",
+      "checked_by": ""
+     }
+    ]
+   },
+   {
+    "key": "conversion",
+    "label": "Cash-flow libre net : la conversion de 2027 reconduite chaque année",
+    "source": "hypothèses de 2027 reconduites (onglet Hypothèses) : conv ; registre : [F13], [F17], [F29], [F3]",
+    "inputs": [
+     "conv"
+    ],
+    "consts": [],
+    "refs": [
+     "F13",
+     "F17",
+     "F29",
+     "F3"
+    ],
+    "sources": [
+     {
+      "id": "F13",
+      "label": "Cash-flow libre net (net free cash flow)",
+      "value": "1,156",
+      "unit": "M EUR",
+      "period": "FY2024",
+      "file": "05_Commercial_Strategy/annual-resultats-2025.pdf",
+      "page": "1",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/02/annual-resultats-2025.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F17",
+      "label": "EBITDA (groupe)",
+      "value": "6,788",
+      "unit": "M EUR",
+      "period": "FY2024",
+      "file": "05_Commercial_Strategy/annual-resultats-2025.pdf",
+      "page": "1",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/02/annual-resultats-2025.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F29",
+      "label": "Cash-flow libre net (net free cash flow)",
+      "value": "1,178",
+      "unit": "M EUR",
+      "period": "FY2025",
+      "file": "05_Commercial_Strategy/annual-resultats-2025.pdf",
+      "page": "1",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/02/annual-resultats-2025.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F3",
+      "label": "EBITDA (groupe)",
+      "value": "7,050",
+      "unit": "M EUR",
+      "period": "FY2025",
+      "file": "05_Commercial_Strategy/annual-resultats-2025.pdf",
+      "page": "1",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/02/annual-resultats-2025.pdf",
+      "checked_by": ""
+     }
+    ]
+   },
+   {
+    "key": "dividendes",
+    "label": "Dividendes : la croissance de 2027 reconduite chaque année ; minoritaires constants",
+    "source": "hypothèses de 2027 reconduites (onglet Hypothèses) : gDiv, minDiv ; registre : [F74], [F89], [F731]",
+    "inputs": [
+     "gDiv",
+     "minDiv"
+    ],
+    "consts": [
+     "divsh26"
+    ],
+    "refs": [
+     "F74",
+     "F89",
+     "F731"
+    ],
+    "sources": [
+     {
+      "id": "F74",
+      "label": "Dividende versé aux actionnaires, approuvé par l'AG du 23 avril 2026",
+      "value": "1,099",
+      "unit": "M EUR",
+      "period": "2026",
+      "file": "01_Financial/veolia_finance_amendment_urd_2025.pdf",
+      "page": "25",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_Amendment_URD_2025.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F89",
+      "label": "Guidance 2026 : croissance du résultat net courant, au moins",
+      "value": "8",
+      "unit": "%",
+      "period": "2026",
+      "file": "05_Commercial_Strategy/veolia-2026-first-half-results.pdf",
+      "page": "3",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/veolia-2026-first-half-results.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F731",
+      "label": "Pont de dette 9M 2026 : dividendes versés (total, minoritaires compris)",
+      "value": "1,464",
+      "unit": "M EUR",
+      "period": "9M 2026",
+      "file": "01_Financial/finance_veolia_operating_financial_review_q3_2026.pdf",
+      "page": "19",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf",
+      "checked_by": ""
+     }
+    ]
+   },
+   {
+    "key": "autres",
+    "label": "Autres flux de dette : comme en 2027",
+    "source": "hypothèses de 2027 reconduites (onglet Hypothèses) : other",
+    "inputs": [
+     "other"
+    ],
+    "consts": [],
+    "refs": [],
+    "sources": []
+   },
+   {
+    "key": "plafond",
+    "label": "Plafond de levier : engagement de Veolia pour 2027 seulement, prolongé par hypothèse",
+    "source": "hypothèses de 2027 reconduites (onglet Hypothèses) : cap ; registre : [F56], [F6]",
+    "inputs": [
+     "cap"
+    ],
+    "consts": [],
+    "refs": [
+     "F56",
+     "F6"
+    ],
+    "sources": [
+     {
+      "id": "F56",
+      "label": "Engagement de levier du groupe : ≤",
+      "value": "3",
+      "unit": "x",
+      "period": "2027",
+      "file": "01_Financial/veolia_clean_earth_investor_presentation.pdf",
+      "page": "16",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/11/Veolia_Clean_Earth_Investor_Presentation.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F6",
+      "label": "Plafond GreenUp : dette financière nette / EBITDA ≤",
+      "value": "3",
+      "unit": "x",
+      "period": "2024-2027",
+      "file": "01_Financial/en_master_greenup_strategy-day_v270324.pdf",
+      "page": "64",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/03/EN_Master_GreenUp_Strategy%20day_V270324.pdf",
+      "checked_by": ""
+     }
+    ]
+   },
+   {
+    "key": "agences",
+    "label": "Seuil des agences : seuil S&P publié pour 2026-2028, prolongé par hypothèse ensuite ; même écart entre dette ajustée et dette financière nette, même part de FFO dans l'EBITDA qu'en 2027",
+    "source": "hypothèses de 2027 reconduites (onglet Hypothèses) : ffo ; registre : [F163], [F256], [F8], [F261], [F3]",
+    "inputs": [
+     "ffo"
+    ],
+    "consts": [
+     "sptrig",
+     "monet",
+     "nfd25"
+    ],
+    "refs": [
+     "F163",
+     "F256",
+     "F8",
+     "F261",
+     "F3"
+    ],
+    "sources": [
+     {
+      "id": "F163",
+      "label": "S&P : seuil de dégradation, FFO / dette ajustés durablement sous",
+      "value": "18",
+      "unit": "%",
+      "period": "2026-2028",
+      "file": "01_Financial/ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf",
+      "page": "3",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/04/RatingsDirect_TearSheet_VeoliaEnvironnementS.A._3552186_Apr-27-2026.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F256",
+      "label": "Moody's : dette nette ajustée (Exhibit 13)",
+      "value": "25,404.0",
+      "unit": "M EUR",
+      "period": "FY2025",
+      "file": "01_Financial/credit_opinion-veolia-environnement-sa-04may2026.pdf",
+      "page": "11",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F8",
+      "label": "Endettement financier net (groupe)",
+      "value": "19,657",
+      "unit": "M EUR",
+      "period": "31/12/2025",
+      "file": "05_Commercial_Strategy/annual-resultats-2025.pdf",
+      "page": "1",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/02/annual-resultats-2025.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F261",
+      "label": "Moody's : FFO (funds from operations)",
+      "value": "5,160",
+      "unit": "M EUR",
+      "period": "FY2025",
+      "file": "01_Financial/credit_opinion-veolia-environnement-sa-04may2026.pdf",
+      "page": "12",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Credit_Opinion-Veolia-Environnement-SA-04May2026.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F3",
+      "label": "EBITDA (groupe)",
+      "value": "7,050",
+      "unit": "M EUR",
+      "period": "FY2025",
+      "file": "05_Commercial_Strategy/annual-resultats-2025.pdf",
+      "page": "1",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/02/annual-resultats-2025.pdf",
+      "checked_by": ""
+     }
+    ]
+   },
+   {
+    "key": "tirages",
+    "label": "Monte-Carlo : les mêmes futurs que 2027 (mêmes uniformes, mêmes lois triangulaires, même facteur de conjoncture) ; un futur garde ses hypothèses d'une année à l'autre",
+    "source": "définition du modèle (model_def.py), sans nombre nouveau",
+    "inputs": [],
+    "consts": [],
+    "refs": [],
+    "sources": []
+   },
+   {
+    "key": "scenarios",
+    "label": "Scénarios défavorable et favorable combinés : les colonnes de 2027 (le sens de chaque borne est choisi sur la marge fin 2027), prolongées",
+    "source": "définition du modèle (model_def.py), sans nombre nouveau",
+    "inputs": [],
+    "consts": [],
+    "refs": [],
+    "sources": []
+   }
+  ],
+  "excluded": [
+   {
+    "key": "hybrides",
+    "label": "Réinitialisation des hybrides après 2027 : Veolia les compte en capitaux propres ; ni rappel ni refinancement n'est modélisé",
+    "source": "[F568], [F570], [F564], [F572]",
+    "refs": [
+     "F568",
+     "F570",
+     "F564",
+     "F572"
+    ],
+    "sources": [
+     {
+      "id": "F568",
+      "label": "Hybride novembre 2021 : coupon jusqu'à la première date de réinitialisation (02/2028)",
+      "value": "2",
+      "unit": "%",
+      "period": "31/12/2025",
+      "file": "01_Financial/finance_veolia_urd_2025_en.pdf",
+      "page": "429",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F570",
+      "label": "Hybride novembre 2023 : coupon jusqu'à la première date de réinitialisation (02/2029)",
+      "value": "6",
+      "unit": "%",
+      "period": "31/12/2025",
+      "file": "01_Financial/finance_veolia_urd_2025_en.pdf",
+      "page": "429",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F564",
+      "label": "Hybride octobre 2020, tranche résiduelle : coupon jusqu'à la première date de réinitialisation (04/2029)",
+      "value": "2.50",
+      "unit": "%",
+      "period": "31/12/2025",
+      "file": "01_Financial/finance_veolia_urd_2025_en.pdf",
+      "page": "429",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F572",
+      "label": "Hybride mai 2025 (hybride vert) : coupon jusqu'à la première date de réinitialisation (08/2030)",
+      "value": "4.371",
+      "unit": "%",
+      "period": "31/12/2025",
+      "file": "01_Financial/finance_veolia_urd_2025_en.pdf",
+      "page": "429",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf",
+      "checked_by": ""
+     }
+    ]
+   },
+   {
+    "key": "echeances",
+    "label": "Échéances obligataires 2028-2030 : supposées refinancées, sans effet sur la dette nette ; le coût du refinancement n'est pas modélisé",
+    "source": "[F350], [F351], [F352]",
+    "refs": [
+     "F350",
+     "F351",
+     "F352"
+    ],
+    "sources": [
+     {
+      "id": "F350",
+      "label": "Flux contractuels non actualisés : emprunts obligataires, 2028",
+      "value": "2,447",
+      "unit": "M EUR",
+      "period": "31/12/2025",
+      "file": "01_Financial/finance_veolia_urd_2025_en.pdf",
+      "page": "421",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F351",
+      "label": "Flux contractuels non actualisés : emprunts obligataires, 2029",
+      "value": "1,781",
+      "unit": "M EUR",
+      "period": "31/12/2025",
+      "file": "01_Financial/finance_veolia_urd_2025_en.pdf",
+      "page": "421",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F352",
+      "label": "Flux contractuels non actualisés : emprunts obligataires, 2030",
+      "value": "2,006",
+      "unit": "M EUR",
+      "period": "31/12/2025",
+      "file": "01_Financial/finance_veolia_urd_2025_en.pdf",
+      "page": "421",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf",
+      "checked_by": ""
+     }
+    ]
+   },
+   {
+    "key": "previsions_sp",
+    "label": "Prévisions de S&P jusqu'en 2028 : un point de comparaison, pas une entrée du modèle",
+    "source": "[F166], [F167], [F838], [F829]",
+    "refs": [
+     "F166",
+     "F167",
+     "F838",
+     "F829"
+    ],
+    "sources": [
+     {
+      "id": "F166",
+      "label": "S&P : croissance annuelle attendue de l'EBITDA publié, bas de fourchette",
+      "value": "4",
+      "unit": "%",
+      "period": "2026-2028",
+      "file": "01_Financial/ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf",
+      "page": "3",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/04/RatingsDirect_TearSheet_VeoliaEnvironnementS.A._3552186_Apr-27-2026.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F167",
+      "label": "S&P : croissance annuelle attendue de l'EBITDA publié, haut de fourchette",
+      "value": "5",
+      "unit": "%",
+      "period": "2026-2028",
+      "file": "01_Financial/ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf",
+      "page": "3",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/04/RatingsDirect_TearSheet_VeoliaEnvironnementS.A._3552186_Apr-27-2026.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F838",
+      "label": "S&P, prévision annuelle : FFO / dette ajustés, bas de fourchette",
+      "value": "21",
+      "unit": "%",
+      "period": "2028",
+      "file": "01_Financial/ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf",
+      "page": "4",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/04/RatingsDirect_TearSheet_VeoliaEnvironnementS.A._3552186_Apr-27-2026.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F829",
+      "label": "S&P, prévision annuelle : FFO / dette ajustés, haut de fourchette",
+      "value": "22",
+      "unit": "%",
+      "period": "2028",
+      "file": "01_Financial/ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf",
+      "page": "4",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/04/RatingsDirect_TearSheet_VeoliaEnvironnementS.A._3552186_Apr-27-2026.pdf",
+      "checked_by": ""
+     }
+    ]
+   },
+   {
+    "key": "lignes",
+    "label": "Lignes de crédit à échéance 2030 : liquidité, sans effet sur la dette nette",
+    "source": "[F414], [F416]",
+    "refs": [
+     "F414",
+     "F416"
+    ],
+    "sources": [
+     {
+      "id": "F414",
+      "label": "Ligne de crédit syndiquée : échéance après prolongation",
+      "value": "2030",
+      "unit": "année",
+      "period": "31/12/2025",
+      "file": "01_Financial/finance_veolia_urd_2025_en.pdf",
+      "page": "421",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf",
+      "checked_by": ""
+     },
+     {
+      "id": "F416",
+      "label": "Lignes de crédit confirmées non tirées : échéance 2030",
+      "value": "4,650",
+      "unit": "M EUR",
+      "period": "31/12/2025",
+      "file": "01_Financial/finance_veolia_urd_2025_en.pdf",
+      "page": "422",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/03/Finance_Veolia_URD_2025_en.pdf",
+      "checked_by": ""
+     }
+    ]
+   },
+   {
+    "key": "pfas",
+    "label": "Ambition 2030 dans les PFAS : un chiffre d'affaires visé, sans EBITDA ni calendrier publié",
+    "source": "[F772]",
+    "refs": [
+     "F772"
+    ],
+    "sources": [
+     {
+      "id": "F772",
+      "label": "Ambition de chiffre d'affaires dans le traitement des PFAS et des micropolluants",
+      "value": "1",
+      "unit": "Md EUR",
+      "period": "2030",
+      "file": "01_Financial/finance_veolia_operating_financial_review_q3_2026.pdf",
+      "page": "7",
+      "url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_operating_financial_review_Q3_2026.pdf",
+      "checked_by": ""
+     }
+    ]
+   }
+  ],
+  "not_modelled": [
+   "Aucune guidance, aucun objectif d'EBITDA ni aucun engagement de levier n'est publié au-delà de 2027.",
+   "Aucune acquisition autre que les tuck-ins de l'hypothèse, aucune cession au-delà du programme publié.",
+   "Change, taux d'intérêt à refinancement, rachats d'actions, inflation des contrats : non modélisés, comme en 2027."
+  ],
+  "columns": {
+   "central": {
+    "2028": {
+     "EB": 8348.29930999739,
+     "FCF": 1389.1925807974,
+     "DIV": 1646.8736,
+     "NFD": 23730.5523621925,
+     "LEV": 2.84256127877139,
+     "HEAD": 1314.34556779968,
+     "HEADSP": 4468.25097869524,
+     "BIND": 1314.34556779968,
+     "WHICH": "plafond de levier (prolongé par hypothèse)",
+     "MAXACQ": 1894.20390653483
+    },
+    "2029": {
+     "EB": 8847.99415058511,
+     "FCF": 1473.48928374627,
+     "DIV": 1749.423488,
+     "NFD": 24506.4865664462,
+     "LEV": 2.76972228387217,
+     "HEAD": 2037.49588530911,
+     "HEADSP": 5724.17286382893,
+     "BIND": 2037.49588530911,
+     "WHICH": "plafond de levier (prolongé par hypothèse)",
+     "MAXACQ": 2936.39112882783
+    },
+    "2030": {
+     "EB": 9371.87223700901,
+     "FCF": 1561.86561234867,
+     "DIV": 1860.17736704,
+     "NFD": 25304.7983211376,
+     "LEV": 2.70007930978938,
+     "HEAD": 2810.81838988949,
+     "HEADSP": 7056.05096410004,
+     "BIND": 2810.81838988949,
+     "WHICH": "plafond de levier (prolongé par hypothèse)",
+     "MAXACQ": 4050.88532660544
+    }
+   },
+   "unfavourable": {
+    "2028": {
+     "EB": 8127.78747747194,
+     "FCF": 1118.75508458445,
+     "DIV": 1743.5856,
+     "NFD": 25758.5615679476,
+     "LEV": 3.16919723102301,
+     "HEAD": -1375.19913553174,
+     "HEADSP": -108.860059226172,
+     "BIND": -1375.19913553174,
+     "WHICH": "plafond de levier (prolongé par hypothèse)",
+     "MAXACQ": 0.0
+    },
+    "2029": {
+     "EB": 8543.80806747991,
+     "FCF": 1176.99796718556,
+     "DIV": 1909.015872,
+     "NFD": 27490.579472762,
+     "LEV": 3.21760264926816,
+     "HEAD": -1859.15527032228,
+     "HEADSP": -233.838616350258,
+     "BIND": -1859.15527032228,
+     "WHICH": "plafond de levier (prolongé par hypothèse)",
+     "MAXACQ": 0.0
+    },
+    "2030": {
+     "EB": 8976.4694810882,
+     "FCF": 1237.57056509072,
+     "DIV": 2094.29777664,
+     "NFD": 29347.3066843113,
+     "LEV": 3.26935960136006,
+     "HEAD": -2417.8982410467,
+     "HEADSP": -419.244906301567,
+     "BIND": -2417.8982410467,
+     "WHICH": "plafond de levier (prolongé par hypothèse)",
+     "MAXACQ": 0.0
+    }
+   },
+   "favourable": {
+    "2028": {
+     "EB": 8711.60196095684,
+     "FCF": 1636.06921032017,
+     "DIV": 1553.6784,
+     "NFD": 21929.2110022927,
+     "LEV": 2.5172420756336,
+     "HEAD": 4205.59488057779,
+     "HEADSP": 8809.54321527498,
+     "BIND": 4205.59488057779,
+     "WHICH": "plafond de levier (prolongé par hypothèse)",
+     "MAXACQ": 7073.04593551719
+    },
+    "2029": {
+     "EB": 9314.27030431282,
+     "FCF": 1750.57619555781,
+     "DIV": 1601.225536,
+     "NFD": 21779.8603427349,
+     "LEV": 2.33833243304633,
+     "HEAD": 6162.95057020351,
+     "HEADSP": 11482.9771776447,
+     "BIND": 6162.95057020351,
+     "WHICH": "plafond de levier (prolongé par hypothèse)",
+     "MAXACQ": 10364.962322615
+    },
+    "2030": {
+     "EB": 9959.12543170371,
+     "FCF": 1873.09866976208,
+     "DIV": 1650.67455744,
+     "NFD": 21557.4362304129,
+     "LEV": 2.1645912965196,
+     "HEAD": 8319.94006469826,
+     "HEADSP": 14406.1704239755,
+     "BIND": 8319.94006469826,
+     "WHICH": "plafond de levier (prolongé par hypothèse)",
+     "MAXACQ": 13992.6264724471
+    }
+   }
+  },
+  "distribution": {
+   "2028": {
+    "BIND": {
+     "mean": 1406.70962405263,
+     "p5": 408.977541139164,
+     "p10": 610.744439071259,
+     "p50": 1365.67762455658,
+     "p90": 2241.82242698344,
+     "p95": 2512.35223423754
+    },
+    "LEV": {
+     "mean": 2.83351118356259,
+     "p5": 2.70784319297681,
+     "p10": 2.73829329407347,
+     "p50": 2.83651376077073,
+     "p90": 2.92606378066879,
+     "p95": 2.95038073595165
+    },
+    "MAXACQ": {
+     "mean": 2059.24012304877,
+     "p5": 624.106828102921,
+     "p10": 927.491210158911,
+     "p50": 2009.06913495001,
+     "p90": 3250.56211742578,
+     "p95": 3586.03666115102
+    },
+    "HEAD": {
+     "mean": 1406.70962405263,
+     "p5": 408.977541139164,
+     "p10": 610.744439071259,
+     "p50": 1365.67762455658,
+     "p90": 2241.82242698344,
+     "p95": 2512.35223423754
+    },
+    "HEADSP": {
+     "mean": 4413.95272063258,
+     "p5": 2579.54308719781,
+     "p10": 3015.86421997973,
+     "p50": 4367.15483243741,
+     "p90": 5936.93055711739,
+     "p95": 6353.53436516824
+    },
+    "EB": {
+     "mean": 8412.43342824503,
+     "p5": 8203.85719528739,
+     "p10": 8246.28555247375,
+     "p50": 8404.12357523171,
+     "p90": 8597.48669793226,
+     "p95": 8639.92837671436
+    },
+    "FCF": {
+     "mean": 1381.51338577583,
+     "p5": 1219.63065500124,
+     "p10": 1252.35771463952,
+     "p50": 1384.05340797447,
+     "p90": 1511.67029649485,
+     "p95": 1546.66368039887
+    },
+    "DIV": {
+     "mean": 1646.9056347843,
+     "p5": 1578.60023185629,
+     "p10": 1589.93956135142,
+     "p50": 1647.13628040442,
+     "p90": 1699.22691166014,
+     "p95": 1711.20051319309
+    },
+    "NFD": {
+     "mean": 23830.5906606825,
+     "p5": 23032.4223071151,
+     "p10": 23197.8051253586,
+     "p50": 23849.298027738,
+     "p90": 24447.9010297957,
+     "p95": 24591.2217291905
+    }
+   },
+   "2029": {
+    "BIND": {
+     "mean": 2191.94032170577,
+     "p5": 792.887239519434,
+     "p10": 1037.58329712779,
+     "p50": 2140.32103239196,
+     "p90": 3373.99436616995,
+     "p95": 3752.78087913306
+    },
+    "LEV": {
+     "mean": 2.75604389145603,
+     "p5": 2.58945220283866,
+     "p10": 2.62885101723388,
+     "p50": 2.76060004924361,
+     "p90": 2.8820189023575,
+     "p95": 2.90932447022955
+    },
+    "MAXACQ": {
+     "mean": 3211.02865450306,
+     "p5": 1201.73986492725,
+     "p10": 1569.99745187894,
+     "p50": 3135.5141898557,
+     "p90": 4894.81043818454,
+     "p95": 5416.54525348531
+    },
+    "HEAD": {
+     "mean": 2191.94032170577,
+     "p5": 792.887239519434,
+     "p10": 1037.58329712779,
+     "p50": 2140.32103239196,
+     "p90": 3373.99436616995,
+     "p95": 3752.78087913306
+    },
+    "HEADSP": {
+     "mean": 5747.8243898921,
+     "p5": 3421.93146531429,
+     "p10": 3968.78090241183,
+     "p50": 5636.55820591339,
+     "p90": 7709.98161437112,
+     "p95": 8322.21165434488
+    },
+    "EB": {
+     "mean": 8938.2386227085,
+     "p5": 8637.67680697026,
+     "p10": 8696.33210769689,
+     "p50": 8923.9924338226,
+     "p90": 9211.03598144293,
+     "p95": 9277.77334023519
+    },
+    "FCF": {
+     "mean": 1469.24865981505,
+     "p5": 1291.46850671157,
+     "p10": 1327.6353330904,
+     "p50": 1469.80781398977,
+     "p90": 1615.87405702308,
+     "p95": 1656.60573453734
+    },
+    "DIV": {
+     "mean": 1749.9702766813,
+     "p5": 1640.30666660204,
+     "p10": 1658.22218376124,
+     "p50": 1749.84905205616,
+     "p90": 1835.09600965255,
+     "p95": 1854.92972182569
+    },
+    "NFD": {
+     "mean": 24622.7755464197,
+     "p5": 23471.4303543236,
+     "p10": 23700.9417263061,
+     "p50": 24647.3957397521,
+     "p90": 25534.4896102116,
+     "p95": 25760.0969098649
+    }
+   },
+   "2030": {
+    "BIND": {
+     "mean": 3010.1387087346,
+     "p5": 1157.12093572861,
+     "p10": 1483.62849269937,
+     "p50": 2928.5940926301,
+     "p90": 4592.4789838007,
+     "p95": 5113.49791453397
+    },
+    "LEV": {
+     "mean": 2.68447302743463,
+     "p5": 2.48005077665999,
+     "p10": 2.52675745972195,
+     "p50": 2.69075462748432,
+     "p90": 2.83962268012533,
+     "p95": 2.87005430353018
+    },
+    "MAXACQ": {
+     "mean": 4411.35214431647,
+     "p5": 1745.92697333906,
+     "p10": 2218.44997770552,
+     "p50": 4318.01047053143,
+     "p90": 6656.56289725388,
+     "p95": 7334.67598074424
+    },
+    "HEAD": {
+     "mean": 3010.1387087346,
+     "p5": 1157.12093572861,
+     "p10": 1483.62849269937,
+     "p50": 2928.5940926301,
+     "p90": 4592.4789838007,
+     "p95": 5113.49791453397
+    },
+    "HEADSP": {
+     "mean": 7133.31650305695,
+     "p5": 4366.91675359332,
+     "p10": 4916.15561560267,
+     "p50": 6974.65281462033,
+     "p90": 9539.80774728856,
+     "p95": 10359.2792282696
+    },
+    "EB": {
+     "mean": 9482.02731014262,
+     "p5": 9083.08706289673,
+     "p10": 9150.29204366543,
+     "p50": 9461.63486177953,
+     "p90": 9852.57064292435,
+     "p95": 9940.90765754826
+    },
+    "FCF": {
+     "mean": 1559.97249956166,
+     "p5": 1366.37638242532,
+     "p10": 1404.691185709,
+     "p50": 1560.42842882807,
+     "p90": 1723.77328277618,
+     "p95": 1770.94338110278
+    },
+    "DIV": {
+     "mean": 1861.67690596415,
+     "p5": 1705.15061242422,
+     "p10": 1730.31113075269,
+     "p50": 1860.79021067645,
+     "p90": 1984.80114538941,
+     "p95": 2014.00441059172
+    },
+    "NFD": {
+     "mean": 25435.9432216933,
+     "p5": 23899.9633330161,
+     "p10": 24183.8771276402,
+     "p50": 25458.5751824446,
+     "p90": 26621.1370196877,
+     "p95": 26987.4016701072
+    }
+   }
+  },
+  "probabilities": {
+   "2028": {
+    "pBind": 0.996,
+    "pHead": 0.996,
+    "pSP": 1.0,
+    "pAcq1": 0.878,
+    "pAcq2": 0.508,
+    "pAcq3": 0.159
+   },
+   "2029": {
+    "pBind": 0.998,
+    "pHead": 0.998,
+    "pSP": 1.0,
+    "pAcq1": 0.961,
+    "pAcq2": 0.815,
+    "pAcq3": 0.547
+   },
+   "2030": {
+    "pBind": 0.998,
+    "pHead": 0.998,
+    "pSP": 1.0,
+    "pAcq1": 0.985,
+    "pAcq2": 0.929,
+    "pAcq3": 0.788
+   }
+  },
+  "events": [
+   {
+    "id": "pBind_2028",
+    "key": "pBind",
+    "year": 2028,
+    "metric": "BIND",
+    "calc": "BIND28",
+    "op": ">",
+    "threshold": 0,
+    "unit": "M EUR",
+    "label": "La marge contraignante fin 2028 est positive (plafond prolongé ET seuil S&P tenus)"
+   },
+   {
+    "id": "pHead_2028",
+    "key": "pHead",
+    "year": 2028,
+    "metric": "HEAD",
+    "calc": "HEAD28",
+    "op": ">",
+    "threshold": 0,
+    "unit": "M EUR",
+    "label": "Le levier fin 2028 reste sous le plafond prolongé (marge > 0)"
+   },
+   {
+    "id": "pSP_2028",
+    "key": "pSP",
+    "year": 2028,
+    "metric": "HEADSP",
+    "calc": "HEADSP28",
+    "op": ">",
+    "threshold": 0,
+    "unit": "M EUR",
+    "label": "Le ratio FFO / dette reste au-dessus du seuil S&P fin 2028"
+   },
+   {
+    "id": "pAcq1_2028",
+    "key": "pAcq1",
+    "year": 2028,
+    "metric": "MAXACQ",
+    "calc": "MAXACQ28",
+    "op": ">=",
+    "threshold": 1000,
+    "unit": "M EUR",
+    "label": "Veolia peut acheter au moins 1 Md€ fin 2028 sans franchir la contrainte qui mord"
+   },
+   {
+    "id": "pAcq2_2028",
+    "key": "pAcq2",
+    "year": 2028,
+    "metric": "MAXACQ",
+    "calc": "MAXACQ28",
+    "op": ">=",
+    "threshold": 2000,
+    "unit": "M EUR",
+    "label": "… au moins 2 Md€"
+   },
+   {
+    "id": "pAcq3_2028",
+    "key": "pAcq3",
+    "year": 2028,
+    "metric": "MAXACQ",
+    "calc": "MAXACQ28",
+    "op": ">=",
+    "threshold": 3000,
+    "unit": "M EUR",
+    "label": "… au moins 3 Md€"
+   },
+   {
+    "id": "pBind_2029",
+    "key": "pBind",
+    "year": 2029,
+    "metric": "BIND",
+    "calc": "BIND29",
+    "op": ">",
+    "threshold": 0,
+    "unit": "M EUR",
+    "label": "La marge contraignante fin 2029 est positive (plafond prolongé ET seuil S&P tenus)"
+   },
+   {
+    "id": "pHead_2029",
+    "key": "pHead",
+    "year": 2029,
+    "metric": "HEAD",
+    "calc": "HEAD29",
+    "op": ">",
+    "threshold": 0,
+    "unit": "M EUR",
+    "label": "Le levier fin 2029 reste sous le plafond prolongé (marge > 0)"
+   },
+   {
+    "id": "pSP_2029",
+    "key": "pSP",
+    "year": 2029,
+    "metric": "HEADSP",
+    "calc": "HEADSP29",
+    "op": ">",
+    "threshold": 0,
+    "unit": "M EUR",
+    "label": "Le ratio FFO / dette reste au-dessus du seuil S&P fin 2029"
+   },
+   {
+    "id": "pAcq1_2029",
+    "key": "pAcq1",
+    "year": 2029,
+    "metric": "MAXACQ",
+    "calc": "MAXACQ29",
+    "op": ">=",
+    "threshold": 1000,
+    "unit": "M EUR",
+    "label": "Veolia peut acheter au moins 1 Md€ fin 2029 sans franchir la contrainte qui mord"
+   },
+   {
+    "id": "pAcq2_2029",
+    "key": "pAcq2",
+    "year": 2029,
+    "metric": "MAXACQ",
+    "calc": "MAXACQ29",
+    "op": ">=",
+    "threshold": 2000,
+    "unit": "M EUR",
+    "label": "… au moins 2 Md€"
+   },
+   {
+    "id": "pAcq3_2029",
+    "key": "pAcq3",
+    "year": 2029,
+    "metric": "MAXACQ",
+    "calc": "MAXACQ29",
+    "op": ">=",
+    "threshold": 3000,
+    "unit": "M EUR",
+    "label": "… au moins 3 Md€"
+   },
+   {
+    "id": "pBind_2030",
+    "key": "pBind",
+    "year": 2030,
+    "metric": "BIND",
+    "calc": "BIND30",
+    "op": ">",
+    "threshold": 0,
+    "unit": "M EUR",
+    "label": "La marge contraignante fin 2030 est positive (plafond prolongé ET seuil S&P tenus)"
+   },
+   {
+    "id": "pHead_2030",
+    "key": "pHead",
+    "year": 2030,
+    "metric": "HEAD",
+    "calc": "HEAD30",
+    "op": ">",
+    "threshold": 0,
+    "unit": "M EUR",
+    "label": "Le levier fin 2030 reste sous le plafond prolongé (marge > 0)"
+   },
+   {
+    "id": "pSP_2030",
+    "key": "pSP",
+    "year": 2030,
+    "metric": "HEADSP",
+    "calc": "HEADSP30",
+    "op": ">",
+    "threshold": 0,
+    "unit": "M EUR",
+    "label": "Le ratio FFO / dette reste au-dessus du seuil S&P fin 2030"
+   },
+   {
+    "id": "pAcq1_2030",
+    "key": "pAcq1",
+    "year": 2030,
+    "metric": "MAXACQ",
+    "calc": "MAXACQ30",
+    "op": ">=",
+    "threshold": 1000,
+    "unit": "M EUR",
+    "label": "Veolia peut acheter au moins 1 Md€ fin 2030 sans franchir la contrainte qui mord"
+   },
+   {
+    "id": "pAcq2_2030",
+    "key": "pAcq2",
+    "year": 2030,
+    "metric": "MAXACQ",
+    "calc": "MAXACQ30",
+    "op": ">=",
+    "threshold": 2000,
+    "unit": "M EUR",
+    "label": "… au moins 2 Md€"
+   },
+   {
+    "id": "pAcq3_2030",
+    "key": "pAcq3",
+    "year": 2030,
+    "metric": "MAXACQ",
+    "calc": "MAXACQ30",
+    "op": ">=",
+    "threshold": 3000,
+    "unit": "M EUR",
+    "label": "… au moins 3 Md€"
+   }
+  ],
+  "draws": 1000,
+  "factor_weight": 0.4,
+  "model": "modele-greenup-2027.xlsx",
+  "generated": "11/11/2026 11:24"
+ }
 }

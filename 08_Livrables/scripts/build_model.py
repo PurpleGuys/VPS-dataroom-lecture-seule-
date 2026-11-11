@@ -1104,6 +1104,19 @@ RES0 = r + 1
 import model_def as MD
 NFK = {"M": NF_M, "x": NF_X, "%": NF_P, None: None}
 calc = [(key, label, tpl, unit, NFK[kind], bold) for key, label, tpl, unit, kind, bold in MD.CALC]
+# Prolongation exploratoire 2028-2030 (model_def.HORIZON_CALC) : mêmes colonnes, sous les lignes 2026-2027, qui gardent
+# leur place. Une ligne de titre par bloc et par année (clés SEPH…, sans formule).
+HKEYS = [k for k, *_ in MD.HORIZON_CALC]
+HTITLE = {"SEPH": f"{MD.HORIZON_LABEL} : {MD.HORIZON_YEARS[0]}-{MD.HORIZON_YEARS[-1]} (mêmes hypothèses que 2027, reconduites)"}
+calc += [("SEPH0", None, None, None, None, None), ("SEPH", None, None, None, None, None)]
+for _year in MD.HORIZON_YEARS:
+    _first = MD.HORIZON_KEYS[str(_year)]["B"]
+    for key, label, tpl, unit, kind, bold in MD.HORIZON_CALC:
+        if key == _first:
+            calc.append((f"SEPH{_year}", None, None, None, None, None))
+            HTITLE[f"SEPH{_year}"] = str(_year)
+        if key in MD.HORIZON_KEYS[str(_year)].values():
+            calc.append((key, label, tpl, unit, NFK[kind], bold))
 tgt, i_tgt = E("Objectif GreenUp : EBITDA", "2027")
 syn_rr, i_syn = E("Clean Earth : synergies de coûts", "année 4")
 put(ws, f"B{RES0-1}", "Calcul", bold=True)
@@ -1119,6 +1132,8 @@ assert set(CONST_IDS) == set(MD.CONSTS), "model_def.CONSTS et build_model.refs d
 for key, label, formula, unit, nf, bold in calc:
     rr = ROW[key]
     if label is None:
+        if key in HTITLE:
+            put(ws, f"B{rr}", HTITLE[key], bold=True, fill=HEAD if key == "SEPH" else None)
         continue
     put(ws, f"A{rr}", key, color=GREY)
     put(ws, f"B{rr}", label, bold=bold)
@@ -1126,10 +1141,11 @@ for key, label, formula, unit, nf, bold in calc:
     for col, *_ in cols:
         fmt = {**refs, **{k: f"{col}{v}" for k, v in IN.items()}, **{k: f"{col}{v}" for k, v in ROW.items()}}
         put(ws, f"{col}{rr}", formula.format(**fmt), nf=nf, bold=bold)
-        if key == "WHICH27":
+        if key == "WHICH27" or (key in HKEYS and nf is None):
             ws[f"{col}{rr}"].alignment = Alignment(horizontal="right")
         if bold:
             ws[f"{col}{rr}"].border = TOPLINE if key in ("EB26", "EB27", "NFD27", "ADJ26") else Border()
+put(ws, f"B{ROW['SEPH0']}", MD.HORIZON_CAP_NOTE + " " + MD.HORIZON_READING, color=GREY, italic=True)
 # hypothèses par colonne
 for code in INPUT_ORDER:
     rr = IN[code]
@@ -1314,6 +1330,8 @@ ci = 4
 for code in VARIED:
     UCOL[code], XCOL[code] = L(ci), L(ci + 1); ci += 2
 CALC_KEYS = [k for k, lab, tpl, unit, kind, bold in MD.CALC if lab is not None and kind is not None]
+MAIN_KEYS = list(CALC_KEYS)
+CALC_KEYS += [k for k, lab, tpl, unit, kind, bold in MD.HORIZON_CALC if kind is not None]   # 2028-2030, à la suite
 CCOL = {}
 for key in CALC_KEYS:
     CCOL[key] = L(ci); ci += 1
@@ -1374,8 +1392,8 @@ def _calc_formula(tpl, r):
 
 _rng = _random.Random(MD.SEED)
 UNIFORMS = []   # exportés pour le simulateur : mêmes tirages, mêmes nombres
-TPL = {k: tpl for k, lab, tpl, unit, kind, bold in MD.CALC}
-NFK_SIM = {k: NFK[kind] for k, lab, tpl, unit, kind, bold in MD.CALC}
+TPL = {k: tpl for k, lab, tpl, unit, kind, bold in MD.CALC + MD.HORIZON_CALC}
+NFK_SIM = {k: NFK[kind] for k, lab, tpl, unit, kind, bold in MD.CALC + MD.HORIZON_CALC}
 for i in range(SIM_N + 1):
     r = SIM_BASE + i
     base_row = i == 0
@@ -1498,6 +1516,43 @@ put(ws, f"B{r}", "Lecture : la fourchette défavorable / favorable de Trajectoir
     "Simulation) fait bouger ensemble les hypothèses qui y sont exposées. Les probabilités "
     "dépendent des bornes choisies dans Hypothèses : elles mesurent notre incertitude, pas celle du marché.", color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:J{r}"); ws.row_dimensions[r].height = 44
+# E, F : la prolongation exploratoire 2028-2030, sur les MÊMES tirages (colonnes ajoutées à droite de Simulation). Placés
+# sous le graphique de l'éventail ; aucune ligne des blocs A à D ne bouge, et rien d'ici n'entre dans la fourchette publiée.
+r = max(r + 2, FA0 + 20)
+HDIST, HPROB = {}, []
+put(ws, f"A{r}", "E", bold=True)
+put(ws, f"B{r}", f"{MD.HORIZON_LABEL} : {MD.HORIZON_YEARS[0]}-{MD.HORIZON_YEARS[-1]}, sur les mêmes tirages", bold=True); r += 1
+put(ws, f"B{r}", MD.HORIZON_CAP_NOTE + " " + MD.HORIZON_READING, color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:J{r}"); ws.row_dimensions[r].height = 44; r += 1
+header(ws, r, ["", "Résultat", "Moyenne", "p5", "p10", "Médiane", "p90", "p95", "Ligne base", "Trajectoire (actif)"]); r += 1
+_HKIND = {g: kind for g, lab, kind in MD.HORIZON_METRICS}
+_HLAB = {k: lab for k, lab, *_ in MD.HORIZON_CALC}
+_HUNIT = {k: unit for k, lab, tpl, unit, *_ in MD.HORIZON_CALC}
+for _year in MD.HORIZON_YEARS:
+    for generic in MD.HORIZON_OUTPUTS:
+        key = MD.HORIZON_KEYS[str(_year)][generic]
+        nf = {"M": NF_M, "x": NF_X, "%": NF_P}[_HKIND[generic]]
+        rng = SIM[key]
+        put(ws, f"A{r}", key, color=GREY); put(ws, f"B{r}", _HLAB[key])
+        put(ws, f"C{r}", f"=AVERAGE({rng})", nf=nf)
+        for col, pc in (("D", 0.05), ("E", 0.10), ("F", 0.50), ("G", 0.90), ("H", 0.95)):
+            put(ws, f"{col}{r}", f"=PERCENTILE({rng},{pc})", nf=nf, bold=col == "F")
+        put(ws, f"I{r}", f"={SIMB[key]}", nf=nf, color=GREEN)
+        put(ws, f"J{r}", f"={T[key]}", nf=nf, color=GREEN)
+        HDIST[key] = r; r += 1
+r += 1
+put(ws, f"A{r}", "F", bold=True); put(ws, f"B{r}", "Les mêmes probabilités, année par année (prolongation exploratoire)", bold=True); r += 1
+header(ws, r, ["", "Événement de la prolongation", "Probabilité", "", "Comment c'est compté"]); r += 1
+for _year in MD.HORIZON_YEARS:
+    for pkey, generic, op, threshold, lab in MD.HORIZON_PROBS:
+        key = MD.HORIZON_KEYS[str(_year)][generic]
+        put(ws, f"A{r}", f"{pkey}_{_year}", color=GREY)
+        put(ws, f"B{r}", lab.replace("@A", str(_year)), bold=pkey in ("pBind", "pAcq1"))
+        put(ws, f"C{r}", f'=COUNTIF({SIM[key]},"{op}{threshold}")/{SIM_N}', nf='0%', bold=True)
+        put(ws, f"E{r}", f"tirages où {key} {op} {threshold}", color=GREY)
+        HPROB.append({"id": f"{pkey}_{_year}", "key": pkey, "year": _year, "metric": generic, "calc": key, "op": op,
+                      "threshold": threshold, "unit": _HUNIT[key], "label": lab.replace("@A", str(_year)), "row": r})
+        r += 1
 widths(ws, {"A": 8, "B": 62, "C": 12, "D": 12, "E": 12, "F": 12, "G": 12, "H": 12, "I": 12, "J": 14})
 ws.freeze_panes = "C4"
 
@@ -2894,6 +2949,21 @@ OUT.with_name("model-def.json").write_text(_json.dumps({
                  "conclusions": [cid for cid, _l, _m in CONCL], "size_cell": FN["S"].replace("$", ""), "lev26max_cell": FN["lev26max"].replace("$", "")},
     "trajectoire": {"columns": [{"col": col, "name": name, "code": code, "side": side} for col, name, code, side in cols],
                     "input_rows": IN, "calc_rows": {k: v for k, v in ROW.items()}},
+    # Prolongation exploratoire 2028-2030 : un bloc séparé (ni dans calc ni dans outputs), mêmes moteurs, mêmes tirages.
+    "horizon": {
+        "years": MD.HORIZON_YEARS, "label": MD.HORIZON_LABEL, "cap_note": MD.HORIZON_CAP_NOTE, "reading": MD.HORIZON_READING,
+        "calc": [{"key": k, "label": lab, "template": tpl, "unit": unit, "kind": kind, "bold": bold}
+                 for k, lab, tpl, unit, kind, bold in MD.HORIZON_CALC],
+        "keys": MD.HORIZON_KEYS,
+        "metrics": [{"key": g, "label": lab, "kind": kind} for g, lab, kind in MD.HORIZON_METRICS],
+        "outputs": MD.HORIZON_OUTPUTS,
+        "probabilities": HPROB,
+        "assumptions": [{"key": k, "label": lab, "inputs": codes, "consts": names,
+                         "refs": [CONST_IDS[n] for n in names]} for k, lab, codes, names in MD.HORIZON_ASSUMPTIONS],
+        "excluded": [{"key": k, "label": lab, "refs": ids} for k, lab, ids in MD.HORIZON_EXCLUDED],
+        "not_modelled": MD.HORIZON_NOT_MODELLED,
+        "distribution_rows": HDIST,
+    },
 }, ensure_ascii=False), encoding="utf-8")
 
 OUT.with_name("model-uses.json").write_text(_json.dumps({

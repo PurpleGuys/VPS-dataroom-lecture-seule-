@@ -77,14 +77,34 @@ def relabel(version):
     return changed
 
 
+def horizon_block(d):
+    """La prolongation exploratoire 2028-2030, reprise telle quelle de simulateur-data.json (rien n'est calculé ici),
+    sans le bloc de parité. Elle vit À CÔTÉ des versions (clé « horizon » de l'historique) : elle n'entre pas dans
+    signature(), et la changer ne publie pas une nouvelle version de la fourchette."""
+    h = d.get("horizon")
+    if not h:
+        return None
+    return {k: v for k, v in h.items() if k != "all_columns"} | {"model": d["model"], "generated": d["generated"]}
+
+
+def same_horizon(a, b):
+    strip = lambda h: {k: v for k, v in (h or {}).items() if k != "generated"}
+    return strip(a) == strip(b)
+
+
 history = json.loads(HIST.read_text(encoding="utf-8")) if HIST.exists() else {"versions": []}
 versions = history.get("versions", [])
 relabeled = sum(relabel(v) for v in versions)
+horizon = horizon_block(data)
+horizon_changed = horizon is not None and not same_horizon(history.get("horizon"), horizon)
+if horizon_changed:
+    history["horizon"] = horizon
 if versions and signature(versions[-1]) == signature(snapshot):
-    if relabeled:
+    if relabeled or horizon_changed:
         HIST.write_text(json.dumps(history, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"fourchette inchangée (version {len(versions)} du {versions[-1]['date']})"
-          + (f" ; libellé de la contrainte qui mord repris du classeur dans {relabeled} version(s)" if relabeled else ""))
+          + (f" ; libellé de la contrainte qui mord repris du classeur dans {relabeled} version(s)" if relabeled else "")
+          + (f" ; prolongation {horizon['years'][0]}-{horizon['years'][-1]} mise à jour, hors version publiée" if horizon_changed else ""))
     sys.exit(0)
 snapshot["version"] = len(versions) + 1
 versions.append(snapshot)

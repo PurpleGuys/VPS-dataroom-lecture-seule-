@@ -224,6 +224,85 @@ if t0:
             "sources": sources,
         })
 
+# ---------------------------------------------------------------- prolongation exploratoire 2028-2030 : un bloc séparé
+# Mêmes colonnes de Trajectoire, mêmes tirages de Simulation, lus dans les lignes ajoutées sous les blocs 2026-2027.
+# Rien de ce bloc n'entre dans columns / distribution / probabilities ci-dessus, ni dans la fourchette publiée.
+horizon = None
+hz = model.get("horizon")
+if hz:
+    calc_rows = model["trajectoire"]["calc_rows"]
+    hkeys = hz["keys"]                                   # année -> {grandeur -> clé du moteur}
+    kinds = {m["key"]: m["kind"] for m in hz["metrics"]}
+
+    def hz_value(letter, key, kind):
+        value = traj[f"{letter}{calc_rows[key]}"].value
+        if kind is None:
+            return value
+        if num(value) is None:
+            raise SystemExit(f"prolongation : {key} sans valeur en colonne {letter} : recalculer le classeur d'abord")
+        return num(value)
+
+    def hz_column(letter):
+        return {year: {g: hz_value(letter, hkeys[year][g], kinds[g]) for g in kinds} for year in hkeys}
+
+    letters = {c["name"]: c["col"] for c in model["trajectoire"]["columns"]}
+    hz_kind = {c["key"]: c["kind"] for c in hz["calc"]}
+    hz_dist = {year: {g: {name: num(dist[f"{c}{hz['distribution_rows'][hkeys[year][g]]}"].value) for name, c in
+                          (("mean", "C"), ("p5", "D"), ("p10", "E"), ("p50", "F"), ("p90", "G"), ("p95", "H"))}
+                      for g in hz["outputs"]} for year in hkeys}
+    hz_prob = {year: {} for year in hkeys}
+    for ev in hz["probabilities"]:
+        value = num(dist[f"C{ev['row']}"].value)
+        if value is None or dist[f"A{ev['row']}"].value != ev["id"]:
+            raise SystemExit(f"prolongation : probabilité {ev['id']} introuvable dans Distribution, ligne {ev['row']}")
+        hz_prob[str(ev["year"])][ev["key"]] = value
+
+    def hz_refs(item):
+        ids = list(item.get("refs", []))
+        for code in item.get("inputs", []):
+            ids += [x.strip().split()[0] for x in str(inputs[code]["refs"]).replace(";", ",").split(",") if x.strip().startswith("F")]
+        seen = []
+        for fid in ids:
+            if fid not in seen:
+                seen.append(fid)
+        missing = [fid for fid in seen if fid not in register]
+        if missing:
+            raise SystemExit(f"prolongation : {item['key']} cite {', '.join(missing)}, absent(s) du registre")
+        return seen
+
+    def hz_source(item, ids):
+        parts = []
+        if item.get("inputs"):
+            parts.append("hypothèses de 2027 reconduites (onglet Hypothèses) : " + ", ".join(item["inputs"]))
+        if ids:
+            parts.append("registre : " + ", ".join(f"[{fid}]" for fid in ids))
+        return " ; ".join(parts) or "définition du modèle (model_def.py), sans nombre nouveau"
+
+    assumptions = []
+    for item in hz["assumptions"]:
+        ids = hz_refs(item)
+        assumptions.append({"key": item["key"], "label": item["label"], "source": hz_source(item, ids),
+                            "inputs": item["inputs"], "consts": item["consts"], "refs": ids, "sources": [source(i) for i in ids]})
+    excluded = []
+    for item in hz["excluded"]:
+        ids = hz_refs(item)
+        excluded.append({"key": item["key"], "label": item["label"], "source": ", ".join(f"[{fid}]" for fid in ids),
+                         "refs": ids, "sources": [source(i) for i in ids]})
+    horizon = {
+        "years": hz["years"], "label": hz["label"], "cap_note": hz["cap_note"], "reading": hz["reading"],
+        "metrics": hz["metrics"], "keys": hkeys,
+        "assumptions": assumptions, "excluded": excluded, "not_modelled": hz["not_modelled"],
+        "columns": {"central": hz_column(letters["Scénario actif"]), "unfavourable": hz_column(letters["Défavorable combiné"]),
+                    "favourable": hz_column(letters["Favorable combiné"])},
+        "distribution": hz_dist, "probabilities": hz_prob,
+        "events": [{k: v for k, v in ev.items() if k != "row"} for ev in hz["probabilities"]],
+        "draws": model.get("n_draws"), "factor_weight": factor_weight,
+        # pour le test de parité : ce que LibreOffice a calculé pour chaque colonne de Trajectoire (mêmes entrées que columns)
+        "all_columns": [{"name": c["name"], "code": c["code"], "side": c["side"],
+                         "outputs": {k["key"]: hz_value(c["col"], k["key"], hz_kind[k["key"]]) for k in hz["calc"]}}
+                        for c in model["trajectoire"]["columns"]],
+    }
+
 data = {
     "generated": datetime.now(ZoneInfo("Europe/Paris")).strftime("%d/%m/%Y %H:%M"),
     "model": BOOK.name,
@@ -233,5 +312,8 @@ data = {
     "bascules": bascules, "bascule_params": bascule_params, "bascule_table": bascule_table, "financing": financing,
     "targets": targets, "target_params": target_params,
 }
+if horizon:
+    data["horizon"] = horizon
 OUT.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
-print("écrit", OUT, f"— {len(inputs)} hypothèses, {len(columns)} scénarios, {len(multiples)} multiples, {len(targets)} cibles")
+print("écrit", OUT, f"— {len(inputs)} hypothèses, {len(columns)} scénarios, {len(multiples)} multiples, {len(targets)} cibles"
+      + (f", prolongation {horizon['years'][0]}-{horizon['years'][-1]}" if horizon else ""))
