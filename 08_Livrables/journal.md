@@ -5,7 +5,7 @@ Généré depuis le journal des requêtes du serveur et les registres ; rien n'e
 
 ## 2026-11-11
 
-- **compte partagé (dataroom-bearer)** : 2 chiffre(s) ajouté(s) (F858, F859); 4 cible(s) (T28, T29, T30, T31); 6 document(s) versé(s); 5 enregistrement(s) sans trace au registre.
+- **compte partagé (dataroom-bearer)** : 7 chiffre(s) ajouté(s) (F858, F859, F860, F861, F862, F863, F864); 4 cible(s) (T28, T29, T30, T31); 6 document(s) versé(s).
 
 ## 2026-11-09
 

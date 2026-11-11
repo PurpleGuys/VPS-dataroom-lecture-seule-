@@ -1,7 +1,7 @@
 {
  "generated": "2026-11-11",
  "checks": "OK",
- "n_figures": 853,
+ "n_figures": 858,
  "title": "GreenUp 2027 : combien Veolia peut-elle encore acheter sans dépasser ses engagements de levier ?",
  "subtitle": "Capstone Innovations in Finance — sujet 2, périmètre « capacité financière »",
  "thread": "Fin 2027, notre marge de dette centrale atteint 159 M€ sous le plafond de 3x. Au multiple de Clean Earth, elle finance une acquisition supplémentaire de 229 M€. Dans le scénario défavorable, elle n'en finance aucune. Veolia peut donc encore acheter des tuck-ins d'ici fin 2027, pas une nouvelle plateforme.",
@@ -3638,7 +3638,7 @@
   }
  ],
  "todo": [
-  "Relire en croisé les 853 chiffres du registre (0 relus) et les 61 opérations (0 relues).",
+  "Relire en croisé les 858 chiffres du registre (0 relus) et les 61 opérations (0 relues).",
   "En priorité, les 190 lignes que le rapport cite et qu'aucun second membre n'a relues (sur 190 citées).",
   "Signer (frontmatter signe_par du texte) : rôle 1 (Périmètre et sources), rôle 2 (La contrainte), rôle 3 (Capacité et sensibilité), rôle 4 (L'écart et les comparables), rôle 5 (Le coût ESG), rôle 6 (Cibles, puis synthèse), synthèse (Recommandation).",
   "Faire relire (frontmatter relu_par du texte) : rôle 1 (Périmètre et sources), rôle 2 (La contrainte), rôle 3 (Capacité et sensibilité), rôle 4 (L'écart et les comparables), rôle 5 (Le coût ESG), rôle 6 (Cibles, puis synthèse), synthèse (Recommandation)."
@@ -11318,6 +11318,51 @@
    "10,9123 NOK pour 1 EUR",
    "30/04/2026",
    "bce-taux-de-reference-2026-04-30.pdf, p. 1, https://www.ecb.europa.eu/stats/exchange/eurofxref/shared/pdf/2026/04/20260430.pdf (consulté le 2026-11-11)",
+   "6",
+   ""
+  ],
+  [
+   "F860",
+   "Greenthesis : EBITDA de l'année précédant l'article",
+   "42 M€",
+   "« lo scorso anno »",
+   "alla-tedesca-patrizia-il-40-di-greenthesis-2643263-alla-tedesca-patrizia-il-40-di-greenth.html, p. 1, https://www.milanofinanza.it/news/alla-tedesca-patrizia-il-40-di-greenthesis-2643263 (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F861",
+   "Lassila & Tikanoja : EBITDA",
+   "79,8 M€",
+   "2025",
+   "lassila-and-tikanoja-plc-interim-report-january-september-2026-lassila-tikanoja-plc-int.html, p. 1, https://www.inderes.fi/releases/lassila-and-tikanoja-plc-interim-report-january-september-2026 (consulté le 2026-11-11)",
+   "6",
+   ""
+  ],
+  [
+   "F862",
+   "Lassila & Tikanoja : dette nette portant intérêt",
+   "163,5 M€",
+   "30/09/2026",
+   "lassila-and-tikanoja-plc-interim-report-january-september-2026-lassila-tikanoja-plc-int.html, p. 1, https://www.inderes.fi/releases/lassila-and-tikanoja-plc-interim-report-january-september-2026 (consulté le 2026-11-11)",
+   "6",
+   ""
+  ],
+  [
+   "F863",
+   "Mo-BRUK : EBITDA (2025P dans la note d'analyste)",
+   "87 M PLN",
+   "2025",
+   "20260831_noble_securities_mbr_pl_ra.pdf, p. 1, https://www.gpw.pl/pub/pwpa/20260831_noble_securities_mbr_pl_ra.pdf (consulté le 2026-11-11)",
+   "6",
+   ""
+  ],
+  [
+   "F864",
+   "Mo-BRUK : dette nette",
+   "124 M PLN",
+   "31/12/2025",
+   "20260831_noble_securities_mbr_pl_ra.pdf, p. 3, https://www.gpw.pl/pub/pwpa/20260831_noble_securities_mbr_pl_ra.pdf (consulté le 2026-11-11)",
    "6",
    ""
   ]
