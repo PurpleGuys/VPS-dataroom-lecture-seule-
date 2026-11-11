@@ -95,11 +95,11 @@ Clean Harbors, acheteur d'EnviroServe et d'ES&H en 2026, convoite le même march
 
 ### En Asie et en Océanie, des repères de prix plus que des cibles
 
-Gaw Capital a racheté le coréen Koentec pour environ [F702] en janvier 2026. Koentec incinère et stocke des déchets sur un site d'Ulsan, sans part dangereuse publiée. En Australie, EQT a proposé, sans engagement, de racheter tout Cleanaway sur une valeur d'entreprise d'environ [F679]. Cela représente environ [F674] l'EBIT de l'exercice 2026. Le pôle des déchets dangereux n'y est pas vendu à part.
+Gaw Capital a racheté le coréen Koentec pour environ [F702] en janvier 2026. Koentec incinère et stocke des déchets sur un site d'Ulsan, sans part dangereuse publiée. En Australie, EQT a proposé, sans engagement, de racheter tout Cleanaway sur une valeur d'entreprise d'environ [F679]. Au taux de référence de la BCE du jour de l'annonce, [F856], ces [F679] valent environ [M:T.T13]. Cela représente environ [F674] l'EBIT de l'exercice 2026. Le pôle des déchets dangereux n'y est pas vendu à part.
 
 ### En Europe, des cibles hors de la priorité publiée
 
-NG Group n'a pour valeur publiée que le prix du pôle racheté à Fortum en 2024, environ [F611]. I Squared Capital a annoncé le rachat d'Enva en avril 2023, sans prix publié[D55]. Indaver et Tradebe appartiennent à des groupes privés sans processus de cession connu[T16][T17]. Tradebe reste même acheteur, avec Soltec en Irlande en 2026[D58]. La vente d'Urbaser à Blackstone et EQT, annoncée pour environ [F687], dépasse toute capacité.
+NG Group n'a pour valeur publiée que le prix du pôle racheté à Fortum en 2024, environ [F611]. Au Royaume-Uni, des fonds ont repris Augean en 2021 pour environ [T18] de fonds propres, soit environ [M:T.T18] au taux de référence de la BCE du jour de l'enchère, [F857]. I Squared Capital a annoncé le rachat d'Enva en avril 2023, sans prix publié[D55]. Indaver et Tradebe appartiennent à des groupes privés sans processus de cession connu[T16][T17]. Tradebe reste même acheteur, avec Soltec en Irlande en 2026[D58]. La vente d'Urbaser à Blackstone et EQT, annoncée pour environ [F687], dépasse toute capacité.
 
 ### Les autres cibles sont trop grandes, hors sujet ou déjà prises
 

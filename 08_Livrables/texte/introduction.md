@@ -16,7 +16,7 @@ Le sujet 2 du capstone Innovations in Finance de l'EDHEC s'inscrit dans ce cadre
 
 ## Le groupe a mesuré la marge de dette sous ce plafond, du 30 septembre 2026 à fin 2027
 
-Notre mission consiste à traduire l'engagement de levier en montant d'acquisitions. Une acquisition ajoute son prix à la dette et son EBITDA au dénominateur du levier. La capacité d'achat se mesure donc en marge de dette sous le plafond. Nous partons de la dette du 30 septembre 2026, [F721]. Nous projetons ensuite la dette jusqu'au 31 décembre 2027, l'horizon du sujet.
+Notre mission consiste à traduire l'engagement de levier en montant d'acquisitions. Une acquisition ajoute son prix à la dette et son EBITDA au dénominateur du levier. La capacité d'achat se mesure donc en marge de dette sous le plafond. Nous partons de la dette du 30 septembre 2026, [F721].
 
 Notre méthode suit trois étapes. D'abord, chaque chiffre cité renvoie à un fichier, une page et une date de consultation. Ensuite, le modèle du groupe projette la dette et l'EBITDA. Il en tire trois scénarios et mille futurs simulés. Enfin, nous confrontons la réponse aux seuils des agences, aux comparables et aux cibles réelles.
 
@@ -26,7 +26,7 @@ Fin 2027, notre scénario central laisse une marge de dette de [M:HEAD27] sous l
 
 Cette marge vient de la croissance de l'EBITDA et des cessions. Sur une année pleine, le cash-flow libre net couvre le dividende de Veolia. Il ne couvre pas l'ensemble des dividendes. Le calendrier des cessions pèse le plus sur la marge. Or le programme se termine après l'horizon du sujet.
 
-Les plateformes américaines chiffrées dépassent la marge dans la plupart des futurs. Enfin, notre modèle place l'EBITDA 2027 à [M:EB27]. C'est moins que l'objectif d'au moins [F12], que Veolia confirme avec sa trajectoire GreenUp.
+Enfin, notre modèle place l'EBITDA 2027 à [M:EB27]. C'est moins que l'objectif d'au moins [F12], que Veolia confirme avec sa trajectoire GreenUp.
 
 Le rapport suit sept parties, annoncées ici sous leur titre.
 

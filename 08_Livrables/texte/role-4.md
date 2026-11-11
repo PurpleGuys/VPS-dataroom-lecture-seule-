@@ -69,17 +69,16 @@ Les rachats de Covanta, pour [F484], et de Stericycle, pour environ [F474], ne s
 
 ## Les comparables valident les hypothèses centrales du modèle, pas sa borne basse sur Clean Earth
 
-Le modèle du groupe retient un EBITDA de Clean Earth de [M:H.ceEb] en année pleine. Il le fait varier entre [M:H.ceEb@bas] et [M:H.ceEb@haut]. Le budget de Veolia et la marge de l'effet de périmètre soutiennent la valeur centrale. L'EBITDA reconstitué du vendeur se situe pourtant sous la borne basse. Nous mesurons chaque hypothèse par la marge de manœuvre sous le plafond de levier fin 2027. À la borne basse, elle passe de [M:HEAD27] à [M:HEAD27@ceEb-bas]. Un EBITDA au niveau du vendeur la réduirait davantage.
+Le modèle du groupe retient un EBITDA de Clean Earth de [M:H.ceEb] en année pleine. Il le fait varier entre [M:H.ceEb@bas] et [M:H.ceEb@haut]. Le budget de Veolia et la marge de l'effet de périmètre soutiennent la valeur centrale. L'EBITDA reconstitué du vendeur se situe pourtant sous la borne basse. Nous mesurons chaque hypothèse par la marge de manœuvre sous le plafond de levier fin 2027. À la borne basse, elle passe de [M:HEAD27] à [M:HEAD27@ceEb-bas].
 
 Les synergies du modèle suivent le calendrier de la direction, qui annonce les premières en 2027. Le modèle en réalise [M:H.syn] en 2027, soit [M:SYN27]. Sans synergies, la marge de manœuvre tombe à [M:HEAD27@syn-bas]. À [M:H.syn@haut], elle monte à [M:HEAD27@syn-haut].
 
-Pour les tuck-ins, le modèle retient le multiple de Clean Earth après synergies, [M:H.mTuck]. Ses bornes vont de [M:H.mTuck@bas] à [M:H.mTuck@haut]. Les multiples après synergies observés restent proches de ces bornes. Avant synergies, ils se situent à la borne haute ou au-dessus. L'acquisition maximale fin 2027 vaut [M:MAXACQB] au centre, et [M:MAXACQB@mTuck-haut] à la borne haute du multiple. Une cible disputée, sans synergies, la réduirait encore.
+Pour les tuck-ins, le modèle retient le multiple de Clean Earth après synergies, [M:H.mTuck]. Ses bornes vont de [M:H.mTuck@bas] à [M:H.mTuck@haut]. Les multiples après synergies observés restent proches de ces bornes. Avant synergies, ils se situent à la borne haute ou au-dessus. L'acquisition maximale fin 2027 vaut [M:MAXACQB] au centre, et [M:MAXACQB@mTuck-haut] à la borne haute du multiple.
 
-À l'échelle du groupe, notre modèle place l'EBITDA 2027 à [M:EB27], sous l'objectif d'au moins [F12]. Veolia confirme pourtant pleinement sa trajectoire GreenUp le 5 novembre 2026. Notre lecture : le booster y contribue d'abord par Clean Earth. La fourchette complète figure à l'annexe IV.
+À l'échelle du groupe, notre modèle place l'EBITDA 2027 à [M:EB27], sous l'objectif d'au moins [F12]. Notre lecture : le booster y contribue d'abord par Clean Earth.
 
 ## Ce que nous n'avons pas pu établir
 
 - L'EBITDA du métier au 30 septembre 2026. Veolia ne le publie pas.
 - La contribution propre de Clean Earth à l'EBITDA.
-- Le passage de l'EBITDA d'Enviri à celui de Veolia.
 - La valeur et le multiple de chaque cession signée.

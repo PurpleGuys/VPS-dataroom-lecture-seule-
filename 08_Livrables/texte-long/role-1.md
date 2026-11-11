@@ -40,9 +40,9 @@ Une autre page du plan donne le total de la période. GreenUp y prévoit [F129] 
 
 Les résultats annuels 2024 précisent le contenu de ce net. La croissance nette y vaut [F745]. Elle additionne l'investissement organique, en priorité dans les boosters, et les acquisitions petites et moyennes. Elle en retranche les cessions. Quatre années à [F745] redonnent bien les [F129] du plan.
 
-Notre lecture rapproche les deux documents. Le rapprochement se fait au bas de la fourchette du capex discrétionnaire. Ses [F24] et la rotation nette d'environ [F2] font environ 1,0 Md€ par an. Nous y lisons la croissance nette de [F745]. L'enveloppe mêle donc investissement organique et acquisitions, boosters et strongholds. Elle ne mesure pas ce que Veolia peut acheter.
+Notre lecture rapproche les deux documents. Le rapprochement se fait au bas de la fourchette du capex discrétionnaire. Ses [F24] et la rotation nette d'environ [F2] font environ 1,0 Md€ par an. L'enveloppe mêle donc investissement organique et acquisitions, boosters et strongholds. Elle ne mesure pas ce que Veolia peut acheter.
 
-Pour le sujet, ce n'est donc pas l'enveloppe restante qui compte. Une acquisition ajoute son prix à la dette et son EBITDA au dénominateur du levier. La capacité d'acquisition se mesure donc en marge de levier.
+Pour le sujet, ce n'est donc pas l'enveloppe restante qui compte. La capacité d'acquisition se mesure donc en marge de levier.
 
 Ce qui borne les acquisitions, c'est l'engagement de levier, au plus [F6]. Veolia l'assortit du maintien de ses notations. Le 5 novembre 2026, elle a confirmé sa cible pour fin 2026. Elle vise un levier égal ou légèrement supérieur à [F725], Clean Earth inclus. Pour 2027, elle annonce un retour à au plus [F726]. La partie 2 analyse ces contraintes. La partie 3 en mesure la marge.
 
@@ -84,7 +84,7 @@ Enfin, les périodes ne coïncident pas. Le cumul s'arrête au 30 septembre 2026
 
 Corriger ces écarts jouerait dans les deux sens. Ajouter l'investissement organique augmenterait le cumul. Retirer le rachat de minoritaires le réduirait.
 
-Une comparaison juste demanderait le capex discrétionnaire de chaque année. Notre registre le contient pour 2024, sous le nom de capex de croissance. La présentation des résultats 2024 publie à part les investissements contractuels. Notre lecture assimile donc ce capex de croissance à l'investissement organique de GreenUp. En 2024, un capex de croissance de [F660] et une entrée nette de [F138] laissent alors 266 M€ de croissance nette. Ce résultat reste loin du rythme moyen de [F745]. Le capex de croissance discrétionnaire vaut ensuite [F827] en 2025 et [F841] au premier semestre 2026. Le signe négatif est celui des documents cités. Pour 2025, il faudrait retirer le rachat des minoritaires de Water Technologies. Pour 2026, ce capex ne couvre que six mois. Le pont de dette en couvre neuf. La comparaison s'arrête donc à 2024.
+Une comparaison juste demanderait le capex discrétionnaire de chaque année. Notre registre le contient pour 2024, sous le nom de capex de croissance. La présentation des résultats 2024 publie à part les investissements contractuels. Notre lecture assimile donc ce capex de croissance à l'investissement organique de GreenUp. En 2024, un capex de croissance de [F660] et une entrée nette de [F138] laissent alors 266 M€ de croissance nette. Ce résultat reste loin du rythme moyen de [F745]. Le capex de croissance discrétionnaire vaut ensuite [F827] en 2025 et [F841] au premier semestre 2026. Le signe négatif est celui des documents cités. Pour 2026, ce capex ne couvre que six mois. Le pont de dette en couvre neuf. La comparaison s'arrête donc à 2024.
 
 ## Clean Earth compte quatre chiffres, et le levier retient l'effet sur la dette
 
@@ -105,17 +105,17 @@ Les chiffres à fin septembre intègrent [F787] de Clean Earth. L'effet de péri
 
 Clean Earth rejoint le métier des déchets dangereux de Veolia. Ce métier a réalisé [F647] de chiffre d'affaires en 2024 et [F811] en 2025. La baisse apparente tient au périmètre et au change. À périmètre et change constants, le chiffre d'affaires de 2025 progresse de [F805]. Moody's reprend [F160] pour 2025, soit [F161] des ventes du groupe. Sur neuf mois en 2026, Veolia publie pour ce métier [F746], contre [F747] un an plus tôt, soit 14,1 % de hausse. À périmètre et change constants, la hausse n'est que de [F748]. Tuck-ins compris mais hors Clean Earth, elle atteint [F788]. À change constant, effet de périmètre compris, elle atteint [F814]. Le change a donc réduit la hausse publiée. Le périmètre, surtout Clean Earth, en explique l'essentiel. Le métier pèse [F749] du chiffre d'affaires du groupe. Nous citons chaque chiffre avec sa source et sa date, sans les additionner.
 
-Clean Earth renforce surtout la présence de Veolia aux États-Unis. Le chiffre d'affaires américain du groupe atteint [F771] en pro forma 2025, Water Technologies compris. Avec [F730], Clean Earth pèse plus de vingt fois Enviropacific, inscrite pour [F77].
+Clean Earth renforce surtout la présence de Veolia aux États-Unis. Avec [F730], Clean Earth pèse plus de vingt fois Enviropacific, inscrite pour [F77].
 
 ## Le programme de cessions compense la plus grande part de Clean Earth, en partie après 2027
 
-Veolia a adossé Clean Earth à un programme de cessions. En novembre 2025, elle a annoncé plus de [F132] de cessions d'actifs matures dans les deux ans suivant la clôture. Les résultats annuels 2025 situent ce programme dans [F848] de cessions de la rotation d'actifs. Moody's reprend environ [F159] de cessions sur la même durée. Le rapport semestriel 2026 fixe l'échéance : plus de [F25] d'ici la mi-2028. Le rapport du troisième trimestre confirme cette date. Comme la clôture date du 1er juin 2026, l'échéance du programme tombe après l'horizon du sujet.
+Veolia a adossé Clean Earth à un programme de cessions. En novembre 2025, elle a annoncé plus de [F132] de cessions d'actifs matures dans les deux ans suivant la clôture. Les résultats annuels 2025 situent ce programme dans [F848] de cessions de la rotation d'actifs. Moody's reprend environ [F159] de cessions sur la même durée. Le rapport semestriel 2026 fixe l'échéance : plus de [F25] d'ici la mi-2028. Le rapport du troisième trimestre confirme cette date.
 
 Le programme avance. Au premier semestre 2026, Veolia a réalisé [F30] de cessions, au Mexique et en Belgique. La cession mexicaine porte sur des actifs matures de déchets solides, pour un montant [D21]. Veolia a alors annoncé environ [F31] de signatures attendues en 2026.
 
 Au 30 septembre 2026, les cessions réalisées atteignent [F738] sur neuf mois. Le 25 septembre, Veolia a vendu une participation minoritaire dans Rookery South pour [D61], soit [F739]. Elle rattache cette vente à son plan de rotation d'actifs de l'année. Le 5 novembre 2026, Veolia a annoncé [F736] de cessions déjà signées. Leur multiple moyen atteint [F737] l'EBITDA.
 
-Veolia vend des actifs non stratégiques ou matures, ou des positions où elle ne compte pas parmi les leaders. Hormis Rookery, les publications du troisième trimestre ne donnent pas la valeur des actifs cités en exemple. Ces exemples vont du recyclage d'huiles en Europe au nettoyage industriel en Belgique. Le recyclage en Corée en fait partie. Avec ses résultats du premier trimestre, Veolia a annoncé une cession en Corée. Elle porte sur des activités de recyclage de plastiques, pour un montant [D22]. Veolia a alors situé la clôture au troisième trimestre 2026.
+Veolia vend des actifs non stratégiques ou matures, ou des positions où elle ne compte pas parmi les leaders. Hormis Rookery, les publications du troisième trimestre ne donnent pas la valeur des actifs cités en exemple. Ces exemples vont du recyclage d'huiles en Europe au nettoyage industriel en Belgique. Avec ses résultats du premier trimestre, Veolia a annoncé une cession en Corée. Elle porte sur des activités de recyclage de plastiques, pour un montant [D22]. Veolia a alors situé la clôture au troisième trimestre 2026.
 
 Net du programme, Clean Earth pèse au plus 804 M€ : [F730] moins plus de [F25]. Ces 804 M€ font 1,6 année de rotation nette à environ [F2]. Ce montant de cessions est un plancher : un programme plus large réduirait ce solde. Pour le levier, la compensation est moindre, car une cession retire aussi de l'EBITDA. Selon le modèle du groupe, le programme retire [M:C.progEb] d'EBITDA au multiple central de [M:H.mDisp]. La part encaissée avant le 31 décembre 2027 reste la première sensibilité de la capacité. La partie 3 la mesure ; voir l'annexe IV.
 
@@ -129,17 +129,16 @@ Les résumés de presse, les consensus d'analystes et les transcriptions d'appel
 
 Le rapport semestriel 2026 existe en français et en anglais. Chaque ligne nomme la version qu'elle cite. Les ponts de dette gardent le signe du document, et le texte rappelle la convention. Veolia a publié ses résultats des neuf premiers mois le 5 novembre 2026. Nous les avons consultés le 6 novembre. Notre position de départ est donc le 30 septembre 2026.
 
-Deux contrôles protègent ces sources. Un contrôle automatique vérifie que chaque valeur figure sur la page qu'elle cite. Il signale aussi les lignes que seul leur auteur a vues. Avant la remise, un second membre du groupe doit relire chaque ligne citée. Ce relecteur ne peut pas être celui qui a saisi la ligne. La version finale du rapport ne peut être produite tant qu'une ligne citée reste sans relecture.
+Deux contrôles protègent ces sources. Un contrôle automatique vérifie que chaque valeur figure sur la page qu'elle cite. Il signale aussi les lignes que seul leur auteur a vues. Avant la remise, un second membre du groupe doit relire chaque ligne citée. Ce relecteur ne peut pas être celui qui a saisi la ligne.
 
 L'annexe I reproduit chaque chiffre cité avec sa source. L'annexe II fait de même pour les opérations. L'annexe V décrit les outils d'intelligence artificielle employés.
 
 ## Ce que nous n'avons pas pu établir
 
 - La page des investissements nets de croissance rapporte les [F129] au plan précédent, Impact 2023. Nous n'avons pas établi la base exacte de cette comparaison.
-- La page d'allocation du capital ne dit pas si les tuck-ins et les cessions sont annuels. Notre recalcul de la rotation nette reste une fourchette.
 - La rotation brute de plus de [F32] est annoncée sur quatre ans, mais les cessions se poursuivent jusqu'à la mi-2028. Nous n'avons pas établi le découpage exact de ces quatre années.
 - Les montants des cessions de 2024 reposent sur des bases différentes. Nous ne les avons pas rapprochés des [F785] de cessions affichées pour cette année.
-- Veolia publie son capex discrétionnaire pour 2025 et pour le premier semestre 2026. Il vaut respectivement [F827] et [F841]. Le rapport du troisième trimestre ne le publie pas. En 2025, la sortie nette comprend le rachat des minoritaires de Water Technologies. La croissance nette au sens de GreenUp reste donc à calculer après 2024.
+- Veolia publie son capex discrétionnaire pour 2025 et pour le premier semestre 2026. Il vaut respectivement [F827] et [F841]. Le rapport du troisième trimestre ne le publie pas. La croissance nette au sens de GreenUp reste donc à calculer après 2024.
 - L'effet de périmètre des neuf mois tient principalement à Clean Earth, consolidée sur [F787], et à Enviropacific. La contribution propre de Clean Earth reste inconnue.
 - Le solde de 36 M€ entre [F730] et la somme de [F41] et de [F766] n'est pas détaillé.
 - Nous ignorons la valeur des cessions signées autres que Rookery. Nous ignorons aussi si Rookery fait partie des [F736].

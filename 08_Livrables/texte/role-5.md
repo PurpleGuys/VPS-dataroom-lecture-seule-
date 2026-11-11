@@ -48,7 +48,7 @@ Le ratio de chiffre d'affaires sert d'analogie pour Clean Earth. Cette analogie 
 
 ### Enviri fournit une borne haute, sans actualisation
 
-Enviri, le vendeur, donne une borne. Son 10-K 2025 présente [F218] de passifs courants et [F219] non courants, soit 50 992 k USD. Ce total couvre tout le groupe Enviri, Clean Earth compris. Il borne donc par le haut les passifs environnementaux qu'Enviri a inscrits pour Clean Earth. L'analogie et la borne donnent le même ordre de grandeur : quelques dizaines de millions de dollars. Elles ne se comparent pas pour autant terme à terme. L'analogie repose sur des montants actualisés, la borne non. Notre lecture : à base non actualisée, l'analogie dépasserait la borne, et ces dizaines de millions sont un bas de fourchette. Sans actualisation, les passifs de dépollution de Clean Harbors atteignent [F817], contre [F238] actualisés.
+Enviri, le vendeur, donne une borne. Son 10-K 2025 présente [F218] de passifs courants et [F219] non courants, soit 50 992 k$. Ce total couvre tout le groupe Enviri, Clean Earth compris. Il borne donc par le haut les passifs environnementaux qu'Enviri a inscrits pour Clean Earth. L'analogie et la borne donnent le même ordre de grandeur : quelques dizaines de millions de dollars. Elles ne se comparent pas pour autant terme à terme. L'analogie repose sur des montants actualisés, la borne non. Notre lecture : à base non actualisée, l'analogie dépasserait la borne, et ces dizaines de millions sont un bas de fourchette. Sans actualisation, les passifs de dépollution de Clean Harbors atteignent [F817], contre [F238] actualisés.
 
 ## L'exposition hors bilan tient aux contentieux, aux PFAS et aux limites de l'assurance
 
@@ -82,7 +82,7 @@ Le levier de Veolia rapporte la dette financière nette à l'EBITDA. Le rapport 
 
 Moody's élargit la dette sans nommer non plus ces provisions. Son pont de dette ajustée de 2025 part de la dette publiée. Il ajoute les retraites, la titrisation et des ajustements non standard. Les ajustements non standard ne sont pas détaillés. Nous ne pouvons donc pas exclure qu'ils en contiennent une part.
 
-Un prêteur prudent pourrait pourtant les compter. Rapportées à l'EBITDA central de 2027, [M:EB27], les provisions de [F44] représentent 0,16x. La dette centrale de fin 2027, [M:NFD27], augmentée de [F44] et rapportée à [M:EB27], donne 3,14x. Le modèle du groupe calcule un levier central de [M:LEV27]. Ce calcul suppose un stock de provisions inchangé jusqu'à fin 2027.
+Un prêteur prudent pourrait pourtant les compter. Rapportées à l'EBITDA central de 2027, [M:EB27], les provisions de [F44] représentent 0,16x. La dette centrale de fin 2027, [M:NFD27], augmentée de [F44] et rapportée à [M:EB27], donne 3,14x. Le modèle du groupe calcule un levier central de [M:LEV27]. Ce calcul suppose un stock de provisions inchangé jusqu'à fin 2027. L'engagement de levier de Veolia ne compte pas ces provisions.
 
 La capacité d'achat se mesure donc sans ces passifs. La partie 3 situe la marge centrale de fin 2027 à [M:HEAD27] sous [F56]. Un passif repris ne modifie pas ce calcul. Il se négocie dans le prix ou se couvre par une garantie du vendeur. Mal évalué, il se paie plus tard en travaux de dépollution, donc en trésorerie. Notre lecture : le coût ESG d'une cible relève de la diligence, pas de la capacité. Face à une marge centrale de [M:HEAD27], un tel passif mérite pourtant un audit sérieux.
 

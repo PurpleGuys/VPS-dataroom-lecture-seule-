@@ -26,13 +26,13 @@ D'ici fin 2027, la marge permet des tuck-ins au bas de la fourchette de GreenUp.
 
 La marge interdit en revanche une opération de la taille de Clean Earth. Aucun futur simulé ne permet d'acheter 2 Md€ sur la seule marge, [M:P.acq2]. Au haut de la fourchette, les tuck-ins rendraient même la marge centrale négative, à [M:HEAD27@tuck-haut].
 
-Une plateforme américaine ne s'envisage qu'à deux conditions. Les cessions signées doivent dépasser nettement [F736]. Les comptes de 2026 doivent confirmer la trajectoire de Veolia. Même alors, la plateforme remplacerait souvent les tuck-ins de 2027. Notre lecture : hybrides et augmentation de capital iraient contre les choix récents de Veolia. En 2026, elle a remboursé deux hybrides. Son rapport des neuf mois ne mentionne aucune émission d'hybride. Elle a aussi compensé son émission d'actions réservée aux salariés par une annulation d'actions.
+Une plateforme américaine ne s'envisage qu'à deux conditions. Les cessions signées doivent dépasser nettement [F736]. Les comptes de 2026 doivent confirmer la trajectoire de Veolia. Même alors, la plateforme remplacerait souvent les tuck-ins de 2027. Notre lecture : hybrides et augmentation de capital iraient contre les choix récents de Veolia.
 
 ## Un chiffre se lit sur sa page, une marge se lit en probabilités
 
 Le groupe retient quatre leçons de sa méthode.
 
-D'abord, un chiffre ne vaut que par sa source. Chaque chiffre cité renvoie à un fichier, une page et une date de consultation. Un second membre du groupe doit relire chaque ligne citée avant la version finale.
+D'abord, un chiffre ne vaut que par sa source. Un second membre du groupe doit relire chaque ligne citée avant la version finale.
 
 Ensuite, un même événement peut porter plusieurs chiffres. Clean Earth en compte quatre, et le levier n'en retient qu'un : l'effet sur la dette.
 
