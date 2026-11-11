@@ -8,13 +8,13 @@
 | role-4.md | 7 | 1616 | 6-9 |
 | role-5.md | 6 | 1619 | 6-9 |
 | role-6.md | 7 | 1581 | 6-9 |
-| corps, du sommaire à la première annexe | 58 | 11971 | 50-60 |
-| document entier, annexes et contrôle compris | 80 | | — |
+| corps, du sommaire à la première annexe | 57 | 11971 | 50-60 |
+| document entier, annexes et contrôle compris | 79 | | — |
 
 ## Jetons inconnus (0)
 - aucun
 
-## Lignes citées que personne n'a relues (279)
+## Lignes citées que personne n'a relues (281)
 - role-1.md : F2 — GreenUp : rotation NETTE d'actifs, environ
 - role-1.md : F745 — GreenUp : croissance, montant net par an (investissements organiques, priorité aux boosters, plus acquisitions petites et moyennes, moins cessions)
 - role-1.md : F129 — GreenUp : investissements nets de croissance 2024-2027, boosters et strongholds réunis (« 2 x Impact 2023 »)
@@ -263,6 +263,7 @@
 - role-6.md : F87 — Guidance 2026 : croissance organique de l'EBITDA, bas de fourchette
 - role-6.md : F88 — Guidance 2026 : croissance organique de l'EBITDA, haut de fourchette
 - role-6.md : F420 — GreenUp : gains d'efficacité par an
+- role-6.md : F615 — Taux de référence BCE : dollars canadiens pour un euro
 - recommandation.md : F726 — Trajectoire de levier présentée au T3 : légèrement au-dessus de 3x fin 2026, retour en 2027 à au plus
 - recommandation.md : F48 — Clean Earth : multiple VE / EBITDA 2026e après synergies en régime de croisière
 - recommandation.md : T4 — Triumvirate Environmental
@@ -278,6 +279,7 @@
 - recommandation.md : F88 — Guidance 2026 : croissance organique de l'EBITDA, haut de fourchette
 - recommandation.md : F736 — Programme de cessions : montant déjà signé
 - recommandation.md : F25 — Programme de cessions, à réaliser d'ici mi-2028 : plus de
+- recommandation.md : F41 — Clean Earth : prix d'acquisition
 - outils-ia.md : F98 — Clean Earth : goodwill préliminaire (affectation du prix non réalisée au 30/06/2026)
 - outils-ia.md : F41 — Clean Earth : prix d'acquisition
 - outils-ia.md : F129 — GreenUp : investissements nets de croissance 2024-2027, boosters et strongholds réunis (« 2 x Impact 2023 »)
@@ -324,3 +326,44 @@
 - conclusion.md : 12 phrase(s) sur 33 au-delà de 12 mots
 - couverture : le logo de l'EDHEC (08_Livrables/scripts/logo-edhec.png) manque
 - couverture : le nom du responsable (roles.yaml : encadrant) manque
+
+## Années des références (33)
+Ces documents cités n'ont pas de date de publication dans leur note (`date_published`) : l'année de leur référence est devinée. Lire la date sur le document et l'écrire dans la note.
+- Arcwood Environmental (2025) — 05_Commercial_Strategy/arcwood-rebrand-2025-03-18.html : lue dans le titre
+- Banque centrale européenne (2026) — 01_Financial/bce-taux-eur-cad-2026-10-06.html : année de la consultation
+- BIC Magazine (2022) — 05_Commercial_Strategy/bic-us-ecology-republic-2022.html : lue dans le titre
+- Clean Harbors (2024) — 05_Commercial_Strategy/clean-harbors-hepaco-2024-03-25.html : lue dans l'adresse
+- Clean Harbors (2026a) — 05_Commercial_Strategy/clean-harbors-q2-2026-2026-07-29.html : lue dans l'adresse
+- Clean Harbors (2026b) — 05_Commercial_Strategy/clean-harbors-enviroserve-esh-2026-10-05.html : lue dans le titre
+- Clean Harbors (2026c) — 05_Commercial_Strategy/clean-harbors-enviroserve-2026-08-12.html : lue dans le titre
+- Clean Harbors, Inc. (2025) — 01_Financial/clean-harbors-10-k-2025.pdf : lue dans le titre
+- Enviri Corporation (2025) — 01_Financial/enviri-10-k-2025.pdf : lue dans le titre
+- EQT (PR Newswire) (2021) — 05_Commercial_Strategy/eqt-covanta-2021-07-14.html : lue dans le titre
+- Fortum / Summa Equity (Cision) (2024) — 05_Commercial_Strategy/fortum-summa-ng-group-2024-07-18.html : lue dans le titre
+- Heritage-Crystal Clean (2023) — 05_Commercial_Strategy/crystal-clean-jfl-2023-07-19.html : lue dans le titre
+- Latham & Watkins (conseil de GFL) (2025) — 05_Commercial_Strategy/gfl-es-latham-2025-01-07.html : lue dans l'adresse
+- Moody's Ratings (2026) — 01_Financial/credit_opinion-veolia-environnement-sa-04may2026.pdf : lue dans l'adresse
+- Reuters (via Yahoo Finance) (2025) — 05_Commercial_Strategy/triumvirate-berkshire-2025-02-04.html : lue dans le titre
+- S&P Global Ratings (2026) — 01_Financial/ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf : lue dans l'adresse
+- Seaside Equity Partners (2025) — 05_Commercial_Strategy/enviracore-lancement-2025-09-30.html : lue dans le titre
+- Seaside Equity Partners (2026) — 05_Commercial_Strategy/seaside-criteres-2026-10-07.html : lue dans le titre
+- Veolia Environnement SA (2024) — 01_Financial/en_master_greenup_strategy-day_v270324.pdf : lue dans l'adresse
+- Veolia Environnement SA (2025a) — 05_Commercial_Strategy/pr-2024-annual-results-veolia.pdf : lue dans l'adresse
+- Veolia Environnement SA (2025b) — 01_Financial/finance_2024_full_year_results_presentation.pdf : lue dans l'adresse
+- Veolia Environnement SA (2025c) — 01_Financial/veolia_clean_earth_investor_presentation.pdf : lue dans l'adresse
+- Veolia Environnement SA (2025d) — 01_Financial/rapport-de-gestion-va-t3_2025_0.pdf : lue dans l'adresse
+- Veolia Environnement SA (2026a) — 01_Financial/finance_veolia_2025_full_year_results_presentation_0.pdf : lue dans l'adresse
+- Veolia Environnement SA (2026b) — 05_Commercial_Strategy/veolia-2026-first-half-results.pdf : lue dans l'adresse
+- Veolia Environnement SA (2026c) — 01_Financial/veolia_finance_presentation_h1_2026_results.pdf : lue dans l'adresse
+- Veolia Environnement SA (2026d) — 01_Financial/finance_veolia_9m_2026_key_figures_presentation.pdf : lue dans l'adresse
+- Veolia Environnement SA (2026e) — 01_Financial/veolia_finance_amendment_urd_2025.pdf : lue dans l'adresse
+- Veolia Environnement SA (2026f) — 05_Commercial_Strategy/annual-resultats-2025.pdf : lue dans l'adresse
+- Veolia Environnement SA (2026g) — 01_Financial/finance_veolia_operating_financial_review_q3_2026.pdf : lue dans l'adresse
+- Veolia Environnement SA (2026h) — 01_Financial/finance_veolia_urd_2025_en.pdf : lue dans l'adresse
+- Veolia Environnement SA (2026i) — 01_Financial/veolia-amendement-deu-2025-s1-2026.pdf : lue dans l'adresse
+- WM (Waste Management) (2024) — 05_Commercial_Strategy/wm-stericycle-2024-06-03.html : lue dans l'adresse
+
+## Mise en page
+- polices du PDF : LiberationSerif, LiberationSerif-Bold, LiberationSerif-Italic ; numéro de page : 10 pt
+- fin de partie — page 6 (PDF p. 9) : « Introduction » finit par 2 lignes sur sa dernière page
+- fin de partie — page 32 (PDF p. 35) : « 4. Le booster déchets dangereux achète sa croissance … » finit par 5 lignes sur sa dernière page

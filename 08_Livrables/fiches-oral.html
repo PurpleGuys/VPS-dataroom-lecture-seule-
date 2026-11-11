@@ -251,7 +251,25 @@ button.ascii-ligne:hover { border-color: var(--ink); }
 .proof .pbox.charge .psheet { visibility: hidden; }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
-@media print { .is42-bar { display: none !important; } .ascii-scene { display: none !important; } }
+/* ---------------------------------------------------------------- l'impression (dossiers, fiches, annexe des sources)
+ * Une feuille A4 aux marges du rapport (2,5 cm, sans le retrait d'écran du contenu), sans la barre ni Ascii ; la palette
+ * claire même depuis le thème sombre (le navigateur n'imprime pas les fonds : une encre claire disparaîtrait) ; une
+ * ligne de tableau, une carte ou une tuile ne se coupe pas entre deux pages ; l'en-tête d'un tableau se répète en haut de
+ * chaque page ; un tableau qui défile à l'écran s'imprime en entier. Les <details> s'ouvrent le temps de l'impression
+ * (is42.PRINT_DETAILS). */
+@page { size: A4; margin: 2.5cm; }
+@media print {
+  :root:root, :root:root[data-theme] {   /* :root doublé : plus fort que les sélecteurs du thème sombre */
+    --paper: #ffffff; --paper-2: #f4f2ee; --ink: #151512; --mut: #55524c; --faint: #66635a;
+    --hair: #15151224; --hair-2: #1515124d; --pig: #1a22c4; --pig-fg: #eeebe4; color-scheme: light;
+  }
+  .is42-bar, .ascii-scene { display: none !important; }
+  body .wrap, body > main { padding-inline: 0; max-width: none; }
+  tr, .card, .tile, .panel, .callout, .target, .verdict { break-inside: avoid; page-break-inside: avoid; }
+  thead { display: table-header-group; }
+  .tw, .tbl { overflow: visible !important; }
+  h1, h2, h3, h4, summary { break-after: avoid; page-break-after: avoid; }
+}
 
 /* Ascii plat — le logo qui s'éveille, et le loader par pas de 60°.
  * Usage : coller ascii-flat.svg en ligne (<svg …>) ; la couleur du corps = currentColor.
@@ -284,7 +302,7 @@ button.ascii-ligne:hover { border-color: var(--ink); }
 @media (prefers-reduced-motion: reduce) {
   .ascii-eveil .ascii-yeux, .ascii-eveil:hover .ascii-corps, .ascii-loader .ascii-plat, .ascii-vivant .ascii-yeux-points { animation: none; transition: none; }
 }
-</style><script>(function(){try{var t=localStorage.getItem("is42-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script></head>
+</style><script>(function(){try{var t=localStorage.getItem("is42-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script><script>(function(){var opened=[];addEventListener("beforeprint",function(){document.querySelectorAll("details:not([open])").forEach(function(d){if(d.closest(".is42-bar"))return;d.open=true;opened.push(d)})});addEventListener("afterprint",function(){opened.forEach(function(d){d.open=false});opened=[]})})();</script></head>
 <body><header class="is42-bar"><div class="in"><a class="is42-brand ascii-eveil" href="/visualisation/hub.html" aria-label="Dataroom, accueil"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42" width="42" height="42" class="ascii-plat" aria-hidden="true"><g class="ascii-corps" stroke="currentColor" stroke-width="7" stroke-linecap="butt"><line x1="0" y1="21" x2="42" y2="21"/><line x1="10.5" y1="2.81" x2="31.5" y2="39.19"/><line x1="31.5" y1="2.81" x2="10.5" y2="39.19"/></g><g class="ascii-yeux" fill="var(--ascii-papier, #EEEBE4)"><g class="ascii-yeux-points"><circle cx="18" cy="20" r="1.85"/><circle cx="24" cy="20" r="1.85"/></g><g class="ascii-yeux-arcs" fill="none" stroke="var(--ascii-papier, #EEEBE4)" stroke-width="1.1" stroke-linecap="round"><path d="M16.6 21.2 A1.5 1.5 0 0 1 19.4 21.2"/><path d="M22.6 21.2 A1.5 1.5 0 0 1 25.4 21.2"/></g><g class="ascii-yeux-traits" fill="none" stroke="var(--ascii-papier, #EEEBE4)" stroke-width="1.1" stroke-linecap="round"><line x1="16.5" y1="20" x2="19.5" y2="20"/><line x1="22.5" y1="20" x2="25.5" y2="20"/></g></g></svg><b>Dataroom</b><span>is42</span></a><nav class="is42-nav" aria-label="Pages de la dataroom"><a href="/visualisation/index.html">Carte</a><a href="/visualisation/relecture.html">Relecture</a><a href="/visualisation/simulateur.html">Simulateur</a><a href="/visualisation/cibles.html">Cibles</a><a href="/visualisation/rapport.html">Rapport</a><a href="/visualisation/fourchette.html">Fourchette</a><a href="/visualisation/hub.html#livrables" aria-current="page">Livrables</a></nav><div class="is42-tools"><button type="button" class="is42-square" id="is42-theme" aria-label="Changer de thème">&#9728;</button><details class="is42-menu"><summary class="is42-square" aria-label="Menu">&#8801;</summary><nav class="sheet" aria-label="Pages de la dataroom"><a href="/visualisation/hub.html">Accueil</a><a href="/visualisation/index.html">Carte</a><a href="/visualisation/relecture.html">Relecture</a><a href="/visualisation/simulateur.html">Simulateur</a><a href="/visualisation/cibles.html">Cibles</a><a href="/visualisation/rapport.html">Rapport</a><a href="/visualisation/fourchette.html">Fourchette</a><a href="/visualisation/hub.html#livrables" aria-current="page">Livrables</a></nav></details></div></div></header><script>(function(){var b=document.getElementById("is42-theme");if(!b)return;
 function cur(){var t=document.documentElement.getAttribute("data-theme");if(t)return t;
 return window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}

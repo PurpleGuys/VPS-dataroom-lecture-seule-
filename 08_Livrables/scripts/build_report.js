@@ -9,15 +9,19 @@
 //   parenthèses : chaque chiffre cité par son jeton [F12] porte sa source en note.
 // Lit rapport-sujet-2.data.json (dataroom report) ou, à défaut, report-data.json (build_dossiers.py).
 // N'écrit aucun chiffre lui-même : une valeur vient du registre ou le jeton est marqué inconnu.
+// La mise en page se tient seule, dans Word comme dans LibreOffice : contrôle des veuves et orphelines, titres liés à
+// ce qui les suit et coupés en lignes équilibrées, lignes de tableau insécables, colonnes assez larges pour leur mot
+// le plus long, petits tableaux d'un seul tenant avec la phrase qui les annonce, sauts de page portés par le titre
+// qui ouvre la page. dataroom report relit ensuite le PDF (layout_findings) et dit ce qui a échappé.
 // Écrit, à côté du .docx, la liste ordonnée des titres (…headings.json) : dataroom report la
 // confronte au PDF pour numéroter le sommaire et la table des annexes au second passage.
 "use strict";
 const fs = require("fs");
 const path = require("path");
 const {
-  Document, Packer, Paragraph, TextRun, HeadingLevel, Table, TableRow, TableCell, WidthType,
-  AlignmentType, PageBreak, Footer, PageNumber, ShadingType, LevelFormat, BorderStyle,
-  ExternalHyperlink, FootnoteReferenceRun, ImageRun, NumberFormat, Tab, TabStopType, LeaderType,
+  Document, Packer, Paragraph, TextRun: RawTextRun, HeadingLevel, Table, TableRow, TableCell, WidthType,
+  AlignmentType, Footer, PageNumber, ShadingType, LevelFormat, BorderStyle,
+  ExternalHyperlink, FootnoteReferenceRun, ImageRun, NumberFormat, Tab, TabStopType, LeaderType, UnderlineType,
 } = require("docx");
 
 const DATA = JSON.parse(fs.readFileSync(process.argv[2] || path.join(__dirname, "report-data.json"), "utf8"));
@@ -45,10 +49,167 @@ const MARGIN = 1417;                   // « 2,5 cm pour toutes les marges »
 const PAGE_W = 11906, PAGE_H = 16838;  // A4
 const TEXT_WIDTH = PAGE_W - 2 * MARGIN; // 9072
 const RETURN = 360;                    // « un seul retour avant et après » un titre : une ligne à 1,5
+const TOC_RIGHT = 567;                 // sommaire : 1 cm de retrait à droite, où viennent les points de conduite et la page
+const CELL_PAD = 160;                  // marges gauche et droite d'une cellule (80 + 80)
+const WJ = "\u2060", ZWSP = "\u200b";  // WORD JOINER : rien ne se coupe autour ; ZERO WIDTH SPACE : une coupure permise
 
 const bodyFont = { font: FONT, size: BODY };
 const smallFont = { font: FONT, size: SMALL };
 const HEADING_LEVELS = [HeadingLevel.HEADING_1, HeadingLevel.HEADING_2, HeadingLevel.HEADING_3];
+
+// ---- la typographie française : les espaces qui ne se coupent pas. Les textes sont tapés avec des espaces simples ;
+// ce qui s'imprime passe par typo(), qui lie ce que la règle veut lié. Une espace insécable (U+00A0) après « et avant
+// » ; : ? !, entre « p. », « n° », « § », « art. » et leur numéro, entre un jour et son mois, entre IFRS ou IAS et son
+// numéro, à l'intérieur d'une unité (« Md AUD ») ; une espace fine insécable (U+202F), celle des valeurs du registre,
+// entre les milliers et entre un nombre et son unité. Rien d'autre ne change : ni tiret, ni apostrophe, ni mot.
+// Sans effet sur un texte déjà traité. dataroom report relit le PDF et signale ce qui lui aurait échappé (« ponctuation »).
+const NBSP = "\u00a0", NNBSP = "\u202f";
+const MONTHS = "janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre";
+const CURRENCIES = "USD|AUD|GBP|CAD|EUR";
+const TYPO = [
+  [/« /g, "«" + NBSP],
+  [/ »/g, NBSP + "»"],
+  [/ (?=[;:?!])/g, NBSP],
+  // les milliers tapés avec une espace : « 5 747 », jamais une année suivie d'un nombre (« 2026 150 »), ni un identifiant
+  [/(?<![\p{L}\p{N},.])\d{1,3}(?: \d{3})+(?!\d)/gu, (m) => m.replace(/ /g, NNBSP)],
+  // l'unité qui contient une espace : « Md AUD », « k USD »
+  [new RegExp(`(?<![\\p{L}\\p{N}])(Mds?|M|k) (?=(?:${CURRENCIES})(?![\\p{L}\\p{N}]))`, "gu"), "$1" + NBSP],
+  // un nombre et son unité : « 3 % », « 229 M€ », « 470 M$ », « 50 992 k USD », « 12 kt »
+  [new RegExp(`(\\d) (?=(?:(?:Mds?|M|k)?[€$£]|[%‰]|kt|Mt|(?:(?:Mds?|M|k)${NBSP})?(?:${CURRENCIES}))(?![\\p{L}\\p{N}]))`, "gu"), "$1" + NNBSP],
+  // « p. 12 », « pp. 12 », « n° 3 », « § 4 », « art. L » : l'abréviation garde son numéro
+  [/(^|[\s(«])(pp?\.|[nN]°|§|[aA]rt\.) (?=\d|[IVXLC]+(?:[\s.,;:)]|$))/g, "$1$2" + NBSP],
+  // le jour et son mois : « 13 novembre », « 1er janvier »
+  [new RegExp(`(?<![\\p{L}\\p{N},.${NNBSP}])(\\d{1,2}|1er) (?=(?:${MONTHS})(?![\\p{L}]))`, "gu"), "$1" + NBSP],
+  // la norme et son numéro : « IFRS 16 », « IAS 37 »
+  [/(?<![\p{L}\p{N}])(IFRS|IAS) (?=\d)/gu, "$1" + NBSP],
+];
+function typo(text) {
+  let s = String(text == null ? "" : text);
+  if (!s.includes(" ")) return s;
+  for (const [pattern, by] of TYPO) s = s.replace(pattern, by);
+  return s;
+}
+// Tout ce qui s'imprime passe par ici : un TextRun de la bibliothèque, dont le texte a reçu ses espaces insécables.
+// `verbatim: true` le laisse tel quel (du code, une adresse).
+function TextRun(options) {
+  if (typeof options === "string") return new RawTextRun(typo(options));
+  const { verbatim, ...rest } = options || {};
+  if (!verbatim) {
+    if (typeof rest.text === "string") rest.text = typo(rest.text);
+    if (Array.isArray(rest.children)) rest.children = rest.children.map((c) => (typeof c === "string" ? typo(c) : c));
+  }
+  return new RawTextRun(rest);
+}
+
+// ---- les chasses de Times New Roman, en 1/2048 d'em (Liberation Serif, qui la remplace dans LibreOffice, a les mêmes :
+// c'est sa raison d'être). De quoi couper un titre en lignes équilibrées et donner à chaque colonne la largeur de son
+// mot le plus long, sans attendre le PDF. Les 224 premiers caractères (U+0020 à U+00FF), puis ADVANCE_CHARS.
+const ADVANCE = {
+  r: [512,682,836,1024,1024,1706,1593,369,682,682,1024,1155,512,682,512,569,1024,1024,1024,1024,1024,1024,1024,1024,1024,1024,569,569,1155,1155,1155,909,1886,1479,1366,1366,1479,1251,1139,1479,1479,682,797,1479,1251,1821,1479,1479,1139,1479,1366,1139,1251,1479,1479,1933,1479,1479,1251,682,569,682,961,1024,682,909,1024,909,1024,909,682,1024,1024,569,569,1024,569,1593,1024,1024,1024,1024,682,797,569,1024,1024,1479,1024,1024,909,983,410,983,1108,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,512,682,1024,1024,1024,1024,410,1024,682,1556,565,1024,1155,682,1556,1024,819,1124,614,614,682,1180,928,682,682,614,635,1024,1536,1536,1536,909,1479,1479,1479,1479,1479,1479,1821,1366,1251,1251,1251,1251,682,682,682,682,1479,1479,1479,1479,1479,1479,1479,1155,1479,1479,1479,1479,1479,1479,1139,1024,909,909,909,909,909,909,1366,909,909,909,909,909,569,569,569,569,1024,1024,1024,1024,1024,1024,1024,1124,1024,1024,1024,1024,1024,1024,1024,1024],
+  b: [512,682,1137,1024,1024,2048,1706,569,682,682,1024,1167,512,682,512,569,1024,1024,1024,1024,1024,1024,1024,1024,1024,1024,682,682,1167,1167,1167,1024,1905,1479,1366,1479,1479,1366,1251,1593,1593,797,1024,1593,1366,1933,1479,1593,1251,1593,1479,1139,1366,1479,1479,2048,1479,1479,1366,682,569,682,1190,1024,682,1024,1139,909,1139,909,682,1024,1139,569,682,1139,569,1706,1139,1024,1139,1139,909,797,682,1139,1024,1479,1024,1024,909,807,451,807,1065,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,512,682,1024,1024,1024,1024,451,1024,682,1530,614,1024,1167,682,1530,1024,819,1124,614,614,682,1180,1106,683,682,614,676,1024,1536,1536,1536,1024,1479,1479,1479,1479,1479,1479,2048,1479,1366,1366,1366,1366,797,797,797,797,1479,1479,1593,1593,1593,1593,1593,1167,1593,1479,1479,1479,1479,1479,1251,1139,1024,1024,1024,1024,1024,1024,1479,909,909,909,909,909,569,569,569,569,1024,1139,1024,1024,1024,1024,1024,1124,1024,1139,1139,1139,1139,1024,1139,1024],
+  i: [512,682,860,1024,1024,1706,1593,438,682,682,1024,1382,512,682,512,569,1024,1024,1024,1024,1024,1024,1024,1024,1024,1024,682,682,1382,1382,1382,1024,1884,1251,1251,1366,1479,1251,1251,1479,1479,682,909,1366,1139,1706,1366,1479,1251,1479,1251,1024,1139,1479,1251,1706,1251,1139,1139,797,569,797,864,1024,682,1024,1024,909,1024,909,569,1024,1024,569,569,909,569,1479,1024,1024,1024,1024,797,797,569,1024,909,1366,909,909,797,819,563,819,1108,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,512,797,1024,1024,1024,1024,563,1024,682,1556,565,1024,1382,682,1556,1024,819,1124,614,614,682,1180,1071,512,682,614,635,1024,1536,1536,1536,1024,1251,1251,1251,1251,1251,1251,1821,1366,1251,1251,1251,1251,682,682,682,682,1479,1366,1479,1479,1479,1479,1479,1382,1479,1479,1479,1479,1479,1139,1251,1024,1024,1024,1024,1024,1024,1024,1366,909,909,909,909,909,569,569,569,569,1024,1024,1024,1024,1024,1024,1024,1124,1024,1024,1024,1024,1024,909,1024,909],
+  bi: [512,797,1137,1024,1024,1706,1593,569,682,682,1024,1167,512,682,512,569,1024,1024,1024,1024,1024,1024,1024,1024,1024,1024,682,682,1167,1167,1167,1024,1704,1366,1366,1366,1479,1366,1366,1479,1593,797,1024,1366,1251,1821,1479,1479,1251,1479,1366,1139,1251,1479,1366,1821,1366,1251,1251,682,569,682,1167,1024,682,1024,1024,909,1024,909,682,1024,1139,569,569,1024,569,1593,1139,1024,1024,1024,797,797,569,1139,909,1366,1024,909,797,713,451,713,1167,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,512,797,1024,1024,1024,1024,451,1024,682,1530,545,1024,1241,682,1530,1024,819,1124,614,614,682,1180,1024,512,682,614,614,1024,1536,1536,1536,1024,1366,1366,1366,1366,1366,1366,1933,1366,1366,1366,1366,1366,797,797,797,797,1479,1479,1479,1479,1479,1479,1479,1167,1479,1479,1479,1479,1479,1251,1251,1024,1024,1024,1024,1024,1024,1024,1479,909,909,909,909,909,569,569,569,569,1024,1139,1024,1024,1024,1024,1024,1124,1024,1139,1139,1139,1139,909,1024,909],
+};
+const ADVANCE_CHARS = "\u0152\u0153\u0178\u2009\u200b\u2010\u2012\u2013\u2014\u2015\u2016\u2017\u2018\u2019\u201a\u201b\u201c\u201d\u201e\u201f\u2020\u2021\u2022\u2026\u202f\u2030\u2032\u2033\u2039\u203a\u20ac\u2122\u2190\u2191\u2192\u2193\u2212\u2248\u2260\u2264\u2265";
+const ADVANCE_MORE = {
+  r: [1821,1479,1479,410,0,682,1024,1024,2048,2048,575,1024,682,682,682,682,909,909,909,909,1024,1024,717,2048,410,2048,448,853,682,682,1024,2007,2048,1024,2048,1024,1155,1124,1124,1124,1124],
+  b: [2048,1479,1479,410,0,682,1024,1024,2048,2048,664,1024,682,682,682,682,1024,1024,1024,1024,1024,1024,717,2048,410,2048,576,1131,682,682,1024,2048,2048,1024,2048,1024,1167,1124,1124,1124,1124],
+  i: [1933,1366,1139,410,0,682,1024,1024,1821,2048,575,1024,682,682,682,682,1139,1139,1139,1139,1024,1024,717,1821,410,2048,448,853,682,682,1024,2007,2048,1024,2048,1024,1382,1124,1124,1124,1124],
+  bi: [1933,1479,1251,410,0,682,1024,1024,2048,2048,708,1024,682,682,682,682,1024,1024,1024,1024,1024,1024,717,2048,410,2048,576,1131,682,682,1024,2048,2048,1024,2048,1024,1241,1124,1124,1124,1124],
+};
+function advance(ch, style) {
+  const cp = ch.codePointAt(0);
+  if (cp === 0x200b || cp === 0x2060 || cp === 0xad) return 0;
+  const more = ADVANCE_CHARS.indexOf(ch);
+  const v = cp >= 32 && cp < 256 ? ADVANCE[style][cp - 32] : (more >= 0 ? ADVANCE_MORE[style][more] : 0);
+  return v || 1024;   // un caractère hors table compte pour un demi-em : assez pour ne rien promettre de trop
+}
+// Largeur d'un texte en twips ; `size` en demi-points, `style` r, b, i ou bi.
+function textWidth(text, size, style = "r") {
+  let units = 0;
+  for (const ch of String(text)) units += advance(ch, style);
+  return (units / 2048) * size * 10;
+}
+// Où Word et LibreOffice peuvent couper une ligne : à une espace simple (qui disparaît en fin de ligne), après un trait
+// d'union ou un tiret suivi d'une lettre (jamais devant un chiffre), à une espace sans chasse (U+200B) ; jamais autour
+// d'un WORD JOINER. Chaque segment dit s'il est suivi d'une espace.
+function segments(text) {
+  const out = [];
+  const chars = Array.from(typo(text));   // les espaces insécables d'abord : on mesure ce qui s'imprime
+  let cur = "";
+  for (let i = 0; i < chars.length; i++) {
+    const ch = chars[i];
+    if (ch === " ") {
+      if (cur) out.push({ text: cur, space: true });
+      else if (out.length) out[out.length - 1].space = true;
+      cur = "";
+    } else if (ch === ZWSP) {
+      if (cur) out.push({ text: cur, space: false });
+      cur = "";
+    } else {
+      cur += ch;
+      const next = chars[i + 1];
+      if ("-‐–—".includes(ch) && cur.length > 1 && next && /\p{L}/u.test(next) && chars[i - 1] !== WJ) {
+        out.push({ text: cur, space: false });
+        cur = "";
+      }
+    }
+  }
+  if (cur) out.push({ text: cur, space: false });
+  return out;
+}
+// La coupure naturelle : chaque ligne prend autant de segments qu'elle peut.
+function layoutLines(segs, maxWidth, size, style) {
+  const lines = [];
+  const space = textWidth(" ", size, style);
+  let line = [], width = 0;
+  for (const s of segs) {
+    const w = textWidth(s.text, size, style);
+    const sep = line.length && line[line.length - 1].space ? space : 0;
+    if (line.length && width + sep + w > maxWidth) {
+      lines.push(line);
+      line = [s];
+      width = w;
+    } else {
+      line.push(s);
+      width += sep + w;
+    }
+  }
+  if (line.length) lines.push(line);
+  return lines;
+}
+const lineText = (line) => line.map((s, i) => s.text + (i < line.length - 1 && s.space ? " " : "")).join("");
+// Une coupure équilibrée : autant de lignes que la coupure naturelle, mais la plus étroite qui les tienne, si bien que
+// la dernière ligne ne porte pas un ou deux mots seuls. 2 pt de marge sur la largeur mesurée ; null quand le texte
+// tient sur une ligne, ou n'a pas besoin de cette marge pour tenir en autant de lignes.
+function balancedLines(text, maxWidth, size, style) {
+  const segs = segments(text);
+  const natural = layoutLines(segs, maxWidth, size, style).length;
+  const room = maxWidth - 40;
+  if (natural < 2 || layoutLines(segs, room, size, style).length > natural) return null;
+  let lo = 0, hi = room;
+  for (let k = 0; k < 30; k++) {
+    const mid = (lo + hi) / 2;
+    if (layoutLines(segs, mid, size, style).length <= natural) hi = mid; else lo = mid;
+  }
+  const lines = layoutLines(segs, hi, size, style);
+  // Garde-fou : si la dernière ligne n'a encore qu'un ou deux mots, elle prend le dernier mot de la précédente.
+  const words = (line) => lineText(line).split(" ").length;
+  const n = lines.length;
+  while (n > 1 && words(lines[n - 1]) <= 2 && lines[n - 2].length > 1 && words(lines[n - 2]) > 3) {
+    const moved = lines[n - 2].pop();
+    lines[n - 1].unshift(moved);
+    if (textWidth(lineText(lines[n - 1]), size, style) > room) { lines[n - 1].shift(); lines[n - 2].push(moved); break; }
+  }
+  // chaque ligne garde l'espace qui la suivait (rien après un trait d'union) : le texte du titre ne change pas
+  return lines.map((line, i) => lineText(line) + (i < n - 1 && line[line.length - 1].space ? " " : ""));
+}
+// Les runs d'un texte coupé en lignes : un retour à la ligne explicite entre elles, l'espace gardée en fin de ligne
+// (le texte du titre, et donc le signet du PDF, reste le même).
+function linedRuns(text, lines, fmt) {
+  if (!lines) return [new TextRun({ text, ...fmt })];
+  return lines.map((line, i) => new TextRun({ text: line, ...(i ? { break: 1 } : {}), ...fmt }));
+}
 const numberingRefs = new Set(["numbers", "numbers2", "role1", "role2", "role3", "role4", "role5", "role6"]);
 let dynamicLists = 0;
 
@@ -80,13 +241,25 @@ function collectGroups(blocks) {
   };
   visit(blocks);
 }
+// Une note du classeur se lit comme une référence : « Classeur du groupe, onglet Trajectoire, scénario défavorable
+// combiné », la clé du jeton (M:HEAD27@def) à la fin, pour qui veut retrouver la cellule.
+function classeurNote(where) {
+  let s = String(where || "").trim().replace(/\.$/, "");
+  let tail = "";
+  const paren = /\s*(\([^()]*\))$/.exec(s);
+  if (paren) { tail = " " + paren[1]; s = s.slice(0, paren.index); }
+  const m = /(?:^|,\s*)onglet (.+?) du classeur(?: du groupe)?$/.exec(s);
+  if (!m) return `Classeur du groupe : ${s}${tail}`;
+  const rest = s.slice(0, m.index).replace(/[,\s]+$/, "");
+  return `Classeur du groupe, onglet ${m[1]}${rest ? ", " + rest : ""}${tail}`;
+}
 function groupNote(key, r) {
   const g = groups.get(key) || { ids: [r.id], unread: !r.checked, model: r.rowkind === "model" };
   if (g.model) {
     // la version de la fourchette n'est dite qu'une fois : dans la première note du modèle
-    let text = `${g.ids.join(", ")} — ${key.slice(2)}`;
-    if (!modelVersionShown && DATA.model_version) { text = text.replace(/\.$/, "") + ` ; ${DATA.model_version}, valable pour toutes les notes du modèle.`; modelVersionShown = true; }
-    return text;
+    let text = classeurNote(key.slice(2));
+    if (!modelVersionShown && DATA.model_version) { text += ` ; ${DATA.model_version}, valable pour toutes les notes du classeur`; modelVersionShown = true; }
+    return `${text} ; ${g.ids.length > 1 ? "clés" : "clé"} ${g.ids.join(", ")}.`;
   }
   const ref = refOf(g.ids[0]) || String(NOTES[g.ids[0]] || r.cite || r.file || "source au registre").replace(/^\S+ — /, "").replace(/ ; non relue\.$|\.$/, "");
   return `${g.ids.join(", ")} — ${ref}${g.unread ? (g.ids.length > 1 ? " ; non relues" : " ; non relue") : ""}.`;
@@ -102,15 +275,17 @@ const glossaryRegex = (() => {
   if (!GLOSSARY.length) return null;
   const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const variants = [];
+  const spaced = (s) => esc(s).replace(/ /g, `[ ${NBSP}${NNBSP}]`);
   for (const { term } of GLOSSARY) {
-    variants.push(esc(term));
-    if (term[0] === term[0].toLowerCase()) variants.push(esc(term[0].toUpperCase() + term.slice(1)));
+    variants.push(spaced(term));
+    if (term[0] === term[0].toLowerCase()) variants.push(spaced(term[0].toUpperCase() + term.slice(1)));
   }
   variants.sort((a, b) => b.length - a.length);
   return new RegExp("(?<![\\p{L}\\p{N}-])(" + variants.join("|") + ")(?![\\p{L}\\p{N}-])", "gu");
 })();
 function textRuns(text, fmt, italicizeGlossary) {
   if (!italicizeGlossary || !glossaryRegex || fmt.italics) return [new TextRun({ text, ...fmt })];
+  text = typo(text);   // avant de couper : « IFRS 16 » ou « 3 % » ne doivent pas se trouver de part et d'autre d'un terme
   const out = [];
   let last = 0;
   for (const m of text.matchAll(glossaryRegex)) {
@@ -131,8 +306,11 @@ function p(text, opts = {}) {
     children: [new TextRun({ text, ...bodyFont, ...opts.run })],
   });
 }
+// Un paragraphe tout en gras est un intertitre : il reste avec ce qu'il annonce.
 function runs(parts, para = {}) {
-  return new Paragraph({ spacing: { after: 0, line: LINE }, alignment: AlignmentType.JUSTIFIED, ...para,
+  const intertitle = parts.length > 0 && parts.every((x) => x.bold);
+  return new Paragraph({ spacing: { after: 0, line: LINE }, alignment: AlignmentType.JUSTIFIED,
+    ...(intertitle ? { keepNext: true, keepLines: true } : {}), ...para,
     children: parts.map((x) => new TextRun({ ...bodyFont, ...x })) });
 }
 function blank() {
@@ -159,42 +337,145 @@ function caption(text) {
   return new Paragraph({ spacing: { before: 60, after: RETURN, line: 240 }, alignment: AlignmentType.LEFT,
     children: [new TextRun({ text, ...smallFont, italics: true })] });
 }
-const pageBreak = () => new Paragraph({ children: [new PageBreak()] });
+// La légende posée au-dessus de son tableau, et qui ne le quitte pas.
+function captionAbove(text) {
+  return new Paragraph({ keepNext: true, keepLines: true, spacing: { before: 60, after: 60, line: 240 }, alignment: AlignmentType.LEFT,
+    children: [new TextRun({ text, ...smallFont, italics: true })] });
+}
 
-// ---- titres : en gras, taille 12, un seul retour avant et après ; chaque titre est noté pour le sommaire
+// ---- titres : en gras, taille 12, un seul retour avant et après ; chaque titre est noté pour le sommaire.
+// heading() rend une marque ; settle() en fait un paragraphe quand sa place est connue : sans espace avant quand il
+// ouvre une page (saut porté par le titre lui-même, ou début de section) ou suit directement un autre titre, dont le
+// retour suffit ; coupé en lignes équilibrées quand il en prend plusieurs.
 const HEADINGS = [];
 function heading(text, level, opts = {}) {
   HEADINGS.push({ text, level, annex: !!opts.annex, label: opts.label || "", role: opts.role || 0, toc: opts.toc !== false });
+  return { isHeading: true, text, level, newPage: !!opts.newPage };
+}
+const isHeading = (x) => !!x && x.isHeading === true;
+// Les titres que LibreOffice a laissés seuls en bas d'une page du PDF précédent, quand le paragraphe auquel ils sont
+// liés part à la page suivante avec ses notes : dataroom report les relève (layout_findings) et le titre ouvre alors
+// la page, ce que « lié au suivant » aurait dû faire.
+// La mise à plat est celle de dataroom report (_one_line), qui nomme ces titres d'après les signets du PDF : sans
+// caractère invisible, un mot composé coupé après son trait d'union recollé, les espaces et les retours réduits à une
+// espace.
+const oneLine = (s) => String(s || "").replace(/[\u200b\u2060\u00ad]/g, "")
+  .replace(/(?<=[-\u2010\u2013\u2014])\r?\n/g, "").replace(/\s+/g, " ").trim();
+const PAGE_BREAKS = new Set(((CONTROLS && CONTROLS.layout && CONTROLS.layout.page_breaks) || []).map(oneLine));
+function headingParagraph(h, before) {
   return new Paragraph({
-    heading: HEADING_LEVELS[level - 1], keepNext: true, keepLines: true, pageBreakBefore: !!opts.newPage,
-    spacing: { before: RETURN, after: RETURN, line: LINE }, alignment: AlignmentType.LEFT,
-    children: [new TextRun({ text, ...bodyFont, bold: true, color: "000000" })],
+    heading: HEADING_LEVELS[h.level - 1], keepNext: true, keepLines: true, pageBreakBefore: h.newPage,
+    spacing: { before, after: RETURN, line: LINE }, alignment: AlignmentType.LEFT,
+    children: linedRuns(h.text, balancedLines(h.text, TEXT_WIDTH, BODY, "b"), { ...bodyFont, bold: true, color: "000000" }),
+  });
+}
+function settle(children) {
+  // un titre laissé seul ouvre la page ; s'il suit d'autres titres, c'est le premier de la pile qui l'ouvre
+  const breakAt = new Set();
+  children.forEach((x, i) => {
+    if (!isHeading(x) || !PAGE_BREAKS.has(oneLine(x.text))) return;
+    let j = i;
+    while (j > 0 && isHeading(children[j - 1])) j -= 1;
+    breakAt.add(j);
+  });
+  return children.map((x, i) => {
+    if (!isHeading(x)) return x;
+    const h = breakAt.has(i) && i > 0 ? { ...x, newPage: true } : x;
+    return headingParagraph(h, i === 0 || h.newPage || isHeading(children[i - 1]) ? 0 : RETURN);
   });
 }
 
 // ---- tableaux
+// Le texte d'une cellule, protégé : une date (31/12/2025) ou une période (2024-2027) ne se coupe pas ; une adresse ou
+// un nom de fichier se coupe après « / », « _ » ou un trait d'union plutôt qu'au milieu d'un mot.
+const URLISH = /:\/\/|^www\.|\.(?:pdf|html?|xlsx?|csv|docx?)\b/i;
+function protect(text) {
+  return String(text == null ? "" : text).split(/( +)/).map((tok) => {
+    if (!tok.trim()) return tok;
+    if (URLISH.test(tok)) return tok.replace(/([\/_?&=#])(?=[^\/\s])|(-)(?=\d)/g, (m, a, b) => (a || b) + ZWSP);
+    return tok.replace(/(\d)([\/-])(?=\d)/g, `$1${WJ}$2${WJ}`);
+  }).join("");
+}
+const protectInlines = (inlines) => (inlines || []).map((r) => (r.kind === "text" ? { ...r, text: protect(r.text) } : r));
+// Ce que la cellule imprime, pour mesurer ses mots.
+const cellText = (content) => (Array.isArray(content) ? plain(protectInlines(content)) : protect(content));
+const cellBold = (content, head) => head || (Array.isArray(content) && content.some((r) => r.bold));
 function cell(content, width, opts = {}) {
   const children = Array.isArray(content)
-    ? inlineRuns(content, smallFont, { glossary: false })
-    : [new TextRun({ text: String(content == null ? "" : content), ...smallFont, bold: !!opts.head })];
+    ? inlineRuns(protectInlines(content), { ...smallFont, bold: !!opts.head }, { glossary: false })
+    : [new TextRun({ text: protect(content), ...smallFont, bold: !!opts.head })];
   return new TableCell({
     width: { size: width, type: WidthType.DXA },
     shading: opts.head ? { type: ShadingType.CLEAR, color: "auto", fill: "E7E6E6" } : undefined,
     margins: { top: 40, bottom: 40, left: 80, right: 80 },
-    children: [new Paragraph({ spacing: { after: 0, line: 240 }, alignment: opts.right ? AlignmentType.RIGHT : AlignmentType.LEFT, children })],
+    children: [new Paragraph({ keepNext: !!opts.keepNext, spacing: { after: 0, line: 240 },
+      alignment: opts.right ? AlignmentType.RIGHT : AlignmentType.LEFT, children })],
   });
+}
+// Chaque colonne reçoit au moins la largeur de son mot insécable le plus long, marges de la cellule comprises,
+// prise sur les colonnes qui en ont de reste : aucun mot ne se coupe en deux dans une cellule.
+function fitWidths(rows, base) {
+  const need = base.map(() => 0);
+  rows.forEach((row, i) => row.forEach((c, j) => {
+    const style = cellBold(c, i === 0) ? "b" : "r";
+    for (const s of segments(cellText(c))) need[j] = Math.max(need[j], textWidth(s.text, SMALL, style));
+  }));
+  const min = need.map((w) => Math.ceil(w + CELL_PAD + 40));
+  const short = base.map((w, j) => Math.max(0, min[j] - w));
+  const deficit = short.reduce((a, b) => a + b, 0);
+  if (!deficit) return base.slice();
+  const slack = base.map((w, j) => (short[j] ? 0 : Math.max(0, w - min[j])));
+  const totalSlack = slack.reduce((a, b) => a + b, 0);
+  if (totalSlack < deficit) {
+    console.error(`tableau : ${Math.round(deficit - totalSlack)} twips manquent pour que chaque mot tienne dans sa colonne`);
+    const scale = TEXT_WIDTH / min.reduce((a, b) => a + b, 0);
+    const out = min.map((w) => Math.floor(w * scale));
+    out[out.length - 1] += TEXT_WIDTH - out.reduce((a, b) => a + b, 0);
+    return out;
+  }
+  const out = base.map((w, j) => (short[j] ? min[j] : Math.floor(w - (slack[j] * deficit) / totalSlack)));
+  const widest = out.indexOf(Math.max(...out.filter((w, j) => !short[j])));
+  out[widest] += TEXT_WIDTH - out.reduce((a, b) => a + b, 0);
+  return out;
+}
+// Un petit tableau (au plus 12 lignes et environ un tiers de page, notes de bas de page qu'il appelle comprises)
+// reste d'un seul tenant : chaque ligne, sauf la dernière, est liée à la suivante. Les plus grands se coupent entre
+// deux lignes, jamais au milieu d'une, et leurs dernières lignes restent ensemble : au moins deux, et assez pour
+// faire TABLE_TAIL_LINES lignes de texte (quatre lignes de tableau au plus). La dernière page d'un long tableau ne
+// porte donc jamais une ligne seule sous l'en-tête répété, et un tableau aux lignes hautes ne laisse pas un grand
+// blanc au bas de la page qui précède.
+const SMALL_TABLE_ROWS = 12, SMALL_TABLE_HEIGHT = 4700;   // twips : un peu plus du tiers de la hauteur utile
+const TABLE_TAIL_ROWS = 4, TABLE_TAIL_LINES = 6;
+const rowLines = (row, widths, head) => Math.max(1, ...row.map((c, j) =>
+  layoutLines(segments(cellText(c)), widths[j] - CELL_PAD, SMALL, cellBold(c, head) ? "b" : "r").length));
+function tableHeight(rows, widths) {
+  const notes = new Set();
+  for (const row of rows) for (const c of row) for (const r of (Array.isArray(c) ? c : [])) if (r.kind === "token" && r.status === "ok") notes.add(noteKey(r));
+  return notes.size * 320 + rows.reduce((total, row, i) => total + 80 + 230 * rowLines(row, widths, i === 0), 0);
+}
+const isSmallTable = (rows, widths) => rows.length <= SMALL_TABLE_ROWS && tableHeight(rows, widths) <= SMALL_TABLE_HEIGHT;
+// Combien de lignes de la fin restent ensemble (l'en-tête, rows[0], n'en est pas une).
+function tableTail(rows, widths) {
+  let kept = 0, lines = 0;
+  while (kept < Math.min(TABLE_TAIL_ROWS, rows.length - 1) && (kept < 2 || lines < TABLE_TAIL_LINES)) {
+    kept += 1;
+    lines += rowLines(rows[rows.length - kept], widths, false);
+  }
+  return kept;
+}
+function tableRows(rows, widths, rightCols = []) {
+  const small = isSmallTable(rows, widths);
+  const tail = small ? 0 : tableTail(rows, widths);
+  return rows.map((row, i) => new TableRow({ ...(i === 0 ? { tableHeader: true } : {}), cantSplit: true,
+    children: row.map((c, j) => cell(c, widths[j], { head: i === 0, right: i > 0 && rightCols.includes(j),
+      keepNext: i === 0 || (i < rows.length - 1 && (small || i >= rows.length - tail)) })) }));
 }
 function table(headers, rows, widths, rightCols = []) {
   const total = widths.reduce((a, b) => a + b, 0);
   if (total !== TEXT_WIDTH) throw new Error("largeurs de colonnes : " + total + " ≠ " + TEXT_WIDTH);
-  return new Table({
-    width: { size: TEXT_WIDTH, type: WidthType.DXA },
-    columnWidths: widths,
-    rows: [
-      new TableRow({ tableHeader: true, children: headers.map((t, i) => cell(t, widths[i], { head: true })) }),
-      ...rows.map((r) => new TableRow({ children: r.map((t, i) => cell(t, widths[i], { right: rightCols.includes(i) })) })),
-    ],
-  });
+  const all = [headers, ...rows];
+  const fitted = fitWidths(all, widths);
+  return new Table({ width: { size: TEXT_WIDTH, type: WidthType.DXA }, columnWidths: fitted, rows: tableRows(all, fitted, rightCols) });
 }
 function evenWidths(n) {
   const base = Math.floor(TEXT_WIDTH / n);
@@ -208,31 +489,67 @@ function evenWidths(n) {
 // [M:…] est un résultat du classeur du groupe : sa note dit quel onglet et quelle version. Pour les autres, la note donne l'identifiant
 // du registre, la source (fichier, page, URL, date de consultation) et dit si la ligne a été relue.
 // Un jeton inconnu reste visible, en rouge sur jaune. Les termes du glossaire passent en italique.
+// Deux jetons voisins (séparés par rien ou par des espaces) n'appellent qu'une note, qui les source tous deux ; un
+// jeton qui n'affiche rien (une cible sans prix publié) colle son appel au mot qui le précède.
+const shown = (r) => (r.status === "ok" ? (r.display || `${r.value}${r.unit ? " " + r.unit : ""}`) : `[${r.id} ?]`);
+function joinTokens(inlines) {
+  const out = [];
+  const list = inlines || [];
+  for (let i = 0; i < list.length; i++) {
+    const r = list[i];
+    if (r.kind !== "token") { out.push(r); continue; }
+    const group = { kind: "tokens", items: [r], seps: [] };
+    let j = i + 1;
+    for (;;) {
+      if (j < list.length && list[j].kind === "token") { group.seps.push(""); group.items.push(list[j]); j += 1; continue; }
+      if (j + 1 < list.length && list[j].kind === "text" && !list[j].text.trim() && list[j + 1].kind === "token") {
+        group.seps.push(list[j].text); group.items.push(list[j + 1]); j += 2; continue;
+      }
+      break;
+    }
+    i = j - 1;
+    const prev = out[out.length - 1];
+    if (!shown(r).trim() && prev && prev.kind === "text") out[out.length - 1] = { ...prev, text: prev.text.replace(/\s+$/, "") };
+    out.push(group);
+  }
+  return out;
+}
 function inlineRuns(inlines, base = bodyFont, opts = {}) {
   const glossary = opts.glossary !== false;
   const out = [];
-  for (const r of inlines || []) {
-    const fmt = { ...base, bold: !!r.bold, italics: !!r.italic };
+  for (const r of joinTokens(inlines)) {
+    const fmt = { ...base, bold: !!r.bold || !!base.bold, italics: !!r.italic };
     if (r.kind === "text") out.push(...textRuns(r.text, fmt, glossary));
-    else if (r.kind === "code") out.push(new TextRun({ text: r.text, ...fmt, font: "Courier New" }));
+    else if (r.kind === "code") out.push(new TextRun({ text: r.text, ...fmt, font: "Courier New", verbatim: true }));
     else if (r.kind === "link") out.push(new ExternalHyperlink({ link: r.url, children: [new TextRun({ text: r.text, ...fmt, style: "Hyperlink" })] }));
+    // l'adresse d'une source, imprimée comme le texte qui l'entoure : `text` porte déjà ses coupures permises
+    else if (r.kind === "address") out.push(new ExternalHyperlink({ link: r.url, children: [new TextRun({ text: r.text, ...fmt, color: "000000", underline: { type: UnderlineType.NONE }, verbatim: true })] }));
     else if (r.kind === "wikilink") out.push(new TextRun({ text: r.text, ...fmt, italics: true }));
-    else if (r.kind === "token") {
-      if (r.status !== "ok") out.push(new TextRun({ text: `[${r.id} ?]`, ...fmt, bold: true, color: "C00000", highlight: "yellow" }));
-      else {
-        out.push(new TextRun({ text: r.display || `${r.value}${r.unit ? " " + r.unit : ""}`, ...fmt }));
-        const key = noteKey(r);
-        if (!noted.has(key)) {
-          noted.add(key);
-          out.push(footnote(groupNote(key, r)));
+    else if (r.kind === "tokens") {
+      const notes = [];
+      let printed = false;
+      r.items.forEach((t, k) => {
+        const tfmt = { ...base, bold: !!t.bold || !!base.bold, italics: !!t.italic };
+        const text = shown(t);
+        if (text.trim() && printed) out.push(new TextRun({ text: r.seps[k - 1] || " ", ...tfmt }));
+        if (t.status !== "ok") out.push(new TextRun({ text, ...tfmt, bold: true, color: "C00000", highlight: "yellow" }));
+        else {
+          if (text.trim()) out.push(new TextRun({ text, ...tfmt }));
+          const key = noteKey(t);
+          if (!noted.has(key)) {
+            noted.add(key);
+            notes.push(groupNote(key, t));
+          }
         }
-      }
+        printed = printed || !!text.trim();
+      });
+      if (notes.length) out.push(footnote(notes.join(" ")));
     }
   }
   return out;
 }
 function plain(inlines) {
-  return (inlines || []).map((r) => (r.kind === "token" ? (r.status === "ok" ? (r.display || `${r.value}${r.unit ? " " + r.unit : ""}`) : `[${r.id} ?]`) : r.text)).join("").trim();
+  return (inlines || []).map((r) => (r.kind === "token" ? shown(r) : r.text)).join("").trim();
 }
 // Les blocs d'un fichier texte. `part` numérote les sous-parties (1.1, 1.1.1) ; sans lui (introduction,
 // conclusion, remerciements) les sous-titres restent sans numéro, comme la méthode le permet.
@@ -242,7 +559,19 @@ function renderBlocks(blocks, opts = {}) {
   collectGroups(blocks);
   const counters = [0, 0];
   const out = [];
+  // Les tableaux du texte : largeurs ajustées à leurs mots, et s'ils sont petits, d'un seul tenant avec la phrase
+  // qui les annonce.
+  const layouts = new Map();
   for (const b of blocks || []) {
+    if (b.kind !== "table" || !b.rows.length) continue;
+    const n = Math.max(...b.rows.map((r) => r.length));
+    const rows = b.rows.map((row) => { const r = row.slice(); while (r.length < n) r.push([]); return r; });
+    const widths = fitWidths(rows, evenWidths(n));
+    layouts.set(b, { rows, widths, small: isSmallTable(rows, widths) });
+  }
+  (blocks || []).forEach((b, k) => {
+    const next = (blocks || [])[k + 1];
+    const announces = !!next && layouts.has(next) && layouts.get(next).small;
     if (b.kind === "heading") {
       const level = Math.min(3, Math.max(2, b.level));
       let number = "";
@@ -253,7 +582,10 @@ function renderBlocks(blocks, opts = {}) {
       // dans une annexe, les sous-titres restent hors du sommaire : il ne liste que le corps (§ 5.4)
       out.push(heading(number + plain(b.inlines), level, opts.inAnnex ? { toc: false } : {}));
     } else if (b.kind === "paragraph") {
-      out.push(new Paragraph({ spacing: { after: PARA_AFTER, line: LINE }, alignment: AlignmentType.JUSTIFIED, children: inlineRuns(b.inlines) }));
+      // un paragraphe tout en gras est un intertitre ; la phrase qui annonce un petit tableau reste avec lui
+      const intertitle = b.inlines.length > 0 && b.inlines.every((r) => r.bold || (r.kind === "text" && !r.text.trim()));
+      out.push(new Paragraph({ spacing: { after: PARA_AFTER, line: LINE }, alignment: AlignmentType.JUSTIFIED,
+        ...(intertitle || announces ? { keepNext: true } : {}), ...(intertitle ? { keepLines: true } : {}), children: inlineRuns(b.inlines) }));
     } else if (b.kind === "quote") {
       // Une citation recopiée exactement, entre guillemets français (§ 5.6) ; le retrait la signale.
       const text = plain(b.inlines);
@@ -270,17 +602,11 @@ function renderBlocks(blocks, opts = {}) {
     } else if (b.kind === "todo") {
       if (!FINAL) out.push(placeholder(b.text));
     } else if (b.kind === "table" && b.rows.length) {
-      const n = Math.max(...b.rows.map((r) => r.length));
-      const widths = evenWidths(n);
-      const pad = (row) => { const r = row.slice(); while (r.length < n) r.push([]); return r; };
-      out.push(new Table({
-        width: { size: TEXT_WIDTH, type: WidthType.DXA }, columnWidths: widths,
-        rows: b.rows.map((row, i) => new TableRow({ tableHeader: i === 0,
-          children: pad(row).map((c, j) => cell(c, widths[j], { head: i === 0 })) })),
-      }));
+      const { rows, widths } = layouts.get(b);
+      out.push(new Table({ width: { size: TEXT_WIDTH, type: WidthType.DXA }, columnWidths: widths, rows: tableRows(rows, widths) }));
       out.push(new Paragraph({ spacing: { after: PARA_AFTER, line: 240 }, children: [] }));
     }
-  }
+  });
   return out;
 }
 function prose(key) {
@@ -293,13 +619,19 @@ function signature(key) {
   if (!signed) return null;
   return `Partie rédigée par ${signed}${read ? `, relue par ${read}` : ""}.`;
 }
-// Une entrée du sommaire ou de la table des annexes : le titre, des points de conduite, la page.
+// Une entrée du sommaire ou de la table des annexes : le titre, des points de conduite, la page. Le titre s'arrête
+// à 1 cm de la marge (retrait à droite) et la tabulation va jusqu'à elle : la dernière ligne garde toujours des
+// points et son numéro, aucune ligne n'est faite que de points. Une partie (niveau 1) ne finit jamais une page du
+// sommaire : elle reste avec sa première sous-partie ; aucune entrée ne se coupe entre deux pages.
 function tocLine(text, page, level) {
+  const left = level > 1 ? 567 * (level - 1) : 0;
+  const fmt = { ...bodyFont, bold: level === 1 };
   return new Paragraph({
     spacing: { after: level === 1 ? 60 : 0, line: 276 }, alignment: AlignmentType.LEFT,
-    indent: level > 1 ? { left: 567 * (level - 1) } : undefined,
+    indent: { left, right: TOC_RIGHT }, keepNext: level === 1, keepLines: true,
     tabStops: [{ type: TabStopType.RIGHT, position: TEXT_WIDTH, leader: LeaderType.DOT }],
-    children: [new TextRun({ children: [text, new Tab(), page || ""], ...bodyFont, bold: level === 1 })],
+    children: [...linedRuns(text, balancedLines(text, TEXT_WIDTH - left - TOC_RIGHT, BODY, level === 1 ? "b" : "r"), fmt),
+      new TextRun({ children: [new Tab(), page || ""], ...fmt })],
   });
 }
 
@@ -340,10 +672,11 @@ if (!FINAL) {
   front.push(center([new TextRun({ text: "Édition vérifiable, où chaque chiffre ouvre sa page source : ", ...smallFont, color: "555555" }),
     new ExternalHyperlink({ link: WEB, children: [new TextRun({ text: WEB, ...smallFont, style: "Hyperlink" })] })], { line: 240 }));
 }
-// ---- la page blanche qui suit la couverture (§ 5.3)
-front.push(pageBreak(), blank(), pageBreak());
+// ---- la page blanche qui suit la couverture (§ 5.3) : un paragraphe vide qui ouvre sa page ; les remerciements,
+// la suivante. Chaque saut de page est porté par ce qui ouvre la page, jamais par un paragraphe de saut.
+front.push(new Paragraph({ pageBreakBefore: true, spacing: { after: 0, line: LINE }, children: [] }));
 // ---- remerciements (§ 5.3) : sobres, écrits par le groupe
-front.push(heading("Remerciements", 1, { toc: false }));
+front.push(heading("Remerciements", 1, { toc: false, newPage: true }));
 const thanks = prose("remerciements");
 if (thanks) front.push(...renderBlocks(thanks.blocks));
 else if (!FINAL) front.push(placeholder("[À rédiger] 08_Livrables/texte/remerciements.md : des remerciements sobres, à Veolia et aux personnes qui ont éclairé le travail."));
@@ -408,8 +741,8 @@ const recoSigned = signature("recommandation");
 if (recoSigned) body.push(p(recoSigned, { run: { italics: true } }), blank());
 if (reco) body.push(...renderBlocks(reco.blocks, { part }));
 else if (!FINAL) body.push(placeholder("[À rédiger] 08_Livrables/texte/recommandation.md : ce que nous recommandons, ce que cela coûte et à qui, ce qui nous ferait changer d'avis. Chiffres par jeton."));
+body.push(captionAbove(`Tableau ${part}.1 — Les indicateurs de la réponse, calculés dans le classeur du groupe à partir des chiffres du registre (${DATA.n_figures} lignes sourcées).`));
 body.push(table(["Indicateur", "Valeur", "Ce qu'il faut en lire"], DATA.tiles.map((t) => [t[0], t[1], t[2]]), [3200, 1600, 4272], [1]));
-body.push(caption(`Tableau ${part}.1 — Les indicateurs de la réponse, calculés dans le classeur du groupe à partir des chiffres du registre (${DATA.n_figures} lignes sourcées).`));
 
 // ---- conclusion (§ 4.5) : les points forts à retenir
 body.push(heading("Conclusion", 1, { newPage: true }));
@@ -421,17 +754,32 @@ else if (!FINAL) {
 }
 
 // ---- bibliographie raisonnée (§ 4.6, § 5.7.3) : les documents cités, par type de source, puis par auteur
+// Une référence : « Auteur (année), « Titre », site, adresse, consulté le J mois AAAA. » L'adresse est un lien, imprimé
+// comme le texte ; elle peut se couper après / _ ? & = # et, après un trait d'union, devant un chiffre (une espace sans
+// chasse, que LibreOffice retire du PDF). « consulté le J mois AAAA. » reste d'un seul tenant : plus de « 2026. » seul
+// sur une ligne. Une référence d'une autre forme s'imprime telle quelle.
+function biblioRuns(entry) {
+  const m = /^(.*?, )(https?:\/\/\S+?)(, )(consulté le .*)$/.exec(entry);
+  if (!m) return [new TextRun({ text: entry, ...bodyFont })];
+  const [, head, url, comma, consulted] = m;
+  const shown = url.replace(/([\/_?&=#])(?=[^\/\s])|(-)(?=\d)/g, (x, a, b) => (a || b) + ZWSP);
+  return [
+    new TextRun({ text: head, ...bodyFont }),
+    new ExternalHyperlink({ link: url, children: [new TextRun({ text: shown, ...bodyFont, color: "000000", underline: { type: UnderlineType.NONE }, verbatim: true })] }),
+    new TextRun({ text: comma + consulted.replace(/ /g, NBSP), ...bodyFont }),
+  ];
+}
 body.push(heading("Bibliographie", 1, { newPage: true }));
 const biblio = DATA.bibliography || [];
 if (biblio.length) {
-  body.push(p("Les documents cités dans ce rapport, classés par type de source puis par ordre alphabétique d'auteur. Chaque référence donne la date de consultation ; les pages citées figurent dans les notes de bas de page et à l'annexe I."), blank());
+  body.push(p("Les documents cités dans ce rapport, classés par type de source puis par ordre alphabétique d'auteur. Chaque référence donne la date de consultation ; les pages citées figurent dans les notes de bas de page et à l'annexe I."));
   for (const group of biblio) {
-    body.push(runs([{ text: group.category, bold: true }]));
+    // la rubrique, liée à sa première référence ; le retour qui la précède est un espace avant, qui tombe en haut de page
+    body.push(runs([{ text: group.category, bold: true }], { spacing: { before: RETURN, after: 0, line: LINE } }));
     for (const entry of group.entries) {
-      body.push(new Paragraph({ spacing: { after: 0, line: LINE }, alignment: AlignmentType.LEFT, indent: { left: 567, hanging: 567 },
-        children: [new TextRun({ text: entry, ...bodyFont })] }));
+      body.push(new Paragraph({ keepLines: true, spacing: { after: 0, line: LINE }, alignment: AlignmentType.LEFT, indent: { left: 567, hanging: 567 },
+        children: biblioRuns(entry) }));
     }
-    body.push(blank());
   }
 } else if (!FINAL) {
   body.push(placeholder("La bibliographie se remplit d'elle-même : chaque document dont une ligne du registre est citée par jeton y prend sa place, par type de source puis par auteur."));
@@ -457,8 +805,7 @@ let annexNo = 0;
 function annex(title, children, legend) {
   const label = `Annexe ${ROMAN[annexNo++] || annexNo}`;
   const text = `${label} — ${title}`;
-  if (annexes.length) annexes.push(pageBreak());
-  annexes.push(heading(text, 1, { annex: true, label }));
+  annexes.push(heading(text, 1, { annex: true, label, newPage: annexes.length > 0 }));
   annexes.push(caption(legend));
   annexes.push(...children);
 }
@@ -471,25 +818,54 @@ const citedIds = new Set();
     for (const k of ["blocks", "inlines", "items", "rows"]) if (node[k]) walk(node[k]);
   }
 })(Object.values(TEXTS));
+// Les lignes sur lesquelles repose une conversion imprimée (le taux qui convertit une cible citée) : le lecteur les
+// tient pour citées, l'annexe I les reprend avec les autres.
+(DATA.cited_extra || []).forEach((id) => citedIds.add(String(id).split("-")[0]));
 const citedRows = DATA.register.filter((r) => citedIds.has(String(r[0])));
+// Une valeur trop longue pour sa colonne se coupe avant « par an », jamais entre « par » et « an ».
+const valueCell = (v) => String(v == null ? "" : v).replace(/ par (an|action)$/, ` par${NBSP}$1`);
+// La source d'une ligne d'annexe : la référence courte de la bibliographie (ou l'adresse d'une ligne sans fichier
+// joint), à défaut la citation entière du registre. Une adresse est un lien, comme en bibliographie : sa cible est
+// l'adresse telle quelle, celle que l'on suit ou que l'on copie, sans les espaces sans chasse qui la laissent se
+// couper. Ce qui s'imprime ne change pas d'un caractère : le texte protégé de la cellule (protect), dont l'adresse
+// est la part cliquable.
+function sourceCell(id, citation) {
+  const ref = (DATA.refs || {})[id] || citation || "—";
+  const m = /^(https?:\/\/\S+?)(, consulté le .*)?$/.exec(ref);
+  if (!m) return ref;
+  const tail = m[2] || "", printed = protect(ref);
+  return [{ kind: "address", url: m[1], text: printed.slice(0, printed.length - protect(tail).length) },
+    { kind: "text", text: tail }].filter((r) => r.text);
+}
+// Le montant d'une opération ou d'une cible tient en une cellule, devise comprise ; un générateur plus ancien
+// ne la fournit pas : la valeur et la devise du registre, telles quelles.
+// Une mention sans chiffre (« non communiqué ») tient sur une ligne : la colonne s'élargit pour elle.
+const amountCell = (shown, value, currency) => {
+  const text = String((shown !== undefined && shown !== null ? shown : [value, currency].filter(Boolean).join(" ")) || "—");
+  return /\d/.test(text) ? text : text.replace(/ /g, NBSP);
+};
 annex("Registre des chiffres cités", [
   ...(citedRows.length
-    ? [table(["ID", "Chiffre", "Valeur", "Période", "Source (voir la bibliographie)", "Rôle", "Relu"],
-        citedRows.map((r) => [r[0], r[1], (DATA.displays || {})[r[0]] || r[2], r[3], (DATA.refs || {})[r[0]] || r[4], r[5], r[6] || "—"]),
+    ? [table(["ID", "Chiffre", "Valeur", "Période", "Source", "Rôle", "Relu"],
+        citedRows.map((r) => [r[0], r[1], valueCell((DATA.displays || {})[r[0]] || r[2]), r[3], sourceCell(r[0], r[4]), r[5], r[6] || "—"]),
         [600, 2900, 1100, 1000, 2272, 600, 600], [2])]
     : [FINAL ? p("Aucun chiffre cité.") : placeholder(`Aucun chiffre encore cité par jeton : l'annexe se remplira des lignes citées parmi les ${DATA.register.length} du registre.`)]),
 ], `${citedRows.length} chiffres cités dans le texte, sur ${DATA.register.length} au registre du groupe. Chaque source renvoie à la bibliographie, qui donne le titre, l'adresse et la date de consultation ; le registre garde le fichier joint. « Relu » vide : un seul membre a lu la page.`);
 if (DATA.cited_deals && DATA.cited_deals.length) {
+  // [id, opération, montant, devise, citation, relecture, montant affiché]
   annex("Opérations citées", [
-    table(["ID", "Opération", "Montant", "Devise", "Source", "Relecture"],
-      DATA.cited_deals.map((d) => [d[0], d[1], d[2], d[3], d[4], d[5]]), [600, 2600, 1000, 700, 3172, 1000], [2]),
-  ], "Les opérations du registre deals.csv citées dans le texte par leur jeton [D…].");
+    table(["ID", "Opération", "Montant", "Source", "Relecture"],
+      DATA.cited_deals.map((d) => [d[0], d[1], amountCell(d[6], d[2], d[3]), sourceCell(d[0], d[4]), d[5]]), [600, 3400, 1400, 2672, 1000], [2]),
+  ], "Les opérations du registre deals.csv citées dans le texte par leur jeton [D…]. Le montant est donné dans la devise de sa source ; un tiret : le registre n'en porte pas. Chaque source renvoie à la bibliographie.");
 }
 if (DATA.cited_targets && DATA.cited_targets.length) {
+  // [id, nom, valeur estimée, devise, citation, relecture, en euros, taux, valeur affichée] : « en euros » et « taux »
+  // quand le classeur convertit
+  const euros = (t) => (t[6] ? `${t[6]}${t[7] ? ` (${t[7]})` : ""}` : "—");
   annex("Cibles citées", [
-    table(["ID", "Cible", "Valeur estimée", "Devise", "Source", "Relecture"],
-      DATA.cited_targets.map((t) => [t[0], t[1], t[2], t[3], t[4], t[5]]), [600, 2600, 1000, 700, 3172, 1000], [2]),
-  ], "Les cibles du registre targets.csv citées dans le texte par leur jeton [T…].");
+    table(["ID", "Cible", "Valeur estimée", "En euros (taux, date)", "Source", "Relecture"],
+      DATA.cited_targets.map((t) => [t[0], t[1], amountCell(t[8], t[2], t[3]), euros(t), sourceCell(t[0], t[4]), t[5]]), [600, 1800, 1300, 1900, 2472, 1000], [2]),
+  ], "Les cibles du registre targets.csv citées dans le texte par leur jeton [T…]. « Valeur estimée » : dans la devise de sa source ; un tiret quand le registre n'en porte pas. « En euros » : la valeur convertie par le classeur du groupe (onglet Cibles), avec le taux employé, qui est une ligne datée du registre ou l'hypothèse de change du groupe ; un tiret quand le classeur ne convertit pas (prix en euros, non publié ou sans taux). Chaque source renvoie à la bibliographie ; une adresse seule : la ligne n'a pas de fichier joint au registre.");
 }
 annex("La fourchette de capacité pour les autres périmètres", [
   p("Le nombre que les groupes « technologies de l'eau », « déchets dangereux » et « bioénergie » doivent respecter, dans ses trois scénarios et sous ses deux plafonds."), blank(),
@@ -547,14 +923,23 @@ if (CONTROLS && !FINAL) {
   list("Pages liminaires à écrire", [...(CONTROLS.cover_missing || []).map((x) => `couverture : ${x}`), ...(CONTROLS.front_missing || [])], (x) => x);
   const uncited = Object.entries(CONTROLS.uncited || {});
   list("Chiffres du registre jamais cités par leur rôle", uncited, ([role, ids]) => `rôle ${role} : ${ids.length}${ids.length ? " — " + ids.slice(0, 20).join(", ") + (ids.length > 20 ? " …" : "") : ""}`);
+  // ce que dataroom report a relevé sur le PDF (layout_findings) : fins de partie, titres, tableaux, sommaire, notes
+  const layout = CONTROLS.layout || {};
+  if (layout.findings) {
+    list(`Mise en page, relevée sur le PDF (${layout.findings.length})`, layout.findings, (f) => `${f.label} — ${f.text}`);
+    if ((layout.page_breaks || []).length) list("Titres qui ouvrent une page (LibreOffice les laissait seuls en bas de la précédente)", layout.page_breaks, (t) => `« ${t} »`);
+    const sizes = (layout.page_number_pt || []).map((x) => `${String(x).replace(".", ",")} pt`).join(", ");
+    controls.push(p(`Polices du PDF : ${(layout.fonts || []).join(", ") || "—"} ; numéro de page : ${sizes || "—"}.`, { run: { italics: true } }));
+  }
 }
 
 // =================================================================== le document
 const pageProps = (pageNumbers) => ({ page: { size: { width: PAGE_W, height: PAGE_H }, margin: { top: MARGIN, right: MARGIN, bottom: MARGIN, left: MARGIN }, ...(pageNumbers ? { pageNumbers } : {}) } });
-const numberFooter = () => new Footer({ children: [new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 0 },
-  children: [new TextRun({ children: [PageNumber.CURRENT], ...smallFont })] })] });
-const textFooter = (text) => new Footer({ children: [new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 0 },
-  children: [new TextRun({ text, ...smallFont, color: "777777" })] })] });
+// Le pied de page : 10 pt posés sur le paragraphe (style Footer et marque de paragraphe), que le champ PAGE reprend
+// (LibreOffice ignore la taille portée par le run du champ).
+const footerParagraph = (children) => new Paragraph({ style: "Footer", alignment: AlignmentType.CENTER, spacing: { after: 0 }, run: smallFont, children });
+const numberFooter = () => new Footer({ children: [footerParagraph([new TextRun({ children: [PageNumber.CURRENT], ...smallFont })])] });
+const textFooter = (text) => new Footer({ children: [footerParagraph([new TextRun({ text, ...smallFont, color: "777777" })])] });
 const headingStyle = (id, name, level) => ({
   id, name, basedOn: "Normal", next: "Normal", quickFormat: true,
   run: { font: FONT, size: BODY, bold: true, color: "000000", italics: false },
@@ -562,18 +947,20 @@ const headingStyle = (id, name, level) => ({
 });
 
 const sections = [
-  { properties: pageProps(null), footers: { default: textFooter("") }, children: front },
-  { properties: pageProps({ start: 1, formatType: NumberFormat.DECIMAL }), footers: { default: numberFooter() }, children: body },
-  { properties: pageProps({ start: 1, formatType: NumberFormat.UPPER_ROMAN }), footers: { default: numberFooter() }, children: annexes },
+  { properties: pageProps(null), footers: { default: textFooter("") }, children: settle(front) },
+  { properties: pageProps({ start: 1, formatType: NumberFormat.DECIMAL }), footers: { default: numberFooter() }, children: settle(body) },
+  { properties: pageProps({ start: 1, formatType: NumberFormat.UPPER_ROMAN }), footers: { default: numberFooter() }, children: settle(annexes) },
 ];
-if (controls.length) sections.push({ properties: pageProps(null), footers: { default: textFooter("Contrôle — hors version finale") }, children: controls });
+if (controls.length) sections.push({ properties: pageProps(null), footers: { default: textFooter("Contrôle — hors version finale") }, children: settle(controls) });
 
 const doc = new Document({
   creator: "Groupe sujet 2",
   title: DATA.title,
   styles: {
-    default: { document: { run: bodyFont, paragraph: { spacing: { line: LINE, after: 0 }, alignment: AlignmentType.JUSTIFIED } } },
+    // le contrôle des veuves et orphelines, explicite : sans lui, ni Word ni LibreOffice ne l'appliquent à un .docx
+    default: { document: { run: bodyFont, paragraph: { spacing: { line: LINE, after: 0 }, alignment: AlignmentType.JUSTIFIED, widowControl: true } } },
     paragraphStyles: [
+      { id: "Footer", name: "footer", basedOn: "Normal", run: { font: FONT, size: SMALL }, paragraph: { spacing: { line: 240, after: 0 }, alignment: AlignmentType.CENTER } },
       headingStyle("Heading1", "Heading 1", 0),
       headingStyle("Heading2", "Heading 2", 1),
       headingStyle("Heading3", "Heading 3", 2),

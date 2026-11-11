@@ -227,7 +227,25 @@ button.ascii-ligne:hover { border-color: var(--ink); }
 .proof .pbox.charge .psheet { visibility: hidden; }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
-@media print { .is42-bar { display: none !important; } .ascii-scene { display: none !important; } }
+/* ---------------------------------------------------------------- l'impression (dossiers, fiches, annexe des sources)
+ * Une feuille A4 aux marges du rapport (2,5 cm, sans le retrait d'écran du contenu), sans la barre ni Ascii ; la palette
+ * claire même depuis le thème sombre (le navigateur n'imprime pas les fonds : une encre claire disparaîtrait) ; une
+ * ligne de tableau, une carte ou une tuile ne se coupe pas entre deux pages ; l'en-tête d'un tableau se répète en haut de
+ * chaque page ; un tableau qui défile à l'écran s'imprime en entier. Les <details> s'ouvrent le temps de l'impression
+ * (is42.PRINT_DETAILS). */
+@page { size: A4; margin: 2.5cm; }
+@media print {
+  :root:root, :root:root[data-theme] {   /* :root doublé : plus fort que les sélecteurs du thème sombre */
+    --paper: #ffffff; --paper-2: #f4f2ee; --ink: #151512; --mut: #55524c; --faint: #66635a;
+    --hair: #15151224; --hair-2: #1515124d; --pig: #1a22c4; --pig-fg: #eeebe4; color-scheme: light;
+  }
+  .is42-bar, .ascii-scene { display: none !important; }
+  body .wrap, body > main { padding-inline: 0; max-width: none; }
+  tr, .card, .tile, .panel, .callout, .target, .verdict { break-inside: avoid; page-break-inside: avoid; }
+  thead { display: table-header-group; }
+  .tw, .tbl { overflow: visible !important; }
+  h1, h2, h3, h4, summary { break-after: avoid; page-break-after: avoid; }
+}
 
 /* Ascii plat — le logo qui s'éveille, et le loader par pas de 60°.
  * Usage : coller ascii-flat.svg en ligne (<svg …>) ; la couleur du corps = currentColor.
@@ -260,7 +278,7 @@ button.ascii-ligne:hover { border-color: var(--ink); }
 @media (prefers-reduced-motion: reduce) {
   .ascii-eveil .ascii-yeux, .ascii-eveil:hover .ascii-corps, .ascii-loader .ascii-plat, .ascii-vivant .ascii-yeux-points { animation: none; transition: none; }
 }
-</style><script>(function(){try{var t=localStorage.getItem("is42-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script><meta name="robots" content="noindex, nofollow">
+</style><script>(function(){try{var t=localStorage.getItem("is42-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script><script>(function(){var opened=[];addEventListener("beforeprint",function(){document.querySelectorAll("details:not([open])").forEach(function(d){if(d.closest(".is42-bar"))return;d.open=true;opened.push(d)})});addEventListener("afterprint",function(){opened.forEach(function(d){d.open=false});opened=[]})})();</script><meta name="robots" content="noindex, nofollow">
 <title>Dossiers du sujet 2</title>
 <style>
 /* Layout : une note d'analyste — synthèse chiffrée en tête, puis un dossier par rôle, texte à gauche, chiffres sourcés à droite.
@@ -504,7 +522,7 @@ document.querySelectorAll(".is42-menu .sheet a").forEach(function(a){a.addEventL
       ses chiffres et ce qui manque.</li>
     </ul>
   </section>
-  <p class="foot">Sources : registre de la dataroom (00_Admin/register.csv), 851 chiffres au 10/11/2026, documents publics
+  <p class="foot">Sources : registre de la dataroom (00_Admin/register.csv), 851 chiffres au 11/11/2026, documents publics
   uniquement. Chaque chiffre vient du registre ou d'une cellule du classeur ; seule exception, le multiple de 18,6x d'Enviri, cité
   d'après sa publication et signalé comme non encore versé. Les hypothèses du groupe sont dans l'onglet Hypothèses du classeur.</p>
 </div>

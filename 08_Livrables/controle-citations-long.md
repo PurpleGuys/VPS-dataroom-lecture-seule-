@@ -9,12 +9,12 @@
 | role-5.md | 10 | 2941 | — |
 | role-6.md | 12 | 3091 | — |
 | corps, du sommaire à la première annexe | 86 | 20780 | — (édition de référence) |
-| document entier, annexes et contrôle compris | 119 | | — |
+| document entier, annexes et contrôle compris | 117 | | — |
 
 ## Jetons inconnus (0)
 - aucun
 
-## Lignes citées que personne n'a relues (573)
+## Lignes citées que personne n'a relues (575)
 - role-1.md : F2 — GreenUp : rotation NETTE d'actifs, environ
 - role-1.md : F745 — GreenUp : croissance, montant net par an (investissements organiques, priorité aux boosters, plus acquisitions petites et moyennes, moins cessions)
 - role-1.md : F129 — GreenUp : investissements nets de croissance 2024-2027, boosters et strongholds réunis (« 2 x Impact 2023 »)
@@ -550,6 +550,7 @@
 - role-6.md : F759 — Gains d'efficacité opérationnelle bruts, neuf mois
 - role-6.md : F12 — Objectif GreenUp : EBITDA ≥
 - role-6.md : F597 — Cours de clôture de l'action Veolia
+- role-6.md : F615 — Taux de référence BCE : dollars canadiens pour un euro
 - recommandation.md : F726 — Trajectoire de levier présentée au T3 : légèrement au-dessus de 3x fin 2026, retour en 2027 à au plus
 - recommandation.md : F48 — Clean Earth : multiple VE / EBITDA 2026e après synergies en régime de croisière
 - recommandation.md : T4 — Triumvirate Environmental
@@ -571,6 +572,7 @@
 - recommandation.md : F25 — Programme de cessions, à réaliser d'ici mi-2028 : plus de
 - recommandation.md : F420 — GreenUp : gains d'efficacité par an
 - recommandation.md : F759 — Gains d'efficacité opérationnelle bruts, neuf mois
+- recommandation.md : F41 — Clean Earth : prix d'acquisition
 - outils-ia.md : F98 — Clean Earth : goodwill préliminaire (affectation du prix non réalisée au 30/06/2026)
 - outils-ia.md : F41 — Clean Earth : prix d'acquisition
 - outils-ia.md : F129 — GreenUp : investissements nets de croissance 2024-2027, boosters et strongholds réunis (« 2 x Impact 2023 »)
@@ -618,3 +620,66 @@
 - conclusion.md : 18 phrase(s) sur 48 au-delà de 12 mots
 - couverture : le logo de l'EDHEC (08_Livrables/scripts/logo-edhec.png) manque
 - couverture : le nom du responsable (roles.yaml : encadrant) manque
+
+## Années des références (54)
+Ces documents cités n'ont pas de date de publication dans leur note (`date_published`) : l'année de leur référence est devinée. Lire la date sur le document et l'écrire dans la note.
+- Arcwood Environmental (2025) — 05_Commercial_Strategy/arcwood-rebrand-2025-03-18.html : lue dans le titre
+- AVR (2025) — 01_Financial/avr-annual-report-2024-resolve-web-1.pdf : lue dans l'adresse
+- Banque centrale européenne (2026) — 01_Financial/bce-taux-eur-cad-2026-10-06.html : année de la consultation
+- BIC Magazine (2022) — 05_Commercial_Strategy/bic-us-ecology-republic-2022.html : lue dans le titre
+- Clean Harbors (2024) — 05_Commercial_Strategy/clean-harbors-hepaco-2024-03-25.html : lue dans l'adresse
+- Clean Harbors (2026a) — 05_Commercial_Strategy/clean-harbors-q2-2026-2026-07-29.html : lue dans l'adresse
+- Clean Harbors (2026b) — 05_Commercial_Strategy/clean-harbors-enviroserve-esh-2026-10-05.html : lue dans le titre
+- Clean Harbors (2026c) — 05_Commercial_Strategy/clean-harbors-enviroserve-2026-08-12.html : lue dans le titre
+- Clean Harbors, Inc. (2025) — 01_Financial/clean-harbors-10-k-2025.pdf : lue dans le titre
+- Cleanaway Waste Management Limited (2026) — 05_Commercial_Strategy/cleanaway-eqt-proposal-2026-08-13.pdf : année de la consultation
+- Enva (2026) — 05_Commercial_Strategy/enva-announces-agreement-to-be-acquired-by-i-squared-capital-from-exponent-enva-announces.html : année de la consultation
+- Enviracore Services (2025) — 05_Commercial_Strategy/enviracore-boomer-2025-10-01.html : lue dans le titre
+- Enviracore Services (2026) — 05_Commercial_Strategy/enviracore-emi-2026-05-08.html : lue dans le titre
+- Enviri Corporation (2025) — 01_Financial/enviri-10-k-2025.pdf : lue dans le titre
+- Enviri Corporation (2026) — 01_Financial/enviri-q1-2026-results.html : lue dans l'adresse
+- EQT (PR Newswire) (2021) — 05_Commercial_Strategy/eqt-covanta-2021-07-14.html : lue dans le titre
+- Fortum / Summa Equity (Cision) (2024) — 05_Commercial_Strategy/fortum-summa-ng-group-2024-07-18.html : lue dans le titre
+- Gaw Capital Partners (2026) — 05_Commercial_Strategy/gaw-capital-koentec-2026-01-15.html : année de la consultation
+- Heritage-Crystal Clean (2023) — 05_Commercial_Strategy/crystal-clean-jfl-2023-07-19.html : lue dans le titre
+- Indaver (2025) — 01_Financial/indaver_dzr_2025_en.pdf : lue dans l'adresse
+- Latham & Watkins (conseil de GFL) (2025) — 05_Commercial_Strategy/gfl-es-latham-2025-01-07.html : lue dans l'adresse
+- Montrose Environmental Group, Inc. (2026) — 01_Financial/montrose-8k-fy2025-results.pdf : lue dans le titre
+- Moody's Ratings (2026) — 01_Financial/credit_opinion-veolia-environnement-sa-04may2026.pdf : lue dans l'adresse
+- Platinum Equity (2026) — 05_Commercial_Strategy/platinum-equity-to-sell-global-environmental-services-business-urbaser-to-blackstone-and-e.html : année de la consultation
+- Pulse 2.0 (2026) — 05_Commercial_Strategy/pulse2-clean-harbors-terra-nova-2026-05-14.html : année de la consultation
+- Reuters (via Yahoo Finance) (2025) — 05_Commercial_Strategy/triumvirate-berkshire-2025-02-04.html : lue dans le titre
+- S&P Global Ratings (2026) — 01_Financial/ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf : lue dans l'adresse
+- Seaside Equity Partners (2025) — 05_Commercial_Strategy/enviracore-lancement-2025-09-30.html : lue dans le titre
+- Seaside Equity Partners (2026) — 05_Commercial_Strategy/seaside-criteres-2026-10-07.html : lue dans le titre
+- SUEZ (2022) — 05_Commercial_Strategy/cp-suez-reprend-essentiel-activites-secteur-dechets-dangereux-france-fr-30nov2022.pdf : lue dans l'adresse
+- Séché Environnement (2026) — 01_Financial/seche_environnement_deu_2025_fr.pdf : lue dans l'adresse
+- Tradebe Environmental Services (2026) — 05_Commercial_Strategy/tradebe-refuerza-su-presencia-en-reino-unido-yentra-en-el-mercado-irlandes-mediante-la-adq.html : année de la consultation
+- Veolia Environnement (diffusion réglementée, DILA/AMF) (2026) — 01_Financial/fcbwr168355_20260623.pdf : lue dans l'adresse
+- Veolia Environnement SA (2024) — 01_Financial/en_master_greenup_strategy-day_v270324.pdf : lue dans l'adresse
+- Veolia Environnement SA (2025a) — 05_Commercial_Strategy/pr-2024-annual-results-veolia.pdf : lue dans l'adresse
+- Veolia Environnement SA (2025b) — 01_Financial/finance_2024_full_year_results_presentation.pdf : lue dans l'adresse
+- Veolia Environnement SA (2025c) — 01_Financial/veolia_clean_earth_investor_presentation.pdf : lue dans l'adresse
+- Veolia Environnement SA (2025d) — 01_Financial/finance_consolidated_financial_statement_2024.pdf : lue dans l'adresse
+- Veolia Environnement SA (2025e) — 01_Financial/rapport-de-gestion-va-t3_2025_0.pdf : lue dans l'adresse
+- Veolia Environnement SA (2025f) — 01_Financial/finance_veolia_q1_presentation_2025.pdf : lue dans l'adresse
+- Veolia Environnement SA (2025g) — 05_Commercial_Strategy/pr-hazardous-waste-treatment-veolia.pdf : lue dans l'adresse
+- Veolia Environnement SA (2026a) — 01_Financial/finance_veolia_2025_full_year_results_presentation_0.pdf : lue dans l'adresse
+- Veolia Environnement SA (2026b) — 05_Commercial_Strategy/veolia-2026-first-half-results.pdf : lue dans l'adresse
+- Veolia Environnement SA (2026c) — 01_Financial/veolia_finance_presentation_h1_2026_results.pdf : lue dans l'adresse
+- Veolia Environnement SA (2026d) — 01_Financial/finance_veolia_9m_2026_key_figures_presentation.pdf : lue dans l'adresse
+- Veolia Environnement SA (2026e) — 01_Financial/veolia_finance_amendment_urd_2025.pdf : lue dans l'adresse
+- Veolia Environnement SA (2026f) — 01_Financial/finance_veolia_consolidated_financial_statements_31-12-25.pdf : lue dans l'adresse
+- Veolia Environnement SA (2026g) — 05_Commercial_Strategy/annual-resultats-2025.pdf : lue dans l'adresse
+- Veolia Environnement SA (2026h) — 01_Financial/operating_and_financial_review_consolidated_financial_statements_q1_2026.pdf : lue dans l'adresse
+- Veolia Environnement SA (2026i) — 01_Financial/finance_veolia_operating_financial_review_q3_2026.pdf : lue dans l'adresse
+- Veolia Environnement SA (2026j) — 01_Financial/finance_veolia_q1_2026_results_presentation.pdf : lue dans l'adresse
+- Veolia Environnement SA (2026k) — 01_Financial/finance_veolia_urd_2025_en.pdf : lue dans l'adresse
+- Veolia Environnement SA (2026l) — 01_Financial/veolia-amendement-deu-2025-s1-2026.pdf : lue dans l'adresse
+- WM (Waste Management) (2024) — 05_Commercial_Strategy/wm-stericycle-2024-06-03.html : lue dans l'adresse
+
+## Mise en page
+- polices du PDF : LiberationSerif, LiberationSerif-Bold, LiberationSerif-Italic ; numéro de page : 10 pt
+- fin de partie — page 16 (PDF p. 19) : « 1. GreenUp annonce des enveloppes nettes, qui ne … » finit par 9 lignes sur sa dernière page
+- fin de partie — page 56 (PDF p. 59) : « 5. Les passifs environnementaux d'une acquisition fixent le … » finit par 9 lignes sur sa dernière page
+- fin de partie — page 76 (PDF p. 79) : « Conclusion » finit par 2 lignes sur sa dernière page
