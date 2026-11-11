@@ -2,19 +2,19 @@
 
 | Section | Pages | Mots | Cible |
 |---|---|---|---|
-| role-1.md | 10 | 2971 | — |
+| role-1.md | 9 | 2845 | — |
 | role-2.md | 9 | 2919 | — |
 | role-3.md | 11 | 2823 | — |
 | role-4.md | 10 | 2909 | — |
-| role-5.md | 10 | 2941 | — |
-| role-6.md | 12 | 3091 | — |
-| corps, du sommaire à la première annexe | 86 | 20780 | — (édition de référence) |
-| document entier, annexes et contrôle compris | 117 | | — |
+| role-5.md | 10 | 2947 | — |
+| role-6.md | 12 | 3135 | — |
+| corps, du sommaire à la première annexe | 84 | 20659 | — (édition de référence) |
+| document entier, annexes et contrôle compris | 115 | | — |
 
 ## Jetons inconnus (0)
 - aucun
 
-## Lignes citées que personne n'a relues (575)
+## Lignes citées que personne n'a relues (578)
 - role-1.md : F2 — GreenUp : rotation NETTE d'actifs, environ
 - role-1.md : F745 — GreenUp : croissance, montant net par an (investissements organiques, priorité aux boosters, plus acquisitions petites et moyennes, moins cessions)
 - role-1.md : F129 — GreenUp : investissements nets de croissance 2024-2027, boosters et strongholds réunis (« 2 x Impact 2023 »)
@@ -86,7 +86,6 @@
 - role-1.md : F788 — Déchets dangereux (métier) : croissance tuck-ins compris, hors Clean Earth, à périmètre et change constants
 - role-1.md : F814 — Déchets dangereux (métier) : variation du chiffre d'affaires à change constant, effet de périmètre compris
 - role-1.md : F749 — Déchets dangereux (métier) : part du chiffre d'affaires du groupe
-- role-1.md : F771 — Chiffre d'affaires de Veolia aux États-Unis, pro forma Clean Earth (Water Technologies compris, année 2025)
 - role-1.md : F132 — Cessions nouvelles d'actifs matures dans les 2 ans après la clôture de Clean Earth, plus de
 - role-1.md : F848 — Cessions d'actifs au titre de la rotation GreenUp : montant total (dont plus de 2 Md€ dans les deux ans suivant la clôture de Clean Earth)
 - role-1.md : F159 — Moody's : cessions envisagées d'actifs non stratégiques ou matures, environ
@@ -507,8 +506,11 @@
 - role-6.md : F617 — Seaside Equity Partners : EBITDA visé pour une plateforme (fonds Flagship), haut
 - role-6.md : F702 — Koentec : prix d'acquisition
 - role-6.md : F679 — Cleanaway (EQT) : valeur d'entreprise, environ
+- role-6.md : F856 — Taux de référence BCE du 13/08/2026 : dollars australiens pour un euro
 - role-6.md : F674 — Cleanaway (EQT) : multiple VE / EBIT FY26, environ
 - role-6.md : F611 — Fortum Recycling and Waste (NG Group, Summa Equity) : prix, dette et trésorerie exclues, environ
+- role-6.md : T18 — Augean
+- role-6.md : F857 — Taux de référence BCE du 22/09/2021 : livres sterling pour un euro
 - role-6.md : D55 — Enva (déchets dangereux et spéciaux, Royaume-Uni et Irlande)
 - role-6.md : T16 — Indaver
 - role-6.md : T17 — Tradebe Environmental Services
@@ -551,6 +553,7 @@
 - role-6.md : F12 — Objectif GreenUp : EBITDA ≥
 - role-6.md : F597 — Cours de clôture de l'action Veolia
 - role-6.md : F615 — Taux de référence BCE : dollars canadiens pour un euro
+- role-6.md : T13 — Cleanaway — Oils & Technical Services and Health Services
 - recommandation.md : F726 — Trajectoire de levier présentée au T3 : légèrement au-dessus de 3x fin 2026, retour en 2027 à au plus
 - recommandation.md : F48 — Clean Earth : multiple VE / EBITDA 2026e après synergies en régime de croisière
 - recommandation.md : T4 — Triumvirate Environmental
@@ -603,29 +606,31 @@
 - rôle 3 (Capacité et sensibilité) : 125 — F4, F5, F7, F9, F13, F21, F24, F27, F53, F64, F65, F67, F68, F69, F72, F73, F75, F79, F80, F81 …
 - rôle 4 (L'écart et les comparables) : 106 — F37, F38, F58, F94, F95, F96, F97, F160, F161, F162, F168, F169, F170, F171, F172, F173, F174, F175, F176, F177 …
 - rôle 5 (Le coût ESG) : 33 — F488, F489, F494, F495, F496, F497, F498, F501, F502, F503, F504, F505, F506, F513, F514, F515, F516, F517, F518, F519 …
-- rôle 6 (Cibles, puis synthèse) : 79 — F76, F77, F209, F210, F212, F215, F216, F443, F474, F475, F476, F477, F480, F481, F482, F484, F485, F486, F487, F526 …
+- rôle 6 (Cibles, puis synthèse) : 77 — F76, F77, F209, F210, F212, F215, F216, F443, F474, F475, F476, F477, F480, F481, F482, F484, F485, F486, F487, F526 …
 
 ## Ce que la méthode du rapport mesure
-- corps du rapport : 124 503 caractères, espaces compris, pour 50 000 demandés
-- role-1.md : 83 phrase(s) sur 251 au-delà de 12 mots
+- corps du rapport : 123 738 caractères, espaces compris, pour 50 000 demandés
+- role-1.md : 77 phrase(s) sur 241 au-delà de 12 mots
 - role-2.md : 95 phrase(s) sur 234 au-delà de 12 mots
 - role-3.md : 78 phrase(s) sur 237 au-delà de 12 mots
 - role-4.md : 75 phrase(s) sur 247 au-delà de 12 mots
-- role-5.md : 86 phrase(s) sur 240 au-delà de 12 mots
-- role-6.md : 94 phrase(s) sur 219 au-delà de 12 mots
+- role-5.md : 86 phrase(s) sur 241 au-delà de 12 mots
+- role-6.md : 96 phrase(s) sur 221 au-delà de 12 mots
 - recommandation.md : 28 phrase(s) sur 79 au-delà de 12 mots
 - outils-ia.md : 17 phrase(s) sur 35 au-delà de 12 mots
 - remerciements.md : 2 phrase(s) sur 6 au-delà de 12 mots
 - introduction.md : 26 phrase(s) sur 71 au-delà de 12 mots
-- conclusion.md : 18 phrase(s) sur 48 au-delà de 12 mots
+- conclusion.md : 16 phrase(s) sur 44 au-delà de 12 mots
 - couverture : le logo de l'EDHEC (08_Livrables/scripts/logo-edhec.png) manque
 - couverture : le nom du responsable (roles.yaml : encadrant) manque
 
-## Années des références (54)
+## Années des références (57)
 Ces documents cités n'ont pas de date de publication dans leur note (`date_published`) : l'année de leur référence est devinée. Lire la date sur le document et l'écrire dans la note.
 - Arcwood Environmental (2025) — 05_Commercial_Strategy/arcwood-rebrand-2025-03-18.html : lue dans le titre
 - AVR (2025) — 01_Financial/avr-annual-report-2024-resolve-web-1.pdf : lue dans l'adresse
-- Banque centrale européenne (2026) — 01_Financial/bce-taux-eur-cad-2026-10-06.html : année de la consultation
+- Banque centrale européenne (2021) — 01_Financial/bce-taux-de-reference-2021-09-22.pdf : lue dans l'adresse
+- Banque centrale européenne (2026a) — 01_Financial/bce-taux-eur-cad-2026-10-06.html : année de la consultation
+- Banque centrale européenne (2026b) — 01_Financial/bce-taux-de-reference-2026-08-13.pdf : lue dans l'adresse
 - BIC Magazine (2022) — 05_Commercial_Strategy/bic-us-ecology-republic-2022.html : lue dans le titre
 - Clean Harbors (2024) — 05_Commercial_Strategy/clean-harbors-hepaco-2024-03-25.html : lue dans l'adresse
 - Clean Harbors (2026a) — 05_Commercial_Strategy/clean-harbors-q2-2026-2026-07-29.html : lue dans l'adresse
@@ -677,9 +682,8 @@ Ces documents cités n'ont pas de date de publication dans leur note (`date_publ
 - Veolia Environnement SA (2026k) — 01_Financial/finance_veolia_urd_2025_en.pdf : lue dans l'adresse
 - Veolia Environnement SA (2026l) — 01_Financial/veolia-amendement-deu-2025-s1-2026.pdf : lue dans l'adresse
 - WM (Waste Management) (2024) — 05_Commercial_Strategy/wm-stericycle-2024-06-03.html : lue dans l'adresse
+- Yorkshire Evening Post (2026) — 05_Commercial_Strategy/winning-bid-made-in-battle-to-acquire-waste-management-company-3394815-winning-bid-made-in.html : année de la consultation
 
 ## Mise en page
 - polices du PDF : LiberationSerif, LiberationSerif-Bold, LiberationSerif-Italic ; numéro de page : 10 pt
-- fin de partie — page 16 (PDF p. 19) : « 1. GreenUp annonce des enveloppes nettes, qui ne … » finit par 9 lignes sur sa dernière page
-- fin de partie — page 56 (PDF p. 59) : « 5. Les passifs environnementaux d'une acquisition fixent le … » finit par 9 lignes sur sa dernière page
-- fin de partie — page 76 (PDF p. 79) : « Conclusion » finit par 2 lignes sur sa dernière page
+- rien à reprendre

@@ -2,14 +2,14 @@
 
 | Section | Pages | Mots | Cible |
 |---|---|---|---|
-| role-1.md | 6 | 1562 | 6-9 |
+| role-1.md | 6 | 1538 | 6-9 |
 | role-2.md | 6 | 1627 | 6-9 |
 | role-3.md | 7 | 1602 | 6-9 |
-| role-4.md | 7 | 1616 | 6-9 |
-| role-5.md | 6 | 1619 | 6-9 |
+| role-4.md | 6 | 1572 | 6-9 |
+| role-5.md | 6 | 1628 | 6-9 |
 | role-6.md | 7 | 1581 | 6-9 |
-| corps, du sommaire à la première annexe | 57 | 11971 | 50-60 |
-| document entier, annexes et contrôle compris | 79 | | — |
+| corps, du sommaire à la première annexe | 55 | 11888 | 50-60 |
+| document entier, annexes et contrôle compris | 77 | | — |
 
 ## Jetons inconnus (0)
 - aucun
@@ -312,17 +312,17 @@
 - rôle 6 (Cibles, puis synthèse) : 108 — F46, F47, F49, F50, F76, F77, F209, F210, F211, F212, F213, F214, F215, F216, F443, F444, F445, F473, F474, F475 …
 
 ## Ce que la méthode du rapport mesure
-- corps du rapport : 71 348 caractères, espaces compris, pour 50 000 demandés
-- role-1.md : 36 phrase(s) sur 129 au-delà de 12 mots
+- corps du rapport : 70 820 caractères, espaces compris, pour 50 000 demandés
+- role-1.md : 35 phrase(s) sur 127 au-delà de 12 mots
 - role-2.md : 53 phrase(s) sur 131 au-delà de 12 mots
 - role-3.md : 44 phrase(s) sur 131 au-delà de 12 mots
-- role-4.md : 38 phrase(s) sur 129 au-delà de 12 mots
-- role-5.md : 51 phrase(s) sur 126 au-delà de 12 mots
+- role-4.md : 38 phrase(s) sur 124 au-delà de 12 mots
+- role-5.md : 51 phrase(s) sur 127 au-delà de 12 mots
 - role-6.md : 48 phrase(s) sur 110 au-delà de 12 mots
 - recommandation.md : 19 phrase(s) sur 51 au-delà de 12 mots
 - outils-ia.md : 17 phrase(s) sur 35 au-delà de 12 mots
 - remerciements.md : 2 phrase(s) sur 6 au-delà de 12 mots
-- introduction.md : 19 phrase(s) sur 51 au-delà de 12 mots
+- introduction.md : 19 phrase(s) sur 49 au-delà de 12 mots
 - conclusion.md : 12 phrase(s) sur 33 au-delà de 12 mots
 - couverture : le logo de l'EDHEC (08_Livrables/scripts/logo-edhec.png) manque
 - couverture : le nom du responsable (roles.yaml : encadrant) manque
@@ -365,5 +365,4 @@ Ces documents cités n'ont pas de date de publication dans leur note (`date_publ
 
 ## Mise en page
 - polices du PDF : LiberationSerif, LiberationSerif-Bold, LiberationSerif-Italic ; numéro de page : 10 pt
-- fin de partie — page 6 (PDF p. 9) : « Introduction » finit par 2 lignes sur sa dernière page
-- fin de partie — page 32 (PDF p. 35) : « 4. Le booster déchets dangereux achète sa croissance … » finit par 5 lignes sur sa dernière page
+- rien à reprendre
