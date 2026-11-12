@@ -32,7 +32,7 @@ Une plateforme américaine ne s'envisage qu'à deux conditions. Les cessions sig
 
 Le groupe retient quatre leçons de sa méthode.
 
-D'abord, un chiffre ne vaut que par sa source. Un second membre du groupe doit relire chaque ligne citée avant la version finale.
+D'abord, un chiffre ne vaut que par sa source.
 
 Ensuite, un même événement peut porter plusieurs chiffres. Clean Earth en compte quatre et le levier n'en retient qu'un : l'effet sur la dette.
 

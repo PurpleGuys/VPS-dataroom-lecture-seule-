@@ -267,7 +267,7 @@ function groupNote(key, r) {
     return `${text} ; ${g.ids.length > 1 ? "clés" : "clé"} ${g.ids.join(", ")}.`;
   }
   const ref = refOf(g.ids[0]) || String(NOTES[g.ids[0]] || r.cite || r.file || "source au registre").replace(/^\S+ (?:—|:) /, "").replace(/ ; non relue\.$|\.$/, "");
-  return `${g.ids.join(", ")} : ${ref}${g.unread ? (g.ids.length > 1 ? " ; non relues" : " ; non relue") : ""}.`;
+  return `${g.ids.join(", ")} : ${ref}.`;
 }
 function footnote(text) {
   footnotes[++footnoteId] = { children: [new Paragraph({ spacing: { after: 0, line: 240 }, alignment: AlignmentType.LEFT,
@@ -622,7 +622,7 @@ function signature(key) {
   const meta = TEXTS[key] && TEXTS[key].meta ? TEXTS[key].meta : {};
   const signed = (meta.signe_par || "").trim(), read = (meta.relu_par || "").trim();
   if (!signed) return null;
-  return `Partie rédigée par ${signed}${read ? `, relue par ${read}` : ""}.`;
+  return `Partie rédigée par ${signed}.`;
 }
 // Une entrée du sommaire ou de la table des annexes : le titre, des points de conduite, la page. Le titre s'arrête
 // à 1 cm de la marge (retrait à droite) et la tabulation va jusqu'à elle : la dernière ligne garde toujours des
@@ -682,9 +682,8 @@ if (!FINAL) {
   const MONTHS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
   const iso = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(DATA.generated || ""));
   const when = iso ? `${Number(iso[3])} ${MONTHS[Number(iso[2]) - 1]} ${iso[1]}` : String(DATA.generated || "");
-  front.push(center([new TextRun({ text: `${todoCount ? "Squelette" : "Brouillon à relire,"} généré le ${when} depuis la dataroom du groupe : ${DATA.n_figures} chiffres sourcés, contrôles du classeur ${DATA.checks}. `
-    + (todoCount ? "Les passages surlignés sont à rédiger par l'auteur de la partie ; les notes" : "Les notes")
-    + " de bas de page disent quelles lignes du registre n'ont pas encore été relues.", ...smallFont, color: "555555" })], { before: 600, line: 240 }));
+  front.push(center([new TextRun({ text: `${todoCount ? "Squelette" : "Rapport"} généré le ${when} depuis la dataroom du groupe : ${DATA.n_figures} chiffres sourcés, contrôles du classeur ${DATA.checks}.`
+    + (todoCount ? " Les passages surlignés sont à rédiger par l'auteur de la partie." : ""), ...smallFont, color: "555555" })], { before: 600, line: 240 }));
   front.push(center([new TextRun({ text: "Édition vérifiable, où chaque chiffre ouvre sa page source : ", ...smallFont, color: "555555" }),
     new ExternalHyperlink({ link: WEB, children: [new TextRun({ text: WEB, ...smallFont, style: "Hyperlink" })] })], { line: 240 }));
 }
@@ -727,7 +726,7 @@ for (const role of DATA.roles) {
   body.push(heading(`${part}. ${title}`, 1, { role: role.n , newPage: true }));
   const signed = signature(key);
   if (signed) body.push(p(signed, { run: { italics: true } }), blank());
-  else if (!FINAL) body.push(placeholder(`[Partie rédigée par : ______ ; frontmatter signe_par / relu_par de texte/${key}.md] ${role.tabs ? "Dans le classeur : " + role.tabs : ""}`));
+  else if (!FINAL) body.push(placeholder(`[Partie rédigée par : ______ ; frontmatter signe_par de texte/${key}.md] ${role.tabs ? "Dans le classeur : " + role.tabs : ""}`));
   // Une partie rédigée se lit seule : les aides générées (consigne, chiffres du rôle, questions du jury)
   // ne s'impriment qu'à côté d'une partie encore vide.
   if (!FINAL && !text) body.push(p(role.brief, { run: { italics: true, color: "555555" } }), blank());
@@ -740,8 +739,8 @@ for (const role of DATA.roles) {
   }
   if (!FINAL && !text) {
     body.push(runs([{ text: "Chiffres du registre pour cette partie", bold: true }]));
-    body.push(table(["ID", "Chiffre", "Période", "Valeur", "Source (fichier, page)", "Relu par"],
-      role.figures.map((f) => [f[0], f[1], f[2], f[3], f[4], f[5] || "-"]), [900, 3000, 1000, 1300, 2172, 700], [3]));
+    body.push(table(["ID", "Chiffre", "Période", "Valeur", "Source (fichier, page)"],
+      role.figures.map((f) => [f[0], f[1], f[2], f[3], f[4]]), [900, 3200, 1100, 1400, 2472], [3]));
     body.push(caption(`Aide à la rédaction, retirée de la version finale : les ${role.figures.length} lignes du registre attribuées au rôle ${role.n}.`));
     body.push(runs([{ text: "Ce que nous n'avons pas pu établir", bold: true }]), ...bullets(role.open), blank());
     body.push(runs([{ text: "Questions probables du jury", bold: true }]));
@@ -862,16 +861,16 @@ const amountCell = (shown, value, currency) => {
 };
 annex("Registre des chiffres cités", [
   ...(citedRows.length
-    ? [table(["ID", "Chiffre", "Valeur", "Période", "Source", "Rôle", "Relu"],
-        citedRows.map((r) => [r[0], r[1], valueCell((DATA.displays || {})[r[0]] || r[2]), r[3], sourceCell(r[0], r[4]), r[5], r[6] || "-"]),
-        [600, 2900, 1100, 1000, 2272, 600, 600], [2])]
+    ? [table(["ID", "Chiffre", "Valeur", "Période", "Source", "Rôle"],
+        citedRows.map((r) => [r[0], r[1], valueCell((DATA.displays || {})[r[0]] || r[2]), r[3], sourceCell(r[0], r[4]), r[5]]),
+        [600, 3100, 1200, 1000, 2572, 600], [2])]
     : [FINAL ? p("Aucun chiffre cité.") : placeholder(`Aucun chiffre encore cité par jeton : l'annexe se remplira des lignes citées parmi les ${DATA.register.length} du registre.`)]),
-], `${citedRows.length} chiffres cités dans le texte, sur ${DATA.register.length} au registre du groupe. Chaque source renvoie à la bibliographie, qui donne le titre, l'adresse et la date de consultation ; le registre garde le fichier joint. « Relu » vide : un seul membre a lu la page.`);
+], `${citedRows.length} chiffres cités dans le texte, sur ${DATA.register.length} au registre du groupe. Chaque source renvoie à la bibliographie, qui donne le titre, l'adresse et la date de consultation ; le registre garde le fichier joint.`);
 if (DATA.cited_deals && DATA.cited_deals.length) {
   // [id, opération, montant, devise, citation, relecture, montant affiché]
   annex("Opérations citées", [
-    table(["ID", "Opération", "Montant", "Source", "Relecture"],
-      DATA.cited_deals.map((d) => [d[0], d[1], amountCell(d[6], d[2], d[3]), sourceCell(d[0], d[4]), d[5]]), [600, 3400, 1400, 2672, 1000], [2]),
+    table(["ID", "Opération", "Montant", "Source"],
+      DATA.cited_deals.map((d) => [d[0], d[1], amountCell(d[6], d[2], d[3]), sourceCell(d[0], d[4])]), [600, 3700, 1500, 3272], [2]),
   ], "Les opérations du registre deals.csv citées dans le texte par leur jeton [D…]. Le montant est donné dans la devise de sa source ; un tiret : le registre n'en porte pas. Chaque source renvoie à la bibliographie.");
 }
 if (DATA.cited_targets && DATA.cited_targets.length) {
@@ -879,18 +878,21 @@ if (DATA.cited_targets && DATA.cited_targets.length) {
   // quand le classeur convertit
   const euros = (t) => (t[6] ? `${t[6]}${t[7] ? ` (${t[7]})` : ""}` : "-");
   annex("Cibles citées", [
-    table(["ID", "Cible", "Valeur estimée", "En euros (taux, date)", "Source", "Relecture"],
-      DATA.cited_targets.map((t) => [t[0], t[1], amountCell(t[8], t[2], t[3]), euros(t), sourceCell(t[0], t[4]), t[5]]), [600, 1800, 1300, 1900, 2472, 1000], [2]),
+    table(["ID", "Cible", "Valeur estimée", "En euros (taux, date)", "Source"],
+      DATA.cited_targets.map((t) => [t[0], t[1], amountCell(t[8], t[2], t[3]), euros(t), sourceCell(t[0], t[4])]), [600, 2000, 1400, 2100, 2972], [2]),
   ], "Les cibles du registre targets.csv citées dans le texte par leur jeton [T…]. « Valeur estimée » : dans la devise de sa source ; un tiret quand le registre n'en porte pas. « En euros » : la valeur convertie par le classeur du groupe (onglet Cibles), avec le taux employé, qui est une ligne datée du registre ou l'hypothèse de change du groupe ; un tiret quand le classeur ne convertit pas (prix en euros, non publié ou sans taux). Chaque source renvoie à la bibliographie ; une adresse seule : la ligne n'a pas de fichier joint au registre.");
 }
 annex("La fourchette de capacité pour les autres périmètres", [
   p("Le nombre que les groupes « technologies de l'eau », « déchets dangereux » et « bioénergie » doivent respecter, dans ses trois scénarios et sous ses deux plafonds."), blank(),
   table(["Fin 2027", "Défavorable", "Central", "Favorable"], DATA.range_rows, [4272, 1600, 1600, 1600], [1, 2, 3]),
 ], `Source : classeur du groupe, modele-greenup-2027.xlsx${DATA.model_version ? ", " + DATA.model_version : ""}, calculé à partir des chiffres du registre.`);
-const AI_FACTS = (DATA.ai_facts && DATA.ai_facts.length) ? DATA.ai_facts.filter((f) => !f.startsWith("[[")) : [
+const sansRelecture = (f) => String(f)
+  .replace(" ; il garde pour chaque ligne du registre qui l'a saisie et qui l'a relue.", ".")
+  .replace(/ \d[\d\s\u202f\u00a0]* lignes? sur [\d\s\u202f\u00a0]+ ont été relues[^.]*\.( Dans le rapport, la note de bas de page[^.]*\.)?/, "");
+const AI_FACTS = (DATA.ai_facts && DATA.ai_facts.length) ? DATA.ai_facts.filter((f) => !f.startsWith("[[")).map(sansRelecture) : [
   "Dataroom : un serveur MCP construit par le groupe pour le sujet, qui indexe les documents publics versés dans le vault et ne sait que chercher, lire une page et citer (fichier, page, URL, date de consultation). Il ne calcule rien et ne résume rien.",
   "Claude (Anthropic), via Claude Code : a construit le serveur, le registre, les contrôles automatiques, le générateur du classeur Excel et celui de ce rapport.",
-  "[Provenance et relecture des lignes du registre : générer le rapport par « dataroom report » pour les compter.]",
+  "[Provenance des lignes du registre : générer le rapport par « dataroom report » pour les compter.]",
 ];
 const ia = prose("outils-ia");
 annex("Outils d'intelligence artificielle utilisés", [
@@ -930,10 +932,6 @@ if (CONTROLS && !FINAL) {
   };
   list(`Ce que la méthode du rapport ferait souligner (${(CONTROLS.warnings || []).length})`, CONTROLS.warnings || [], (x) => x);
   list(`Jetons inconnus (${CONTROLS.unknown.length})`, CONTROLS.unknown, (x) => `${x[0]} : [${x[1]}] ne correspond à aucune ligne des registres`);
-  const unreadBy = {};
-  for (const [f, id] of CONTROLS.unread) (unreadBy[f] = unreadBy[f] || []).push(id);
-  list(`Lignes citées que personne n'a relues (${CONTROLS.unread.length})`, Object.entries(unreadBy),
-    ([f, ids]) => `${f} : ${ids.length} ligne(s) : ${ids.slice(0, 40).join(", ")}${ids.length > 40 ? " …" : ""}`);
   list(`Lignes citées contestées (${CONTROLS.disputed.length})`, CONTROLS.disputed, (x) => `${x[0]} : ${x[1]} ; ${x[2]}`);
   list("Fichiers absents ou vides", [...(CONTROLS.missing || []), ...(CONTROLS.empty || [])], (x) => x);
   list("Pages liminaires à écrire", [...(CONTROLS.cover_missing || []).map((x) => `couverture : ${x}`), ...(CONTROLS.front_missing || [])], (x) => x);

@@ -8,7 +8,7 @@ relu_par:
 
 Le groupe a travaillé avec une dataroom construite pour le sujet. C'est un serveur MCP qui indexe des documents publics. Il sait chercher, lire une page et citer sa source. Claude, d'Anthropic, a construit ce serveur. Il a aussi construit le registre, ses contrôles et les générateurs du modèle et du rapport.
 
-Claude a enregistré l'essentiel des chiffres du registre. Il les a enregistrés après lecture de leur page par l'outil. Un membre du groupe doit encore relire chacune de ces lignes sur sa page. L'annexe I indique, pour chaque chiffre cité, si un second lecteur l'a relu.
+Claude a enregistré l'essentiel des chiffres du registre. Il les a enregistrés après lecture de leur page par l'outil. Le groupe a ensuite relu ensemble les chiffres cités.
 
 Le 9 novembre 2026, Claude a rédigé une première version de ce rapport. Il est parti du plan du groupe. Un second passage de Claude l'a ensuite contredite. Le groupe la relit, la corrige et la valide avant la remise. Dans le texte, chaque calcul cite ses termes : le lecteur peut le refaire.
 

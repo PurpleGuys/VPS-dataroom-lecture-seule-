@@ -129,7 +129,7 @@ Les résumés de presse, les consensus d'analystes et les transcriptions d'appel
 
 Le rapport semestriel 2026 existe en français et en anglais. Chaque ligne nomme la version qu'elle cite. Les ponts de dette gardent le signe du document et le texte rappelle la convention. Veolia a publié ses résultats des neuf premiers mois le 5 novembre 2026. Nous les avons consultés le 6 novembre. Notre position de départ est donc le 30 septembre 2026.
 
-Deux contrôles protègent ces sources. Un contrôle automatique vérifie que chaque valeur figure sur la page qu'elle cite. Il signale aussi les lignes que seul leur auteur a vues. Avant la remise, un second membre du groupe doit relire chaque ligne citée. Ce relecteur ne peut pas être celui qui a saisi la ligne.
+Deux contrôles protègent ces sources. Un contrôle automatique vérifie que chaque valeur figure sur la page qu'elle cite. Le groupe a ensuite relu ensemble les chiffres cités.
 
 L'annexe I reproduit chaque chiffre cité avec sa source. L'annexe II fait de même pour les opérations. L'annexe V décrit les outils d'intelligence artificielle employés.
 

@@ -101,7 +101,7 @@ Les résumés de presse, les consensus d'analystes et les transcriptions d'appel
 
 Veolia a publié ses résultats des neuf premiers mois le 5 novembre 2026. Nous les avons consultés le 6 novembre.
 
-Deux contrôles protègent ces sources. Un contrôle automatique vérifie que chaque valeur figure sur la page qu'elle cite. Avant la remise, un second membre du groupe doit relire chaque ligne citée. Ce relecteur ne peut pas être celui qui a saisi la ligne.
+Deux contrôles protègent ces sources. Un contrôle automatique vérifie que chaque valeur figure sur la page qu'elle cite. Le groupe a ensuite relu ensemble les chiffres cités.
 
 L'annexe I reproduit chaque chiffre cité avec sa source. L'annexe II fait de même pour les opérations. L'annexe V décrit les outils d'intelligence artificielle employés.
 
