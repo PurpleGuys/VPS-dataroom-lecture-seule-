@@ -40,6 +40,23 @@ const THEME = (process.argv.find((a) => a.startsWith("--theme=")) || "").slice(8
 const VEOLIA = THEME === "veolia";
 const MARINE = "002D62", SKY = "8DACCD", SKY_PALE = "E3EAF2", INK = "55555A", RULE = "D1D3D4";
 const ASSETS = path.join(__dirname, "veolia");
+// L'édition anglaise : --lang=en. Les textes arrivent traduits (dataroom report, par DeepL) ; les chaînes écrites ici
+// passent par T() : les nombres sortent du gabarit ({0}, {1}…), la table DATA.i18n donne l'anglais, et ce qu'elle ne
+// connaît pas est noté dans <rapport>.i18n.json pour être traduit avant le passage suivant.
+const LANG = (process.argv.find((a) => a.startsWith("--lang=")) || "").slice(7) || String(DATA.lang || "");
+const EN = LANG === "en";
+const I18N = DATA.i18n || {};
+const I18N_MISSING = new Set();
+const enNum = (n) => String(n).replace(/[\u202f\u00a0 ](?=\d{3})/g, ",").replace(/(\d),(\d{1,2})$/, "$1.$2");
+function T(text) {
+  if (!EN) return text;
+  const args = [];
+  const tpl = String(text).replace(/\d{1,3}(?:[\u202f\u00a0 ]\d{3})+|\d+(?:[.,]\d+)?/g, (m) => { args.push(m); return `{${args.length - 1}}`; });
+  const got = I18N[tpl];
+  if (got === undefined) { I18N_MISSING.add(tpl); return String(text); }
+  return got.replace(/\{(\d+)\}/g, (_, k) => (args[Number(k)] === undefined ? "" : enNum(args[Number(k)])));
+}
+const SEP = EN ? ": " : " : ";   // la ponctuation haute : sans espace devant, en anglais
 const TEXTS = DATA.texts || {};
 const CONTROLS = DATA.controls || null;
 const COVER = DATA.cover || {};
@@ -100,6 +117,7 @@ const TYPO = [
 ];
 function typo(text) {
   let s = String(text == null ? "" : text);
+  if (EN) return s.replace(/(^|[\s(])(pp?\.) (?=\d)/g, "$1$2" + NBSP);   // en anglais : seul « p. 12 » reste lié
   if (!s.includes(" ")) return s;
   for (const [pattern, by] of TYPO) s = s.replace(pattern, by);
   return s;
@@ -273,12 +291,12 @@ function groupNote(key, r) {
   const g = groups.get(key) || { ids: [r.id], unread: !r.checked, model: r.rowkind === "model" };
   if (g.model) {
     // la version de la fourchette n'est dite qu'une fois : dans la première note du modèle
-    let text = classeurNote(key.slice(2));
-    if (!modelVersionShown && DATA.model_version) { text += ` ; ${DATA.model_version}, valable pour toutes les notes du classeur`; modelVersionShown = true; }
-    return `${text} ; ${g.ids.length > 1 ? "clés" : "clé"} ${g.ids.join(", ")}.`;
+    let text = T(classeurNote(key.slice(2)));
+    if (!modelVersionShown && DATA.model_version) { text += EN ? `; ${DATA.model_version}, valid for every workbook note` : ` ; ${DATA.model_version}, valable pour toutes les notes du classeur`; modelVersionShown = true; }
+    return `${text}${EN ? ";" : " ;"} ${T(g.ids.length > 1 ? "clés" : "clé")} ${g.ids.join(", ")}.`;
   }
   const ref = refOf(g.ids[0]) || String(NOTES[g.ids[0]] || r.cite || r.file || "source au registre").replace(/^\S+ (?:—|:) /, "").replace(/ ; non relue\.$|\.$/, "");
-  return `${g.ids.join(", ")} : ${ref}.`;
+  return `${g.ids.join(", ")}${SEP}${ref}.`;
 }
 function footnote(text) {
   footnotes[++footnoteId] = { children: [new Paragraph({ spacing: { after: 0, line: 240 }, alignment: AlignmentType.LEFT,
@@ -620,7 +638,7 @@ function renderBlocks(blocks, opts = {}) {
   let boxed = false;   // édition mise en forme : la liste de ce qui n'a pas pu être établi est encadrée
   (blocks || []).forEach((b, k) => {
     const next = (blocks || [])[k + 1];
-    if (b.kind === "heading") boxed = VEOLIA && /^Ce que nous n.avons pas pu établir/.test(plain(b.inlines));
+    if (b.kind === "heading") boxed = VEOLIA && (b.box === true || /^Ce que nous n.avons pas pu établir/.test(plain(b.inlines)));
     const announces = !!next && layouts.has(next) && layouts.get(next).small;
     if (b.kind === "heading") {
       const level = Math.min(3, Math.max(2, b.level));
@@ -641,7 +659,7 @@ function renderBlocks(blocks, opts = {}) {
       const text = plain(b.inlines);
       const open = /^[«"“]/.test(text), close = /[»"”]$/.test(text);
       out.push(new Paragraph({ spacing: { after: AFTER, line: LN }, alignment: ALIGN, indent: { left: 567, right: 567 },
-        children: [...(open ? [] : [new TextRun({ text: "« ", ...bodyFont })]), ...inlineRuns(b.inlines, bodyFont, { glossary: false }), ...(close ? [] : [new TextRun({ text: " »", ...bodyFont })])] }));
+        children: [...(open ? [] : [new TextRun({ text: EN ? "“" : "« ", ...bodyFont })]), ...inlineRuns(b.inlines, bodyFont, { glossary: false }), ...(close ? [] : [new TextRun({ text: EN ? "”" : " »", ...bodyFont })])] }));
     } else if (b.kind === "list") {
       let ref = "bullets";
       if (b.ordered) { ref = `list${dynamicLists++}`; numberingRefs.add(ref); }
@@ -718,11 +736,11 @@ if (VEOLIA) {
     line([W(DATA.subtitle, { size: 22 })], { spacing: { before: 360, line: 300 }, indent: { right: 3300 } }),
   ];
   const bottom = [
-    line([G(`Rapport réalisé pour ${COVER.entreprise || "Veolia Environnement"}`, { bold: true, color: MARINE, size: 24 })]),
+    line([G(`${T("Rapport réalisé pour")} ${COVER.entreprise || "Veolia Environnement"}`, { bold: true, color: MARINE, size: 24 })]),
     line([G((COVER.auteurs || []).join(", "))], { spacing: { before: 200 } }),
-    line([G([COVER.encadrant ? `Responsable : ${COVER.encadrant}` : "", COVER.annee || ""].filter(Boolean).join(" | "))], { spacing: { before: 80 } }),
-    line([G("Travail académique d'étudiants de l'EDHEC. Ce document n'est pas une publication de Veolia.", { size: 17, italics: true })], { spacing: { before: 280 } }),
-    ...(FINAL ? [] : [line([G(`Rapport généré le ${when} depuis la dataroom du groupe : ${DATA.n_figures} chiffres sourcés, contrôles du classeur ${DATA.checks}. Édition vérifiable : `, { size: 15 }),
+    line([G([COVER.encadrant ? `${T("Responsable")}${SEP}${COVER.encadrant}` : "", T(COVER.annee || "")].filter(Boolean).join(" | "))], { spacing: { before: 80 } }),
+    line([G(T("Travail académique d'étudiants de l'EDHEC. Ce document n'est pas une publication de Veolia."), { size: 17, italics: true })], { spacing: { before: 280 } }),
+    ...(FINAL ? [] : [line([G(T(`Rapport généré le ${when} depuis la dataroom du groupe : ${DATA.n_figures} chiffres sourcés, contrôles du classeur ${DATA.checks}. Édition vérifiable :`) + " ", { size: 15 }),
       new ExternalHyperlink({ link: WEB, children: [new TextRun({ text: WEB, font: FONT, size: 15, style: "Hyperlink" })] })], { spacing: { before: 100, line: 220 } })]),
   ];
   // le fond s'ancre dans un paragraphe hors du tableau : dans une cellule, LibreOffice le placerait par rapport à elle
@@ -769,7 +787,7 @@ if (!FINAL) {
 // la suivante. Chaque saut de page est porté par ce qui ouvre la page, jamais par un paragraphe de saut.
 front.push(new Paragraph({ pageBreakBefore: true, spacing: { after: 0, line: LINE }, children: [] }));
 // ---- remerciements (§ 5.3) : sobres, écrits par le groupe
-front.push(heading("Remerciements", 1, { toc: false, newPage: true }));
+front.push(heading(T("Remerciements"), 1, { toc: false, newPage: true }));
 const thanks = prose("remerciements");
 if (thanks) front.push(...renderBlocks(thanks.blocks));
 else if (!FINAL) front.push(placeholder("[À rédiger] 08_Livrables/texte/remerciements.md : des remerciements sobres, à Veolia et aux personnes qui ont éclairé le travail."));
@@ -778,13 +796,13 @@ else if (!FINAL) front.push(placeholder("[À rédiger] 08_Livrables/texte/remerc
 const body = [];
 // ---- le sommaire (§ 5.4), page 1 : rempli au second passage, quand le PDF a donné ses pages
 const tocMarker = body.length;
-body.push(heading("Sommaire", 1, { toc: false }));
+body.push(heading(T("Sommaire"), 1, { toc: false }));
 // (les entrées sont insérées à la fin, quand tous les titres sont connus)
 
 // ---- introduction (§ 4.3) : rédigée en dernier par le groupe ; situe le cadre, présente la mission, annonce les résultats et le plan
 if (VEOLIA && (DATA.tiles || []).length) {
   // Les indicateurs de la réponse (ceux du tableau de la recommandation), en tuiles : un nombre, son nom, sa lecture.
-  body.push(heading("Chiffres clés", 1, { toc: false, newPage: true }));
+  body.push(heading(T("Chiffres clés"), 1, { toc: false, newPage: true }));
   const COLS = 2, wide = Math.floor(TEXT_WIDTH / COLS), gap = { style: BorderStyle.SINGLE, size: 36, color: "FFFFFF" };
   const tile = (t) => new TableCell({ width: { size: wide, type: WidthType.DXA }, shading: { type: ShadingType.CLEAR, color: "auto", fill: SKY_PALE },
     borders: { top: gap, bottom: gap, left: gap, right: gap }, margins: { top: 220, bottom: 220, left: 260, right: 200 },
@@ -795,9 +813,9 @@ if (VEOLIA && (DATA.tiles || []).length) {
   for (let i = 0; i < DATA.tiles.length; i += COLS) rows.push(new TableRow({ cantSplit: true, children: Array.from({ length: COLS }, (_, j) => tile(DATA.tiles[i + j])) }));
   body.push(new Table({ width: { size: wide * COLS, type: WidthType.DXA }, columnWidths: Array(COLS).fill(wide),
     borders: { top: NO_LINE, bottom: NO_LINE, left: NO_LINE, right: NO_LINE, insideHorizontal: NO_LINE, insideVertical: NO_LINE }, rows }));
-  body.push(caption(`Source : classeur du groupe, calculé à partir des chiffres du registre (${DATA.n_figures} lignes sourcées). Le détail figure dans la dernière partie.`));
+  body.push(caption(T(`Source : classeur du groupe, calculé à partir des chiffres du registre (${DATA.n_figures} lignes sourcées). Le détail figure dans la dernière partie.`)));
 }
-body.push(heading("Introduction", 1, { newPage: true }));
+body.push(heading(T("Introduction"), 1, { newPage: true }));
 const intro = prose("introduction");
 if (intro) body.push(...renderBlocks(intro.blocks, { tight: tightFor("Introduction") }));
 else if (!FINAL) {
@@ -849,11 +867,11 @@ const recoSigned = signature("recommandation");
 if (recoSigned) body.push(p(recoSigned, { run: { italics: true } }), blank());
 if (reco) body.push(...renderBlocks(reco.blocks, { part, tight: tightFor(`${part}. ${recoTitle}`) }));
 else if (!FINAL) body.push(placeholder("[À rédiger] 08_Livrables/texte/recommandation.md : ce que nous recommandons, ce que cela coûte et à qui, ce qui nous ferait changer d'avis. Chiffres par jeton."));
-body.push(captionAbove(`Tableau ${part}.1 : Les indicateurs de la réponse, calculés dans le classeur du groupe à partir des chiffres du registre (${DATA.n_figures} lignes sourcées).`));
-body.push(table(["Indicateur", "Valeur", "Ce qu'il faut en lire"], DATA.tiles.map((t) => [t[0], t[1], t[2]]), [3200, 1600, 4272], [1]));
+body.push(captionAbove(T(`Tableau ${part}.1 : Les indicateurs de la réponse, calculés dans le classeur du groupe à partir des chiffres du registre (${DATA.n_figures} lignes sourcées).`)));
+body.push(table(["Indicateur", "Valeur", "Ce qu'il faut en lire"].map(T), DATA.tiles.map((t) => [t[0], t[1], t[2]]), [3200, 1600, 4272], [1]));
 
 // ---- conclusion (§ 4.5) : les points forts à retenir
-body.push(heading("Conclusion", 1, { newPage: true }));
+body.push(heading(T("Conclusion"), 1, { newPage: true }));
 const concl = prose("conclusion");
 if (concl) body.push(...renderBlocks(concl.blocks, { tight: tightFor("Conclusion") }));
 else if (!FINAL) {
@@ -866,10 +884,17 @@ else if (!FINAL) {
 // comme le texte ; elle peut se couper après / _ ? & = # et, après un trait d'union, devant un chiffre (une espace sans
 // chasse, que LibreOffice retire du PDF). « consulté le J mois AAAA. » reste d'un seul tenant : plus de « 2026. » seul
 // sur une ligne. Une référence d'une autre forme s'imprime telle quelle.
+// « consulté le 6 novembre 2026 » → « accessed on 6 November 2026 »
+const EN_MONTHS = { janvier: "January", "février": "February", mars: "March", avril: "April", mai: "May", juin: "June", juillet: "July", "août": "August",
+  septembre: "September", octobre: "October", novembre: "November", "décembre": "December" };
+const enAccessed = (s) => String(s).replace(/consulté le (\d{1,2})(?:er)? (\p{L}+) (\d{4})/gu, (_, d, mo, y) => `accessed on ${d} ${EN_MONTHS[mo] || mo} ${y}`)
+  .replace(/consulté le /g, "accessed on ");
+const enQuotes = (s) => String(s).replace(/«[\u00a0\u202f ]?/g, "“").replace(/[\u00a0\u202f ]?»/g, "”");
 function biblioRuns(entry) {
   const m = /^(.*?, )(https?:\/\/\S+?)(, )(consulté le .*)$/.exec(entry);
-  if (!m) return [new TextRun({ text: entry, ...bodyFont })];
-  const [, head, url, comma, consulted] = m;
+  if (!m) return [new TextRun({ text: EN ? enQuotes(enAccessed(entry)) : entry, ...bodyFont })];
+  const [, headFr, url, comma, consultedFr] = m;
+  const consulted = EN ? enAccessed(consultedFr) : consultedFr, head = EN ? enQuotes(headFr) : headFr;
   const shown = url.replace(/([\/_?&=#])(?=[^\/\s])|(-)(?=\d)/g, (x, a, b) => (a || b) + ZWSP);
   return [
     new TextRun({ text: head, ...bodyFont }),
@@ -877,10 +902,10 @@ function biblioRuns(entry) {
     new TextRun({ text: comma + consulted.replace(/ /g, NBSP), ...bodyFont }),
   ];
 }
-body.push(heading("Bibliographie", 1, { newPage: true }));
+body.push(heading(T("Bibliographie"), 1, { newPage: true }));
 const biblio = DATA.bibliography || [];
 if (biblio.length) {
-  body.push(p("Les documents cités dans ce rapport, classés par type de source puis par ordre alphabétique d'auteur. Chaque référence donne la date de consultation ; les pages citées figurent dans les notes de bas de page et à l'annexe I."));
+  body.push(p(T("Les documents cités dans ce rapport, classés par type de source puis par ordre alphabétique d'auteur. Chaque référence donne la date de consultation ; les pages citées figurent dans les notes de bas de page et à l'annexe I.")));
   for (const group of biblio) {
     // la rubrique, liée à sa première référence ; le retour qui la précède est un espace avant, qui tombe en haut de page
     body.push(runs([{ text: group.category, bold: true }], { spacing: { before: RETURN, after: 0, line: LINE } }));
@@ -894,12 +919,12 @@ if (biblio.length) {
 }
 
 // ---- glossaire (§ 4.7) : les termes techniques et sigles, en italique dans le texte, définis ici par ordre alphabétique
-body.push(heading("Glossaire", 1, { newPage: true }));
+body.push(heading(T("Glossaire"), 1, { newPage: true }));
 if (GLOSSARY.length) {
-  body.push(p("Les termes techniques, expressions étrangères et sigles employés dans le rapport ; ils apparaissent en italique dans le texte."), blank());
+  body.push(p(T("Les termes techniques, expressions étrangères et sigles employés dans le rapport ; ils apparaissent en italique dans le texte.")), blank());
   for (const { term, definition } of GLOSSARY) {
     body.push(new Paragraph({ spacing: { after: 0, line: LINE }, alignment: ALIGN, indent: { left: 567, hanging: 567 },
-      children: [new TextRun({ text: term, ...bodyFont, bold: true }), new TextRun({ text: ` : ${definition}`, ...bodyFont })] }));
+      children: [new TextRun({ text: term, ...bodyFont, bold: true }), new TextRun({ text: `${SEP}${definition}`, ...bodyFont })] }));
   }
 } else if (!FINAL) {
   body.push(placeholder("Le glossaire se remplit d'elle-même des termes définis dans report.py (GLOSSARY) que le texte emploie."));
@@ -911,10 +936,10 @@ const annexes = [];
 const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
 let annexNo = 0;
 function annex(title, children, legend) {
-  const label = `Annexe ${ROMAN[annexNo++] || annexNo}`;
-  const text = `${label} : ${title}`;
+  const label = `${T("Annexe")} ${ROMAN[annexNo++] || annexNo}`;
+  const text = `${label}${SEP}${T(title)}`;
   annexes.push(heading(text, 1, { annex: true, label, newPage: annexes.length > 0 }));
-  annexes.push(caption(legend));
+  annexes.push(caption(T(legend)));
   annexes.push(...children);
 }
 // Les identifiants cités dans la prose, dans l'ordre de lecture : l'annexe I ne reprend qu'eux.
@@ -940,7 +965,7 @@ const valueCell = (v) => String(v == null ? "" : v).replace(/ par (an|action)$/,
 function sourceCell(id, citation) {
   const ref = (DATA.refs || {})[id] || citation || "-";
   const m = /^(https?:\/\/\S+?)(, consulté le .*)?$/.exec(ref);
-  if (!m) return ref;
+  if (!m) return EN ? enAccessed(ref) : ref;
   const tail = m[2] || "", printed = protect(ref);
   return [{ kind: "address", url: m[1], text: printed.slice(0, printed.length - protect(tail).length) },
     { kind: "text", text: tail }].filter((r) => r.text);
@@ -954,7 +979,7 @@ const amountCell = (shown, value, currency) => {
 };
 annex("Registre des chiffres cités", [
   ...(citedRows.length
-    ? [table(["ID", "Chiffre", "Valeur", "Période", "Source", "Rôle"],
+    ? [table(["ID", "Chiffre", "Valeur", "Période", "Source", "Rôle"].map(T),
         citedRows.map((r) => [r[0], r[1], valueCell((DATA.displays || {})[r[0]] || r[2]), r[3], sourceCell(r[0], r[4]), r[5]]),
         [600, 3100, 1200, 1000, 2572, 600], [2])]
     : [FINAL ? p("Aucun chiffre cité.") : placeholder(`Aucun chiffre encore cité par jeton : l'annexe se remplira des lignes citées parmi les ${DATA.register.length} du registre.`)]),
@@ -962,7 +987,7 @@ annex("Registre des chiffres cités", [
 if (DATA.cited_deals && DATA.cited_deals.length) {
   // [id, opération, montant, devise, citation, relecture, montant affiché]
   annex("Opérations citées", [
-    table(["ID", "Opération", "Montant", "Source"],
+    table(["ID", "Opération", "Montant", "Source"].map(T),
       DATA.cited_deals.map((d) => [d[0], d[1], amountCell(d[6], d[2], d[3]), sourceCell(d[0], d[4])]), [600, 3700, 1500, 3272], [2]),
   ], "Les opérations du registre deals.csv citées dans le texte par leur jeton [D…]. Le montant est donné dans la devise de sa source ; un tiret : le registre n'en porte pas. Chaque source renvoie à la bibliographie.");
 }
@@ -971,14 +996,15 @@ if (DATA.cited_targets && DATA.cited_targets.length) {
   // quand le classeur convertit
   const euros = (t) => (t[6] ? `${t[6]}${t[7] ? ` (${t[7]})` : ""}` : "-");
   annex("Cibles citées", [
-    table(["ID", "Cible", "Valeur estimée", "En euros (taux, date)", "Source"],
+    table(["ID", "Cible", "Valeur estimée", "En euros (taux, date)", "Source"].map(T),
       DATA.cited_targets.map((t) => [t[0], t[1], amountCell(t[8], t[2], t[3]), euros(t), sourceCell(t[0], t[4])]), [600, 2000, 1400, 2100, 2972], [2]),
   ], "Les cibles du registre targets.csv citées dans le texte par leur jeton [T…]. « Valeur estimée » : dans la devise de sa source ; un tiret quand le registre n'en porte pas. « En euros » : la valeur convertie par le classeur du groupe (onglet Cibles), avec le taux employé, qui est une ligne datée du registre ou l'hypothèse de change du groupe ; un tiret quand le classeur ne convertit pas (prix en euros, non publié ou sans taux). Chaque source renvoie à la bibliographie ; une adresse seule : la ligne n'a pas de fichier joint au registre.");
 }
 annex("La fourchette de capacité pour les autres périmètres", [
-  p("Le nombre que les groupes « technologies de l'eau », « déchets dangereux » et « bioénergie » doivent respecter, dans ses trois scénarios et sous ses deux plafonds."), blank(),
-  table(["Fin 2027", "Défavorable", "Central", "Favorable"], DATA.range_rows, [4272, 1600, 1600, 1600], [1, 2, 3]),
-], `Source : classeur du groupe, modele-greenup-2027.xlsx${DATA.model_version ? ", " + DATA.model_version : ""}, calculé à partir des chiffres du registre.`);
+  p(T("Le nombre que les groupes « technologies de l'eau », « déchets dangereux » et « bioénergie » doivent respecter, dans ses trois scénarios et sous ses deux plafonds.")), blank(),
+  table(["Fin 2027", "Défavorable", "Central", "Favorable"].map(T), DATA.range_rows, [4272, 1600, 1600, 1600], [1, 2, 3]),
+], EN ? `Source: group workbook, modele-greenup-2027.xlsx${DATA.model_version ? ", " + DATA.model_version : ""}, calculated from the figures of the register.`
+  : `Source : classeur du groupe, modele-greenup-2027.xlsx${DATA.model_version ? ", " + DATA.model_version : ""}, calculé à partir des chiffres du registre.`);
 const sansRelecture = (f) => String(f)
   .replace(" ; il garde pour chaque ligne du registre qui l'a saisie et qui l'a relue.", ".")
   .replace(/ \d[\d\s\u202f\u00a0]* lignes? sur [\d\s\u202f\u00a0]+ ont été relues[^.]*\.( Dans le rapport, la note de bas de page[^.]*\.)?/, "");
@@ -994,13 +1020,13 @@ annex("Outils d'intelligence artificielle utilisés", [
 ], "Annexe demandée par le cours : les outils, ce qu'ils ont fait, ce que le groupe a vérifié lui-même. Les phrases comptées le sont depuis les registres, le jour de la génération.");
 
 // ---- la table des annexes (§ 5.8), dernière page numérotée du corps
-body.push(heading("Table des annexes", 1, { newPage: true }));
+body.push(heading(T("Table des annexes"), 1, { newPage: true }));
 for (const h of HEADINGS.filter((x) => x.annex)) body.push(tocLine(h.text, ANNEX_PAGES.get(h.text) || "", 1));
 
 // ---- le sommaire, maintenant que tous les titres sont connus : parties et sous-parties, puis les annexes en un mot
 const tocEntries = HEADINGS.filter((h) => h.toc && !h.annex && h.level <= 2).map((h) => tocLine(h.text, TOC_PAGES.get(h.text) || "", h.level));
 const firstAnnex = HEADINGS.find((h) => h.annex);
-if (firstAnnex) tocEntries.push(tocLine("Annexes (paginées à part, en chiffres romains)", ANNEX_PAGES.get(firstAnnex.text) || "", 1));
+if (firstAnnex) tocEntries.push(tocLine(T("Annexes (paginées à part, en chiffres romains)"), ANNEX_PAGES.get(firstAnnex.text) || "", 1));
 body.splice(tocMarker + 1, 0, ...tocEntries);
 
 // =================================================================== IV. Contrôle des citations (jamais dans la version finale)
@@ -1048,7 +1074,7 @@ const footerParagraph = (children) => new Paragraph({ style: "Footer", alignment
 const numberFooter = () => (VEOLIA
   ? new Footer({ children: [new Paragraph({ style: "Footer", alignment: AlignmentType.LEFT, spacing: { after: 0 }, run: smallFont,
       tabStops: [{ type: TabStopType.RIGHT, position: TEXT_WIDTH }], border: { top: { style: BorderStyle.SINGLE, size: 4, color: RULE, space: 6 } },
-      children: [new TextRun({ text: "Rapport d'étudiants de l'EDHEC réalisé pour Veolia. Ce document n'est pas une publication de Veolia.", font: FONT, size: 14, color: "8A8A8E" }),
+      children: [new TextRun({ text: T("Rapport d'étudiants de l'EDHEC réalisé pour Veolia. Ce document n'est pas une publication de Veolia."), font: FONT, size: 14, color: "8A8A8E" }),
         new TextRun({ children: [new Tab(), PageNumber.CURRENT], font: FONT, size: SMALL, bold: true, color: MARINE })] })] })
   : new Footer({ children: [footerParagraph([new TextRun({ children: [PageNumber.CURRENT], ...smallFont })])] }));
 const textFooter = (text) => new Footer({ children: [footerParagraph([new TextRun({ text, ...smallFont, color: "777777" })])] });
@@ -1095,6 +1121,7 @@ const doc = new Document({
 
 Packer.toBuffer(doc).then((buf) => {
   fs.writeFileSync(OUT, buf);
+  if (EN) fs.writeFileSync(OUT.replace(/\.docx$/i, "") + ".i18n.json", JSON.stringify([...I18N_MISSING], null, 1));
   fs.writeFileSync(HEADINGS_OUT, JSON.stringify(HEADINGS.map(({ text, level, annex, label, role }) => ({ text, level, annex, label, role })), null, 1));
   console.log("écrit", OUT, Math.round(buf.length / 1024), "Ko", `(${HEADINGS.length} titres, ${footnoteId} notes)` + (FINAL ? " (version finale)" : ""));
 });
