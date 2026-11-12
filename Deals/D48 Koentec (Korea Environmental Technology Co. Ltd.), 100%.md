@@ -21,4 +21,4 @@ added_by: "dataroom-bearer"
 - Participation : 100 %
 - Périmètre : Integrated waste management: waste incineration, steam production and landfill on a single site in the Ulsan Industrial Complex; no EBITDA or multiple disclosed; hazardous share not stated
 - Source : https://www.gawcapital.com/?p=30396
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

@@ -17,4 +17,4 @@ added_by: "dataroom-bearer"
 - Annonce : 2021-12-14 · Clôture : — · Statut : cleared
 - Périmètre : Activités eau et déchets de Suez, sous conditions d'engagements
 - Source : [[04_Litigation/m9969-veolia-suez-decision.pdf#page=1|m9969-veolia-suez-decision.pdf, p. 1]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

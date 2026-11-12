@@ -22,4 +22,4 @@ added_by: "dataroom-bearer"
 - Participation : 100 %
 - Périmètre : Seller-side view (Enviri release): 100% of Clean Earth; Enviri to repay ~ $1.35 billion of debt; no EBITDA or multiple in the release (Enviri CEO quoted by ENR at roughly 18x trailing EBITDA). Captured as 05_Commercial_Strategy/enviri-sale-clean-earth-veolia-2025-11-21.html
 - Source : https://www.stocktitan.net/news/NVRI/enviri-corporation-announces-sale-of-clean-earth-to-veolia-for-3-04-8o9fmtps8mjt.html
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

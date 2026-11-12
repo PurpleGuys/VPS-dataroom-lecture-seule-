@@ -22,4 +22,4 @@ added_by: "dataroom-bearer"
 - Participation : 100 %
 - Périmètre : Regional hazardous and non-hazardous waste provider, five sites (wastewater treatment, solidification, waste processing); expected revenue $45-50 million, adjusted EBITDA ~$15 million; post-synergy multiple 11.8x as stated by Clean Harbors (seller identified by Waste Dive)
 - Source : https://pulse2.com/clean-harbors-225-million-acquisition-of-terra-nova-solutions-expands-waste-services-footprint/amp/
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

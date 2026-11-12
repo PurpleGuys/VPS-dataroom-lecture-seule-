@@ -21,4 +21,4 @@ added_by: "dataroom-bearer"
 - Participation : 30 %
 - Périmètre : Rachat des minoritaires, Veolia porte sa détention à 100 % ; ~1,5 Md€ ; impact capitaux propres -1 380 M€
 - Source : [[01_Financial/finance_veolia_consolidated_financial_statements_31-12-25.pdf#page=17|finance_veolia_consolidated_financial_statements_31-12-25.pdf, p. 17]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

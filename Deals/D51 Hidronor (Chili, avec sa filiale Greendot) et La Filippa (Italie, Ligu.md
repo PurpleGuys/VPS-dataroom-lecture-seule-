@@ -22,4 +22,4 @@ added_by: "dataroom-bearer"
 - Participation : 100 %
 - Périmètre : Hidronor (finalisée le 27/01/2026) : n°1 des déchets dangereux au Chili, CA ~42 M€ et EBE ~14 M€ en 2024 ; La Filippa (finalisée le 27/02/2026) : stockage de déchets non dangereux, CA ~13 M€ et EBE ~8 M€ en 2024 (communiqué du 05/01/2026). Prix global non ventilé ; investissement net décaissé 190,9 M€ ; goodwill provisoire 96,2 M€ et 38,6 M€.
 - Source : [[01_Financial/seche_environnement_rfs_2026_fr_amf.pdf#page=38|seche_environnement_rfs_2026_fr_amf.pdf, p. 38]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

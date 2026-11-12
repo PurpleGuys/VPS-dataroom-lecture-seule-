@@ -22,4 +22,4 @@ added_by: "dataroom-bearer"
 - Participation : 56 %
 - Périmètre : VE 8,0 Md CAD ; GFL garde 44 % (≈ 1,7 Md CAD) et encaisse ≈ 6,2 Md CAD
 - Source : [[05_Commercial_Strategy/gfl-es-canadian-lawyer-2025.html|gfl-es-canadian-lawyer-2025.html, p. 1]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

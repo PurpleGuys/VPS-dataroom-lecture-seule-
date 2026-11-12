@@ -20,4 +20,4 @@ added_by: "dataroom-bearer"
 - Annonce : — · Clôture : 2024-03-01 · Statut : completed
 - Périmètre : Collecte, tri, valorisation, recyclage et négoce de matières premières secondaires, région de Nuremberg
 - Source : [[01_Financial/finance_consolidated_financial_statement_2024.pdf#page=16|finance_consolidated_financial_statement_2024.pdf, p. 16]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

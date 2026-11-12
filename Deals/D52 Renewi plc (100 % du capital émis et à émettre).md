@@ -22,4 +22,4 @@ added_by: "dataroom-bearer"
 - Participation : 100 %
 - Périmètre : Recycleur « pure-play » (Benelux), incluant la division Mineralz & Water ; prime de 57 % sur le cours du 27/11/2024. Scheme effectif le 6 juin 2025 (05_Commercial_Strategy/scheme-effective.pdf).
 - Source : [[05_Commercial_Strategy/rule-2-7-announcement-regarding-the-recommended-final-cash-acquisition-of-renewi-by-macquarie.pdf#page=1|rule-2-7-announcement-regarding-the-recommended-final-cash-acquisition-of-renewi-by-macquarie.pdf, p. 1]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

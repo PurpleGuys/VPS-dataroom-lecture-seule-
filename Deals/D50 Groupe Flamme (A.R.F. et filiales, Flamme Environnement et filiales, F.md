@@ -21,4 +21,4 @@ added_by: "dataroom-bearer"
 - Participation : 100 %
 - Périmètre : Collecte et incinération de déchets dangereux (A.R.F., ~49 % du CA 2024), services à l'environnement et assainissement ; CA ~100 M€ et EBE ~20 M€ (exercice clos au 30/09/2024). Prix « pour 100 % des titres ». Notifié à l'Autorité de la concurrence fin S1 2026 (communiqué S1 2026).
 - Source : [[05_Commercial_Strategy/25-06-cp-flamme.pdf#page=3|25-06-cp-flamme.pdf, p. 3]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

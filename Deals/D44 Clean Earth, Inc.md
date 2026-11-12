@@ -22,4 +22,4 @@ added_by: "dataroom-bearer"
 - Participation : 100 %
 - Périmètre : Clean Earth, specialty waste processing; expected 2019 revenue ~$300 million and adjusted EBITDA ~$65 million per the release (captured as 05_Commercial_Strategy/harsco-clean-earth-acquisition-2019.html, pending indexation)
 - Source : https://www.enviri.com/harsco-enters-definitive-agreement-acquire-clean-earth-accelerating-its/
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

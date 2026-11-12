@@ -17,4 +17,4 @@ added_by: "dataroom-bearer"
 - Annonce : 2025-10-01 · Clôture : — · Statut : completed
 - Périmètre : première société de la plateforme ; fondée en 2002 ; montant non publié
 - Source : [[05_Commercial_Strategy/enviracore-boomer-2025-10-01.html|enviracore-boomer-2025-10-01.html, p. 1]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

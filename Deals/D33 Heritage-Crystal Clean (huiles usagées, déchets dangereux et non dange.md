@@ -21,4 +21,4 @@ added_by: "dataroom-bearer"
 - Annonce : 2023-07-19 · Clôture : 2023-10-17 · Statut : completed
 - Périmètre : 100 % ; 45,50 $ par action en numéraire ; valorisation ≈ 1,2 Md$ (base non précisée) ; annonce le 19 juillet 2023 (communiqué versé)
 - Source : [[05_Commercial_Strategy/crystal-clean-jfl-2023-10-17.html|crystal-clean-jfl-2023-10-17.html, p. 1]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

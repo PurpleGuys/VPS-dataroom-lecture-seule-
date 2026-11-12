@@ -21,4 +21,4 @@ added_by: "dataroom-bearer"
 - Annonce : 2024-02-06 · Clôture : 2024-03-25 · Statut : completed
 - Périmètre : 100 % ; 400 M$ en numéraire ; EBITDA ajusté 2023 ≈ 36 M$ ; multiple après synergies 7,1x
 - Source : [[05_Commercial_Strategy/clean-harbors-hepaco-2024-03-25.html|clean-harbors-hepaco-2024-03-25.html, p. 1]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

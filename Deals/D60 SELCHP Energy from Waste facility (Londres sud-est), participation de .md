@@ -18,4 +18,4 @@ added_by: "dataroom-bearer"
 - Participation : 49.78 %
 - Périmètre : Usine de valorisation énergétique (440 000 t/an de déchets résiduels), co-détenue et exploitée par Veolia, qui reste opérateur ; prix non publié ; participation de Veolia non précisée dans l'article. Statut « completed » au sens de l'article (« MEAG acquires »), date de clôture non publiée.
 - Source : [[05_Commercial_Strategy/meag-acquires-49-78-stake-in-south-east-london-efw-plant-meag-acquires-49.78-stake-in-sou.html|meag-acquires-49-78-stake-in-south-east-london-efw-plant-meag-acquires-49.78-stake-in-sou.html, document]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

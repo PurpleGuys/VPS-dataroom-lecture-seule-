@@ -20,4 +20,4 @@ added_by: "dataroom-bearer"
 - Annonce : — · Clôture : 2026-03-31 · Statut : completed
 - Périmètre : Réhabilitation des sols et traitement des eaux contaminées, PFAS ; 228 M AUD soit 137 M EUR (montant net)
 - Source : [[01_Financial/veolia-amendement-deu-2025-s1-2026.pdf#page=46|veolia-amendement-deu-2025-s1-2026.pdf, p. 46]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

@@ -22,4 +22,4 @@ added_by: "dataroom-bearer"
 - Participation : 100 %
 - Périmètre : Construction et réparation de réseaux d'eau ; CA 2023 1,1 Md€, ~6 900 salariés ; dont paiement différé 20 M€
 - Source : [[01_Financial/finance_consolidated_financial_statement_2024.pdf#page=16|finance_consolidated_financial_statement_2024.pdf, p. 16]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

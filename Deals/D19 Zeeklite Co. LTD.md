@@ -21,4 +21,4 @@ added_by: "dataroom-bearer"
 - Annonce : 2025-05-16 · Clôture : 2025-05-30 · Statut : completed
 - Périmètre : Stockage et traitement de déchets dangereux, Yonezawa
 - Source : [[01_Financial/finance_veolia_consolidated_financial_statements_31-12-25.pdf#page=17|finance_veolia_consolidated_financial_statements_31-12-25.pdf, p. 17]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

@@ -16,4 +16,4 @@ added_by: "dataroom-bearer"
 - Annonce : — · Clôture : — · Statut : completed
 - Périmètre : acquisition en janvier 2024 selon la société (jour non publié) ; prix non publié
 - Source : [[05_Commercial_Strategy/arcwood-rebrand-2025-03-18.html|arcwood-rebrand-2025-03-18.html, p. 1]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

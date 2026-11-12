@@ -21,4 +21,4 @@ added_by: "dataroom-bearer"
 - Annonce : 2021-07-14 · Clôture : 2021-11-30 · Statut : completed
 - Périmètre : 100 % ; 5,3 Md$ dette comprise ; EBITDA ajusté 2021 attendu 460-480 M$
 - Source : [[05_Commercial_Strategy/eqt-covanta-2021-07-14.html|eqt-covanta-2021-07-14.html, p. 1]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

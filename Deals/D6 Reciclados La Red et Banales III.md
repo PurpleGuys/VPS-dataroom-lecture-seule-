@@ -20,4 +20,4 @@ added_by: "dataroom-bearer"
 - Annonce : — · Clôture : 2023-01-10 · Statut : completed
 - Périmètre : Valorisation et recyclage des plastiques (Madrid, Séville) ; montant total des deux filiales
 - Source : [[01_Financial/finance_consolidated_financial_statements_2023.pdf#page=16|finance_consolidated_financial_statements_2023.pdf, p. 16]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

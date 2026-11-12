@@ -20,4 +20,4 @@ added_by: "dataroom-bearer"
 - Annonce : — · Clôture : 2022-06-24 · Statut : completed
 - Périmètre : Filiale de valorisation énergétique des déchets ; accord de transfert signé en décembre 2021
 - Source : [[01_Financial/ve_urd_2022_en.pdf#page=373|ve_urd_2022_en.pdf, p. 373]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

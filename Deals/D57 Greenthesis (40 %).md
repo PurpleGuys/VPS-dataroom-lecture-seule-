@@ -21,4 +21,4 @@ added_by: "dataroom-bearer"
 - Participation : 40 %
 - Périmètre : Gestion et valorisation de déchets, valorisation énergétique, dépollution, décharges (~20 sites, Italie du Nord et du Centre) ; après retrait de la cote : famille Grossi 60 %, Patrizia 40 % ; CA 173 M€ et EBITDA 42 M€ « l'an dernier » ; prix de la participation et vendeur non publiés ; date = date de l'article (finalisation).
 - Source : [[05_Commercial_Strategy/alla-tedesca-patrizia-il-40-di-greenthesis-2643263-alla-tedesca-patrizia-il-40-di-greenth.html|alla-tedesca-patrizia-il-40-di-greenthesis-2643263-alla-tedesca-patrizia-il-40-di-greenth.html, p. 1]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

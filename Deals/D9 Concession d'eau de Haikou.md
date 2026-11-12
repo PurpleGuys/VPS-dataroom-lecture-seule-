@@ -22,4 +22,4 @@ added_by: "dataroom-bearer"
 - Participation : 49 %
 - Périmètre : Participation de 49 % ; 620 M CNY
 - Source : [[01_Financial/finance_consolidated_financial_statement_2024.pdf#page=16|finance_consolidated_financial_statement_2024.pdf, p. 16]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

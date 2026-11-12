@@ -17,4 +17,4 @@ added_by: "dataroom-bearer"
 - Annonce : 2026-05-08 · Clôture : — · Statut : completed
 - Périmètre : EMI, fondée en 1983 à Guthrie (Oklahoma), garde sa marque ; montant non publié
 - Source : [[05_Commercial_Strategy/enviracore-emi-2026-05-08.html|enviracore-emi-2026-05-08.html, p. 1]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

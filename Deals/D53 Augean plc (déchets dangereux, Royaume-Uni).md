@@ -21,4 +21,4 @@ added_by: "dataroom-bearer"
 - Participation : 100 %
 - Périmètre : Spécialiste britannique des déchets dangereux ; enchère du Takeover Panel : Eleia 372p contre 361p pour Morgan Stanley Infrastructure. Valeur de ~390 M£ lue dans la presse (05_Commercial_Strategy/winning-bid-made-in-battle-...html) ; pas de valeur d'entreprise publiée ; date de clôture non vérifiée.
 - Source : [[05_Commercial_Strategy/panel-statement-2021-19.pdf#page=1|panel-statement-2021-19.pdf, p. 1]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

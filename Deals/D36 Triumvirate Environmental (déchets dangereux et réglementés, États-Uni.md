@@ -20,4 +20,4 @@ added_by: "dataroom-bearer"
 - Annonce : 2025-02-04 · Clôture : — · Statut : announced
 - Périmètre : investissement aux côtés du fondateur ; société valorisée ≈ 1,8 Md$ ; part et autres termes non publiés
 - Source : [[05_Commercial_Strategy/triumvirate-berkshire-2025-02-04.html|triumvirate-berkshire-2025-02-04.html, p. 1]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

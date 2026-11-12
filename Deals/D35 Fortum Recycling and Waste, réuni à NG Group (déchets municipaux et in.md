@@ -21,4 +21,4 @@ added_by: "dataroom-bearer"
 - Annonce : 2024-07-18 · Clôture : 2024-11-29 · Statut : completed
 - Périmètre : pôle recyclage et déchets de Fortum, ~900 salariés ; ≈ 800 M€ dette et trésorerie exclues ; plus-value ≈ 180 M€
 - Source : [[05_Commercial_Strategy/fortum-summa-2024-11-29.html|fortum-summa-2024-11-29.html, p. 1]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

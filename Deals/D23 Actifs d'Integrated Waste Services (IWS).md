@@ -20,4 +20,4 @@ added_by: "dataroom-bearer"
 - Annonce : — · Clôture : 2022-01-17 · Statut : completed
 - Périmètre : Traitement de déchets ; 155 M AUD
 - Source : [[01_Financial/ve_urd_2022_en.pdf#page=330|ve_urd_2022_en.pdf, p. 330]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

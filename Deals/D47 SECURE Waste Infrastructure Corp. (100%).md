@@ -22,4 +22,4 @@ added_by: "dataroom-bearer"
 - Participation : 100 %
 - Périmètre : Industrial waste infrastructure: processing of hazardous and non-hazardous liquids and solids, 12 landfills, 55 waste treatment facilities, 98 injection wells, plus energy infrastructure; consideration 80% GFL shares / 20% cash; no EBITDA multiple disclosed. Closing date per Waste360 (GFL announcement 1 Sept 2026)
 - Source : https://s24.q4cdn.com/409248530/files/doc_news/GFL-Environmental-and-SECURE-Waste-Infrastructure-announce-acquisition-by-GFL-further-expanding-and-densifying-GFLs-Western-Canadian--BXDJX.pdf
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

@@ -22,4 +22,4 @@ added_by: "dataroom-bearer"
 - Participation : 100 %
 - Périmètre : Déchets dangereux ; 2 989 M USD soit 2 542 M EUR ; montant net 2 778 M EUR dettes IFRS 16 et coûts d'acquisition inclus ; 82 sites dont 19 autorisés EPA
 - Source : [[01_Financial/veolia-amendement-deu-2025-s1-2026.pdf#page=46|veolia-amendement-deu-2025-s1-2026.pdf, p. 46]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

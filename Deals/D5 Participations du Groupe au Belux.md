@@ -20,4 +20,4 @@ added_by: "dataroom-bearer"
 - Annonce : — · Clôture : 2026-06-30 · Statut : completed
 - Périmètre : Cessions de participations ; produit de cession au 30 juin 2026, frais inclus
 - Source : [[01_Financial/veolia-amendement-deu-2025-s1-2026.pdf#page=27|veolia-amendement-deu-2025-s1-2026.pdf, p. 27]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

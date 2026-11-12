@@ -22,4 +22,4 @@ added_by: "dataroom-bearer"
 - Participation : 100 %
 - Périmètre : Totalité de la participation, issue de la prise de contrôle de Suez ; dividendes perçus inclus ; amende de 9 M€ confirmée
 - Source : [[01_Financial/finance_consolidated_financial_statement_2024.pdf#page=16|finance_consolidated_financial_statement_2024.pdf, p. 16]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

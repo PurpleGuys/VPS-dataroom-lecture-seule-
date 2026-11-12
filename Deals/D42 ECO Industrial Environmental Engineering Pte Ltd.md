@@ -22,4 +22,4 @@ added_by: "dataroom-bearer"
 - Participation : 100 %
 - Périmètre : Industrial hazardous waste platform, one integrated site of ~440 kt annual capacity plus two JVs; 2023 revenue ~SGD 96 million, adjusted EBITDA ~SGD 41 million (incl. SGD 3.9 million from JVs)
 - Source : https://echanges.dila.gouv.fr/OPENDATA/AMF/BWR/2024/06/FCBWR157582_20240617.pdf
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

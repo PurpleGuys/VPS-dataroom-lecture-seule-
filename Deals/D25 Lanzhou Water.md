@@ -21,4 +21,4 @@ added_by: "dataroom-bearer"
 - Participation : 36 %
 - Périmètre : Participation de 36 %, mise en équivalence
 - Source : [[01_Financial/ve_urd_2022_en.pdf#page=373|ve_urd_2022_en.pdf, p. 373]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer

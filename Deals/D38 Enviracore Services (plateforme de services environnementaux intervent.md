@@ -17,4 +17,4 @@ added_by: "dataroom-bearer"
 - Annonce : 2025-09-30 · Clôture : — · Statut : completed
 - Périmètre : plateforme créée par le fonds (investissement 2024, Fund II, selon son portefeuille) ; premières sociétés Boomer Environmental et Environmental Cleanup (Oklahoma, Arkansas) ; montants non publiés
 - Source : [[05_Commercial_Strategy/enviracore-lancement-2025-09-30.html|enviracore-lancement-2025-09-30.html, p. 1]]
-- Enregistré par : dataroom-bearer · Relu par : **personne**
+- Enregistré par : dataroom-bearer
