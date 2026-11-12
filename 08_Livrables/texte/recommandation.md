@@ -14,6 +14,8 @@ Les tuck-ins américains et asiatiques restent à portée. La fourchette de Gree
 
 Deux leviers élargissent la marge. Sans tuck-in en 2027, l'acquisition maximale atteindrait [M:MAXACQB@tuck-bas]. Avec tout le reste du programme de cessions encaissé en 2027, elle atteindrait [M:MAXACQB@s27-haut]. Au centre, aucun des deux ne suffit seul à financer 1 Md€. Une plateforme demande donc de nouvelles signatures. Même alors, elle remplacerait souvent les tuck-ins de 2027.
 
+Au-delà de 2027, Veolia n'a publié ni objectif d'EBITDA ni engagement de levier. Nous avons donc prolongé notre modèle à titre exploratoire, sans le mêler à la fourchette. La croissance organique de 2027 y est reconduite chaque année. Le reste du programme de cessions y est encaissé en 2028. Dans ce cadre, l'acquisition maximale atteindrait [M:HZ.2028.MAXACQ] fin 2028 au centre, contre [M:MAXACQB] fin 2027. Dans le scénario défavorable, la marge reste négative, à [M:HZ.2030.BIND@def] fin 2030. Cette prolongation appuie l'ordre que nous recommandons : des tuck-ins d'abord, une plateforme après les cessions.
+
 ## La prudence se paie en EBITDA cédé, et actionnaires comme agences en portent l'effet
 
 Les cessions sont la voie de financement choisie par Veolia. Leur coût est l'EBITDA cédé. Au multiple central de [M:H.mDisp], le programme retire [M:C.progEb] d'EBITDA. Avant synergies, Clean Earth a coûté environ 14,9x, soit [F40] pour [F51]. À ce prix, un euro investi rapporte moins d'EBITDA qu'un euro cédé à [F737] n'en retire.
@@ -45,3 +47,4 @@ Chaque seuil se lira dans une publication de Veolia.
 - Le calendrier d'encaissement des cessions signées et du reste du programme. Veolia ne le publie pas.
 - Le prix actuel d'une plateforme américaine. Nos sources ne donnent que des prix d'entrée de fonds, sans EBITDA récent.
 - L'effet net des cessions sur le bénéfice par action. Il dépend aussi des intérêts économisés, que nous n'avons pas chiffrés.
+- Les hypothèses de Veolia au-delà de 2027. Notre prolongation reconduit celles de 2027 : c'est un choix du groupe, pas une prévision de Veolia.

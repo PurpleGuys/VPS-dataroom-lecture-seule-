@@ -59,10 +59,15 @@ Nous trions les cibles recensées selon les critères publiés par Veolia. L'ann
 | Enviracore Services | Seaside Equity Partners | non publiée[T7] | en partie | taille de tuck-in |
 | NG Group | Summa Equity | environ [T6] | non | pays nordiques |
 | GFL Environmental Services | Apollo et BC Partners | [T5] | oui | hors de portée |
+| Cenviro | Khazanah Nasional et SK | environ [T28] | oui | cession en cours ; taille de tuck-in |
 
 J.F. Lehman a racheté Heritage-Crystal Clean en 2023 sur une valorisation d'environ [F609]. L'investissement de Berkshire Partners a valorisé Triumvirate à [F612] en février 2025. Au change implicite du prix de Clean Earth, [M:H.fx] dollar par euro, [F609] et [F612] tombent entre 1 et 2 Md€. Or une acquisition de 1 Md€ ne passe que dans [M:P.acq1] des futurs. Ces valeurs sont des prix d'entrée de fonds, pas des prix de sortie. Notre lecture : un fonds vendeur demanderait davantage.
 
 Les autres cibles américaines n'ont pas de valeur dans nos sources. Onterris a lancé le 5 août 2026 une revue stratégique, qui examine notamment un intérêt d'acquisition. Notre lecture : son métier de conseil et de dépollution complète le traitement sans l'élargir. Seaside Equity Partners a lancé Enviracore Services fin septembre 2025[D38]. Les critères publiés par Seaside visent des plateformes de [F616] à [F617] d'EBITDA.
+
+Une cession est en cours en Asie. SK étudie la vente de ses 30 % dans Cenviro, société malaisienne de gestion de déchets. La presse valorise l'ensemble à environ [T28], soit [M:T.T28], de sources anonymes. À ce prix et au multiple médian du secteur, Cenviro tient sous le plafond dans [M:T.T28.p] des futurs.
+
+En Europe, hors des critères publiés par Veolia, trois cibles ont un prix et un EBITDA publiés. Greenthesis est valorisée [M:T.T23.ve]. Lassila & Tikanoja vaut [T29] en Bourse et Mo-BRUK [T31], hors dette. Elles s'échangent à [M:T.T23.m], [M:T.T29.m] et [M:T.T31.m] leur EBITDA, dette nette comprise pour les deux dernières. À ces multiples, elles tiennent sous le plafond dans [M:T.T23.p], [M:T.T29.p] et [M:T.T31.p] des futurs. Les deux dernières sont cotées et ne sont pas à vendre : leur valeur est une capitalisation, sans prime de contrôle. Notre lecture : des cibles de cette taille existent, mais aucune ne tient dans notre scénario central.
 
 ## Une cible plus grande demande un financement que la politique du groupe écarte
 
@@ -96,3 +101,4 @@ Enfin, écarter d'ici fin 2027 toute opération de la taille de Clean Earth. Auc
 - Le prix ou l'EBITDA d'Arcwood, la valeur d'Onterris, l'EBITDA récent de Heritage-Crystal Clean, de Triumvirate et de NG Group.
 - Le nom et le prix des acquisitions américaines en cours, évoquées par Veolia dans Waste Dive le 23 septembre 2026.
 - Le prix de chacun des tuck-ins américains de 2025, et la taille visée pour une prochaine plateforme.
+- L'EBITDA de Cenviro, et le prix de contrôle des cibles cotées. Une capitalisation ne dit pas ce qu'un acquéreur paierait.

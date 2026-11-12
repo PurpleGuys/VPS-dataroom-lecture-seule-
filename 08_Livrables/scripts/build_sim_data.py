@@ -199,6 +199,8 @@ if t0:
                 ref = str(cib[f"E{rr}"].value or "").split()[0] if cib[f"E{rr}"].value else ""
                 target_params["rates"][cur] = {"value": num(cib[f"C{rr}"].value), "label": "taux de référence BCE",
                                                "sources": [s for s in [source(ref)] if s]}
+    tspec = model.get("targets") or {}
+    tcols, tfigures = tspec.get("columns") or {}, tspec.get("figures") or {}
     for r in range(t0 + 1, cib.max_row + 1):
         name = cib[f"B{r}"].value
         if not isinstance(name, str) or not name.strip():
@@ -213,6 +215,14 @@ if t0:
             sources = [src]
         else:   # l'étalon (Clean Earth) : ses chiffres viennent du registre
             sources = [s for s in (source(x.strip()) for x in ref.split(",")) if s]
+        # le multiple propre (model-def.json, « targets ») : EBITDA et dette nette publiés, valeur d'entreprise retenue
+        own = {k: num(cib[f"{c}{r}"].value) for k, c in tcols.items()}
+        fig = tfigures.get(tid) or {}
+        fig_src = {k: source(fid) for k, fid in fig.items()}
+        if any(s is None for s in fig_src.values()):
+            raise SystemExit(f"cible {tid} : chiffre publié absent du registre ({fig})")
+        if fig.get("ebitda") and own.get("multiple_own") is None:
+            raise SystemExit(f"cible {tid} : multiple propre sans valeur : recalculer le classeur d'abord")
         targets.append({
             "id": tid, "name": name, "benchmark": tid is None,
             "country": cib[f"C{r}"].value or "", "activity": meta.get("activity") or cib[f"D{r}"].value or "",
@@ -222,6 +232,13 @@ if t0:
             "p": num(cib[f"L{r}"].value), "years": num(cib[f"M{r}"].value),
             "scores": [num(cib[f"{c}{r}"].value) for c in crit_cols], "score": num(cib[f"S{r}"].value),
             "sources": sources,
+            # ev_eur et value gardent leur sens (la valeur PUBLIÉE) ; ce qui suit est nul sans EBITDA publié au registre
+            "ebitda": own.get("ebitda"), "ebitda_unit": (cib[f"G{r}"].value or "") if own.get("ebitda") is not None else None,
+            "net_debt": own.get("net_debt"), "net_debt_unit": (cib[f"G{r}"].value or "") if own.get("net_debt") is not None else None,
+            "ev_retained": own.get("ev_retained"), "ev_retained_eur": own.get("ev_retained_eur"),
+            "multiple_own": own.get("multiple_own"),
+            "multiple_basis": "publié" if tid is None else "propre" if own.get("multiple_own") is not None else "médiane",
+            "ebitda_source": fig_src.get("ebitda"), "net_debt_source": fig_src.get("net_debt"),
         })
 
 # ---------------------------------------------------------------- prolongation exploratoire 2028-2030 : un bloc séparé

@@ -2564,15 +2564,41 @@ for col, (name, _) in zip(CW, CRIT):
 WROW = r; r += 1
 header(ws, r, ["", "Cible", "Pays", "Activité", "Propriétaire (depuis)", "Valeur publiée", "Unité", "Base", "VE (M EUR)",
                "Multiple retenu", "Tient au central ?", "Tient dans X % des tirages", "Années de détention fin 2027"]
-       + [c[0] + " (0-2)" for c in CRIT] + ["Score (0-2)", "Réf."]); r += 1
+       + [c[0] + " (0-2)" for c in CRIT] + ["Score (0-2)", "Réf."]
+       + ["EBITDA publié", "Dette nette publiée", "Valeur d'entreprise retenue", "Multiple propre", "VE retenue (M EUR)",
+          "Réf. EBITDA, dette nette"]); r += 1
 GR0 = r
 N_ = f"{SIM_N}"
-def _fits(row, scen_cell):
-    return (f'=IF(AND(ISNUMBER(I{row}),ISNUMBER(J{row})),IF(I{row}<=IF(J{row}>{HY("cap")},MAX(0,{scen_cell})/(1-{HY("cap")}/J{row}),0),'
+SCALE = {"M": 1, "Md": 1000}
+# Colonnes du multiple propre (model_def.TARGET_FIGURES), à droite de la grille : aucune colonne existante ne bouge.
+TCOL = {"ebitda": "U", "net_debt": "V", "ev_retained": "W", "multiple_own": "X", "ev_retained_eur": "Y", "refs": "Z"}
+def _fits(row, scen_cell, ev="I"):
+    return (f'=IF(AND(ISNUMBER({ev}{row}),ISNUMBER(J{row})),IF({ev}{row}<=IF(J{row}>{HY("cap")},MAX(0,{scen_cell})/(1-{HY("cap")}/J{row}),0),'
             f'"oui","non"),"")')
-def _prob(row):
-    return (f'=IF(AND(ISNUMBER(I{row}),ISNUMBER(J{row})),IF(J{row}>{HY("cap")},'
-            f'COUNTIF({SIM["BIND27"]},">="&I{row}*(1-{HY("cap")}/J{row}))/{N_},0),"")')
+def _prob(row, ev="I"):
+    return (f'=IF(AND(ISNUMBER({ev}{row}),ISNUMBER(J{row})),IF(J{row}>{HY("cap")},'
+            f'COUNTIF({SIM["BIND27"]},">="&{ev}{row}*(1-{HY("cap")}/J{row}))/{N_},0),"")')
+_REG_ROWS = {x["id"]: x for x in rows}
+_TARGET_IDS = {t["id"] for t in TARGETS}
+_unknown = sorted(set(MD.TARGET_FIGURES) - _TARGET_IDS)
+if _unknown:
+    raise SystemExit(f"model_def.TARGET_FIGURES cite {', '.join(_unknown)}, absent(s) de targets.csv")
+def _figure(tid, kind, pub):
+    """La cellule d'Entrées d'un chiffre publié d'une cible (EBITDA, dette nette), ramenée à l'échelle de sa valeur publiée.
+    Le chiffre doit être au registre, dans la devise de la cible : le multiple se calcule dans cette devise."""
+    fid = (MD.TARGET_FIGURES.get(tid) or {}).get(kind)
+    if not fid:
+        return None, None
+    reg = _REG_ROWS.get(fid)
+    if reg is None or fid not in ENTREE_ROW:
+        raise SystemExit(f"model_def.TARGET_FIGURES : {tid}.{kind} cite {fid}, absent du registre")
+    parts = reg["unit"].split()
+    if pub is None or len(parts) != 2 or parts[0] not in SCALE or pub[1] not in SCALE or parts[1] != pub[2]:
+        raise SystemExit(f"model_def.TARGET_FIGURES : {tid}.{kind} ({fid}, {reg['unit']}) n'est pas dans la devise de la valeur publiée de la cible")
+    USED.append({"id": fid, "prefix": reg["label"], "period": reg["period"], "unit": reg["unit"]})
+    factor = SCALE[parts[0]] / SCALE[pub[1]]
+    cell = f"{q('Entrées')}!$C${ENTREE_ROW[fid]}"
+    return (f"={cell}" if factor == 1 else f"={cell}*{factor}"), fid
 # l'étalon : Clean Earth, au prix payé et au multiple publié
 put(ws, f"B{r}", "Clean Earth (étalon, déjà acquis)", italic=True); put(ws, f"C{r}", "États-Unis", italic=True)
 put(ws, f"D{r}", "TSDF, 82 sites", italic=True); put(ws, f"E{r}", "Veolia (depuis le 01/06/2026)", italic=True)
@@ -2581,7 +2607,6 @@ put(ws, f"I{r}", f"=F{r}", nf=NF_M); put(ws, f"J{r}", f"={ce_mult}", color=GREEN
 put(ws, f"K{r}", _fits(r, f"$D${HR}")); put(ws, f"L{r}", _prob(r), nf="0%", bold=True)
 put(ws, f"T{r}", f"{i_cenfd}, {id_cemult}", color=GREY)
 CE_ROW = r; r += 1
-SCALE = {"M": 1, "Md": 1000}
 for t in TARGETS:
     if "Veolia" in (t.get("owner") or ""):
         continue
@@ -2600,8 +2625,28 @@ for t in TARGETS:
             put(ws, f"I{r}", "devise non convertie", color=GREY, align="right")
     else:
         put(ws, f"F{r}", "non publié", color=GREY, align="right"); put(ws, f"I{r}", "n/d", color=GREY, align="right")
-    put(ws, f"J{r}", f"={K['mRet']}", nf='0.0"x"', fill=YELLOW)
-    put(ws, f"K{r}", _fits(r, f"$D${HR}")); put(ws, f"L{r}", _prob(r), nf="0%", bold=True)
+    # Multiple propre : EBITDA publié au registre -> valeur d'entreprise retenue ÷ EBITDA, dans la devise de la cible ; le
+    # test « tient » emploie alors la valeur d'entreprise retenue (en euros) et ce multiple. Sinon : la médiane, comme avant.
+    f_eb, id_eb = _figure(t["id"], "ebitda", pub)
+    f_nd, id_nd = _figure(t["id"], "net_debt", pub)
+    if f_eb:
+        put(ws, f"{TCOL['ebitda']}{r}", f_eb, color=GREEN, nf="#,##0.0")
+        if f_nd:
+            put(ws, f"{TCOL['net_debt']}{r}", f_nd, color=GREEN, nf="#,##0.0")
+        equity = t.get("ev_basis") == "equity_value" and f_nd
+        put(ws, f"{TCOL['ev_retained']}{r}", f"=F{r}+{TCOL['net_debt']}{r}" if equity else f"=F{r}", nf="#,##0.0")
+        put(ws, f"{TCOL['multiple_own']}{r}", f"={TCOL['ev_retained']}{r}/{TCOL['ebitda']}{r}", nf='0.0"x"', bold=True)
+        if scale and rate:
+            put(ws, f"{TCOL['ev_retained_eur']}{r}", f"={TCOL['ev_retained']}{r}*{scale}/{rate}", nf=NF_M)
+        else:
+            put(ws, f"{TCOL['ev_retained_eur']}{r}", "devise non convertie", color=GREY, align="right")
+        put(ws, f"{TCOL['refs']}{r}", ", ".join(x for x in (id_eb, id_nd) if x), color=GREY)
+        put(ws, f"J{r}", f"={TCOL['multiple_own']}{r}", nf='0.0"x"')
+        put(ws, f"K{r}", _fits(r, f"$D${HR}", TCOL["ev_retained_eur"]))
+        put(ws, f"L{r}", _prob(r, TCOL["ev_retained_eur"]), nf="0%", bold=True)
+    else:
+        put(ws, f"J{r}", f"={K['mRet']}", nf='0.0"x"', fill=YELLOW)
+        put(ws, f"K{r}", _fits(r, f"$D${HR}")); put(ws, f"L{r}", _prob(r), nf="0%", bold=True)
     yr = re.search(r"depuis[^0-9]*?(?:\d{1,2}/\d{1,2}/)?(\d{4})", t.get("owner", ""))
     if yr:
         put(ws, f"M{r}", f"=2027-{yr.group(1)}", nf="0", align="center")
@@ -2627,10 +2672,16 @@ put(ws, f"B{r}", "Cellules jaunes : le multiple payé (par défaut la médiane d
     "défendre par le groupe ; le score est la moyenne pondérée des critères renseignés. Ajouter une cible : register_target, la ligne apparaît "
     "au prochain passage de la chaîne.", color=GREY, italic=True, wrap=True)
 ws.merge_cells(f"B{r}:L{r}"); ws.row_dimensions[r].height = 30; r += 1
+put(ws, f"B{r}", "Multiple propre (colonnes U à Z) : quand l'EBITDA publié d'une cible est au registre, elle est jugée à son multiple "
+    "(valeur d'entreprise retenue ÷ EBITDA publié, dans sa devise) et non à la médiane : elle ajoute son prix à la dette et son EBITDA au "
+    "dénominateur. Valeur d'entreprise retenue = valeur publiée, plus la dette nette publiée quand la valeur est une valeur de fonds propres.",
+    color=GREY, italic=True, wrap=True)
+ws.merge_cells(f"B{r}:L{r}"); ws.row_dimensions[r].height = 30; r += 1
 for col, (name, why) in zip(CW, CRIT):
     put(ws, f"B{r}", f"{name} : {why}", color=GREY); r += 1
 widths(ws, {"A": 4, "B": 46, "C": 16, "D": 30, "E": 30, "F": 14, "G": 9, "H": 12, "I": 12, "J": 12, "K": 12, "L": 14, "M": 12,
-            "N": 11, "O": 11, "P": 11, "Q": 11, "R": 11, "S": 10, "T": 40})
+            "N": 11, "O": 11, "P": 11, "Q": 11, "R": 11, "S": 10, "T": 40,
+            "U": 13, "V": 13, "W": 15, "X": 12, "Y": 14, "Z": 16})
 
 # ================================================================ Vérifications
 ws = sheets["Vérifications"]
@@ -2949,6 +3000,8 @@ OUT.with_name("model-def.json").write_text(_json.dumps({
                  "conclusions": [cid for cid, _l, _m in CONCL], "size_cell": FN["S"].replace("$", ""), "lev26max_cell": FN["lev26max"].replace("$", "")},
     "trajectoire": {"columns": [{"col": col, "name": name, "code": code, "side": side} for col, name, code, side in cols],
                     "input_rows": IN, "calc_rows": {k: v for k, v in ROW.items()}},
+    # Cibles : où le classeur écrit le multiple propre (onglet Cibles), et de quelles lignes du registre il vient.
+    "targets": {"figures": MD.TARGET_FIGURES, "columns": {k: v for k, v in TCOL.items() if k != "refs"}},
     # Prolongation exploratoire 2028-2030 : un bloc séparé (ni dans calc ni dans outputs), mêmes moteurs, mêmes tirages.
     "horizon": {
         "years": MD.HORIZON_YEARS, "label": MD.HORIZON_LABEL, "cap_note": MD.HORIZON_CAP_NOTE, "reading": MD.HORIZON_READING,

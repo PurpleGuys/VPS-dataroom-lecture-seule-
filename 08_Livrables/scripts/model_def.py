@@ -231,6 +231,18 @@ HORIZON_NOT_MODELLED = [
     "Change, taux d'intérêt à refinancement, rachats d'actions, inflation des contrats : non modélisés, comme en 2027.",
 ]
 
+# ---------------------------------------------------------------- cibles : le multiple propre
+# Une cible dont le registre porte l'EBITDA publié est jugée à SON multiple (valeur d'entreprise retenue ÷ EBITDA publié,
+# dans sa devise), pas à la médiane du secteur : elle ajoute son prix à la dette et son EBITDA au dénominateur. Quand sa
+# valeur publiée est une valeur de fonds propres et que sa dette nette publiée est au registre, la valeur d'entreprise
+# retenue est leur somme ; sinon c'est la valeur publiée. Table explicite : identifiant de la cible -> lignes du registre.
+# Une cible sans entrée garde le multiple médian, au chiffre près. Aucun nombre ici : seulement des identifiants.
+TARGET_FIGURES = {
+    "T23": {"ebitda": "F860"},
+    "T29": {"ebitda": "F861", "net_debt": "F862"},
+    "T31": {"ebitda": "F863", "net_debt": "F864"},
+}
+
 # Monte-Carlo : graine des tirages (reproductibles) et nombre de tirages.
 SEED = 20261016
 N_DRAWS = 1000

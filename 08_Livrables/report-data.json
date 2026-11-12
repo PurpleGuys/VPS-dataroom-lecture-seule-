@@ -466,14 +466,14 @@
     "Au 30 septembre 2026, aucune lecture du levier ne descend sous le plafond — La dette financière nette atteint 25 423 M€ au 30 septembre 2026. L'EBITDA des neuf premiers mois passe de 5 080 M€ en 2025 à 5 404 M€ en 2026. Ajoutée à l'EBITDA 2025, 7 050 M€, cette progression donne un EBITDA glissant de 7 374 M€.",
     "Finir 2026 au niveau annoncé exige un quatrième trimestre hors norme — Avec l'EBITDA 2026 du modèle, 7 486 M€, un levier de 3x correspond à environ 22,5 Md€ de dette. C'est loin des 25 423 M€ du 30 septembre, et il ne reste qu'un trimestre. Or la dette n'a baissé que de 268 M€ au quatrième trimestre 2025, de 19 925 M€ à 19 657 M€. Le cash-flow libre net de ce trimestre a pourtant atteint 1 383 M€. Les autres flux du trimestre en ont absorbé l'essentiel.",
     "Le remboursement d'un hybride alourdit le levier de Veolia plus que la dette ajustée de Moody's — Le 12 septembre 2026, Veolia a remboursé un hybride. Le pont des neuf mois l'inscrit pour −500 M€.",
-    "Les seuils des agences laissent plus de marge que le plafond de Veolia fin 2027 — Les deux agences ont confirmé leur note au printemps 2026, avec une perspective stable. Leur seuil de dégradation ne porte pas sur le levier de Veolia. Il porte sur le FFO rapporté à une dette ajustée, propre à chaque agence. Le tableau suivant compare leurs grilles.",
+    "Les seuils des agences laissent plus de marge que le plafond de Veolia fin 2027 — Les deux agences ont confirmé leur note au printemps 2026, avec une perspective stable. Veolia ne présente pas d'autre notation : nous n'en avons trouvé aucune de Fitch. Le seuil de dégradation des deux agences ne porte pas sur le levier de Veolia. Il porte sur le FFO rapporté à une dette ajustée, propre à chaque agence. Le tableau suivant compare leurs grilles.",
     "Le refinancement renchérit la dette sans limiter la capacité — Veolia juge ses besoins de 2026 couverts par ses émissions de l'année. La liquidité reste solide, mais elle a baissé. Elle atteint 14,9 Md€, dont 5,8 Md€ de lignes de crédit confirmées non tirées, sans covenant restrictif. La liquidité nette des dettes courantes vaut 4 087 M€, contre 6 886 M€ fin 2025."
    ],
    "open": [
     "Nous n'avons trouvé aucun levier publié au 30 septembre 2026. Nos trois lectures de cette date sont des calculs du groupe.",
     "Nous ignorons combien de mois de Clean Earth le ratio de fin 2026 retiendra. Le modèle en compte 7 mois et donne 3,18x. Sur une année pleine, il donne 3,15x.",
     "L'EBITDA de Clean Earth retenu, 200 M$, est une prévision de Veolia. Un EBITDA plus faible relèverait nos lectures pro forma.",
-    "Nous n'avons pas repris la dette ajustée ni le FFO propres à S&P.",
+    "Moody's ne chiffre pas son seuil, high teens : sa marge ne se mesure pas en euros.",
     "Veolia a signé 570 M€ de cessions et en a réalisé 0,2 Md€ sur neuf mois. Nous ne savons pas comment ces montants s'emboîtent, ni quand les cessions signées seront encaissées."
    ],
    "qa": [
@@ -495,7 +495,7 @@
     ],
     [
      "Sur quoi vous appuyez-vous pour dire : « Les seuils des agences laissent plus de marge que le plafond de Veolia fin 2027 » ?",
-     "Les deux agences ont confirmé leur note au printemps 2026, avec une perspective stable. Leur seuil de dégradation ne porte pas sur le levier de Veolia. Il porte sur le FFO rapporté à une dette ajustée, propre à chaque agence. Le tableau suivant compare leurs grilles."
+     "Les deux agences ont confirmé leur note au printemps 2026, avec une perspective stable. Veolia ne présente pas d'autre notation : nous n'en avons trouvé aucune de Fitch. Le seuil de dégradation des deux agences ne porte pas sur le levier de Veolia. Il porte sur le FFO rapporté à une dette ajustée, propre à chaque agence. Le tableau suivant compare leurs grilles."
     ],
     [
      "Sur quoi vous appuyez-vous pour dire : « Le refinancement renchérit la dette sans limiter la capacité » ?",
@@ -977,19 +977,51 @@
      ""
     ],
     [
-     "F164",
-     "S&P : FFO / dette ajustés attendu, bas de fourchette",
-     "2026-2028",
-     "20 %",
-     "ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf, p. 3",
+     "F867",
+     "S&P : FFO / dette ajustés constaté",
+     "FY2025",
+     "21,0 %",
+     "ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf, p. 4",
      ""
     ],
     [
-     "F165",
-     "S&P : FFO / dette ajustés attendu, haut de fourchette",
-     "2026-2028",
-     "22 %",
-     "ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf, p. 3",
+     "F147",
+     "Moody's : FFO / dette nette ajustée",
+     "FY2025",
+     "20,3 %",
+     "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 7",
+     ""
+    ],
+    [
+     "F831",
+     "S&P, prévision annuelle : FFO / dette ajustés, bas de fourchette",
+     "2026",
+     "19 %",
+     "ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf, p. 4",
+     ""
+    ],
+    [
+     "F832",
+     "S&P, prévision annuelle : FFO / dette ajustés, haut de fourchette",
+     "2026",
+     "20 %",
+     "ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf, p. 4",
+     ""
+    ],
+    [
+     "F826",
+     "S&P, prévision annuelle : FFO / dette ajustés, bas de fourchette",
+     "2027",
+     "20 %",
+     "ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf, p. 4",
+     ""
+    ],
+    [
+     "F852",
+     "S&P, prévision annuelle : FFO / dette ajustés, haut de fourchette",
+     "2027",
+     "21 %",
+     "ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf, p. 4",
      ""
     ],
     [
@@ -1006,6 +1038,30 @@
      "2027F",
      "19,5 %",
      "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 2",
+     ""
+    ],
+    [
+     "F865",
+     "S&P : dette ajustée par l'agence",
+     "FY2025",
+     "24 340 M€",
+     "ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf, p. 4",
+     ""
+    ],
+    [
+     "F868",
+     "S&P, prévision : dette ajustée par l'agence, bas de fourchette (tableau en milliards)",
+     "2026-2028",
+     "26,0 Md€",
+     "ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf, p. 4",
+     ""
+    ],
+    [
+     "F869",
+     "S&P, prévision : dette ajustée par l'agence, haut de fourchette (tableau en milliards)",
+     "2026-2028",
+     "27,0 Md€",
+     "ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf, p. 4",
      ""
     ],
     [
@@ -1033,19 +1089,19 @@
      ""
     ],
     [
-     "F147",
-     "Moody's : FFO / dette nette ajustée",
-     "FY2025",
-     "20,3 %",
-     "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 7",
-     ""
-    ],
-    [
      "calcul",
      "FFO (mesure des agences) en % de l'EBITDA",
      "",
      "73,2 %",
      "Hypothèse du groupe, valeur centrale, onglet Hypothèses du classeur (sources : F261, F3)",
+     ""
+    ],
+    [
+     "calcul",
+     "FFO 2026 (hypothèse ffo × EBITDA 2026)",
+     "",
+     "5 479 M€",
+     "Scénario central, onglet Trajectoire du classeur du groupe",
      ""
     ],
     [
@@ -1070,6 +1126,38 @@
      "",
      "0 %",
      "Part des 1 000 futurs tirés, onglet Distribution du classeur du groupe",
+     ""
+    ],
+    [
+     "F870",
+     "S&P, note de mars 2025 : FFO / dette ajustés attendu, environ",
+     "2025-2027",
+     "22 %",
+     "finance_standard_-_poors_ratings_direct_veolia_environnement_sa_mars_2025_03-04-25.pdf, p. 2",
+     ""
+    ],
+    [
+     "F872",
+     "Moody's, opinion d'avril 2025 : FFO / dette nette ajustée, vue à 12-18 mois, bas de fourchette",
+     "2025-2026",
+     "20,0 %",
+     "credit_opinion_moodys_veolia-environnement-sa_22apr2025.pdf, p. 2",
+     ""
+    ],
+    [
+     "F873",
+     "Moody's, opinion d'avril 2025 : FFO / dette nette ajustée, vue à 12-18 mois, haut de fourchette",
+     "2025-2026",
+     "22,0 %",
+     "credit_opinion_moodys_veolia-environnement-sa_22apr2025.pdf, p. 2",
+     ""
+    ],
+    [
+     "F871",
+     "S&P, note de novembre 2025 : levier publié jusqu'auquel la politique financière de Veolia reste compatible avec la note BBB",
+     "11/2025",
+     "3,0x",
+     "ratingsdirect_update_veoliaenvironnements.a._3485780_nov-25-2025.pdf, p. 3",
      ""
     ],
     [
@@ -2952,7 +3040,8 @@
    "open": [
     "Le prix ou l'EBITDA d'Arcwood, la valeur d'Onterris, l'EBITDA récent de Heritage-Crystal Clean, de Triumvirate et de NG Group.",
     "Le nom et le prix des acquisitions américaines en cours, évoquées par Veolia dans Waste Dive le 23 septembre 2026.",
-    "Le prix de chacun des tuck-ins américains de 2025, et la taille visée pour une prochaine plateforme."
+    "Le prix de chacun des tuck-ins américains de 2025, et la taille visée pour une prochaine plateforme.",
+    "L'EBITDA de Cenviro, et le prix de contrôle des cibles cotées. Une capitalisation ne dit pas ce qu'un acquéreur paierait."
    ],
    "qa": [
     [
@@ -3371,6 +3460,14 @@
      ""
     ],
     [
+     "T28",
+     "Cenviro",
+     "",
+     "300 M$",
+     "sk-group-is-said-to-consider-selling-stake-in-malaysian-waste-firm-cenviro-sk-group-is-sai.html, p. 1",
+     ""
+    ],
+    [
      "F609",
      "Heritage-Crystal Clean (J.F. Lehman) : valorisation de la transaction, environ",
      "07/2023",
@@ -3416,6 +3513,94 @@
      "critères 2026",
      "15 M$",
      "seaside-criteres-2026-10-07.html, p. 1",
+     ""
+    ],
+    [
+     "calcul",
+     "Cenviro : valeur publiée en euros",
+     "",
+     "255 M€",
+     "Valeur publiée [T28] convertie en euros au taux 1,1758 $ pour 1 €, hypothèse de change du groupe d'après F40 et F41, onglet Cibles du classeur du groupe",
+     ""
+    ],
+    [
+     "calcul",
+     "Cenviro : part des futurs où la cible tient",
+     "",
+     "47 %",
+     "Part des 1 000 futurs tirés où la cible [T28] tient, onglet Cibles du classeur du groupe",
+     ""
+    ],
+    [
+     "calcul",
+     "Greenthesis : valeur d'entreprise retenue",
+     "",
+     "340 M€",
+     "Valeur d'entreprise retenue pour la cible [T23], onglet Cibles du classeur du groupe",
+     ""
+    ],
+    [
+     "T29",
+     "Lassila & Tikanoja",
+     "",
+     "251,8 M€",
+     "lassila-and-tikanoja-plc-interim-report-january-september-2026-lassila-tikanoja-plc-int.html, p. 1",
+     ""
+    ],
+    [
+     "T31",
+     "Mo-BRUK",
+     "",
+     "1 381 M PLN",
+     "20260831_noble_securities_mbr_pl_ra.pdf, p. 1",
+     ""
+    ],
+    [
+     "calcul",
+     "Greenthesis : multiple VE / EBITDA employé",
+     "",
+     "8,1x",
+     "Multiple VE / EBITDA propre à la cible [T23], onglet Cibles du classeur du groupe",
+     ""
+    ],
+    [
+     "calcul",
+     "Lassila & Tikanoja : multiple VE / EBITDA employé",
+     "",
+     "5,2x",
+     "Multiple VE / EBITDA propre à la cible [T29], onglet Cibles du classeur du groupe",
+     ""
+    ],
+    [
+     "calcul",
+     "Mo-BRUK : multiple VE / EBITDA employé",
+     "",
+     "17,3x",
+     "Multiple VE / EBITDA propre à la cible [T31], onglet Cibles du classeur du groupe",
+     ""
+    ],
+    [
+     "calcul",
+     "Greenthesis : part des futurs où la cible tient",
+     "",
+     "46 %",
+     "Part des 1 000 futurs tirés où la cible [T23] tient, onglet Cibles du classeur du groupe",
+     ""
+    ],
+    [
+     "calcul",
+     "Lassila & Tikanoja : part des futurs où la cible tient",
+     "",
+     "49 %",
+     "Part des 1 000 futurs tirés où la cible [T29] tient, onglet Cibles du classeur du groupe",
+     ""
+    ],
+    [
+     "calcul",
+     "Mo-BRUK : part des futurs où la cible tient",
+     "",
+     "40 %",
+     "Part des 1 000 futurs tirés où la cible [T31] tient, onglet Cibles du classeur du groupe",
      ""
     ],
     [
@@ -3639,7 +3824,7 @@
  ],
  "todo": [
   "Relire en croisé les 867 chiffres du registre (0 relus) et les 61 opérations (0 relues).",
-  "En priorité, les 190 lignes que le rapport cite et qu'aucun second membre n'a relues (sur 190 citées).",
+  "En priorité, les 203 lignes que le rapport cite et qu'aucun second membre n'a relues (sur 203 citées).",
   "Signer (frontmatter signe_par du texte) : rôle 1 (Périmètre et sources), rôle 2 (La contrainte), rôle 3 (Capacité et sensibilité), rôle 4 (L'écart et les comparables), rôle 5 (Le coût ESG), rôle 6 (Cibles, puis synthèse), synthèse (Recommandation).",
   "Faire relire (frontmatter relu_par du texte) : rôle 1 (Périmètre et sources), rôle 2 (La contrainte), rôle 3 (Capacité et sensibilité), rôle 4 (L'écart et les comparables), rôle 5 (Le coût ESG), rôle 6 (Cibles, puis synthèse), synthèse (Recommandation)."
  ],

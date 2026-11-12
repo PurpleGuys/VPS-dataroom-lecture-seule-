@@ -3,18 +3,18 @@
 | Section | Pages | Mots | Cible |
 |---|---|---|---|
 | role-1.md | 6 | 1538 | 6-9 |
-| role-2.md | 6 | 1627 | 6-9 |
+| role-2.md | 6 | 1859 | 6-9 |
 | role-3.md | 7 | 1602 | 6-9 |
 | role-4.md | 6 | 1572 | 6-9 |
 | role-5.md | 6 | 1628 | 6-9 |
-| role-6.md | 7 | 1581 | 6-9 |
-| corps, du sommaire à la première annexe | 55 | 11888 | 50-60 |
-| document entier, annexes et contrôle compris | 77 | | — |
+| role-6.md | 7 | 1764 | 6-9 |
+| corps, du sommaire à la première annexe | 57 | 12453 | 50-60 |
+| document entier, annexes et contrôle compris | 80 | | — |
 
 ## Jetons inconnus (0)
 - aucun
 
-## Lignes citées que personne n'a relues (281)
+## Lignes citées que personne n'a relues (295)
 - role-1.md : F2 — GreenUp : rotation NETTE d'actifs, environ
 - role-1.md : F745 — GreenUp : croissance, montant net par an (investissements organiques, priorité aux boosters, plus acquisitions petites et moyennes, moins cessions)
 - role-1.md : F129 — GreenUp : investissements nets de croissance 2024-2027, boosters et strongholds réunis (« 2 x Impact 2023 »)
@@ -80,14 +80,24 @@
 - role-2.md : F769 — Notation Standard & Poor's (court terme / long terme), confirmée, perspective stable
 - role-2.md : F770 — Notation Moody's (court terme / long terme), confirmée, perspective stable
 - role-2.md : F152 — Moody's : seuil de dégradation, FFO / dette nette sous (libellé publié)
-- role-2.md : F164 — S&P : FFO / dette ajustés attendu, bas de fourchette
-- role-2.md : F165 — S&P : FFO / dette ajustés attendu, haut de fourchette
+- role-2.md : F867 — S&P : FFO / dette ajustés constaté
+- role-2.md : F147 — Moody's : FFO / dette nette ajustée
+- role-2.md : F831 — S&P, prévision annuelle : FFO / dette ajustés, bas de fourchette
+- role-2.md : F832 — S&P, prévision annuelle : FFO / dette ajustés, haut de fourchette
+- role-2.md : F826 — S&P, prévision annuelle : FFO / dette ajustés, bas de fourchette
+- role-2.md : F852 — S&P, prévision annuelle : FFO / dette ajustés, haut de fourchette
 - role-2.md : F244 — Moody's : FFO / dette nette ajustée prévu
 - role-2.md : F245 — Moody's : FFO / dette nette ajustée prévu
+- role-2.md : F865 — S&P : dette ajustée par l'agence
+- role-2.md : F868 — S&P, prévision : dette ajustée par l'agence, bas de fourchette (tableau en milliards)
+- role-2.md : F869 — S&P, prévision : dette ajustée par l'agence, haut de fourchette (tableau en milliards)
 - role-2.md : F256 — Moody's : dette nette ajustée (Exhibit 13)
 - role-2.md : F151 — Moody's : dette nette ajustée, pic attendu, environ
 - role-2.md : F261 — Moody's : FFO (funds from operations)
-- role-2.md : F147 — Moody's : FFO / dette nette ajustée
+- role-2.md : F870 — S&P, note de mars 2025 : FFO / dette ajustés attendu, environ
+- role-2.md : F872 — Moody's, opinion d'avril 2025 : FFO / dette nette ajustée, vue à 12-18 mois, bas de fourchette
+- role-2.md : F873 — Moody's, opinion d'avril 2025 : FFO / dette nette ajustée, vue à 12-18 mois, haut de fourchette
+- role-2.md : F871 — S&P, note de novembre 2025 : levier publié jusqu'auquel la politique financière de Veolia reste compatible avec la note BBB
 - role-2.md : F830 — Liquidité du groupe, lignes de crédit confirmées non tirées comprises
 - role-2.md : F835 — Lignes de crédit confirmées non tirées, sans covenants restrictifs (comprises dans la liquidité du groupe)
 - role-2.md : F768 — Liquidité nette (groupe), après dettes courantes
@@ -247,11 +257,14 @@
 - role-6.md : T7 — Enviracore Services
 - role-6.md : T6 — NG Group
 - role-6.md : T5 — GFL Environmental Services
+- role-6.md : T28 — Cenviro
 - role-6.md : F609 — Heritage-Crystal Clean (J.F. Lehman) : valorisation de la transaction, environ
 - role-6.md : F612 — Triumvirate Environmental (Berkshire Partners) : valorisation après investissement
 - role-6.md : D38 — Enviracore Services (plateforme de services environnementaux : intervention d'urgence, nettoyage industriel, eaux usées, États-Unis)
 - role-6.md : F616 — Seaside Equity Partners : EBITDA visé pour une plateforme (fonds Flagship), bas
 - role-6.md : F617 — Seaside Equity Partners : EBITDA visé pour une plateforme (fonds Flagship), haut
+- role-6.md : T29 — Lassila & Tikanoja
+- role-6.md : T31 — Mo-BRUK
 - role-6.md : F575 — Hybride octobre 2020, première tranche remboursée en février 2026 : nominal
 - role-6.md : F732 — Pont de dette 9M 2026 : remboursement de dette hybride (titres super-subordonnés, 12/09/2026)
 - role-6.md : F733 — Pont de dette 9M 2026 : augmentation de capital Sequoia 2026 (actionnariat salarié), montant net
@@ -264,6 +277,7 @@
 - role-6.md : F88 — Guidance 2026 : croissance organique de l'EBITDA, haut de fourchette
 - role-6.md : F420 — GreenUp : gains d'efficacité par an
 - role-6.md : F615 — Taux de référence BCE : dollars canadiens pour un euro
+- role-6.md : F858 — Taux de référence BCE du 31/08/2026 : zlotys pour un euro
 - recommandation.md : F726 — Trajectoire de levier présentée au T3 : légèrement au-dessus de 3x fin 2026, retour en 2027 à au plus
 - recommandation.md : F48 — Clean Earth : multiple VE / EBITDA 2026e après synergies en régime de croisière
 - recommandation.md : T4 — Triumvirate Environmental
@@ -305,32 +319,33 @@
 
 ## Chiffres du registre jamais cités par leur rôle
 - rôle 1 (Périmètre et sources) : 18 — F90, F91, F92, F131, F133, F134, F135, F136, F137, F654, F659, F661, F662, F672, F685, F750, F825, F848
-- rôle 2 (La contrainte) : 263 — F1, F10, F11, F12, F14, F19, F22, F26, F55, F56, F57, F66, F71, F78, F82, F140, F142, F144, F145, F146 …
+- rôle 2 (La contrainte) : 253 — F1, F10, F11, F12, F14, F19, F22, F26, F55, F56, F57, F66, F71, F78, F82, F140, F142, F144, F145, F146 …
 - rôle 3 (Capacité et sensibilité) : 137 — F4, F5, F7, F9, F13, F21, F24, F27, F31, F53, F64, F65, F67, F68, F69, F72, F73, F75, F79, F80 …
 - rôle 4 (L'écart et les comparables) : 136 — F33, F37, F38, F39, F41, F54, F58, F59, F60, F61, F62, F63, F93, F94, F95, F96, F97, F160, F161, F162 …
 - rôle 5 (Le coût ESG) : 54 — F43, F45, F103, F104, F105, F106, F108, F109, F237, F488, F489, F490, F494, F495, F496, F497, F498, F500, F501, F502 …
 - rôle 6 (Cibles, puis synthèse) : 115 — F46, F47, F49, F50, F76, F77, F209, F210, F211, F212, F213, F214, F215, F216, F443, F444, F445, F473, F474, F475 …
 
 ## Ce que la méthode du rapport mesure
-- corps du rapport : 70 820 caractères, espaces compris, pour 50 000 demandés
+- corps du rapport : 74 099 caractères, espaces compris, pour 50 000 demandés
 - role-1.md : 35 phrase(s) sur 127 au-delà de 12 mots
-- role-2.md : 53 phrase(s) sur 131 au-delà de 12 mots
+- role-2.md : 63 phrase(s) sur 147 au-delà de 12 mots
 - role-3.md : 44 phrase(s) sur 131 au-delà de 12 mots
 - role-4.md : 38 phrase(s) sur 124 au-delà de 12 mots
 - role-5.md : 51 phrase(s) sur 127 au-delà de 12 mots
-- role-6.md : 48 phrase(s) sur 110 au-delà de 12 mots
-- recommandation.md : 19 phrase(s) sur 51 au-delà de 12 mots
+- role-6.md : 55 phrase(s) sur 123 au-delà de 12 mots
+- recommandation.md : 24 phrase(s) sur 60 au-delà de 12 mots
 - outils-ia.md : 17 phrase(s) sur 35 au-delà de 12 mots
 - remerciements.md : 2 phrase(s) sur 6 au-delà de 12 mots
-- introduction.md : 19 phrase(s) sur 49 au-delà de 12 mots
+- introduction.md : 20 phrase(s) sur 51 au-delà de 12 mots
 - conclusion.md : 12 phrase(s) sur 33 au-delà de 12 mots
 - couverture : le logo de l'EDHEC (08_Livrables/scripts/logo-edhec.png) manque
 - couverture : le nom du responsable (roles.yaml : encadrant) manque
 
-## Années des références (33)
+## Années des références (40)
 Ces documents cités n'ont pas de date de publication dans leur note (`date_published`) : l'année de leur référence est devinée. Lire la date sur le document et l'écrire dans la note.
 - Arcwood Environmental (2025) — 05_Commercial_Strategy/arcwood-rebrand-2025-03-18.html : lue dans le titre
-- Banque centrale européenne (2026) — 01_Financial/bce-taux-eur-cad-2026-10-06.html : année de la consultation
+- Banque centrale européenne (2026a) — 01_Financial/bce-taux-eur-cad-2026-10-06.html : année de la consultation
+- Banque centrale européenne (2026b) — 01_Financial/bce-taux-de-reference-2026-08-31.pdf : lue dans l'adresse
 - BIC Magazine (2022) — 05_Commercial_Strategy/bic-us-ecology-republic-2022.html : lue dans le titre
 - Clean Harbors (2024) — 05_Commercial_Strategy/clean-harbors-hepaco-2024-03-25.html : lue dans l'adresse
 - Clean Harbors (2026a) — 05_Commercial_Strategy/clean-harbors-q2-2026-2026-07-29.html : lue dans l'adresse
@@ -341,12 +356,18 @@ Ces documents cités n'ont pas de date de publication dans leur note (`date_publ
 - EQT (PR Newswire) (2021) — 05_Commercial_Strategy/eqt-covanta-2021-07-14.html : lue dans le titre
 - Fortum / Summa Equity (Cision) (2024) — 05_Commercial_Strategy/fortum-summa-ng-group-2024-07-18.html : lue dans le titre
 - Heritage-Crystal Clean (2023) — 05_Commercial_Strategy/crystal-clean-jfl-2023-07-19.html : lue dans le titre
+- Lassila & Tikanoja Plc (communiqué boursier, reproduit par Inderes) (2026) — 05_Commercial_Strategy/lassila-and-tikanoja-plc-interim-report-january-september-2026-lassila-tikanoja-plc-int.html : lue dans l'adresse
 - Latham & Watkins (conseil de GFL) (2025) — 05_Commercial_Strategy/gfl-es-latham-2025-01-07.html : lue dans l'adresse
+- Moody's Ratings (2025) — 01_Financial/credit_opinion_moodys_veolia-environnement-sa_22apr2025.pdf : lue dans l'adresse
 - Moody's Ratings (2026) — 01_Financial/credit_opinion-veolia-environnement-sa-04may2026.pdf : lue dans l'adresse
+- Noble Securities S.A. (diffusé par la Bourse de Varsovie, gpw.pl) (2026) — 05_Commercial_Strategy/20260831_noble_securities_mbr_pl_ra.pdf : année de la consultation
 - Reuters (via Yahoo Finance) (2025) — 05_Commercial_Strategy/triumvirate-berkshire-2025-02-04.html : lue dans le titre
+- S&P Global Ratings (2025a) — 01_Financial/ratingsdirect_update_veoliaenvironnements.a._3485780_nov-25-2025.pdf : lue dans l'adresse
+- S&P Global Ratings (2025b) — 01_Financial/finance_standard_-_poors_ratings_direct_veolia_environnement_sa_mars_2025_03-04-25.pdf : lue dans l'adresse
 - S&P Global Ratings (2026) — 01_Financial/ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf : lue dans l'adresse
 - Seaside Equity Partners (2025) — 05_Commercial_Strategy/enviracore-lancement-2025-09-30.html : lue dans le titre
 - Seaside Equity Partners (2026) — 05_Commercial_Strategy/seaside-criteres-2026-10-07.html : lue dans le titre
+- The Star (dépêche Bloomberg) (2025) — 05_Commercial_Strategy/sk-group-is-said-to-consider-selling-stake-in-malaysian-waste-firm-cenviro-sk-group-is-sai.html : lue dans l'adresse
 - Veolia Environnement SA (2024) — 01_Financial/en_master_greenup_strategy-day_v270324.pdf : lue dans l'adresse
 - Veolia Environnement SA (2025a) — 05_Commercial_Strategy/pr-2024-annual-results-veolia.pdf : lue dans l'adresse
 - Veolia Environnement SA (2025b) — 01_Financial/finance_2024_full_year_results_presentation.pdf : lue dans l'adresse

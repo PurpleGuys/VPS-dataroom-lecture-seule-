@@ -198,8 +198,8 @@
   "F268",
   "F269",
   "F270",
-  "F271",
   "F271-543e",
+  "F271",
   "F272",
   "F272-40a3",
   "F273",
@@ -430,7 +430,12 @@
   "F856",
   "F857",
   "F858",
-  "F859"
+  "F859",
+  "F860",
+  "F861",
+  "F862",
+  "F863",
+  "F864"
  ],
  "lookups": [
   {
@@ -3180,6 +3185,36 @@
    "prefix": "Taux de référence BCE du 31/08/2026 : zlotys pour un euro",
    "period": "31/08/2026",
    "unit": "PLN pour 1 EUR"
+  },
+  {
+   "id": "F860",
+   "prefix": "Greenthesis : EBITDA de l'année précédant l'article",
+   "period": "« lo scorso anno »",
+   "unit": "M EUR"
+  },
+  {
+   "id": "F861",
+   "prefix": "Lassila & Tikanoja : EBITDA",
+   "period": "2025",
+   "unit": "M EUR"
+  },
+  {
+   "id": "F862",
+   "prefix": "Lassila & Tikanoja : dette nette portant intérêt",
+   "period": "30/09/2026",
+   "unit": "M EUR"
+  },
+  {
+   "id": "F863",
+   "prefix": "Mo-BRUK : EBITDA (2025P dans la note d'analyste)",
+   "period": "2025",
+   "unit": "M PLN"
+  },
+  {
+   "id": "F864",
+   "prefix": "Mo-BRUK : dette nette",
+   "period": "31/12/2025",
+   "unit": "M PLN"
   },
   {
    "id": "F27",

@@ -84,12 +84,17 @@ Nous trions les cibles recensées selon les critères publiés par Veolia. L'ann
 | NG Group | Summa Equity | environ [T6] | non | pays nordiques |
 | Enva | I Squared Capital | non publiée[T19] | non | Royaume-Uni et Irlande |
 | GFL Environmental Services | Apollo et BC Partners | [T5] | oui | hors de portée |
+| Cenviro | Khazanah Nasional et SK | environ [T28] | oui | cession en cours ; taille de tuck-in |
 
 ### Aux États-Unis, les deux plateformes chiffrées dépassent la marge
 
 Hors GFL Environmental Services, trop grande, deux plateformes américaines ont une valeur publiée. J.F. Lehman a racheté Heritage-Crystal Clean en 2023 sur une valorisation d'environ [F609]. L'investissement de Berkshire Partners a valorisé Triumvirate à [F612] en février 2025. Au change implicite du prix de Clean Earth, [M:H.fx] dollar par euro, [F609] et [F612] tombent entre 1 et 2 Md€. Or une acquisition de 1 Md€ ne passe que dans [M:P.acq1] des futurs. Ces valeurs sont des prix d'entrée de fonds, pas des prix de sortie. Notre lecture : un fonds vendeur demanderait davantage. Aucune des deux n'a d'EBITDA récent dans nos sources. Le métier des huiles de Heritage-Crystal Clean ressemble en outre à l'activité européenne que Veolia met en vente.
 
 Les autres cibles américaines n'ont pas de valeur dans nos sources. Arcwood Environmental exploite un incinérateur au Texas et développe une offre PFAS. EQT Infrastructure l'a rachetée en janvier 2024, sans publier de prix[D34]. Chemtron, basée dans l'Ohio et détenue par Kinderhook depuis 2019, exploite des sites autorisés de traitement. Onterris a lancé le 5 août 2026 une revue stratégique, qui examine notamment un intérêt d'acquisition. En 2025, son EBITDA ajusté consolidé a atteint [F822], pour un chiffre d'affaires de [F806]. Notre lecture : son métier de conseil et de dépollution complète le traitement sans l'élargir. Seaside Equity Partners a lancé Enviracore Services fin septembre 2025[D38]. Enviracore a racheté Boomer Environmental puis EMI[D40][D39]. Les critères publiés par Seaside visent des plateformes de [F616] à [F617] d'EBITDA. Le métier d'Enviracore, l'intervention et le nettoyage industriel, ressemble à ce que Veolia met en vente en Belgique.
+
+Une cession est en cours en Asie. SK étudie la vente de ses 30 % dans Cenviro, société malaisienne de gestion de déchets. La presse valorise l'ensemble à environ [T28], soit [M:T.T28], de sources anonymes. À ce prix et au multiple médian du secteur, Cenviro tient sous le plafond dans [M:T.T28.p] des futurs.
+
+En Europe, hors des critères publiés par Veolia, trois cibles ont un prix et un EBITDA publiés. Greenthesis est valorisée [M:T.T23.ve]. Lassila & Tikanoja vaut [T29] en Bourse et Mo-BRUK [T31], hors dette. Elles s'échangent à [M:T.T23.m], [M:T.T29.m] et [M:T.T31.m] leur EBITDA, dette nette comprise pour les deux dernières. À ces multiples, elles tiennent sous le plafond dans [M:T.T23.p], [M:T.T29.p] et [M:T.T31.p] des futurs. Les deux dernières sont cotées et ne sont pas à vendre : leur valeur est une capitalisation, sans prime de contrôle. Notre lecture : des cibles de cette taille existent, mais aucune ne tient dans notre scénario central.
 
 Clean Harbors, acheteur d'EnviroServe et d'ES&H en 2026, convoite le même marché.
 
@@ -157,6 +162,7 @@ Veolia confirme entièrement sa trajectoire GreenUp, qui vise un EBITDA 2027 d'a
 - Le prix ou l'EBITDA d'Arcwood, la valeur d'Onterris, l'EBITDA récent de Heritage-Crystal Clean, de Triumvirate, d'Augean, de NG Group et de Greenthesis.
 - Le nom et le prix des acquisitions américaines en cours, évoquées par Veolia dans Waste Dive le 23 septembre 2026.
 - Le prix de chacun des tuck-ins américains de 2025, et la taille visée pour une prochaine plateforme.
+- L'EBITDA de Cenviro, et le prix de contrôle des cibles cotées. Une capitalisation ne dit pas ce qu'un acquéreur paierait.
 - Le multiple de Clean Earth sur l'EBITDA des douze derniers mois du vendeur : aucune de nos sources ne le publie.
 - Un cours et un change récents : nous utilisons le cours du 31 décembre 2025, [F597], et le change implicite du prix de Clean Earth.
 - Les bornes de nos hypothèses d'encaissement et de multiple, qui restent des choix du groupe.

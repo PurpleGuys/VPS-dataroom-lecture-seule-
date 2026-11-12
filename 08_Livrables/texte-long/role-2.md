@@ -72,22 +72,27 @@ La tranche de [F575] remboursée en février n'a pas accru la dette des neuf moi
 
 ## Les seuils des agences laissent plus de marge que le plafond de Veolia fin 2027
 
-Les deux agences ont confirmé leur note au printemps 2026, avec une perspective stable. Leur seuil de dégradation ne porte pas sur le levier de Veolia. Il porte sur le FFO rapporté à une dette ajustée, propre à chaque agence. Le tableau suivant compare leurs grilles.
+Les deux agences ont confirmé leur note au printemps 2026, avec une perspective stable. Veolia ne présente pas d'autre notation : nous n'en avons trouvé aucune de Fitch. Le seuil de dégradation des deux agences ne porte pas sur le levier de Veolia. Il porte sur le FFO rapporté à une dette ajustée, propre à chaque agence. Le tableau suivant compare leurs grilles.
 
 | Repère | S&P | Moody's |
 |---|---|---|
 | Note confirmée en 2026 | [F769], le 27 avril | [F770], le 4 mai |
 | Seuil de dégradation du ratio FFO sur dette | durablement sous [F163] | sous [F152] |
-| Ratio attendu par l'agence | environ [F164] à [F165] sur 2026-2028 | [F244] en 2026, [F245] en 2027 |
-| Dette ajustée de référence | définition propre, non reprise ici | [F256] fin 2025, pic d'environ [F151] en 2026 |
+| Ratio constaté fin 2025 | [F867] | [F147] |
+| Ratio attendu par l'agence | [F831] à [F832] en 2026, [F826] à [F852] en 2027 | [F244] en 2026, [F245] en 2027 |
+| Dette ajustée de référence | [F865] fin 2025, [F868] à [F869] attendus sur 2026-2028 | [F256] fin 2025, pic d'environ [F151] en 2026 |
 
 Pour Moody's, le test se fait sur ses propres chiffres. Son FFO 2025, [F261], rapporté à sa dette nette ajustée, [F256], donne [F147]. Cette dette ajustée, [F256], dépasse de 5 747 M€ la dette financière nette publiée, [F8]. Moody's part de la même dette brute que Veolia, [F271]. L'agence y ajoute les hybrides pour [F251] et la titrisation pour [F252]. Elle ajoute aussi les pensions, [F250], et des ajustements non standard, [F253]. Elle retient enfin moins de trésorerie, [F255]. Veolia déduit pour sa part [F272] de trésorerie et [F273] d'actifs liquides et de financement. Pour 2026, Moody's attend un ratio de [F244]. Notre lecture : ce niveau touche la zone de son seuil. La marge de Veolia y est étroite. L'agence prévoit ensuite [F245] en 2027, grâce à la performance opérationnelle et aux cessions envisagées.
 
-Pour S&P, nous n'avons pas repris la dette ajustée propre à l'agence. Le modèle approche donc son ratio sur la base de Moody's. Il ajoute à sa dette financière nette l'écart constaté chez Moody's fin 2025. Il estime le FFO à [M:H.ffo] de l'EBITDA. C'est le FFO de Moody's, [F261], rapporté à l'EBITDA publié de 2025, [F3]. Fin 2026, la dette ajustée atteint [M:ADJ26], un peu au-dessus du pic attendu par Moody's. Le ratio ressort à [M:RATIO26], le niveau même que prévoit Moody's pour 2026. Fin 2027, il remonte à [M:RATIO27]. Notre lecture : appliquer le seuil de S&P à cette base est prudent. S&P attend en effet environ [F164] à [F165] sur sa propre base. L'agence prévoit [F831] à [F832] en 2026, puis [F826] à [F852] en 2027. Notre ratio reste sous chacune de ces fourchettes : [M:RATIO26] fin 2026, [M:RATIO27] fin 2027.
+Pour S&P, le modèle approche le ratio sur la base de Moody's. Il ajoute à sa dette financière nette l'écart constaté chez Moody's fin 2025. Il estime le FFO à [M:H.ffo] de l'EBITDA. C'est le FFO de Moody's, [F261], rapporté à l'EBITDA publié de 2025, [F3]. Fin 2026, la dette ajustée atteint [M:ADJ26], un peu au-dessus du pic attendu par Moody's. Le ratio ressort à [M:RATIO26], le niveau même que prévoit Moody's pour 2026. Fin 2027, il remonte à [M:RATIO27]. Notre lecture : ce test est sévère pour S&P. Sa dette ajustée, [F865] fin 2025, ne dépasse la dette publiée, [F8], que de 4 683 M€. C'est 1 064 M€ de moins que l'écart de Moody's. Son FFO 2025, [F866], rapporté à cette dette donne [F867], contre [F147] chez Moody's. S&P attend environ [F164] à [F165] sur 2026-2028, pour une dette ajustée de [F868] à [F869]. Avec l'écart de 4 683 M€, la dette du modèle fin 2026, [M:NFD26], donnerait environ 28,5 Md€ de dette ajustée. Un FFO de [M:FFO26] sur cette dette donnerait environ 19,2 %, soit une marge de dette d'environ 1,9 Md€ sous le seuil. Notre lecture : la prévision de S&P suppose que Veolia tienne le levier annoncé pour fin 2026. Sur la trajectoire du modèle, le ratio finit dans le bas de ce que S&P attend. L'agence prévoit [F831] à [F832] en 2026, puis [F826] à [F852] en 2027. Sur la base de Moody's, notre ratio reste sous chacune de ces fourchettes : [M:RATIO26] fin 2026, [M:RATIO27] fin 2027.
 
 La marge de dette sous le seuil de S&P vaut [M:HEADSP26] fin 2026. Le ratio passe pourtant sous ce seuil dans [M:P.sp26] des simulations. Avec un FFO limité à [M:H.ffo@bas] de l'EBITDA, il tombe à [M:RATIO26@ffo-bas]. Fin 2027, il reste au-dessus dans [M:P.sp27] des simulations. Or le seuil de S&P vise un ratio durablement trop bas. Un simple creux en 2026 ne remplit pas cette condition, selon notre lecture. En 2028, S&P attend d'ailleurs [F838] à [F829], contre [F831] à [F832] en 2026. Fin 2027, la marge sous ce seuil atteint [M:HEADSP27], contre [M:HEAD27] sous le plafond de Veolia. Le seuil des agences mord le premier dans [M:P.agences] des simulations.
 
 Moody's compare aussi Veolia à des pairs, mesurés sur douze mois à juin 2025. ACEA et Hera, de même note, affichent [F532] et [F537]. Suez, notée [F540], descend à [F542].
+
+Des deux agences, Moody's laisse le moins de marge. Elle note Veolia un cran au-dessus de S&P, et attend pourtant un ratio plus bas. Dans la grille de Moody's, le levier brut, [F157] fin 2025, est d'ailleurs le facteur le plus mal noté. La note tient d'abord à la taille et au profil d'activité, selon notre lecture. Les deux marges ont fondu avec Clean Earth. En mars 2025, S&P attendait environ [F870]. En avril 2025, Moody's visait [F872] à [F873]. Chaque agence a ainsi retiré de l'ordre de deux à trois points à sa prévision pour 2026.
+
+Le plafond de Veolia et les seuils des agences sont liés. En novembre 2025, S&P jugeait la politique financière de Veolia compatible avec sa note pour un levier publié allant jusqu'à [F871]. Moody's fonde sa perspective stable sur le désendettement de Veolia après Clean Earth. S&P cite d'abord, parmi les causes d'une dégradation, des acquisitions par dette plus fortes que prévu. Sa prévision intègre Clean Earth et d'éventuels petits tuck-ins. Notre lecture : une plateforme payée par dette sortirait du scénario que les deux agences ont noté, avant même que le ratio n'atteigne son seuil.
 
 ## Le refinancement renchérit la dette sans limiter la capacité
 
@@ -104,7 +109,8 @@ Aux taux des émissions de 2026, la plupart des échéances obligataires de 2027
 - Nous n'avons trouvé aucun levier publié au 30 septembre 2026. Nos trois lectures de cette date sont des calculs du groupe.
 - Nous ignorons combien de mois de Clean Earth le ratio de fin 2026 retiendra. Le modèle en compte [M:H.months] et donne [M:LEV26]. Sur une année pleine, il donne [M:LEV26PF].
 - L'EBITDA de Clean Earth retenu, [F51], est une prévision de Veolia. Un EBITDA plus faible relèverait nos lectures pro forma.
-- Nous n'avons pas repris la dette ajustée ni le FFO propres à S&P. Notre test applique son seuil à une base proche de celle de Moody's.
+- Moody's ne chiffre pas son seuil : elle écrit [F152]. Sa marge ne se mesure donc pas en euros.
+- Le modèle ne recalcule pas le ratio de S&P sur la dette propre à l'agence. Son test reste celui, plus sévère, de la base de Moody's.
 - Dans sa réconciliation, Moody's ne détaille pas ses ajustements non standard, [F253]. Aucune opinion de crédit postérieure au 4 mai 2026 ne figure dans nos sources.
 - Veolia a signé [F736] de cessions et en a réalisé [F738] sur neuf mois. Elle a cédé le 25 septembre une participation minoritaire dans Rookery South, pour [F739]. Cette cession figure parmi les exemples du programme. Nous ne savons pas comment ces trois montants s'emboîtent, ni quand les cessions signées seront encaissées.
 - Une partie de la hausse de la dette reste dans des mouvements que Veolia ne détaille pas.
