@@ -12,7 +12,7 @@ Claude a enregistré l'essentiel des chiffres du registre. Il les a enregistrés
 
 Le 9 novembre 2026, Claude a rédigé une première version de ce rapport. Il est parti du plan du groupe. Un second passage de Claude l'a ensuite contredite. Le groupe la relit, la corrige et la valide avant la remise. Dans le texte, chaque calcul cite ses termes : le lecteur peut le refaire.
 
-## Les choix restent ceux du groupe, et l'outil a été contredit après lecture
+## Les choix restent ceux du groupe et l'outil a été contredit après lecture
 
 Les hypothèses du modèle sont des choix du groupe. Un membre du groupe a validé les sept hypothèses recalées le 9 novembre 2026.
 
@@ -26,7 +26,7 @@ L'outil a été contredit à plusieurs reprises après lecture de la page source
 
 ## Le compte partagé porte la quasi-totalité de l'usage de la dataroom
 
-Le tableau suivant reprend le relevé d'usage du 9 novembre 2026 à 22 h 20. Il vient du journal des requêtes du serveur et des registres. Le compte dataroom-bearer ne désigne personne : c'est l'accès commun, utilisé avant les accès personnels. Claude a saisi ses lignes à travers ce compte, et l'API Claude sous l'identité claude-api. Les deux chiffres ajoutés par un membre sont des lignes du registre des cibles. Au 9 novembre 2026, le relevé ne compte encore aucune relecture.
+Le tableau suivant reprend le relevé d'usage du 9 novembre 2026 à 22 h 20. Il vient du journal des requêtes du serveur et des registres. Le compte dataroom-bearer ne désigne personne : c'est l'accès commun, utilisé avant les accès personnels. Claude a saisi ses lignes à travers ce compte et l'API Claude sous l'identité claude-api. Les deux chiffres ajoutés par un membre sont des lignes du registre des cibles. Au 9 novembre 2026, le relevé ne compte encore aucune relecture.
 
 | Compte de la dataroom | Usage | Période |
 |---|---|---|

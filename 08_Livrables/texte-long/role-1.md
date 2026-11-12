@@ -34,7 +34,7 @@ Le recalcul de cette dernière colonne ne donne qu'une fourchette. Des tuck-ins 
 
 ### Les investissements nets de croissance réunissent boosters et strongholds
 
-Une autre page du plan donne le total de la période. GreenUp y prévoit [F129] d'investissements nets de croissance. Sur ces [F129], [F130] vont aux strongholds et le solde, 2 Md€, aux boosters. Le montant couvre donc les deux familles d'activités, et non les seuls boosters.
+Une autre page du plan donne le total de la période. GreenUp y prévoit [F129] d'investissements nets de croissance. Sur ces [F129], [F130] vont aux strongholds et le solde, 2 Md€, aux boosters. Le montant couvre donc les deux familles d'activités et non les seuls boosters.
 
 ### La croissance nette inclut l'investissement organique
 
@@ -66,7 +66,7 @@ Additionnées, les six valeurs [F782], [F783], [F784], [F785], [F786] et [F738] 
 
 Le pont de dette suit une autre convention. Dans son texte, un montant négatif est une sortie de trésorerie, qui accroît la dette. Un montant positif est une entrée. En 2024, Veolia a vendu plus qu'elle n'a acheté : le pont enregistre [F138]. La présentation de Clean Earth montre le même solde avec le signe inverse, [F136]. Pour 2025, cette présentation a prévu environ [F137] ; le pont de dette a ensuite enregistré [F64]. Nous gardons partout le signe du document cité.
 
-Le communiqué des résultats 2024 nomme les opérations qui expliquent l'entrée nette de [F138]. Veolia a cédé SADE pour [D8], paiement différé compris, et RGS pour [D17]. Elle a cédé Lydec pour [D16], dividendes perçus compris, et sa part de la concession de Haikou pour [D9]. Elle a acheté les activités de recyclage et de déchets de Hofmann, en Allemagne, pour [D12]. Ces montants n'ont pas la même base, et nous ne les additionnons pas. Sur le chiffre d'affaires 2024, l'effet de périmètre vaut [F661] pour SADE, [F662] pour RGS et [F654] pour Lydec. L'acquisition en Allemagne y ajoute [F659].
+Le communiqué des résultats 2024 nomme les opérations qui expliquent l'entrée nette de [F138]. Veolia a cédé SADE pour [D8], paiement différé compris, et RGS pour [D17]. Elle a cédé Lydec pour [D16], dividendes perçus compris, et sa part de la concession de Haikou pour [D9]. Elle a acheté les activités de recyclage et de déchets de Hofmann, en Allemagne, pour [D12]. Ces montants n'ont pas la même base et nous ne les additionnons pas. Sur le chiffre d'affaires 2024, l'effet de périmètre vaut [F661] pour SADE, [F662] pour RGS et [F654] pour Lydec. L'acquisition en Allemagne y ajoute [F659].
 
 ## Les sorties nettes depuis 2024 ne se comparent pas à l'enveloppe de croissance
 
@@ -86,7 +86,7 @@ Corriger ces écarts jouerait dans les deux sens. Ajouter l'investissement organ
 
 Une comparaison juste demanderait le capex discrétionnaire de chaque année. Notre registre le contient pour 2024, sous le nom de capex de croissance. La présentation des résultats 2024 publie à part les investissements contractuels. Notre lecture assimile donc ce capex de croissance à l'investissement organique de GreenUp. En 2024, un capex de croissance de [F660] et une entrée nette de [F138] laissent alors 266 M€ de croissance nette. Ce résultat reste loin du rythme moyen de [F745]. Le capex de croissance discrétionnaire vaut ensuite [F827] en 2025 et [F841] au premier semestre 2026. Le signe négatif est celui des documents cités. Pour 2026, ce capex ne couvre que six mois. Le pont de dette en couvre neuf. La comparaison s'arrête donc à 2024.
 
-## Clean Earth compte quatre chiffres, et le levier retient l'effet sur la dette
+## Clean Earth compte quatre chiffres et le levier retient l'effet sur la dette
 
 Clean Earth change le périmètre de la réponse. Veolia a acquis cette activité américaine de déchets dangereux auprès d'Enviri. L'opération s'est conclue le 1er juin 2026. Quatre chiffres circulent pour cette seule acquisition. Le tableau suivant les distingue.
 
@@ -121,13 +121,13 @@ Net du programme, Clean Earth pèse au plus 804 M€ : [F730] moins plus de [F25
 
 ## Chaque chiffre renvoie à un fichier, une page et une date de consultation
 
-Nos chiffres viennent d'abord des publications de Veolia. Ce sont ses documents d'enregistrement universel, son rapport semestriel et ses rapports trimestriels. S'y ajoutent ses présentations aux investisseurs et ses communiqués. Les opinions de Moody's et de S&P complètent ces sources. Nous utilisons aussi les rapports et communiqués d'Enviri et de pairs du secteur, et des décisions de concurrence.
+Nos chiffres viennent d'abord des publications de Veolia. Ce sont ses documents d'enregistrement universel, son rapport semestriel et ses rapports trimestriels. S'y ajoutent ses présentations aux investisseurs et ses communiqués. Les opinions de Moody's et de S&P complètent ces sources. Nous utilisons aussi les rapports et communiqués d'Enviri et de pairs du secteur et des décisions de concurrence.
 
 Chaque chiffre cité occupe une ligne d'un registre commun au groupe. La ligne donne le libellé, la valeur, l'unité et la période. Elle donne aussi le fichier, la page, l'adresse internet de la source et la date de consultation. La valeur est recopiée telle que le document l'imprime. Le libellé doit garder les mentions environ, plus de et moins de. Les opérations et les cibles ont leurs propres tables, construites sur le même modèle. Cette partie ne cite aucune opération sans document versé.
 
 Les résumés de presse, les consensus d'analystes et les transcriptions d'appels non versées ne sont pas cités comme chiffres. Ils servent au plus de repères, nommés comme tels.
 
-Le rapport semestriel 2026 existe en français et en anglais. Chaque ligne nomme la version qu'elle cite. Les ponts de dette gardent le signe du document, et le texte rappelle la convention. Veolia a publié ses résultats des neuf premiers mois le 5 novembre 2026. Nous les avons consultés le 6 novembre. Notre position de départ est donc le 30 septembre 2026.
+Le rapport semestriel 2026 existe en français et en anglais. Chaque ligne nomme la version qu'elle cite. Les ponts de dette gardent le signe du document et le texte rappelle la convention. Veolia a publié ses résultats des neuf premiers mois le 5 novembre 2026. Nous les avons consultés le 6 novembre. Notre position de départ est donc le 30 septembre 2026.
 
 Deux contrôles protègent ces sources. Un contrôle automatique vérifie que chaque valeur figure sur la page qu'elle cite. Il signale aussi les lignes que seul leur auteur a vues. Avant la remise, un second membre du groupe doit relire chaque ligne citée. Ce relecteur ne peut pas être celui qui a saisi la ligne.
 

@@ -10,9 +10,9 @@ En volume, le booster dépasse déjà son objectif. Veolia a traité [F34] de d�
 
 En valeur, la croissance change de nature. En 2025, l'EBITDA du métier a progressé de [F744] à périmètre et change constants. En 2026, l'organique ralentit. Au premier semestre, l'EBITDA progresse de [F801] à périmètre et change constants. Sur neuf mois, le chiffre d'affaires ne gagne plus que [F748], contre [F653] en 2024. La hausse publiée atteint pourtant 14,1 %, de [F747] à [F746]. Hors Clean Earth, tuck-ins compris et à change constant, elle n'est que de [F788]. Clean Earth fait le reste, malgré un change défavorable. Sur la même période, Veolia a investi [F762] dans ses projets de traitement et [F784] en acquisitions. Notre lecture est nette : la croissance du booster est achetée plus que générée.
 
-Le prix de Clean Earth ne se justifie qu'avec ses synergies. Veolia l'a payé [F48] l'EBITDA 2026 attendu après synergies. Sans synergies, le multiple ressort à 14,9x, [F40] pour [F51]. Vu du vendeur, l'EBITDA de 2025 est nettement plus bas. Clean Harbors est le seul comparable direct dont les achats sont chiffrés. Les autres noms étudiés ne sont pas comparables, ou n'ont pas de multiple publié. Clean Harbors a payé HEPACO [F483] et EnviroServe avec ES&H [F607] après synergies. Veolia, de son côté, cède des actifs mûrs à [F737]. Avant synergies, un euro investi dans Clean Earth rapporte donc moins d'EBITDA qu'un euro cédé n'en retire. Notre lecture : ces repères confirment les hypothèses centrales du modèle du groupe. Ils fragilisent sa borne basse sur l'EBITDA de Clean Earth.
+Le prix de Clean Earth ne se justifie qu'avec ses synergies. Veolia l'a payé [F48] l'EBITDA 2026 attendu après synergies. Sans synergies, le multiple ressort à 14,9x, [F40] pour [F51]. Vu du vendeur, l'EBITDA de 2025 est nettement plus bas. Clean Harbors est le seul comparable direct dont les achats sont chiffrés. Les autres noms étudiés ne sont pas comparables ou n'ont pas de multiple publié. Clean Harbors a payé HEPACO [F483] et EnviroServe avec ES&H [F607] après synergies. Veolia, de son côté, cède des actifs mûrs à [F737]. Avant synergies, un euro investi dans Clean Earth rapporte donc moins d'EBITDA qu'un euro cédé n'en retire. Notre lecture : ces repères confirment les hypothèses centrales du modèle du groupe. Ils fragilisent sa borne basse sur l'EBITDA de Clean Earth.
 
-## L'objectif de volume a baissé avec le périmètre, et Veolia le dépasse déjà
+## L'objectif de volume a baissé avec le périmètre et Veolia le dépasse déjà
 
 GreenUp a fixé en février 2024 un objectif de [F36] traités en 2027. Il couvre les déchets dangereux et les polluants. Le DEU 2025 retient désormais [F35] de déchets dangereux traités en 2027. La révision retire un million de tonnes, [F36] moins [F35].
 
@@ -89,7 +89,7 @@ Avant synergies, Clean Earth se situe dans la fourchette de ses pairs, entre HEP
 
 Le multiple après synergies dépend surtout du poids des synergies dans l'EBITDA acheté. Chez EnviroServe, les synergies attendues, [F604], égalent presque l'EBITDA acheté, [F602]. Chez US Ecology, elles n'en font qu'environ un quart, [F529] pour [F527]. Chez Clean Earth, elles en représentent 60 %, [F49] pour [F51]. Le multiple de [F48] repose donc sur une hypothèse de synergies élevée. Veolia a payé ses tuck-ins de 2025, environ [F471], à environ [F472] en moyenne, sans préciser la base.
 
-Veolia cède ses actifs mûrs à [F737] en moyenne, sur [F736] déjà signés. Son programme de plus de [F25] doit être livré d'ici mi-2028, après l'horizon du sujet. Avant synergies, un euro investi dans Clean Earth rapporte moins d'EBITDA qu'un euro cédé n'en retire. À EBITDA constant, l'équilibre exige près des trois quarts des [F49] de synergies : [F40] sur [F737], moins [F51]. Le modèle du groupe en réalise [M:H.syn] en 2027, et au plus [M:H.syn@haut]. Notre lecture : d'ici 2027, cet échange retire plus d'EBITDA par euro qu'il n'en apporte.
+Veolia cède ses actifs mûrs à [F737] en moyenne, sur [F736] déjà signés. Son programme de plus de [F25] doit être livré d'ici mi-2028, après l'horizon du sujet. Avant synergies, un euro investi dans Clean Earth rapporte moins d'EBITDA qu'un euro cédé n'en retire. À EBITDA constant, l'équilibre exige près des trois quarts des [F49] de synergies : [F40] sur [F737], moins [F51]. Le modèle du groupe en réalise [M:H.syn] en 2027 et au plus [M:H.syn@haut]. Notre lecture : d'ici 2027, cet échange retire plus d'EBITDA par euro qu'il n'en apporte.
 
 ### Les autres noms ne sont pas comparables ou restent à chiffrer
 
@@ -103,9 +103,9 @@ Les synergies du modèle suivent le calendrier de la direction, qui annonce les 
 
 Pour les cessions, le modèle reprend le multiple publié de [F737]. Il le fait varier entre [M:H.mDisp@bas] et [M:H.mDisp@haut]. La marge de manœuvre se déplace alors de [M:HEAD27@mDisp-bas] à [M:HEAD27@mDisp-haut]. Un multiple de cession plus bas retire plus d'EBITDA par euro encaissé.
 
-Pour les tuck-ins, le modèle retient le multiple de Clean Earth après synergies, [M:H.mTuck]. Ses bornes vont de [M:H.mTuck@bas] à [M:H.mTuck@haut]. Les multiples après synergies observés restent proches de ces bornes. HEPACO passe un peu sous la borne basse. Selon la presse, Terra Nova dépasse un peu la borne haute. Avant synergies, ils se situent à la borne haute ou au-dessus. L'acquisition maximale fin 2027 vaut [M:MAXACQB] au centre, et [M:MAXACQB@mTuck-haut] à la borne haute du multiple. Une cible disputée, sans synergies, la réduirait encore.
+Pour les tuck-ins, le modèle retient le multiple de Clean Earth après synergies, [M:H.mTuck]. Ses bornes vont de [M:H.mTuck@bas] à [M:H.mTuck@haut]. Les multiples après synergies observés restent proches de ces bornes. HEPACO passe un peu sous la borne basse. Selon la presse, Terra Nova dépasse un peu la borne haute. Avant synergies, ils se situent à la borne haute ou au-dessus. L'acquisition maximale fin 2027 vaut [M:MAXACQB] au centre et [M:MAXACQB@mTuck-haut] à la borne haute du multiple. Une cible disputée, sans synergies, la réduirait encore.
 
-Les gains d'efficacité ne relèvent pas de cette partie. Sur neuf mois, Veolia annonce [F759] de gains bruts, pour une croissance et performance de [F756] au pont d'EBITDA. Les deux chiffres ne s'additionnent pas, et la partie 3 les rapproche.
+Les gains d'efficacité ne relèvent pas de cette partie. Sur neuf mois, Veolia annonce [F759] de gains bruts, pour une croissance et performance de [F756] au pont d'EBITDA. Les deux chiffres ne s'additionnent pas et la partie 3 les rapproche.
 
 À l'échelle du groupe, notre modèle place l'EBITDA 2027 à [M:EB27], sous l'objectif d'au moins [F12]. Veolia confirme pourtant pleinement sa trajectoire GreenUp le 5 novembre 2026. Notre lecture : le booster y contribue d'abord par Clean Earth. La fourchette complète figure à l'annexe IV.
 
@@ -116,6 +116,6 @@ Les gains d'efficacité ne relèvent pas de cette partie. Sur neuf mois, Veolia 
 - Le passage de l'EBITDA d'Enviri à celui de Veolia. Les normes, les retraitements et les coûts centraux jouent en sens contraires, sans ventilation publiée.
 - La définition des tonnages traités. Le communiqué du 25 juin 2025 donne une capacité mondiale de traitement de [F803]. Elle est inférieure aux tonnages déclarés traités en 2024.
 - Les comptes récents du vendeur et du comparable. Le rapport d'Enviri sur le deuxième trimestre 2026 manque à nos sources. Les résultats de Clean Harbors au troisième trimestre 2026 aussi.
-- Une comparaison des multiples avec Indaver, et la valeur de marché des pairs cotés.
+- Une comparaison des multiples avec Indaver et la valeur de marché des pairs cotés.
 - Le multiple exact de Terra Nova Solutions, faute de communiqué de l'acheteur dans nos sources. La presse en donne un multiple implicite de [F807] après synergies.
 - La valeur et le multiple de chaque cession signée. Seule la cession de Rookery est chiffrée, à [F739].

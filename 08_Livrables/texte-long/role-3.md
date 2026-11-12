@@ -116,7 +116,7 @@ Dans le pont d'EBITDA des neuf mois, ces gains ne forment pas une marche distinc
 
 Les synergies forment un second appui, plus étroit. Water Technologies a cumulé [F780] de synergies au 30 septembre 2026. Son objectif atteint [F781] fin 2027. Il reste 40 M€ à livrer en cinq trimestres, l'écart entre [F781] et [F780]. Pour Clean Earth, Veolia annonce les premières synergies en 2027. Le modèle en retient [M:H.syn] du rythme de croisière, [F49]. Converti en euros, cela donne [M:SYN27]. Entre les bornes de cette part, la marge varie de [M:HEAD27@syn-bas] à [M:HEAD27@syn-haut].
 
-Nous jugeons l'efficacité l'hypothèse la plus fragile, pour trois raisons. D'abord, un plan de coûts se livre ou ne se livre pas. Nous ne pouvons le vérifier qu'à travers les publications de Veolia. Ensuite, les gains publiés sont bruts, et une partie revient aux clients. Enfin, les prix de l'énergie et des recyclats pèsent déjà sur la croissance organique. Si la croissance de 2027 tombe à [M:H.g27@bas], la marge devient négative, à [M:HEAD27@g27-bas].
+Nous jugeons l'efficacité l'hypothèse la plus fragile, pour trois raisons. D'abord, un plan de coûts se livre ou ne se livre pas. Nous ne pouvons le vérifier qu'à travers les publications de Veolia. Ensuite, les gains publiés sont bruts et une partie revient aux clients. Enfin, les prix de l'énergie et des recyclats pèsent déjà sur la croissance organique. Si la croissance de 2027 tombe à [M:H.g27@bas], la marge devient négative, à [M:HEAD27@g27-bas].
 
 ## Ce que nous n'avons pas pu établir
 

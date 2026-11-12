@@ -48,7 +48,7 @@ Le ratio de chiffre d'affaires sert d'analogie pour Clean Earth. Cette analogie 
 
 ### Enviri fournit une borne haute, sans actualisation
 
-Enviri, le vendeur, donne une borne. Son 10-K 2025 présente [F218] de passifs courants et [F219] non courants, soit 50 992 k$. Ce total couvre tout le groupe Enviri, Clean Earth compris. Il borne donc par le haut les passifs environnementaux qu'Enviri a inscrits pour Clean Earth. L'analogie et la borne donnent le même ordre de grandeur : quelques dizaines de millions de dollars. Elles ne se comparent pas pour autant terme à terme. L'analogie repose sur des montants actualisés, la borne non. Notre lecture : à base non actualisée, l'analogie dépasserait la borne, et ces dizaines de millions sont un bas de fourchette. Sans actualisation, les passifs de dépollution de Clean Harbors atteignent [F817], contre [F238] actualisés.
+Enviri, le vendeur, donne une borne. Son 10-K 2025 présente [F218] de passifs courants et [F219] non courants, soit 50 992 k$. Ce total couvre tout le groupe Enviri, Clean Earth compris. Il borne donc par le haut les passifs environnementaux qu'Enviri a inscrits pour Clean Earth. L'analogie et la borne donnent le même ordre de grandeur : quelques dizaines de millions de dollars. Elles ne se comparent pas pour autant terme à terme. L'analogie repose sur des montants actualisés, la borne non. Notre lecture : à base non actualisée, l'analogie dépasserait la borne et ces dizaines de millions sont un bas de fourchette. Sans actualisation, les passifs de dépollution de Clean Harbors atteignent [F817], contre [F238] actualisés.
 
 ## L'exposition hors bilan tient aux contentieux, aux PFAS et aux limites de l'assurance
 
@@ -76,7 +76,7 @@ La taxonomie européenne mesure la part verte des investissements et du chiffre 
 
 Surtout, la taxonomie ne mesure pas les passifs. Une installation alignée peut porter une obligation de fermeture. Le coût ESG d'une acquisition se lit donc ailleurs. Il est dans les provisions, l'affectation du prix et le hors bilan.
 
-## Les provisions restent hors du levier de Veolia, et Moody's ne leur consacre aucune ligne
+## Les provisions restent hors du levier de Veolia et Moody's ne leur consacre aucune ligne
 
 Le levier de Veolia rapporte la dette financière nette à l'EBITDA. Le rapport du troisième trimestre en donne la définition. Les provisions n'en font pas partie. Au 30 septembre 2026, la dette financière nette atteint [F721]. Elle contient la dette de loyers reprise avec Clean Earth, pas ses passifs environnementaux.
 

@@ -4,9 +4,9 @@ relu_par:
 ---
 # Rôle 6 — Jusqu'à fin 2027, Veolia peut acheter des tuck-ins, pas une nouvelle plateforme
 
-## La marge de 2027 finance une petite acquisition, et aucune dans le scénario défavorable
+## La marge de 2027 finance une petite acquisition et aucune dans le scénario défavorable
 
-Veolia annonce un retour de son levier à [F726] au plus en 2027. Sous ce plafond, notre modèle laisse fin 2027 une marge de dette centrale de [M:HEAD27]. Cette marge s'entend après les tuck-ins de [M:H.tuck] que notre scénario central compte déjà en 2027. Au multiple de Clean Earth, [F48], elle permet une acquisition supplémentaire de [M:MAXACQB]. Sur mille futurs simulés, l'acquisition maximale médiane atteint [M:MAXACQB@p50]. Veolia peut acheter au moins 1 Md€ dans [M:P.acq1] des futurs, et 2 Md€ dans [M:P.acq2]. Dans le scénario défavorable, la marge devient négative, à [M:HEAD27@def].
+Veolia annonce un retour de son levier à [F726] au plus en 2027. Sous ce plafond, notre modèle laisse fin 2027 une marge de dette centrale de [M:HEAD27]. Cette marge s'entend après les tuck-ins de [M:H.tuck] que notre scénario central compte déjà en 2027. Au multiple de Clean Earth, [F48], elle permet une acquisition supplémentaire de [M:MAXACQB]. Sur mille futurs simulés, l'acquisition maximale médiane atteint [M:MAXACQB@p50]. Veolia peut acheter au moins 1 Md€ dans [M:P.acq1] des futurs et 2 Md€ dans [M:P.acq2]. Dans le scénario défavorable, la marge devient négative, à [M:HEAD27@def].
 
 L'acquisition maximale centrale, [M:MAXACQB], fait moins d'un dixième de l'effet de Clean Earth sur la dette, [F730]. Aux États-Unis, hors GFL Environmental Services, deux plateformes chiffrées sont valorisées [T4] et environ [T2]. Elles dépassent la marge dans la plupart des futurs. Les tuck-ins, eux, restent à portée.
 
@@ -16,7 +16,7 @@ Le programme de cessions ne change pas ce constat. Veolia a signé [F736] de ces
 
 Le multiple annoncé est de [F48] l'EBITDA 2026 attendu, après synergies en régime de croisière. Veolia attend de Clean Earth un EBITDA 2026 de [F51], en mesure ajustée après IFRS 16.
 
-Le prix payé à la clôture, le 1er juin 2026, est de [F40], soit [F41]. L'effet sur la dette financière nette atteint [F730] sur neuf mois. Nous retenons l'effet sur la dette pour le levier, et le prix pour le multiple. Avant synergies, le prix de [F40] rapporté à l'EBITDA attendu de [F51] donne environ 14,9x.
+Le prix payé à la clôture, le 1er juin 2026, est de [F40], soit [F41]. L'effet sur la dette financière nette atteint [F730] sur neuf mois. Nous retenons l'effet sur la dette pour le levier et le prix pour le multiple. Avant synergies, le prix de [F40] rapporté à l'EBITDA attendu de [F51] donne environ 14,9x.
 
 ### Le multiple déplace peu le résultat, la marge beaucoup
 
@@ -46,7 +46,7 @@ Veolia confirme un levier égal ou légèrement supérieur à [F725] fin 2026. E
 
 Dans sa présentation des neuf mois, Veolia publie ses priorités d'acquisition. Elle vise l'international hors d'Europe, ainsi que les activités booster et technologiques.
 
-## Les cibles réelles se réduisent à des plateformes américaines hors de portée ou sans prix, et à des tuck-ins
+## Les cibles réelles se réduisent à des plateformes américaines hors de portée ou sans prix et à des tuck-ins
 
 Nous trions les cibles recensées selon les critères publiés par Veolia. L'annexe III liste les cibles citées, l'annexe II les opérations.
 
@@ -100,5 +100,5 @@ Enfin, écarter d'ici fin 2027 toute opération de la taille de Clean Earth. Auc
 
 - Le prix ou l'EBITDA d'Arcwood, la valeur d'Onterris, l'EBITDA récent de Heritage-Crystal Clean, de Triumvirate et de NG Group.
 - Le nom et le prix des acquisitions américaines en cours, évoquées par Veolia dans Waste Dive le 23 septembre 2026.
-- Le prix de chacun des tuck-ins américains de 2025, et la taille visée pour une prochaine plateforme.
-- L'EBITDA de Cenviro, et le prix de contrôle des cibles cotées. Une capitalisation ne dit pas ce qu'un acquéreur paierait.
+- Le prix de chacun des tuck-ins américains de 2025 et la taille visée pour une prochaine plateforme.
+- L'EBITDA de Cenviro et le prix de contrôle des cibles cotées. Une capitalisation ne dit pas ce qu'un acquéreur paierait.

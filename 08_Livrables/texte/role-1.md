@@ -66,7 +66,7 @@ Enfin, les périodes ne coïncident pas. Le cumul s'arrête au 30 septembre 2026
 
 Corriger ces écarts jouerait dans les deux sens. Ajouter l'investissement organique augmenterait le cumul. Retirer le rachat de minoritaires le réduirait.
 
-## Clean Earth compte quatre chiffres, et le levier retient l'effet sur la dette
+## Clean Earth compte quatre chiffres et le levier retient l'effet sur la dette
 
 Clean Earth change le périmètre de la réponse. Veolia a acquis cette activité américaine de déchets dangereux auprès d'Enviri. L'opération s'est conclue le 1er juin 2026. Quatre chiffres circulent pour cette seule acquisition. Le tableau suivant les distingue.
 
@@ -93,7 +93,7 @@ Net du programme, Clean Earth pèse au plus 804 M€ : [F730] moins plus de [F25
 
 ## Chaque chiffre renvoie à un fichier, une page et une date de consultation
 
-Nos chiffres viennent d'abord des publications de Veolia. Les opinions de Moody's et de S&P complètent ces sources. Nous utilisons aussi les rapports et communiqués d'Enviri et de pairs du secteur, et des décisions de concurrence.
+Nos chiffres viennent d'abord des publications de Veolia. Les opinions de Moody's et de S&P complètent ces sources. Nous utilisons aussi les rapports et communiqués d'Enviri et de pairs du secteur et des décisions de concurrence.
 
 Chaque chiffre cité occupe une ligne d'un registre commun au groupe. La ligne donne le libellé, la valeur, l'unité et la période. Elle donne aussi le fichier, la page, l'adresse internet de la source et la date de consultation. La valeur est recopiée telle que le document l'imprime. Le libellé doit garder les mentions environ, plus de et moins de. Cette partie ne cite aucune opération sans document versé.
 

@@ -16,7 +16,7 @@ Deux leviers élargissent la marge. Sans tuck-in en 2027, l'acquisition maximale
 
 Au-delà de 2027, Veolia n'a publié ni objectif d'EBITDA ni engagement de levier. Nous avons donc prolongé notre modèle à titre exploratoire, sans le mêler à la fourchette. La croissance organique de 2027 y est reconduite chaque année. Le reste du programme de cessions y est encaissé en 2028. Dans ce cadre, l'acquisition maximale atteindrait [M:HZ.2028.MAXACQ] fin 2028 au centre, contre [M:MAXACQB] fin 2027. Dans le scénario défavorable, la marge reste négative, à [M:HZ.2030.BIND@def] fin 2030. Cette prolongation appuie l'ordre que nous recommandons : des tuck-ins d'abord, une plateforme après les cessions.
 
-## La prudence se paie en EBITDA cédé, et actionnaires comme agences en portent l'effet
+## La prudence se paie en EBITDA cédé et actionnaires comme agences en portent l'effet
 
 Les cessions sont la voie de financement choisie par Veolia. Leur coût est l'EBITDA cédé. Au multiple central de [M:H.mDisp], le programme retire [M:C.progEb] d'EBITDA. Avant synergies, Clean Earth a coûté environ 14,9x, soit [F40] pour [F51]. À ce prix, un euro investi rapporte moins d'EBITDA qu'un euro cédé à [F737] n'en retire.
 

@@ -63,7 +63,7 @@ Avant synergies, Clean Earth se situe dans la fourchette de ses pairs, entre HEP
 
 Le multiple après synergies dépend surtout du poids des synergies dans l'EBITDA acheté. Chez EnviroServe, les synergies attendues, [F604], égalent presque l'EBITDA acheté, [F602]. Chez US Ecology, elles n'en font qu'environ un quart, [F529] pour [F527]. Chez Clean Earth, elles en représentent 60 %, [F49] pour [F51]. Le multiple de [F48] repose donc sur une hypothèse de synergies élevée.
 
-Veolia cède ses actifs mûrs à [F737] en moyenne, sur [F736] déjà signés. Son programme de plus de [F25] doit être livré d'ici mi-2028, après l'horizon du sujet. Avant synergies, un euro investi dans Clean Earth rapporte moins d'EBITDA qu'un euro cédé n'en retire. À EBITDA constant, l'équilibre exige près des trois quarts des [F49] de synergies : [F40] sur [F737], moins [F51]. Le modèle du groupe en réalise [M:H.syn] en 2027, et au plus [M:H.syn@haut]. Notre lecture : d'ici 2027, cet échange retire plus d'EBITDA par euro qu'il n'en apporte.
+Veolia cède ses actifs mûrs à [F737] en moyenne, sur [F736] déjà signés. Son programme de plus de [F25] doit être livré d'ici mi-2028, après l'horizon du sujet. Avant synergies, un euro investi dans Clean Earth rapporte moins d'EBITDA qu'un euro cédé n'en retire. À EBITDA constant, l'équilibre exige près des trois quarts des [F49] de synergies : [F40] sur [F737], moins [F51]. Le modèle du groupe en réalise [M:H.syn] en 2027 et au plus [M:H.syn@haut]. Notre lecture : d'ici 2027, cet échange retire plus d'EBITDA par euro qu'il n'en apporte.
 
 Les rachats de Covanta, pour [F484], et de Stericycle, pour environ [F474], ne servent pas de comparables. Le premier valorise l'énergie des déchets. Le second traite des déchets médicaux.
 
@@ -73,7 +73,7 @@ Le modèle du groupe retient un EBITDA de Clean Earth de [M:H.ceEb] en année pl
 
 Les synergies du modèle suivent le calendrier de la direction, qui annonce les premières en 2027. Le modèle en réalise [M:H.syn] en 2027, soit [M:SYN27]. Sans synergies, la marge de manœuvre tombe à [M:HEAD27@syn-bas]. À [M:H.syn@haut], elle monte à [M:HEAD27@syn-haut].
 
-Pour les tuck-ins, le modèle retient le multiple de Clean Earth après synergies, [M:H.mTuck]. Ses bornes vont de [M:H.mTuck@bas] à [M:H.mTuck@haut]. Les multiples après synergies observés restent proches de ces bornes. Avant synergies, ils se situent à la borne haute ou au-dessus. L'acquisition maximale fin 2027 vaut [M:MAXACQB] au centre, et [M:MAXACQB@mTuck-haut] à la borne haute du multiple.
+Pour les tuck-ins, le modèle retient le multiple de Clean Earth après synergies, [M:H.mTuck]. Ses bornes vont de [M:H.mTuck@bas] à [M:H.mTuck@haut]. Les multiples après synergies observés restent proches de ces bornes. Avant synergies, ils se situent à la borne haute ou au-dessus. L'acquisition maximale fin 2027 vaut [M:MAXACQB] au centre et [M:MAXACQB@mTuck-haut] à la borne haute du multiple.
 
 À l'échelle du groupe, notre modèle place l'EBITDA 2027 à [M:EB27], sous l'objectif d'au moins [F12]. Notre lecture : le booster y contribue d'abord par Clean Earth.
 

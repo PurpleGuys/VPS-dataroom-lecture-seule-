@@ -8,7 +8,7 @@ relu_par:
 
 Fin 2027, notre marge de dette centrale atteint [M:HEAD27] sous le plafond de [F726]. Au multiple de Clean Earth, elle finance une acquisition supplémentaire de [M:MAXACQB]. Dans le scénario défavorable, elle n'en finance aucune. Veolia peut donc encore acheter des tuck-ins d'ici fin 2027, pas une nouvelle plateforme.
 
-## Le levier, et non l'enveloppe de GreenUp, borne les achats de Veolia
+## Le levier et non l'enveloppe de GreenUp borne les achats de Veolia
 
 Sept constats portent cette lecture.
 
@@ -32,7 +32,7 @@ Le groupe retient quatre leçons de sa méthode.
 
 D'abord, un chiffre ne vaut que par sa source.
 
-Ensuite, un même événement peut porter plusieurs chiffres. Clean Earth en compte quatre, et le levier n'en retient qu'un : l'effet sur la dette.
+Ensuite, un même événement peut porter plusieurs chiffres. Clean Earth en compte quatre et le levier n'en retient qu'un : l'effet sur la dette.
 
 Puis une marge se lit en probabilités. Tenu dans [M:P.tenir3x] des futurs simulés, le plafond cède dans plus d'un sur trois.
 

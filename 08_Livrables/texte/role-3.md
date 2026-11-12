@@ -76,7 +76,7 @@ GreenUp vise [F420] de gains d'efficacité par an. Veolia a dépassé cet object
 
 Dans le pont d'EBITDA des neuf mois, ces gains ne forment pas une marche distincte. La marche croissance et performance apporte [F756]. Elle regroupe les prix, la productivité, l'efficacité, les volumes et les synergies. Cette marche est nette des gains rendus aux clients. Les prix de l'énergie et des recyclats pèsent pour [F757]. Les gains bruts d'efficacité et la marche nette ne se comparent donc pas terme à terme. Notre lecture : sans le plan d'efficacité, la croissance organique serait nettement plus faible.
 
-Nous jugeons l'efficacité l'hypothèse la plus fragile, pour trois raisons. D'abord, un plan de coûts se livre ou ne se livre pas. Nous ne pouvons le vérifier qu'à travers les publications de Veolia. Ensuite, les gains publiés sont bruts, et une partie revient aux clients. Enfin, les prix de l'énergie et des recyclats pèsent déjà sur la croissance organique. Si la croissance de 2027 tombe à [M:H.g27@bas], la marge devient négative, à [M:HEAD27@g27-bas].
+Nous jugeons l'efficacité l'hypothèse la plus fragile, pour trois raisons. D'abord, un plan de coûts se livre ou ne se livre pas. Nous ne pouvons le vérifier qu'à travers les publications de Veolia. Ensuite, les gains publiés sont bruts et une partie revient aux clients. Enfin, les prix de l'énergie et des recyclats pèsent déjà sur la croissance organique. Si la croissance de 2027 tombe à [M:H.g27@bas], la marge devient négative, à [M:HEAD27@g27-bas].
 
 ## Ce que nous n'avons pas pu établir
 

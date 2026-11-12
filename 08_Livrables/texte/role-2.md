@@ -16,7 +16,7 @@ Fin 2027, les agences laissent davantage de marge. S&P pourrait dégrader Veolia
 
 Le levier de Veolia rapporte la dette financière nette de clôture à l'EBITDA. Les deux termes intègrent la norme IFRS 16 sur les loyers. Le rapport du troisième trimestre 2026 précise que ces définitions n'ont pas changé.
 
-Le ratio retient la dette de clôture, et non une dette moyenne. Une acquisition payée en juin pèse donc en entier sur la dette de décembre. Elle n'apporte pourtant à l'EBITDA que ses mois consolidés. Pour Clean Earth en 2026, ce sont [M:H.months].
+Le ratio retient la dette de clôture et non une dette moyenne. Une acquisition payée en juin pèse donc en entier sur la dette de décembre. Elle n'apporte pourtant à l'EBITDA que ses mois consolidés. Pour Clean Earth en 2026, ce sont [M:H.months].
 
 Les hybrides restent hors de cette dette. Veolia les inscrit en capitaux propres, en application de la norme IAS 32.
 
@@ -34,9 +34,9 @@ De [F8] à [F721], la hausse doit près de la moitié à Clean Earth, [F730]. Le
 
 ## Finir 2026 au niveau annoncé exige un quatrième trimestre hors norme
 
-Avec l'EBITDA 2026 du modèle, [M:EB26], un levier de [F725] correspond à environ 22,5 Md€ de dette. C'est loin des [F721] du 30 septembre, et il ne reste qu'un trimestre. Or la dette n'a baissé que de [M:PD.dropQ4] au quatrième trimestre 2025, de [F740] à [F8]. Le cash-flow libre net de ce trimestre a pourtant atteint [M:PD.fcfQ4]. Les autres flux du trimestre en ont absorbé l'essentiel.
+Avec l'EBITDA 2026 du modèle, [M:EB26], un levier de [F725] correspond à environ 22,5 Md€ de dette. C'est loin des [F721] du 30 septembre et il ne reste qu'un trimestre. Or la dette n'a baissé que de [M:PD.dropQ4] au quatrième trimestre 2025, de [F740] à [F8]. Le cash-flow libre net de ce trimestre a pourtant atteint [M:PD.fcfQ4]. Les autres flux du trimestre en ont absorbé l'essentiel.
 
-Le modèle reprend au quatrième trimestre 2026 le cash-flow libre net de celui de 2025, [M:H.fcfQ4]. Il suppose que [M:H.s26] des cessions signées non encore encaissées le seront avant le 31 décembre. Cela représente [M:D26]. Le modèle fixe à [M:H.tuckH2] les tuck-ins du quatrième trimestre, et à [M:H.other] les autres flux. Il n'y prévoit pas non plus de dividende. La dette tombe alors à [M:NFD26] et le levier à [M:LEV26].
+Le modèle reprend au quatrième trimestre 2026 le cash-flow libre net de celui de 2025, [M:H.fcfQ4]. Il suppose que [M:H.s26] des cessions signées non encore encaissées le seront avant le 31 décembre. Cela représente [M:D26]. Le modèle fixe à [M:H.tuckH2] les tuck-ins du quatrième trimestre et à [M:H.other] les autres flux. Il n'y prévoit pas non plus de dividende. La dette tombe alors à [M:NFD26] et le levier à [M:LEV26].
 
 Passer de [F721] à [M:NFD26] demande une baisse d'environ 1,6 Md€ en un seul trimestre. Notre lecture : ce levier de fin 2026 est une cible, pas un résultat de calage. Il suppose un quatrième trimestre aussi généreux qu'en 2025, sans ses autres sorties de trésorerie.
 
@@ -66,7 +66,7 @@ Pour S&P, le modèle approche le ratio sur la base de Moody's. Il ajoute à sa d
 
 Sur la base de Moody's, cette marge vaut [M:HEADSP26] fin 2026. Le ratio passe pourtant sous ce seuil dans [M:P.sp26] des simulations. Fin 2027, il reste au-dessus dans [M:P.sp27] des simulations. Or le seuil de S&P vise un ratio durablement trop bas. Un simple creux en 2026 ne remplit pas cette condition, selon notre lecture. Fin 2027, la marge sous ce seuil atteint [M:HEADSP27], contre [M:HEAD27] sous le plafond de Veolia. Le seuil des agences mord le premier dans [M:P.agences] des simulations.
 
-Des deux agences, Moody's laisse le moins de marge. Elle note Veolia un cran au-dessus de S&P, et attend pourtant un ratio plus bas. Les deux marges ont fondu avec Clean Earth. En mars 2025, S&P attendait environ [F870]. En avril 2025, Moody's visait [F872] à [F873]. Chaque agence a ainsi retiré de l'ordre de deux à trois points à sa prévision pour 2026.
+Des deux agences, Moody's laisse le moins de marge. Elle note Veolia un cran au-dessus de S&P et attend pourtant un ratio plus bas. Les deux marges ont fondu avec Clean Earth. En mars 2025, S&P attendait environ [F870]. En avril 2025, Moody's visait [F872] à [F873]. Chaque agence a ainsi retiré de l'ordre de deux à trois points à sa prévision pour 2026.
 
 Le plafond de Veolia et les seuils des agences sont liés. En novembre 2025, S&P jugeait la politique financière de Veolia compatible avec sa note pour un levier publié allant jusqu'à [F871]. Moody's fonde sa perspective stable sur le désendettement de Veolia après Clean Earth. S&P cite d'abord, parmi les causes d'une dégradation, des acquisitions par dette plus fortes que prévu. Sa prévision intègre Clean Earth et d'éventuels petits tuck-ins. Notre lecture : une plateforme payée par dette sortirait du scénario que les deux agences ont noté, avant même que le ratio n'atteigne son seuil.
 

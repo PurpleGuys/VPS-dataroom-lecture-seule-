@@ -24,7 +24,10 @@ const {
   ExternalHyperlink, FootnoteReferenceRun, ImageRun, NumberFormat, Tab, TabStopType, LeaderType, UnderlineType,
 } = require("docx");
 
-const DATA = JSON.parse(fs.readFileSync(process.argv[2] || path.join(__dirname, "report-data.json"), "utf8"));
+// Aucun tiret long dans le document : dans toutes les chaînes reçues (notes, titres, légendes), « A — B » devient « A : B ».
+const noDash = (v) => (typeof v === "string" ? v.replace(/\s—\s/g, " : ")
+  : Array.isArray(v) ? v.map(noDash) : v && typeof v === "object" ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, noDash(x)])) : v);
+const DATA = noDash(JSON.parse(fs.readFileSync(process.argv[2] || path.join(__dirname, "report-data.json"), "utf8")));
 const OUT = process.argv[3] || "rapport-sujet-2.docx";
 const HEADINGS_OUT = OUT.replace(/\.docx$/i, "") + ".headings.json";
 const FINAL = process.argv.includes("--final") || DATA.final === true;
@@ -45,9 +48,11 @@ const BODY = 24;                       // « Times New Roman 12 »
 const SMALL = 20;                      // 10 pt : tableaux, légendes
 const NOTE = 18;                       // 9 pt : notes de bas de page
 const LINE = 360;                      // « interligne 1,5 »
-const MARGIN = 1417;                   // « 2,5 cm pour toutes les marges »
+const MARGIN = 1417;                   // « 2,5 cm pour toutes les marges » : en haut et en bas
+// Le rapport est relié : 3 cm à gauche, 2 cm à droite. La largeur du texte ne change pas (16 cm), la mise en page non plus.
+const MARGIN_LEFT = 1701, MARGIN_RIGHT = 1133;
 const PAGE_W = 11906, PAGE_H = 16838;  // A4
-const TEXT_WIDTH = PAGE_W - 2 * MARGIN; // 9072
+const TEXT_WIDTH = PAGE_W - MARGIN_LEFT - MARGIN_RIGHT; // 9072
 const RETURN = 360;                    // « un seul retour avant et après » un titre : une ligne à 1,5
 const TOC_RIGHT = 567;                 // sommaire : 1 cm de retrait à droite, où viennent les points de conduite et la page
 const CELL_PAD = 160;                  // marges gauche et droite d'une cellule (80 + 80)
@@ -222,7 +227,7 @@ let modelVersionShown = false;  // la version de la fourchette, dite dans la pre
 const PARA_AFTER = 120;  // 6 pt entre deux paragraphes : pas de ligne vide, la méthode ne veut qu'un retour autour des titres
 function refOf(id) { const R = DATA.refs || {}; return R[id] || R[String(id).split("-")[0]] || ""; }
 function noteKey(r) {
-  if (r.rowkind === "model") return "M|" + String(NOTES[r.id] || r.id).replace(/^\S+ — /, "");
+  if (r.rowkind === "model") return "M|" + String(NOTES[r.id] || r.id).replace(/^\S+ (?:—|:) /, "");
   return "R|" + (r.file || r.id) + "#" + (r.page || "");
 }
 function collectGroups(blocks) {
@@ -261,8 +266,8 @@ function groupNote(key, r) {
     if (!modelVersionShown && DATA.model_version) { text += ` ; ${DATA.model_version}, valable pour toutes les notes du classeur`; modelVersionShown = true; }
     return `${text} ; ${g.ids.length > 1 ? "clés" : "clé"} ${g.ids.join(", ")}.`;
   }
-  const ref = refOf(g.ids[0]) || String(NOTES[g.ids[0]] || r.cite || r.file || "source au registre").replace(/^\S+ — /, "").replace(/ ; non relue\.$|\.$/, "");
-  return `${g.ids.join(", ")} — ${ref}${g.unread ? (g.ids.length > 1 ? " ; non relues" : " ; non relue") : ""}.`;
+  const ref = refOf(g.ids[0]) || String(NOTES[g.ids[0]] || r.cite || r.file || "source au registre").replace(/^\S+ (?:—|:) /, "").replace(/ ; non relue\.$|\.$/, "");
+  return `${g.ids.join(", ")} : ${ref}${g.unread ? (g.ids.length > 1 ? " ; non relues" : " ; non relue") : ""}.`;
 }
 function footnote(text) {
   footnotes[++footnoteId] = { children: [new Paragraph({ spacing: { after: 0, line: 240 }, alignment: AlignmentType.LEFT,
@@ -722,7 +727,7 @@ for (const role of DATA.roles) {
   body.push(heading(`${part}. ${title}`, 1, { role: role.n , newPage: true }));
   const signed = signature(key);
   if (signed) body.push(p(signed, { run: { italics: true } }), blank());
-  else if (!FINAL) body.push(placeholder(`[Partie rédigée par : ______ — frontmatter signe_par / relu_par de texte/${key}.md] ${role.tabs ? "Dans le classeur : " + role.tabs : ""}`));
+  else if (!FINAL) body.push(placeholder(`[Partie rédigée par : ______ ; frontmatter signe_par / relu_par de texte/${key}.md] ${role.tabs ? "Dans le classeur : " + role.tabs : ""}`));
   // Une partie rédigée se lit seule : les aides générées (consigne, chiffres du rôle, questions du jury)
   // ne s'impriment qu'à côté d'une partie encore vide.
   if (!FINAL && !text) body.push(p(role.brief, { run: { italics: true, color: "555555" } }), blank());
@@ -736,7 +741,7 @@ for (const role of DATA.roles) {
   if (!FINAL && !text) {
     body.push(runs([{ text: "Chiffres du registre pour cette partie", bold: true }]));
     body.push(table(["ID", "Chiffre", "Période", "Valeur", "Source (fichier, page)", "Relu par"],
-      role.figures.map((f) => [f[0], f[1], f[2], f[3], f[4], f[5] || "—"]), [900, 3000, 1000, 1300, 2172, 700], [3]));
+      role.figures.map((f) => [f[0], f[1], f[2], f[3], f[4], f[5] || "-"]), [900, 3000, 1000, 1300, 2172, 700], [3]));
     body.push(caption(`Aide à la rédaction, retirée de la version finale : les ${role.figures.length} lignes du registre attribuées au rôle ${role.n}.`));
     body.push(runs([{ text: "Ce que nous n'avons pas pu établir", bold: true }]), ...bullets(role.open), blank());
     body.push(runs([{ text: "Questions probables du jury", bold: true }]));
@@ -752,7 +757,7 @@ const recoSigned = signature("recommandation");
 if (recoSigned) body.push(p(recoSigned, { run: { italics: true } }), blank());
 if (reco) body.push(...renderBlocks(reco.blocks, { part }));
 else if (!FINAL) body.push(placeholder("[À rédiger] 08_Livrables/texte/recommandation.md : ce que nous recommandons, ce que cela coûte et à qui, ce qui nous ferait changer d'avis. Chiffres par jeton."));
-body.push(captionAbove(`Tableau ${part}.1 — Les indicateurs de la réponse, calculés dans le classeur du groupe à partir des chiffres du registre (${DATA.n_figures} lignes sourcées).`));
+body.push(captionAbove(`Tableau ${part}.1 : Les indicateurs de la réponse, calculés dans le classeur du groupe à partir des chiffres du registre (${DATA.n_figures} lignes sourcées).`));
 body.push(table(["Indicateur", "Valeur", "Ce qu'il faut en lire"], DATA.tiles.map((t) => [t[0], t[1], t[2]]), [3200, 1600, 4272], [1]));
 
 // ---- conclusion (§ 4.5) : les points forts à retenir
@@ -815,7 +820,7 @@ const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
 let annexNo = 0;
 function annex(title, children, legend) {
   const label = `Annexe ${ROMAN[annexNo++] || annexNo}`;
-  const text = `${label} — ${title}`;
+  const text = `${label} : ${title}`;
   annexes.push(heading(text, 1, { annex: true, label, newPage: annexes.length > 0 }));
   annexes.push(caption(legend));
   annexes.push(...children);
@@ -841,7 +846,7 @@ const valueCell = (v) => String(v == null ? "" : v).replace(/ par (an|action)$/,
 // couper. Ce qui s'imprime ne change pas d'un caractère : le texte protégé de la cellule (protect), dont l'adresse
 // est la part cliquable.
 function sourceCell(id, citation) {
-  const ref = (DATA.refs || {})[id] || citation || "—";
+  const ref = (DATA.refs || {})[id] || citation || "-";
   const m = /^(https?:\/\/\S+?)(, consulté le .*)?$/.exec(ref);
   if (!m) return ref;
   const tail = m[2] || "", printed = protect(ref);
@@ -852,13 +857,13 @@ function sourceCell(id, citation) {
 // ne la fournit pas : la valeur et la devise du registre, telles quelles.
 // Une mention sans chiffre (« non communiqué ») tient sur une ligne : la colonne s'élargit pour elle.
 const amountCell = (shown, value, currency) => {
-  const text = String((shown !== undefined && shown !== null ? shown : [value, currency].filter(Boolean).join(" ")) || "—");
+  const text = String((shown !== undefined && shown !== null ? shown : [value, currency].filter(Boolean).join(" ")) || "-");
   return /\d/.test(text) ? text : text.replace(/ /g, NBSP);
 };
 annex("Registre des chiffres cités", [
   ...(citedRows.length
     ? [table(["ID", "Chiffre", "Valeur", "Période", "Source", "Rôle", "Relu"],
-        citedRows.map((r) => [r[0], r[1], valueCell((DATA.displays || {})[r[0]] || r[2]), r[3], sourceCell(r[0], r[4]), r[5], r[6] || "—"]),
+        citedRows.map((r) => [r[0], r[1], valueCell((DATA.displays || {})[r[0]] || r[2]), r[3], sourceCell(r[0], r[4]), r[5], r[6] || "-"]),
         [600, 2900, 1100, 1000, 2272, 600, 600], [2])]
     : [FINAL ? p("Aucun chiffre cité.") : placeholder(`Aucun chiffre encore cité par jeton : l'annexe se remplira des lignes citées parmi les ${DATA.register.length} du registre.`)]),
 ], `${citedRows.length} chiffres cités dans le texte, sur ${DATA.register.length} au registre du groupe. Chaque source renvoie à la bibliographie, qui donne le titre, l'adresse et la date de consultation ; le registre garde le fichier joint. « Relu » vide : un seul membre a lu la page.`);
@@ -872,7 +877,7 @@ if (DATA.cited_deals && DATA.cited_deals.length) {
 if (DATA.cited_targets && DATA.cited_targets.length) {
   // [id, nom, valeur estimée, devise, citation, relecture, en euros, taux, valeur affichée] : « en euros » et « taux »
   // quand le classeur convertit
-  const euros = (t) => (t[6] ? `${t[6]}${t[7] ? ` (${t[7]})` : ""}` : "—");
+  const euros = (t) => (t[6] ? `${t[6]}${t[7] ? ` (${t[7]})` : ""}` : "-");
   annex("Cibles citées", [
     table(["ID", "Cible", "Valeur estimée", "En euros (taux, date)", "Source", "Relecture"],
       DATA.cited_targets.map((t) => [t[0], t[1], amountCell(t[8], t[2], t[3]), euros(t), sourceCell(t[0], t[4]), t[5]]), [600, 1800, 1300, 1900, 2472, 1000], [2]),
@@ -913,11 +918,11 @@ if (CONTROLS && !FINAL) {
     const longEdition = DATA.edition === "longue";
     const [lo, hi] = CONTROLS.pages_per_role || [6, 9];
     controls.push(table(["Fichier", "Pages (PDF)", "Mots", "Caractères", "Cible pages", "À rédiger"],
-      files.map((f) => [f, CONTROLS.pages && CONTROLS.pages[f] != null ? CONTROLS.pages[f] : "—", CONTROLS.words[f],
-        CONTROLS.chars && CONTROLS.chars[f] != null ? CONTROLS.chars[f] : "—",
-        f.startsWith("role-") && !longEdition ? `${lo}-${hi}` : "—", CONTROLS.todos[f] || 0]), [2772, 1200, 1100, 1300, 1300, 1400], [1, 2, 3, 5]));
+      files.map((f) => [f, CONTROLS.pages && CONTROLS.pages[f] != null ? CONTROLS.pages[f] : "-", CONTROLS.words[f],
+        CONTROLS.chars && CONTROLS.chars[f] != null ? CONTROLS.chars[f] : "-",
+        f.startsWith("role-") && !longEdition ? `${lo}-${hi}` : "-", CONTROLS.todos[f] || 0]), [2772, 1200, 1100, 1300, 1300, 1400], [1, 2, 3, 5]));
     const target = (CONTROLS.pages_total_target || [50, 60]).join("-");
-    controls.push(caption(`Corps du rapport, du sommaire à la première annexe : ${CONTROLS.pages_body || "—"} pages ${longEdition ? "(édition de référence, sans cible de pages)" : `(cible ${target})`} ; document entier : ${CONTROLS.pages_total || "—"} pages ; ${CONTROLS.chars_total || 0} caractères espaces compris dans le corps (la méthode en demande ${(DATA.method && DATA.method.chars_min) || 50000} au minimum).`));
+    controls.push(caption(`Corps du rapport, du sommaire à la première annexe : ${CONTROLS.pages_body || "-"} pages ${longEdition ? "(édition de référence, sans cible de pages)" : `(cible ${target})`} ; document entier : ${CONTROLS.pages_total || "-"} pages ; ${CONTROLS.chars_total || 0} caractères espaces compris dans le corps (la méthode en demande ${(DATA.method && DATA.method.chars_min) || 50000} au minimum).`));
   }
   const list = (title, items, fmt) => {
     controls.push(runs([{ text: title, bold: true }]));
@@ -928,24 +933,24 @@ if (CONTROLS && !FINAL) {
   const unreadBy = {};
   for (const [f, id] of CONTROLS.unread) (unreadBy[f] = unreadBy[f] || []).push(id);
   list(`Lignes citées que personne n'a relues (${CONTROLS.unread.length})`, Object.entries(unreadBy),
-    ([f, ids]) => `${f} : ${ids.length} ligne(s) — ${ids.slice(0, 40).join(", ")}${ids.length > 40 ? " …" : ""}`);
-  list(`Lignes citées contestées (${CONTROLS.disputed.length})`, CONTROLS.disputed, (x) => `${x[0]} : ${x[1]} — ${x[2]}`);
+    ([f, ids]) => `${f} : ${ids.length} ligne(s) : ${ids.slice(0, 40).join(", ")}${ids.length > 40 ? " …" : ""}`);
+  list(`Lignes citées contestées (${CONTROLS.disputed.length})`, CONTROLS.disputed, (x) => `${x[0]} : ${x[1]} ; ${x[2]}`);
   list("Fichiers absents ou vides", [...(CONTROLS.missing || []), ...(CONTROLS.empty || [])], (x) => x);
   list("Pages liminaires à écrire", [...(CONTROLS.cover_missing || []).map((x) => `couverture : ${x}`), ...(CONTROLS.front_missing || [])], (x) => x);
   const uncited = Object.entries(CONTROLS.uncited || {});
-  list("Chiffres du registre jamais cités par leur rôle", uncited, ([role, ids]) => `rôle ${role} : ${ids.length}${ids.length ? " — " + ids.slice(0, 20).join(", ") + (ids.length > 20 ? " …" : "") : ""}`);
+  list("Chiffres du registre jamais cités par leur rôle", uncited, ([role, ids]) => `rôle ${role} : ${ids.length}${ids.length ? " : " + ids.slice(0, 20).join(", ") + (ids.length > 20 ? " …" : "") : ""}`);
   // ce que dataroom report a relevé sur le PDF (layout_findings) : fins de partie, titres, tableaux, sommaire, notes
   const layout = CONTROLS.layout || {};
   if (layout.findings) {
-    list(`Mise en page, relevée sur le PDF (${layout.findings.length})`, layout.findings, (f) => `${f.label} — ${f.text}`);
+    list(`Mise en page, relevée sur le PDF (${layout.findings.length})`, layout.findings, (f) => `${f.label} : ${f.text}`);
     if ((layout.page_breaks || []).length) list("Titres qui ouvrent une page (LibreOffice les laissait seuls en bas de la précédente)", layout.page_breaks, (t) => `« ${t} »`);
     const sizes = (layout.page_number_pt || []).map((x) => `${String(x).replace(".", ",")} pt`).join(", ");
-    controls.push(p(`Polices du PDF : ${(layout.fonts || []).join(", ") || "—"} ; numéro de page : ${sizes || "—"}.`, { run: { italics: true } }));
+    controls.push(p(`Polices du PDF : ${(layout.fonts || []).join(", ") || "-"} ; numéro de page : ${sizes || "-"}.`, { run: { italics: true } }));
   }
 }
 
 // =================================================================== le document
-const pageProps = (pageNumbers) => ({ page: { size: { width: PAGE_W, height: PAGE_H }, margin: { top: MARGIN, right: MARGIN, bottom: MARGIN, left: MARGIN }, ...(pageNumbers ? { pageNumbers } : {}) } });
+const pageProps = (pageNumbers) => ({ page: { size: { width: PAGE_W, height: PAGE_H }, margin: { top: MARGIN, right: MARGIN_RIGHT, bottom: MARGIN, left: MARGIN_LEFT }, ...(pageNumbers ? { pageNumbers } : {}) } });
 // Le pied de page : 10 pt posés sur le paragraphe (style Footer et marque de paragraphe), que le champ PAGE reprend
 // (LibreOffice ignore la taille portée par le run du champ).
 const footerParagraph = (children) => new Paragraph({ style: "Footer", alignment: AlignmentType.CENTER, spacing: { after: 0 }, run: smallFont, children });
@@ -962,7 +967,7 @@ const sections = [
   { properties: pageProps({ start: 1, formatType: NumberFormat.DECIMAL }), footers: { default: numberFooter() }, children: settle(body) },
   { properties: pageProps({ start: 1, formatType: NumberFormat.UPPER_ROMAN }), footers: { default: numberFooter() }, children: settle(annexes) },
 ];
-if (controls.length) sections.push({ properties: pageProps(null), footers: { default: textFooter("Contrôle — hors version finale") }, children: settle(controls) });
+if (controls.length) sections.push({ properties: pageProps(null), footers: { default: textFooter("Contrôle, hors version finale") }, children: settle(controls) });
 
 const doc = new Document({
   creator: "Groupe sujet 2",

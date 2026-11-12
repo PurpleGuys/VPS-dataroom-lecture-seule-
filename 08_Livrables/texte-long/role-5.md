@@ -81,7 +81,7 @@ Cette analogie suppose des portefeuilles de sites comparables. Nous ne l'avons p
 
 ### Enviri fournit une borne haute, sans actualisation
 
-Enviri, le vendeur, donne une borne. Son 10-K 2025 présente [F218] de passifs courants et [F219] non courants, soit 50 992 k$. Ces montants ne sont pas actualisés. Ce total couvre tout le groupe Enviri, Clean Earth compris. Il borne donc par le haut les passifs environnementaux qu'Enviri a inscrits pour Clean Earth. L'analogie et la borne donnent le même ordre de grandeur : quelques dizaines de millions de dollars. Elles ne se comparent pas pour autant terme à terme. L'analogie repose sur des montants actualisés, la borne non. Notre lecture : à base non actualisée, l'analogie dépasserait la borne, et ces dizaines de millions sont un bas de fourchette. Sans actualisation, les passifs de dépollution de Clean Harbors atteignent [F817], contre [F238] actualisés. Ses passifs de fermeture et post-fermeture non actualisés atteignent [F791]. Ce montant inclut la part liée à l'airspace non encore consommé. L'airspace désigne la capacité de stockage d'une décharge. Les [F791] ne se comparent donc pas terme à terme aux [F237].
+Enviri, le vendeur, donne une borne. Son 10-K 2025 présente [F218] de passifs courants et [F219] non courants, soit 50 992 k$. Ces montants ne sont pas actualisés. Ce total couvre tout le groupe Enviri, Clean Earth compris. Il borne donc par le haut les passifs environnementaux qu'Enviri a inscrits pour Clean Earth. L'analogie et la borne donnent le même ordre de grandeur : quelques dizaines de millions de dollars. Elles ne se comparent pas pour autant terme à terme. L'analogie repose sur des montants actualisés, la borne non. Notre lecture : à base non actualisée, l'analogie dépasserait la borne et ces dizaines de millions sont un bas de fourchette. Sans actualisation, les passifs de dépollution de Clean Harbors atteignent [F817], contre [F238] actualisés. Ses passifs de fermeture et post-fermeture non actualisés atteignent [F791]. Ce montant inclut la part liée à l'airspace non encore consommé. L'airspace désigne la capacité de stockage d'une décharge. Les [F791] ne se comparent donc pas terme à terme aux [F237].
 
 ## L'exposition hors bilan tient aux contentieux, aux PFAS et aux limites de l'assurance
 
@@ -121,7 +121,7 @@ Le financement vert suit la même logique. Prenons l'hybride vert de mai 2025, d
 
 Clean Earth entrera dans la taxonomie de l'exercice 2026. Sa part éligible et alignée n'est pas encore connue. Surtout, la taxonomie ne mesure pas les passifs. Une installation alignée peut porter une obligation de fermeture. Le coût ESG d'une acquisition se lit donc ailleurs. Il est dans les provisions, l'affectation du prix et le hors bilan.
 
-## Les provisions restent hors du levier de Veolia, et Moody's ne leur consacre aucune ligne
+## Les provisions restent hors du levier de Veolia et Moody's ne leur consacre aucune ligne
 
 Le levier de Veolia rapporte la dette financière nette à l'EBITDA. Le rapport du troisième trimestre en donne la définition. Ce sont les dettes financières brutes, dette de loyers IFRS 16 comprise. On en retire la trésorerie et les actifs liquides. Les provisions n'en font pas partie. Au 30 septembre 2026, la dette financière nette atteint [F721]. Elle contient la dette de loyers reprise avec Clean Earth, pas ses passifs environnementaux.
 
