@@ -5,7 +5,7 @@ Généré depuis le journal des requêtes du serveur et les registres ; rien n'e
 
 ## 2026-11-12
 
-- **compte partagé (dataroom-bearer)** : 2 recherche(s), 0 page(s) lue(s).
+- **compte partagé (dataroom-bearer)** : 2 recherche(s), 4 page(s) lue(s); 9 enregistrement(s) sans trace au registre.
 
 ## 2026-11-11
 
