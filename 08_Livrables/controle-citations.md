@@ -8,13 +8,13 @@
 | role-4.md | 6 | 1572 | 6-9 |
 | role-5.md | 6 | 1628 | 6-9 |
 | role-6.md | 7 | 1764 | 6-9 |
-| corps, du sommaire à la première annexe | 57 | 12453 | 50-60 |
+| corps, du sommaire à la première annexe | 57 | 12557 | 50-60 |
 | document entier, annexes et contrôle compris | 80 | | — |
 
 ## Jetons inconnus (0)
 - aucun
 
-## Lignes citées que personne n'a relues (295)
+## Lignes citées que personne n'a relues (297)
 - role-1.md : F2 — GreenUp : rotation NETTE d'actifs, environ
 - role-1.md : F745 — GreenUp : croissance, montant net par an (investissements organiques, priorité aux boosters, plus acquisitions petites et moyennes, moins cessions)
 - role-1.md : F129 — GreenUp : investissements nets de croissance 2024-2027, boosters et strongholds réunis (« 2 x Impact 2023 »)
@@ -288,6 +288,8 @@
 - recommandation.md : F51 — Clean Earth : EBITDA (ajusté, post IFRS 16)
 - recommandation.md : F737 — Programme de cessions : multiple moyen d'EBITDA des cessions signées
 - recommandation.md : F163 — S&P : seuil de dégradation, FFO / dette ajustés durablement sous
+- recommandation.md : F244 — Moody's : FFO / dette nette ajustée prévu
+- recommandation.md : F871 — S&P, note de novembre 2025 : levier publié jusqu'auquel la politique financière de Veolia reste compatible avec la note BBB
 - recommandation.md : F12 — Objectif GreenUp : EBITDA ≥
 - recommandation.md : F87 — Guidance 2026 : croissance organique de l'EBITDA, bas de fourchette
 - recommandation.md : F88 — Guidance 2026 : croissance organique de l'EBITDA, haut de fourchette
@@ -326,18 +328,18 @@
 - rôle 6 (Cibles, puis synthèse) : 115 — F46, F47, F49, F50, F76, F77, F209, F210, F211, F212, F213, F214, F215, F216, F443, F444, F445, F473, F474, F475 …
 
 ## Ce que la méthode du rapport mesure
-- corps du rapport : 74 099 caractères, espaces compris, pour 50 000 demandés
+- corps du rapport : 74 682 caractères, espaces compris, pour 50 000 demandés
 - role-1.md : 35 phrase(s) sur 127 au-delà de 12 mots
 - role-2.md : 63 phrase(s) sur 147 au-delà de 12 mots
 - role-3.md : 44 phrase(s) sur 131 au-delà de 12 mots
 - role-4.md : 38 phrase(s) sur 124 au-delà de 12 mots
 - role-5.md : 51 phrase(s) sur 127 au-delà de 12 mots
 - role-6.md : 55 phrase(s) sur 123 au-delà de 12 mots
-- recommandation.md : 24 phrase(s) sur 60 au-delà de 12 mots
+- recommandation.md : 26 phrase(s) sur 67 au-delà de 12 mots
 - outils-ia.md : 17 phrase(s) sur 35 au-delà de 12 mots
 - remerciements.md : 2 phrase(s) sur 6 au-delà de 12 mots
 - introduction.md : 20 phrase(s) sur 51 au-delà de 12 mots
-- conclusion.md : 12 phrase(s) sur 33 au-delà de 12 mots
+- conclusion.md : 13 phrase(s) sur 34 au-delà de 12 mots
 - couverture : le logo de l'EDHEC (08_Livrables/scripts/logo-edhec.png) manque
 - couverture : le nom du responsable (roles.yaml : encadrant) manque
 
@@ -386,4 +388,5 @@ Ces documents cités n'ont pas de date de publication dans leur note (`date_publ
 
 ## Mise en page
 - polices du PDF : LiberationSerif, LiberationSerif-Bold, LiberationSerif-Italic ; numéro de page : 10 pt
+- ouvre une page (LibreOffice le laissait seul en bas de la précédente) : « La marge permet des tuck-ins et interdit une seconde opération de la taille de Clean Earth »
 - rien à reprendre

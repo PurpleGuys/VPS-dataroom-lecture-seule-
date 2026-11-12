@@ -13,7 +13,7 @@ Fin 2027, notre marge de dette centrale atteint [M:HEAD27] sous le plafond de [F
 Sept constats portent cette lecture.
 
 - Les enveloppes de GreenUp sont nettes des cessions. Le levier, pas l'enveloppe, borne les acquisitions.
-- Fin 2027, le plafond de Veolia mord avant les seuils des agences.
+- Fin 2027, le plafond de Veolia mord avant les seuils des agences. Les deux sont liés : S&P et Moody's notent une Veolia qui tient sa politique de levier.
 - Sur une année pleine, le cash-flow libre net couvre le dividende de Veolia. Il ne couvre pas l'ensemble des dividendes. La marge vient donc de la croissance de l'EBITDA et des cessions.
 - Le calendrier des cessions pèse le plus sur la marge.
 - Le booster déchets dangereux achète sa croissance plus qu'il ne la génère.

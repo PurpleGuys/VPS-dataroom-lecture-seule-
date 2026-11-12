@@ -435,7 +435,8 @@
   "F861",
   "F862",
   "F863",
-  "F864"
+  "F864",
+  "F865"
  ],
  "lookups": [
   {
@@ -760,6 +761,12 @@
    "id": "F163",
    "prefix": "S&P : seuil de dégradation",
    "period": "2026-2028",
+   "unit": ""
+  },
+  {
+   "id": "F865",
+   "prefix": "S&P : dette ajustée par l'agence",
+   "period": "FY2025",
    "unit": ""
   },
   {

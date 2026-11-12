@@ -3,18 +3,18 @@
 | Section | Pages | Mots | Cible |
 |---|---|---|---|
 | role-1.md | 9 | 2845 | — |
-| role-2.md | 10 | 3258 | — |
+| role-2.md | 10 | 3297 | — |
 | role-3.md | 11 | 2823 | — |
 | role-4.md | 11 | 2909 | — |
 | role-5.md | 10 | 2947 | — |
 | role-6.md | 13 | 3318 | — |
-| corps, du sommaire à la première annexe | 88 | 21331 | — (édition de référence) |
-| document entier, annexes et contrôle compris | 120 | | — |
+| corps, du sommaire à la première annexe | 89 | 21474 | — (édition de référence) |
+| document entier, annexes et contrôle compris | 121 | | — |
 
 ## Jetons inconnus (0)
 - aucun
 
-## Lignes citées que personne n'a relues (592)
+## Lignes citées que personne n'a relues (594)
 - role-1.md : F2 — GreenUp : rotation NETTE d'actifs, environ
 - role-1.md : F745 — GreenUp : croissance, montant net par an (investissements organiques, priorité aux boosters, plus acquisitions petites et moyennes, moins cessions)
 - role-1.md : F129 — GreenUp : investissements nets de croissance 2024-2027, boosters et strongholds réunis (« 2 x Impact 2023 »)
@@ -581,6 +581,8 @@
 - recommandation.md : F40 — Clean Earth : prix d'acquisition
 - recommandation.md : F51 — Clean Earth : EBITDA (ajusté, post IFRS 16)
 - recommandation.md : F163 — S&P : seuil de dégradation, FFO / dette ajustés durablement sous
+- recommandation.md : F244 — Moody's : FFO / dette nette ajustée prévu
+- recommandation.md : F871 — S&P, note de novembre 2025 : levier publié jusqu'auquel la politique financière de Veolia reste compatible avec la note BBB
 - recommandation.md : F251 — Moody's : ajustement titres hybrides (50 % en dette)
 - recommandation.md : F12 — Objectif GreenUp : EBITDA ≥
 - recommandation.md : F725 — Guidance 2026 confirmée au T3 : ratio de levier fin 2026, Clean Earth inclus, égal ou légèrement supérieur à
@@ -623,18 +625,18 @@
 - rôle 6 (Cibles, puis synthèse) : 84 — F76, F77, F209, F210, F212, F215, F216, F443, F474, F475, F476, F477, F480, F481, F482, F484, F485, F486, F487, F526 …
 
 ## Ce que la méthode du rapport mesure
-- corps du rapport : 127 590 caractères, espaces compris, pour 50 000 demandés
+- corps du rapport : 128 383 caractères, espaces compris, pour 50 000 demandés
 - role-1.md : 77 phrase(s) sur 241 au-delà de 12 mots
-- role-2.md : 110 phrase(s) sur 257 au-delà de 12 mots
+- role-2.md : 112 phrase(s) sur 259 au-delà de 12 mots
 - role-3.md : 78 phrase(s) sur 237 au-delà de 12 mots
 - role-4.md : 75 phrase(s) sur 247 au-delà de 12 mots
 - role-5.md : 86 phrase(s) sur 241 au-delà de 12 mots
 - role-6.md : 103 phrase(s) sur 234 au-delà de 12 mots
-- recommandation.md : 33 phrase(s) sur 88 au-delà de 12 mots
+- recommandation.md : 35 phrase(s) sur 95 au-delà de 12 mots
 - outils-ia.md : 17 phrase(s) sur 35 au-delà de 12 mots
 - remerciements.md : 2 phrase(s) sur 6 au-delà de 12 mots
 - introduction.md : 27 phrase(s) sur 73 au-delà de 12 mots
-- conclusion.md : 16 phrase(s) sur 44 au-delà de 12 mots
+- conclusion.md : 17 phrase(s) sur 45 au-delà de 12 mots
 - couverture : le logo de l'EDHEC (08_Livrables/scripts/logo-edhec.png) manque
 - couverture : le nom du responsable (roles.yaml : encadrant) manque
 

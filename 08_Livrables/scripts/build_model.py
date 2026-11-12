@@ -468,6 +468,7 @@ mond25, i_mond25 = E("Moody's : dette nette ajustée", "FY2025", "Md EUR")
 mond26, i_mond26 = E("Moody's : dette nette ajustée, pic", "2026F")
 motrig, i_motrig = E("Moody's : seuil de dégradation", "2026-2027")
 sptrig, i_sptrig = E("S&P : seuil de dégradation", "2026-2028")
+spdebt, i_spdebt = E("S&P : dette ajustée par l'agence", "FY2025")
 splo, i_splo = E("S&P : FFO / dette ajustés attendu, bas", "2026-2028")
 sphi, i_sphi = E("S&P : FFO / dette ajustés attendu, haut", "2026-2028")
 line(ws, r, "mo24", "Moody's : FFO / dette nette ajustée", f"={mo24}/100", "%", i_mo24, NF_P); r += 1
@@ -1125,9 +1126,9 @@ rr = RES0
 for key, *_ in calc:
     ROW[key] = rr; rr += 1
 refs = dict(eb25=eb25, sign26=sign26, rook=rook, nfdq326=nfdq326, prog=prog, closed=closed, divsh26=div_sh26, tgt=tgt, synRR=syn_rr,
-            mond25=mond25, nfd25=nfd25, sptrig=sptrig, monet=mo_net)
+            mond25=mond25, nfd25=nfd25, sptrig=sptrig, monet=mo_net, spdebt=spdebt)
 CONST_IDS = dict(eb25=id_eb25, sign26=id_sign26, rook=id_rook, nfdq326=i_nfdq326, prog=i_prog, closed=i_closed, divsh26=id_divsh26, tgt=i_tgt,
-                 synRR=i_syn, mond25=i_mond25, nfd25=i_nfd25, sptrig=i_sptrig, monet=i_monet)
+                 synRR=i_syn, mond25=i_mond25, nfd25=i_nfd25, sptrig=i_sptrig, monet=i_monet, spdebt=i_spdebt)
 assert set(CONST_IDS) == set(MD.CONSTS), "model_def.CONSTS et build_model.refs divergent"
 for key, label, formula, unit, nf, bold in calc:
     rr = ROW[key]

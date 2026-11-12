@@ -22,7 +22,7 @@ Les cessions sont la voie de financement choisie par Veolia. Leur coût est l'EB
 
 Les actionnaires supportent l'effet de cet échange, par le bénéfice par action et le dividende. Le dividende de Veolia suit en effet la croissance du bénéfice net courant par action.
 
-Les agences en portent le risque, à travers le ratio FFO sur dette. S&P pourrait abaisser la note si ce ratio passait durablement sous [F163]. Notre modèle place ce ratio à [M:RATIO26] fin 2026, avec les ajustements de dette de Moody's. Il passe sous ce seuil dans [M:P.sp26] des futurs.
+Les agences en portent le risque, à travers le ratio FFO sur dette. S&P pourrait abaisser la note si ce ratio passait durablement sous [F163]. Notre modèle place ce ratio à [M:RATIO26] fin 2026, avec les ajustements de dette de Moody's. Il passe sous ce seuil dans [M:P.sp26] des futurs. Sur la propre base de S&P, il vaut [M:RATIOS26]. Des deux agences, Moody's laisse le moins de marge : elle note Veolia un cran plus haut que S&P et attend [F244] en 2026. Toutes deux adossent leur note à la discipline de Veolia. S&P jugeait sa politique financière compatible avec la note jusqu'à un levier publié de [F871]. Sa prévision intègre Clean Earth et d'éventuels petits tuck-ins. Notre lecture : une plateforme payée par dette sortirait du scénario noté. C'est pourquoi nous la conditionnons à de nouvelles cessions.
 
 ## Veolia confirme GreenUp ; notre modèle place l'EBITDA 2027 juste sous l'objectif
 

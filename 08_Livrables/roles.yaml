@@ -1,7 +1,7 @@
 # Qui défend quel rôle, et qui relit quoi — à remplir par le groupe, dans l'éditeur web.
 #
 # Un login par rôle (ethan, kevin, noa, benjamin) ; un même login peut tenir deux rôles,
-# puisque le groupe est à quatre pour six rôles.
+# puisque le groupe est à cinq pour six rôles.
 roles:
   1: ""   # Périmètre et sources
   2: ""   # La contrainte
@@ -19,10 +19,11 @@ relecture: {}
 # (tuteur ou professeur référent), l'intitulé de la formation, l'entreprise, l'année en cours. Le logo de
 # l'EDHEC se dépose dans 08_Livrables/scripts/logo-edhec.png. Un champ vide bloque la version finale.
 auteurs:                 # « Prénom NOM », tel qu'il doit s'imprimer, dans l'ordre de la couverture
-  noa: "Noa ROZAK"
+  noa: "Noa ROSZAK"
   armand: "Armand MARIN"
   kevin: "Kevin TU"
   ethan: "Ethan PETROVIC"
+  benjamin: "Benjamin ROLAND"
 encadrant: ""
 formation: "EDHEC Business School — BBA 3 — Capstone Innovations in Finance"
 entreprise: "Veolia Environnement"

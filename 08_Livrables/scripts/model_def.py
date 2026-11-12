@@ -30,6 +30,7 @@ CONSTS = {
     "nfd25": "Dette financière nette au 31/12/2025 (M EUR)",
     "sptrig": "S&P : seuil de dégradation FFO / dette (%)",
     "monet": "Moody's : dette nette ajustée 2025, Exhibit 13 (M EUR)",
+    "spdebt": "S&P : dette ajustée par l'agence 2025 (M EUR)",
 }
 
 # (clé, libellé, gabarit, unité, format : "M" millions | "x" multiple | "%" | None texte, gras)
@@ -78,6 +79,16 @@ CALC = [
      '=IF({HEADSP27}<{HEAD27},"FFO / dette ajustée ≥ 18 % (seuil des agences)","levier ≤ 3x (plafond de Veolia)")', "", None, True),
     ("MAXACQB", "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple des tuck-ins",
      "=IF({mTuck}>{cap},MAX(0,{BIND27})/(1-{cap}/{mTuck}),0)", "M EUR", "M", True),
+    # Lecture de contrôle sur la base de S&P : la dette ajustée propre à l'agence (écart S&P de fin 2025 au lieu de l'écart
+    # Moody's), avec le même FFO. Elle n'entre ni dans la marge contraignante ni dans la fourchette : BIND27 reste sur la
+    # base de Moody's, la plus sévère des deux.
+    ("SEP3", None, None, None, None, None),
+    ("ADJS26", "Dette ajustée fin 2026 sur la base de S&P (DFN + écart S&P 2025)", "={NFD26}+({spdebt}-{nfd25})", "M EUR", "M", False),
+    ("RATIOS26", "FFO / dette ajustée fin 2026, base S&P", "={FFO26}/{ADJS26}", "%", "%", True),
+    ("HEADS26", "Marge de dette fin 2026 sous le seuil S&P, base S&P", "={FFO26}/({sptrig}/100)-{ADJS26}", "M EUR", "M", True),
+    ("ADJS27", "Dette ajustée fin 2027 sur la base de S&P", "={NFD27}+({spdebt}-{nfd25})", "M EUR", "M", False),
+    ("RATIOS27", "FFO / dette ajustée fin 2027, base S&P", "={FFO27}/{ADJS27}", "%", "%", True),
+    ("HEADS27", "Marge de dette fin 2027 sous le seuil S&P, base S&P", "={FFO27}/({sptrig}/100)-{ADJS27}", "M EUR", "M", True),
 ]
 
 # Ce que le Monte-Carlo résume (onglet Distribution) et ce que le simulateur affiche.

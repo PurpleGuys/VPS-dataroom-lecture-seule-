@@ -1098,9 +1098,33 @@
     ],
     [
      "calcul",
-     "FFO 2026 (hypothèse ffo × EBITDA 2026)",
+     "Dette ajustée fin 2026 sur la base de S&P (DFN + écart S&P 2025)",
      "",
-     "5 479 M€",
+     "28 488 M€",
+     "Scénario central, onglet Trajectoire du classeur du groupe",
+     ""
+    ],
+    [
+     "calcul",
+     "FFO / dette ajustée fin 2026, base S&P",
+     "",
+     "19,2 %",
+     "Scénario central, onglet Trajectoire du classeur du groupe",
+     ""
+    ],
+    [
+     "calcul",
+     "Marge de dette fin 2026 sous le seuil S&P, base S&P",
+     "",
+     "1 952 M€",
+     "Scénario central, onglet Trajectoire du classeur du groupe",
+     ""
+    ],
+    [
+     "calcul",
+     "Marge de dette fin 2027 sous le seuil S&P, base S&P",
+     "",
+     "3 934 M€",
      "Scénario central, onglet Trajectoire du classeur du groupe",
      ""
     ],
