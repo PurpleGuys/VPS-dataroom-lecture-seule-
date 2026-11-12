@@ -640,9 +640,20 @@ const front = [];
 
 // ---- page de couverture (§ 5.2) : logo, formation, entreprise, titre, prénoms et NOMS, année, responsable
 const center = (children, spacing) => new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 0, line: LINE, ...spacing }, children });
+// Le logo de l'école et, s'il est déposé à côté de ce script (logo-veolia.png), celui de l'entreprise : sur une même ligne,
+// à la même hauteur, chacun dans ses proportions (lues dans l'en-tête du PNG ; un JPEG garde l'ancien cadre 220 × 80).
+const LOGO_HEIGHT = 46;
+const logoRun = (file) => {
+  const data = fs.readFileSync(file);
+  const png = data.length > 24 && data.toString("latin1", 1, 4) === "PNG";
+  const transformation = png ? { width: Math.round(LOGO_HEIGHT * data.readUInt32BE(16) / data.readUInt32BE(20)), height: LOGO_HEIGHT } : { width: 220, height: 80 };
+  return new ImageRun({ type: /\.jpe?g$/i.test(file) ? "jpg" : "png", data, transformation });
+};
+const COMPANY_LOGO = path.join(__dirname, "logo-veolia.png");
 if (COVER.logo && fs.existsSync(COVER.logo)) {
-  const type = /\.jpe?g$/i.test(COVER.logo) ? "jpg" : "png";
-  front.push(center([new ImageRun({ type, data: fs.readFileSync(COVER.logo), transformation: { width: 220, height: 80 } })], { before: 0, after: 240 }));
+  const logos = [logoRun(COVER.logo)];
+  if (fs.existsSync(COMPANY_LOGO)) logos.push(new TextRun({ text: "\u00A0".repeat(16), ...bodyFont }), logoRun(COMPANY_LOGO));
+  front.push(center(logos, { before: 0, after: 240 }));
 } else if (!FINAL) {
   front.push(placeholder("[Logo de l'EDHEC : déposer 08_Livrables/scripts/logo-edhec.png]"));
 }

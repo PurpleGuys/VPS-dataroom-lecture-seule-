@@ -54,7 +54,7 @@ Ce chiffre brut mesure l'ampleur de la transformation du portefeuille. Il ne dit
 
 En novembre 2025, Veolia a chiffré à environ [F131] la rotation déjà réalisée. Elle a porté le total à environ [F133] avec Clean Earth et le plan de cessions. Environ [F134] des acquisitions de GreenUp relèvent des boosters. Environ [F135] se situent hors d'Europe. La présentation des neuf mois 2026 reprend ces deux proportions. Veolia y affiche des critères d'acquisition tournés vers l'international et les boosters.
 
-Cette présentation actualise aussi la décomposition par année. Le tableau suivant la rapproche du pont de dette publié par Veolia.
+Cette présentation actualise aussi la décomposition par année. Le tableau suivant la rapproche du pont de dette publié par Veolia. Ses sources sont données en note.
 
 | Période | Acquisitions | Cessions | Investissements financiers nets, pont de dette |
 |---|---|---|---|

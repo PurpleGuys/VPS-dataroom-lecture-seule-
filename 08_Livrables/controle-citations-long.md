@@ -2,13 +2,13 @@
 
 | Section | Pages | Mots | Cible |
 |---|---|---|---|
-| role-1.md | 9 | 2845 | — |
+| role-1.md | 9 | 2851 | — |
 | role-2.md | 10 | 3297 | — |
 | role-3.md | 11 | 2823 | — |
 | role-4.md | 11 | 2909 | — |
 | role-5.md | 10 | 2947 | — |
 | role-6.md | 13 | 3318 | — |
-| corps, du sommaire à la première annexe | 89 | 21474 | — (édition de référence) |
+| corps, du sommaire à la première annexe | 89 | 21480 | — (édition de référence) |
 | document entier, annexes et contrôle compris | 121 | | — |
 
 ## Jetons inconnus (0)
@@ -625,8 +625,8 @@
 - rôle 6 (Cibles, puis synthèse) : 84 — F76, F77, F209, F210, F212, F215, F216, F443, F474, F475, F476, F477, F480, F481, F482, F484, F485, F486, F487, F526 …
 
 ## Ce que la méthode du rapport mesure
-- corps du rapport : 128 383 caractères, espaces compris, pour 50 000 demandés
-- role-1.md : 77 phrase(s) sur 241 au-delà de 12 mots
+- corps du rapport : 128 417 caractères, espaces compris, pour 50 000 demandés
+- role-1.md : 77 phrase(s) sur 242 au-delà de 12 mots
 - role-2.md : 112 phrase(s) sur 259 au-delà de 12 mots
 - role-3.md : 78 phrase(s) sur 237 au-delà de 12 mots
 - role-4.md : 75 phrase(s) sur 247 au-delà de 12 mots
@@ -637,8 +637,6 @@
 - remerciements.md : 2 phrase(s) sur 6 au-delà de 12 mots
 - introduction.md : 27 phrase(s) sur 73 au-delà de 12 mots
 - conclusion.md : 17 phrase(s) sur 45 au-delà de 12 mots
-- couverture : le logo de l'EDHEC (08_Livrables/scripts/logo-edhec.png) manque
-- couverture : le nom du responsable (roles.yaml : encadrant) manque
 
 ## Années des références (64)
 Ces documents cités n'ont pas de date de publication dans leur note (`date_published`) : l'année de leur référence est devinée. Lire la date sur le document et l'écrire dans la note.

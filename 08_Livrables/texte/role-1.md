@@ -44,6 +44,8 @@ La présentation des neuf mois 2026 actualise la décomposition par année. Le t
 | 2025 | [F783] | [F786] | [F64] |
 | Neuf mois 2026 | [F784] | [F738] | [F729] |
 
+*Sources : Veolia, présentation des résultats des neuf mois 2026 pour les acquisitions et les cessions ; résultats annuels 2024 et 2025 et rapport du troisième trimestre 2026 pour le pont de dette. Les notes donnent la page de chaque valeur.*
+
 Additionnées, les six valeurs [F782], [F783], [F784], [F785], [F786] et [F738] donnent 7,3 Md€ de rotation brute. La présentation dépasse [F32] en y ajoutant les cessions attendues d'ici la mi-2028.
 
 Le pont de dette suit une autre convention. Dans son texte, un montant négatif est une sortie de trésorerie, qui accroît la dette. Un montant positif est une entrée. En 2024, Veolia a vendu plus qu'elle n'a acheté : le pont enregistre [F138]. Nous gardons partout le signe du document cité.
