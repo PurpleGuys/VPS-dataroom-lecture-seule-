@@ -10,7 +10,7 @@ Au 30 septembre 2026, la dette financière nette de Veolia atteint [F721]. Veoli
 
 Sur une année pleine, le cash-flow libre net couvre le dividende de Veolia, pas tous les dividendes. La marge vient donc de deux autres sources. La croissance de l'EBITDA élève le plafond de dette. Les cessions réduisent la dette. Dans le scénario central du modèle du groupe, la dette atteint [M:NFD27] fin 2027. L'EBITDA atteint [M:EB27] et le levier revient à [M:LEV27]. La marge sous le plafond de [M:H.cap] n'est que de [M:HEAD27]. Elle s'entend après [M:H.tuck] de tuck-ins payés en 2027.
 
-Cette marge est fragile. Le plafond tient dans [M:P.tenir3x] des 1 000 futurs tirés par le modèle. Le premier facteur est la part des cessions non encore signées encaissée en 2027. Sans autre encaissement en 2027 que le solde des cessions signées, la marge tombe à [M:HEAD27@s27-bas]. Viennent ensuite la croissance organique de 2027 et le montant des tuck-ins. La croissance de l'EBITDA repose en partie sur les plans d'efficacité. Nous jugeons l'efficacité l'hypothèse la plus fragile du modèle. La fourchette complète de capacité figure à l'annexe IV.
+Cette marge est fragile. Le plafond tient dans [M:P.tenir3x] des 1 000 futurs tirés par le modèle. Le premier facteur est la part des cessions non encore signées encaissée en 2027. Sans autre encaissement en 2027 que le solde des cessions signées, la marge tombe à [M:HEAD27@s27-bas]. Viennent ensuite la croissance organique de 2027 et le montant des tuck-ins. La croissance de l'EBITDA repose en partie sur les plans d'efficacité, l'hypothèse la plus fragile du modèle. La fourchette complète de capacité figure à l'annexe IV.
 
 ## Le cash-flow libre net ne couvre pas l'ensemble des dividendes
 
@@ -64,9 +64,9 @@ Ni les sensibilités ni les tirages du modèle ne font varier le change ou les t
 
 Le scénario défavorable combine toutes les bornes défavorables : la marge y tombe à [M:HEAD27@def]. Le scénario favorable les combine dans l'autre sens : [M:HEAD27@fav]. Ces deux extrêmes supposent que tout tourne mal, ou bien, en même temps. Le modèle tire donc 1 000 futurs par la méthode de Monte-Carlo. Chaque hypothèse suit une loi triangulaire entre ses bornes, la valeur centrale au sommet. Un facteur commun de conjoncture relie la plupart des hypothèses.
 
-La marge médiane atteint [M:HEAD27@p50]. Le plafond tient dans [M:P.tenir3x] des futurs : il cède donc dans plus d'un futur sur trois. Le seuil des agences s'impose en premier dans [M:P.agences] des futurs tirés. La contrainte utile reste le plafond de Veolia.
+La marge médiane atteint [M:HEAD27@p50]. Le plafond cède dans plus d'un futur sur trois. Le seuil des agences s'impose en premier dans [M:P.agences] des futurs tirés. La contrainte utile reste le plafond de Veolia.
 
-La capacité d'acquisition qui en découle est faible. Au multiple central des tuck-ins, [M:H.mTuck], l'acquisition maximale du scénario central atteint [M:MAXACQB]. Sur les futurs tirés, chacun avec son propre multiple, l'acquisition maximale médiane atteint [M:MAXACQB@p50]. Ces montants s'ajoutent aux tuck-ins déjà prévus. Veolia peut acheter au moins un milliard d'euros fin 2027 dans [M:P.acq1] des futurs seulement. Deux milliards ne passent dans aucun futur, [M:P.acq2]. Notre lecture : une acquisition d'envergure demanderait des cessions supplémentaires ou un autre financement.
+La capacité d'acquisition qui en découle est faible. Au multiple central des tuck-ins, [M:H.mTuck], l'acquisition maximale du scénario central atteint [M:MAXACQB]. Sur les futurs tirés, chacun avec son propre multiple, l'acquisition maximale médiane atteint [M:MAXACQB@p50]. Ces montants s'ajoutent aux tuck-ins déjà prévus. Veolia peut acheter au moins un milliard d'euros fin 2027 dans [M:P.acq1] des futurs seulement. Deux milliards ne passent dans aucun futur, [M:P.acq2]. Une acquisition d'envergure demanderait donc, selon nous, des cessions supplémentaires ou un autre financement.
 
 ## L'efficacité soutient la croissance de l'EBITDA et reste l'hypothèse la plus fragile
 
@@ -74,9 +74,9 @@ La croissance organique de 2027 est le deuxième facteur de la marge. Le modèle
 
 GreenUp vise [F420] de gains d'efficacité par an. Veolia a dépassé cet objectif en 2024, avec [F641], puis en 2025, avec [F424]. Sur les neuf premiers mois de 2026, les gains bruts atteignent [F759].
 
-Dans le pont d'EBITDA des neuf mois, ces gains ne forment pas une marche distincte. La marche croissance et performance apporte [F756]. Elle regroupe les prix, la productivité, l'efficacité, les volumes et les synergies. Cette marche est nette des gains rendus aux clients. Les prix de l'énergie et des recyclats pèsent pour [F757]. Les gains bruts d'efficacité et la marche nette ne se comparent donc pas terme à terme. Notre lecture : sans le plan d'efficacité, la croissance organique serait nettement plus faible.
+Dans le pont d'EBITDA des neuf mois, ces gains ne forment pas une marche distincte. La marche croissance et performance apporte [F756]. Elle regroupe les prix, la productivité, l'efficacité, les volumes et les synergies. Cette marche est nette des gains rendus aux clients. Les prix de l'énergie et des recyclats pèsent pour [F757]. Les gains bruts d'efficacité et la marche nette ne se comparent donc pas terme à terme. Sans ce plan, la croissance organique serait nettement plus faible, selon nous.
 
-Nous jugeons l'efficacité l'hypothèse la plus fragile, pour trois raisons. D'abord, un plan de coûts se livre ou ne se livre pas. Nous ne pouvons le vérifier qu'à travers les publications de Veolia. Ensuite, les gains publiés sont bruts et une partie revient aux clients. Enfin, les prix de l'énergie et des recyclats pèsent déjà sur la croissance organique. Si la croissance de 2027 tombe à [M:H.g27@bas], la marge devient négative, à [M:HEAD27@g27-bas].
+Cette hypothèse est fragile pour trois raisons. D'abord, un plan de coûts se livre ou ne se livre pas. Nous ne pouvons le vérifier qu'à travers les publications de Veolia. Ensuite, les gains publiés sont bruts et une partie revient aux clients. Enfin, les prix de l'énergie et des recyclats pèsent déjà sur la croissance organique. Si la croissance de 2027 tombe à [M:H.g27@bas], la marge devient négative, à [M:HEAD27@g27-bas].
 
 ## Ce que nous n'avons pas pu établir
 

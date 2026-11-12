@@ -22,6 +22,7 @@ const {
   Document, Packer, Paragraph, TextRun: RawTextRun, HeadingLevel, Table, TableRow, TableCell, WidthType,
   AlignmentType, Footer, PageNumber, ShadingType, LevelFormat, BorderStyle,
   ExternalHyperlink, FootnoteReferenceRun, ImageRun, NumberFormat, Tab, TabStopType, LeaderType, UnderlineType,
+  HorizontalPositionRelativeFrom, VerticalPositionRelativeFrom, TextWrappingType, HeightRule, VerticalAlign,
 } = require("docx");
 
 // Aucun tiret long dans le document : dans toutes les chaînes reçues (notes, titres, légendes), « A — B » devient « A : B ».
@@ -31,6 +32,14 @@ const DATA = noDash(JSON.parse(fs.readFileSync(process.argv[2] || path.join(__di
 const OUT = process.argv[3] || "rapport-sujet-2.docx";
 const HEADINGS_OUT = OUT.replace(/\.docx$/i, "") + ".headings.json";
 const FINAL = process.argv.includes("--final") || DATA.final === true;
+// L'édition mise en forme : même texte, mêmes chiffres, mêmes notes ; l'habillage suit les « Essentiels de la charte
+// graphique » de Veolia (mars 2024) : Arial (police des documents bureautiques), deux couleurs d'une même teinte (marine
+// et bleu ciel), texte en noir à 80 %, un marqueur circulaire sur la couverture et les ouvertures de partie. Pas de rouge :
+// la charte le réserve aux usages « corporate » ; seul le logotype l'est.
+const THEME = (process.argv.find((a) => a.startsWith("--theme=")) || "").slice(8) || String(DATA.theme || "");
+const VEOLIA = THEME === "veolia";
+const MARINE = "002D62", SKY = "8DACCD", SKY_PALE = "E3EAF2", INK = "55555A", RULE = "D1D3D4";
+const ASSETS = path.join(__dirname, "veolia");
 const TEXTS = DATA.texts || {};
 const CONTROLS = DATA.controls || null;
 const COVER = DATA.cover || {};
@@ -43,11 +52,12 @@ const NOTES = DATA.notes || {};   // la note de bas de page de chaque jeton, éc
 const WEB = DATA.web_edition || "https://dataroom.is42.fr/visualisation/rapport.html";
 
 // ---- la méthode, en chiffres (twips : 1 cm = 567 ; tailles en demi-points : 12 pt = 24)
-const FONT = "Times New Roman";
-const BODY = 24;                       // « Times New Roman 12 »
-const SMALL = 20;                      // 10 pt : tableaux, légendes
-const NOTE = 18;                       // 9 pt : notes de bas de page
-const LINE = 360;                      // « interligne 1,5 »
+const FONT = VEOLIA ? "Arial" : "Times New Roman";
+const BODY = VEOLIA ? 21 : 24;         // « Times New Roman 12 » ; Arial 10,5 dans l'édition mise en forme
+const SMALL = VEOLIA ? 18 : 20;        // 10 pt : tableaux, légendes
+const NOTE = VEOLIA ? 16 : 18;         // 9 pt : notes de bas de page
+const LINE = VEOLIA ? 300 : 360;       // « interligne 1,5 » ; 1,25 dans l'édition mise en forme
+const ALIGN = VEOLIA ? AlignmentType.LEFT : AlignmentType.JUSTIFIED;   // la charte compose au fer à gauche
 const MARGIN = 1417;                   // « 2,5 cm pour toutes les marges » : en haut et en bas
 // Le rapport est relié : 3 cm à gauche, 2 cm à droite. La largeur du texte ne change pas (16 cm), la mise en page non plus.
 const MARGIN_LEFT = 1701, MARGIN_RIGHT = 1133;
@@ -99,6 +109,7 @@ function typo(text) {
 function TextRun(options) {
   if (typeof options === "string") return new RawTextRun(typo(options));
   const { verbatim, ...rest } = options || {};
+  if (VEOLIA && rest.color === undefined && rest.style !== "Hyperlink") rest.color = INK;
   if (!verbatim) {
     if (typeof rest.text === "string") rest.text = typo(rest.text);
     if (Array.isArray(rest.children)) rest.children = rest.children.map((c) => (typeof c === "string" ? typo(c) : c));
@@ -127,7 +138,7 @@ function advance(ch, style) {
   if (cp === 0x200b || cp === 0x2060 || cp === 0xad) return 0;
   const more = ADVANCE_CHARS.indexOf(ch);
   const v = cp >= 32 && cp < 256 ? ADVANCE[style][cp - 32] : (more >= 0 ? ADVANCE_MORE[style][more] : 0);
-  return v || 1024;   // un caractère hors table compte pour un demi-em : assez pour ne rien promettre de trop
+  return Math.round((v || 1024) * (VEOLIA ? 1.14 : 1));   // un caractère hors table compte pour un demi-em ; Arial : environ 14 % de plus
 }
 // Largeur d'un texte en twips ; `size` en demi-points, `style` r, b, i ou bi.
 function textWidth(text, size, style = "r") {
@@ -306,7 +317,7 @@ function textRuns(text, fmt, italicizeGlossary) {
 function p(text, opts = {}) {
   return new Paragraph({
     spacing: { after: 0, line: LINE },
-    alignment: AlignmentType.JUSTIFIED,
+    alignment: ALIGN,
     ...opts.para,
     children: [new TextRun({ text, ...bodyFont, ...opts.run })],
   });
@@ -314,7 +325,7 @@ function p(text, opts = {}) {
 // Un paragraphe tout en gras est un intertitre : il reste avec ce qu'il annonce.
 function runs(parts, para = {}) {
   const intertitle = parts.length > 0 && parts.every((x) => x.bold);
-  return new Paragraph({ spacing: { after: 0, line: LINE }, alignment: AlignmentType.JUSTIFIED,
+  return new Paragraph({ spacing: { after: 0, line: LINE }, alignment: ALIGN,
     ...(intertitle ? { keepNext: true, keepLines: true } : {}), ...para,
     children: parts.map((x) => new TextRun({ ...bodyFont, ...x })) });
 }
@@ -323,12 +334,12 @@ function blank() {
 }
 function bullets(items) {
   return items.map((t) => new Paragraph({ numbering: { reference: "bullets", level: 0 }, spacing: { after: 0, line: LINE },
-    alignment: AlignmentType.JUSTIFIED, children: [new TextRun({ text: t, ...bodyFont })] }));
+    alignment: ALIGN, children: [new TextRun({ text: t, ...bodyFont })] }));
 }
 function numbered(items, ref) {
   numberingRefs.add(ref);
   return items.map((t) => new Paragraph({ numbering: { reference: ref, level: 0 }, spacing: { after: 0, line: LINE },
-    alignment: AlignmentType.JUSTIFIED, children: [new TextRun({ text: t, ...bodyFont })] }));
+    alignment: ALIGN, children: [new TextRun({ text: t, ...bodyFont })] }));
 }
 // Un passage à écrire, ou une aide générée : visible, sur fond jaune, jamais dans la version finale.
 function placeholder(text) {
@@ -367,7 +378,34 @@ const isHeading = (x) => !!x && x.isHeading === true;
 const oneLine = (s) => String(s || "").replace(/[\u200b\u2060\u00ad]/g, "")
   .replace(/(?<=[-\u2010\u2013\u2014])\r?\n/g, "").replace(/\s+/g, " ").trim();
 const PAGE_BREAKS = new Set(((CONTROLS && CONTROLS.layout && CONTROLS.layout.page_breaks) || []).map(oneLine));
-function headingParagraph(h, before) {
+const TIGHTEN = new Set(((CONTROLS && CONTROLS.layout && CONTROLS.layout.tighten) || []).map(oneLine));
+const tightFor = (title) => (!VEOLIA ? 0 : TIGHTEN.has(oneLine(title) + "!!") ? 2 : TIGHTEN.has(oneLine(title)) ? 1 : 0);
+// Édition mise en forme. Niveau 1 : le titre, en blanc, sur un bandeau marine posé en haut de la page (il ouvre toujours
+// une page) ; l'anneau du bandeau est le marqueur circulaire de la charte. Niveau 2 : marine, souligné d'un filet bleu ciel.
+const BAND_PX = [794, 192], BAND_TWIPS = 2880, H1_SIZE = 32, H1_LINE = 420, H1_INDENT = 2100;
+const floating = (file, width, height, x = 0, y = 0) => new ImageRun({ type: "png", data: fs.readFileSync(path.join(ASSETS, file)),
+  transformation: { width, height },
+  floating: { horizontalPosition: { relative: HorizontalPositionRelativeFrom.PAGE, offset: x },
+    verticalPosition: { relative: VerticalPositionRelativeFrom.PAGE, offset: y },
+    behindDocument: true, allowOverlap: true, wrap: { type: TextWrappingType.NONE } } });
+function veoliaHeading(h, before, first) {
+  if (h.level === 1) {
+    const lines = balancedLines(h.text, TEXT_WIDTH - H1_INDENT, H1_SIZE, "b");
+    const n = lines ? lines.length : 1;
+    return new Paragraph({ heading: HEADING_LEVELS[0], keepNext: true, keepLines: true, pageBreakBefore: !first,
+      spacing: { before: 0, after: Math.max(240, BAND_TWIPS - MARGIN - n * H1_LINE + 320), line: H1_LINE, lineRule: "exact" },
+      alignment: AlignmentType.LEFT, indent: { right: H1_INDENT },
+      children: [floating("bandeau.png", BAND_PX[0], BAND_PX[1]), ...linedRuns(h.text, lines, { font: FONT, size: H1_SIZE, bold: true, color: "FFFFFF" })] });
+  }
+  const size = h.level === 2 ? 26 : 22;
+  return new Paragraph({ heading: HEADING_LEVELS[h.level - 1], keepNext: true, keepLines: true, pageBreakBefore: h.newPage,
+    spacing: { before: before ? (h.level === 2 ? (h.tight === 2 ? 200 : 320) : (h.tight === 2 ? 140 : 220)) : 0,
+      after: h.level === 2 ? (h.tight === 2 ? 100 : 160) : (h.tight === 2 ? 50 : 90), line: h.level === 2 ? 320 : 280 }, alignment: AlignmentType.LEFT,
+    ...(h.level === 2 ? { border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: SKY, space: 5 } } } : {}),
+    children: linedRuns(h.text, balancedLines(h.text, TEXT_WIDTH, size, "b"), { font: FONT, size, bold: true, color: h.level === 2 ? MARINE : INK }) });
+}
+function headingParagraph(h, before, first) {
+  if (VEOLIA) return veoliaHeading(h, before, first);
   return new Paragraph({
     heading: HEADING_LEVELS[h.level - 1], keepNext: true, keepLines: true, pageBreakBefore: h.newPage,
     spacing: { before, after: RETURN, line: LINE }, alignment: AlignmentType.LEFT,
@@ -386,7 +424,7 @@ function settle(children) {
   return children.map((x, i) => {
     if (!isHeading(x)) return x;
     const h = breakAt.has(i) && i > 0 ? { ...x, newPage: true } : x;
-    return headingParagraph(h, i === 0 || h.newPage || isHeading(children[i - 1]) ? 0 : RETURN);
+    return headingParagraph(h, i === 0 || h.newPage || isHeading(children[i - 1]) ? 0 : RETURN, i === 0);
   });
 }
 
@@ -407,12 +445,12 @@ const cellText = (content) => (Array.isArray(content) ? plain(protectInlines(con
 const cellBold = (content, head) => head || (Array.isArray(content) && content.some((r) => r.bold));
 function cell(content, width, opts = {}) {
   const children = Array.isArray(content)
-    ? inlineRuns(protectInlines(content), { ...smallFont, bold: !!opts.head }, { glossary: false })
-    : [new TextRun({ text: protect(content), ...smallFont, bold: !!opts.head })];
+    ? inlineRuns(protectInlines(content), { ...smallFont, bold: !!opts.head, ...(VEOLIA && opts.head ? { color: "FFFFFF" } : {}) }, { glossary: false })
+    : [new TextRun({ text: protect(content), ...smallFont, bold: !!opts.head, ...(VEOLIA && opts.head ? { color: "FFFFFF" } : {}) })];
   return new TableCell({
     width: { size: width, type: WidthType.DXA },
-    shading: opts.head ? { type: ShadingType.CLEAR, color: "auto", fill: "E7E6E6" } : undefined,
-    margins: { top: 40, bottom: 40, left: 80, right: 80 },
+    shading: opts.head ? { type: ShadingType.CLEAR, color: "auto", fill: VEOLIA ? MARINE : "E7E6E6" } : undefined,
+    margins: { top: VEOLIA ? 70 : 40, bottom: VEOLIA ? 70 : 40, left: 80, right: 80 },
     children: [new Paragraph({ keepNext: !!opts.keepNext, spacing: { after: 0, line: 240 },
       alignment: opts.right ? AlignmentType.RIGHT : AlignmentType.LEFT, children })],
   });
@@ -475,12 +513,16 @@ function tableRows(rows, widths, rightCols = []) {
     children: row.map((c, j) => cell(c, widths[j], { head: i === 0, right: i > 0 && rightCols.includes(j),
       keepNext: i === 0 || (i < rows.length - 1 && (small || i >= rows.length - tail)) })) }));
 }
+// Édition mise en forme : des filets horizontaux seulement, marine en haut et en bas, gris entre les lignes.
+const NO_LINE = { style: BorderStyle.NONE, size: 0, color: "FFFFFF" };
+const VEOLIA_BORDERS = VEOLIA ? { borders: { top: { style: BorderStyle.SINGLE, size: 8, color: MARINE }, bottom: { style: BorderStyle.SINGLE, size: 8, color: MARINE },
+  left: NO_LINE, right: NO_LINE, insideVertical: NO_LINE, insideHorizontal: { style: BorderStyle.SINGLE, size: 4, color: RULE } } } : {};
 function table(headers, rows, widths, rightCols = []) {
   const total = widths.reduce((a, b) => a + b, 0);
   if (total !== TEXT_WIDTH) throw new Error("largeurs de colonnes : " + total + " ≠ " + TEXT_WIDTH);
   const all = [headers, ...rows];
   const fitted = fitWidths(all, widths);
-  return new Table({ width: { size: TEXT_WIDTH, type: WidthType.DXA }, columnWidths: fitted, rows: tableRows(all, fitted, rightCols) });
+  return new Table({ width: { size: TEXT_WIDTH, type: WidthType.DXA }, columnWidths: fitted, ...VEOLIA_BORDERS, rows: tableRows(all, fitted, rightCols) });
 }
 function evenWidths(n) {
   const base = Math.floor(TEXT_WIDTH / n);
@@ -559,6 +601,7 @@ function plain(inlines) {
 // Les blocs d'un fichier texte. `part` numérote les sous-parties (1.1, 1.1.1) ; sans lui (introduction,
 // conclusion, remerciements) les sous-titres restent sans numéro, comme la méthode le permet.
 function renderBlocks(blocks, opts = {}) {
+  const AFTER = opts.tight === 2 ? 20 : opts.tight ? 50 : PARA_AFTER, LN = opts.tight === 2 ? LINE - 18 : opts.tight ? LINE - 10 : LINE;   // une partie resserrée, d'un cran ou de deux
   const part = opts.part || 0;
   noted = new Set();   // chaque partie redonne la source de ses chiffres
   collectGroups(blocks);
@@ -574,8 +617,10 @@ function renderBlocks(blocks, opts = {}) {
     const widths = fitWidths(rows, evenWidths(n));
     layouts.set(b, { rows, widths, small: isSmallTable(rows, widths) });
   }
+  let boxed = false;   // édition mise en forme : la liste de ce qui n'a pas pu être établi est encadrée
   (blocks || []).forEach((b, k) => {
     const next = (blocks || [])[k + 1];
+    if (b.kind === "heading") boxed = VEOLIA && /^Ce que nous n.avons pas pu établir/.test(plain(b.inlines));
     const announces = !!next && layouts.has(next) && layouts.get(next).small;
     if (b.kind === "heading") {
       const level = Math.min(3, Math.max(2, b.level));
@@ -585,31 +630,33 @@ function renderBlocks(blocks, opts = {}) {
         else { counters[1] += 1; number = `${part}.${counters[0] || 1}.${counters[1]} `; }
       }
       // dans une annexe, les sous-titres restent hors du sommaire : il ne liste que le corps (§ 5.4)
-      out.push(heading(number + plain(b.inlines), level, opts.inAnnex ? { toc: false } : {}));
+      out.push({ ...heading(number + plain(b.inlines), level, opts.inAnnex ? { toc: false } : {}), tight: opts.tight || 0 });
     } else if (b.kind === "paragraph") {
       // un paragraphe tout en gras est un intertitre ; la phrase qui annonce un petit tableau reste avec lui
       const intertitle = b.inlines.length > 0 && b.inlines.every((r) => r.bold || (r.kind === "text" && !r.text.trim()));
-      out.push(new Paragraph({ spacing: { after: PARA_AFTER, line: LINE }, alignment: AlignmentType.JUSTIFIED,
+      out.push(new Paragraph({ spacing: { after: AFTER, line: LN }, alignment: ALIGN,
         ...(intertitle || announces ? { keepNext: true } : {}), ...(intertitle ? { keepLines: true } : {}), children: inlineRuns(b.inlines) }));
     } else if (b.kind === "quote") {
       // Une citation recopiée exactement, entre guillemets français (§ 5.6) ; le retrait la signale.
       const text = plain(b.inlines);
       const open = /^[«"“]/.test(text), close = /[»"”]$/.test(text);
-      out.push(new Paragraph({ spacing: { after: PARA_AFTER, line: LINE }, alignment: AlignmentType.JUSTIFIED, indent: { left: 567, right: 567 },
+      out.push(new Paragraph({ spacing: { after: AFTER, line: LN }, alignment: ALIGN, indent: { left: 567, right: 567 },
         children: [...(open ? [] : [new TextRun({ text: "« ", ...bodyFont })]), ...inlineRuns(b.inlines, bodyFont, { glossary: false }), ...(close ? [] : [new TextRun({ text: " »", ...bodyFont })])] }));
     } else if (b.kind === "list") {
       let ref = "bullets";
       if (b.ordered) { ref = `list${dynamicLists++}`; numberingRefs.add(ref); }
       b.items.forEach((item, i) => {
-        out.push(new Paragraph({ numbering: { reference: ref, level: 0 }, spacing: { after: i === b.items.length - 1 ? PARA_AFTER : 0, line: LINE },
-          alignment: AlignmentType.JUSTIFIED, children: inlineRuns(item) }));
+        out.push(new Paragraph({ numbering: { reference: ref, level: 0 }, spacing: { after: i === b.items.length - 1 ? AFTER : 0, line: LN },
+          ...(boxed ? { shading: { type: ShadingType.CLEAR, color: "auto", fill: SKY_PALE },
+            border: { left: { style: BorderStyle.SINGLE, size: 24, color: MARINE, space: 6 } } } : {}),
+          alignment: ALIGN, children: inlineRuns(item) }));
       });
     } else if (b.kind === "todo") {
       if (!FINAL) out.push(placeholder(b.text));
     } else if (b.kind === "table" && b.rows.length) {
       const { rows, widths } = layouts.get(b);
-      out.push(new Table({ width: { size: TEXT_WIDTH, type: WidthType.DXA }, columnWidths: widths, rows: tableRows(rows, widths) }));
-      out.push(new Paragraph({ spacing: { after: PARA_AFTER, line: 240 }, children: [] }));
+      out.push(new Table({ width: { size: TEXT_WIDTH, type: WidthType.DXA }, columnWidths: widths, ...VEOLIA_BORDERS, rows: tableRows(rows, widths) }));
+      out.push(new Paragraph({ spacing: { after: AFTER, line: 240 }, children: [] }));
     }
   });
   return out;
@@ -655,6 +702,36 @@ const logoRun = (file) => {
   return new ImageRun({ type: /\.jpe?g$/i.test(file) ? "jpg" : "png", data, transformation });
 };
 const COMPANY_LOGO = path.join(__dirname, "logo-veolia.png");
+if (VEOLIA) {
+  // Le fond (marine, liseré, anneau, logotypes) est une image ; le texte se pose dessus dans un tableau sans filets, à
+  // hauteurs fixes : le haut sur le marine, le bas sur le blanc.
+  const W = (text, o = {}) => new TextRun({ text, font: FONT, color: "FFFFFF", ...o });
+  const G = (text, o = {}) => new TextRun({ text, font: FONT, color: INK, size: 21, ...o });
+  const line = (children, o = {}) => new Paragraph({ alignment: AlignmentType.LEFT, spacing: { after: 0, line: 276, ...(o.spacing || {}) }, ...(o.indent ? { indent: o.indent } : {}), children });
+  const blankCell = { borders: { top: NO_LINE, bottom: NO_LINE, left: NO_LINE, right: NO_LINE }, margins: { top: 0, bottom: 0, left: 0, right: 0 } };
+  const MONTHS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+  const iso = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(DATA.generated || ""));
+  const when = iso ? `${Number(iso[3])} ${MONTHS[Number(iso[2]) - 1]} ${iso[1]}` : String(DATA.generated || "");
+  const top = [
+    line([W(COVER.formation || "EDHEC Business School", { size: 19 })]),
+    line([W(DATA.title, { size: 48, bold: true })], { spacing: { before: 760, line: 600, lineRule: "exact" }, indent: { right: 2700 } }),
+    line([W(DATA.subtitle, { size: 22 })], { spacing: { before: 360, line: 300 }, indent: { right: 3300 } }),
+  ];
+  const bottom = [
+    line([G(`Rapport réalisé pour ${COVER.entreprise || "Veolia Environnement"}`, { bold: true, color: MARINE, size: 24 })]),
+    line([G((COVER.auteurs || []).join(", "))], { spacing: { before: 200 } }),
+    line([G([COVER.encadrant ? `Responsable : ${COVER.encadrant}` : "", COVER.annee || ""].filter(Boolean).join(" | "))], { spacing: { before: 80 } }),
+    line([G("Travail académique d'étudiants de l'EDHEC. Ce document n'est pas une publication de Veolia.", { size: 17, italics: true })], { spacing: { before: 280 } }),
+    ...(FINAL ? [] : [line([G(`Rapport généré le ${when} depuis la dataroom du groupe : ${DATA.n_figures} chiffres sourcés, contrôles du classeur ${DATA.checks}. Édition vérifiable : `, { size: 15 }),
+      new ExternalHyperlink({ link: WEB, children: [new TextRun({ text: WEB, font: FONT, size: 15, style: "Hyperlink" })] })], { spacing: { before: 100, line: 220 } })]),
+  ];
+  // le fond s'ancre dans un paragraphe hors du tableau : dans une cellule, LibreOffice le placerait par rapport à elle
+  front.push(new Paragraph({ spacing: { after: 0, line: 20, lineRule: "exact" }, children: [floating("couverture.png", 794, 1123)] }));
+  front.push(new Table({ width: { size: TEXT_WIDTH, type: WidthType.DXA }, columnWidths: [TEXT_WIDTH],
+    borders: { top: NO_LINE, bottom: NO_LINE, left: NO_LINE, right: NO_LINE, insideHorizontal: NO_LINE, insideVertical: NO_LINE },
+    rows: [new TableRow({ height: { value: 8830, rule: HeightRule.EXACT }, children: [new TableCell({ ...blankCell, width: { size: TEXT_WIDTH, type: WidthType.DXA }, children: top })] }),
+      new TableRow({ height: { value: 4000, rule: HeightRule.EXACT }, children: [new TableCell({ ...blankCell, width: { size: TEXT_WIDTH, type: WidthType.DXA }, verticalAlign: VerticalAlign.TOP, children: bottom })] })] }));
+} else {
 if (COVER.logo && fs.existsSync(COVER.logo)) {
   const logos = [logoRun(COVER.logo)];
   if (fs.existsSync(COMPANY_LOGO)) logos.push(new TextRun({ text: "\u00A0".repeat(16), ...bodyFont }), logoRun(COMPANY_LOGO));
@@ -687,6 +764,7 @@ if (!FINAL) {
   front.push(center([new TextRun({ text: "Édition vérifiable, où chaque chiffre ouvre sa page source : ", ...smallFont, color: "555555" }),
     new ExternalHyperlink({ link: WEB, children: [new TextRun({ text: WEB, ...smallFont, style: "Hyperlink" })] })], { line: 240 }));
 }
+}
 // ---- la page blanche qui suit la couverture (§ 5.3) : un paragraphe vide qui ouvre sa page ; les remerciements,
 // la suivante. Chaque saut de page est porté par ce qui ouvre la page, jamais par un paragraphe de saut.
 front.push(new Paragraph({ pageBreakBefore: true, spacing: { after: 0, line: LINE }, children: [] }));
@@ -704,9 +782,24 @@ body.push(heading("Sommaire", 1, { toc: false }));
 // (les entrées sont insérées à la fin, quand tous les titres sont connus)
 
 // ---- introduction (§ 4.3) : rédigée en dernier par le groupe ; situe le cadre, présente la mission, annonce les résultats et le plan
+if (VEOLIA && (DATA.tiles || []).length) {
+  // Les indicateurs de la réponse (ceux du tableau de la recommandation), en tuiles : un nombre, son nom, sa lecture.
+  body.push(heading("Chiffres clés", 1, { toc: false, newPage: true }));
+  const COLS = 2, wide = Math.floor(TEXT_WIDTH / COLS), gap = { style: BorderStyle.SINGLE, size: 36, color: "FFFFFF" };
+  const tile = (t) => new TableCell({ width: { size: wide, type: WidthType.DXA }, shading: { type: ShadingType.CLEAR, color: "auto", fill: SKY_PALE },
+    borders: { top: gap, bottom: gap, left: gap, right: gap }, margins: { top: 220, bottom: 220, left: 260, right: 200 },
+    children: t ? [new Paragraph({ alignment: AlignmentType.LEFT, spacing: { after: 60, line: 560, lineRule: "exact" }, children: [new TextRun({ text: t[1], font: FONT, size: 48, bold: true, color: MARINE })] }),
+      new Paragraph({ alignment: AlignmentType.LEFT, spacing: { after: 60, line: 260 }, children: [new TextRun({ text: t[0], font: FONT, size: 20, bold: true, color: MARINE })] }),
+      new Paragraph({ alignment: AlignmentType.LEFT, spacing: { after: 0, line: 240 }, children: [new TextRun({ text: t[2], font: FONT, size: 17 })] })] : [new Paragraph({ children: [] })] });
+  const rows = [];
+  for (let i = 0; i < DATA.tiles.length; i += COLS) rows.push(new TableRow({ cantSplit: true, children: Array.from({ length: COLS }, (_, j) => tile(DATA.tiles[i + j])) }));
+  body.push(new Table({ width: { size: wide * COLS, type: WidthType.DXA }, columnWidths: Array(COLS).fill(wide),
+    borders: { top: NO_LINE, bottom: NO_LINE, left: NO_LINE, right: NO_LINE, insideHorizontal: NO_LINE, insideVertical: NO_LINE }, rows }));
+  body.push(caption(`Source : classeur du groupe, calculé à partir des chiffres du registre (${DATA.n_figures} lignes sourcées). Le détail figure dans la dernière partie.`));
+}
 body.push(heading("Introduction", 1, { newPage: true }));
 const intro = prose("introduction");
-if (intro) body.push(...renderBlocks(intro.blocks));
+if (intro) body.push(...renderBlocks(intro.blocks, { tight: tightFor("Introduction") }));
 else if (!FINAL) {
   body.push(placeholder("[À rédiger en dernier] 08_Livrables/texte/introduction.md : le cadre (Veolia, GreenUp 2027, le sujet 2), la mission du groupe, les résultats annoncés, le plan. Ci-dessous, la matière générée depuis le classeur, à réécrire :"));
   body.push(p(DATA.thread), blank());
@@ -726,12 +819,12 @@ for (const role of DATA.roles) {
   body.push(heading(`${part}. ${title}`, 1, { role: role.n , newPage: true }));
   const signed = signature(key);
   if (signed) body.push(p(signed, { run: { italics: true } }), blank());
-  else if (!FINAL) body.push(placeholder(`[Partie rédigée par : ______ ; frontmatter signe_par de texte/${key}.md] ${role.tabs ? "Dans le classeur : " + role.tabs : ""}`));
+  else if (!FINAL && !VEOLIA) body.push(placeholder(`[Partie rédigée par : ______ ; frontmatter signe_par de texte/${key}.md] ${role.tabs ? "Dans le classeur : " + role.tabs : ""}`));
   // Une partie rédigée se lit seule : les aides générées (consigne, chiffres du rôle, questions du jury)
   // ne s'impriment qu'à côté d'une partie encore vide.
   if (!FINAL && !text) body.push(p(role.brief, { run: { italics: true, color: "555555" } }), blank());
   if (text) {
-    body.push(...renderBlocks(text.blocks, { part }));
+    body.push(...renderBlocks(text.blocks, { part, tight: tightFor(`${part}. ${title}`) }));
   } else if (!FINAL) {
     body.push(placeholder(`[À rédiger] 08_Livrables/texte/${key}.md : 6 à 9 pages, chaque chiffre cité par son jeton [F…] du registre ; des titres habillés (ce que la partie démontre), jamais « analyse » ou « résultats ».`));
     body.push(runs([{ text: "Réponse générée depuis le classeur, à réécrire", bold: true }]), p(role.answer), blank());
@@ -754,7 +847,7 @@ const recoTitle = (TEXTS.recommandation && TEXTS.recommandation.title) || "Ce qu
 body.push(heading(`${part}. ${recoTitle}`, 1, { newPage: true }));
 const recoSigned = signature("recommandation");
 if (recoSigned) body.push(p(recoSigned, { run: { italics: true } }), blank());
-if (reco) body.push(...renderBlocks(reco.blocks, { part }));
+if (reco) body.push(...renderBlocks(reco.blocks, { part, tight: tightFor(`${part}. ${recoTitle}`) }));
 else if (!FINAL) body.push(placeholder("[À rédiger] 08_Livrables/texte/recommandation.md : ce que nous recommandons, ce que cela coûte et à qui, ce qui nous ferait changer d'avis. Chiffres par jeton."));
 body.push(captionAbove(`Tableau ${part}.1 : Les indicateurs de la réponse, calculés dans le classeur du groupe à partir des chiffres du registre (${DATA.n_figures} lignes sourcées).`));
 body.push(table(["Indicateur", "Valeur", "Ce qu'il faut en lire"], DATA.tiles.map((t) => [t[0], t[1], t[2]]), [3200, 1600, 4272], [1]));
@@ -762,7 +855,7 @@ body.push(table(["Indicateur", "Valeur", "Ce qu'il faut en lire"], DATA.tiles.ma
 // ---- conclusion (§ 4.5) : les points forts à retenir
 body.push(heading("Conclusion", 1, { newPage: true }));
 const concl = prose("conclusion");
-if (concl) body.push(...renderBlocks(concl.blocks));
+if (concl) body.push(...renderBlocks(concl.blocks, { tight: tightFor("Conclusion") }));
 else if (!FINAL) {
   body.push(placeholder("[À rédiger] 08_Livrables/texte/conclusion.md : les points forts à retenir, la réponse en trois phrases, ce que le groupe retient de la méthode."));
   body.push(runs([{ text: "Ce qu'il reste à faire avant la remise", bold: true }]), ...bullets(DATA.todo));
@@ -805,7 +898,7 @@ body.push(heading("Glossaire", 1, { newPage: true }));
 if (GLOSSARY.length) {
   body.push(p("Les termes techniques, expressions étrangères et sigles employés dans le rapport ; ils apparaissent en italique dans le texte."), blank());
   for (const { term, definition } of GLOSSARY) {
-    body.push(new Paragraph({ spacing: { after: 0, line: LINE }, alignment: AlignmentType.JUSTIFIED, indent: { left: 567, hanging: 567 },
+    body.push(new Paragraph({ spacing: { after: 0, line: LINE }, alignment: ALIGN, indent: { left: 567, hanging: 567 },
       children: [new TextRun({ text: term, ...bodyFont, bold: true }), new TextRun({ text: ` : ${definition}`, ...bodyFont })] }));
   }
 } else if (!FINAL) {
@@ -913,7 +1006,7 @@ body.splice(tocMarker + 1, 0, ...tocEntries);
 // =================================================================== IV. Contrôle des citations (jamais dans la version finale)
 const controls = [];
 if (CONTROLS && !FINAL) {
-  controls.push(heading("Contrôle des citations et de la méthode (retiré de la version finale)", 1, { toc: false }));
+  if (!VEOLIA) controls.push(heading("Contrôle des citations et de la méthode (retiré de la version finale)", 1, { toc: false }));
   const files = Object.keys(CONTROLS.words || {});
   if (files.length) {
     // l'édition longue est la version de référence : les cibles de pages ne valent que pour la courte
@@ -952,11 +1045,16 @@ const pageProps = (pageNumbers) => ({ page: { size: { width: PAGE_W, height: PAG
 // Le pied de page : 10 pt posés sur le paragraphe (style Footer et marque de paragraphe), que le champ PAGE reprend
 // (LibreOffice ignore la taille portée par le run du champ).
 const footerParagraph = (children) => new Paragraph({ style: "Footer", alignment: AlignmentType.CENTER, spacing: { after: 0 }, run: smallFont, children });
-const numberFooter = () => new Footer({ children: [footerParagraph([new TextRun({ children: [PageNumber.CURRENT], ...smallFont })])] });
+const numberFooter = () => (VEOLIA
+  ? new Footer({ children: [new Paragraph({ style: "Footer", alignment: AlignmentType.LEFT, spacing: { after: 0 }, run: smallFont,
+      tabStops: [{ type: TabStopType.RIGHT, position: TEXT_WIDTH }], border: { top: { style: BorderStyle.SINGLE, size: 4, color: RULE, space: 6 } },
+      children: [new TextRun({ text: "Rapport d'étudiants de l'EDHEC réalisé pour Veolia. Ce document n'est pas une publication de Veolia.", font: FONT, size: 14, color: "8A8A8E" }),
+        new TextRun({ children: [new Tab(), PageNumber.CURRENT], font: FONT, size: SMALL, bold: true, color: MARINE })] })] })
+  : new Footer({ children: [footerParagraph([new TextRun({ children: [PageNumber.CURRENT], ...smallFont })])] }));
 const textFooter = (text) => new Footer({ children: [footerParagraph([new TextRun({ text, ...smallFont, color: "777777" })])] });
 const headingStyle = (id, name, level) => ({
   id, name, basedOn: "Normal", next: "Normal", quickFormat: true,
-  run: { font: FONT, size: BODY, bold: true, color: "000000", italics: false },
+  run: { font: FONT, size: BODY, bold: true, color: VEOLIA ? MARINE : "000000", italics: false },
   paragraph: { spacing: { before: RETURN, after: RETURN, line: LINE }, outlineLevel: level, keepNext: true },
 });
 
@@ -965,14 +1063,14 @@ const sections = [
   { properties: pageProps({ start: 1, formatType: NumberFormat.DECIMAL }), footers: { default: numberFooter() }, children: settle(body) },
   { properties: pageProps({ start: 1, formatType: NumberFormat.UPPER_ROMAN }), footers: { default: numberFooter() }, children: settle(annexes) },
 ];
-if (controls.length) sections.push({ properties: pageProps(null), footers: { default: textFooter("Contrôle, hors version finale") }, children: settle(controls) });
+if (controls.length && !VEOLIA) sections.push({ properties: pageProps(null), footers: { default: textFooter("Contrôle, hors version finale") }, children: settle(controls) });
 
 const doc = new Document({
   creator: "Groupe sujet 2",
   title: DATA.title,
   styles: {
     // le contrôle des veuves et orphelines, explicite : sans lui, ni Word ni LibreOffice ne l'appliquent à un .docx
-    default: { document: { run: bodyFont, paragraph: { spacing: { line: LINE, after: 0 }, alignment: AlignmentType.JUSTIFIED, widowControl: true } } },
+    default: { document: { run: bodyFont, paragraph: { spacing: { line: LINE, after: 0 }, alignment: ALIGN, widowControl: true } } },
     paragraphStyles: [
       { id: "Footer", name: "footer", basedOn: "Normal", run: { font: FONT, size: SMALL }, paragraph: { spacing: { line: 240, after: 0 }, alignment: AlignmentType.CENTER } },
       headingStyle("Heading1", "Heading 1", 0),

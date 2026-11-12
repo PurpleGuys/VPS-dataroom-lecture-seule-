@@ -6,7 +6,7 @@ relu_par:
 
 ## Les enveloppes sont nettes ; le levier, pas l'enveloppe, borne les acquisitions
 
-Combien Veolia peut-elle encore acheter d'ici fin 2027 sans dépasser ses engagements de levier ? Cette première partie fixe le périmètre de la réponse. Elle établit la portée des enveloppes du plan GreenUp. Elle dit aussi d'où viennent nos chiffres.
+Dans quelle mesure l'engagement de levier de GreenUp borne-t-il la capacité d'acquisition de Veolia d'ici fin 2027 ? Cette première partie fixe le périmètre de la réponse. Elle établit la portée des enveloppes du plan GreenUp. Elle dit aussi d'où viennent nos chiffres.
 
 Les enveloppes de GreenUp sont nettes des cessions. Le plan prévoit une rotation nette d'actifs d'environ [F2]. Il prévoit aussi une croissance nette de [F745], investissement organique compris. Quatre années à [F745] donnent les [F129] d'investissements nets de croissance du plan. Ce total couvre les boosters et les strongholds, dont [F130] pour les seconds. Il ne plafonne donc pas les acquisitions. Leur borne se trouve ailleurs : dans l'engagement de levier, au plus [F6], et dans le maintien des notations.
 

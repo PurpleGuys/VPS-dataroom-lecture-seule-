@@ -26,7 +26,7 @@ Trois causes peuvent s'y mêler. La première est l'entrée des deux sociétés.
 
 Veolia a acquis Clean Earth le 1er juin 2026 pour [F40], soit [F41]. Fin septembre 2026, l'effet sur la dette atteint [F730]. Il comprend pour l'essentiel le prix et la dette de loyers IFRS 16 reprise, [F766].
 
-Au 30 juin 2026, le goodwill préliminaire de [F98] représente 81,3 % du prix de [F41]. L'amendement au DEU précise qu'aucune affectation provisoire du prix n'a été comptabilisée. Ses notes font pourtant entrer des actifs de Clean Earth par variation de périmètre. Faute d'affectation, ces actifs ne sont pas encore réévalués à leur juste valeur. Les passifs de fermeture déjà inscrits par Clean Earth ont pu entrer de la même façon. Notre lecture : ils se trouvent peut-être dans les [F44]. Les comptes publiés ne permettent ni de le confirmer ni de l'exclure.
+Au 30 juin 2026, le goodwill préliminaire de [F98] représente 81,3 % du prix de [F41]. L'amendement au DEU précise qu'aucune affectation provisoire du prix n'a été comptabilisée. Ses notes font pourtant entrer des actifs de Clean Earth par variation de périmètre. Faute d'affectation, ces actifs ne sont pas encore réévalués à leur juste valeur. Les passifs de fermeture déjà inscrits par Clean Earth ont pu entrer de la même façon. Ils se trouvent peut-être dans les [F44]. Les comptes publiés ne permettent ni de le confirmer ni de l'exclure.
 
 IFRS 3 laisse à l'acquéreur un an au plus pour affecter le prix. La norme impose alors d'inscrire à leur juste valeur les passifs éventuels repris. Un passif antérieur à l'acquisition et identifié pendant cette période augmente le goodwill. Identifié après, il passe en résultat, sauf correction d'erreur.
 
@@ -48,7 +48,7 @@ Le ratio de chiffre d'affaires sert d'analogie pour Clean Earth. Cette analogie 
 
 ### Enviri fournit une borne haute, sans actualisation
 
-Enviri, le vendeur, donne une borne. Son 10-K 2025 présente [F218] de passifs courants et [F219] non courants, soit 50 992 k$. Ce total couvre tout le groupe Enviri, Clean Earth compris. Il borne donc par le haut les passifs environnementaux qu'Enviri a inscrits pour Clean Earth. L'analogie et la borne donnent le même ordre de grandeur : quelques dizaines de millions de dollars. Elles ne se comparent pas pour autant terme à terme. L'analogie repose sur des montants actualisés, la borne non. Notre lecture : à base non actualisée, l'analogie dépasserait la borne et ces dizaines de millions sont un bas de fourchette. Sans actualisation, les passifs de dépollution de Clean Harbors atteignent [F817], contre [F238] actualisés.
+Enviri, le vendeur, donne une borne. Son 10-K 2025 présente [F218] de passifs courants et [F219] non courants, soit 50 992 k$. Ce total couvre tout le groupe Enviri, Clean Earth compris. Il borne donc par le haut les passifs environnementaux qu'Enviri a inscrits pour Clean Earth. L'analogie et la borne donnent le même ordre de grandeur : quelques dizaines de millions de dollars. Elles ne se comparent pas pour autant terme à terme. L'analogie repose sur des montants actualisés, la borne non. Nous en retenons qu'à base non actualisée, l'analogie dépasserait la borne et que ces dizaines de millions sont un bas de fourchette. Sans actualisation, les passifs de dépollution de Clean Harbors atteignent [F817], contre [F238] actualisés.
 
 ## L'exposition hors bilan tient aux contentieux, aux PFAS et aux limites de l'assurance
 

@@ -26,7 +26,7 @@ D'ici fin 2027, la marge permet des tuck-ins au bas de la fourchette de GreenUp.
 
 La marge interdit en revanche une opération de la taille de Clean Earth. Aucun futur simulé ne permet d'acheter 2 Md€ sur la seule marge, [M:P.acq2]. Au haut de la fourchette, les tuck-ins rendraient même la marge centrale négative, à [M:HEAD27@tuck-haut].
 
-Une plateforme américaine ne s'envisage qu'à deux conditions. Les cessions signées doivent dépasser nettement [F736]. Les comptes de 2026 doivent confirmer la trajectoire de Veolia. Même alors, la plateforme remplacerait souvent les tuck-ins de 2027. Notre lecture : hybrides et augmentation de capital iraient contre les choix récents de Veolia.
+Une plateforme américaine ne s'envisage qu'à deux conditions. Les cessions signées doivent dépasser nettement [F736]. Les comptes de 2026 doivent confirmer la trajectoire de Veolia. Même alors, la plateforme remplacerait souvent les tuck-ins de 2027. Hybrides et augmentation de capital iraient, selon nous, contre les choix récents de Veolia.
 
 ## Un chiffre se lit sur sa page, une marge se lit en probabilités
 

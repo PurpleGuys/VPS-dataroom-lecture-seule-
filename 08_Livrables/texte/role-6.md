@@ -10,7 +10,7 @@ Veolia annonce un retour de son levier à [F726] au plus en 2027. Sous ce plafon
 
 L'acquisition maximale centrale, [M:MAXACQB], fait moins d'un dixième de l'effet de Clean Earth sur la dette, [F730]. Aux États-Unis, hors GFL Environmental Services, deux plateformes chiffrées sont valorisées [T4] et environ [T2]. Elles dépassent la marge dans la plupart des futurs. Les tuck-ins, eux, restent à portée.
 
-Le programme de cessions ne change pas ce constat. Veolia a signé [F736] de cessions, à [F737] l'EBITDA en moyenne. Le programme complet, plus de [F25], sera livré d'ici la mi-2028, après l'horizon du sujet. Notre lecture : jusqu'à fin 2027, Veolia peut payer des tuck-ins, pas une nouvelle plateforme. L'annexe IV détaille la fourchette par scénario.
+Le programme de cessions ne change pas ce constat. Veolia a signé [F736] de cessions, à [F737] l'EBITDA en moyenne. Le programme complet, plus de [F25], sera livré d'ici la mi-2028, après l'horizon du sujet. Nous en concluons que, jusqu'à fin 2027, Veolia peut payer des tuck-ins, pas une nouvelle plateforme. L'annexe IV détaille la fourchette par scénario.
 
 ## Clean Earth fixe l'étalon : un multiple après synergies, un prix porté en entier par la dette
 
@@ -26,7 +26,7 @@ Au multiple bas des tuck-ins, [M:H.mTuck@bas], l'acquisition maximale monte à [
 
 ### Avant synergies, le secteur paie plus cher que le multiple de Clean Earth
 
-Un acheteur paie l'EBITDA d'une cible avant ses propres synergies. Clean Harbors a payé HEPACO environ 11x avant synergies, soit [F478] pour [F479]. Elle a payé EnviroServe environ 17x, soit [F601] pour [F602]. Notre lecture : une plateforme tierce se paierait dans cette fourchette, au-dessus du multiple de Clean Earth après synergies. À ce prix, la marge porterait moins encore que [M:MAXACQB].
+Un acheteur paie l'EBITDA d'une cible avant ses propres synergies. Clean Harbors a payé HEPACO environ 11x avant synergies, soit [F478] pour [F479]. Elle a payé EnviroServe environ 17x, soit [F601] pour [F602]. Une plateforme tierce se paierait, selon nous, dans cette fourchette, au-dessus du multiple de Clean Earth après synergies. À ce prix, la marge porterait moins encore que [M:MAXACQB].
 
 ## Le troisième trimestre confirme le plafond et place la fin des cessions après l'horizon
 
@@ -50,7 +50,7 @@ Dans sa présentation des neuf mois, Veolia publie ses priorités d'acquisition.
 
 Nous trions les cibles recensées selon les critères publiés par Veolia. L'annexe III liste les cibles citées, l'annexe II les opérations.
 
-| Cible | Détenteur | Valeur publiée | Hors d'Europe et booster | Notre lecture |
+| Cible | Détenteur | Valeur publiée | Hors d'Europe et booster | Notre appréciation |
 |---|---|---|---|---|
 | Heritage-Crystal Clean | J.F. Lehman | environ [T2] | en partie | plateforme ; huiles usagées |
 | Triumvirate Environmental | Berkshire Partners | [T4] | oui | plateforme |
@@ -61,13 +61,13 @@ Nous trions les cibles recensées selon les critères publiés par Veolia. L'ann
 | GFL Environmental Services | Apollo et BC Partners | [T5] | oui | hors de portée |
 | Cenviro | Khazanah Nasional et SK | environ [T28] | oui | cession en cours ; taille de tuck-in |
 
-J.F. Lehman a racheté Heritage-Crystal Clean en 2023 sur une valorisation d'environ [F609]. L'investissement de Berkshire Partners a valorisé Triumvirate à [F612] en février 2025. Au change implicite du prix de Clean Earth, [M:H.fx] dollar par euro, [F609] et [F612] tombent entre 1 et 2 Md€. Or une acquisition de 1 Md€ ne passe que dans [M:P.acq1] des futurs. Ces valeurs sont des prix d'entrée de fonds, pas des prix de sortie. Notre lecture : un fonds vendeur demanderait davantage.
+J.F. Lehman a racheté Heritage-Crystal Clean en 2023 sur une valorisation d'environ [F609]. L'investissement de Berkshire Partners a valorisé Triumvirate à [F612] en février 2025. Au change implicite du prix de Clean Earth, [M:H.fx] dollar par euro, [F609] et [F612] tombent entre 1 et 2 Md€. Or une acquisition de 1 Md€ ne passe que dans [M:P.acq1] des futurs. Ces valeurs sont des prix d'entrée de fonds, pas des prix de sortie. Un fonds vendeur demanderait sans doute davantage.
 
-Les autres cibles américaines n'ont pas de valeur dans nos sources. Onterris a lancé le 5 août 2026 une revue stratégique, qui examine notamment un intérêt d'acquisition. Notre lecture : son métier de conseil et de dépollution complète le traitement sans l'élargir. Seaside Equity Partners a lancé Enviracore Services fin septembre 2025[D38]. Les critères publiés par Seaside visent des plateformes de [F616] à [F617] d'EBITDA.
+Les autres cibles américaines n'ont pas de valeur dans nos sources. Onterris a lancé le 5 août 2026 une revue stratégique, qui examine notamment un intérêt d'acquisition. À nos yeux, son métier de conseil et de dépollution complète le traitement sans l'élargir. Seaside Equity Partners a lancé Enviracore Services fin septembre 2025[D38]. Les critères publiés par Seaside visent des plateformes de [F616] à [F617] d'EBITDA.
 
 Une cession est en cours en Asie. SK étudie la vente de ses 30 % dans Cenviro, société malaisienne de gestion de déchets. La presse valorise l'ensemble à environ [T28], soit [M:T.T28], de sources anonymes. À ce prix et au multiple médian du secteur, Cenviro tient sous le plafond dans [M:T.T28.p] des futurs.
 
-En Europe, hors des critères publiés par Veolia, trois cibles ont un prix et un EBITDA publiés. Greenthesis est valorisée [M:T.T23.ve]. Lassila & Tikanoja vaut [T29] en Bourse et Mo-BRUK [T31], hors dette. Elles s'échangent à [M:T.T23.m], [M:T.T29.m] et [M:T.T31.m] leur EBITDA, dette nette comprise pour les deux dernières. À ces multiples, elles tiennent sous le plafond dans [M:T.T23.p], [M:T.T29.p] et [M:T.T31.p] des futurs. Les deux dernières sont cotées et ne sont pas à vendre : leur valeur est une capitalisation, sans prime de contrôle. Notre lecture : des cibles de cette taille existent, mais aucune ne tient dans notre scénario central.
+En Europe, hors des critères publiés par Veolia, trois cibles ont un prix et un EBITDA publiés. Greenthesis est valorisée [M:T.T23.ve]. Lassila & Tikanoja vaut [T29] en Bourse et Mo-BRUK [T31], hors dette. Elles s'échangent à [M:T.T23.m], [M:T.T29.m] et [M:T.T31.m] leur EBITDA, dette nette comprise pour les deux dernières. À ces multiples, elles tiennent sous le plafond dans [M:T.T23.p], [M:T.T29.p] et [M:T.T31.p] des futurs. Les deux dernières sont cotées et ne sont pas à vendre : leur valeur est une capitalisation, sans prime de contrôle. Des cibles de cette taille existent donc, mais aucune ne tient dans notre scénario central.
 
 ## Une cible plus grande demande un financement que la politique du groupe écarte
 
@@ -75,11 +75,11 @@ Notre modèle chiffre une cible de la taille de Clean Earth : [M:F.size] payés 
 
 Les cessions sont la voie choisie par Veolia. Un euro cédé à [F737] libère environ 0,71 euro de marge sous le plafond de [F726]. Un euro investi à [F48] en consomme environ 0,69 sous le même plafond de [F726]. Les cessions financent donc à peu près leur montant en acquisitions. Leur coût est l'EBITDA perdu : le programme en retire [M:C.progEb] au multiple central.
 
-Les hybrides n'entrent pas dans la dette financière nette de Veolia. Veolia a remboursé [F575] d'hybrides en février 2026. Le remboursement de septembre pèse [F732] dans le pont de dette. Le rapport des neuf mois ne mentionne aucune émission hybride en 2026. Notre lecture : une nouvelle émission irait contre la tendance de 2026.
+Les hybrides n'entrent pas dans la dette financière nette de Veolia. Veolia a remboursé [F575] d'hybrides en février 2026. Le remboursement de septembre pèse [F732] dans le pont de dette. Le rapport des neuf mois ne mentionne aucune émission hybride en 2026. Une nouvelle émission irait, selon nous, contre la tendance de 2026.
 
 Nous excluons l'augmentation de capital. En 2026, Veolia a compensé l'émission réservée aux salariés, [F733], par une annulation d'actions, [F734]. Sa guidance de bénéfice par action repose sur ce rachat. Émettre des actions pour acheter contredirait cet engagement.
 
-## Notre lecture : des tuck-ins d'abord, une plateforme seulement après de nouvelles signatures
+## Des tuck-ins d'abord, une plateforme seulement après de nouvelles signatures
 
 D'abord, poursuivre les tuck-ins américains et asiatiques, au bas de la fourchette de GreenUp, de [F5] à [F21]. En 2025, Veolia en a acheté pour environ [F471], à environ [F472]. Au haut de la fourchette, la marge centrale deviendrait négative, à [M:HEAD27@tuck-haut]. Sans tuck-in en 2027, elle porterait une acquisition de [M:MAXACQB@tuck-bas]. Tuck-ins et plateforme puisent donc dans la même marge.
 

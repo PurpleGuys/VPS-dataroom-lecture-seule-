@@ -10,7 +10,7 @@ Veolia annonce un retour de son levier à [F726] au plus en 2027. Sous ce plafon
 
 Ces montants restent loin de l'étalon. L'acquisition maximale centrale, [M:MAXACQB], fait moins d'un dixième de l'effet de Clean Earth sur la dette, [F730]. Aux États-Unis, hors GFL Environmental Services, deux plateformes chiffrées sont valorisées [T4] et environ [T2]. Elles dépassent la marge dans la plupart des futurs. Les tuck-ins, eux, restent à portée.
 
-Le programme de cessions ne change pas ce constat. Veolia a signé [F736] de cessions, à [F737] l'EBITDA en moyenne. Le programme complet, plus de [F25], sera livré d'ici la mi-2028, après l'horizon du sujet. Notre lecture : jusqu'à fin 2027, Veolia peut payer des tuck-ins, pas une nouvelle plateforme. Une plateforme supposerait de nouvelles signatures et des comptes 2026 conformes à la trajectoire. L'annexe IV détaille la fourchette par scénario.
+Le programme de cessions ne change pas ce constat. Veolia a signé [F736] de cessions, à [F737] l'EBITDA en moyenne. Le programme complet, plus de [F25], sera livré d'ici la mi-2028, après l'horizon du sujet. Nous en concluons que, jusqu'à fin 2027, Veolia peut payer des tuck-ins, pas une nouvelle plateforme. Une plateforme supposerait de nouvelles signatures et des comptes 2026 conformes à la trajectoire. L'annexe IV détaille la fourchette par scénario.
 
 ## Clean Earth fixe l'étalon : un multiple après synergies, un prix porté en entier par la dette
 
@@ -18,7 +18,7 @@ Veolia a annoncé l'achat de Clean Earth en novembre 2025, pour une valeur d'ent
 
 Le prix payé à la clôture, le 1er juin 2026, est de [F40], soit [F41]. L'effet sur la dette financière nette atteint [F730] sur neuf mois. Il comprend pour l'essentiel le prix et la dette locative reprise, [F766]. Nous retenons l'effet sur la dette pour le levier et le prix pour le multiple.
 
-Le multiple publié intègre les synergies. Avant synergies, le prix de [F40] rapporté à l'EBITDA attendu de [F51] donne environ 14,9x. Chez Enviri, le résultat opérationnel 2025 du segment, [F211], plus ses dotations aux amortissements, [F213] et [F214], donne environ 155 M$, environ 22 % sous les [F51] attendus. Notre lecture : l'écart tient en partie aux normes. Enviri publie 2025 en normes américaines, Veolia vise 2026 après IFRS 16. L'année ne le comble pas : au premier trimestre 2026, l'EBITDA ajusté du segment recule de [F855] à [F812].
+Le multiple publié intègre les synergies. Avant synergies, le prix de [F40] rapporté à l'EBITDA attendu de [F51] donne environ 14,9x. Chez Enviri, le résultat opérationnel 2025 du segment, [F211], plus ses dotations aux amortissements, [F213] et [F214], donne environ 155 M$, environ 22 % sous les [F51] attendus. L'écart tient en partie aux normes, selon nous. Enviri publie 2025 en normes américaines, Veolia vise 2026 après IFRS 16. L'année ne le comble pas : au premier trimestre 2026, l'EBITDA ajusté du segment recule de [F855] à [F812].
 
 Depuis la clôture, Veolia ne publie pas l'EBITDA propre de Clean Earth. Seul l'effet de périmètre sur l'EBITDA des neuf mois est publié, [F755]. Il tient principalement à [F787] de Clean Earth et à l'australienne Enviropacific. Il ne permet pas de vérifier l'EBITDA attendu.
 
@@ -43,7 +43,7 @@ Au multiple bas des tuck-ins, [M:H.mTuck@bas], l'acquisition maximale monte à [
 | EnviroServe et ES&H | Clean Harbors, 2026 | [F605] | environ [F606] après synergies | [F607] après synergies |
 | US Ecology | Republic Services, 2022 | environ [F525] | [F527] sur douze mois | non publié |
 
-Un acheteur paie l'EBITDA d'une cible avant ses propres synergies. Clean Harbors a payé HEPACO environ 11x avant synergies, soit [F478] pour [F479]. Elle a payé EnviroServe environ 17x, soit [F601] pour [F602]. En mai 2026, elle a annoncé l'achat de Terra Nova Solutions. Selon Pulse 2.0, le multiple implicite atteint [F807] même après synergies. Veolia, elle, a signé ses cessions à [F737] en moyenne. Notre lecture : une plateforme tierce se paierait dans cette fourchette, au-dessus du multiple de Clean Earth. À ce prix, la marge porterait moins encore que [M:MAXACQB].
+Un acheteur paie l'EBITDA d'une cible avant ses propres synergies. Clean Harbors a payé HEPACO environ 11x avant synergies, soit [F478] pour [F479]. Elle a payé EnviroServe environ 17x, soit [F601] pour [F602]. En mai 2026, elle a annoncé l'achat de Terra Nova Solutions. Selon Pulse 2.0, le multiple implicite atteint [F807] même après synergies. Veolia, elle, a signé ses cessions à [F737] en moyenne. Une plateforme tierce se paierait, selon nous, dans cette fourchette, au-dessus du multiple de Clean Earth. À ce prix, la marge porterait moins encore que [M:MAXACQB].
 
 ## Le troisième trimestre confirme le plafond et place la fin des cessions après l'horizon
 
@@ -63,7 +63,7 @@ Veolia confirme un levier égal ou légèrement supérieur à [F725] fin 2026. E
 
 ### Le booster s'achète plus qu'il ne se construit
 
-Le chiffre d'affaires des déchets dangereux atteint [F746] sur neuf mois, contre [F747] un an plus tôt. À périmètre et change constants, il progresse de [F748]. Tuck-ins compris, hors Clean Earth, la hausse atteint [F788]. À change constant, effet de périmètre compris, elle monte à [F814]. Sur neuf mois, Veolia a investi [F762] dans ses projets de traitement de déchets dangereux. Elle a consacré [F784] aux acquisitions sur la même période, Clean Earth compris. Notre lecture : la croissance du booster s'achète plus qu'elle ne se construit.
+Le chiffre d'affaires des déchets dangereux atteint [F746] sur neuf mois, contre [F747] un an plus tôt. À périmètre et change constants, il progresse de [F748]. Tuck-ins compris, hors Clean Earth, la hausse atteint [F788]. À change constant, effet de périmètre compris, elle monte à [F814]. Sur neuf mois, Veolia a investi [F762] dans ses projets de traitement de déchets dangereux. Elle a consacré [F784] aux acquisitions sur la même période, Clean Earth compris. Nous en concluons que la croissance du booster s'achète plus qu'elle ne se construit.
 
 ### Les critères publiés placent l'Europe hors des priorités d'acquisition
 
@@ -73,7 +73,7 @@ Dans sa présentation des neuf mois, Veolia publie ses priorités d'acquisition.
 
 Nous trions les cibles recensées selon les critères publiés par Veolia. L'annexe III liste les cibles citées, l'annexe II les opérations.
 
-| Cible | Détenteur | Valeur publiée | Hors d'Europe et booster | Notre lecture |
+| Cible | Détenteur | Valeur publiée | Hors d'Europe et booster | Notre appréciation |
 |---|---|---|---|---|
 | Heritage-Crystal Clean | J.F. Lehman | environ [T2] | en partie | plateforme ; huiles usagées |
 | Triumvirate Environmental | Berkshire Partners | [T4] | oui | plateforme |
@@ -88,13 +88,13 @@ Nous trions les cibles recensées selon les critères publiés par Veolia. L'ann
 
 ### Aux États-Unis, les deux plateformes chiffrées dépassent la marge
 
-Hors GFL Environmental Services, trop grande, deux plateformes américaines ont une valeur publiée. J.F. Lehman a racheté Heritage-Crystal Clean en 2023 sur une valorisation d'environ [F609]. L'investissement de Berkshire Partners a valorisé Triumvirate à [F612] en février 2025. Au change implicite du prix de Clean Earth, [M:H.fx] dollar par euro, [F609] et [F612] tombent entre 1 et 2 Md€. Or une acquisition de 1 Md€ ne passe que dans [M:P.acq1] des futurs. Ces valeurs sont des prix d'entrée de fonds, pas des prix de sortie. Notre lecture : un fonds vendeur demanderait davantage. Aucune des deux n'a d'EBITDA récent dans nos sources. Le métier des huiles de Heritage-Crystal Clean ressemble en outre à l'activité européenne que Veolia met en vente.
+Hors GFL Environmental Services, trop grande, deux plateformes américaines ont une valeur publiée. J.F. Lehman a racheté Heritage-Crystal Clean en 2023 sur une valorisation d'environ [F609]. L'investissement de Berkshire Partners a valorisé Triumvirate à [F612] en février 2025. Au change implicite du prix de Clean Earth, [M:H.fx] dollar par euro, [F609] et [F612] tombent entre 1 et 2 Md€. Or une acquisition de 1 Md€ ne passe que dans [M:P.acq1] des futurs. Ces valeurs sont des prix d'entrée de fonds, pas des prix de sortie. Un fonds vendeur demanderait sans doute davantage. Aucune des deux n'a d'EBITDA récent dans nos sources. Le métier des huiles de Heritage-Crystal Clean ressemble en outre à l'activité européenne que Veolia met en vente.
 
-Les autres cibles américaines n'ont pas de valeur dans nos sources. Arcwood Environmental exploite un incinérateur au Texas et développe une offre PFAS. EQT Infrastructure l'a rachetée en janvier 2024, sans publier de prix[D34]. Chemtron, basée dans l'Ohio et détenue par Kinderhook depuis 2019, exploite des sites autorisés de traitement. Onterris a lancé le 5 août 2026 une revue stratégique, qui examine notamment un intérêt d'acquisition. En 2025, son EBITDA ajusté consolidé a atteint [F822], pour un chiffre d'affaires de [F806]. Notre lecture : son métier de conseil et de dépollution complète le traitement sans l'élargir. Seaside Equity Partners a lancé Enviracore Services fin septembre 2025[D38]. Enviracore a racheté Boomer Environmental puis EMI[D40][D39]. Les critères publiés par Seaside visent des plateformes de [F616] à [F617] d'EBITDA. Le métier d'Enviracore, l'intervention et le nettoyage industriel, ressemble à ce que Veolia met en vente en Belgique.
+Les autres cibles américaines n'ont pas de valeur dans nos sources. Arcwood Environmental exploite un incinérateur au Texas et développe une offre PFAS. EQT Infrastructure l'a rachetée en janvier 2024, sans publier de prix[D34]. Chemtron, basée dans l'Ohio et détenue par Kinderhook depuis 2019, exploite des sites autorisés de traitement. Onterris a lancé le 5 août 2026 une revue stratégique, qui examine notamment un intérêt d'acquisition. En 2025, son EBITDA ajusté consolidé a atteint [F822], pour un chiffre d'affaires de [F806]. À nos yeux, son métier de conseil et de dépollution complète le traitement sans l'élargir. Seaside Equity Partners a lancé Enviracore Services fin septembre 2025[D38]. Enviracore a racheté Boomer Environmental puis EMI[D40][D39]. Les critères publiés par Seaside visent des plateformes de [F616] à [F617] d'EBITDA. Le métier d'Enviracore, l'intervention et le nettoyage industriel, ressemble à ce que Veolia met en vente en Belgique.
 
 Une cession est en cours en Asie. SK étudie la vente de ses 30 % dans Cenviro, société malaisienne de gestion de déchets. La presse valorise l'ensemble à environ [T28], soit [M:T.T28], de sources anonymes. À ce prix et au multiple médian du secteur, Cenviro tient sous le plafond dans [M:T.T28.p] des futurs.
 
-En Europe, hors des critères publiés par Veolia, trois cibles ont un prix et un EBITDA publiés. Greenthesis est valorisée [M:T.T23.ve]. Lassila & Tikanoja vaut [T29] en Bourse et Mo-BRUK [T31], hors dette. Elles s'échangent à [M:T.T23.m], [M:T.T29.m] et [M:T.T31.m] leur EBITDA, dette nette comprise pour les deux dernières. À ces multiples, elles tiennent sous le plafond dans [M:T.T23.p], [M:T.T29.p] et [M:T.T31.p] des futurs. Les deux dernières sont cotées et ne sont pas à vendre : leur valeur est une capitalisation, sans prime de contrôle. Notre lecture : des cibles de cette taille existent, mais aucune ne tient dans notre scénario central.
+En Europe, hors des critères publiés par Veolia, trois cibles ont un prix et un EBITDA publiés. Greenthesis est valorisée [M:T.T23.ve]. Lassila & Tikanoja vaut [T29] en Bourse et Mo-BRUK [T31], hors dette. Elles s'échangent à [M:T.T23.m], [M:T.T29.m] et [M:T.T31.m] leur EBITDA, dette nette comprise pour les deux dernières. À ces multiples, elles tiennent sous le plafond dans [M:T.T23.p], [M:T.T29.p] et [M:T.T31.p] des futurs. Les deux dernières sont cotées et ne sont pas à vendre : leur valeur est une capitalisation, sans prime de contrôle. Des cibles de cette taille existent donc, mais aucune ne tient dans notre scénario central.
 
 Clean Harbors, acheteur d'EnviroServe et d'ES&H en 2026, convoite le même marché.
 
@@ -118,15 +118,15 @@ Notre modèle chiffre une cible de la taille de Clean Earth : [M:F.size] payés 
 
 Les cessions sont la voie choisie par Veolia. Un euro cédé à [F737] libère environ 0,71 euro de marge sous le plafond de [F726]. Un euro investi à [F48] en consomme environ 0,69 sous le même plafond de [F726]. Les cessions financent donc à peu près leur montant en acquisitions. Leur coût est l'EBITDA perdu : le programme en retire [M:C.progEb] au multiple central. Leur calendrier dépasse surtout l'horizon du sujet.
 
-Les hybrides n'entrent pas dans la dette financière nette de Veolia. En 2025, l'hybride vert l'a ainsi réduite de [F66]. Moody's en compte toutefois la moitié en dette, soit [F251] pour 2025. Veolia a remboursé [F575] d'hybrides en février 2026. Le remboursement de septembre pèse [F732] dans le pont de dette. Le rapport des neuf mois ne mentionne aucune émission hybride en 2026. Il décrit en revanche des émissions senior : [F837] en janvier, [F847] en avril, [F834] en août. Un abondement de [F850] s'y ajoute en juin. Le dernier hybride émis, en septembre 2025, porte un coupon de [F574], celui de notre calcul. Notre lecture : une nouvelle émission irait contre la tendance de 2026.
+Les hybrides n'entrent pas dans la dette financière nette de Veolia. En 2025, l'hybride vert l'a ainsi réduite de [F66]. Moody's en compte toutefois la moitié en dette, soit [F251] pour 2025. Veolia a remboursé [F575] d'hybrides en février 2026. Le remboursement de septembre pèse [F732] dans le pont de dette. Le rapport des neuf mois ne mentionne aucune émission hybride en 2026. Il décrit en revanche des émissions senior : [F837] en janvier, [F847] en avril, [F834] en août. Un abondement de [F850] s'y ajoute en juin. Le dernier hybride émis, en septembre 2025, porte un coupon de [F574], celui de notre calcul. Une nouvelle émission irait, selon nous, contre la tendance de 2026.
 
 Nous excluons l'augmentation de capital. En 2026, Veolia a compensé l'émission réservée aux salariés, [F733], par une annulation d'actions, [F734]. Sa guidance de bénéfice par action repose sur ce rachat. Émettre des actions pour acheter contredirait cet engagement.
 
-La convertible de juin 2026 ne crée pas de marge. Veolia a émis [F676] d'obligations convertibles synthétiques à [F675], remboursables en numéraire et sans dilution. Notre lecture : elles restent une dette et ne desserrent pas le plafond. Leur coupon reste très inférieur au coût moyen du financement, [F776] au 30 septembre 2026.
+La convertible de juin 2026 ne crée pas de marge. Veolia a émis [F676] d'obligations convertibles synthétiques à [F675], remboursables en numéraire et sans dilution. Elles restent une dette et ne desserrent pas le plafond. Leur coupon reste très inférieur au coût moyen du financement, [F776] au 30 septembre 2026.
 
-Reste un partenaire minoritaire. Veolia a partagé Water Technologies avec la Caisse de dépôt et placement du Québec. Elle a racheté sa part en 2025 pour [D14], à environ [F473] l'EBITDA après synergies. Notre lecture : un partenaire allège l'achat, mais renchérit la sortie.
+Reste un partenaire minoritaire. Veolia a partagé Water Technologies avec la Caisse de dépôt et placement du Québec. Elle a racheté sa part en 2025 pour [D14], à environ [F473] l'EBITDA après synergies. À nos yeux, un partenaire allège l'achat, mais renchérit la sortie.
 
-## Notre lecture : des tuck-ins d'abord, une plateforme seulement après de nouvelles signatures
+## Des tuck-ins d'abord, une plateforme seulement après de nouvelles signatures
 
 Trois propositions préparent la recommandation.
 

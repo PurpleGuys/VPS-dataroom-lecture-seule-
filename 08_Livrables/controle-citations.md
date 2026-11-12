@@ -2,13 +2,13 @@
 
 | Section | Pages | Mots | Cible |
 |---|---|---|---|
-| role-1.md | 6 | 1563 | 6-9 |
-| role-2.md | 6 | 1859 | 6-9 |
-| role-3.md | 7 | 1602 | 6-9 |
-| role-4.md | 6 | 1572 | 6-9 |
-| role-5.md | 6 | 1628 | 6-9 |
-| role-6.md | 7 | 1764 | 6-9 |
-| corps, du sommaire à la première annexe | 57 | 12564 | 50-60 |
+| role-1.md | 6 | 1566 | 6-9 |
+| role-2.md | 6 | 1856 | 6-9 |
+| role-3.md | 7 | 1587 | 6-9 |
+| role-4.md | 6 | 1570 | 6-9 |
+| role-5.md | 6 | 1626 | 6-9 |
+| role-6.md | 7 | 1757 | 6-9 |
+| corps, du sommaire à la première annexe | 57 | 12541 | 50-60 |
 | document entier, annexes et contrôle compris | 78 | | — |
 
 ## Jetons inconnus (0)
@@ -328,17 +328,17 @@
 - rôle 6 (Cibles, puis synthèse) : 115 — F46, F47, F49, F50, F76, F77, F209, F210, F211, F212, F213, F214, F215, F216, F443, F444, F445, F473, F474, F475 …
 
 ## Ce que la méthode du rapport mesure
-- corps du rapport : 74 722 caractères, espaces compris, pour 50 000 demandés
+- corps du rapport : 74 608 caractères, espaces compris, pour 50 000 demandés
 - role-1.md : 35 phrase(s) sur 128 au-delà de 12 mots
 - role-2.md : 63 phrase(s) sur 147 au-delà de 12 mots
-- role-3.md : 44 phrase(s) sur 131 au-delà de 12 mots
-- role-4.md : 38 phrase(s) sur 124 au-delà de 12 mots
+- role-3.md : 43 phrase(s) sur 130 au-delà de 12 mots
+- role-4.md : 37 phrase(s) sur 124 au-delà de 12 mots
 - role-5.md : 51 phrase(s) sur 127 au-delà de 12 mots
 - role-6.md : 55 phrase(s) sur 123 au-delà de 12 mots
 - recommandation.md : 26 phrase(s) sur 67 au-delà de 12 mots
 - outils-ia.md : 15 phrase(s) sur 34 au-delà de 12 mots
 - remerciements.md : 2 phrase(s) sur 6 au-delà de 12 mots
-- introduction.md : 20 phrase(s) sur 51 au-delà de 12 mots
+- introduction.md : 20 phrase(s) sur 49 au-delà de 12 mots
 - conclusion.md : 13 phrase(s) sur 34 au-delà de 12 mots
 
 ## Années des références (40)

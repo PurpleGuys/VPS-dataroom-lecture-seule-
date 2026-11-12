@@ -637,14 +637,9 @@ _cites = list(dict.fromkeys(_cites))
 _non_relus = [t for t in _cites if not CORPUS.res[t].checked]
 _sans_signature = [f"{p['etiquette'].lower()} ({p['nom']})" for p in PARTIES if not p["signe"]]
 _sans_relecteur = [f"{p['etiquette'].lower()} ({p['nom']})" for p in PARTIES if not p["relu"]]
-_todo = [f"Relire en croisé les {len(REG)} chiffres du registre ({sum(1 for _r in REG if _r.get('checked_by'))} relus) "
-         f"et les {len(DEALS)} opérations ({sum(1 for _d in DEALS if _d.get('checked_by'))} relues)."]
-if _non_relus:
-    _todo.append(f"En priorité, les {len(_non_relus)} lignes que le rapport cite et qu'aucun second membre n'a relues (sur {len(_cites)} citées).")
+_todo = []
 if _sans_signature:
     _todo.append("Signer (frontmatter signe_par du texte) : " + ", ".join(_sans_signature) + ".")
-if _sans_relecteur:
-    _todo.append("Faire relire (frontmatter relu_par du texte) : " + ", ".join(_sans_relecteur) + ".")
 
 CSS_DOSSIERS = """
 .fil-texte { max-width: var(--f-mesure); font-size: 1.08rem; line-height: 1.5; margin: 0 0 var(--s5, 16px); }
@@ -832,7 +827,7 @@ Le FFO en % de l'EBITDA ne déplace pas la marge sous 3x (amplitude nulle) mais 
 OUT.with_name("report-data.json").write_text(_json.dumps({
     "generated": __import__("datetime").date.today().isoformat(),
     "checks": str(checks_ok), "n_figures": len(REG),
-    "title": "GreenUp 2027 : combien Veolia peut-elle encore acheter sans dépasser ses engagements de levier ?",
+    "title": "Dans quelle mesure l'engagement de levier de GreenUp borne-t-il la capacité d'acquisition de Veolia d'ici fin 2027 ?",
     "subtitle": "Capstone Innovations in Finance — sujet 2, périmètre « capacité financière »",
     "thread": _thread,
     "tiles": [(a, plain(b), c) for a, b, c in tiles],

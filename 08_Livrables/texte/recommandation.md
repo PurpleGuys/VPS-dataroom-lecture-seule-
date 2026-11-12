@@ -22,13 +22,13 @@ Les cessions sont la voie de financement choisie par Veolia. Leur coût est l'EB
 
 Les actionnaires supportent l'effet de cet échange, par le bénéfice par action et le dividende. Le dividende de Veolia suit en effet la croissance du bénéfice net courant par action.
 
-Les agences en portent le risque, à travers le ratio FFO sur dette. S&P pourrait abaisser la note si ce ratio passait durablement sous [F163]. Notre modèle place ce ratio à [M:RATIO26] fin 2026, avec les ajustements de dette de Moody's. Il passe sous ce seuil dans [M:P.sp26] des futurs. Sur la propre base de S&P, il vaut [M:RATIOS26]. Des deux agences, Moody's laisse le moins de marge : elle note Veolia un cran plus haut que S&P et attend [F244] en 2026. Toutes deux adossent leur note à la discipline de Veolia. S&P jugeait sa politique financière compatible avec la note jusqu'à un levier publié de [F871]. Sa prévision intègre Clean Earth et d'éventuels petits tuck-ins. Notre lecture : une plateforme payée par dette sortirait du scénario noté. C'est pourquoi nous la conditionnons à de nouvelles cessions.
+Les agences en portent le risque, à travers le ratio FFO sur dette. S&P pourrait abaisser la note si ce ratio passait durablement sous [F163]. Notre modèle place ce ratio à [M:RATIO26] fin 2026, avec les ajustements de dette de Moody's. Il passe sous ce seuil dans [M:P.sp26] des futurs. Sur la propre base de S&P, il vaut [M:RATIOS26]. Des deux agences, Moody's laisse le moins de marge : elle note Veolia un cran plus haut que S&P et attend [F244] en 2026. Toutes deux adossent leur note à la discipline de Veolia. S&P jugeait sa politique financière compatible avec la note jusqu'à un levier publié de [F871]. Sa prévision intègre Clean Earth et d'éventuels petits tuck-ins. Une plateforme payée par dette sortirait donc, selon nous, du scénario noté. C'est pourquoi nous la conditionnons à de nouvelles cessions.
 
 ## Veolia confirme GreenUp ; notre modèle place l'EBITDA 2027 juste sous l'objectif
 
 Le 5 novembre 2026, Veolia a confirmé ses objectifs de l'année. Son rapport du troisième trimestre écrit, en page 21 : « GreenUp trajectory is fully confirmed ». Le plan vise un EBITDA 2027 d'au moins [F12]. Notre scénario central le place à [M:EB27], soit un écart de [M:GAP8] à l'objectif. Seuls [M:P.obj8] des futurs simulés atteignent cet objectif.
 
-L'EBITDA cédé en 2027, [M:DE27], pèse plus que cet écart de [M:GAP8]. Le modèle le retire en année pleine dès l'encaissement, par prudence. Notre lecture : les cessions adossées à Clean Earth éloignent l'objectif de 2027. Elles ne le mettent pas hors de portée.
+L'EBITDA cédé en 2027, [M:DE27], pèse plus que cet écart de [M:GAP8]. Le modèle le retire en année pleine dès l'encaissement, par prudence. Nous en concluons que les cessions adossées à Clean Earth éloignent l'objectif de 2027. Elles ne le mettent pas hors de portée.
 
 Le retour sous le plafond fin 2027 ne tient que dans [M:P.tenir3x] des futurs. Cadrage et lecture se séparent donc sur une marge mince, [M:HEAD27].
 

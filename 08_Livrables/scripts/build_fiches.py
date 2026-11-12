@@ -113,7 +113,7 @@ class Corpus:
         if not self.connu(jeton):
             return "à corriger dans le texte"
         r = self.res[jeton]
-        return r.state or "non relu"
+        return r.state if "contest" in (r.state or "") else ""   # seul un désaccord se signale
 
     # -------------------------------------------------------------- le texte du rapport, rendu
     def html(self, inlines):
@@ -279,21 +279,21 @@ def question(corpus, section):
 
 
 def tete_html(corpus, p, prefixe="fiche"):
-    signe = " · ".join(x for x in (f"signé par {p['signe']}" if p["signe"] else "", f"relu par {p['relu']}" if p["relu"] else "") if x)
+    signe = f"signé par {p['signe']}" if p["signe"] else ""
     return (f'<header class="f-tete"><span class="f-n" aria-hidden="true">{p["rang"]}</span><div>'
             f'<p class="anno">{esc(p["etiquette"])} · {esc(p["nom"])}{" · " + esc(signe) if signe else ""}</p>'
             f'<h2 id="{prefixe}-{p["rang"]}-t">{these_html(corpus, p)}</h2></div></header>')
 
 
 def chiffres_html(corpus, jetons, ident=False):
-    """Le tableau des chiffres : le libellé et, dessous, la source cliquable et l'état de relecture ; la valeur à droite."""
+    """Le tableau des chiffres : le libellé et, dessous, la source cliquable ; la valeur à droite."""
     lignes = []
     for t in jetons:
         r = corpus.res[t]
         href, ref = corpus.lien(t), corpus.reference(t)
         source = f'<a href="{esc(href)}">{esc(ref)}</a>' if href else esc(ref)
         idc = f'<span class="id">{esc(t)}</span> ' if (ident or r.kind != "model") else ""
-        etat = "" if r.kind == "model" else f' <span class="etat{" ok" if r.checked else ""}">{esc(corpus.etat(t))}</span>'
+        etat = "" if (r.kind == "model" or not corpus.etat(t)) else f' <span class="etat">{esc(corpus.etat(t))}</span>'
         classe = "alerte" if not corpus.connu(t) else ("calc" if r.kind == "model" else "")
         lignes.append(f'<tr{" class=\"" + classe + "\"" if classe else ""}><td class="lib"><span class="l">{esc(corpus.libelle(t))}</span>'
                       f'<span class="src">{idc}{source}{etat}</span></td><td class="num">{esc(corpus.valeur(t))}</td></tr>')

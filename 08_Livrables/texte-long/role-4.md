@@ -8,9 +8,9 @@ relu_par:
 
 En volume, le booster dépasse déjà son objectif. Veolia a traité [F34] de déchets dangereux en 2025. Son objectif pour 2027 est de [F35]. Cet objectif remplace les [F36] fixés par GreenUp en 2024. Le DEU 2025 explique la révision par la cession de RGS aux États-Unis. La cible a donc suivi le périmètre, pas l'activité.
 
-En valeur, la croissance change de nature. En 2025, l'EBITDA du métier a progressé de [F744] à périmètre et change constants. En 2026, l'organique ralentit. Au premier semestre, l'EBITDA progresse de [F801] à périmètre et change constants. Sur neuf mois, le chiffre d'affaires ne gagne plus que [F748], contre [F653] en 2024. La hausse publiée atteint pourtant 14,1 %, de [F747] à [F746]. Hors Clean Earth, tuck-ins compris et à change constant, elle n'est que de [F788]. Clean Earth fait le reste, malgré un change défavorable. Sur la même période, Veolia a investi [F762] dans ses projets de traitement et [F784] en acquisitions. Notre lecture est nette : la croissance du booster est achetée plus que générée.
+En valeur, la croissance change de nature. En 2025, l'EBITDA du métier a progressé de [F744] à périmètre et change constants. En 2026, l'organique ralentit. Au premier semestre, l'EBITDA progresse de [F801] à périmètre et change constants. Sur neuf mois, le chiffre d'affaires ne gagne plus que [F748], contre [F653] en 2024. La hausse publiée atteint pourtant 14,1 %, de [F747] à [F746]. Hors Clean Earth, tuck-ins compris et à change constant, elle n'est que de [F788]. Clean Earth fait le reste, malgré un change défavorable. Sur la même période, Veolia a investi [F762] dans ses projets de traitement et [F784] en acquisitions. Notre conclusion est nette : la croissance du booster est achetée plus que générée.
 
-Le prix de Clean Earth ne se justifie qu'avec ses synergies. Veolia l'a payé [F48] l'EBITDA 2026 attendu après synergies. Sans synergies, le multiple ressort à 14,9x, [F40] pour [F51]. Vu du vendeur, l'EBITDA de 2025 est nettement plus bas. Clean Harbors est le seul comparable direct dont les achats sont chiffrés. Les autres noms étudiés ne sont pas comparables ou n'ont pas de multiple publié. Clean Harbors a payé HEPACO [F483] et EnviroServe avec ES&H [F607] après synergies. Veolia, de son côté, cède des actifs mûrs à [F737]. Avant synergies, un euro investi dans Clean Earth rapporte donc moins d'EBITDA qu'un euro cédé n'en retire. Notre lecture : ces repères confirment les hypothèses centrales du modèle du groupe. Ils fragilisent sa borne basse sur l'EBITDA de Clean Earth.
+Le prix de Clean Earth ne se justifie qu'avec ses synergies. Veolia l'a payé [F48] l'EBITDA 2026 attendu après synergies. Sans synergies, le multiple ressort à 14,9x, [F40] pour [F51]. Vu du vendeur, l'EBITDA de 2025 est nettement plus bas. Clean Harbors est le seul comparable direct dont les achats sont chiffrés. Les autres noms étudiés ne sont pas comparables ou n'ont pas de multiple publié. Clean Harbors a payé HEPACO [F483] et EnviroServe avec ES&H [F607] après synergies. Veolia, de son côté, cède des actifs mûrs à [F737]. Avant synergies, un euro investi dans Clean Earth rapporte donc moins d'EBITDA qu'un euro cédé n'en retire. Ces repères confirment, selon nous, les hypothèses centrales du modèle du groupe. Ils fragilisent sa borne basse sur l'EBITDA de Clean Earth.
 
 ## L'objectif de volume a baissé avec le périmètre et Veolia le dépasse déjà
 
@@ -38,7 +38,7 @@ Veolia attribue sa croissance organique à des gains commerciaux et à des hauss
 
 ### L'investissement organique pèse peu face aux acquisitions
 
-Sur neuf mois, Veolia a investi [F762] dans ses projets de traitement de déchets dangereux. Ses acquisitions atteignent [F784] sur la même période, Clean Earth et Enviropacific en tête. Elles pèsent plus de quinze fois cet investissement, [F784] contre [F762]. En 2025, Veolia a engagé [F792] dans ces projets sur toute l'année. Les usines en construction doivent ajouter [F63] de capacité. Le communiqué de Veolia du 25 juin 2025 n'en prévoit que [F813] d'ici 2027. Notre lecture : d'ici 2027, la croissance du métier vient d'abord du périmètre acquis.
+Sur neuf mois, Veolia a investi [F762] dans ses projets de traitement de déchets dangereux. Ses acquisitions atteignent [F784] sur la même période, Clean Earth et Enviropacific en tête. Elles pèsent plus de quinze fois cet investissement, [F784] contre [F762]. En 2025, Veolia a engagé [F792] dans ces projets sur toute l'année. Les usines en construction doivent ajouter [F63] de capacité. Le communiqué de Veolia du 25 juin 2025 n'en prévoit que [F813] d'ici 2027. Nous en concluons que, d'ici 2027, la croissance du métier vient d'abord du périmètre acquis.
 
 ## Vu du vendeur, l'EBITDA de Clean Earth est plus bas que le budget de Veolia
 
@@ -56,7 +56,7 @@ Nous reconstituons l'EBITDA de 2025 en ajoutant les amortissements du segment. L
 
 Le premier trimestre 2026 ne montre pas l'accélération que suppose le budget. Selon Enviri, le chiffre d'affaires du segment y recule sur un an, à [F793]. Son EBITDA ajusté passe de [F855] à [F812]. Sa marge recule de [F853] à [F854]. Enviri l'explique surtout par moins de chantiers et de volumes industriels, en grande partie à cause des intempéries. Un trimestre ne s'annualise pas.
 
-Une partie de l'écart tient aux normes comptables. Enviri publie en normes américaines. Les loyers de ses locations simples restent donc dans ses charges. Veolia retient un EBITDA ajusté après IFRS 16, qui exclut ces loyers. Avec Clean Earth, elle a d'ailleurs repris [F766] de dette locative. À l'inverse, le résultat de segment d'Enviri exclut ses coûts centraux. Cet effet joue dans l'autre sens. Nous ne savons pas chiffrer ces effets. Notre lecture : le budget de Veolia reste plausible. Il suppose toutefois une croissance que les comptes du vendeur ne montrent pas.
+Une partie de l'écart tient aux normes comptables. Enviri publie en normes américaines. Les loyers de ses locations simples restent donc dans ses charges. Veolia retient un EBITDA ajusté après IFRS 16, qui exclut ces loyers. Avec Clean Earth, elle a d'ailleurs repris [F766] de dette locative. À l'inverse, le résultat de segment d'Enviri exclut ses coûts centraux. Cet effet joue dans l'autre sens. Nous ne savons pas chiffrer ces effets. Le budget de Veolia reste, à nos yeux, plausible. Il suppose toutefois une croissance que les comptes du vendeur ne montrent pas.
 
 ### Les premiers mois consolidés sont cohérents avec le budget, sans le prouver
 
@@ -89,7 +89,7 @@ Avant synergies, Clean Earth se situe dans la fourchette de ses pairs, entre HEP
 
 Le multiple après synergies dépend surtout du poids des synergies dans l'EBITDA acheté. Chez EnviroServe, les synergies attendues, [F604], égalent presque l'EBITDA acheté, [F602]. Chez US Ecology, elles n'en font qu'environ un quart, [F529] pour [F527]. Chez Clean Earth, elles en représentent 60 %, [F49] pour [F51]. Le multiple de [F48] repose donc sur une hypothèse de synergies élevée. Veolia a payé ses tuck-ins de 2025, environ [F471], à environ [F472] en moyenne, sans préciser la base.
 
-Veolia cède ses actifs mûrs à [F737] en moyenne, sur [F736] déjà signés. Son programme de plus de [F25] doit être livré d'ici mi-2028, après l'horizon du sujet. Avant synergies, un euro investi dans Clean Earth rapporte moins d'EBITDA qu'un euro cédé n'en retire. À EBITDA constant, l'équilibre exige près des trois quarts des [F49] de synergies : [F40] sur [F737], moins [F51]. Le modèle du groupe en réalise [M:H.syn] en 2027 et au plus [M:H.syn@haut]. Notre lecture : d'ici 2027, cet échange retire plus d'EBITDA par euro qu'il n'en apporte.
+Veolia cède ses actifs mûrs à [F737] en moyenne, sur [F736] déjà signés. Son programme de plus de [F25] doit être livré d'ici mi-2028, après l'horizon du sujet. Avant synergies, un euro investi dans Clean Earth rapporte moins d'EBITDA qu'un euro cédé n'en retire. À EBITDA constant, l'équilibre exige près des trois quarts des [F49] de synergies : [F40] sur [F737], moins [F51]. Le modèle du groupe en réalise [M:H.syn] en 2027 et au plus [M:H.syn@haut]. Pour nous, d'ici 2027, cet échange retire plus d'EBITDA par euro qu'il n'en apporte.
 
 ### Les autres noms ne sont pas comparables ou restent à chiffrer
 
@@ -107,7 +107,7 @@ Pour les tuck-ins, le modèle retient le multiple de Clean Earth après synergie
 
 Les gains d'efficacité ne relèvent pas de cette partie. Sur neuf mois, Veolia annonce [F759] de gains bruts, pour une croissance et performance de [F756] au pont d'EBITDA. Les deux chiffres ne s'additionnent pas et la partie 3 les rapproche.
 
-À l'échelle du groupe, notre modèle place l'EBITDA 2027 à [M:EB27], sous l'objectif d'au moins [F12]. Veolia confirme pourtant pleinement sa trajectoire GreenUp le 5 novembre 2026. Notre lecture : le booster y contribue d'abord par Clean Earth. La fourchette complète figure à l'annexe IV.
+À l'échelle du groupe, notre modèle place l'EBITDA 2027 à [M:EB27], sous l'objectif d'au moins [F12]. Veolia confirme pourtant pleinement sa trajectoire GreenUp le 5 novembre 2026. Le booster y contribue d'abord par Clean Earth, selon nous. La fourchette complète figure à l'annexe IV.
 
 ## Ce que nous n'avons pas pu établir
 
