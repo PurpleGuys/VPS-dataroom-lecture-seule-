@@ -131,7 +131,7 @@ Le rapport semestriel 2026 existe en français et en anglais. Chaque ligne nomme
 
 Deux contrôles protègent ces sources. Un contrôle automatique vérifie que chaque valeur figure sur la page qu'elle cite. Le groupe a ensuite relu ensemble les chiffres cités.
 
-L'annexe I reproduit chaque chiffre cité avec sa source. L'annexe II fait de même pour les opérations. L'annexe V décrit les outils d'intelligence artificielle employés.
+L'annexe I reproduit chaque chiffre cité avec sa source. L'annexe II fait de même pour les opérations.
 
 ## Ce que nous n'avons pas pu établir
 

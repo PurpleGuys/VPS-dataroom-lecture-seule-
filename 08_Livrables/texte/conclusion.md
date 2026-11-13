@@ -36,6 +36,6 @@ Ensuite, un même événement peut porter plusieurs chiffres. Clean Earth en com
 
 Puis une marge se lit en probabilités. Tenu dans [M:P.tenir3x] des futurs simulés, le plafond cède dans plus d'un sur trois.
 
-Enfin, toute lecture se vérifie sur la page source, y compris celle d'une analyse automatique. L'annexe V décrit les cas où cette vérification a corrigé une erreur.
+Enfin, toute lecture se vérifie sur la page source, y compris celle d'une analyse automatique.
 
 Les comptes de l'exercice 2026 trancheront, après la remise de ce rapport. Les seuils observables de la partie 7 disent ce qui nous ferait réviser cette réponse.

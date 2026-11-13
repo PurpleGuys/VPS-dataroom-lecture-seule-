@@ -854,34 +854,6 @@
   "role": 0
  },
  {
-  "text": "Claude a construit l'outil et recopié l'essentiel des chiffres, page par page",
-  "level": 2,
-  "annex": false,
-  "label": "",
-  "role": 0
- },
- {
-  "text": "Les choix restent ceux du groupe et l'outil a été contredit après lecture",
-  "level": 2,
-  "annex": false,
-  "label": "",
-  "role": 0
- },
- {
-  "text": "Le compte partagé porte la quasi-totalité de l'usage de la dataroom",
-  "level": 2,
-  "annex": false,
-  "label": "",
-  "role": 0
- },
- {
-  "text": "Annexe V : Outils d'intelligence artificielle utilisés",
-  "level": 1,
-  "annex": true,
-  "label": "Annexe V",
-  "role": 0
- },
- {
   "text": "Table des annexes",
   "level": 1,
   "annex": false,

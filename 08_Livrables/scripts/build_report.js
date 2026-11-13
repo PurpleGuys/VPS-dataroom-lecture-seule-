@@ -1005,20 +1005,6 @@ annex("La fourchette de capacité pour les autres périmètres", [
   table(["Fin 2027", "Défavorable", "Central", "Favorable"].map(T), DATA.range_rows, [4272, 1600, 1600, 1600], [1, 2, 3]),
 ], EN ? `Source: group workbook, modele-greenup-2027.xlsx${DATA.model_version ? ", " + DATA.model_version : ""}, calculated from the figures of the register.`
   : `Source : classeur du groupe, modele-greenup-2027.xlsx${DATA.model_version ? ", " + DATA.model_version : ""}, calculé à partir des chiffres du registre.`);
-const sansRelecture = (f) => String(f)
-  .replace(" ; il garde pour chaque ligne du registre qui l'a saisie et qui l'a relue.", ".")
-  .replace(/ \d[\d\s\u202f\u00a0]* lignes? sur [\d\s\u202f\u00a0]+ ont été relues[^.]*\.( Dans le rapport, la note de bas de page[^.]*\.)?/, "");
-const AI_FACTS = (DATA.ai_facts && DATA.ai_facts.length) ? DATA.ai_facts.filter((f) => !f.startsWith("[[")).map(sansRelecture) : [
-  "Dataroom : un serveur MCP construit par le groupe pour le sujet, qui indexe les documents publics versés dans le vault et ne sait que chercher, lire une page et citer (fichier, page, URL, date de consultation). Il ne calcule rien et ne résume rien.",
-  "Claude (Anthropic), via Claude Code : a construit le serveur, le registre, les contrôles automatiques, le générateur du classeur Excel et celui de ce rapport.",
-  "[Provenance des lignes du registre : générer le rapport par « dataroom report » pour les compter.]",
-];
-const ia = prose("outils-ia");
-annex("Outils d'intelligence artificielle utilisés", [
-  ...bullets(AI_FACTS), blank(),
-  ...(ia ? renderBlocks(ia.blocks, { inAnnex: true }) : (!FINAL ? [placeholder("[À rédiger] 08_Livrables/texte/outils-ia.md : ce que le groupe a décidé sans l'outil, les cas où l'outil a été contredit après lecture, puis un tableau membre / outil / usage / période.")] : [])),
-], "Annexe demandée par le cours : les outils, ce qu'ils ont fait, ce que le groupe a vérifié lui-même. Les phrases comptées le sont depuis les registres, le jour de la génération.");
-
 // ---- la table des annexes (§ 5.8), dernière page numérotée du corps
 body.push(heading(T("Table des annexes"), 1, { newPage: true }));
 for (const h of HEADINGS.filter((x) => x.annex)) body.push(tocLine(h.text, ANNEX_PAGES.get(h.text) || "", 1));
@@ -1052,7 +1038,7 @@ if (CONTROLS && !FINAL) {
   list(`Ce que la méthode du rapport ferait souligner (${(CONTROLS.warnings || []).length})`, CONTROLS.warnings || [], (x) => x);
   list(`Jetons inconnus (${CONTROLS.unknown.length})`, CONTROLS.unknown, (x) => `${x[0]} : [${x[1]}] ne correspond à aucune ligne des registres`);
   list(`Lignes citées contestées (${CONTROLS.disputed.length})`, CONTROLS.disputed, (x) => `${x[0]} : ${x[1]} ; ${x[2]}`);
-  list("Fichiers absents ou vides", [...(CONTROLS.missing || []), ...(CONTROLS.empty || [])], (x) => x);
+  list("Fichiers absents ou vides", [...(CONTROLS.missing || []), ...(CONTROLS.empty || [])].filter((x) => x !== "outils-ia.md"), (x) => x);
   list("Pages liminaires à écrire", [...(CONTROLS.cover_missing || []).map((x) => `couverture : ${x}`), ...(CONTROLS.front_missing || [])], (x) => x);
   const uncited = Object.entries(CONTROLS.uncited || {});
   list("Chiffres du registre jamais cités par leur rôle", uncited, ([role, ids]) => `rôle ${role} : ${ids.length}${ids.length ? " : " + ids.slice(0, 20).join(", ") + (ids.length > 20 ? " …" : "") : ""}`);

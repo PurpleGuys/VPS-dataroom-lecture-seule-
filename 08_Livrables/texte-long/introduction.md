@@ -38,4 +38,4 @@ Le rapport suit sept parties, annoncées ici sous leur titre.
 6. Jusqu'à fin 2027, Veolia peut acheter des tuck-ins, pas une nouvelle plateforme. Cette partie traduit la marge en taille de cible et trie les cibles réelles.
 7. Des tuck-ins jusqu'à fin 2027, une plateforme américaine seulement après de nouvelles cessions signées. Cette partie donne notre recommandation, son coût et les seuils qui nous feraient changer d'avis.
 
-Cinq annexes complètent le rapport. L'annexe I reprend chaque chiffre cité avec sa source. Les annexes II et III font de même pour les opérations et les cibles. L'annexe IV donne la fourchette de capacité. L'annexe V décrit l'usage des outils d'intelligence artificielle.
+Quatre annexes complètent le rapport. L'annexe I reprend chaque chiffre cité avec sa source. Les annexes II et III font de même pour les opérations et les cibles. L'annexe IV donne la fourchette de capacité.
