@@ -7,7 +7,7 @@ generated: true
 
 # Stratégie commerciale
 
-Rubrique de [[Targets/Veolia|Veolia]] — 196 élément(s).
+Rubrique de [[Targets/Veolia|Veolia]] — 197 élément(s).
 Note générée à chaque synchronisation : ne pas la modifier à la main.
 
 - [[05_Commercial_Strategy/1183.pdf.md|Waste statistics — Statistics Explained]]
@@ -148,6 +148,7 @@ Note générée à chaque synchronisation : ne pas la modifier à la main.
 - [[05_Commercial_Strategy/pr-veolia-mistral.pdf.md|Veolia and Mistral AI\_ join forces to revolutionize resource efficiency management with generative AI and accelerate the ecological transformation]]
 - [[05_Commercial_Strategy/pr-veolia-pfas-04032024.pdf.md|Veolia Advances PFAS Mitigation in Drinking Water With More Than 30 Treatment Projects Launched in the U.S.]]
 - [[05_Commercial_Strategy/pr-veolia-pickleball-020724.pdf.md|Pickleball Goes Green: Veolia Joins Forces with Professional Pickleball Association as Official Partner and Sustainability Provider]]
+- [[05_Commercial_Strategy/pr-veolia-pioneering-site-extraction-strategic-metals-ev-batteries-121126.pdf.md|European industrial sovereignty: Veolia launches a pioneering site for extracting strategic metals from EV batteries]]
 - [[05_Commercial_Strategy/pr-veolia-results-q3-11072024.pdf.md|KEY FIGURES AT 30 SEPTEMBER 2024]]
 - [[05_Commercial_Strategy/pr-veolia-saint-fons-080124.pdf.md|Veolia wins a major contract to make one of the largest wastewater treatment plants in France an environmental standard-setter]]
 - [[05_Commercial_Strategy/pr-veolia-sbti-072924.pdf.md|Veolia Strengthens its Leadership in Ecological Transformation with the Validation of its Accelerated Decarbonization Trajectory by SBTi]]
