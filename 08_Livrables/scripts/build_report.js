@@ -1019,7 +1019,7 @@ body.splice(tocMarker + 1, 0, ...tocEntries);
 const controls = [];
 if (CONTROLS && !FINAL) {
   if (!VEOLIA) controls.push(heading("Contrôle des citations et de la méthode (retiré de la version finale)", 1, { toc: false }));
-  const files = Object.keys(CONTROLS.words || {});
+  const files = Object.keys(CONTROLS.words || {}).filter((f) => f !== "outils-ia.md");
   if (files.length) {
     // l'édition longue est la version de référence : les cibles de pages ne valent que pour la courte
     const longEdition = DATA.edition === "longue";
