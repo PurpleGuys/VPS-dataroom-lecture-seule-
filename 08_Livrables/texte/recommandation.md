@@ -22,9 +22,17 @@ Tuck-ins et plateforme puisent dans la même marge. Au haut de la fourchette, [M
 
 Chauny ne change pas l'EBITDA de Veolia. À 2 M€ d'excédent brut, le site n'apporte presque rien à un objectif de [F12]. Son intérêt est ailleurs. Le ROCE des déchets dangereux, [F894] en 2024, reste proche du coût du capital, [F891]. Un four acheté sept fois son excédent brut, puis mieux rempli, relève ce rendement. Une plateforme payée au prix du secteur, avant synergies, le dilue.
 
-L'offre a aussi une valeur défensive. Séché et Flamme réunis pèseraient davantage dans l'incinération de déchets dangereux du nord de la France. Un four repris par Veolia garde dans la région une capacité que Séché ne contrôle pas.
-
 Trois faits nous feraient renoncer : un refus d'agrément par l'Autorité, un excédent brut constaté trop faible pour tenir le payback au prix demandé, un passif de sols laissé à l'acheteur sans garantie.
+
+## La décision de l'Autorité commande trois conduites
+
+L'issue de l'examen commande la suite. Nous distinguons trois cas.
+
+- L'Autorité autorise l'opération sans condition. Aucun actif ne vient sur le marché. Veolia s'en tient aux tuck-ins hors d'Europe.
+- L'Autorité autorise sous engagement de cession. La vente se fait alors sous son contrôle et elle agrée le repreneur. Veolia dépose une offre sous le prix plafond. Elle montre, dès l'offre, pourquoi son rachat ne réduit pas la concurrence.
+- L'Autorité ouvre un examen approfondi. Le périmètre des cessions peut s'élargir. Veolia attend : un actif plus grand changerait le prix et l'analyse de concurrence.
+
+Dans les trois cas, Veolia peut préparer dès maintenant ce qui ne dépend pas de la décision : l'estimation des flux qu'elle apporterait à Chauny, le chiffrage de la mise en conformité et son dossier d'agrément.
 
 ## La prudence se paie en EBITDA cédé et les agences en portent le risque
 

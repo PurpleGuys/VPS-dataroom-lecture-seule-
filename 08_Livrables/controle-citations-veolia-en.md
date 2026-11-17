@@ -2,14 +2,14 @@
 
 | Section | Pages | Mots | Cible |
 |---|---|---|---|
-| role-1.md | 2 | 889 | 6-9 |
-| role-2.md | 3 | 1226 | 6-9 |
-| role-3.md | 3 | 1062 | 6-9 |
-| role-4.md | 3 | 1007 | 6-9 |
-| role-5.md | 3 | 967 | 6-9 |
-| role-6.md | 5 | 2189 | 6-9 |
-| corps, du sommaire à la première annexe | 36 | 9376 | 50-60 |
-| document entier, annexes et contrôle compris | 55 | | — |
+| role-1.md | 4 | 1526 | 6-9 |
+| role-2.md | 5 | 1857 | 6-9 |
+| role-3.md | 5 | 1588 | 6-9 |
+| role-4.md | 5 | 1571 | 6-9 |
+| role-5.md | 5 | 1626 | 6-9 |
+| role-6.md | 7 | 2926 | 6-9 |
+| corps, du sommaire à la première annexe | 50 | 13228 | 50-60 |
+| document entier, annexes et contrôle compris | 73 | | — |
 
 ## Jetons inconnus (0)
 - aucun
@@ -21,22 +21,22 @@
 - aucun
 
 ## Chiffres du registre jamais cités par leur rôle
-- rôle 1 (Périmètre et sources) : 19 — F90, F91, F92, F131, F132, F133, F134, F135, F136, F137, F654, F659, F661, F662, F672, F685, F750, F825, F848
-- rôle 2 (La contrainte) : 273 — F1, F10, F11, F12, F14, F19, F22, F26, F55, F56, F57, F66, F71, F78, F82, F140, F142, F144, F145, F146 …
-- rôle 3 (Capacité et sensibilité) : 152 — F4, F5, F7, F9, F13, F15, F21, F24, F27, F28, F29, F31, F53, F64, F65, F67, F68, F69, F70, F72 …
-- rôle 4 (L'écart et les comparables) : 141 — F33, F37, F38, F39, F41, F54, F58, F59, F60, F61, F62, F63, F93, F94, F95, F96, F97, F160, F161, F162 …
-- rôle 5 (Le coût ESG) : 72 — F42, F43, F45, F99, F100, F101, F102, F103, F104, F105, F106, F107, F108, F109, F218, F219, F237, F238, F488, F489 …
-- rôle 6 (Cibles, puis synthèse) : 132 — F46, F47, F49, F50, F76, F77, F209, F210, F211, F212, F213, F214, F215, F216, F443, F444, F445, F473, F474, F475 …
+- rôle 1 (Périmètre et sources) : 18 — F90, F91, F92, F131, F133, F134, F135, F136, F137, F654, F659, F661, F662, F672, F685, F750, F825, F848
+- rôle 2 (La contrainte) : 253 — F1, F10, F11, F12, F14, F19, F22, F26, F55, F56, F57, F66, F71, F78, F82, F140, F142, F144, F145, F146 …
+- rôle 3 (Capacité et sensibilité) : 137 — F4, F5, F7, F9, F13, F21, F24, F27, F31, F53, F64, F65, F67, F68, F69, F72, F73, F75, F79, F80 …
+- rôle 4 (L'écart et les comparables) : 136 — F33, F37, F38, F39, F41, F54, F58, F59, F60, F61, F62, F63, F93, F94, F95, F96, F97, F160, F161, F162 …
+- rôle 5 (Le coût ESG) : 54 — F43, F45, F103, F104, F105, F106, F108, F109, F237, F488, F489, F490, F494, F495, F496, F497, F498, F500, F501, F502 …
+- rôle 6 (Cibles, puis synthèse) : 123 — F46, F47, F49, F50, F76, F77, F209, F210, F211, F212, F213, F214, F215, F216, F443, F444, F445, F473, F474, F475 …
 
 ## Ce que la méthode du rapport mesure
-- corps du rapport : 55 132 caractères, espaces compris, pour 50 000 demandés
-- role-1.md : 21 phrase(s) sur 66 au-delà de 12 mots
-- role-2.md : 42 phrase(s) sur 95 au-delà de 12 mots
-- role-3.md : 29 phrase(s) sur 85 au-delà de 12 mots
-- role-4.md : 21 phrase(s) sur 76 au-delà de 12 mots
-- role-5.md : 33 phrase(s) sur 71 au-delà de 12 mots
-- role-6.md : 74 phrase(s) sur 156 au-delà de 12 mots
-- recommandation.md : 23 phrase(s) sur 51 au-delà de 12 mots
+- corps du rapport : 78 221 caractères, espaces compris, pour 50 000 demandés
+- role-1.md : 36 phrase(s) sur 123 au-delà de 12 mots
+- role-2.md : 63 phrase(s) sur 147 au-delà de 12 mots
+- role-3.md : 43 phrase(s) sur 130 au-delà de 12 mots
+- role-4.md : 37 phrase(s) sur 122 au-delà de 12 mots
+- role-5.md : 51 phrase(s) sur 127 au-delà de 12 mots
+- role-6.md : 94 phrase(s) sur 212 au-delà de 12 mots
+- recommandation.md : 24 phrase(s) sur 61 au-delà de 12 mots
 - remerciements.md : 2 phrase(s) sur 6 au-delà de 12 mots
 - introduction.md : 25 phrase(s) sur 44 au-delà de 12 mots
 - conclusion.md : 19 phrase(s) sur 36 au-delà de 12 mots
@@ -46,9 +46,10 @@
 - Appendix IV : commentée nulle part dans le texte
 - Appendix V : commentée nulle part dans le texte
 
-## Années des références (44)
+## Années des références (47)
 Ces documents cités n'ont pas de date de publication dans leur note (`date_published`) : l'année de leur référence est devinée. Lire la date sur le document et l'écrire dans la note.
 - Arcwood Environmental (2025) — 05_Commercial_Strategy/arcwood-rebrand-2025-03-18.html : lue dans le titre
+- ARF (Activités de Recyclage et de Formulation) (2024) — 03_Environment_HSE/arf-vendeuil-rapport-activite-2023.pdf : lue dans l'adresse
 - Banque centrale européenne (2026) — 01_Financial/bce-taux-eur-cad-2026-10-06.html : année de la consultation
 - BIC Magazine (2022) — 05_Commercial_Strategy/bic-us-ecology-republic-2022.html : lue dans le titre
 - Clean Harbors (2024) — 05_Commercial_Strategy/clean-harbors-hepaco-2024-03-25.html : lue dans l'adresse
@@ -56,18 +57,21 @@ Ces documents cités n'ont pas de date de publication dans leur note (`date_publ
 - Clean Harbors (2026b) — 05_Commercial_Strategy/clean-harbors-enviroserve-esh-2026-10-05.html : lue dans le titre
 - Clean Harbors (2026c) — 05_Commercial_Strategy/clean-harbors-enviroserve-2026-08-12.html : lue dans le titre
 - Clean Harbors, Inc. (2025) — 01_Financial/clean-harbors-10-k-2025.pdf : lue dans le titre
+- Commission européenne, DG Concurrence (via EUR-Lex) (2022) — 04_Litigation/pdf.pdf : lue dans le titre
 - DREAL Hauts-de-France, unité départementale de l'Aisne (2024) — 02_Permits_Regulatory/saa5ias7eeumrd2nxloai0toarpzn59t.pdf : lue dans le titre
 - DREAL Hauts-de-France, unité départementale de l'Aisne (2025) — 02_Permits_Regulatory/3kpze2d6rwdqzpytulalmbwllehzzgd7.pdf : lue dans le titre
 - Enviri Corporation (2025) — 01_Financial/enviri-10-k-2025.pdf : lue dans le titre
-- EQT (PR Newswire) (2021) — 05_Commercial_Strategy/eqt-covanta-2021-07-14.html : lue dans le titre
 - Fortum / Summa Equity (Cision) (2024) — 05_Commercial_Strategy/fortum-summa-ng-group-2024-07-18.html : lue dans le titre
 - Heritage-Crystal Clean (2023) — 05_Commercial_Strategy/crystal-clean-jfl-2023-07-19.html : lue dans le titre
 - Latham & Watkins (conseil de GFL) (2025) — 05_Commercial_Strategy/gfl-es-latham-2025-01-07.html : lue dans l'adresse
+- Moody's Ratings (2025) — 01_Financial/credit_opinion_moodys_veolia-environnement-sa_22apr2025.pdf : lue dans l'adresse
 - Moody's Ratings (2026) — 01_Financial/credit_opinion-veolia-environnement-sa-04may2026.pdf : lue dans l'adresse
 - Reuters (via Yahoo Finance) (2025) — 05_Commercial_Strategy/triumvirate-berkshire-2025-02-04.html : lue dans le titre
-- S&P Global Ratings (2025) — 01_Financial/ratingsdirect_update_veoliaenvironnements.a._3485780_nov-25-2025.pdf : lue dans l'adresse
+- S&P Global Ratings (2025a) — 01_Financial/ratingsdirect_update_veoliaenvironnements.a._3485780_nov-25-2025.pdf : lue dans l'adresse
+- S&P Global Ratings (2025b) — 01_Financial/finance_standard_-_poors_ratings_direct_veolia_environnement_sa_mars_2025_03-04-25.pdf : lue dans l'adresse
 - S&P Global Ratings (2026) — 01_Financial/ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf : lue dans l'adresse
 - Seaside Equity Partners (2025) — 05_Commercial_Strategy/enviracore-lancement-2025-09-30.html : lue dans le titre
+- SUEZ (2022) — 05_Commercial_Strategy/cp-suez-reprend-essentiel-activites-secteur-dechets-dangereux-france-fr-30nov2022.pdf : lue dans l'adresse
 - Séché Environnement (2025) — 05_Commercial_Strategy/25-06-cp-flamme.pdf : lue dans l'adresse
 - Séché Environnement (2026) — 01_Financial/26-06_cp-bn-s1-26.pdf : lue dans l'adresse
 - The Star (dépêche Bloomberg) (2025) — 05_Commercial_Strategy/sk-group-is-said-to-consider-selling-stake-in-malaysian-waste-firm-cenviro-sk-group-is-sai.html : lue dans l'adresse
@@ -91,7 +95,6 @@ Ces documents cités n'ont pas de date de publication dans leur note (`date_publ
 - Veolia Environnement SA (2026j) — 01_Financial/finance_veolia_q1_2026_results_presentation.pdf : lue dans l'adresse
 - Veolia Environnement SA (2026k) — 01_Financial/finance_veolia_urd_2025_en.pdf : lue dans l'adresse
 - Veolia Environnement SA (2026l) — 01_Financial/veolia-amendement-deu-2025-s1-2026.pdf : lue dans l'adresse
-- WM (Waste Management) (2024) — 05_Commercial_Strategy/wm-stericycle-2024-06-03.html : lue dans l'adresse
 
 ## Mise en page
 - polices du PDF : LiberationSans, LiberationSans-Bold, LiberationSans-Italic ; numéro de page : 9 pt

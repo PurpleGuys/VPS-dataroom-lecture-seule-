@@ -30,7 +30,7 @@ Le 5 juin 2025, Séché Environnement a signé une promesse d'achat du Groupe Fl
 
 Séché a notifié l'opération à l'Autorité de la concurrence le 28 mai 2026. Le 10 octobre 2026, elle figurait encore parmi les opérations en cours d'examen, en première phase. À notre connaissance, à la date de ce rapport, l'Autorité n'a publié ni décision ni engagement. Aucune cession n'est donc annoncée. Nous raisonnons sur un scénario : celui où l'Autorité conditionnerait son accord à une cession.
 
-Ce scénario a un précédent qui concerne Veolia. Pour racheter Suez, Veolia a dû céder toute l'incinération de déchets dangereux de Suez en France. Elle a aussi cédé à Séché des sites d'assainissement d'Île-de-France, pour [D24]. Dans ce secteur, le remède d'une concentration est la vente d'un site à un repreneur agréé.
+Ce scénario n'a rien d'exceptionnel. Dans ce secteur, le remède d'une concentration est la vente d'un site à un repreneur agréé. Veolia elle-même y a été soumise.
 
 Séché a par ailleurs une raison financière de vendre. Son levier atteint [F898] au 30 juin 2026, avant Flamme. Elle s'engage à ramener ce levier sous son plafond après toute acquisition.
 
@@ -39,6 +39,34 @@ Séché a par ailleurs une raison financière de vendre. Son levier atteint [F89
 Les deux incinérateurs de Flamme n'ont pas la même taille. Vendeuil réunit une enceinte statique de [F892] pour [F885] et un four rotatif de [F893] pour [F886]. Chauny ne compte qu'une enceinte de [F884], réservée aux déchets liquides. Le site broie aussi des aérosols et produit de la vapeur. Chauny représente ainsi 7 t/h sur 45 (7 + 8 + 30), soit environ 16 % de la capacité horaire d'incinération de Flamme.
 
 Trois raisons font de Chauny l'actif le plus détachable. Le site a sa propre autorisation préfectorale, distincte de celle de Vendeuil. Cette autorisation a déjà changé de titulaire une fois, lors de la fusion de la société DEM dans ARF. Enfin, sa vente laisserait à Séché l'essentiel des capacités qu'elle achète. C'est donc, selon nous, la cession que Séché proposerait en premier. L'Autorité pourrait la juger insuffisante : nous ne pouvons pas le savoir.
+
+## L'Autorité raisonne par marché et l'incinération de déchets dangereux en est un
+
+Pour juger un repreneur, l'Autorité regarde le marché où l'actif cédé concurrence le vendeur. Les décisions versées à notre dossier donnent trois repères.
+
+D'abord, l'incinération est un marché à part. La Commission européenne distingue la collecte, l'enfouissement, l'incinération et le traitement physico-chimique des déchets dangereux. Chaque filière a ses déchets et ses coûts.
+
+Ensuite, la distance compte. Le transport dépasse [F900] du coût total du traitement. Pour l'enfouissement, la Commission a retenu des zones de chalandise de [F901] autour des sites. Les autorités françaises s'opposent de plus à l'exportation quand la France dispose de capacités.
+
+Enfin, les flux réels débordent la région. En 2023, Vendeuil a reçu [F902] de ses déchets des Hauts-de-France, [F903] d'autres régions et [F904] d'autres pays d'Europe.
+
+Ces repères jouent dans deux sens. Si le marché est régional, le four que Veolia exploite à Courrières la place en face de Chauny : son rachat réduirait le choix des industriels du Nord. Si le marché est national, Veolia y est déjà un acteur de premier rang. Elle est le premier opérateur européen, avec [F917] de chiffre d'affaires dans les déchets dangereux et [F906] d'incinération. Elle n'est donc pas le concurrent nouveau qu'un remède cherche à faire naître. Dans les deux cas, l'agrément de Veolia se plaide. Il ne se présume pas. C'est la principale faiblesse de notre thèse.
+
+## Le précédent de Suez fixe les règles et laisse une ouverture
+
+Veolia connaît ces règles pour les avoir subies. Pour racheter Suez, elle a dû s'engager à céder toute l'incinération de déchets dangereux de Suez en France. Elle a revendu ces actifs au nouveau Suez pour [F905] en 2022, puis les dernières activités pour [D10] en 2023. Suez chiffre l'ensemble repris à [F918] de valeur d'entreprise. Veolia a aussi cédé à Séché des sites d'assainissement d'Île-de-France, pour [D24].
+
+Le repreneur agréé devait remplir trois conditions. Il devait être indépendant du vendeur. Il devait avoir les moyens et la compétence de faire de l'actif un concurrent actif. Il ne devait pas créer lui-même de problème de concurrence à première vue. Le nouveau Suez a été agréé parce qu'il n'avait plus d'activité significative dans les déchets dangereux.
+
+Un autre précédent laisse une ouverture. Séché a repris des actifs de remède dans l'eau industrielle alors qu'elle y était déjà présente, parce que sa part de marché y restait limitée. Un repreneur déjà actif n'est donc pas exclu par principe. Tout dépend de sa part sur le marché retenu. Or nous ne connaissons pas celle de Veolia dans l'incinération du nord de la France.
+
+La deuxième condition joue en revanche pour Veolia. Un four classé Seveso seuil haut, soumis à des demandes de mise en conformité, appelle un exploitant confirmé.
+
+## D'autres acheteurs existent et Veolia perd à les laisser faire
+
+Veolia ne serait pas seule candidate. Un entrant français peut se présenter : l'Autorité a autorisé en mars 2026 le projet d'Ortec et de Paprec de convertir une cimenterie en incinérateur. Un industriel étranger déjà implanté dans la région le peut aussi, comme Remondis, présent dans l'Oise.
+
+Ces candidats remplissent mieux que Veolia la troisième condition. Aucun n'a ses atouts industriels dans la région. Pour Veolia, l'enjeu dépasse donc le site. Si un rival reprend Chauny, il s'installe à portée de Courrières avec un four déjà autorisé, sur un marché où les autorisations nouvelles sont rares. L'offre de Veolia a ainsi une valeur défensive, que notre prix plafond ne compte pas.
 
 ## Nos hypothèses prêtent à Chauny environ 2 M€ d'excédent brut et un prix d'une vingtaine de millions
 
@@ -70,8 +98,6 @@ Le taux de rendement interne enfin. Il doit atteindre 9,7 % (5,7 + 4). Nous ne l
 
 Ces critères disent la même chose. Sans synergie, Veolia ne peut pas payer Chauny plus de sept fois son excédent brut. Au-delà, l'écart doit venir de l'acheteur : un four mieux rempli, des flux de Veolia traités sur place, la vapeur mieux vendue.
 
-Clean Earth sert de repère. Son prix, [F40], représente environ 15 fois l'EBITDA attendu de [F51] (2 989 / 200). Le multiple annoncé, [F48], ne vaut qu'après synergies. La plus grande opération du plan ne tient donc elle-même ses critères qu'avec ses synergies.
-
 Notre hypothèse peut aussi être trop haute. Sur la part horaire de 16 %, le chiffre d'affaires de Chauny tomberait à 8 M€ (16 % × 49). Au taux de marge de [F895], l'excédent brut serait de 1,3 M€ (8 × 16 %). Un tableau en annexe donne le prix selon l'excédent brut constaté et le multiple retenu. Chaque case multiplie l'un par l'autre.
 
 | Excédent brut de Chauny | À [F897] (Enviropacific) | À 7 fois (payback de Veolia) | À [F472] (tuck-ins de 2025) | À 15 fois (Flamme) |
@@ -83,13 +109,38 @@ Notre hypothèse peut aussi être trop haute. Sur la part horaire de 16 %, le ch
 
 *Sources : calculs du groupe. La colonne à 7 fois est le prix plafond que nous retenons.*
 
-## Trois objections affaiblissent cette thèse et nous y répondons
+## Veolia apporterait au four ce qui lui manque pour tenir les critères
 
-**L'Autorité agréerait-elle Veolia ?** C'est la principale faiblesse de notre thèse. Un repreneur doit être indépendant du vendeur et capable d'exploiter l'actif. Il ne doit pas créer lui-même de problème de concurrence à première vue. Or Veolia est le premier acteur européen des déchets dangereux et exploite déjà un incinérateur à Courrières, dans la même région. Nous n'avons trouvé aucun précédent d'un exploitant voisin agréé pour reprendre un four. Deux éléments jouent pourtant pour Veolia. Le four de Chauny brûle des liquides et une part des déchets de Vendeuil vient d'autres régions et d'Europe : le marché ne se limite pas à la région. L'Autorité a de plus autorisé en mars 2026 le projet d'Ortec et de Paprec de convertir une cimenterie en incinérateur : un concurrent arrive. Si l'Autorité écartait Veolia, notre recommandation se reporterait sur les tuck-ins nommés plus haut.
+Le prix plafond suppose un site laissé tel quel. Veolia peut faire mieux, par quatre leviers que ses publications documentent.
+
+- Le remplissage. Veolia vise un taux d'utilisation de ses actifs supérieur à [F907]. Elle annonce pour ses fours européens une disponibilité de [F909] à [F910]. Nous ne connaissons pas le taux de Chauny.
+- Les flux. En Europe, Veolia traite elle-même la plus grande part des déchets qu'elle collecte. Les liquides collectés dans le Nord trouveraient à Chauny un exutoire interne.
+- Les coûts. Le personnel pèse [F911] de la base de coûts d'un incinérateur de Veolia. Un site isolé partage mal ses fonctions de sécurité, de maintenance et d'achat. Un réseau de [F906] les met en commun.
+- Les prix. Veolia a relevé ses prix de [F912] en Europe en 2024.
+
+Ces leviers donnent la mesure de l'effort. Pour justifier 18 M€ avec un payback de [F889], l'excédent brut doit passer de 2 M€ à 2,6 M€, soit 30 % de plus (0,6 / 2). Cet effort reste en deçà de ce que Veolia se fixe pour tout le métier : une hausse d'environ [F908] du ROCE des déchets dangereux d'ici 2027.
+
+## Appliqué aux rachats récents de Veolia, le payback montre que notre plafond est prudent
+
+Nous avons appliqué la même mesure aux opérations récentes. Un tableau en annexe les compare.
+
+| Opération | Prix rapporté à l'EBITDA | Payback simple inférieur à [F889] |
+|---|---|---|
+| Enviropacific Services, 2026 | [F897] | oui |
+| Tuck-ins de 2025 | environ [F472] | non, sauf synergies |
+| Clean Earth, après synergies | [F48] | non |
+| Clean Earth, avant synergies | environ 15 fois ([F40] pour [F51]) | non |
+| Groupe Flamme, par Séché | 15 fois ([F874] pour [F876]) | non |
+
+Seule Enviropacific tient le critère sur l'EBITDA acquis. Veolia mesure sans doute son payback sur des flux qui croissent, synergies comprises. Notre mesure est donc la plus sévère. Elle a un mérite : un prix qui la respecte ne dépend d'aucune promesse.
+
+## Deux autres objections : la priorité donnée au reste du monde et le passif du site
 
 **L'Europe n'est pas la priorité publiée.** Environ [F896] des acquisitions de Veolia se font hors d'Europe. Une part reste donc ouverte à l'Europe. Chauny appartient au booster des déchets dangereux et son prix est petit.
 
-**Le site porte un passif.** Les sols voisins contiennent [F887] de dioxines, pour une valeur cible de [F888]. L'inspection attribue cette pollution à l'histoire industrielle de la zone, antérieure à ARF. Elle ne la relie pas aux rejets actuels. Elle a demandé en 2025 une nouvelle évaluation des risques sanitaires. Elle a aussi relevé des dépassements en mercure et en oxydes d'azote. Les premières habitations sont à [F899]. La partie 5 l'a montré : un tel passif fixe le coût de la diligence. Nous conditionnons donc toute offre à un audit des sols et à une garantie du vendeur sur la pollution historique.
+**Le site porte un passif et des écarts de conformité.** Les sols voisins contiennent [F887] de dioxines, pour une valeur cible de [F888]. L'inspection attribue cette pollution à l'histoire industrielle de la zone, antérieure à ARF. Elle ne la relie pas aux rejets actuels. Elle a demandé en 2025 une nouvelle évaluation des risques sanitaires. Les rejets eux-mêmes ont dépassé leurs limites. Le mercure a atteint [F913] pour une limite de [F914]. L'exploitant suivait les oxydes d'azote sur une limite de [F915], alors que la limite réglementaire est de [F916]. L'inspection a demandé un plan d'actions. Les premières habitations sont à [F899].
+
+La partie 5 l'a montré : un tel passif fixe le coût de la diligence, pas l'intérêt de l'achat. Nous conditionnons donc toute offre à trois protections : un audit des sols avant l'offre ferme, une garantie du vendeur sur la pollution historique et un prix qui retranche le coût de la mise en conformité des rejets.
 
 ## Les plateformes américaines restent hors de portée ou sans prix
 

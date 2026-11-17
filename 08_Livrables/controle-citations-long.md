@@ -7,9 +7,9 @@
 | role-3.md | 9 | 2718 | — |
 | role-4.md | 10 | 2907 | — |
 | role-5.md | 10 | 2945 | — |
-| role-6.md | 7 | 2189 | — |
-| corps, du sommaire à la première annexe | 74 | 18908 | — (édition de référence) |
-| document entier, annexes et contrôle compris | 107 | | — |
+| role-6.md | 9 | 2926 | — |
+| corps, du sommaire à la première annexe | 77 | 19743 | — (édition de référence) |
+| document entier, annexes et contrôle compris | 112 | | — |
 
 ## Jetons inconnus (0)
 - aucun
@@ -26,24 +26,25 @@
 - rôle 3 (Capacité et sensibilité) : 125 — F4, F5, F7, F9, F13, F21, F24, F27, F53, F64, F65, F67, F68, F69, F72, F73, F75, F79, F80, F81 …
 - rôle 4 (L'écart et les comparables) : 106 — F37, F38, F58, F94, F95, F96, F97, F160, F161, F162, F168, F169, F170, F171, F172, F173, F174, F175, F176, F177 …
 - rôle 5 (Le coût ESG) : 33 — F488, F489, F494, F495, F496, F497, F498, F501, F502, F503, F504, F505, F506, F513, F514, F515, F516, F517, F518, F519 …
-- rôle 6 (Cibles, puis synthèse) : 132 — F46, F47, F49, F50, F76, F77, F209, F210, F211, F212, F213, F214, F215, F216, F443, F444, F445, F473, F474, F475 …
+- rôle 6 (Cibles, puis synthèse) : 123 — F46, F47, F49, F50, F76, F77, F209, F210, F211, F212, F213, F214, F215, F216, F443, F444, F445, F473, F474, F475 …
 
 ## Ce que la méthode du rapport mesure
-- corps du rapport : 112 252 caractères, espaces compris, pour 50 000 demandés
+- corps du rapport : 117 332 caractères, espaces compris, pour 50 000 demandés
 - role-1.md : 76 phrase(s) sur 239 au-delà de 12 mots
 - role-2.md : 112 phrase(s) sur 259 au-delà de 12 mots
 - role-3.md : 77 phrase(s) sur 224 au-delà de 12 mots
 - role-4.md : 74 phrase(s) sur 247 au-delà de 12 mots
 - role-5.md : 86 phrase(s) sur 241 au-delà de 12 mots
-- role-6.md : 74 phrase(s) sur 156 au-delà de 12 mots
-- recommandation.md : 23 phrase(s) sur 51 au-delà de 12 mots
+- role-6.md : 94 phrase(s) sur 212 au-delà de 12 mots
+- recommandation.md : 24 phrase(s) sur 61 au-delà de 12 mots
 - remerciements.md : 2 phrase(s) sur 6 au-delà de 12 mots
 - introduction.md : 25 phrase(s) sur 44 au-delà de 12 mots
 - conclusion.md : 19 phrase(s) sur 36 au-delà de 12 mots
 
-## Années des références (54)
+## Années des références (57)
 Ces documents cités n'ont pas de date de publication dans leur note (`date_published`) : l'année de leur référence est devinée. Lire la date sur le document et l'écrire dans la note.
 - Arcwood Environmental (2025) — 05_Commercial_Strategy/arcwood-rebrand-2025-03-18.html : lue dans le titre
+- ARF (Activités de Recyclage et de Formulation) (2024) — 03_Environment_HSE/arf-vendeuil-rapport-activite-2023.pdf : lue dans l'adresse
 - AVR (2025) — 01_Financial/avr-annual-report-2024-resolve-web-1.pdf : lue dans l'adresse
 - Banque centrale européenne (2026) — 01_Financial/bce-taux-eur-cad-2026-10-06.html : année de la consultation
 - BIC Magazine (2022) — 05_Commercial_Strategy/bic-us-ecology-republic-2022.html : lue dans le titre
@@ -52,6 +53,7 @@ Ces documents cités n'ont pas de date de publication dans leur note (`date_publ
 - Clean Harbors (2026b) — 05_Commercial_Strategy/clean-harbors-enviroserve-esh-2026-10-05.html : lue dans le titre
 - Clean Harbors (2026c) — 05_Commercial_Strategy/clean-harbors-enviroserve-2026-08-12.html : lue dans le titre
 - Clean Harbors, Inc. (2025) — 01_Financial/clean-harbors-10-k-2025.pdf : lue dans le titre
+- Commission européenne, DG Concurrence (via EUR-Lex) (2022) — 04_Litigation/pdf.pdf : lue dans le titre
 - DREAL Hauts-de-France, unité départementale de l'Aisne (2024) — 02_Permits_Regulatory/saa5ias7eeumrd2nxloai0toarpzn59t.pdf : lue dans le titre
 - DREAL Hauts-de-France, unité départementale de l'Aisne (2025) — 02_Permits_Regulatory/3kpze2d6rwdqzpytulalmbwllehzzgd7.pdf : lue dans le titre
 - Enviri Corporation (2025) — 01_Financial/enviri-10-k-2025.pdf : lue dans le titre
@@ -69,6 +71,7 @@ Ces documents cités n'ont pas de date de publication dans leur note (`date_publ
 - S&P Global Ratings (2025b) — 01_Financial/finance_standard_-_poors_ratings_direct_veolia_environnement_sa_mars_2025_03-04-25.pdf : lue dans l'adresse
 - S&P Global Ratings (2026) — 01_Financial/ratingsdirect_tearsheet_veoliaenvironnements.a._3552186_apr-27-2026.pdf : lue dans l'adresse
 - Seaside Equity Partners (2025) — 05_Commercial_Strategy/enviracore-lancement-2025-09-30.html : lue dans le titre
+- SUEZ (2022) — 05_Commercial_Strategy/cp-suez-reprend-essentiel-activites-secteur-dechets-dangereux-france-fr-30nov2022.pdf : lue dans l'adresse
 - Séché Environnement (2025) — 05_Commercial_Strategy/25-06-cp-flamme.pdf : lue dans l'adresse
 - Séché Environnement (2026) — 01_Financial/26-06_cp-bn-s1-26.pdf : lue dans l'adresse
 - The Star (dépêche Bloomberg) (2025) — 05_Commercial_Strategy/sk-group-is-said-to-consider-selling-stake-in-malaysian-waste-firm-cenviro-sk-group-is-sai.html : lue dans l'adresse

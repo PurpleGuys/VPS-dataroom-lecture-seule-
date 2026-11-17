@@ -12,6 +12,18 @@ Sur une année pleine, le cash-flow libre net couvre le dividende de Veolia, pas
 
 Cette marge est fragile. Le plafond tient dans [M:P.tenir3x] des 1 000 futurs tirés par le modèle. Le premier facteur est la part des cessions non encore signées encaissée en 2027. Sans autre encaissement en 2027 que le solde des cessions signées, la marge tombe à [M:HEAD27@s27-bas]. Viennent ensuite la croissance organique de 2027 et le montant des tuck-ins. La croissance de l'EBITDA repose en partie sur les plans d'efficacité, l'hypothèse la plus fragile du modèle. La fourchette complète de capacité figure à l'annexe IV.
 
+## Le cash-flow libre net ne couvre pas l'ensemble des dividendes
+
+Le cash-flow libre net de Veolia est très saisonnier. En 2025, il s'établit à [F70] à fin juin, puis à [F728] à fin septembre. Il atteint pourtant [F29] sur l'année. Le seul quatrième trimestre en a apporté [M:PD.fcfQ4].
+
+L'année 2026 suit le même profil, avec un troisième trimestre plus faible. Le cash-flow libre net vaut [F727] au 30 septembre 2026, contre [F28] au 30 juin. Le besoin en fonds de roulement explique une part de ce retard. Sa variation atteint [F760] à fin septembre 2026, contre [F761] un an plus tôt.
+
+Le modèle du groupe suppose un quatrième trimestre 2026 identique à celui de 2025 : [M:H.fcfQ4]. Nous bornons cette hypothèse entre [M:H.fcfQ4@bas] et [M:H.fcfQ4@haut]. La borne basse couvre un retard d'encaissement qui ne se résorberait pas.
+
+Veolia a versé [F74] à ses actionnaires au titre de 2025. Sur neuf mois, son pont de dette compte [F731] de dividendes versés, minoritaires compris. Ce total dépasse déjà le cash-flow libre net de toute l'année 2025, [F29]. En 2025 déjà, ce cash-flow a couvert le dividende de Veolia, [F15]. Il n'a pas couvert tous les dividendes du tableau de flux, inscrits pour [F336].
+
+Le dividende de Veolia suit la croissance du bénéfice net courant par action. Le modèle fait croître ce dividende de [M:H.gDiv] en 2027. Ce taux reprend la guidance de résultat net courant, au moins [F89]. Le modèle ajoute [M:H.minDiv] d'autres dividendes, l'écart observé entre [F731] et [F74]. Les dividendes de 2027 atteignent ainsi [M:DIV27]. Le cash-flow libre net de 2027, [M:FCF27], reste en dessous.
+
 ## Du 30 septembre 2026 à fin 2027, la dette baisse par le quatrième trimestre et par les cessions
 
 Au quatrième trimestre 2026, la dette baisse de deux façons. Le cash-flow saisonnier en ôte [M:H.fcfQ4]. Les cessions signées en ôtent [M:D26]. La dette finit l'année à [M:NFD26], pour un EBITDA 2026 de [M:EB26]. Le levier fin 2026 atteint alors [M:LEV26].
@@ -30,6 +42,8 @@ Le multiple pèse moins que la date. À [M:H.mDisp] et sous un plafond de [M:H.c
 
 ## Le calendrier des cessions et la croissance de 2027 font le plus bouger la marge
 
+### Une hypothèse à la fois, cinq facteurs peuvent effacer la marge
+
 Nous faisons varier chaque hypothèse entre ses bornes, les autres restant au centre. Un tableau en annexe classe les cinq hypothèses qui pèsent le plus sur la marge.
 
 | Hypothèse du groupe | Bornes retenues | Marge à la borne basse | Marge à la borne haute |
@@ -40,11 +54,17 @@ Nous faisons varier chaque hypothèse entre ses bornes, les autres restant au ce
 | Cash-flow libre net du quatrième trimestre 2026 | [M:H.fcfQ4@bas] à [M:H.fcfQ4@haut] | [M:HEAD27@fcfQ4-bas] | [M:HEAD27@fcfQ4-haut] |
 | Conversion de l'EBITDA en cash-flow libre net en 2027 | [M:H.conv@bas] à [M:H.conv@haut] | [M:HEAD27@conv-bas] | [M:HEAD27@conv-haut] |
 
-Le calendrier des cessions domine. La croissance organique de 2027 vient ensuite. Le troisième facteur est une décision de Veolia, pas un aléa. Sans tuck-in en 2027, la marge monterait à [M:HEAD27@tuck-bas]. Ces cinq hypothèses peuvent chacune effacer la marge à leur borne défavorable.
+Le calendrier des cessions domine. La croissance organique de 2027 vient ensuite. Le troisième facteur est une décision de Veolia, pas un aléa. Sans tuck-in en 2027, la marge monterait à [M:HEAD27@tuck-bas].
 
-Le scénario défavorable combine toutes les bornes défavorables : la marge y tombe à [M:HEAD27@def]. Le scénario favorable les combine dans l'autre sens : [M:HEAD27@fav]. Ces deux extrêmes supposent que tout tourne mal, ou bien, en même temps. Le modèle tire donc 1 000 futurs par la méthode de Monte-Carlo. Un facteur commun de conjoncture relie la plupart des hypothèses.
+Ces cinq hypothèses peuvent chacune effacer la marge à leur borne défavorable. Les autres laissent la marge positive à leurs deux bornes. C'est le cas du multiple de cession et des synergies de Clean Earth.
 
-La marge médiane atteint [M:HEAD27@p50]. Le seuil des agences s'impose en premier dans [M:P.agences] des futurs tirés. La contrainte utile reste le plafond de Veolia.
+Ni les sensibilités ni les tirages du modèle ne font varier le change ou les taux. Ces risques existent pourtant. L'effet de change et de juste valeur sur la dette atteint [F735] sur neuf mois. Côté taux, [F775] de la dette financière nette est à taux fixe au 30 septembre 2026. Nous jugeons ces facteurs secondaires face au calendrier des cessions.
+
+### Sur 1 000 futurs tirés, le plafond cède dans une forte minorité de cas
+
+Le scénario défavorable combine toutes les bornes défavorables : la marge y tombe à [M:HEAD27@def]. Le scénario favorable les combine dans l'autre sens : [M:HEAD27@fav]. Ces deux extrêmes supposent que tout tourne mal, ou bien, en même temps. Le modèle tire donc 1 000 futurs par la méthode de Monte-Carlo. Chaque hypothèse suit une loi triangulaire entre ses bornes, la valeur centrale au sommet. Un facteur commun de conjoncture relie la plupart des hypothèses.
+
+La marge médiane atteint [M:HEAD27@p50]. Le plafond cède dans plus d'un futur sur trois. Le seuil des agences s'impose en premier dans [M:P.agences] des futurs tirés. La contrainte utile reste le plafond de Veolia.
 
 La capacité d'acquisition qui en découle est faible. Au multiple central des tuck-ins, [M:H.mTuck], l'acquisition maximale du scénario central atteint [M:MAXACQB]. Sur les futurs tirés, chacun avec son propre multiple, l'acquisition maximale médiane atteint [M:MAXACQB@p50]. Ces montants s'ajoutent aux tuck-ins déjà prévus. Veolia peut acheter au moins un milliard d'euros fin 2027 dans [M:P.acq1] des futurs seulement. Deux milliards ne passent dans aucun futur, [M:P.acq2]. Une acquisition d'envergure demanderait donc, selon nous, des cessions supplémentaires ou un autre financement.
 
@@ -54,8 +74,12 @@ La croissance organique de 2027 est le deuxième facteur de la marge. Le modèle
 
 GreenUp vise [F420] de gains d'efficacité par an. Veolia a dépassé cet objectif en 2024, avec [F641], puis en 2025, avec [F424]. Sur les neuf premiers mois de 2026, les gains bruts atteignent [F759].
 
-Cette hypothèse est fragile pour deux raisons. Les gains publiés sont bruts et une partie revient aux clients. Les prix de l'énergie et des recyclats pèsent déjà sur la croissance organique. Si la croissance de 2027 tombe à [M:H.g27@bas], la marge devient négative, à [M:HEAD27@g27-bas].
+Dans le pont d'EBITDA des neuf mois, ces gains ne forment pas une marche distincte. La marche croissance et performance apporte [F756]. Elle regroupe les prix, la productivité, l'efficacité, les volumes et les synergies. Cette marche est nette des gains rendus aux clients. Les prix de l'énergie et des recyclats pèsent pour [F757]. Les gains bruts d'efficacité et la marche nette ne se comparent donc pas terme à terme. Sans ce plan, la croissance organique serait nettement plus faible, selon nous.
+
+Cette hypothèse est fragile pour trois raisons. D'abord, un plan de coûts se livre ou ne se livre pas. Nous ne pouvons le vérifier qu'à travers les publications de Veolia. Ensuite, les gains publiés sont bruts et une partie revient aux clients. Enfin, les prix de l'énergie et des recyclats pèsent déjà sur la croissance organique. Si la croissance de 2027 tombe à [M:H.g27@bas], la marge devient négative, à [M:HEAD27@g27-bas].
 
 ## Ce que nous n'avons pas pu établir
 
-- Les dates d'encaissement des cessions, que Veolia ne publie pas. Les parts [M:H.s26] et [M:H.s27], comme la plupart des bornes, sont des choix du groupe.
+- Les dates d'encaissement des cessions. Veolia ne les publie pas. Les parts [M:H.s26] et [M:H.s27] sont des choix du groupe.
+- Les flux du quatrième trimestre 2025 hors cash-flow libre net. Nous n'avons pas expliqué pourquoi la dette n'a baissé que de [M:PD.dropQ4] ce trimestre-là.
+- La plupart des bornes des hypothèses et la force du facteur commun. Ce sont des choix du groupe, sans source externe.

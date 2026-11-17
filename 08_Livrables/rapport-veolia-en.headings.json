@@ -77,21 +77,35 @@
   "role": 0
  },
  {
-  "text": "1.4 Clean Earth has four figures, and leverage retains the effect on debt",
+  "text": "1.4 Net outflows since 2024 are not comparable to the growth envelope",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "1.5 Each figure refers to a file, a page and a date of access",
+  "text": "1.5 Clean Earth has four figures, and leverage retains the effect on debt",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "1.6 What we could not establish",
+  "text": "1.6 The disposal programme offsets the majority of Clean Earth’s value, partly after 2027",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "1.7 Each figure refers to a file, a page and a date of access",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "1.8 What we could not establish",
   "level": 2,
   "annex": false,
   "label": "",
@@ -126,14 +140,35 @@
   "role": 0
  },
  {
-  "text": "2.4 The rating agencies' thresholds leave more headroom than Veolia's cap at the end of 2027",
+  "text": "2.4 To end 2026 at the announced level will require an exceptional fourth quarter",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "2.5 What we could not establish",
+  "text": "2.5 The repayment of a hybrid security increases Veolia’s leverage more than Moody’s adjusted debt figure",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "2.6 The rating agencies' thresholds leave more headroom than Veolia's cap at the end of 2027",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "2.7 Refinancing increases the cost of debt without limiting capacity",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "2.8 What we could not establish",
   "level": 2,
   "annex": false,
   "label": "",
@@ -154,35 +189,56 @@
   "role": 0
  },
  {
-  "text": "3.2 From 30 September 2026 to the end of 2027, debt falls due to the fourth quarter and the disposals",
+  "text": "3.2 Net free cash flow does not cover all dividends",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "3.3 Disposals are more significant in terms of their timing than their multiples",
+  "text": "3.3 From 30 September 2026 to the end of 2027, debt falls due to the fourth quarter and the disposals",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "3.4 The timing of the disposals and growth in 2027 have the greatest impact on the headroom",
+  "text": "3.4 Disposals are more significant in terms of their timing than their multiples",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "3.5 Efficiency drives EBITDA growth and remains the most fragile assumption",
+  "text": "3.5 The timing of the disposals and growth in 2027 have the greatest impact on the headroom",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "3.6 What we could not establish",
+  "text": "3.5.1 One assumption at a time: five factors can wipe out the headroom",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "3.5.2 Out of the 1,000 simulated outcomes, the cap is breached in a significant minority of cases",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "3.6 Efficiency drives EBITDA growth and remains the most fragile assumption",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "3.7 What we could not establish",
   "level": 2,
   "annex": false,
   "label": "",
@@ -231,21 +287,49 @@
   "role": 0
  },
  {
-  "text": "4.3 Clean Harbors, the only direct comparable, commands prices on a par with Veolia’s",
+  "text": "4.3 From the seller’s perspective, Clean Earth’s EBITDA is lower than Veolia’s budget",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "4.3.1 Before synergies, Clean Earth is valued on a par with its US peers",
+  "text": "4.3.1 Enviri’s financial statements show lower EBITDA and slow growth",
   "level": 3,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "4.4 What we could not establish",
+  "text": "4.3.2 The first few months’ consolidated results are consistent with the budget, though this does not prove it",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.4 Clean Harbors, the only direct comparable, commands prices on a par with Veolia’s",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.4.1 Before synergies, Clean Earth is valued on a par with its US peers",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.5 Peer group analysis validates the model’s central assumptions, but not its lower bound for Clean Earth",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.6 What we could not establish",
   "level": 2,
   "annex": false,
   "label": "",
@@ -266,63 +350,98 @@
   "role": 0
  },
  {
-  "text": "5.2 Clean Earth was recognised in the accounts before its liabilities were measured at fair value",
+  "text": "5.2 Veolia’s closure provisions remain stable, except for the half-year period relating to Clean Earth",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "5.2.1 A known purchase price, but liabilities that are still provisional",
-  "level": 3,
-  "annex": false,
-  "label": "",
-  "role": 0
- },
- {
-  "text": "5.2.2 Authorised sites and financial guarantees to be monitored",
-  "level": 3,
-  "annex": false,
-  "label": "",
-  "role": 0
- },
- {
-  "text": "5.3 Off-balance-sheet exposure relates to litigation, PFAS and insurance limits",
+  "text": "5.3 Clean Earth was recognised in the accounts before its liabilities were measured at fair value",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "5.3.1 Penalties at sites, a past that may resurface",
+  "text": "5.3.1 A known purchase price, but liabilities that are still provisional",
   "level": 3,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "5.3.2 PFAS represent a market for Veolia and a potential liability for a treatment centre",
+  "text": "5.3.2 Authorised sites and financial guarantees to be monitored",
   "level": 3,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "5.3.3 Insurance does not cover everything",
-  "level": 3,
-  "annex": false,
-  "label": "",
-  "role": 0
- },
- {
-  "text": "5.4 Provisions remain excluded from Veolia’s leverage ratio, and Moody’s does not include them in any line item",
+  "text": "5.4 Peer companies provide an order of magnitude, not a precise measure of Clean Earth’s liabilities",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "5.5 What we could not establish",
+  "text": "5.4.1 Clean Harbors has liabilities comparable to those of Veolia",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.4.2 Enviri provides an upper limit, without discounting",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.5 Off-balance-sheet exposure relates to litigation, PFAS and insurance limits",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.5.1 Penalties at sites, a past that may resurface",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.5.2 PFAS represent a market for Veolia and a potential liability for a treatment centre",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.5.3 Insurance does not cover everything",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.6 The taxonomy classifies a portion of hazardous waste capex as ‘green’, without taking liabilities into account",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.7 Provisions remain excluded from Veolia’s leverage ratio, and Moody’s does not include them in any line item",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.8 What we could not establish",
   "level": 2,
   "annex": false,
   "label": "",
@@ -364,35 +483,70 @@
   "role": 0
  },
  {
-  "text": "6.5 Our assumptions give Chauny about €2m of EBITDA and a price of some twenty million",
+  "text": "6.5 The Authority reasons market by market and hazardous waste incineration is one",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "6.6 At the 2025 tuck-in multiple, Veolia’s criteria are met only with synergies",
+  "text": "6.6 The Suez precedent sets the rules and leaves an opening",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "6.7 Three objections weaken this thesis and we answer them",
+  "text": "6.7 Other buyers exist and Veolia loses by letting them act.",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "6.8 US platforms remain out of reach or unpriced",
+  "text": "6.8 Our assumptions give Chauny about €2m of EBITDA and a price of some twenty million",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "6.9 What we could not establish",
+  "text": "6.9 At the 2025 tuck-in multiple, Veolia’s criteria are met only with synergies",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.10 Veolia would bring the incinerator what it lacks to meet the criteria",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.11 Applied to Veolia’s recent acquisitions, the payback period shows that our cap is conservative",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.12 Two further objections: the priority given to the rest of the world and the site’s liabilities",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.13 US platforms remain out of reach or unpriced",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "6.14 What we could not establish",
   "level": 2,
   "annex": false,
   "label": "",
@@ -420,28 +574,35 @@
   "role": 0
  },
  {
-  "text": "7.3 Caution is paid for in EBITDA given up and the rating agencies carry the risk",
+  "text": "7.3 The Authority’s decision dictates three courses of action",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "7.4 Veolia has confirmed GreenUp, and our model projects 2027 EBITDA just below the target",
+  "text": "7.4 Caution is paid for in EBITDA given up and the rating agencies carry the risk",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "7.5 Four observable thresholds would cause us to change our view",
+  "text": "7.5 Veolia has confirmed GreenUp, and our model projects 2027 EBITDA just below the target",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "7.6 What we could not establish",
+  "text": "7.6 Four observable thresholds would cause us to change our view",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "7.7 What we could not establish",
   "level": 2,
   "annex": false,
   "label": "",
