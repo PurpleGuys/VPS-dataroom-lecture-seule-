@@ -1,7 +1,7 @@
 {
  "generated": "2026-11-17",
  "checks": "OK",
- "n_figures": 877,
+ "n_figures": 893,
  "title": "Dans quelle mesure l'engagement de levier de GreenUp borne-t-il la capacité d'acquisition de Veolia d'ici fin 2027 ?",
  "subtitle": "Capstone Innovations in Finance — sujet 2, périmètre « capacité financière »",
  "thread": "Fin 2027, notre marge de dette centrale atteint 159 M€ sous le plafond de 3x. Au multiple de Clean Earth, elle finance une acquisition supplémentaire de 229 M€. Dans le scénario défavorable, elle n'en finance aucune. Veolia peut donc encore acheter des tuck-ins d'ici fin 2027, pas une nouvelle plateforme.",
@@ -11740,6 +11740,150 @@
    "5 opérations",
    "S1 2025",
    "veolia_finance_deep_dive_waste_to_value_06-25-2025_en.pdf, p. 28, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/06/Veolia_Finance_Deep_dive_waste_to_value_06-25-2025_en.pdf (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F884",
+   "ARF Chauny : capacité maximale de l'enceinte de post-combustion (incinération de déchets liquides)",
+   "7 t/h",
+   "inspection du 29/07/2025",
+   "3kpze2d6rwdqzpytulalmbwllehzzgd7.pdf, p. 2, https://www.georisques.gouv.fr/webappReport/ws/installations/inspection/3kpzE2d6rWDQZPytulAlmbWlLEhzzGd7 (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F885",
+   "ARF Vendeuil : capacité annuelle de l'enceinte statique d'incinération",
+   "60 000 t/an",
+   "inspection du 25/03/2024",
+   "saa5ias7eeumrd2nxloai0toarpzn59t.pdf, p. 4, https://www.georisques.gouv.fr/webappReport/ws/installations/inspection/saa5iAS7eeuMRD2NxloaI0TOArPZn59t (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F886",
+   "ARF Vendeuil : capacité annuelle du four rotatif",
+   "150 000 t/an",
+   "inspection du 25/03/2024",
+   "saa5ias7eeumrd2nxloai0toarpzn59t.pdf, p. 4, https://www.georisques.gouv.fr/webappReport/ws/installations/inspection/saa5iAS7eeuMRD2NxloaI0TOArPZn59t (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F887",
+   "ARF Chauny : dioxines dans les sols à la station K1' (pg OMS2005-TEQ/g), pollution dite antérieure à ARF",
+   "940 pg TEQ/g",
+   "campagne de 09/2021",
+   "3kpze2d6rwdqzpytulalmbwllehzzgd7.pdf, p. 14, https://www.georisques.gouv.fr/webappReport/ws/installations/inspection/3kpzE2d6rWDQZPytulAlmbWlLEhzzGd7 (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F888",
+   "ARF Chauny : valeur cible des dioxines dans les sols (pg OMS2005-TEQ/g)",
+   "5 pg TEQ/g",
+   "campagne de 09/2021",
+   "3kpze2d6rwdqzpytulalmbwllehzzgd7.pdf, p. 14, https://www.georisques.gouv.fr/webappReport/ws/installations/inspection/3kpzE2d6rWDQZPytulAlmbWlLEhzzGd7 (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F889",
+   "Critère d'investissement de Veolia (croissance organique et tuck-ins) : délai de retour maximal (pay-back)",
+   "7 ans",
+   "plan GreenUp, 27/03/2024",
+   "en_master_greenup_strategy-day_v270324.pdf, p. 64, https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/03/EN_Master_GreenUp_Strategy%20day_V270324.pdf (consulté le 2026-09-22)",
+   "6",
+   ""
+  ],
+  [
+   "F890",
+   "Comité d'investissement du groupe : seuil de valeur d'entreprise au-delà duquel il approuve un projet",
+   "10 M€",
+   "plan GreenUp, 27/03/2024",
+   "en_master_greenup_strategy-day_v270324.pdf, p. 64, https://www.veolia.com/sites/g/files/dvc4206/files/document/2024/03/EN_Master_GreenUp_Strategy%20day_V270324.pdf (consulté le 2026-09-22)",
+   "6",
+   ""
+  ],
+  [
+   "F891",
+   "Coût moyen pondéré du capital (WACC) de l'unité France et déchets dangereux Europe, tests de dépréciation",
+   "5,7 %",
+   "FY2025",
+   "finance_veolia_consolidated_financial_statements_31-12-25.pdf, p. 44, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/02/Finance_Veolia_Consolidated_financial_statements_31-12-25.pdf (consulté le 2026-09-22)",
+   "6",
+   ""
+  ],
+  [
+   "F892",
+   "ARF Vendeuil : capacité horaire de l'enceinte statique d'incinération",
+   "8 t/h",
+   "inspection du 25/03/2024",
+   "saa5ias7eeumrd2nxloai0toarpzn59t.pdf, p. 4, https://www.georisques.gouv.fr/webappReport/ws/installations/inspection/saa5iAS7eeuMRD2NxloaI0TOArPZn59t (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F893",
+   "ARF Vendeuil : capacité horaire du four rotatif",
+   "30 t/h",
+   "inspection du 25/03/2024",
+   "saa5ias7eeumrd2nxloai0toarpzn59t.pdf, p. 4, https://www.georisques.gouv.fr/webappReport/ws/installations/inspection/saa5iAS7eeuMRD2NxloaI0TOArPZn59t (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F894",
+   "Déchets dangereux (Veolia, monde) : ROCE après impôts",
+   "6 %",
+   "FY2024",
+   "veolia_finance_deep_dive_waste_to_value_06-25-2025_en.pdf, p. 26, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/06/Veolia_Finance_Deep_dive_waste_to_value_06-25-2025_en.pdf (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F895",
+   "Déchets dangereux en Europe (Veolia) : marge d'EBITDA, environ",
+   "16 %",
+   "FY2024",
+   "veolia_finance_deep_dive_waste_to_value_06-25-2025_en.pdf, p. 27, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/06/Veolia_Finance_Deep_dive_waste_to_value_06-25-2025_en.pdf (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F896",
+   "Acquisitions de Veolia : part réalisée hors d'Europe, environ",
+   "80 %",
+   "présentation des neuf mois 2026",
+   "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 14, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/11/Finance_Veolia_9M_2026_key_figures_presentation.pdf (consulté le 2026-11-06)",
+   "6",
+   ""
+  ],
+  [
+   "F897",
+   "Enviropacific Services : multiple VE / EBITDA ajusté de l'exercice 2025",
+   "5,8x",
+   "exercice 2025",
+   "finance_veolia_q1_2026_results_presentation.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Finance_Veolia_Q1_2026_results_presentation.pdf (consulté le 2026-09-22)",
+   "6",
+   ""
+  ],
+  [
+   "F898",
+   "Séché Environnement : levier financier IFRS",
+   "2,9x",
+   "au 30/06/2026",
+   "26-06_cp-bn-s1-26.pdf, p. 1, https://www.groupe-seche.com/uploads/2026/09/26-06_cp-bn-s1-26.pdf (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F899",
+   "ARF Chauny : distance des premières habitations",
+   "220 m",
+   "inspection du 29/07/2025",
+   "3kpze2d6rwdqzpytulalmbwllehzzgd7.pdf, p. 10, https://www.georisques.gouv.fr/webappReport/ws/installations/inspection/3kpzE2d6rWDQZPytulAlmbWlLEhzzGd7 (consulté le 2026-10-10)",
    "6",
    ""
   ]
