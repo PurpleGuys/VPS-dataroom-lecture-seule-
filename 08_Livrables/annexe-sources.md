@@ -1,6 +1,6 @@
 # Annexe — sources et chiffres cités
 
-Généré le 2026-11-17 depuis la dataroom : 893 chiffres, 61 opérations, 368 documents citables.
+Généré le 2026-11-17 depuis la dataroom : 902 chiffres, 61 opérations, 368 documents citables.
 Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date de consultation.
 
 ## 1. Chiffres, par rôle
@@ -771,7 +771,7 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F821 | Goodwill (groupe) : part du dollar américain dans l'effet de change | 171 M€ | S1 2026 | veolia_finance_amendment_urd_2025.pdf, p. 53, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_Amendment_URD_2025.pdf (consulté le 2026-09-22) |
 | F823 | Goodwill (groupe) : effet de change total sur le semestre | 256 M€ | S1 2026 | veolia_finance_amendment_urd_2025.pdf, p. 53, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_Amendment_URD_2025.pdf (consulté le 2026-09-22) |
 
-### Rôle 6 — Cibles, puis synthèse (152 chiffres)
+### Rôle 6 — Cibles, puis synthèse (161 chiffres)
 
 | ID | Chiffre | Valeur | Période | Citation |
 |---|---|---|---|---|
@@ -927,6 +927,15 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F897 | Enviropacific Services : multiple VE / EBITDA ajusté de l'exercice 2025 | 5,8x | exercice 2025 | finance_veolia_q1_2026_results_presentation.pdf, p. 11, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/05/Finance_Veolia_Q1_2026_results_presentation.pdf (consulté le 2026-09-22) |
 | F898 | Séché Environnement : levier financier IFRS | 2,9x | au 30/06/2026 | 26-06_cp-bn-s1-26.pdf, p. 1, https://www.groupe-seche.com/uploads/2026/09/26-06_cp-bn-s1-26.pdf (consulté le 2026-10-10) |
 | F899 | ARF Chauny : distance des premières habitations | 220 m | inspection du 29/07/2025 | 3kpze2d6rwdqzpytulalmbwllehzzgd7.pdf, p. 10, https://www.georisques.gouv.fr/webappReport/ws/installations/inspection/3kpzE2d6rWDQZPytulAlmbWlLEhzzGd7 (consulté le 2026-10-10) |
+| F900 | Déchets dangereux : part minimale du transport dans le coût total du traitement (décision de la Commission) | 10 % | décision M.10759 | pdf.pdf, p. 12, https://eur-lex.europa.eu/legal-content/FR/TXT/PDF/?uri=CELEX:32022M10759 (consulté le 2026-10-10) |
+| F901 | Déchets dangereux : rayon des zones de chalandise retenues par la Commission autour des installations de stockage | 300 km | décision M.10759 | pdf.pdf, p. 13, https://eur-lex.europa.eu/legal-content/FR/TXT/PDF/?uri=CELEX:32022M10759 (consulté le 2026-10-10) |
+| F902 | ARF Vendeuil : part des déchets reçus venant des Hauts-de-France | 57 % | 2023 | arf-vendeuil-rapport-activite-2023.pdf, p. 9, https://www.arf.fr/wp-content/uploads/2024/06/ARF-VENDEUIL-Rapport-dactivit%C3%A9-2023.pdf (consulté le 2026-10-11) |
+| F903 | ARF Vendeuil : part des déchets reçus venant d'autres régions françaises | 29 % | 2023 | arf-vendeuil-rapport-activite-2023.pdf, p. 9, https://www.arf.fr/wp-content/uploads/2024/06/ARF-VENDEUIL-Rapport-dactivit%C3%A9-2023.pdf (consulté le 2026-10-11) |
+| F904 | ARF Vendeuil : part des déchets reçus venant d'autres pays d'Europe | 14 % | 2023 | arf-vendeuil-rapport-activite-2023.pdf, p. 9, https://www.arf.fr/wp-content/uploads/2024/06/ARF-VENDEUIL-Rapport-dactivit%C3%A9-2023.pdf (consulté le 2026-10-11) |
+| F905 | Cession par Veolia à Suez d'une partie de ses actifs de déchets dangereux en France (remède Veolia-Suez) : prix | 439 M€ | 2022 | ve_urd_2022_en.pdf, p. 326, https://www.veolia.com/sites/g/files/dvc4206/files/document/2023/04/VE_URD_2022_EN.pdf (consulté le 2026-09-22) |
+| F906 | Déchets dangereux en Europe (Veolia) : nombre de sites d'incinération à haute température | 20 sites | présentation du 25/06/2025 | veolia_finance_deep_dive_waste_to_value_06-25-2025_en.pdf, p. 36, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/06/Veolia_Finance_Deep_dive_waste_to_value_06-25-2025_en.pdf (consulté le 2026-10-10) |
+| F907 | Déchets dangereux (Veolia) : taux d'utilisation visé des actifs, supérieur à | 80 % | présentation du 25/06/2025 | veolia_finance_deep_dive_waste_to_value_06-25-2025_en.pdf, p. 28, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/06/Veolia_Finance_Deep_dive_waste_to_value_06-25-2025_en.pdf (consulté le 2026-10-10) |
+| F908 | Déchets dangereux (Veolia) : hausse visée du ROCE en 2027, environ | 50 % | présentation du 25/06/2025 | veolia_finance_deep_dive_waste_to_value_06-25-2025_en.pdf, p. 28, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/06/Veolia_Finance_Deep_dive_waste_to_value_06-25-2025_en.pdf (consulté le 2026-10-10) |
 
 ## 2. Opérations (registre des deals)
 
@@ -1370,7 +1379,7 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 ## 4. Outils d'intelligence artificielle utilisés
 
 - Dataroom : un serveur MCP (Model Context Protocol) construit par le groupe pour le sujet, qui indexe les documents publics versés dans le vault et ne sait que chercher, lire une page et citer (fichier, page, URL, date de consultation). Il ne calcule rien ; il garde pour chaque ligne du registre qui l'a saisie. Les résumés de pages que l'API Claude a écrits pour la recherche sont signalés comme tels dans chaque résultat et ne sont jamais cités.
-- Le registre compte 893 chiffres et 61 opérations. 854 lignes y ont été saisies par Claude (Anthropic) à travers le compte partagé du serveur, en recopiant le nombre imprimé sur une page indexée dont le fichier et le numéro sont cités ; 100 lignes par l'API Claude (lecture de chaque page du vault, sous l'identité claude-api, avec un contrôle automatique que le nombre et sa citation sont sur la page) ; 0 ligne par les membres du groupe avec leur compte personnel.
+- Le registre compte 902 chiffres et 61 opérations. 863 lignes y ont été saisies par Claude (Anthropic) à travers le compte partagé du serveur, en recopiant le nombre imprimé sur une page indexée dont le fichier et le numéro sont cités ; 100 lignes par l'API Claude (lecture de chaque page du vault, sous l'identité claude-api, avec un contrôle automatique que le nombre et sa citation sont sur la page) ; 0 ligne par les membres du groupe avec leur compte personnel.
 - Claude, via Claude Code, a aussi construit le serveur, les contrôles automatiques (`audit_dataroom`), le générateur du classeur Excel (`build_model.py`), celui des dossiers et celui de ce rapport. Le classeur ne contient que des formules ; ses entrées sont les lignes du registre.
 - LibreOffice (recalcul sans interface) : recalcule le classeur après chaque génération et signale toute erreur de formule ; aucune valeur calculée n'est saisie à la main.
 - Règle tenue : aucun nombre n'a été inventé. Chaque nombre du registre est recopié d'une page publique citée ; chaque nombre du classeur est une formule sur ces lignes, et le texte du rapport les cite par renvoi, avec leur source en note. Les quelques calculs écrits dans le texte, une différence ou un ratio, citent chacun leurs termes dans la même phrase ; Claude les a écrits en rédigeant la première version, et un second passage de Claude, chargé de contredire, les a tous refaits.

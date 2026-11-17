@@ -1,7 +1,7 @@
 {
  "generated": "2026-11-17",
  "checks": "OK",
- "n_figures": 893,
+ "n_figures": 902,
  "title": "Dans quelle mesure l'engagement de levier de GreenUp borne-t-il la capacité d'acquisition de Veolia d'ici fin 2027 ?",
  "subtitle": "Capstone Innovations in Finance — sujet 2, périmètre « capacité financière »",
  "thread": "Fin 2027, notre marge de dette centrale atteint 159 M€ sous le plafond de 3x. Au multiple de Clean Earth, elle finance une acquisition supplémentaire de 229 M€. Dans le scénario défavorable, elle n'en finance aucune. Veolia peut donc encore acheter des tuck-ins d'ici fin 2027, pas une nouvelle plateforme. Nous en désignons un : l'incinérateur de déchets dangereux de Chauny, si Séché doit le céder pour racheter Flamme.",
@@ -10619,6 +10619,87 @@
    "220 m",
    "inspection du 29/07/2025",
    "3kpze2d6rwdqzpytulalmbwllehzzgd7.pdf, p. 10, https://www.georisques.gouv.fr/webappReport/ws/installations/inspection/3kpzE2d6rWDQZPytulAlmbWlLEhzzGd7 (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F900",
+   "Déchets dangereux : part minimale du transport dans le coût total du traitement (décision de la Commission)",
+   "10 %",
+   "décision M.10759",
+   "pdf.pdf, p. 12, https://eur-lex.europa.eu/legal-content/FR/TXT/PDF/?uri=CELEX:32022M10759 (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F901",
+   "Déchets dangereux : rayon des zones de chalandise retenues par la Commission autour des installations de stockage",
+   "300 km",
+   "décision M.10759",
+   "pdf.pdf, p. 13, https://eur-lex.europa.eu/legal-content/FR/TXT/PDF/?uri=CELEX:32022M10759 (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F902",
+   "ARF Vendeuil : part des déchets reçus venant des Hauts-de-France",
+   "57 %",
+   "2023",
+   "arf-vendeuil-rapport-activite-2023.pdf, p. 9, https://www.arf.fr/wp-content/uploads/2024/06/ARF-VENDEUIL-Rapport-dactivit%C3%A9-2023.pdf (consulté le 2026-10-11)",
+   "6",
+   ""
+  ],
+  [
+   "F903",
+   "ARF Vendeuil : part des déchets reçus venant d'autres régions françaises",
+   "29 %",
+   "2023",
+   "arf-vendeuil-rapport-activite-2023.pdf, p. 9, https://www.arf.fr/wp-content/uploads/2024/06/ARF-VENDEUIL-Rapport-dactivit%C3%A9-2023.pdf (consulté le 2026-10-11)",
+   "6",
+   ""
+  ],
+  [
+   "F904",
+   "ARF Vendeuil : part des déchets reçus venant d'autres pays d'Europe",
+   "14 %",
+   "2023",
+   "arf-vendeuil-rapport-activite-2023.pdf, p. 9, https://www.arf.fr/wp-content/uploads/2024/06/ARF-VENDEUIL-Rapport-dactivit%C3%A9-2023.pdf (consulté le 2026-10-11)",
+   "6",
+   ""
+  ],
+  [
+   "F905",
+   "Cession par Veolia à Suez d'une partie de ses actifs de déchets dangereux en France (remède Veolia-Suez) : prix",
+   "439 M€",
+   "2022",
+   "ve_urd_2022_en.pdf, p. 326, https://www.veolia.com/sites/g/files/dvc4206/files/document/2023/04/VE_URD_2022_EN.pdf (consulté le 2026-09-22)",
+   "6",
+   ""
+  ],
+  [
+   "F906",
+   "Déchets dangereux en Europe (Veolia) : nombre de sites d'incinération à haute température",
+   "20 sites",
+   "présentation du 25/06/2025",
+   "veolia_finance_deep_dive_waste_to_value_06-25-2025_en.pdf, p. 36, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/06/Veolia_Finance_Deep_dive_waste_to_value_06-25-2025_en.pdf (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F907",
+   "Déchets dangereux (Veolia) : taux d'utilisation visé des actifs, supérieur à",
+   "80 %",
+   "présentation du 25/06/2025",
+   "veolia_finance_deep_dive_waste_to_value_06-25-2025_en.pdf, p. 28, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/06/Veolia_Finance_Deep_dive_waste_to_value_06-25-2025_en.pdf (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F908",
+   "Déchets dangereux (Veolia) : hausse visée du ROCE en 2027, environ",
+   "50 %",
+   "présentation du 25/06/2025",
+   "veolia_finance_deep_dive_waste_to_value_06-25-2025_en.pdf, p. 28, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/06/Veolia_Finance_Deep_dive_waste_to_value_06-25-2025_en.pdf (consulté le 2026-10-10)",
    "6",
    ""
   ]
