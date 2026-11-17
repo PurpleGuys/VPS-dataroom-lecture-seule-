@@ -618,6 +618,11 @@ function plain(inlines) {
 }
 // Les blocs d'un fichier texte. `part` numérote les sous-parties (1.1, 1.1.1) ; sans lui (introduction,
 // conclusion, remerciements) les sous-titres restent sans numéro, comme la méthode le permet.
+// Les tableaux du texte partent en annexe : le texte gagne leur place et garde un renvoi. L'annexe qui les reçoit
+// vient après le registre, les opérations, les cibles et la fourchette : son numéro se connaît d'avance.
+const ANNEX_TABLES = [];
+const TABLES_ANNEX = ["I", "II", "III", "IV", "V", "VI"][2 + ((DATA.cited_deals || []).length ? 1 : 0) + ((DATA.cited_targets || []).length ? 1 : 0)];
+const isSourceLine = (x) => !!x && x.kind === "paragraph" && /^Sources?\s?:/.test(plain(x.inlines).trim());
 function renderBlocks(blocks, opts = {}) {
   const AFTER = opts.tight === 2 ? 20 : opts.tight ? 50 : PARA_AFTER, LN = opts.tight === 2 ? LINE - 18 : opts.tight ? LINE - 10 : LINE;   // une partie resserrée, d'un cran ou de deux
   const part = opts.part || 0;
@@ -636,10 +641,13 @@ function renderBlocks(blocks, opts = {}) {
     layouts.set(b, { rows, widths, small: isSmallTable(rows, widths) });
   }
   let boxed = false;   // édition mise en forme : la liste de ce qui n'a pas pu être établi est encadrée
+  let lastHeading = "";   // la sous-partie en cours : elle titre le tableau renvoyé en annexe
+  const moved = new Set();   // la ligne de source d'un tableau le suit en annexe
   (blocks || []).forEach((b, k) => {
     const next = (blocks || [])[k + 1];
+    if (moved.has(b)) return;
     if (b.kind === "heading") boxed = VEOLIA && (b.box === true || /^Ce que nous n.avons pas pu établir/.test(plain(b.inlines)));
-    const announces = !!next && layouts.has(next) && layouts.get(next).small;
+    const announces = !!opts.inAnnex && !!next && layouts.has(next) && layouts.get(next).small;
     if (b.kind === "heading") {
       const level = Math.min(3, Math.max(2, b.level));
       let number = "";
@@ -648,6 +656,7 @@ function renderBlocks(blocks, opts = {}) {
         else { counters[1] += 1; number = `${part}.${counters[0] || 1}.${counters[1]} `; }
       }
       // dans une annexe, les sous-titres restent hors du sommaire : il ne liste que le corps (§ 5.4)
+      lastHeading = number + plain(b.inlines);
       out.push({ ...heading(number + plain(b.inlines), level, opts.inAnnex ? { toc: false } : {}), tight: opts.tight || 0 });
     } else if (b.kind === "paragraph") {
       // un paragraphe tout en gras est un intertitre ; la phrase qui annonce un petit tableau reste avec lui
@@ -673,6 +682,17 @@ function renderBlocks(blocks, opts = {}) {
       if (!FINAL) out.push(placeholder(b.text));
     } else if (b.kind === "table" && b.rows.length) {
       const { rows, widths } = layouts.get(b);
+      if (!opts.inAnnex) {
+        const source = isSourceLine(next) ? next : null;
+        if (source) moved.add(source);
+        const n = ANNEX_TABLES.push({ rows, widths, title: lastHeading, source });
+        // le texte nomme souvent lui-même le tableau et son annexe ; sinon une ligne le fait
+        const prev = (blocks || [])[k - 1];
+        const named = !!prev && prev.kind === "paragraph" && new RegExp(`(annexe|appendix)[\\s\\u00a0]+${TABLES_ANNEX}\\b`, "i").test(plain(prev.inlines));
+        if (!named) out.push(new Paragraph({ spacing: { after: AFTER, line: LN }, alignment: ALIGN,
+          children: [new TextRun({ text: typo(T(`Voir le tableau ${n} de l'annexe ${TABLES_ANNEX}.`)), ...bodyFont, italics: true })] }));
+        return;
+      }
       out.push(new Table({ width: { size: TEXT_WIDTH, type: WidthType.DXA }, columnWidths: widths, ...VEOLIA_BORDERS, rows: tableRows(rows, widths) }));
       out.push(new Paragraph({ spacing: { after: AFTER, line: 240 }, children: [] }));
     }
@@ -1005,6 +1025,18 @@ annex("La fourchette de capacité pour les autres périmètres", [
   table(["Fin 2027", "Défavorable", "Central", "Favorable"].map(T), DATA.range_rows, [4272, 1600, 1600, 1600], [1, 2, 3]),
 ], EN ? `Source: group workbook, modele-greenup-2027.xlsx${DATA.model_version ? ", " + DATA.model_version : ""}, calculated from the figures of the register.`
   : `Source : classeur du groupe, modele-greenup-2027.xlsx${DATA.model_version ? ", " + DATA.model_version : ""}, calculé à partir des chiffres du registre.`);
+if (ANNEX_TABLES.length) {
+  const kids = [];
+  ANNEX_TABLES.forEach((t, i) => {
+    kids.push(new Paragraph({ spacing: { after: 80, line: LINE }, keepNext: true, keepLines: true,
+      children: [new TextRun({ text: typo(`${T("Tableau")} ${i + 1}${SEP}${t.title}`), ...bodyFont, bold: true })] }));
+    kids.push(new Table({ width: { size: TEXT_WIDTH, type: WidthType.DXA }, columnWidths: t.widths, ...VEOLIA_BORDERS, rows: tableRows(t.rows, t.widths) }));
+    if (t.source) kids.push(new Paragraph({ spacing: { before: 60, after: 0, line: 240 }, children: inlineRuns(t.source.inlines, smallFont) }));
+    kids.push(new Paragraph({ spacing: { after: PARA_AFTER, line: 240 }, children: [] }));
+  });
+  if (ROMAN[annexNo] !== TABLES_ANNEX) throw new Error(`annexe des tableaux : ${ROMAN[annexNo]} au lieu de ${TABLES_ANNEX}`);
+  annex("Tableaux du rapport", kids, "Les tableaux que le texte appelle, dans l'ordre de leur renvoi. Chacun porte le titre de la sous-partie qui le commente.");
+}
 // ---- la table des annexes (§ 5.8), dernière page numérotée du corps
 body.push(heading(T("Table des annexes"), 1, { newPage: true }));
 for (const h of HEADINGS.filter((x) => x.annex)) body.push(tocLine(h.text, ANNEX_PAGES.get(h.text) || "", 1));

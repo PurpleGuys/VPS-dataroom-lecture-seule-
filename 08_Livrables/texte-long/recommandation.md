@@ -2,60 +2,53 @@
 signe_par:
 relu_par:
 ---
-# Des tuck-ins jusqu'à fin 2027, une plateforme américaine seulement après de nouvelles cessions signées
+# Viser le four de Chauny sous un prix plafond, poursuivre les tuck-ins et attendre les cessions pour une plateforme
 
-## Nous recommandons des tuck-ins, une plateforme sous conditions et aucune opération de la taille de Clean Earth
+## Nous recommandons une offre plafonnée sur Chauny, des tuck-ins nommés et aucune plateforme avant de nouvelles cessions
 
-Nous recommandons des tuck-ins jusqu'à fin 2027, au bas de la fourchette de GreenUp. Une plateforme américaine attendrait de nouvelles cessions signées et des comptes 2026 conformes à la trajectoire. Nous écartons d'ici fin 2027 toute opération de la taille de Clean Earth.
+Notre recommandation tient en trois décisions.
 
-Ces trois choix prolongent la synthèse de la partie 6. Ils reposent sur la fourchette du modèle du groupe, présentée à l'annexe IV.
+D'abord, préparer une offre sur le four de Chauny. Si l'Autorité de la concurrence conditionne le rachat de Flamme par Séché à une cession, Veolia se porte candidate à l'activité d'incinération de Chauny. Le prix plafond est de sept fois l'excédent brut constaté en diligence, soit 14 M€ sur notre hypothèse de 2 M€ (7 × 2). C'est la limite que fixe le payback publié par Veolia, [F889]. Au-delà, chaque million en plus doit être couvert par une synergie chiffrée. L'offre reste soumise à un audit des sols et à une garantie du vendeur sur la pollution historique.
 
-## La marge de 2027 se partage entre tuck-ins et plateforme
+Ensuite, poursuivre les tuck-ins du type de ceux de 2025, au bas de la fourchette de GreenUp. Cette fourchette va de [F5] à [F21].
 
-Fin 2027, notre marge de dette centrale atteint [M:HEAD27] sous le plafond de [F726]. Cette marge s'entend après [M:H.tuck] de tuck-ins déjà comptés en 2027. Au multiple de Clean Earth, [F48], elle porte une acquisition supplémentaire de [M:MAXACQB]. Sur mille futurs simulés, l'acquisition maximale médiane atteint [M:MAXACQB@p50]. Une acquisition de 1 Md€ ne passe que dans [M:P.acq1] des futurs. Hors GFL Environmental Services, trop grande, deux plateformes américaines ont une valeur publiée. Elles sont valorisées [T4] et environ [T2]. Elles dépassent la marge dans la plupart des futurs.
+Enfin, n'envisager une plateforme américaine qu'après de nouvelles cessions signées et des comptes 2026 conformes à la trajectoire. Nous écartons d'ici fin 2027 toute opération de la taille de Clean Earth.
 
-Les tuck-ins américains et asiatiques restent à portée. Ils suivent les critères publiés par Veolia, qui placent l'Europe hors des priorités. La fourchette de GreenUp va de [F5] à [F21]. En 2025, Veolia en a acheté pour environ [F471], à environ [F472] l'EBITDA. Mais tuck-ins et plateforme puisent dans la même marge. Au haut de la fourchette, [M:H.tuck@haut] de tuck-ins effaceraient la marge centrale. Elle tomberait à [M:HEAD27@tuck-haut].
+Ces choix reposent sur la fourchette du modèle du groupe, présentée à l'annexe IV. Fin 2027, notre marge de dette centrale atteint [M:HEAD27] sous le plafond de [F726]. Elle s'entend après [M:H.tuck] de tuck-ins déjà comptés en 2027. Chauny entre dans cette enveloppe et ne consomme donc aucune marge de plus. Au multiple de Clean Earth, [F48], la marge porte une acquisition supplémentaire de [M:MAXACQB]. Une acquisition de 1 Md€ ne passe que dans [M:P.acq1] des futurs.
 
-Deux leviers élargissent la marge. Sans tuck-in en 2027, l'acquisition maximale atteindrait [M:MAXACQB@tuck-bas]. Avec tout le reste du programme de cessions encaissé en 2027, elle atteindrait [M:MAXACQB@s27-haut]. Au centre, aucun des deux ne suffit seul à financer 1 Md€. Une plateforme demande donc de nouvelles signatures. Même alors, elle remplacerait souvent les tuck-ins de 2027.
+Tuck-ins et plateforme puisent dans la même marge. Au haut de la fourchette, [M:H.tuck@haut] de tuck-ins effaceraient la marge centrale, qui tomberait à [M:HEAD27@tuck-haut]. Sans tuck-in en 2027, l'acquisition maximale atteindrait [M:MAXACQB@tuck-bas]. Avec tout le reste du programme de cessions encaissé en 2027, elle atteindrait [M:MAXACQB@s27-haut]. Au centre, aucun de ces deux leviers ne suffit seul à financer 1 Md€.
 
-Au-delà de 2027, Veolia n'a publié ni objectif d'EBITDA ni engagement de levier. Nous avons donc prolongé notre modèle à titre exploratoire, sans le mêler à la fourchette. La croissance organique de 2027 y est reconduite chaque année. Le reste du programme de cessions y est encaissé en 2028. Dans ce cadre, l'acquisition maximale atteindrait [M:HZ.2028.MAXACQ] fin 2028 au centre, contre [M:MAXACQB] fin 2027. Dans le scénario défavorable, la marge reste négative, à [M:HZ.2030.BIND@def] fin 2030. Cette prolongation appuie l'ordre que nous recommandons : des tuck-ins d'abord, une plateforme après les cessions.
+## Chauny vaut par son rendement, pas par sa taille
 
-## La prudence se paie en EBITDA cédé et actionnaires comme agences en portent l'effet
+Chauny ne change pas l'EBITDA de Veolia. À 2 M€ d'excédent brut, le site n'apporte presque rien à un objectif de [F12]. Son intérêt est ailleurs. Le ROCE des déchets dangereux, [F894] en 2024, reste proche du coût du capital, [F891]. Un four acheté sept fois son excédent brut, puis mieux rempli, relève ce rendement. Une plateforme payée au prix du secteur, avant synergies, le dilue.
 
-Les cessions sont la voie de financement choisie par Veolia. Leur coût est l'EBITDA cédé. Veolia a signé [F736] de cessions, à [F737] l'EBITDA en moyenne. Au multiple central de [M:H.mDisp], le programme retire [M:C.progEb] d'EBITDA. En 2027, l'EBITDA cédé s'inscrit à [M:DE27] dans le modèle. Avant synergies, Clean Earth a coûté environ 14,9x, soit [F40] pour [F51]. À ce prix, un euro investi rapporte moins d'EBITDA qu'un euro cédé à [F737] n'en retire.
+L'offre a aussi une valeur défensive. Séché et Flamme réunis pèseraient davantage dans l'incinération de déchets dangereux du nord de la France. Un four repris par Veolia garde dans la région une capacité que Séché ne contrôle pas.
 
-Les actionnaires supportent l'effet de cet échange, par le bénéfice par action et le dividende. Le dividende de Veolia suit en effet la croissance du bénéfice net courant par action. Veolia a confirmé cette politique avec ses résultats des neuf mois.
+Trois faits nous feraient renoncer : un refus d'agrément par l'Autorité, un excédent brut constaté trop faible pour tenir le payback au prix demandé, un passif de sols laissé à l'acheteur sans garantie.
 
-Les agences en portent le risque, à travers le ratio FFO sur dette. S&P pourrait abaisser la note si ce ratio passait durablement sous [F163]. Notre modèle place ce ratio à [M:RATIO26] fin 2026, avec les ajustements de dette de Moody's. Il passe sous ce seuil dans [M:P.sp26] des futurs. Fin 2027, il remonte à [M:RATIO27] et le plafond de Veolia mord en premier. Sur la propre base de S&P, il vaut [M:RATIOS26]. Des deux agences, Moody's laisse le moins de marge : elle note Veolia un cran plus haut que S&P et attend [F244] en 2026. Toutes deux adossent leur note à la discipline de Veolia. S&P jugeait sa politique financière compatible avec la note jusqu'à un levier publié de [F871]. Sa prévision intègre Clean Earth et d'éventuels petits tuck-ins. Une plateforme payée par dette sortirait donc, selon nous, du scénario noté. C'est pourquoi nous la conditionnons à de nouvelles cessions.
+## La prudence se paie en EBITDA cédé et les agences en portent le risque
 
-Une opération de la taille de Clean Earth coûterait bien davantage. Pour une cible de [M:F.size] payée [M:F.mult] l'EBITDA, il manquerait [M:F.gap3] de marge fin 2027. Des hybrides du même montant, [M:F.hyb], coûteraient [M:F.hybCost] de coupon par an. Moody's compte d'ailleurs la moitié des hybrides en dette : [F251] pour 2025. Des cessions accélérées devraient atteindre [M:F.disp]. Elles retireraient [M:F.dispCost] d'EBITDA par an. Une augmentation de capital du montant manquant accroîtrait le nombre d'actions de [M:F.eqDil]. Le calcul retient le cours du 31 décembre 2025. Or la guidance de bénéfice par action de Veolia repose sur son rachat d'actions. Nous excluons donc cette voie.
+Les cessions sont la voie de financement choisie par Veolia. Leur coût est l'EBITDA cédé. Au multiple central de [M:H.mDisp], le programme retire [M:C.progEb] d'EBITDA.
 
-## Veolia confirme GreenUp ; notre modèle place l'EBITDA 2027 juste sous l'objectif
+Les agences en portent le risque, à travers le ratio FFO sur dette. S&P pourrait abaisser la note si ce ratio passait durablement sous [F163]. Notre modèle le place à [M:RATIO26] fin 2026, avec les ajustements de dette de Moody's. Il passe sous ce seuil dans [M:P.sp26] des futurs. Les deux agences adossent leur note à la discipline de Veolia. Une plateforme payée par dette sortirait, selon nous, du scénario noté. Un tuck-in de la taille de Chauny n'en sort pas.
 
-Le 5 novembre 2026, Veolia a confirmé ses objectifs de l'année. Son rapport du troisième trimestre écrit, en page 21 : « GreenUp trajectory is fully confirmed ». Le plan vise un EBITDA 2027 d'au moins [F12]. Notre scénario central le place à [M:EB27], soit un écart de [M:GAP8] à l'objectif. Seuls [M:P.obj8] des futurs simulés atteignent cet objectif.
+## Veolia confirme GreenUp et notre modèle place l'EBITDA 2027 juste sous l'objectif
 
-L'EBITDA cédé en 2027, [M:DE27], pèse plus que cet écart de [M:GAP8]. Le modèle le retire en année pleine dès l'encaissement, par prudence. Nous en concluons que les cessions adossées à Clean Earth éloignent l'objectif de 2027. Elles ne le mettent pas hors de portée.
+Le 5 novembre 2026, Veolia a confirmé ses objectifs de l'année. Le plan vise un EBITDA 2027 d'au moins [F12]. Notre scénario central le place à [M:EB27], soit un écart de [M:GAP8] à l'objectif. Seuls [M:P.obj8] des futurs simulés l'atteignent.
 
-Veolia annonce un levier égal ou légèrement supérieur à [F725] fin 2026, puis au plus [F726] en 2027. Notre scénario central donne [M:LEV26], puis [M:LEV27]. Notre propre levier de fin 2026 est, pour nous, une cible, pas un calibrage. Il suppose un quatrième trimestre aussi généreux qu'en 2025, sans ses autres sorties de trésorerie. Le retour sous le plafond fin 2027 ne tient que dans [M:P.tenir3x] des futurs. Cadrage et lecture se séparent donc sur une marge mince, [M:HEAD27]. Les comptes de l'exercice 2026 trancheront, après la remise de ce rapport.
+## Quatre seuils observables nous feraient changer d'avis
 
-## Des seuils observables nous feraient changer d'avis
-
-Chaque seuil se lira dans une publication de Veolia.
+Un tableau en annexe réunit ces seuils, tous lisibles dans une publication.
 
 | Seuil observable | Publication | Ce qu'il changerait |
 |---|---|---|
+| Décision de l'Autorité de la concurrence sur Séché et le Groupe Flamme | Site de l'Autorité | Une cession exigée ouvre l'offre sur Chauny ; un accord sans condition la referme |
 | Dette financière nette au 31 décembre 2026 au-delà de [M:NFD26] | Résultats annuels 2026 | Chaque euro en plus retire un euro à la marge de [M:HEAD27] ; nous réduirions les tuck-ins de 2027 |
-| Encaissement avant le 31 décembre 2026 de moins de [M:D26], soit [M:H.s26] des cessions signées et non encaissées | Résultats annuels 2026 | Sans encaissement, levier fin 2026 de [M:LEV26@s26-bas] ; la marge de 2027 bouge à peine ; selon notre lecture, le calendrier de 2027 deviendrait douteux |
-| Croissance organique de l'EBITDA 2026 hors de la guidance de [F87] à [F88] | Résultats annuels 2026 | Selon notre lecture, sous [F87], notre hypothèse de [M:H.g27] pour 2027 deviendrait optimiste ; à [M:H.g27@bas], la marge tombe à [M:HEAD27@g27-bas] |
+| Croissance organique de l'EBITDA 2026 hors de la guidance de [F87] à [F88] | Résultats annuels 2026 | Sous [F87], notre hypothèse de [M:H.g27] pour 2027 deviendrait optimiste ; à [M:H.g27@bas], la marge tombe à [M:HEAD27@g27-bas] |
 | Cessions signées nettement au-delà de [F736], vers plus de [F25] | Chaque publication de résultats | Première condition d'une plateforme ; tout le reste du programme encaissé en 2027 porte la marge à [M:HEAD27@s27-haut] |
-| Gains d'efficacité annuels sous [F420] | Résultats annuels 2026 | Selon notre lecture, l'EBITDA 2027 du modèle deviendrait optimiste ; Veolia déclare [F759] de gains bruts sur neuf mois |
-
-Deux signaux plus lointains compteraient aussi. Sous [F726], un euro d'EBITDA 2027 au-delà de notre scénario libère trois euros de dette. Une plateforme vendue sous [F737], le multiple des cessions de Veolia, changerait le calcul.
 
 ## Ce que nous n'avons pas pu établir
 
-- La date de publication des comptes de l'exercice 2026. Nos sources ne contiennent pas le calendrier financier de Veolia.
-- Le calendrier d'encaissement des cessions signées et du reste du programme. Veolia ne le publie pas.
-- Le prix actuel d'une plateforme américaine. Nos sources ne donnent que des prix d'entrée de fonds, sans EBITDA récent.
-- L'effet net des cessions sur le bénéfice par action. Il dépend aussi des intérêts économisés, que nous n'avons pas chiffrés.
-- Les hypothèses de Veolia au-delà de 2027. Notre prolongation reconduit celles de 2027 : c'est un choix du groupe, pas une prévision de Veolia.
+- L'excédent brut réel de Chauny. Notre prix plafond se recalcule dès qu'il est connu.
+- La position de l'Autorité sur un repreneur déjà présent dans la région.
+- Le calendrier d'encaissement des cessions et le prix actuel d'une plateforme américaine.

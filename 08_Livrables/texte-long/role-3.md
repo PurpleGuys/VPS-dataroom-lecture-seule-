@@ -123,9 +123,7 @@ Cette hypothèse est fragile pour trois raisons. D'abord, un plan de coûts se l
 - Le levier au 30 septembre 2026. Veolia n'en publie aucun ; le levier de [M:L.levMech] est un calcul du groupe.
 - La contribution propre de Clean Earth à l'EBITDA. L'effet de périmètre des neuf mois, [F755], mêle Clean Earth et Enviropacific.
 - La composition des cessions signées. Veolia ne chiffre que Rookery South. Nous ne savons pas si les [F738] réalisés recoupent les [F736] signés. Le modèle suppose que Rookery South figure dans les deux.
-- Les dates d'encaissement des cessions. Veolia ne les publie pas. Les parts [M:H.s26] et [M:H.s27] sont des choix du groupe.
-- Les flux du quatrième trimestre 2025 hors cash-flow libre net. Nous n'avons pas expliqué pourquoi la dette n'a baissé que de [M:PD.dropQ4] ce trimestre-là.
+- Les dates d'encaissement des cessions, que Veolia ne publie pas. Les parts [M:H.s26] et [M:H.s27], comme la plupart des bornes, sont des choix du groupe.
+- La raison pour laquelle la dette n'a baissé que de [M:PD.dropQ4] au quatrième trimestre 2025.
 - La répartition des dividendes versés au-delà de celui de Veolia. Le rapport du troisième trimestre ne détaille pas l'écart entre [F731] et [F74].
-- Le dividende versé en 2027. Veolia n'a pas encore proposé le dividende au titre de 2026. Le modèle applique une croissance de [M:H.gDiv].
-- Une guidance chiffrée pour 2027. Veolia ne donne que le retour à [F726] au plus et les objectifs de GreenUp.
-- La plupart des bornes des hypothèses et la force du facteur commun. Ce sont des choix du groupe, sans source externe.
+- Le dividende versé en 2027 : le modèle applique une croissance de [M:H.gDiv].

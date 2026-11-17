@@ -4,7 +4,7 @@
  "n_figures": 893,
  "title": "Dans quelle mesure l'engagement de levier de GreenUp borne-t-il la capacité d'acquisition de Veolia d'ici fin 2027 ?",
  "subtitle": "Capstone Innovations in Finance — sujet 2, périmètre « capacité financière »",
- "thread": "Fin 2027, notre marge de dette centrale atteint 159 M€ sous le plafond de 3x. Au multiple de Clean Earth, elle finance une acquisition supplémentaire de 229 M€. Dans le scénario défavorable, elle n'en finance aucune. Veolia peut donc encore acheter des tuck-ins d'ici fin 2027, pas une nouvelle plateforme.",
+ "thread": "Fin 2027, notre marge de dette centrale atteint 159 M€ sous le plafond de 3x. Au multiple de Clean Earth, elle finance une acquisition supplémentaire de 229 M€. Dans le scénario défavorable, elle n'en finance aucune. Veolia peut donc encore acheter des tuck-ins d'ici fin 2027, pas une nouvelle plateforme. Nous en désignons un : l'incinérateur de déchets dangereux de Chauny, si Séché doit le céder pour racheter Flamme.",
  "tiles": [
   [
    "Levier fin 2026",
@@ -81,21 +81,17 @@
    "n": 1,
    "name": "Périmètre et sources",
    "brief": "GreenUp annonce des enveloppes nettes, qui ne plafonnent pas les acquisitions",
-   "answer": "Dans quelle mesure l'engagement de levier de GreenUp borne-t-il la capacité d'acquisition de Veolia d'ici fin 2027 ? Cette première partie fixe le périmètre de la réponse. Elle établit la portée des enveloppes du plan GreenUp. Elle dit aussi d'où viennent nos chiffres. Les enveloppes de GreenUp sont nettes des cessions. Le plan prévoit une rotation nette d'actifs d'environ 0,5 Md€ par an. Il prévoit aussi une croissance nette de 1 Md€ par an, investissement organique compris. Quatre années à 1 Md€ par an donnent les 4 Md€ d'investissements nets de croissance du plan. Ce total couvre les boosters et les strongholds, dont 2 Md€ pour les seconds. Il ne plafonne donc pas les acquisitions. Leur borne se trouve ailleurs : dans l'engagement de levier, au plus 3x, et dans le maintien des notations. Le chiffre brut porte un autre nom, la rotation d'actifs. Veolia l'annonce à plus de 8 Md€ sur quatre ans, achats et ventes additionnés. Clean Earth a pesé 2 804 M€ sur la dette financière nette, soit 5,6 années de rotation nette à environ 0,5 Md€ par an. Le programme de cessions de plus de 2 Md€ en compense la plus grande part. Son échéance, la mi-2028, tombe toutefois après l'horizon du sujet. Nous en tirons trois conventions pour la suite du rapport. Une acquisition se juge contre la marge de levier, pas contre une enveloppe. Clean Earth entre dans le levier par son effet sur la dette. La position de départ est le 30 septembre 2026, date des derniers chiffres publiés par Veolia.",
+   "answer": "Dans quelle mesure l'engagement de levier de GreenUp borne-t-il la capacité d'acquisition de Veolia d'ici fin 2027 ? Cette première partie fixe le périmètre de la réponse. Elle établit la portée des enveloppes du plan GreenUp. Elle dit aussi d'où viennent nos chiffres. Les enveloppes de GreenUp sont nettes des cessions. Le plan prévoit une rotation nette d'actifs d'environ 0,5 Md€ par an. Il prévoit aussi une croissance nette de 1 Md€ par an, investissement organique compris. Quatre années à 1 Md€ par an donnent les 4 Md€ d'investissements nets de croissance du plan. Ce total couvre les boosters et les strongholds, dont 2 Md€ pour les seconds. Il ne plafonne donc pas les acquisitions. Leur borne se trouve ailleurs : dans l'engagement de levier, au plus 3x, et dans le maintien des notations. Clean Earth a pesé 2 804 M€ sur la dette financière nette, soit 5,6 années de rotation nette à environ 0,5 Md€ par an. Nous en tirons trois conventions pour la suite du rapport. Une acquisition se juge contre la marge de levier, pas contre une enveloppe. Clean Earth entre dans le levier par son effet sur la dette. La position de départ est le 30 septembre 2026, date des derniers chiffres publiés par Veolia.",
    "reasoning": [
     "Les enveloppes sont nettes ; le levier, pas l'enveloppe, borne les acquisitions — Dans quelle mesure l'engagement de levier de GreenUp borne-t-il la capacité d'acquisition de Veolia d'ici fin 2027 ? Cette première partie fixe le périmètre de la réponse. Elle établit la portée des enveloppes du plan GreenUp. Elle dit aussi d'où viennent nos chiffres.",
     "L'allocation du capital de GreenUp raisonne en soldes nets de cessions — La présentation stratégique de GreenUp consacre une page à l'allocation du capital de 2024 à 2027. Cette page aligne trois colonnes. La première et la troisième sont expressément nettes des cessions.",
     "La rotation d'actifs additionne achats et ventes : c'est le chiffre brut — Veolia publie aussi un chiffre brut, qu'elle appelle rotation d'actifs. Lors des résultats du premier semestre 2026, elle l'a chiffrée à plus de 8 Md€ sur quatre ans. Ce montant additionne les acquisitions et les cessions.",
-    "Les sorties nettes depuis 2024 ne se comparent pas à l'enveloppe de croissance — Le pont de dette retrace l'effet des opérations financières sur la dette. Selon le modèle du groupe, le cumul atteint 4,76 Md€ de sorties nettes au 30 septembre 2026.",
-    "Clean Earth compte quatre chiffres et le levier retient l'effet sur la dette — Clean Earth change le périmètre de la réponse. Veolia a acquis cette activité américaine de déchets dangereux auprès d'Enviri. L'opération s'est conclue le 1er juin 2026. Quatre chiffres circulent pour cette seule acquisition. Le tableau suivant les distingue.",
-    "Le programme de cessions compense la plus grande part de Clean Earth, en partie après 2027 — Veolia a adossé Clean Earth à un programme de cessions. En novembre 2025, elle a annoncé plus de 2 Md€ de cessions d'actifs matures dans les deux ans suivant la clôture. Le rapport semestriel 2026 fixe l'échéance : plus de 2 Md€ d'ici la mi-2028.",
-    "Chaque chiffre renvoie à un fichier, une page et une date de consultation — Nos chiffres viennent d'abord des publications de Veolia. Les opinions de Moody's et de S&P complètent ces sources. Nous utilisons aussi les rapports et communiqués d'Enviri et de pairs du secteur et des décisions de concurrence."
+    "Clean Earth compte quatre chiffres et le levier retient l'effet sur la dette — Clean Earth change le périmètre de la réponse. Veolia a acquis cette activité américaine de déchets dangereux auprès d'Enviri. L'opération s'est conclue le 1er juin 2026. Quatre chiffres circulent pour cette seule acquisition. Un tableau en annexe les distingue.",
+    "Chaque chiffre renvoie à un fichier, une page et une date de consultation — Nos chiffres viennent des publications de Veolia, des opinions de Moody's et de S&P, des rapports de pairs et de Séché, des inspections de la DREAL et de décisions de concurrence. Chaque chiffre cité occupe une ligne d'un registre. La ligne donne la valeur, la période, le fichier, la page, l'adresse de la source et la date de consultation."
    ],
    "open": [
     "La page d'allocation du capital ne dit pas si les tuck-ins et les cessions sont annuels.",
-    "Le solde de 36 M€ entre 2 804 M€ et la somme de 2 542 M€ et de 226 M€ n'est pas détaillé.",
-    "Nous ignorons la valeur des cessions signées autres que Rookery. Nous ignorons aussi si Rookery fait partie des 570 M€.",
-    "Les publications du troisième trimestre ne datent pas les encaissements du programme. La part encaissée avant fin 2027 reste une hypothèse du groupe."
+    "Le solde de 36 M€ entre 2 804 M€ et la somme de 2 542 M€ et de 226 M€ n'est pas détaillé."
    ],
    "qa": [
     [
@@ -107,20 +103,12 @@
      "Veolia publie aussi un chiffre brut, qu'elle appelle rotation d'actifs. Lors des résultats du premier semestre 2026, elle l'a chiffrée à plus de 8 Md€ sur quatre ans. Ce montant additionne les acquisitions et les cessions."
     ],
     [
-     "Sur quoi vous appuyez-vous pour dire : « Les sorties nettes depuis 2024 ne se comparent pas à l'enveloppe de croissance » ?",
-     "Le pont de dette retrace l'effet des opérations financières sur la dette. Selon le modèle du groupe, le cumul atteint 4,76 Md€ de sorties nettes au 30 septembre 2026."
-    ],
-    [
      "Sur quoi vous appuyez-vous pour dire : « Clean Earth compte quatre chiffres et le levier retient l'effet sur la dette » ?",
-     "Clean Earth change le périmètre de la réponse. Veolia a acquis cette activité américaine de déchets dangereux auprès d'Enviri. L'opération s'est conclue le 1er juin 2026. Quatre chiffres circulent pour cette seule acquisition. Le tableau suivant les distingue."
-    ],
-    [
-     "Sur quoi vous appuyez-vous pour dire : « Le programme de cessions compense la plus grande part de Clean Earth, en partie après 2027 » ?",
-     "Veolia a adossé Clean Earth à un programme de cessions. En novembre 2025, elle a annoncé plus de 2 Md€ de cessions d'actifs matures dans les deux ans suivant la clôture. Le rapport semestriel 2026 fixe l'échéance : plus de 2 Md€ d'ici la mi-2028."
+     "Clean Earth change le périmètre de la réponse. Veolia a acquis cette activité américaine de déchets dangereux auprès d'Enviri. L'opération s'est conclue le 1er juin 2026. Quatre chiffres circulent pour cette seule acquisition. Un tableau en annexe les distingue."
     ],
     [
      "Sur quoi vous appuyez-vous pour dire : « Chaque chiffre renvoie à un fichier, une page et une date de consultation » ?",
-     "Nos chiffres viennent d'abord des publications de Veolia. Les opinions de Moody's et de S&P complètent ces sources. Nous utilisons aussi les rapports et communiqués d'Enviri et de pairs du secteur et des décisions de concurrence."
+     "Nos chiffres viennent des publications de Veolia, des opinions de Moody's et de S&P, des rapports de pairs et de Séché, des inspections de la DREAL et de décisions de concurrence. Chaque chiffre cité occupe une ligne d'un registre. La ligne donne la valeur, la période, le fichier, la page, l'adresse de la source et la date de consultation."
     ]
    ],
    "tabs": "Entrées, Cessions §A et §B",
@@ -166,27 +154,11 @@
      ""
     ],
     [
-     "F32",
-     "Rotation d'actifs sur 4 ans : plus de",
-     "2024-2027",
-     "8 Md€",
-     "veolia_finance_presentation_h1_2026_results.pdf, p. 4",
-     ""
-    ],
-    [
      "F730",
      "Clean Earth : effet sur l'endettement financier net (prix et dette IFRS 16 compris)",
      "9M 2026",
      "2 804 M€",
      "finance_veolia_operating_financial_review_q3_2026.pdf, p. 5",
-     ""
-    ],
-    [
-     "F25",
-     "Programme de cessions, à réaliser d'ici mi-2028 : plus de",
-     "2026-2028",
-     "2 Md€",
-     "veolia-amendement-deu-2025-s1-2026.pdf, p. 29",
      ""
     ],
     [
@@ -238,19 +210,11 @@
      ""
     ],
     [
-     "F725",
-     "Guidance 2026 confirmée au T3 : ratio de levier fin 2026, Clean Earth inclus, égal ou légèrement supérieur à",
-     "31/12/2026",
-     "3x",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 21",
-     ""
-    ],
-    [
-     "F726",
-     "Trajectoire de levier présentée au T3 : légèrement au-dessus de 3x fin 2026, retour en 2027 à au plus",
-     "2027",
-     "3x",
-     "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 26",
+     "F32",
+     "Rotation d'actifs sur 4 ans : plus de",
+     "2024-2027",
+     "8 Md€",
+     "veolia_finance_presentation_h1_2026_results.pdf, p. 4",
      ""
     ],
     [
@@ -326,22 +290,6 @@
      ""
     ],
     [
-     "calcul",
-     "investissements financiers nets des cessions cumulés de 2024 au 30/09/2026",
-     "",
-     "4,76 Md€",
-     "Onglet Cessions du classeur du groupe",
-     ""
-    ],
-    [
-     "F77",
-     "Enviropacific Services : effet sur l'endettement financier net",
-     "S1 2026",
-     "−137 M€",
-     "veolia_finance_amendment_urd_2025.pdf, p. 25",
-     ""
-    ],
-    [
      "F40",
      "Clean Earth : prix d'acquisition",
      "01/06/2026",
@@ -396,62 +344,6 @@
      "4 mois",
      "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 23",
      ""
-    ],
-    [
-     "F132",
-     "Cessions nouvelles d'actifs matures dans les 2 ans après la clôture de Clean Earth, plus de",
-     "2026-2028",
-     "2 Md€",
-     "veolia_clean_earth_investor_presentation.pdf, p. 17",
-     ""
-    ],
-    [
-     "D61",
-     "Rookery South Limited : 20 % du capital (usine de valorisation énergétique au nord de Londres)",
-     "",
-     "87 M£",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 7",
-     ""
-    ],
-    [
-     "F739",
-     "Cession de 20 % de Rookery South Limited (mise en équivalence) : prix en euros",
-     "25/09/2026",
-     "101 M€",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 7",
-     ""
-    ],
-    [
-     "F736",
-     "Programme de cessions : montant déjà signé",
-     "au 05/11/2026",
-     "570 M€",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 3",
-     ""
-    ],
-    [
-     "F737",
-     "Programme de cessions : multiple moyen d'EBITDA des cessions signées",
-     "au 05/11/2026",
-     "10,4x",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 3",
-     ""
-    ],
-    [
-     "calcul",
-     "EBITDA cédé par le programme de cessions au multiple central",
-     "",
-     "192 M€",
-     "Onglet Cessions du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Multiple VE / EBITDA des actifs cédés",
-     "",
-     "10,4x",
-     "Hypothèse du groupe, valeur centrale, onglet Hypothèses du classeur (sources : F737)",
-     ""
     ]
    ]
   },
@@ -464,17 +356,13 @@
     "Le levier dépasse le plafond en septembre 2026 et ne laisse qu'une marge mince fin 2027 — Au 30 septembre 2026, la dette atteint 25 423 M€ pour un EBITDA glissant de 7 374 M€. Le levier mécanique ressort ainsi à 3,45x. Avec une année pleine de Clean Earth, il vaut 3,40x. Corrigé de la saisonnalité, il vaut encore 3,36x. Aucune de ces lectures ne descend sous 3x, le plafond fixé par GreenUp.",
     "La définition de Veolia redonne exactement ses ratios publiés — Le levier de Veolia rapporte la dette financière nette de clôture à l'EBITDA. Les deux termes intègrent la norme IFRS 16 sur les loyers. Le rapport du troisième trimestre 2026 précise que ces définitions n'ont pas changé.",
     "Au 30 septembre 2026, aucune lecture du levier ne descend sous le plafond — La dette financière nette atteint 25 423 M€ au 30 septembre 2026. L'EBITDA des neuf premiers mois passe de 5 080 M€ en 2025 à 5 404 M€ en 2026. Ajoutée à l'EBITDA 2025, 7 050 M€, cette progression donne un EBITDA glissant de 7 374 M€.",
-    "Finir 2026 au niveau annoncé exige un quatrième trimestre hors norme — Avec l'EBITDA 2026 du modèle, 7 486 M€, un levier de 3x correspond à environ 22,5 Md€ de dette. C'est loin des 25 423 M€ du 30 septembre et il ne reste qu'un trimestre. Or la dette n'a baissé que de 268 M€ au quatrième trimestre 2025, de 19 925 M€ à 19 657 M€. Le cash-flow libre net de ce trimestre a pourtant atteint 1 383 M€. Les autres flux du trimestre en ont absorbé l'essentiel.",
-    "Le remboursement d'un hybride alourdit le levier de Veolia plus que la dette ajustée de Moody's — Le 12 septembre 2026, Veolia a remboursé un hybride. Le pont des neuf mois l'inscrit pour −500 M€.",
-    "Les seuils des agences laissent plus de marge que le plafond de Veolia fin 2027 — Les deux agences ont confirmé leur note au printemps 2026, avec une perspective stable. Veolia ne présente pas d'autre notation : nous n'en avons trouvé aucune de Fitch. Le seuil de dégradation des deux agences ne porte pas sur le levier de Veolia. Il porte sur le FFO rapporté à une dette ajustée, propre à chaque agence. Le tableau suivant compare leurs grilles.",
-    "Le refinancement renchérit la dette sans limiter la capacité — Veolia juge ses besoins de 2026 couverts par ses émissions de l'année. La liquidité reste solide, mais elle a baissé. Elle atteint 14,9 Md€, dont 5,8 Md€ de lignes de crédit confirmées non tirées, sans covenant restrictif. La liquidité nette des dettes courantes vaut 4 087 M€, contre 6 886 M€ fin 2025."
+    "Les seuils des agences laissent plus de marge que le plafond de Veolia fin 2027 — Les deux agences ont confirmé leur note au printemps 2026, avec une perspective stable. Le seuil de dégradation des deux agences ne porte pas sur le levier de Veolia. Il porte sur le FFO rapporté à une dette ajustée, propre à chaque agence. Un tableau en annexe compare leurs grilles."
    ],
    "open": [
     "Nous n'avons trouvé aucun levier publié au 30 septembre 2026. Nos trois lectures de cette date sont des calculs du groupe.",
     "Nous ignorons combien de mois de Clean Earth le ratio de fin 2026 retiendra. Le modèle en compte 7 mois et donne 3,18x. Sur une année pleine, il donne 3,15x.",
     "L'EBITDA de Clean Earth retenu, 200 M$, est une prévision de Veolia. Un EBITDA plus faible relèverait nos lectures pro forma.",
-    "Moody's ne chiffre pas son seuil, high teens : sa marge ne se mesure pas en euros.",
-    "Veolia a signé 570 M€ de cessions et en a réalisé 0,2 Md€ sur neuf mois. Nous ne savons pas comment ces montants s'emboîtent, ni quand les cessions signées seront encaissées."
+    "Moody's ne chiffre pas son seuil, high teens : sa marge ne se mesure pas en euros."
    ],
    "qa": [
     [
@@ -486,20 +374,8 @@
      "La dette financière nette atteint 25 423 M€ au 30 septembre 2026. L'EBITDA des neuf premiers mois passe de 5 080 M€ en 2025 à 5 404 M€ en 2026. Ajoutée à l'EBITDA 2025, 7 050 M€, cette progression donne un EBITDA glissant de 7 374 M€."
     ],
     [
-     "Sur quoi vous appuyez-vous pour dire : « Finir 2026 au niveau annoncé exige un quatrième trimestre hors norme » ?",
-     "Avec l'EBITDA 2026 du modèle, 7 486 M€, un levier de 3x correspond à environ 22,5 Md€ de dette. C'est loin des 25 423 M€ du 30 septembre et il ne reste qu'un trimestre. Or la dette n'a baissé que de 268 M€ au quatrième trimestre 2025, de 19 925 M€ à 19 657 M€. Le cash-flow libre net de ce trimestre a pourtant atteint 1 383 M€. Les autres flux du trimestre en ont absorbé l'essentiel."
-    ],
-    [
-     "Sur quoi vous appuyez-vous pour dire : « Le remboursement d'un hybride alourdit le levier de Veolia plus que la dette ajustée de Moody's » ?",
-     "Le 12 septembre 2026, Veolia a remboursé un hybride. Le pont des neuf mois l'inscrit pour −500 M€."
-    ],
-    [
      "Sur quoi vous appuyez-vous pour dire : « Les seuils des agences laissent plus de marge que le plafond de Veolia fin 2027 » ?",
-     "Les deux agences ont confirmé leur note au printemps 2026, avec une perspective stable. Veolia ne présente pas d'autre notation : nous n'en avons trouvé aucune de Fitch. Le seuil de dégradation des deux agences ne porte pas sur le levier de Veolia. Il porte sur le FFO rapporté à une dette ajustée, propre à chaque agence. Le tableau suivant compare leurs grilles."
-    ],
-    [
-     "Sur quoi vous appuyez-vous pour dire : « Le refinancement renchérit la dette sans limiter la capacité » ?",
-     "Veolia juge ses besoins de 2026 couverts par ses émissions de l'année. La liquidité reste solide, mais elle a baissé. Elle atteint 14,9 Md€, dont 5,8 Md€ de lignes de crédit confirmées non tirées, sans covenant restrictif. La liquidité nette des dettes courantes vaut 4 087 M€, contre 6 886 M€ fin 2025."
+     "Les deux agences ont confirmé leur note au printemps 2026, avec une perspective stable. Le seuil de dégradation des deux agences ne porte pas sur le levier de Veolia. Il porte sur le FFO rapporté à une dette ajustée, propre à chaque agence. Un tableau en annexe compare leurs grilles."
     ]
    ],
    "tabs": "Levier, Pont de dette, Échéancier",
@@ -817,142 +693,6 @@
      ""
     ],
     [
-     "calcul",
-     "EBITDA 2026",
-     "",
-     "7 486 M€",
-     "Scénario central, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "baisse de la dette financière nette au T4 2025",
-     "",
-     "268 M€",
-     "Onglet Pont de dette du classeur du groupe",
-     ""
-    ],
-    [
-     "F740",
-     "Endettement financier net (groupe)",
-     "30/09/2025",
-     "19 925 M€",
-     "rapport-de-gestion-va-t3_2025_0.pdf, p. 5",
-     ""
-    ],
-    [
-     "calcul",
-     "cash-flow libre net du seul T4 2025 (année moins neuf mois)",
-     "",
-     "1 383 M€",
-     "Onglet Pont de dette du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Cash-flow libre net du T4 2026",
-     "",
-     "1 383 M€",
-     "Hypothèse du groupe, valeur centrale, onglet Hypothèses du classeur (sources : F29, F728)",
-     ""
-    ],
-    [
-     "calcul",
-     "Part des cessions signées non encaissées qui l'est avant le 31/12/2026",
-     "",
-     "50,0 %",
-     "Hypothèse du groupe, valeur centrale, onglet Hypothèses du classeur (sources : F736, F739)",
-     ""
-    ],
-    [
-     "calcul",
-     "Cessions encaissées au T4 2026",
-     "",
-     "234 M€",
-     "Scénario central, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Tuck-ins payés au T4 2026",
-     "",
-     "0 Md€",
-     "Hypothèse du groupe, valeur centrale, onglet Hypothèses du classeur",
-     ""
-    ],
-    [
-     "calcul",
-     "Autres flux de dette par période (change, divers)",
-     "",
-     "0 M€",
-     "Hypothèse du groupe, valeur centrale, onglet Hypothèses du classeur",
-     ""
-    ],
-    [
-     "calcul",
-     "Cash-flow libre net du T4 2026",
-     "",
-     "1 000 M€",
-     "Hypothèse du groupe, borne basse, onglet Hypothèses du classeur (sources : F29, F728)",
-     ""
-    ],
-    [
-     "calcul",
-     "Levier fin 2026",
-     "",
-     "3,23x",
-     "Colonne « fcfQ4 bas » : cette hypothèse à sa borne, les autres au centre, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Marge de manœuvre fin 2027 (plafond × EBITDA − DFN)",
-     "",
-     "−224 M€",
-     "Colonne « fcfQ4 bas » : cette hypothèse à sa borne, les autres au centre, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Levier fin 2026",
-     "",
-     "3,20x",
-     "Colonne « s26 bas » : cette hypothèse à sa borne, les autres au centre, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "F25",
-     "Programme de cessions, à réaliser d'ici mi-2028 : plus de",
-     "2026-2028",
-     "2 Md€",
-     "veolia-amendement-deu-2025-s1-2026.pdf, p. 29",
-     ""
-    ],
-    [
-     "F732",
-     "Pont de dette 9M 2026 : remboursement de dette hybride (titres super-subordonnés, 12/09/2026)",
-     "9M 2026",
-     "−500 M€",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19",
-     ""
-    ],
-    [
-     "F251",
-     "Moody's : ajustement titres hybrides (50 % en dette)",
-     "FY2025",
-     "2 050,0 M€",
-     "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11",
-     ""
-    ],
-    [
-     "F562",
-     "Hybrides : encours hors coupons",
-     "31/12/2025",
-     "4,1 Md€",
-     "finance_veolia_urd_2025_en.pdf, p. 429",
-     ""
-    ],
-    [
      "F769",
      "Notation Standard & Poor's (court terme / long terme), confirmée, perspective stable",
      "27/04/2026",
@@ -1153,30 +893,6 @@
      ""
     ],
     [
-     "F870",
-     "S&P, note de mars 2025 : FFO / dette ajustés attendu, environ",
-     "2025-2027",
-     "22 %",
-     "finance_standard_-_poors_ratings_direct_veolia_environnement_sa_mars_2025_03-04-25.pdf, p. 2",
-     ""
-    ],
-    [
-     "F872",
-     "Moody's, opinion d'avril 2025 : FFO / dette nette ajustée, vue à 12-18 mois, bas de fourchette",
-     "2025-2026",
-     "20,0 %",
-     "credit_opinion_moodys_veolia-environnement-sa_22apr2025.pdf, p. 2",
-     ""
-    ],
-    [
-     "F873",
-     "Moody's, opinion d'avril 2025 : FFO / dette nette ajustée, vue à 12-18 mois, haut de fourchette",
-     "2025-2026",
-     "22,0 %",
-     "credit_opinion_moodys_veolia-environnement-sa_22apr2025.pdf, p. 2",
-     ""
-    ],
-    [
      "F871",
      "S&P, note de novembre 2025 : levier publié jusqu'auquel la politique financière de Veolia reste compatible avec la note BBB",
      "11/2025",
@@ -1185,131 +901,11 @@
      ""
     ],
     [
-     "F830",
-     "Liquidité du groupe, lignes de crédit confirmées non tirées comprises",
-     "30/09/2026",
-     "14,9 Md€",
-     "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 33",
-     ""
-    ],
-    [
-     "F835",
-     "Lignes de crédit confirmées non tirées, sans covenants restrictifs (comprises dans la liquidité du groupe)",
-     "30/09/2026",
-     "5,8 Md€",
-     "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 33",
-     ""
-    ],
-    [
-     "F768",
-     "Liquidité nette (groupe), après dettes courantes",
-     "30/09/2026",
-     "4 087 M€",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 7",
-     ""
-    ],
-    [
-     "F411",
-     "Liquidités nettes des dettes courantes et découverts",
-     "31/12/2025",
-     "6 886 M€",
-     "finance_veolia_urd_2025_en.pdf, p. 421",
-     ""
-    ],
-    [
-     "F776",
-     "Taux de financement du groupe (coût de la dette)",
-     "30/09/2026",
-     "3,82 %",
-     "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 26",
-     ""
-    ],
-    [
-     "F828",
-     "Taux de financement du groupe (coût de la dette)",
-     "30/09/2025",
-     "3,83 %",
-     "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 26",
-     ""
-    ],
-    [
-     "F779",
-     "Émission obligataire d'août 2026 (1,15 Md€, deux tranches) : coupon moyen",
-     "08/2026",
-     "3,856 %",
-     "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 33",
-     ""
-    ],
-    [
-     "F279",
-     "Souche EMTN Series 43, échéance 14/01/2027 : nominal",
-     "31/12/2025",
-     "700 M€",
-     "finance_veolia_urd_2025_en.pdf, p. 407",
-     ""
-    ],
-    [
-     "F280",
-     "Souche EMTN Series 43, échéance 14/01/2027 : taux",
-     "31/12/2025",
-     "0,000 %",
-     "finance_veolia_urd_2025_en.pdf, p. 407",
-     ""
-    ],
-    [
-     "F283",
-     "Souche EMTN Series 23, échéance 02/04/2027 : nominal",
-     "31/12/2025",
-     "850 M€",
-     "finance_veolia_urd_2025_en.pdf, p. 407",
-     ""
-    ],
-    [
-     "F284",
-     "Souche EMTN Series 23, échéance 02/04/2027 : taux",
-     "31/12/2025",
-     "1,250 %",
-     "finance_veolia_urd_2025_en.pdf, p. 407",
-     ""
-    ],
-    [
-     "F281",
-     "Souche EMTN Series 29 (PEO), échéance 30/03/2027 : nominal",
-     "31/12/2025",
-     "750 M€",
-     "finance_veolia_urd_2025_en.pdf, p. 407",
-     ""
-    ],
-    [
-     "F282",
-     "Souche EMTN Series 29 (PEO), échéance 30/03/2027 : taux",
-     "31/12/2025",
-     "4,625 %",
-     "finance_veolia_urd_2025_en.pdf, p. 407",
-     ""
-    ],
-    [
      "calcul",
      "Levier fin 2026, Clean Earth pro forma 12 mois",
      "",
      "3,15x",
      "Scénario central, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "F736",
-     "Programme de cessions : montant déjà signé",
-     "au 05/11/2026",
-     "570 M€",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 3",
-     ""
-    ],
-    [
-     "F738",
-     "Cessions réalisées sur neuf mois (rotation d'actifs GreenUp)",
-     "9M 2026",
-     "0,2 Md€",
-     "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 14",
      ""
     ]
    ]
@@ -1321,22 +917,15 @@
    "answer": "Au 30 septembre 2026, la dette financière nette de Veolia atteint 25 423 M€. Veolia ne publie aucun ratio à cette date. Elle vise un levier égal ou légèrement supérieur à 3x fin 2026. Elle annonce ensuite un retour à 3x au plus en 2027. Sur une année pleine, le cash-flow libre net couvre le dividende de Veolia, pas tous les dividendes. La marge vient donc de deux autres sources. La croissance de l'EBITDA élève le plafond de dette. Les cessions réduisent la dette. Dans le scénario central du modèle du groupe, la dette atteint 23 638 M€ fin 2027. L'EBITDA atteint 7 932 M€ et le levier revient à 2,98x. La marge sous le plafond de 3,0x n'est que de 159 M€. Elle s'entend après 0,5 Md€ de tuck-ins payés en 2027. Cette marge est fragile. Le plafond tient dans 63 % des 1 000 futurs tirés par le modèle. Le premier facteur est la part des cessions non encore signées encaissée en 2027. Sans autre encaissement en 2027 que le solde des cessions signées, la marge tombe à −304 M€. Viennent ensuite la croissance organique de 2027 et le montant des tuck-ins. La croissance de l'EBITDA repose en partie sur les plans d'efficacité, l'hypothèse la plus fragile du modèle. La fourchette complète de capacité figure à l'annexe IV.",
    "reasoning": [
     "Fin 2027, la marge sous le plafond reste mince et tient d'abord au calendrier des cessions — Au 30 septembre 2026, la dette financière nette de Veolia atteint 25 423 M€. Veolia ne publie aucun ratio à cette date. Elle vise un levier égal ou légèrement supérieur à 3x fin 2026. Elle annonce ensuite un retour à 3x au plus en 2027.",
-    "Le cash-flow libre net ne couvre pas l'ensemble des dividendes — Le cash-flow libre net de Veolia est très saisonnier. En 2025, il s'établit à −451 M€ à fin juin, puis à −205 M€ à fin septembre. Il atteint pourtant 1 178 M€ sur l'année. Le seul quatrième trimestre en a apporté 1 383 M€.",
     "Du 30 septembre 2026 à fin 2027, la dette baisse par le quatrième trimestre et par les cessions — Au quatrième trimestre 2026, la dette baisse de deux façons. Le cash-flow saisonnier en ôte 1 383 M€. Les cessions signées en ôtent 234 M€. La dette finit l'année à 23 806 M€, pour un EBITDA 2026 de 7 486 M€. Le levier fin 2026 atteint alors 3,18x.",
     "Les cessions comptent par leur date plus que par leur multiple — Veolia a annoncé un programme de cessions de plus de 2 Md€ d'ici mi-2028. Cette échéance tombe après l'horizon du sujet, fin 2027. Une partie du programme peut donc arriver trop tard pour la marge de fin 2027.",
-    "Le calendrier des cessions et la croissance de 2027 font le plus bouger la marge — Nous faisons varier chaque hypothèse entre ses bornes, les autres restant au centre. Le tableau suivant classe les cinq hypothèses qui pèsent le plus sur la marge.",
+    "Le calendrier des cessions et la croissance de 2027 font le plus bouger la marge — Nous faisons varier chaque hypothèse entre ses bornes, les autres restant au centre. Un tableau en annexe classe les cinq hypothèses qui pèsent le plus sur la marge.",
     "L'efficacité soutient la croissance de l'EBITDA et reste l'hypothèse la plus fragile — La croissance organique de 2027 est le deuxième facteur de la marge. Le modèle la fixe à 5,1 %, le rythme publié sur neuf mois, 5,1 %. Ce rythme se situe dans le bas de la guidance 2026, de 5 % à 6 %. Veolia attribue la hausse de l'EBITDA à la croissance des activités et à ses plans d'efficacité."
    ],
    "open": [
-    "Les dates d'encaissement des cessions. Veolia ne les publie pas. Les parts 50,0 % et 50,0 % sont des choix du groupe.",
-    "Les flux du quatrième trimestre 2025 hors cash-flow libre net. Nous n'avons pas expliqué pourquoi la dette n'a baissé que de 268 M€ ce trimestre-là.",
-    "La plupart des bornes des hypothèses et la force du facteur commun. Ce sont des choix du groupe, sans source externe."
+    "Les dates d'encaissement des cessions, que Veolia ne publie pas. Les parts 50,0 % et 50,0 %, comme la plupart des bornes, sont des choix du groupe."
    ],
    "qa": [
-    [
-     "Sur quoi vous appuyez-vous pour dire : « Le cash-flow libre net ne couvre pas l'ensemble des dividendes » ?",
-     "Le cash-flow libre net de Veolia est très saisonnier. En 2025, il s'établit à −451 M€ à fin juin, puis à −205 M€ à fin septembre. Il atteint pourtant 1 178 M€ sur l'année. Le seul quatrième trimestre en a apporté 1 383 M€."
-    ],
     [
      "Sur quoi vous appuyez-vous pour dire : « Du 30 septembre 2026 à fin 2027, la dette baisse par le quatrième trimestre et par les cessions » ?",
      "Au quatrième trimestre 2026, la dette baisse de deux façons. Le cash-flow saisonnier en ôte 1 383 M€. Les cessions signées en ôtent 234 M€. La dette finit l'année à 23 806 M€, pour un EBITDA 2026 de 7 486 M€. Le levier fin 2026 atteint alors 3,18x."
@@ -1347,7 +936,7 @@
     ],
     [
      "Sur quoi vous appuyez-vous pour dire : « Le calendrier des cessions et la croissance de 2027 font le plus bouger la marge » ?",
-     "Nous faisons varier chaque hypothèse entre ses bornes, les autres restant au centre. Le tableau suivant classe les cinq hypothèses qui pèsent le plus sur la marge."
+     "Nous faisons varier chaque hypothèse entre ses bornes, les autres restant au centre. Un tableau en annexe classe les cinq hypothèses qui pèsent le plus sur la marge."
     ],
     [
      "Sur quoi vous appuyez-vous pour dire : « L'efficacité soutient la croissance de l'EBITDA et reste l'hypothèse la plus fragile » ?",
@@ -1445,163 +1034,11 @@
      ""
     ],
     [
-     "F70",
-     "Cash-flow libre net avant investissements financiers et dividendes",
-     "S1 2025",
-     "−451 M€",
-     "veolia_finance_amendment_urd_2025.pdf, p. 25",
-     ""
-    ],
-    [
-     "F728",
-     "Cash-flow libre net avant investissements financiers et dividendes",
-     "9M 2025",
-     "−205 M€",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19",
-     ""
-    ],
-    [
-     "F29",
-     "Cash-flow libre net (net free cash flow)",
-     "FY2025",
-     "1 178 M€",
-     "annual-resultats-2025.pdf, p. 1",
-     ""
-    ],
-    [
-     "calcul",
-     "cash-flow libre net du seul T4 2025 (année moins neuf mois)",
-     "",
-     "1 383 M€",
-     "Onglet Pont de dette du classeur du groupe",
-     ""
-    ],
-    [
-     "F727",
-     "Cash-flow libre net avant investissements financiers et dividendes",
-     "9M 2026",
-     "−200 M€",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19",
-     ""
-    ],
-    [
-     "F28",
-     "Cash-flow libre net avant investissements financiers et dividendes",
-     "S1 2026",
-     "−288 M€",
-     "veolia_finance_amendment_urd_2025.pdf, p. 25",
-     ""
-    ],
-    [
-     "F760",
-     "Variation du BFR opérationnel",
-     "9M 2026",
-     "−1 488 M€",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19",
-     ""
-    ],
-    [
-     "F761",
-     "Variation du BFR opérationnel",
-     "9M 2025",
-     "−1 272 M€",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19",
-     ""
-    ],
-    [
      "calcul",
      "Cash-flow libre net du T4 2026",
      "",
      "1 383 M€",
      "Hypothèse du groupe, valeur centrale, onglet Hypothèses du classeur (sources : F29, F728)",
-     ""
-    ],
-    [
-     "calcul",
-     "Cash-flow libre net du T4 2026",
-     "",
-     "1 000 M€",
-     "Hypothèse du groupe, borne basse, onglet Hypothèses du classeur (sources : F29, F728)",
-     ""
-    ],
-    [
-     "calcul",
-     "Cash-flow libre net du T4 2026",
-     "",
-     "1 600 M€",
-     "Hypothèse du groupe, borne haute, onglet Hypothèses du classeur (sources : F29, F728)",
-     ""
-    ],
-    [
-     "F74",
-     "Dividende versé aux actionnaires, approuvé par l'AG du 23 avril 2026",
-     "2026",
-     "1 099 M€",
-     "veolia_finance_amendment_urd_2025.pdf, p. 25",
-     ""
-    ],
-    [
-     "F731",
-     "Pont de dette 9M 2026 : dividendes versés (total, minoritaires compris)",
-     "9M 2026",
-     "1 464 M€",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19",
-     ""
-    ],
-    [
-     "F15",
-     "Dividende versé au titre de 2024",
-     "2025",
-     "1 023 M€",
-     "finance_veolia_urd_2025_en.pdf, p. 337",
-     ""
-    ],
-    [
-     "F336",
-     "Tableau de flux : dividendes versés",
-     "FY2025",
-     "−1 280 M€",
-     "finance_veolia_urd_2025_en.pdf, p. 363",
-     ""
-    ],
-    [
-     "calcul",
-     "Croissance du dividende versé en 2027",
-     "",
-     "8,0 %",
-     "Hypothèse du groupe, valeur centrale, onglet Hypothèses du classeur (sources : F89)",
-     ""
-    ],
-    [
-     "F89",
-     "Guidance 2026 : croissance du résultat net courant, au moins",
-     "2026",
-     "8 %",
-     "veolia-2026-first-half-results.pdf, p. 3",
-     ""
-    ],
-    [
-     "calcul",
-     "Dividendes versés aux minoritaires en 2027",
-     "",
-     "365 M€",
-     "Hypothèse du groupe, valeur centrale, onglet Hypothèses du classeur (sources : F731, F74)",
-     ""
-    ],
-    [
-     "calcul",
-     "Dividendes versés en 2027",
-     "",
-     "1 552 M€",
-     "Scénario central, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Cash-flow libre net 2027",
-     "",
-     "1 319 M€",
-     "Scénario central, onglet Trajectoire du classeur du groupe",
      ""
     ],
     [
@@ -1870,6 +1307,22 @@
     ],
     [
      "calcul",
+     "Cash-flow libre net du T4 2026",
+     "",
+     "1 000 M€",
+     "Hypothèse du groupe, borne basse, onglet Hypothèses du classeur (sources : F29, F728)",
+     ""
+    ],
+    [
+     "calcul",
+     "Cash-flow libre net du T4 2026",
+     "",
+     "1 600 M€",
+     "Hypothèse du groupe, borne haute, onglet Hypothèses du classeur (sources : F29, F728)",
+     ""
+    ],
+    [
+     "calcul",
      "Marge de manœuvre fin 2027 (plafond × EBITDA − DFN)",
      "",
      "−224 M€",
@@ -1914,22 +1367,6 @@
      "",
      "328 M€",
      "Colonne « conv haut » : cette hypothèse à sa borne, les autres au centre, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "F735",
-     "Pont de dette 9M 2026 : change et ajustements de juste valeur (principalement dollar)",
-     "9M 2026",
-     "−210 M€",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19",
-     ""
-    ],
-    [
-     "F775",
-     "Part de la dette financière nette à taux fixe",
-     "30/09/2026",
-     "78 %",
-     "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 33",
      ""
     ],
     [
@@ -2067,30 +1504,6 @@
      "294 M€",
      "finance_veolia_operating_financial_review_q3_2026.pdf, p. 5",
      ""
-    ],
-    [
-     "F756",
-     "Pont d'EBITDA 9M 2026 : croissance et performance (prix, productivité, efficacité, volumes, synergies)",
-     "9M 2026",
-     "+303 M€",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 16",
-     ""
-    ],
-    [
-     "F757",
-     "Pont d'EBITDA 9M 2026 : prix de l'énergie et des recyclats",
-     "9M 2026",
-     "−74 M€",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 16",
-     ""
-    ],
-    [
-     "calcul",
-     "baisse de la dette financière nette au T4 2025",
-     "",
-     "268 M€",
-     "Onglet Pont de dette du classeur du groupe",
-     ""
     ]
    ]
   },
@@ -2098,13 +1511,11 @@
    "n": 4,
    "name": "L'écart et les comparables",
    "brief": "Le booster déchets dangereux achète sa croissance plus qu'il ne la génère",
-   "answer": "En volume, le booster dépasse déjà son objectif. Veolia a traité 9 181 kt de déchets dangereux en 2025. Son objectif pour 2027 est de 9 Mt. Cet objectif remplace les 10 Mt fixés par GreenUp en 2024. Le DEU 2025 explique la révision par la cession de RGS aux États-Unis. La cible a donc suivi le périmètre, pas l'activité. En valeur, la croissance change de nature. En 2025, l'EBITDA du métier a progressé de +13,0 % à périmètre et change constants. En 2026, l'organique ralentit. Au premier semestre, l'EBITDA progresse de +7,2 % à périmètre et change constants. Sur neuf mois, le chiffre d'affaires ne gagne plus que 2,6 %, contre +7,1 % en 2024. La hausse publiée atteint pourtant 14,1 %, de 3 126 M€ à 3 566 M€. Hors Clean Earth, tuck-ins compris et à change constant, elle n'est que de +6,3 %. Clean Earth fait le reste, malgré un change défavorable. Notre conclusion est nette : la croissance du booster est achetée plus que générée. Le prix de Clean Earth ne se justifie qu'avec ses synergies. Veolia l'a payé 9,8x l'EBITDA 2026 attendu après synergies. Sans synergies, le multiple ressort à 14,9x, 2 989 M$ pour 200 M$. Vu du vendeur, l'EBITDA de 2025 est nettement plus bas. Clean Harbors est le seul comparable direct dont les achats sont chiffrés. Clean Harbors a payé HEPACO 7,1x et EnviroServe avec ES&H 8,9x après synergies. Veolia, de son côté, cède des actifs mûrs à 10,4x. Avant synergies, un euro investi dans Clean Earth rapporte donc moins d'EBITDA qu'un euro cédé n'en retire. Ces repères confirment, selon nous, les hypothèses centrales du modèle du groupe. Ils fragilisent sa borne basse sur l'EBITDA de Clean Earth.",
+   "answer": "En volume, le booster dépasse déjà son objectif. Veolia a traité 9 181 kt de déchets dangereux en 2025. Son objectif pour 2027 est de 9 Mt. Cet objectif remplace les 10 Mt fixés par GreenUp en 2024. Le DEU 2025 explique la révision par la cession de RGS aux États-Unis. La cible a donc suivi le périmètre, pas l'activité. En valeur, la croissance change de nature. En 2025, l'EBITDA du métier a progressé de +13,0 % à périmètre et change constants. En 2026, l'organique ralentit. Au premier semestre, l'EBITDA progresse de +7,2 % à périmètre et change constants. Sur neuf mois, le chiffre d'affaires ne gagne plus que 2,6 %, contre +7,1 % en 2024. La hausse publiée atteint pourtant 14,1 %, de 3 126 M€ à 3 566 M€. Hors Clean Earth, tuck-ins compris et à change constant, elle n'est que de +6,3 %. Clean Earth fait le reste, malgré un change défavorable. Notre conclusion est nette : la croissance du booster est achetée plus que générée. Le prix de Clean Earth ne se justifie qu'avec ses synergies. Veolia l'a payé 9,8x l'EBITDA 2026 attendu après synergies. Sans synergies, le multiple ressort à 14,9x, 2 989 M$ pour 200 M$. Clean Harbors est le seul comparable direct dont les achats sont chiffrés. Clean Harbors a payé HEPACO 7,1x et EnviroServe avec ES&H 8,9x après synergies. Veolia, de son côté, cède des actifs mûrs à 10,4x. Avant synergies, un euro investi dans Clean Earth rapporte donc moins d'EBITDA qu'un euro cédé n'en retire. Ces repères confirment, selon nous, les hypothèses centrales du modèle du groupe.",
    "reasoning": [
     "Le booster croît d'abord par acquisitions, payées à un prix que seules les synergies compensent — En volume, le booster dépasse déjà son objectif. Veolia a traité 9 181 kt de déchets dangereux en 2025. Son objectif pour 2027 est de 9 Mt. Cet objectif remplace les 10 Mt fixés par GreenUp en 2024. Le DEU 2025 explique la révision par la cession de RGS aux États-Unis. La cible a donc suivi le périmètre, pas l'activité.",
     "En valeur, l'organique ralentit et le périmètre prend le relais — L'EBITDA du métier est passé de 609 M€ en 2024 à 686 M€ en 2025. À périmètre et change constants, il a progressé de +13,0 %. La marge du métier vaut 14,2 % en 2024, 609 M€ sur 4 276 M€. Cette année-là, le chiffre d'affaires a crû de +7,1 % en organique. La croissance de ces deux années est donc d'abord générée, pas achetée.",
-    "Vu du vendeur, l'EBITDA de Clean Earth est plus bas que le budget de Veolia — Enviri a annoncé la vente de Clean Earth pour plus de 3,0 Md$, selon son rapport annuel 2025. Le segment a réalisé 973,9 M$ de chiffre d'affaires en 2025, contre 940,3 M$ en 2024, soit 3,6 % de hausse. Son résultat opérationnel a reculé de 92,6 M$ à 91,7 M$. Le budget de 1 030 M$ suppose environ 5,8 % de croissance sur les 973,9 M$ de 2025. C'est une nette accélération.",
-    "Clean Harbors, seul comparable direct, paie des prix du même ordre que Veolia — Nous retenons Clean Harbors comme comparable direct de Clean Earth. Le groupe exerce le même métier aux États-Unis et publie des comptes audités. En 2025, il réalise 6 030,8 M$ de chiffre d'affaires et 1 169 939 k$ d'EBITDA ajusté. Sa marge de 19,4 % égale celle du budget de Clean Earth, 200 M$ sur 1 030 M$. Son segment Environmental Services dégage 1 343 776 k$ d'EBITDA ajusté pour 5 193 290 k$ de chiffre d'affaires. Sa marge avant coûts centraux atteint 25,9 %, 1 343 776 k$ sur 5 193 290 k$. Les bases ne sont toutefois pas celles de Veolia.",
-    "Les comparables valident les hypothèses centrales du modèle, pas sa borne basse sur Clean Earth — Le modèle du groupe retient un EBITDA de Clean Earth de 200 M$ en année pleine. Il le fait varier entre 180 M$ et 220 M$. Le budget de Veolia et la marge de l'effet de périmètre soutiennent la valeur centrale. L'EBITDA reconstitué du vendeur se situe pourtant sous la borne basse. Nous mesurons chaque hypothèse par la marge de manœuvre sous le plafond de levier fin 2027. À la borne basse, elle passe de 159 M€ à 102 M€."
+    "Clean Harbors, seul comparable direct, paie des prix du même ordre que Veolia — Nous retenons Clean Harbors comme comparable direct de Clean Earth. Le groupe exerce le même métier aux États-Unis et publie des comptes audités. En 2025, il réalise 6 030,8 M$ de chiffre d'affaires et 1 169 939 k$ d'EBITDA ajusté. Sa marge de 19,4 % égale celle du budget de Clean Earth, 200 M$ sur 1 030 M$. Les bases ne sont toutefois pas celles de Veolia."
    ],
    "open": [
     "L'EBITDA du métier au 30 septembre 2026. Veolia ne le publie pas.",
@@ -2117,16 +1528,8 @@
      "L'EBITDA du métier est passé de 609 M€ en 2024 à 686 M€ en 2025. À périmètre et change constants, il a progressé de +13,0 %. La marge du métier vaut 14,2 % en 2024, 609 M€ sur 4 276 M€. Cette année-là, le chiffre d'affaires a crû de +7,1 % en organique. La croissance de ces deux années est donc d'abord générée, pas achetée."
     ],
     [
-     "Sur quoi vous appuyez-vous pour dire : « Vu du vendeur, l'EBITDA de Clean Earth est plus bas que le budget de Veolia » ?",
-     "Enviri a annoncé la vente de Clean Earth pour plus de 3,0 Md$, selon son rapport annuel 2025. Le segment a réalisé 973,9 M$ de chiffre d'affaires en 2025, contre 940,3 M$ en 2024, soit 3,6 % de hausse. Son résultat opérationnel a reculé de 92,6 M$ à 91,7 M$. Le budget de 1 030 M$ suppose environ 5,8 % de croissance sur les 973,9 M$ de 2025. C'est une nette accélération."
-    ],
-    [
      "Sur quoi vous appuyez-vous pour dire : « Clean Harbors, seul comparable direct, paie des prix du même ordre que Veolia » ?",
-     "Nous retenons Clean Harbors comme comparable direct de Clean Earth. Le groupe exerce le même métier aux États-Unis et publie des comptes audités. En 2025, il réalise 6 030,8 M$ de chiffre d'affaires et 1 169 939 k$ d'EBITDA ajusté. Sa marge de 19,4 % égale celle du budget de Clean Earth, 200 M$ sur 1 030 M$. Son segment Environmental Services dégage 1 343 776 k$ d'EBITDA ajusté pour 5 193 290 k$ de chiffre d'affaires. Sa marge avant coûts centraux atteint 25,9 %, 1 343 776 k$ sur 5 193 290 k$. Les bases ne sont toutefois pas celles de Veolia."
-    ],
-    [
-     "Sur quoi vous appuyez-vous pour dire : « Les comparables valident les hypothèses centrales du modèle, pas sa borne basse sur Clean Earth » ?",
-     "Le modèle du groupe retient un EBITDA de Clean Earth de 200 M$ en année pleine. Il le fait varier entre 180 M$ et 220 M$. Le budget de Veolia et la marge de l'effet de périmètre soutiennent la valeur centrale. L'EBITDA reconstitué du vendeur se situe pourtant sous la borne basse. Nous mesurons chaque hypothèse par la marge de manœuvre sous le plafond de levier fin 2027. À la borne basse, elle passe de 159 M€ à 102 M€."
+     "Nous retenons Clean Harbors comme comparable direct de Clean Earth. Le groupe exerce le même métier aux États-Unis et publie des comptes audités. En 2025, il réalise 6 030,8 M$ de chiffre d'affaires et 1 169 939 k$ d'EBITDA ajusté. Sa marge de 19,4 % égale celle du budget de Clean Earth, 200 M$ sur 1 030 M$. Les bases ne sont toutefois pas celles de Veolia."
     ]
    ],
    "tabs": "Segments, Pont EBITDA, Booster",
@@ -2308,94 +1711,6 @@
      ""
     ],
     [
-     "F216",
-     "Enviri : prix de cession de Clean Earth à Veolia, plus de",
-     "annonce 11/2025",
-     "3,0 Md$",
-     "enviri-10-k-2025.pdf, p. 68",
-     ""
-    ],
-    [
-     "F209",
-     "Enviri : chiffre d'affaires du segment Clean Earth",
-     "FY2025",
-     "973,9 M$",
-     "enviri-10-k-2025.pdf, p. 69",
-     ""
-    ],
-    [
-     "F210",
-     "Enviri : chiffre d'affaires du segment Clean Earth",
-     "FY2024",
-     "940,3 M$",
-     "enviri-10-k-2025.pdf, p. 69",
-     ""
-    ],
-    [
-     "F212",
-     "Enviri : résultat opérationnel du segment Clean Earth",
-     "FY2024",
-     "92,6 M$",
-     "enviri-10-k-2025.pdf, p. 70",
-     ""
-    ],
-    [
-     "F211",
-     "Enviri : résultat opérationnel du segment Clean Earth",
-     "FY2025",
-     "91,7 M$",
-     "enviri-10-k-2025.pdf, p. 70",
-     ""
-    ],
-    [
-     "F52",
-     "Clean Earth : chiffre d'affaires",
-     "2026E",
-     "1 030 M$",
-     "veolia_clean_earth_investor_presentation.pdf, p. 6",
-     ""
-    ],
-    [
-     "F213",
-     "Enviri : dépréciation du segment Clean Earth",
-     "FY2025",
-     "39 778 k$",
-     "enviri-10-k-2025.pdf, p. 284",
-     ""
-    ],
-    [
-     "F214",
-     "Enviri : amortissement du segment Clean Earth",
-     "FY2025",
-     "23 644 k$",
-     "enviri-10-k-2025.pdf, p. 284",
-     ""
-    ],
-    [
-     "F754",
-     "Effet de périmètre sur le chiffre d'affaires du groupe (Clean Earth et Enviropacific)",
-     "9M 2026",
-     "+383 M€",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 15",
-     ""
-    ],
-    [
-     "F755",
-     "Effet de périmètre sur l'EBITDA du groupe (Clean Earth et Enviropacific)",
-     "9M 2026",
-     "+73 M€",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 16",
-     ""
-    ],
-    [
-     "F787",
-     "Clean Earth : mois consolidés dans les comptes à fin septembre 2026",
-     "9M 2026",
-     "4 mois",
-     "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 23",
-     ""
-    ],
-    [
      "F224",
      "Clean Harbors : chiffre d'affaires direct total",
      "FY2025",
@@ -2420,19 +1735,43 @@
      ""
     ],
     [
-     "F222",
-     "Clean Harbors : EBITDA ajusté Environmental Services",
-     "FY2025",
-     "1 343 776 k$",
-     "clean-harbors-10-k-2025.pdf, p. 34",
+     "F52",
+     "Clean Earth : chiffre d'affaires",
+     "2026E",
+     "1 030 M$",
+     "veolia_clean_earth_investor_presentation.pdf, p. 6",
      ""
     ],
     [
-     "F220",
-     "Clean Harbors : chiffre d'affaires direct Environmental Services",
+     "F216",
+     "Enviri : prix de cession de Clean Earth à Veolia, plus de",
+     "annonce 11/2025",
+     "3,0 Md$",
+     "enviri-10-k-2025.pdf, p. 68",
+     ""
+    ],
+    [
+     "F211",
+     "Enviri : résultat opérationnel du segment Clean Earth",
      "FY2025",
-     "5 193 290 k$",
-     "clean-harbors-10-k-2025.pdf, p. 34",
+     "91,7 M$",
+     "enviri-10-k-2025.pdf, p. 70",
+     ""
+    ],
+    [
+     "F213",
+     "Enviri : dépréciation du segment Clean Earth",
+     "FY2025",
+     "39 778 k$",
+     "enviri-10-k-2025.pdf, p. 284",
+     ""
+    ],
+    [
+     "F214",
+     "Enviri : amortissement du segment Clean Earth",
+     "FY2025",
+     "23 644 k$",
+     "enviri-10-k-2025.pdf, p. 284",
      ""
     ],
     [
@@ -2565,70 +1904,6 @@
     ],
     [
      "calcul",
-     "EBITDA de Clean Earth en année pleine",
-     "",
-     "200 M$",
-     "Hypothèse du groupe, valeur centrale, onglet Hypothèses du classeur (sources : F51)",
-     ""
-    ],
-    [
-     "calcul",
-     "EBITDA de Clean Earth en année pleine",
-     "",
-     "180 M$",
-     "Hypothèse du groupe, borne basse, onglet Hypothèses du classeur (sources : F51)",
-     ""
-    ],
-    [
-     "calcul",
-     "EBITDA de Clean Earth en année pleine",
-     "",
-     "220 M$",
-     "Hypothèse du groupe, borne haute, onglet Hypothèses du classeur (sources : F51)",
-     ""
-    ],
-    [
-     "calcul",
-     "Marge de manœuvre fin 2027 (plafond × EBITDA − DFN)",
-     "",
-     "159 M€",
-     "Scénario central, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Marge de manœuvre fin 2027 (plafond × EBITDA − DFN)",
-     "",
-     "102 M€",
-     "Colonne « ceEb bas » : cette hypothèse à sa borne, les autres au centre, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Synergies Clean Earth réalisées",
-     "",
-     "26 M€",
-     "Scénario central, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Marge de manœuvre fin 2027 (plafond × EBITDA − DFN)",
-     "",
-     "78 M€",
-     "Colonne « syn bas » : cette hypothèse à sa borne, les autres au centre, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Marge de manœuvre fin 2027 (plafond × EBITDA − DFN)",
-     "",
-     "240 M€",
-     "Colonne « syn haut » : cette hypothèse à sa borne, les autres au centre, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
      "Multiple VE / EBITDA des tuck-ins",
      "",
      "9,8x",
@@ -2650,38 +1925,6 @@
      "11,0x",
      "Hypothèse du groupe, borne haute, onglet Hypothèses du classeur (sources : F48)",
      ""
-    ],
-    [
-     "calcul",
-     "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple des tuck-ins",
-     "",
-     "229 M€",
-     "Scénario central, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple des tuck-ins",
-     "",
-     "195 M€",
-     "Colonne « mTuck haut » : cette hypothèse à sa borne, les autres au centre, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "EBITDA 2027",
-     "",
-     "7 932 M€",
-     "Scénario central, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "F12",
-     "Objectif GreenUp : EBITDA ≥",
-     "2027",
-     "8 Md€",
-     "en_master_greenup_strategy-day_v270324.pdf, p. 9",
-     ""
     ]
    ]
   },
@@ -2692,15 +1935,12 @@
    "answer": "Les provisions de fermeture et post-fermeture de Veolia, 1 290 M€, valent 0,18x son EBITDA 2025 de 7 050 M€. Ce stock date du 30 juin 2026. Les pairs donnent un ordre de grandeur. Clean Harbors porte 230 697 k$ de passifs environnementaux actualisés, soit 3,8 % de son chiffre d'affaires de 6 030,8 M$. Appliqué au chiffre d'affaires 2025 de Clean Earth, 973,9 M$, le ratio de 230 697 k$ pour 6 030,8 M$ donne 37,3 M$. Notre lecture tient en trois points. Pour une cible comme Clean Earth, un passif repris se chiffre en dizaines de millions. La dette financière nette de Veolia ne le compte pas. Aucune ligne du pont de dette de Moody's ne vise ce type de passif. Il ne déplace donc pas la capacité d'achat calculée à la partie 3. Il fixe en revanche le coût de la diligence. L'exposition hors bilan, faite de contentieux et de PFAS, reste à chiffrer. L'annexe I donne la source de chaque chiffre cité.",
    "reasoning": [
     "Un passif repris se compte en dizaines de millions et reste hors de la dette financière nette — Les provisions de fermeture et post-fermeture de Veolia, 1 290 M€, valent 0,18x son EBITDA 2025 de 7 050 M€. Ce stock date du 30 juin 2026.",
-    "Les provisions de fermeture de Veolia sont stables, sauf au semestre de Clean Earth — Le stock a peu bougé en 2025. Il passe de 1 220 M€ fin 2024 à 1 214 M€ fin 2025. Fin 2025, la réhabilitation de sites en porte l'essentiel, avec 1 106 M€.",
     "Clean Earth est entré dans les comptes avant que ses passifs soient évalués à leur juste valeur — Veolia a acquis Clean Earth le 1er juin 2026 pour 2 989 M$, soit 2 542 M€. Fin septembre 2026, l'effet sur la dette atteint 2 804 M€. Il comprend pour l'essentiel le prix et la dette de loyers IFRS 16 reprise, 226 M€.",
-    "Les pairs donnent un ordre de grandeur, pas une mesure du passif de Clean Earth — Clean Harbors, comparable américain coté, publie ses passifs environnementaux au 31 décembre 2025. Rapportés à l'EBITDA ajusté de 1 169 939 k$, les 230 697 k$ valent 0,20x. Veolia est à 0,18x, avec 1 290 M€ pour 7 050 M€. Les normes ne sont pas les mêmes : américaines pour Clean Harbors, IFRS pour Veolia. Les deux groupes actualisent en revanche ces passifs.",
     "L'exposition hors bilan tient aux contentieux, aux PFAS et aux limites de l'assurance — En 2022, l'État de Washington a sanctionné Clean Earth pour une fuite de déchets corrosifs. En 2025, Enviri a transigé avec l'EPA pour le site de Clean Earth à Calvert City.",
-    "La taxonomie classe une part du capex déchets dangereux comme verte, sans mesurer le passif — La taxonomie européenne mesure la part verte des investissements et du chiffre d'affaires. En 2025, Veolia déclare 4,5 Md€ de capex, dont 3,0 Md€ éligibles et 2,1 Md€ éligibles et alignés, soit 47,2 %. Les déchets dangereux apparaissent sur deux lignes. La première couvre les déchets pour l'économie circulaire, déchets dangereux compris. Elle compte 0,4 Md€ de capex éligible, dont 0,4 Md€ aligné. La seconde vise la collecte et le traitement des déchets dangereux pour prévenir la pollution. Son capex éligible atteint 0,4 Md€, dont 0,3 Md€ aligné.",
-    "Les provisions restent hors du levier de Veolia et Moody's ne leur consacre aucune ligne — Le levier de Veolia rapporte la dette financière nette à l'EBITDA. Le rapport du troisième trimestre en donne la définition. Les provisions n'en font pas partie. Au 30 septembre 2026, la dette financière nette atteint 25 423 M€. Elle contient la dette de loyers reprise avec Clean Earth, pas ses passifs environnementaux."
+    "Les provisions restent hors du levier de Veolia et Moody's ne leur consacre aucune ligne — Le levier de Veolia rapporte la dette financière nette à l'EBITDA. Les provisions n'en font pas partie."
    ],
    "open": [
-    "La part de Clean Earth dans les 1 290 M€ de provisions et dans la hausse du semestre.",
+    "La part de Clean Earth dans les 1 290 M€ de provisions.",
     "La juste valeur des actifs et des passifs de Clean Earth. Elle peut apparaître dès les comptes de l'exercice 2026, après la remise de ce rapport.",
     "Les passifs environnementaux propres à Clean Earth. Le rapport d'Enviri du deuxième trimestre 2026 manque à nos sources.",
     "Le contrat de cession : garanties de passif, indemnités environnementales.",
@@ -2708,28 +1948,16 @@
    ],
    "qa": [
     [
-     "Sur quoi vous appuyez-vous pour dire : « Les provisions de fermeture de Veolia sont stables, sauf au semestre de Clean Earth » ?",
-     "Le stock a peu bougé en 2025. Il passe de 1 220 M€ fin 2024 à 1 214 M€ fin 2025. Fin 2025, la réhabilitation de sites en porte l'essentiel, avec 1 106 M€."
-    ],
-    [
      "Sur quoi vous appuyez-vous pour dire : « Clean Earth est entré dans les comptes avant que ses passifs soient évalués à leur juste valeur » ?",
      "Veolia a acquis Clean Earth le 1er juin 2026 pour 2 989 M$, soit 2 542 M€. Fin septembre 2026, l'effet sur la dette atteint 2 804 M€. Il comprend pour l'essentiel le prix et la dette de loyers IFRS 16 reprise, 226 M€."
-    ],
-    [
-     "Sur quoi vous appuyez-vous pour dire : « Les pairs donnent un ordre de grandeur, pas une mesure du passif de Clean Earth » ?",
-     "Clean Harbors, comparable américain coté, publie ses passifs environnementaux au 31 décembre 2025. Rapportés à l'EBITDA ajusté de 1 169 939 k$, les 230 697 k$ valent 0,20x. Veolia est à 0,18x, avec 1 290 M€ pour 7 050 M€. Les normes ne sont pas les mêmes : américaines pour Clean Harbors, IFRS pour Veolia. Les deux groupes actualisent en revanche ces passifs."
     ],
     [
      "Sur quoi vous appuyez-vous pour dire : « L'exposition hors bilan tient aux contentieux, aux PFAS et aux limites de l'assurance » ?",
      "En 2022, l'État de Washington a sanctionné Clean Earth pour une fuite de déchets corrosifs. En 2025, Enviri a transigé avec l'EPA pour le site de Clean Earth à Calvert City."
     ],
     [
-     "Sur quoi vous appuyez-vous pour dire : « La taxonomie classe une part du capex déchets dangereux comme verte, sans mesurer le passif » ?",
-     "La taxonomie européenne mesure la part verte des investissements et du chiffre d'affaires. En 2025, Veolia déclare 4,5 Md€ de capex, dont 3,0 Md€ éligibles et 2,1 Md€ éligibles et alignés, soit 47,2 %. Les déchets dangereux apparaissent sur deux lignes. La première couvre les déchets pour l'économie circulaire, déchets dangereux compris. Elle compte 0,4 Md€ de capex éligible, dont 0,4 Md€ aligné. La seconde vise la collecte et le traitement des déchets dangereux pour prévenir la pollution. Son capex éligible atteint 0,4 Md€, dont 0,3 Md€ aligné."
-    ],
-    [
      "Sur quoi vous appuyez-vous pour dire : « Les provisions restent hors du levier de Veolia et Moody's ne leur consacre aucune ligne » ?",
-     "Le levier de Veolia rapporte la dette financière nette à l'EBITDA. Le rapport du troisième trimestre en donne la définition. Les provisions n'en font pas partie. Au 30 septembre 2026, la dette financière nette atteint 25 423 M€. Elle contient la dette de loyers reprise avec Clean Earth, pas ses passifs environnementaux."
+     "Le levier de Veolia rapporte la dette financière nette à l'EBITDA. Les provisions n'en font pas partie."
     ]
    ],
    "tabs": "ESG",
@@ -2772,54 +2000,6 @@
      "FY2025",
      "973,9 M$",
      "enviri-10-k-2025.pdf, p. 69",
-     ""
-    ],
-    [
-     "F99",
-     "Provisions de fermeture et post-fermeture (total)",
-     "31/12/2024",
-     "1 220 M€",
-     "finance_veolia_urd_2025_en.pdf, p. 432",
-     ""
-    ],
-    [
-     "F100",
-     "Provisions de fermeture et post-fermeture (total)",
-     "31/12/2025",
-     "1 214 M€",
-     "finance_veolia_urd_2025_en.pdf, p. 432",
-     ""
-    ],
-    [
-     "F42",
-     "Provisions pour réhabilitation de sites",
-     "31/12/2025",
-     "1 106 M€",
-     "finance_veolia_urd_2025_en.pdf, p. 432",
-     ""
-    ],
-    [
-     "F101",
-     "Provisions de fermeture, dont Amériques, Asie-Pacifique, Afrique Moyen-Orient",
-     "31/12/2025",
-     "418 M€",
-     "finance_veolia_urd_2025_en.pdf, p. 432",
-     ""
-    ],
-    [
-     "F102",
-     "Provisions de fermeture, dont Amériques, Asie-Pacifique, Afrique Moyen-Orient",
-     "30/06/2026",
-     "472 M€",
-     "veolia_finance_amendment_urd_2025.pdf, p. 65",
-     ""
-    ],
-    [
-     "F107",
-     "Désactualisation des provisions de fermeture et post-fermeture",
-     "FY2025",
-     "72 M€",
-     "finance_veolia_urd_2025_en.pdf, p. 432",
      ""
     ],
     [
@@ -2887,147 +2067,11 @@
      ""
     ],
     [
-     "F225",
-     "Clean Harbors : EBITDA ajusté total",
-     "FY2025",
-     "1 169 939 k$",
-     "clean-harbors-10-k-2025.pdf, p. 38",
-     ""
-    ],
-    [
-     "F218",
-     "Enviri : passifs environnementaux, part courante",
-     "31/12/2025",
-     "12 736 k$",
-     "enviri-10-k-2025.pdf, p. 251",
-     ""
-    ],
-    [
-     "F219",
-     "Enviri : passifs environnementaux, part non courante",
-     "31/12/2025",
-     "38 256 k$",
-     "enviri-10-k-2025.pdf, p. 251",
-     ""
-    ],
-    [
-     "F817",
-     "Clean Harbors : montant non actualisé des passifs de dépollution (remedial)",
-     "31/12/2025",
-     "130 449 k$",
-     "clean-harbors-10-k-2025.pdf, p. 77",
-     ""
-    ],
-    [
-     "F238",
-     "Clean Harbors : passifs de dépollution (remedial)",
-     "31/12/2025",
-     "95 369 k$",
-     "clean-harbors-10-k-2025.pdf, p. 43",
-     ""
-    ],
-    [
      "F772",
      "Ambition de chiffre d'affaires dans le traitement des PFAS et des micropolluants",
      "2030",
      "1 Md€",
      "finance_veolia_operating_financial_review_q3_2026.pdf, p. 7",
-     ""
-    ],
-    [
-     "F491",
-     "Taxonomie 2025 : capex total",
-     "FY2025",
-     "4,5 Md€",
-     "finance_veolia_urd_2025_en.pdf, p. 250",
-     ""
-    ],
-    [
-     "F492",
-     "Taxonomie 2025 : capex éligible",
-     "FY2025",
-     "3,0 Md€",
-     "finance_veolia_urd_2025_en.pdf, p. 250",
-     ""
-    ],
-    [
-     "F493",
-     "Taxonomie 2025 : capex éligible et aligné",
-     "FY2025",
-     "2,1 Md€",
-     "finance_veolia_urd_2025_en.pdf, p. 250",
-     ""
-    ],
-    [
-     "F499",
-     "Taxonomie 2025 : part du capex éligible et aligné",
-     "FY2025",
-     "47,2 %",
-     "finance_veolia_urd_2025_en.pdf, p. 250",
-     ""
-    ],
-    [
-     "F507",
-     "Taxonomie 2025, collecte et traitement des déchets pour l'économie circulaire (déchets dangereux compris) : capex éligible",
-     "FY2025",
-     "0,4 Md€",
-     "finance_veolia_urd_2025_en.pdf, p. 250",
-     ""
-    ],
-    [
-     "F508",
-     "Taxonomie 2025, collecte et traitement des déchets pour l'économie circulaire (déchets dangereux compris) : capex éligible et aligné",
-     "FY2025",
-     "0,4 Md€",
-     "finance_veolia_urd_2025_en.pdf, p. 250",
-     ""
-    ],
-    [
-     "F511",
-     "Taxonomie 2025, collecte et traitement des déchets dangereux, prévention de la pollution (PPC 2.1, 2.2) : capex éligible",
-     "FY2025",
-     "0,4 Md€",
-     "finance_veolia_urd_2025_en.pdf, p. 250",
-     ""
-    ],
-    [
-     "F512",
-     "Taxonomie 2025, collecte et traitement des déchets dangereux, prévention de la pollution (PPC 2.1, 2.2) : capex éligible et aligné",
-     "FY2025",
-     "0,3 Md€",
-     "finance_veolia_urd_2025_en.pdf, p. 250",
-     ""
-    ],
-    [
-     "F721",
-     "Endettement financier net (groupe), après Clean Earth",
-     "30/09/2026",
-     "25 423 M€",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19",
-     ""
-    ],
-    [
-     "calcul",
-     "EBITDA 2027",
-     "",
-     "7 932 M€",
-     "Scénario central, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Dette financière nette au 31/12/2027",
-     "",
-     "23 638 M€",
-     "Scénario central, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Levier fin 2027",
-     "",
-     "2,98x",
-     "Scénario central, onglet Trajectoire du classeur du groupe",
      ""
     ],
     [
@@ -3051,42 +2095,53 @@
   {
    "n": 6,
    "name": "Cibles, puis synthèse",
-   "brief": "Jusqu'à fin 2027, Veolia peut acheter des tuck-ins, pas une nouvelle plateforme",
-   "answer": "Veolia annonce un retour de son levier à 3x au plus en 2027. Sous ce plafond, notre modèle laisse fin 2027 une marge de dette centrale de 159 M€. Cette marge s'entend après les tuck-ins de 0,5 Md€ que notre scénario central compte déjà en 2027. Au multiple de Clean Earth, 9,8x, elle permet une acquisition supplémentaire de 229 M€. Sur mille futurs simulés, l'acquisition maximale médiane atteint 238 M€. Veolia peut acheter au moins 1 Md€ dans 16 % des futurs et 2 Md€ dans 0 %. Dans le scénario défavorable, la marge devient négative, à −1 802 M€. L'acquisition maximale centrale, 229 M€, fait moins d'un dixième de l'effet de Clean Earth sur la dette, 2 804 M€. Aux États-Unis, hors GFL Environmental Services, deux plateformes chiffrées sont valorisées 1,8 Md$ et environ 1,2 Md$. Elles dépassent la marge dans la plupart des futurs. Les tuck-ins, eux, restent à portée. Le programme de cessions ne change pas ce constat. Veolia a signé 570 M€ de cessions, à 10,4x l'EBITDA en moyenne. Le programme complet, plus de 2 Md€, sera livré d'ici la mi-2028, après l'horizon du sujet. Nous en concluons que, jusqu'à fin 2027, Veolia peut payer des tuck-ins, pas une nouvelle plateforme. L'annexe IV détaille la fourchette par scénario.",
+   "brief": "Si Séché doit céder un four pour racheter Flamme, Chauny est le tuck-in que Veolia peut viser",
+   "answer": "Veolia annonce un retour de son levier à 3x au plus en 2027. Sous ce plafond, notre modèle laisse fin 2027 une marge de dette centrale de 159 M€. Cette marge s'entend après les tuck-ins de 0,5 Md€ que notre scénario central compte déjà en 2027. Au multiple de Clean Earth, 9,8x, elle permet une acquisition supplémentaire de 229 M€. Veolia peut acheter au moins 1 Md€ dans 16 % des futurs simulés. Dans le scénario défavorable, la marge devient négative, à −1 802 M€. Cette marge écarte une plateforme. Aux États-Unis, hors GFL Environmental Services, deux plateformes chiffrées sont valorisées 1,8 Md$ et environ 1,2 Md$. Elles dépassent la marge dans la plupart des futurs. Les tuck-ins, eux, restent à portée. Encore faut-il dire lesquels : cette partie en désigne un.",
    "reasoning": [
-    "La marge de 2027 finance une petite acquisition et aucune dans le scénario défavorable — Veolia annonce un retour de son levier à 3x au plus en 2027. Sous ce plafond, notre modèle laisse fin 2027 une marge de dette centrale de 159 M€. Cette marge s'entend après les tuck-ins de 0,5 Md€ que notre scénario central compte déjà en 2027. Au multiple de Clean Earth, 9,8x, elle permet une acquisition supplémentaire de 229 M€. Sur mille futurs simulés, l'acquisition maximale médiane atteint 238 M€. Veolia peut acheter au moins 1 Md€ dans 16 % des futurs et 2 Md€ dans 0 %. Dans le scénario défavorable, la marge devient négative, à −1 802 M€.",
-    "Clean Earth fixe l'étalon : un multiple après synergies, un prix porté en entier par la dette — Le multiple annoncé est de 9,8x l'EBITDA 2026 attendu, après synergies en régime de croisière. Veolia attend de Clean Earth un EBITDA 2026 de 200 M$, en mesure ajustée après IFRS 16.",
-    "Le troisième trimestre confirme le plafond et place la fin des cessions après l'horizon — Veolia a réalisé 0,2 Md€ de cessions sur neuf mois. Le programme dépasse 2 Md€ et sera livré d'ici la mi-2028. Notre scénario central encaisse 900 M€ en 2027. Ce montant réunit le solde des cessions signées et la moitié du reste du programme, 50,0 %. C'est l'hypothèse qui pèse le plus sur la marge. Sans aucun encaissement de ce reste en 2027, la marge tombe à −304 M€. S'il est encaissé en entier, elle monte à 622 M€. L'acquisition maximale reste alors sous 1 Md€, à 896 M€.",
-    "Les cibles réelles se réduisent à des plateformes américaines hors de portée ou sans prix et à des tuck-ins — Nous trions les cibles recensées selon les critères publiés par Veolia. L'annexe III liste les cibles citées, l'annexe II les opérations.",
-    "Une cible plus grande demande un financement que la politique du groupe écarte — Notre modèle chiffre une cible de la taille de Clean Earth : 3 000 M€ payés 9,8x l'EBITDA. Dans le scénario central, il manquerait 1 923 M€ de marge sous le plafond de 3x fin 2027. Il faudrait émettre autant d'hybrides, 1 923 M€, pour un coupon de 83 M€ par an. Des cessions accélérées devraient atteindre 2 702 M€ et retireraient 260 M€ d'EBITDA par an. Une augmentation de capital du montant manquant accroîtrait le nombre d'actions de 8,9 %, au cours du 31 décembre 2025.",
-    "Des tuck-ins d'abord, une plateforme seulement après de nouvelles signatures — D'abord, poursuivre les tuck-ins américains et asiatiques, au bas de la fourchette de GreenUp, de 0,5 Md€ à 1,0 Md€. En 2025, Veolia en a acheté pour environ 370 M€, à environ 9x. Au haut de la fourchette, la marge centrale deviendrait négative, à −179 M€. Sans tuck-in en 2027, elle porterait une acquisition de 717 M€. Tuck-ins et plateforme puisent donc dans la même marge."
+    "La marge de 2027 finance des tuck-ins et aucune plateforme — Veolia annonce un retour de son levier à 3x au plus en 2027. Sous ce plafond, notre modèle laisse fin 2027 une marge de dette centrale de 159 M€. Cette marge s'entend après les tuck-ins de 0,5 Md€ que notre scénario central compte déjà en 2027. Au multiple de Clean Earth, 9,8x, elle permet une acquisition supplémentaire de 229 M€. Veolia peut acheter au moins 1 Md€ dans 16 % des futurs simulés. Dans le scénario défavorable, la marge devient négative, à −1 802 M€.",
+    "Les tuck-ins de Veolia ont des noms, un prix et trois critères publiés — Un tuck-in est une petite acquisition qui complète un métier existant. En 2025, Veolia en a acheté pour environ 370 M€, à environ 9x l'EBITDA. Dans les déchets dangereux, elle compte 5 opérations signées au seul premier semestre 2025. Ces opérations ont des noms.",
+    "Séché rachète Flamme et l'Autorité de la concurrence examine l'opération — Le 5 juin 2025, Séché Environnement a signé une promesse d'achat du Groupe Flamme, pour un prix de l'ordre de 300 M€. Flamme réalise environ 100 M€ de chiffre d'affaires pour un excédent brut d'exploitation d'environ 20 M€. Le prix représente donc 15 fois cet excédent (300 / 20). Son pôle de déchets dangereux, ARF, pèse environ 49 % du chiffre d'affaires. Il exploite quatre sites dans les Hauts-de-France, dont deux incinérateurs, à Vendeuil et à Chauny.",
+    "Si une cession est exigée, le four de Chauny est le plus détachable — Les deux incinérateurs de Flamme n'ont pas la même taille. Vendeuil réunit une enceinte statique de 8 t/h pour 60 000 t/an et un four rotatif de 30 t/h pour 150 000 t/an. Chauny ne compte qu'une enceinte de 7 t/h, réservée aux déchets liquides. Le site broie aussi des aérosols et produit de la vapeur. Chauny représente ainsi 7 t/h sur 45 (7 + 8 + 30), soit environ 16 % de la capacité horaire d'incinération de Flamme.",
+    "Nos hypothèses prêtent à Chauny environ 2 M€ d'excédent brut et un prix d'une vingtaine de millions — Aucun compte de Chauny n'est public. Nous ne connaissons ni son tonnage, ni son chiffre d'affaires, ni son effectif. Nous l'estimons donc en quatre pas. Chaque pas est une hypothèse du groupe, posée sur un chiffre publié.",
+    "Au multiple des tuck-ins de 2025, les critères de Veolia ne sont tenus qu'avec des synergies — Nous appliquons à Chauny les trois critères publiés.",
+    "Trois objections affaiblissent cette thèse et nous y répondons — L'Autorité agréerait-elle Veolia ? C'est la principale faiblesse de notre thèse. Un repreneur doit être indépendant du vendeur et capable d'exploiter l'actif. Il ne doit pas créer lui-même de problème de concurrence à première vue. Or Veolia est le premier acteur européen des déchets dangereux et exploite déjà un incinérateur à Courrières, dans la même région. Nous n'avons trouvé aucun précédent d'un exploitant voisin agréé pour reprendre un four. Deux éléments jouent pourtant pour Veolia. Le four de Chauny brûle des liquides et une part des déchets de Vendeuil vient d'autres régions et d'Europe : le marché ne se limite pas à la région. L'Autorité a de plus autorisé en mars 2026 le projet d'Ortec et de Paprec de convertir une cimenterie en incinérateur : un concurrent arrive. Si l'Autorité écartait Veolia, notre recommandation se reporterait sur les tuck-ins nommés plus haut.",
+    "Les plateformes américaines restent hors de portée ou sans prix — Nous avons trié les autres cibles recensées selon les critères publiés par Veolia. Un tableau en annexe les présente. L'annexe III liste les cibles citées, l'annexe II les opérations."
    ],
    "open": [
-    "Le prix ou l'EBITDA d'Arcwood, la valeur d'Onterris, l'EBITDA récent de Heritage-Crystal Clean, de Triumvirate et de NG Group.",
-    "Le nom et le prix des acquisitions américaines en cours, évoquées par Veolia dans Waste Dive le 23 septembre 2026.",
-    "Le prix de chacun des tuck-ins américains de 2025 et la taille visée pour une prochaine plateforme.",
-    "L'EBITDA de Cenviro et le prix de contrôle des cibles cotées. Une capitalisation ne dit pas ce qu'un acquéreur paierait."
+    "Le tonnage, le chiffre d'affaires, l'excédent brut, les amortissements et l'effectif du site de Chauny. Notre prix repose sur quatre hypothèses.",
+    "La décision de l'Autorité de la concurrence et les engagements éventuels de Séché. Rien n'est publié.",
+    "La capacité de l'incinérateur de Courrières, sa zone de chalandise et les parts de marché de l'incinération de déchets dangereux en France.",
+    "Le prix d'un incinérateur vendu seul, la décote d'un remède et le coût d'une remise à niveau du site.",
+    "Le nom et le prix des acquisitions américaines en cours, évoquées par Veolia en septembre 2026."
    ],
    "qa": [
     [
-     "Sur quoi vous appuyez-vous pour dire : « Clean Earth fixe l'étalon : un multiple après synergies, un prix porté en entier par la dette » ?",
-     "Le multiple annoncé est de 9,8x l'EBITDA 2026 attendu, après synergies en régime de croisière. Veolia attend de Clean Earth un EBITDA 2026 de 200 M$, en mesure ajustée après IFRS 16."
+     "Sur quoi vous appuyez-vous pour dire : « Les tuck-ins de Veolia ont des noms, un prix et trois critères publiés » ?",
+     "Un tuck-in est une petite acquisition qui complète un métier existant. En 2025, Veolia en a acheté pour environ 370 M€, à environ 9x l'EBITDA. Dans les déchets dangereux, elle compte 5 opérations signées au seul premier semestre 2025. Ces opérations ont des noms."
     ],
     [
-     "Sur quoi vous appuyez-vous pour dire : « Le troisième trimestre confirme le plafond et place la fin des cessions après l'horizon » ?",
-     "Veolia a réalisé 0,2 Md€ de cessions sur neuf mois. Le programme dépasse 2 Md€ et sera livré d'ici la mi-2028. Notre scénario central encaisse 900 M€ en 2027. Ce montant réunit le solde des cessions signées et la moitié du reste du programme, 50,0 %. C'est l'hypothèse qui pèse le plus sur la marge. Sans aucun encaissement de ce reste en 2027, la marge tombe à −304 M€. S'il est encaissé en entier, elle monte à 622 M€. L'acquisition maximale reste alors sous 1 Md€, à 896 M€."
+     "Sur quoi vous appuyez-vous pour dire : « Séché rachète Flamme et l'Autorité de la concurrence examine l'opération » ?",
+     "Le 5 juin 2025, Séché Environnement a signé une promesse d'achat du Groupe Flamme, pour un prix de l'ordre de 300 M€. Flamme réalise environ 100 M€ de chiffre d'affaires pour un excédent brut d'exploitation d'environ 20 M€. Le prix représente donc 15 fois cet excédent (300 / 20). Son pôle de déchets dangereux, ARF, pèse environ 49 % du chiffre d'affaires. Il exploite quatre sites dans les Hauts-de-France, dont deux incinérateurs, à Vendeuil et à Chauny."
     ],
     [
-     "Sur quoi vous appuyez-vous pour dire : « Les cibles réelles se réduisent à des plateformes américaines hors de portée ou sans prix et à des tuck-ins » ?",
-     "Nous trions les cibles recensées selon les critères publiés par Veolia. L'annexe III liste les cibles citées, l'annexe II les opérations."
+     "Sur quoi vous appuyez-vous pour dire : « Si une cession est exigée, le four de Chauny est le plus détachable » ?",
+     "Les deux incinérateurs de Flamme n'ont pas la même taille. Vendeuil réunit une enceinte statique de 8 t/h pour 60 000 t/an et un four rotatif de 30 t/h pour 150 000 t/an. Chauny ne compte qu'une enceinte de 7 t/h, réservée aux déchets liquides. Le site broie aussi des aérosols et produit de la vapeur. Chauny représente ainsi 7 t/h sur 45 (7 + 8 + 30), soit environ 16 % de la capacité horaire d'incinération de Flamme."
     ],
     [
-     "Sur quoi vous appuyez-vous pour dire : « Une cible plus grande demande un financement que la politique du groupe écarte » ?",
-     "Notre modèle chiffre une cible de la taille de Clean Earth : 3 000 M€ payés 9,8x l'EBITDA. Dans le scénario central, il manquerait 1 923 M€ de marge sous le plafond de 3x fin 2027. Il faudrait émettre autant d'hybrides, 1 923 M€, pour un coupon de 83 M€ par an. Des cessions accélérées devraient atteindre 2 702 M€ et retireraient 260 M€ d'EBITDA par an. Une augmentation de capital du montant manquant accroîtrait le nombre d'actions de 8,9 %, au cours du 31 décembre 2025."
+     "Sur quoi vous appuyez-vous pour dire : « Nos hypothèses prêtent à Chauny environ 2 M€ d'excédent brut et un prix d'une vingtaine de millions » ?",
+     "Aucun compte de Chauny n'est public. Nous ne connaissons ni son tonnage, ni son chiffre d'affaires, ni son effectif. Nous l'estimons donc en quatre pas. Chaque pas est une hypothèse du groupe, posée sur un chiffre publié."
     ],
     [
-     "Sur quoi vous appuyez-vous pour dire : « Des tuck-ins d'abord, une plateforme seulement après de nouvelles signatures » ?",
-     "D'abord, poursuivre les tuck-ins américains et asiatiques, au bas de la fourchette de GreenUp, de 0,5 Md€ à 1,0 Md€. En 2025, Veolia en a acheté pour environ 370 M€, à environ 9x. Au haut de la fourchette, la marge centrale deviendrait négative, à −179 M€. Sans tuck-in en 2027, elle porterait une acquisition de 717 M€. Tuck-ins et plateforme puisent donc dans la même marge."
+     "Sur quoi vous appuyez-vous pour dire : « Au multiple des tuck-ins de 2025, les critères de Veolia ne sont tenus qu'avec des synergies » ?",
+     "Nous appliquons à Chauny les trois critères publiés."
+    ],
+    [
+     "Sur quoi vous appuyez-vous pour dire : « Trois objections affaiblissent cette thèse et nous y répondons » ?",
+     "L'Autorité agréerait-elle Veolia ? C'est la principale faiblesse de notre thèse. Un repreneur doit être indépendant du vendeur et capable d'exploiter l'actif. Il ne doit pas créer lui-même de problème de concurrence à première vue. Or Veolia est le premier acteur européen des déchets dangereux et exploite déjà un incinérateur à Courrières, dans la même région. Nous n'avons trouvé aucun précédent d'un exploitant voisin agréé pour reprendre un four. Deux éléments jouent pourtant pour Veolia. Le four de Chauny brûle des liquides et une part des déchets de Vendeuil vient d'autres régions et d'Europe : le marché ne se limite pas à la région. L'Autorité a de plus autorisé en mars 2026 le projet d'Ortec et de Paprec de convertir une cimenterie en incinérateur : un concurrent arrive. Si l'Autorité écartait Veolia, notre recommandation se reporterait sur les tuck-ins nommés plus haut."
+    ],
+    [
+     "Sur quoi vous appuyez-vous pour dire : « Les plateformes américaines restent hors de portée ou sans prix » ?",
+     "Nous avons trié les autres cibles recensées selon les critères publiés par Veolia. Un tableau en annexe les présente. L'annexe III liste les cibles citées, l'annexe II les opérations."
     ]
    ],
    "tabs": "Cibles",
@@ -3133,25 +2188,9 @@
     ],
     [
      "calcul",
-     "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple des tuck-ins",
-     "",
-     "238 M€",
-     "Médiane des 1 000 futurs tirés, onglet Distribution du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
      "Veolia peut acheter au moins 1 Md€ fin 2027 sans franchir la contrainte qui mord",
      "",
      "16 %",
-     "Part des 1 000 futurs tirés, onglet Distribution du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "… au moins 2 Md€",
-     "",
-     "0 %",
      "Part des 1 000 futurs tirés, onglet Distribution du classeur du groupe",
      ""
     ],
@@ -3161,14 +2200,6 @@
      "",
      "−1 802 M€",
      "Scénario défavorable combiné, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "F730",
-     "Clean Earth : effet sur l'endettement financier net (prix et dette IFRS 16 compris)",
-     "9M 2026",
-     "2 804 M€",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 5",
      ""
     ],
     [
@@ -3188,35 +2219,227 @@
      ""
     ],
     [
-     "F736",
-     "Programme de cessions : montant déjà signé",
-     "au 05/11/2026",
-     "570 M€",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 3",
+     "F471",
+     "Tuck-ins 2025 (États-Unis, Brésil, Japon) : montant",
+     "FY2025",
+     "370 M€",
+     "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 11",
      ""
     ],
     [
-     "F737",
-     "Programme de cessions : multiple moyen d'EBITDA des cessions signées",
-     "au 05/11/2026",
-     "10,4x",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 3",
+     "F472",
+     "Tuck-ins 2025 (États-Unis, Brésil, Japon) : multiple moyen VE / EBITDA, environ",
+     "FY2025",
+     "9x",
+     "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 11",
      ""
     ],
     [
-     "F25",
-     "Programme de cessions, à réaliser d'ici mi-2028 : plus de",
-     "2026-2028",
-     "2 Md€",
-     "veolia-amendement-deu-2025-s1-2026.pdf, p. 29",
+     "F883",
+     "Déchets dangereux : petites acquisitions (tuck-ins) signées au premier semestre 2025",
+     "S1 2025",
+     "5 opérations",
+     "veolia_finance_deep_dive_waste_to_value_06-25-2025_en.pdf, p. 28",
      ""
     ],
     [
-     "F51",
-     "Clean Earth : EBITDA (ajusté, post IFRS 16)",
-     "2026E",
-     "200 M$",
-     "veolia_clean_earth_investor_presentation.pdf, p. 6",
+     "D20",
+     "New England Disposal Technologies, Bio-Med Innovations, Ingenium, Chameleon Industries Group",
+     "",
+     "247 M€",
+     "finance_veolia_consolidated_financial_statements_31-12-25.pdf, p. 17",
+     ""
+    ],
+    [
+     "D13",
+     "U.S. Industrial Technologies",
+     "",
+     "58 M€",
+     "finance_consolidated_financial_statements_2023.pdf, p. 16",
+     ""
+    ],
+    [
+     "D19",
+     "Zeeklite Co. LTD",
+     "",
+     "85 M€",
+     "finance_veolia_consolidated_financial_statements_31-12-25.pdf, p. 17",
+     ""
+    ],
+    [
+     "D4",
+     "Enviropacific Services",
+     "",
+     "137 M€",
+     "veolia-amendement-deu-2025-s1-2026.pdf, p. 46",
+     ""
+    ],
+    [
+     "F897",
+     "Enviropacific Services : multiple VE / EBITDA ajusté de l'exercice 2025",
+     "exercice 2025",
+     "5,8x",
+     "finance_veolia_q1_2026_results_presentation.pdf, p. 11",
+     ""
+    ],
+    [
+     "F896",
+     "Acquisitions de Veolia : part réalisée hors d'Europe, environ",
+     "présentation des neuf mois 2026",
+     "80 %",
+     "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 14",
+     ""
+    ],
+    [
+     "F881",
+     "Déchets dangereux, critère d'investissement : écart minimal du TRI au-dessus du WACC",
+     "présentation du 25/06/2025",
+     "4 %",
+     "veolia_finance_deep_dive_waste_to_value_06-25-2025_en.pdf, p. 28",
+     ""
+    ],
+    [
+     "F882",
+     "Déchets dangereux, critère d'investissement : année après laquelle le ROCE doit atteindre le WACC",
+     "présentation du 25/06/2025",
+     "3 ans",
+     "veolia_finance_deep_dive_waste_to_value_06-25-2025_en.pdf, p. 28",
+     ""
+    ],
+    [
+     "F889",
+     "Critère d'investissement de Veolia (croissance organique et tuck-ins) : délai de retour maximal (pay-back)",
+     "plan GreenUp, 27/03/2024",
+     "7 ans",
+     "en_master_greenup_strategy-day_v270324.pdf, p. 64",
+     ""
+    ],
+    [
+     "F890",
+     "Comité d'investissement du groupe : seuil de valeur d'entreprise au-delà duquel il approuve un projet",
+     "plan GreenUp, 27/03/2024",
+     "10 M€",
+     "en_master_greenup_strategy-day_v270324.pdf, p. 64",
+     ""
+    ],
+    [
+     "F891",
+     "Coût moyen pondéré du capital (WACC) de l'unité France et déchets dangereux Europe, tests de dépréciation",
+     "FY2025",
+     "5,7 %",
+     "finance_veolia_consolidated_financial_statements_31-12-25.pdf, p. 44",
+     ""
+    ],
+    [
+     "F878",
+     "ROCE après impôts du groupe (y compris IFRS 16)",
+     "FY2025",
+     "9,4 %",
+     "finance_veolia_operating_and_financial_review_2025.pdf, p. 26",
+     ""
+    ],
+    [
+     "F894",
+     "Déchets dangereux (Veolia, monde) : ROCE après impôts",
+     "FY2024",
+     "6 %",
+     "veolia_finance_deep_dive_waste_to_value_06-25-2025_en.pdf, p. 26",
+     ""
+    ],
+    [
+     "F874",
+     "Groupe Flamme : prix pour 100 % des titres annoncé par Séché, de l'ordre de",
+     "annonce du 06/06/2025",
+     "300 M€",
+     "25-06-cp-flamme.pdf, p. 3",
+     ""
+    ],
+    [
+     "F875",
+     "Groupe Flamme : chiffre d'affaires, environ",
+     "exercice clos le 30/09/2024",
+     "100 M€",
+     "25-06-cp-flamme.pdf, p. 2",
+     ""
+    ],
+    [
+     "F876",
+     "Groupe Flamme : excédent brut d'exploitation (EBE), environ",
+     "exercice clos le 30/09/2024",
+     "20 M€",
+     "25-06-cp-flamme.pdf, p. 2",
+     ""
+    ],
+    [
+     "F877",
+     "A.R.F. (pôle déchets dangereux) : part du chiffre d'affaires consolidé du Groupe Flamme, environ",
+     "exercice clos le 30/09/2024",
+     "49 %",
+     "25-06-cp-flamme.pdf, p. 2",
+     ""
+    ],
+    [
+     "D24",
+     "Actifs Osis Grand Paris (SARP), 8 sites",
+     "",
+     "32 M€",
+     "ve_urd_2022_en.pdf, p. 330",
+     ""
+    ],
+    [
+     "F898",
+     "Séché Environnement : levier financier IFRS",
+     "au 30/06/2026",
+     "2,9x",
+     "26-06_cp-bn-s1-26.pdf, p. 1",
+     ""
+    ],
+    [
+     "F892",
+     "ARF Vendeuil : capacité horaire de l'enceinte statique d'incinération",
+     "inspection du 25/03/2024",
+     "8 t/h",
+     "saa5ias7eeumrd2nxloai0toarpzn59t.pdf, p. 4",
+     ""
+    ],
+    [
+     "F885",
+     "ARF Vendeuil : capacité annuelle de l'enceinte statique d'incinération",
+     "inspection du 25/03/2024",
+     "60 000 t/an",
+     "saa5ias7eeumrd2nxloai0toarpzn59t.pdf, p. 4",
+     ""
+    ],
+    [
+     "F893",
+     "ARF Vendeuil : capacité horaire du four rotatif",
+     "inspection du 25/03/2024",
+     "30 t/h",
+     "saa5ias7eeumrd2nxloai0toarpzn59t.pdf, p. 4",
+     ""
+    ],
+    [
+     "F886",
+     "ARF Vendeuil : capacité annuelle du four rotatif",
+     "inspection du 25/03/2024",
+     "150 000 t/an",
+     "saa5ias7eeumrd2nxloai0toarpzn59t.pdf, p. 4",
+     ""
+    ],
+    [
+     "F884",
+     "ARF Chauny : capacité maximale de l'enceinte de post-combustion (incinération de déchets liquides)",
+     "inspection du 29/07/2025",
+     "7 t/h",
+     "3kpze2d6rwdqzpytulalmbwllehzzgd7.pdf, p. 2",
+     ""
+    ],
+    [
+     "F895",
+     "Déchets dangereux en Europe (Veolia) : marge d'EBITDA, environ",
+     "FY2024",
+     "16 %",
+     "veolia_finance_deep_dive_waste_to_value_06-25-2025_en.pdf, p. 27",
      ""
     ],
     [
@@ -3228,219 +2451,35 @@
      ""
     ],
     [
-     "F41",
-     "Clean Earth : prix d'acquisition",
-     "01/06/2026",
-     "2 542 M€",
-     "veolia-amendement-deu-2025-s1-2026.pdf, p. 46",
+     "F51",
+     "Clean Earth : EBITDA (ajusté, post IFRS 16)",
+     "2026E",
+     "200 M$",
+     "veolia_clean_earth_investor_presentation.pdf, p. 6",
      ""
     ],
     [
-     "calcul",
-     "Multiple VE / EBITDA des tuck-ins",
-     "",
-     "7,4x",
-     "Hypothèse du groupe, borne basse, onglet Hypothèses du classeur (sources : F48)",
+     "F887",
+     "ARF Chauny : dioxines dans les sols à la station K1' (pg OMS2005-TEQ/g), pollution dite antérieure à ARF",
+     "campagne de 09/2021",
+     "940 pg TEQ/g",
+     "3kpze2d6rwdqzpytulalmbwllehzzgd7.pdf, p. 14",
      ""
     ],
     [
-     "calcul",
-     "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple des tuck-ins",
-     "",
-     "356 M€",
-     "Colonne « mTuck bas » : cette hypothèse à sa borne, les autres au centre, onglet Trajectoire du classeur du groupe",
+     "F888",
+     "ARF Chauny : valeur cible des dioxines dans les sols (pg OMS2005-TEQ/g)",
+     "campagne de 09/2021",
+     "5 pg TEQ/g",
+     "3kpze2d6rwdqzpytulalmbwllehzzgd7.pdf, p. 14",
      ""
     ],
     [
-     "calcul",
-     "Multiple VE / EBITDA des tuck-ins",
-     "",
-     "11,0x",
-     "Hypothèse du groupe, borne haute, onglet Hypothèses du classeur (sources : F48)",
-     ""
-    ],
-    [
-     "calcul",
-     "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple des tuck-ins",
-     "",
-     "195 M€",
-     "Colonne « mTuck haut » : cette hypothèse à sa borne, les autres au centre, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Marge de manœuvre fin 2027 (plafond × EBITDA − DFN)",
-     "",
-     "141 M€",
-     "Colonne « mTuck haut » : cette hypothèse à sa borne, les autres au centre, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Marge de manœuvre fin 2027 (plafond × EBITDA − DFN)",
-     "",
-     "212 M€",
-     "Colonne « mTuck bas » : cette hypothèse à sa borne, les autres au centre, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Marge de manœuvre fin 2027 (plafond × EBITDA − DFN)",
-     "",
-     "2 280 M€",
-     "Scénario favorable combiné, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple des tuck-ins",
-     "",
-     "3 835 M€",
-     "Scénario favorable combiné, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "F478",
-     "HEPACO (Clean Harbors) : prix d'acquisition",
-     "03/2024",
-     "400 M$",
-     "clean-harbors-hepaco-2024-03-25.html, p. 1",
-     ""
-    ],
-    [
-     "F479",
-     "HEPACO (Clean Harbors) : EBITDA ajusté 2023, environ",
-     "FY2023",
-     "36 M$",
-     "clean-harbors-hepaco-2024-03-25.html, p. 1",
-     ""
-    ],
-    [
-     "F601",
-     "EnviroServe (Clean Harbors) : prix d'acquisition",
-     "08/2026",
-     "470 M$",
-     "clean-harbors-enviroserve-2026-08-12.html, p. 1",
-     ""
-    ],
-    [
-     "F602",
-     "EnviroServe (Clean Harbors) : EBITDA ajusté annuel attendu, environ",
-     "2026e",
-     "27 M$",
-     "clean-harbors-enviroserve-2026-08-12.html, p. 1",
-     ""
-    ],
-    [
-     "F738",
-     "Cessions réalisées sur neuf mois (rotation d'actifs GreenUp)",
-     "9M 2026",
-     "0,2 Md€",
-     "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 14",
-     ""
-    ],
-    [
-     "calcul",
-     "Cessions encaissées en 2027",
-     "",
-     "900 M€",
-     "Scénario central, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Part du reste du programme encaissée en 2027",
-     "",
-     "50,0 %",
-     "Hypothèse du groupe, valeur centrale, onglet Hypothèses du classeur (sources : F25)",
-     ""
-    ],
-    [
-     "calcul",
-     "Marge de manœuvre fin 2027 (plafond × EBITDA − DFN)",
-     "",
-     "−304 M€",
-     "Colonne « s27 bas » : cette hypothèse à sa borne, les autres au centre, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Marge de manœuvre fin 2027 (plafond × EBITDA − DFN)",
-     "",
-     "622 M€",
-     "Colonne « s27 haut » : cette hypothèse à sa borne, les autres au centre, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple des tuck-ins",
-     "",
-     "896 M€",
-     "Colonne « s27 haut » : cette hypothèse à sa borne, les autres au centre, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "F721",
-     "Endettement financier net (groupe), après Clean Earth",
-     "30/09/2026",
-     "25 423 M€",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19",
-     ""
-    ],
-    [
-     "calcul",
-     "Dette financière nette au 31/12/2026",
-     "",
-     "23 806 M€",
-     "Scénario central, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Cash-flow libre net du T4 2026",
-     "",
-     "1 383 M€",
-     "Hypothèse du groupe, valeur centrale, onglet Hypothèses du classeur (sources : F29, F728)",
-     ""
-    ],
-    [
-     "calcul",
-     "Marge de manœuvre fin 2027 (plafond × EBITDA − DFN)",
-     "",
-     "−224 M€",
-     "Colonne « fcfQ4 bas » : cette hypothèse à sa borne, les autres au centre, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "F725",
-     "Guidance 2026 confirmée au T3 : ratio de levier fin 2026, Clean Earth inclus, égal ou légèrement supérieur à",
-     "31/12/2026",
-     "3x",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 21",
-     ""
-    ],
-    [
-     "F6",
-     "Plafond GreenUp : dette financière nette / EBITDA ≤",
-     "2024-2027",
-     "3x",
-     "en_master_greenup_strategy-day_v270324.pdf, p. 64",
-     ""
-    ],
-    [
-     "calcul",
-     "Levier fin 2026",
-     "",
-     "3,18x",
-     "Scénario central, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Levier fin 2027",
-     "",
-     "2,98x",
-     "Scénario central, onglet Trajectoire du classeur du groupe",
+     "F899",
+     "ARF Chauny : distance des premières habitations",
+     "inspection du 29/07/2025",
+     "220 m",
+     "3kpze2d6rwdqzpytulalmbwllehzzgd7.pdf, p. 10",
      ""
     ],
     [
@@ -3516,118 +2555,6 @@
      ""
     ],
     [
-     "D38",
-     "Enviracore Services (plateforme de services environnementaux : intervention d'urgence, nettoyage industriel, eaux usées, États-Unis)",
-     "",
-     "",
-     "enviracore-lancement-2025-09-30.html, p. 1",
-     ""
-    ],
-    [
-     "F616",
-     "Seaside Equity Partners : EBITDA visé pour une plateforme (fonds Flagship), bas",
-     "critères 2026",
-     "3 M$",
-     "seaside-criteres-2026-10-07.html, p. 1",
-     ""
-    ],
-    [
-     "F617",
-     "Seaside Equity Partners : EBITDA visé pour une plateforme (fonds Flagship), haut",
-     "critères 2026",
-     "15 M$",
-     "seaside-criteres-2026-10-07.html, p. 1",
-     ""
-    ],
-    [
-     "calcul",
-     "Cenviro : valeur publiée en euros",
-     "",
-     "255 M€",
-     "Valeur publiée [T28] convertie en euros au taux 1,1758 $ pour 1 €, hypothèse de change du groupe d'après F40 et F41, onglet Cibles du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Cenviro : part des futurs où la cible tient",
-     "",
-     "47 %",
-     "Part des 1 000 futurs tirés où la cible [T28] tient, onglet Cibles du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Greenthesis : valeur d'entreprise retenue",
-     "",
-     "340 M€",
-     "Valeur d'entreprise retenue pour la cible [T23], onglet Cibles du classeur du groupe",
-     ""
-    ],
-    [
-     "T29",
-     "Lassila & Tikanoja",
-     "",
-     "251,8 M€",
-     "lassila-and-tikanoja-plc-interim-report-january-september-2026-lassila-tikanoja-plc-int.html, p. 1",
-     ""
-    ],
-    [
-     "T31",
-     "Mo-BRUK",
-     "",
-     "1 381 M PLN",
-     "20260831_noble_securities_mbr_pl_ra.pdf, p. 1",
-     ""
-    ],
-    [
-     "calcul",
-     "Greenthesis : multiple VE / EBITDA employé",
-     "",
-     "8,1x",
-     "Multiple VE / EBITDA propre à la cible [T23], onglet Cibles du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Lassila & Tikanoja : multiple VE / EBITDA employé",
-     "",
-     "5,2x",
-     "Multiple VE / EBITDA propre à la cible [T29], onglet Cibles du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Mo-BRUK : multiple VE / EBITDA employé",
-     "",
-     "17,3x",
-     "Multiple VE / EBITDA propre à la cible [T31], onglet Cibles du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Greenthesis : part des futurs où la cible tient",
-     "",
-     "46 %",
-     "Part des 1 000 futurs tirés où la cible [T23] tient, onglet Cibles du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Lassila & Tikanoja : part des futurs où la cible tient",
-     "",
-     "49 %",
-     "Part des 1 000 futurs tirés où la cible [T29] tient, onglet Cibles du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Mo-BRUK : part des futurs où la cible tient",
-     "",
-     "40 %",
-     "Part des 1 000 futurs tirés où la cible [T31] tient, onglet Cibles du classeur du groupe",
-     ""
-    ],
-    [
      "calcul",
      "taille de la cible étudiée, valeur d'entreprise payée",
      "",
@@ -3649,198 +2576,6 @@
      "",
      "1 923 M€",
      "Onglet Financement du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "hybrides à émettre pour payer la cible étudiée sous 3x",
-     "",
-     "1 923 M€",
-     "Onglet Financement du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "coupon annuel de ces hybrides",
-     "",
-     "83 M€",
-     "Onglet Financement du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "cessions accélérées nécessaires pour payer la cible étudiée sous 3x",
-     "",
-     "2 702 M€",
-     "Onglet Financement du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "EBITDA perdu chaque année par ces cessions",
-     "",
-     "260 M€",
-     "Onglet Financement du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "dilution d'une augmentation de capital qui paierait la cible étudiée",
-     "",
-     "8,9 %",
-     "Onglet Financement du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "EBITDA cédé par le programme de cessions au multiple central",
-     "",
-     "192 M€",
-     "Onglet Cessions du classeur du groupe",
-     ""
-    ],
-    [
-     "F575",
-     "Hybride octobre 2020, première tranche remboursée en février 2026 : nominal",
-     "02/2026",
-     "850 M€",
-     "finance_veolia_urd_2025_en.pdf, p. 429",
-     ""
-    ],
-    [
-     "F732",
-     "Pont de dette 9M 2026 : remboursement de dette hybride (titres super-subordonnés, 12/09/2026)",
-     "9M 2026",
-     "−500 M€",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19",
-     ""
-    ],
-    [
-     "F733",
-     "Pont de dette 9M 2026 : augmentation de capital Sequoia 2026 (actionnariat salarié), montant net",
-     "9M 2026",
-     "+340 M€",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19",
-     ""
-    ],
-    [
-     "F734",
-     "Pont de dette 9M 2026 : réduction de capital par annulation d'actions auto-détenues (rachat)",
-     "9M 2026",
-     "−432 M€",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19",
-     ""
-    ],
-    [
-     "F5",
-     "GreenUp : tuck-ins, bas de fourchette",
-     "2024-2027",
-     "0,5 Md€",
-     "en_master_greenup_strategy-day_v270324.pdf, p. 63",
-     ""
-    ],
-    [
-     "F21",
-     "GreenUp : tuck-ins, haut de fourchette",
-     "2024-2027",
-     "1,0 Md€",
-     "en_master_greenup_strategy-day_v270324.pdf, p. 63",
-     ""
-    ],
-    [
-     "F471",
-     "Tuck-ins 2025 (États-Unis, Brésil, Japon) : montant",
-     "FY2025",
-     "370 M€",
-     "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 11",
-     ""
-    ],
-    [
-     "F472",
-     "Tuck-ins 2025 (États-Unis, Brésil, Japon) : multiple moyen VE / EBITDA, environ",
-     "FY2025",
-     "9x",
-     "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 11",
-     ""
-    ],
-    [
-     "calcul",
-     "Marge de manœuvre fin 2027 (plafond × EBITDA − DFN)",
-     "",
-     "−179 M€",
-     "Colonne « tuck haut » : cette hypothèse à sa borne, les autres au centre, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Acquisition maximale fin 2027 sous la contrainte qui mord, au multiple des tuck-ins",
-     "",
-     "717 M€",
-     "Colonne « tuck bas » : cette hypothèse à sa borne, les autres au centre, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "… au moins 3 Md€",
-     "",
-     "0 %",
-     "Part des 1 000 futurs tirés, onglet Distribution du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Part des cessions signées non encaissées qui l'est avant le 31/12/2026",
-     "",
-     "50,0 %",
-     "Hypothèse du groupe, valeur centrale, onglet Hypothèses du classeur (sources : F736, F739)",
-     ""
-    ],
-    [
-     "calcul",
-     "Cessions encaissées au T4 2026",
-     "",
-     "234 M€",
-     "Scénario central, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Levier fin 2026",
-     "",
-     "3,16x",
-     "Colonne « s26 haut » : cette hypothèse à sa borne, les autres au centre, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "calcul",
-     "Levier fin 2026",
-     "",
-     "3,20x",
-     "Colonne « s26 bas » : cette hypothèse à sa borne, les autres au centre, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "F87",
-     "Guidance 2026 : croissance organique de l'EBITDA, bas de fourchette",
-     "2026",
-     "5 %",
-     "veolia-2026-first-half-results.pdf, p. 3",
-     ""
-    ],
-    [
-     "F88",
-     "Guidance 2026 : croissance organique de l'EBITDA, haut de fourchette",
-     "2026",
-     "6 %",
-     "veolia-2026-first-half-results.pdf, p. 3",
-     ""
-    ],
-    [
-     "F420",
-     "GreenUp : gains d'efficacité par an",
-     "2024-2027",
-     "350 M€",
-     "en_master_greenup_strategy-day_v270324.pdf, p. 58",
      ""
     ]
    ]
