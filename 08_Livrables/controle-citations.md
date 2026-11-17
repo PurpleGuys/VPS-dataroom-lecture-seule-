@@ -8,7 +8,7 @@
 | role-4.md | 6 | 1570 | 6-9 |
 | role-5.md | 6 | 1626 | 6-9 |
 | role-6.md | 7 | 1757 | 6-9 |
-| corps, du sommaire à la première annexe | 57 | 12510 | 50-60 |
+| corps, du sommaire à la première annexe | 57 | 11963 | 50-60 |
 | document entier, annexes et contrôle compris | 75 | | — |
 
 ## Jetons inconnus (0)
@@ -26,10 +26,10 @@
 - rôle 3 (Capacité et sensibilité) : 137 — F4, F5, F7, F9, F13, F21, F24, F27, F31, F53, F64, F65, F67, F68, F69, F72, F73, F75, F79, F80 …
 - rôle 4 (L'écart et les comparables) : 136 — F33, F37, F38, F39, F41, F54, F58, F59, F60, F61, F62, F63, F93, F94, F95, F96, F97, F160, F161, F162 …
 - rôle 5 (Le coût ESG) : 54 — F43, F45, F103, F104, F105, F106, F108, F109, F237, F488, F489, F490, F494, F495, F496, F497, F498, F500, F501, F502 …
-- rôle 6 (Cibles, puis synthèse) : 115 — F46, F47, F49, F50, F76, F77, F209, F210, F211, F212, F213, F214, F215, F216, F443, F444, F445, F473, F474, F475 …
+- rôle 6 (Cibles, puis synthèse) : 120 — F46, F47, F49, F50, F76, F77, F209, F210, F211, F212, F213, F214, F215, F216, F443, F444, F445, F473, F474, F475 …
 
 ## Ce que la méthode du rapport mesure
-- corps du rapport : 74 406 caractères, espaces compris, pour 50 000 demandés
+- corps du rapport : 71 212 caractères, espaces compris, pour 50 000 demandés
 - role-1.md : 35 phrase(s) sur 127 au-delà de 12 mots
 - role-2.md : 63 phrase(s) sur 147 au-delà de 12 mots
 - role-3.md : 43 phrase(s) sur 130 au-delà de 12 mots
@@ -37,7 +37,6 @@
 - role-5.md : 51 phrase(s) sur 127 au-delà de 12 mots
 - role-6.md : 55 phrase(s) sur 123 au-delà de 12 mots
 - recommandation.md : 26 phrase(s) sur 67 au-delà de 12 mots
-- outils-ia.md : 15 phrase(s) sur 33 au-delà de 12 mots
 - remerciements.md : 2 phrase(s) sur 6 au-delà de 12 mots
 - introduction.md : 20 phrase(s) sur 49 au-delà de 12 mots
 - conclusion.md : 13 phrase(s) sur 33 au-delà de 12 mots

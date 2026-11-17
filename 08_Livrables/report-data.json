@@ -1,7 +1,7 @@
 {
- "generated": "2026-11-13",
+ "generated": "2026-11-17",
  "checks": "OK",
- "n_figures": 867,
+ "n_figures": 872,
  "title": "Dans quelle mesure l'engagement de levier de GreenUp borne-t-il la capacité d'acquisition de Veolia d'ici fin 2027 ?",
  "subtitle": "Capstone Innovations in Finance — sujet 2, périmètre « capacité financière »",
  "thread": "Fin 2027, notre marge de dette centrale atteint 159 M€ sous le plafond de 3x. Au multiple de Clean Earth, elle finance une acquisition supplémentaire de 229 M€. Dans le scénario défavorable, elle n'en finance aucune. Veolia peut donc encore acheter des tuck-ins d'ici fin 2027, pas une nouvelle plateforme.",
@@ -11651,6 +11651,51 @@
    "2025-2026",
    "credit_opinion_moodys_veolia-environnement-sa_22apr2025.pdf, p. 2, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/04/Credit_Opinion_moodys_Veolia-Environnement-SA_22Apr2025.pdf (consulté le 2026-10-02)",
    "2",
+   ""
+  ],
+  [
+   "F874",
+   "Groupe Flamme : prix pour 100 % des titres annoncé par Séché, de l'ordre de",
+   "300 M€",
+   "annonce du 06/06/2025",
+   "25-06-cp-flamme.pdf, p. 3, https://www.groupe-seche.com/uploads/2025/06/25-06-cp-flamme.pdf (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F875",
+   "Groupe Flamme : chiffre d'affaires, environ",
+   "100 M€",
+   "exercice clos le 30/09/2024",
+   "25-06-cp-flamme.pdf, p. 2, https://www.groupe-seche.com/uploads/2025/06/25-06-cp-flamme.pdf (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F876",
+   "Groupe Flamme : excédent brut d'exploitation (EBE), environ",
+   "20 M€",
+   "exercice clos le 30/09/2024",
+   "25-06-cp-flamme.pdf, p. 2, https://www.groupe-seche.com/uploads/2025/06/25-06-cp-flamme.pdf (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F877",
+   "A.R.F. (pôle déchets dangereux) : part du chiffre d'affaires consolidé du Groupe Flamme, environ",
+   "49 %",
+   "exercice clos le 30/09/2024",
+   "25-06-cp-flamme.pdf, p. 2, https://www.groupe-seche.com/uploads/2025/06/25-06-cp-flamme.pdf (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F878",
+   "ROCE après impôts du groupe (y compris IFRS 16)",
+   "9,4 %",
+   "FY2025",
+   "finance_veolia_operating_and_financial_review_2025.pdf, p. 26, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/02/Finance_Veolia_Operating_and_financial_review_2025.pdf (consulté le 2026-09-22)",
+   "6",
    ""
   ]
  ]
