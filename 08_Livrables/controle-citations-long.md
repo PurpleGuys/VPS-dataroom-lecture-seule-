@@ -9,7 +9,7 @@
 | role-5.md | 10 | 2945 | — |
 | role-6.md | 9 | 2926 | — |
 | corps, du sommaire à la première annexe | 77 | 19743 | — (édition de référence) |
-| document entier, annexes et contrôle compris | 112 | | — |
+| document entier, annexes et contrôle compris | 113 | | — |
 
 ## Jetons inconnus (0)
 - aucun
