@@ -1,6 +1,6 @@
 # Annexe — sources et chiffres cités
 
-Généré le 2026-11-17 depuis la dataroom : 872 chiffres, 61 opérations, 368 documents citables.
+Généré le 2026-11-17 depuis la dataroom : 877 chiffres, 61 opérations, 368 documents citables.
 Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date de consultation.
 
 ## 1. Chiffres, par rôle
@@ -771,7 +771,7 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F821 | Goodwill (groupe) : part du dollar américain dans l'effet de change | 171 M€ | S1 2026 | veolia_finance_amendment_urd_2025.pdf, p. 53, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_Amendment_URD_2025.pdf (consulté le 2026-09-22) |
 | F823 | Goodwill (groupe) : effet de change total sur le semestre | 256 M€ | S1 2026 | veolia_finance_amendment_urd_2025.pdf, p. 53, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/07/Veolia_Finance_Amendment_URD_2025.pdf (consulté le 2026-09-22) |
 
-### Rôle 6 — Cibles, puis synthèse (131 chiffres)
+### Rôle 6 — Cibles, puis synthèse (136 chiffres)
 
 | ID | Chiffre | Valeur | Période | Citation |
 |---|---|---|---|---|
@@ -906,6 +906,11 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 | F876 | Groupe Flamme : excédent brut d'exploitation (EBE), environ | 20 M€ | exercice clos le 30/09/2024 | 25-06-cp-flamme.pdf, p. 2, https://www.groupe-seche.com/uploads/2025/06/25-06-cp-flamme.pdf (consulté le 2026-10-10) |
 | F877 | A.R.F. (pôle déchets dangereux) : part du chiffre d'affaires consolidé du Groupe Flamme, environ | 49 % | exercice clos le 30/09/2024 | 25-06-cp-flamme.pdf, p. 2, https://www.groupe-seche.com/uploads/2025/06/25-06-cp-flamme.pdf (consulté le 2026-10-10) |
 | F878 | ROCE après impôts du groupe (y compris IFRS 16) | 9,4 % | FY2025 | finance_veolia_operating_and_financial_review_2025.pdf, p. 26, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/02/Finance_Veolia_Operating_and_financial_review_2025.pdf (consulté le 2026-09-22) |
+| F879 | ROCE après impôts du groupe (y compris IFRS 16) | 8,8 % | FY2024 | finance_veolia_operating_and_financial_review_2025.pdf, p. 26, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/02/Finance_Veolia_Operating_and_financial_review_2025.pdf (consulté le 2026-09-22) |
+| F880 | Capitaux employés moyens du groupe (base du ROCE) | 32 564 M€ | FY2025 | finance_veolia_operating_and_financial_review_2025.pdf, p. 26, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/02/Finance_Veolia_Operating_and_financial_review_2025.pdf (consulté le 2026-09-22) |
+| F881 | Déchets dangereux, critère d'investissement : écart minimal du TRI au-dessus du WACC | 4 % | présentation du 25/06/2025 | veolia_finance_deep_dive_waste_to_value_06-25-2025_en.pdf, p. 28, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/06/Veolia_Finance_Deep_dive_waste_to_value_06-25-2025_en.pdf (consulté le 2026-10-10) |
+| F882 | Déchets dangereux, critère d'investissement : année après laquelle le ROCE doit atteindre le WACC | 3 ans | présentation du 25/06/2025 | veolia_finance_deep_dive_waste_to_value_06-25-2025_en.pdf, p. 28, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/06/Veolia_Finance_Deep_dive_waste_to_value_06-25-2025_en.pdf (consulté le 2026-10-10) |
+| F883 | Déchets dangereux : petites acquisitions (tuck-ins) signées au premier semestre 2025 | 5 opérations | S1 2025 | veolia_finance_deep_dive_waste_to_value_06-25-2025_en.pdf, p. 28, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/06/Veolia_Finance_Deep_dive_waste_to_value_06-25-2025_en.pdf (consulté le 2026-10-10) |
 
 ## 2. Opérations (registre des deals)
 
@@ -1349,7 +1354,7 @@ Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date 
 ## 4. Outils d'intelligence artificielle utilisés
 
 - Dataroom : un serveur MCP (Model Context Protocol) construit par le groupe pour le sujet, qui indexe les documents publics versés dans le vault et ne sait que chercher, lire une page et citer (fichier, page, URL, date de consultation). Il ne calcule rien ; il garde pour chaque ligne du registre qui l'a saisie. Les résumés de pages que l'API Claude a écrits pour la recherche sont signalés comme tels dans chaque résultat et ne sont jamais cités.
-- Le registre compte 872 chiffres et 61 opérations. 833 lignes y ont été saisies par Claude (Anthropic) à travers le compte partagé du serveur, en recopiant le nombre imprimé sur une page indexée dont le fichier et le numéro sont cités ; 100 lignes par l'API Claude (lecture de chaque page du vault, sous l'identité claude-api, avec un contrôle automatique que le nombre et sa citation sont sur la page) ; 0 ligne par les membres du groupe avec leur compte personnel.
+- Le registre compte 877 chiffres et 61 opérations. 838 lignes y ont été saisies par Claude (Anthropic) à travers le compte partagé du serveur, en recopiant le nombre imprimé sur une page indexée dont le fichier et le numéro sont cités ; 100 lignes par l'API Claude (lecture de chaque page du vault, sous l'identité claude-api, avec un contrôle automatique que le nombre et sa citation sont sur la page) ; 0 ligne par les membres du groupe avec leur compte personnel.
 - Claude, via Claude Code, a aussi construit le serveur, les contrôles automatiques (`audit_dataroom`), le générateur du classeur Excel (`build_model.py`), celui des dossiers et celui de ce rapport. Le classeur ne contient que des formules ; ses entrées sont les lignes du registre.
 - LibreOffice (recalcul sans interface) : recalcule le classeur après chaque génération et signale toute erreur de formule ; aucune valeur calculée n'est saisie à la main.
 - Règle tenue : aucun nombre n'a été inventé. Chaque nombre du registre est recopié d'une page publique citée ; chaque nombre du classeur est une formule sur ces lignes, et le texte du rapport les cite par renvoi, avec leur source en note. Les quelques calculs écrits dans le texte, une différence ou un ratio, citent chacun leurs termes dans la même phrase ; Claude les a écrits en rédigeant la première version, et un second passage de Claude, chargé de contredire, les a tous refaits.

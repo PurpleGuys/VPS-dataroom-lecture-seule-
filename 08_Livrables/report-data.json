@@ -1,7 +1,7 @@
 {
  "generated": "2026-11-17",
  "checks": "OK",
- "n_figures": 872,
+ "n_figures": 877,
  "title": "Dans quelle mesure l'engagement de levier de GreenUp borne-t-il la capacité d'acquisition de Veolia d'ici fin 2027 ?",
  "subtitle": "Capstone Innovations in Finance — sujet 2, périmètre « capacité financière »",
  "thread": "Fin 2027, notre marge de dette centrale atteint 159 M€ sous le plafond de 3x. Au multiple de Clean Earth, elle finance une acquisition supplémentaire de 229 M€. Dans le scénario défavorable, elle n'en finance aucune. Veolia peut donc encore acheter des tuck-ins d'ici fin 2027, pas une nouvelle plateforme.",
@@ -11695,6 +11695,51 @@
    "9,4 %",
    "FY2025",
    "finance_veolia_operating_and_financial_review_2025.pdf, p. 26, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/02/Finance_Veolia_Operating_and_financial_review_2025.pdf (consulté le 2026-09-22)",
+   "6",
+   ""
+  ],
+  [
+   "F879",
+   "ROCE après impôts du groupe (y compris IFRS 16)",
+   "8,8 %",
+   "FY2024",
+   "finance_veolia_operating_and_financial_review_2025.pdf, p. 26, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/02/Finance_Veolia_Operating_and_financial_review_2025.pdf (consulté le 2026-09-22)",
+   "6",
+   ""
+  ],
+  [
+   "F880",
+   "Capitaux employés moyens du groupe (base du ROCE)",
+   "32 564 M€",
+   "FY2025",
+   "finance_veolia_operating_and_financial_review_2025.pdf, p. 26, https://www.veolia.com/sites/g/files/dvc4206/files/document/2026/02/Finance_Veolia_Operating_and_financial_review_2025.pdf (consulté le 2026-09-22)",
+   "6",
+   ""
+  ],
+  [
+   "F881",
+   "Déchets dangereux, critère d'investissement : écart minimal du TRI au-dessus du WACC",
+   "4 %",
+   "présentation du 25/06/2025",
+   "veolia_finance_deep_dive_waste_to_value_06-25-2025_en.pdf, p. 28, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/06/Veolia_Finance_Deep_dive_waste_to_value_06-25-2025_en.pdf (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F882",
+   "Déchets dangereux, critère d'investissement : année après laquelle le ROCE doit atteindre le WACC",
+   "3 ans",
+   "présentation du 25/06/2025",
+   "veolia_finance_deep_dive_waste_to_value_06-25-2025_en.pdf, p. 28, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/06/Veolia_Finance_Deep_dive_waste_to_value_06-25-2025_en.pdf (consulté le 2026-10-10)",
+   "6",
+   ""
+  ],
+  [
+   "F883",
+   "Déchets dangereux : petites acquisitions (tuck-ins) signées au premier semestre 2025",
+   "5 opérations",
+   "S1 2025",
+   "veolia_finance_deep_dive_waste_to_value_06-25-2025_en.pdf, p. 28, https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/06/Veolia_Finance_Deep_dive_waste_to_value_06-25-2025_en.pdf (consulté le 2026-10-10)",
    "6",
    ""
   ]
