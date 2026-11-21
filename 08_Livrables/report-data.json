@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17",
+ "generated": "2026-11-21",
  "checks": "OK",
  "n_figures": 912,
  "title": "Dans quelle mesure l'engagement de levier de GreenUp borne-t-il la capacité d'acquisition de Veolia d'ici fin 2027 ?",
@@ -2098,35 +2098,47 @@
    "n": 4,
    "name": "L'écart et les comparables",
    "brief": "Le booster déchets dangereux achète sa croissance plus qu'il ne la génère",
-   "answer": "En volume, le booster dépasse déjà son objectif. Veolia a traité 9 181 kt de déchets dangereux en 2025. Son objectif pour 2027 est de 9 Mt. Cet objectif remplace les 10 Mt fixés par GreenUp en 2024. Le DEU 2025 explique la révision par la cession de RGS aux États-Unis. La cible a donc suivi le périmètre, pas l'activité. En valeur, la croissance change de nature. En 2025, l'EBITDA du métier a progressé de +13,0 % à périmètre et change constants. En 2026, l'organique ralentit. Au premier semestre, l'EBITDA progresse de +7,2 % à périmètre et change constants. Sur neuf mois, le chiffre d'affaires ne gagne plus que 2,6 %, contre +7,1 % en 2024. La hausse publiée atteint pourtant 14,1 %, de 3 126 M€ à 3 566 M€. Hors Clean Earth, tuck-ins compris et à change constant, elle n'est que de +6,3 %. Clean Earth fait le reste, malgré un change défavorable. Notre conclusion est nette : la croissance du booster est achetée plus que générée. Le prix de Clean Earth ne se justifie qu'avec ses synergies. Veolia l'a payé 9,8x l'EBITDA 2026 attendu après synergies. Sans synergies, le multiple ressort à 14,9x, 2 989 M$ pour 200 M$. Vu du vendeur, l'EBITDA de 2025 est nettement plus bas. Clean Harbors est le seul comparable direct dont les achats sont chiffrés. Clean Harbors a payé HEPACO 7,1x et EnviroServe avec ES&H 8,9x après synergies. Veolia, de son côté, cède des actifs mûrs à 10,4x. Avant synergies, un euro investi dans Clean Earth rapporte donc moins d'EBITDA qu'un euro cédé n'en retire. Ces repères confirment, selon nous, les hypothèses centrales du modèle du groupe. Ils fragilisent sa borne basse sur l'EBITDA de Clean Earth.",
+   "answer": "En volume, le booster dépasse déjà son objectif. Veolia a traité 9 181 kt de déchets dangereux en 2025. Son objectif pour 2027 est de 9 Mt. Cet objectif remplace les 10 Mt fixés par GreenUp en 2024. Le DEU 2025 explique la révision par la cession de RGS aux États-Unis. La cible a donc suivi le périmètre, pas l'activité. En valeur, la croissance change de nature. En 2025, l'EBITDA du métier a progressé de +13,0 % à périmètre et change constants. En 2026, l'organique ralentit. Au premier semestre, l'EBITDA progresse de +7,2 % à périmètre et change constants. Sur neuf mois, le chiffre d'affaires ne gagne plus que 2,6 %, contre +7,1 % en 2024. La hausse publiée atteint pourtant 14,1 %, de 3 126 M€ à 3 566 M€. Hors Clean Earth, tuck-ins compris et à change constant, elle n'est que de +6,3 %. Clean Earth fait le reste, malgré un change défavorable. Sur la même période, Veolia a investi 192 M€ dans ses projets de traitement et 3,0 Md€ en acquisitions. Notre conclusion est nette : la croissance du booster est achetée plus que générée. Le prix de Clean Earth ne se justifie qu'avec ses synergies. Veolia l'a payé 9,8x l'EBITDA 2026 attendu après synergies. Sans synergies, le multiple ressort à 14,9x, 2 989 M$ pour 200 M$. Vu du vendeur, l'EBITDA de 2025 est nettement plus bas. Clean Harbors est le seul comparable direct dont les achats sont chiffrés. Les autres noms étudiés ne sont pas comparables ou n'ont pas de multiple publié. Clean Harbors a payé HEPACO 7,1x et EnviroServe avec ES&H 8,9x après synergies. Veolia, de son côté, cède des actifs mûrs à 10,4x. Avant synergies, un euro investi dans Clean Earth rapporte donc moins d'EBITDA qu'un euro cédé n'en retire. Ces repères confirment, selon nous, les hypothèses centrales du modèle du groupe. Ils fragilisent sa borne basse sur l'EBITDA de Clean Earth.",
    "reasoning": [
     "Le booster croît d'abord par acquisitions, payées à un prix que seules les synergies compensent — En volume, le booster dépasse déjà son objectif. Veolia a traité 9 181 kt de déchets dangereux en 2025. Son objectif pour 2027 est de 9 Mt. Cet objectif remplace les 10 Mt fixés par GreenUp en 2024. Le DEU 2025 explique la révision par la cession de RGS aux États-Unis. La cible a donc suivi le périmètre, pas l'activité.",
-    "En valeur, l'organique ralentit et le périmètre prend le relais — L'EBITDA du métier est passé de 609 M€ en 2024 à 686 M€ en 2025. À périmètre et change constants, il a progressé de +13,0 %. La marge du métier vaut 14,2 % en 2024, 609 M€ sur 4 276 M€. Cette année-là, le chiffre d'affaires a crû de +7,1 % en organique. La croissance de ces deux années est donc d'abord générée, pas achetée.",
-    "Vu du vendeur, l'EBITDA de Clean Earth est plus bas que le budget de Veolia — Enviri a annoncé la vente de Clean Earth pour plus de 3,0 Md$, selon son rapport annuel 2025. Le segment a réalisé 973,9 M$ de chiffre d'affaires en 2025, contre 940,3 M$ en 2024, soit 3,6 % de hausse. Son résultat opérationnel a reculé de 92,6 M$ à 91,7 M$. Le budget de 1 030 M$ suppose environ 5,8 % de croissance sur les 973,9 M$ de 2025. C'est une nette accélération.",
-    "Clean Harbors, seul comparable direct, paie des prix du même ordre que Veolia — Nous retenons Clean Harbors comme comparable direct de Clean Earth. Le groupe exerce le même métier aux États-Unis et publie des comptes audités. En 2025, il réalise 6 030,8 M$ de chiffre d'affaires et 1 169 939 k$ d'EBITDA ajusté. Sa marge de 19,4 % égale celle du budget de Clean Earth, 200 M$ sur 1 030 M$. Son segment Environmental Services dégage 1 343 776 k$ d'EBITDA ajusté pour 5 193 290 k$ de chiffre d'affaires. Sa marge avant coûts centraux atteint 25,9 %, 1 343 776 k$ sur 5 193 290 k$. Les bases ne sont toutefois pas celles de Veolia.",
-    "Les comparables valident les hypothèses centrales du modèle, pas sa borne basse sur Clean Earth — Le modèle du groupe retient un EBITDA de Clean Earth de 200 M$ en année pleine. Il le fait varier entre 180 M$ et 220 M$. Le budget de Veolia et la marge de l'effet de périmètre soutiennent la valeur centrale. L'EBITDA reconstitué du vendeur se situe pourtant sous la borne basse. Nous mesurons chaque hypothèse par la marge de manœuvre sous le plafond de levier fin 2027. À la borne basse, elle passe de 159 M€ à 102 M€."
+    "L'objectif de volume a baissé avec le périmètre et Veolia le dépasse déjà — GreenUp a fixé en février 2024 un objectif de 10 Mt traités en 2027. Il couvre les déchets dangereux et les polluants. Le DEU 2025 retient désormais 9 Mt de déchets dangereux traités en 2027. La révision retire un million de tonnes, 10 Mt moins 9 Mt.",
+    "En valeur, l'organique ralentit et le périmètre prend le relais — L'EBITDA du métier est passé de 609 M€ en 2024 à 686 M€ en 2025. À périmètre et change constants, il a progressé de +13,0 %. La marge du métier vaut 14,2 % en 2024, 609 M€ sur 4 276 M€. Cette année-là, le chiffre d'affaires a crû de +7,1 % en organique. En 2025, il a encore crû de +3,8 % en organique. Le chiffre d'affaires publié a pourtant reculé, de 4 276 M€ à 4 217 M€. La marge monte à 16,3 % en 2025, 686 M€ sur 4 217 M€. La croissance de ces deux années est donc d'abord générée, pas achetée.",
+    "Vu du vendeur, l'EBITDA de Clean Earth est plus bas que le budget de Veolia — Veolia a payé Clean Earth 2 989 M$, soit 2 542 M€, à la clôture du 1er juin 2026. La valeur d'entreprise annoncée est de 3,0 Md$. Elle représente 9,8x l'EBITDA 2026 attendu, synergies comprises. Sans synergies, le prix représente 14,9x, 2 989 M$ pour 200 M$. Les synergies visées, 120 M$ en régime de croisière, valent 60 % de cet EBITDA de 200 M$. Leur mise en œuvre doit coûter environ 90 M$. Veolia compte la première année de synergies en 2027. Le régime de croisière arrive donc après l'horizon du sujet.",
+    "Le multiple de Clean Earth va de 9 à 19 fois selon l'EBITDA retenu — Veolia annonce un multiple de 9,8x sans publier l'EBITDA qui le fonde. Interrogée par les groupes, elle a confirmé le 21 novembre 2026 qu'elle ne le donnait pas. Nous avons donc construit nos propres bases. Un tableau en annexe les réunit.",
+    "Clean Harbors, seul comparable direct, paie des prix du même ordre que Veolia — Nous retenons Clean Harbors comme comparable direct de Clean Earth. Le groupe exerce le même métier aux États-Unis et publie des comptes audités. En 2025, il réalise 6 030,8 M$ de chiffre d'affaires et 1 169 939 k$ d'EBITDA ajusté. Sa marge de 19,4 % égale celle du budget de Clean Earth, 200 M$ sur 1 030 M$. Son segment Environmental Services dégage 1 343 776 k$ d'EBITDA ajusté pour 5 193 290 k$ de chiffre d'affaires. Sa marge avant coûts centraux atteint 25,9 %, 1 343 776 k$ sur 5 193 290 k$. Le segment Safety-Kleen Sustainability Solutions fait 16,4 %, 137 454 k$ sur 837 361 k$. Les coûts centraux pèsent 311 291 k$ : 1 343 776 k$ et 137 454 k$, moins 1 169 939 k$. Les bases ne sont toutefois pas celles de Veolia. Clean Harbors publie un EBITDA ajusté selon sa propre définition, en normes américaines.",
+    "Les comparables valident les hypothèses centrales du modèle, pas sa borne basse sur Clean Earth — Le modèle du groupe retient un EBITDA de Clean Earth de 200 M$ en année pleine. Il le fait varier entre 180 M$ et 220 M$. Le budget de Veolia et la marge de l'effet de périmètre soutiennent la valeur centrale. L'EBITDA reconstitué du vendeur se situe pourtant sous la borne basse. Nous mesurons chaque hypothèse par la marge de manœuvre sous le plafond de levier fin 2027. À la borne basse, elle passe de 159 M€ à 102 M€. Un EBITDA au niveau du vendeur la réduirait davantage. Pour 2026, le modèle compte 99 M€ d'EBITDA de Clean Earth, sur 7 mois de consolidation."
    ],
    "open": [
-    "L'EBITDA du métier au 30 septembre 2026. Veolia ne le publie pas.",
-    "La contribution propre de Clean Earth à l'EBITDA.",
-    "La valeur et le multiple de chaque cession signée."
+    "L'EBITDA du métier au 30 septembre 2026, que Veolia ne publie pas.",
+    "La contribution propre de Clean Earth à l'EBITDA. L'effet de périmètre agrège Clean Earth et Enviropacific.",
+    "Le passage de l'EBITDA d'Enviri à celui de Veolia. Les normes, les retraitements et les coûts centraux jouent en sens contraires, sans ventilation publiée.",
+    "La définition des tonnages traités. Le communiqué du 25 juin 2025 donne une capacité mondiale de traitement de 8,7 Mt. Elle est inférieure aux tonnages déclarés traités en 2024.",
+    "Les comptes récents du vendeur et du comparable. Le rapport d'Enviri sur le deuxième trimestre 2026 manque à nos sources. Les résultats de Clean Harbors au troisième trimestre 2026 aussi."
    ],
    "qa": [
     [
+     "Sur quoi vous appuyez-vous pour dire : « L'objectif de volume a baissé avec le périmètre et Veolia le dépasse déjà » ?",
+     "GreenUp a fixé en février 2024 un objectif de 10 Mt traités en 2027. Il couvre les déchets dangereux et les polluants. Le DEU 2025 retient désormais 9 Mt de déchets dangereux traités en 2027. La révision retire un million de tonnes, 10 Mt moins 9 Mt."
+    ],
+    [
      "Sur quoi vous appuyez-vous pour dire : « En valeur, l'organique ralentit et le périmètre prend le relais » ?",
-     "L'EBITDA du métier est passé de 609 M€ en 2024 à 686 M€ en 2025. À périmètre et change constants, il a progressé de +13,0 %. La marge du métier vaut 14,2 % en 2024, 609 M€ sur 4 276 M€. Cette année-là, le chiffre d'affaires a crû de +7,1 % en organique. La croissance de ces deux années est donc d'abord générée, pas achetée."
+     "L'EBITDA du métier est passé de 609 M€ en 2024 à 686 M€ en 2025. À périmètre et change constants, il a progressé de +13,0 %. La marge du métier vaut 14,2 % en 2024, 609 M€ sur 4 276 M€. Cette année-là, le chiffre d'affaires a crû de +7,1 % en organique. En 2025, il a encore crû de +3,8 % en organique. Le chiffre d'affaires publié a pourtant reculé, de 4 276 M€ à 4 217 M€. La marge monte à 16,3 % en 2025, 686 M€ sur 4 217 M€. La croissance de ces deux années est donc d'abord générée, pas achetée."
     ],
     [
      "Sur quoi vous appuyez-vous pour dire : « Vu du vendeur, l'EBITDA de Clean Earth est plus bas que le budget de Veolia » ?",
-     "Enviri a annoncé la vente de Clean Earth pour plus de 3,0 Md$, selon son rapport annuel 2025. Le segment a réalisé 973,9 M$ de chiffre d'affaires en 2025, contre 940,3 M$ en 2024, soit 3,6 % de hausse. Son résultat opérationnel a reculé de 92,6 M$ à 91,7 M$. Le budget de 1 030 M$ suppose environ 5,8 % de croissance sur les 973,9 M$ de 2025. C'est une nette accélération."
+     "Veolia a payé Clean Earth 2 989 M$, soit 2 542 M€, à la clôture du 1er juin 2026. La valeur d'entreprise annoncée est de 3,0 Md$. Elle représente 9,8x l'EBITDA 2026 attendu, synergies comprises. Sans synergies, le prix représente 14,9x, 2 989 M$ pour 200 M$. Les synergies visées, 120 M$ en régime de croisière, valent 60 % de cet EBITDA de 200 M$. Leur mise en œuvre doit coûter environ 90 M$. Veolia compte la première année de synergies en 2027. Le régime de croisière arrive donc après l'horizon du sujet."
+    ],
+    [
+     "Sur quoi vous appuyez-vous pour dire : « Le multiple de Clean Earth va de 9 à 19 fois selon l'EBITDA retenu » ?",
+     "Veolia annonce un multiple de 9,8x sans publier l'EBITDA qui le fonde. Interrogée par les groupes, elle a confirmé le 21 novembre 2026 qu'elle ne le donnait pas. Nous avons donc construit nos propres bases. Un tableau en annexe les réunit."
     ],
     [
      "Sur quoi vous appuyez-vous pour dire : « Clean Harbors, seul comparable direct, paie des prix du même ordre que Veolia » ?",
-     "Nous retenons Clean Harbors comme comparable direct de Clean Earth. Le groupe exerce le même métier aux États-Unis et publie des comptes audités. En 2025, il réalise 6 030,8 M$ de chiffre d'affaires et 1 169 939 k$ d'EBITDA ajusté. Sa marge de 19,4 % égale celle du budget de Clean Earth, 200 M$ sur 1 030 M$. Son segment Environmental Services dégage 1 343 776 k$ d'EBITDA ajusté pour 5 193 290 k$ de chiffre d'affaires. Sa marge avant coûts centraux atteint 25,9 %, 1 343 776 k$ sur 5 193 290 k$. Les bases ne sont toutefois pas celles de Veolia."
+     "Nous retenons Clean Harbors comme comparable direct de Clean Earth. Le groupe exerce le même métier aux États-Unis et publie des comptes audités. En 2025, il réalise 6 030,8 M$ de chiffre d'affaires et 1 169 939 k$ d'EBITDA ajusté. Sa marge de 19,4 % égale celle du budget de Clean Earth, 200 M$ sur 1 030 M$. Son segment Environmental Services dégage 1 343 776 k$ d'EBITDA ajusté pour 5 193 290 k$ de chiffre d'affaires. Sa marge avant coûts centraux atteint 25,9 %, 1 343 776 k$ sur 5 193 290 k$. Le segment Safety-Kleen Sustainability Solutions fait 16,4 %, 137 454 k$ sur 837 361 k$. Les coûts centraux pèsent 311 291 k$ : 1 343 776 k$ et 137 454 k$, moins 1 169 939 k$. Les bases ne sont toutefois pas celles de Veolia. Clean Harbors publie un EBITDA ajusté selon sa propre définition, en normes américaines."
     ],
     [
      "Sur quoi vous appuyez-vous pour dire : « Les comparables valident les hypothèses centrales du modèle, pas sa borne basse sur Clean Earth » ?",
-     "Le modèle du groupe retient un EBITDA de Clean Earth de 200 M$ en année pleine. Il le fait varier entre 180 M$ et 220 M$. Le budget de Veolia et la marge de l'effet de périmètre soutiennent la valeur centrale. L'EBITDA reconstitué du vendeur se situe pourtant sous la borne basse. Nous mesurons chaque hypothèse par la marge de manœuvre sous le plafond de levier fin 2027. À la borne basse, elle passe de 159 M€ à 102 M€."
+     "Le modèle du groupe retient un EBITDA de Clean Earth de 200 M$ en année pleine. Il le fait varier entre 180 M$ et 220 M$. Le budget de Veolia et la marge de l'effet de périmètre soutiennent la valeur centrale. L'EBITDA reconstitué du vendeur se situe pourtant sous la borne basse. Nous mesurons chaque hypothèse par la marge de manœuvre sous le plafond de levier fin 2027. À la borne basse, elle passe de 159 M€ à 102 M€. Un EBITDA au niveau du vendeur la réduirait davantage. Pour 2026, le modèle compte 99 M€ d'EBITDA de Clean Earth, sur 7 mois de consolidation."
     ]
    ],
    "tabs": "Segments, Pont EBITDA, Booster",
@@ -2212,6 +2224,22 @@
      ""
     ],
     [
+     "F762",
+     "Investissements dans les projets de traitement de déchets dangereux (compris dans les investissements industriels nets)",
+     "9M 2026",
+     "192 M€",
+     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19",
+     ""
+    ],
+    [
+     "F784",
+     "Rotation d'actifs GreenUp : acquisitions de l'année",
+     "9M 2026",
+     "3,0 Md€",
+     "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 14",
+     ""
+    ],
+    [
      "F48",
      "Clean Earth : multiple VE / EBITDA 2026e après synergies en régime de croisière",
      "2026e",
@@ -2260,6 +2288,30 @@
      ""
     ],
     [
+     "D17",
+     "Veolia North America Regeneration Services",
+     "",
+     "580 M€",
+     "finance_consolidated_financial_statement_2024.pdf, p. 16",
+     ""
+    ],
+    [
+     "F662",
+     "Cession RGS : effet sur le chiffre d'affaires",
+     "FY2024",
+     "−135 M€",
+     "finance_2024_full_year_results_presentation.pdf, p. 24",
+     ""
+    ],
+    [
+     "F33",
+     "Déchets dangereux traités",
+     "2024",
+     "9 196 kt",
+     "finance_veolia_urd_2025_en.pdf, p. 226",
+     ""
+    ],
+    [
      "F742",
      "Déchets dangereux (booster) : EBITDA",
      "FY2024",
@@ -2284,6 +2336,62 @@
      ""
     ],
     [
+     "F805",
+     "Déchets dangereux (booster) : hausse du chiffre d'affaires à périmètre et change constants",
+     "FY2025",
+     "+3,8 %",
+     "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 41",
+     ""
+    ],
+    [
+     "F811",
+     "Déchets dangereux (booster) : chiffre d'affaires",
+     "FY2025",
+     "4 217 M€",
+     "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 41",
+     ""
+    ],
+    [
+     "F62",
+     "Ambition GreenUp relevée : croissance annuelle de l'EBITDA déchets dangereux, plus de",
+     "2024-2027",
+     "10 % par an",
+     "veolia_clean_earth_investor_presentation.pdf, p. 9",
+     ""
+    ],
+    [
+     "F797",
+     "Déchets dangereux : croissance annuelle moyenne de l'EBITDA visée par GreenUp 2024-2027, environ (communiqué de juin 2025)",
+     "2024-2027",
+     "+10 % par an",
+     "pr-hazardous-waste-treatment-veolia.pdf, p. 2",
+     ""
+    ],
+    [
+     "F59",
+     "Déchets dangereux Veolia + Clean Earth : chiffre d'affaires pro forma",
+     "2025E",
+     "5,2 Md€",
+     "veolia_clean_earth_investor_presentation.pdf, p. 9",
+     ""
+    ],
+    [
+     "F60",
+     "Déchets dangereux Veolia + Clean Earth : EBITDA pro forma",
+     "2025E",
+     "0,9 Md€",
+     "veolia_clean_earth_investor_presentation.pdf, p. 9",
+     ""
+    ],
+    [
+     "F61",
+     "Déchets dangereux Veolia + Clean Earth : marge d'EBITDA pro forma",
+     "2025E",
+     "17 %",
+     "veolia_clean_earth_investor_presentation.pdf, p. 9",
+     ""
+    ],
+    [
      "F814",
      "Déchets dangereux (métier) : variation du chiffre d'affaires à change constant, effet de périmètre compris",
      "9M 2026",
@@ -2292,19 +2400,139 @@
      ""
     ],
     [
-     "F762",
-     "Investissements dans les projets de traitement de déchets dangereux (compris dans les investissements industriels nets)",
+     "F749",
+     "Déchets dangereux (métier) : part du chiffre d'affaires du groupe",
      "9M 2026",
-     "192 M€",
-     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19",
+     "10,7 %",
+     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 14",
      ""
     ],
     [
-     "F784",
-     "Rotation d'actifs GreenUp : acquisitions de l'année",
+     "F39",
+     "Chiffre d'affaires Déchets dangereux Europe",
+     "S1 2026",
+     "1 189 M€",
+     "veolia-2026-first-half-results.pdf, p. 7",
+     ""
+    ],
+    [
+     "F93",
+     "Déchets dangereux Europe : croissance du chiffre d'affaires à périmètre et change constants",
+     "S1 2026",
+     "−0,2 %",
+     "veolia-2026-first-half-results.pdf, p. 7",
+     ""
+    ],
+    [
+     "F751",
+     "Déchets dangereux Europe : chiffre d'affaires",
      "9M 2026",
-     "3,0 Md€",
-     "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 14",
+     "1 800 M€",
+     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 13",
+     ""
+    ],
+    [
+     "F752",
+     "Déchets dangereux Europe : croissance à périmètre et change constants",
+     "9M 2026",
+     "+1,9 %",
+     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 13",
+     ""
+    ],
+    [
+     "F753",
+     "Déchets dangereux Europe : croissance à périmètre et change constants, troisième trimestre seul",
+     "T3 2026",
+     "6,2 %",
+     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 13",
+     ""
+    ],
+    [
+     "F792",
+     "Capex engagés en 2025 dans les projets de traitement de déchets dangereux",
+     "FY2025",
+     "206 M€",
+     "finance_veolia_urd_2025_en.pdf, p. 226",
+     ""
+    ],
+    [
+     "F63",
+     "Capacité ajoutée par 5 usines de traitement en construction",
+     "en construction",
+     "430 kt",
+     "veolia_clean_earth_investor_presentation.pdf, p. 9",
+     ""
+    ],
+    [
+     "F813",
+     "Déchets dangereux Veolia : capacité de traitement nouvelle ouverte d'ici 2027 (ambition GreenUp 2024-2027)",
+     "2027",
+     "285 kt",
+     "pr-hazardous-waste-treatment-veolia.pdf, p. 2",
+     ""
+    ],
+    [
+     "F41",
+     "Clean Earth : prix d'acquisition",
+     "01/06/2026",
+     "2 542 M€",
+     "veolia-amendement-deu-2025-s1-2026.pdf, p. 46",
+     ""
+    ],
+    [
+     "F46",
+     "Clean Earth : valeur d'entreprise",
+     "annonce 11/2025",
+     "3,0 Md$",
+     "veolia_clean_earth_investor_presentation.pdf, p. 3",
+     ""
+    ],
+    [
+     "F49",
+     "Clean Earth : synergies de coûts en régime de croisière, année 4",
+     "année 4",
+     "120 M$",
+     "veolia_clean_earth_investor_presentation.pdf, p. 13",
+     ""
+    ],
+    [
+     "F50",
+     "Clean Earth : coûts de mise en œuvre attendus des synergies",
+     "année 1-4",
+     "90 M$",
+     "veolia_clean_earth_investor_presentation.pdf, p. 13",
+     ""
+    ],
+    [
+     "F54",
+     "Clean Earth : chiffre d'affaires",
+     "2025E",
+     "980 M$",
+     "veolia_clean_earth_investor_presentation.pdf, p. 7",
+     ""
+    ],
+    [
+     "F52",
+     "Clean Earth : chiffre d'affaires",
+     "2026E",
+     "1 030 M$",
+     "veolia_clean_earth_investor_presentation.pdf, p. 6",
+     ""
+    ],
+    [
+     "F771",
+     "Chiffre d'affaires de Veolia aux États-Unis, pro forma Clean Earth (Water Technologies compris, année 2025)",
+     "pro forma FY2025",
+     "6,3 Md$",
+     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 7",
+     ""
+    ],
+    [
+     "F730",
+     "Clean Earth : effet sur l'endettement financier net (prix et dette IFRS 16 compris)",
+     "9M 2026",
+     "2 804 M€",
+     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 5",
      ""
     ],
     [
@@ -2348,14 +2576,6 @@
      ""
     ],
     [
-     "F52",
-     "Clean Earth : chiffre d'affaires",
-     "2026E",
-     "1 030 M$",
-     "veolia_clean_earth_investor_presentation.pdf, p. 6",
-     ""
-    ],
-    [
      "F213",
      "Enviri : dépréciation du segment Clean Earth",
      "FY2025",
@@ -2369,6 +2589,54 @@
      "FY2025",
      "23 644 k$",
      "enviri-10-k-2025.pdf, p. 284",
+     ""
+    ],
+    [
+     "F793",
+     "Enviri : chiffre d'affaires du segment Clean Earth",
+     "T1 2026",
+     "226 M$",
+     "enviri-q1-2026-results.html, p. 1",
+     ""
+    ],
+    [
+     "F855",
+     "Enviri : EBITDA ajusté du segment Clean Earth",
+     "T1 2025",
+     "38 M$",
+     "enviri-q1-2026-results.html, p. 1",
+     ""
+    ],
+    [
+     "F812",
+     "Enviri : EBITDA ajusté du segment Clean Earth",
+     "T1 2026",
+     "33 M$",
+     "enviri-q1-2026-results.html, p. 1",
+     ""
+    ],
+    [
+     "F853",
+     "Enviri : marge d'EBITDA ajusté du segment Clean Earth",
+     "T1 2025",
+     "16,1 %",
+     "enviri-q1-2026-results.html, p. 1",
+     ""
+    ],
+    [
+     "F854",
+     "Enviri : marge d'EBITDA ajusté du segment Clean Earth",
+     "T1 2026",
+     "14,6 %",
+     "enviri-q1-2026-results.html, p. 1",
+     ""
+    ],
+    [
+     "F766",
+     "Clean Earth : dette IFRS 16 reprise (comprise dans l'effet sur l'endettement)",
+     "01/06/2026",
+     "226 M€",
+     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 5",
      ""
     ],
     [
@@ -2393,6 +2661,14 @@
      "9M 2026",
      "4 mois",
      "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 23",
+     ""
+    ],
+    [
+     "F726",
+     "Trajectoire de levier présentée au T3 : légèrement au-dessus de 3x fin 2026, retour en 2027 à au plus",
+     "2027",
+     "3x",
+     "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 26",
      ""
     ],
     [
@@ -2433,6 +2709,62 @@
      "FY2025",
      "5 193 290 k$",
      "clean-harbors-10-k-2025.pdf, p. 34",
+     ""
+    ],
+    [
+     "F223",
+     "Clean Harbors : EBITDA ajusté Safety-Kleen Sustainability Solutions",
+     "FY2025",
+     "137 454 k$",
+     "clean-harbors-10-k-2025.pdf, p. 34",
+     ""
+    ],
+    [
+     "F221",
+     "Clean Harbors : chiffre d'affaires direct Safety-Kleen Sustainability Solutions",
+     "FY2025",
+     "837 361 k$",
+     "clean-harbors-10-k-2025.pdf, p. 34",
+     ""
+    ],
+    [
+     "F818",
+     "Clean Harbors : coûts centraux (Corporate Costs), à déduire de l'EBITDA ajusté des segments",
+     "FY2025",
+     "311 291 k$",
+     "clean-harbors-10-k-2025.pdf, p. 93",
+     ""
+    ],
+    [
+     "F242",
+     "Clean Harbors : dette long terme hors part courante",
+     "31/12/2025",
+     "2 763 563 k$",
+     "clean-harbors-10-k-2025.pdf, p. 53",
+     ""
+    ],
+    [
+     "F243",
+     "Clean Harbors : part courante de la dette long terme",
+     "31/12/2025",
+     "12 600 k$",
+     "clean-harbors-10-k-2025.pdf, p. 53",
+     ""
+    ],
+    [
+     "F240",
+     "Clean Harbors : trésorerie",
+     "31/12/2025",
+     "826 315 k$",
+     "clean-harbors-10-k-2025.pdf, p. 53",
+     ""
+    ],
+    [
+     "F241",
+     "Clean Harbors : titres de placement court terme",
+     "31/12/2025",
+     "127 363 k$",
+     "clean-harbors-10-k-2025.pdf, p. 53",
      ""
     ],
     [
@@ -2508,6 +2840,14 @@
      ""
     ],
     [
+     "F807",
+     "Terra Nova Solutions (Clean Harbors) : multiple implicite après synergies, selon Pulse 2.0",
+     "05/2026",
+     "11,8x",
+     "pulse2-clean-harbors-terra-nova-2026-05-14.html, p. 1",
+     ""
+    ],
+    [
      "F604",
      "EnviroServe (Clean Harbors) : synergies de coûts attendues, environ",
      "années 1-2",
@@ -2516,11 +2856,19 @@
      ""
     ],
     [
-     "F49",
-     "Clean Earth : synergies de coûts en régime de croisière, année 4",
-     "année 4",
-     "120 M$",
-     "veolia_clean_earth_investor_presentation.pdf, p. 13",
+     "F471",
+     "Tuck-ins 2025 (États-Unis, Brésil, Japon) : montant",
+     "FY2025",
+     "370 M€",
+     "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 11",
+     ""
+    ],
+    [
+     "F472",
+     "Tuck-ins 2025 (États-Unis, Brésil, Japon) : multiple moyen VE / EBITDA, environ",
+     "FY2025",
+     "9x",
+     "finance_veolia_2025_full_year_results_presentation_0.pdf, p. 11",
      ""
     ],
     [
@@ -2545,6 +2893,78 @@
      "",
      "50,0 %",
      "Hypothèse du groupe, borne haute, onglet Hypothèses du classeur (sources : F49)",
+     ""
+    ],
+    [
+     "F484",
+     "Covanta (EQT) : valeur de la transaction, dette comprise",
+     "annonce 07/2021",
+     "5,3 Md$",
+     "eqt-covanta-2021-07-14.html, p. 1",
+     ""
+    ],
+    [
+     "F474",
+     "Stericycle (WM) : valeur d'entreprise, environ",
+     "annonce 06/2024",
+     "7,2 Md$",
+     "wm-stericycle-2024-06-03.html, p. 1",
+     ""
+    ],
+    [
+     "T10",
+     "Onterris (ex-Montrose Environmental Group)",
+     "",
+     "",
+     "https://ir.onterris.com/sec-filings/all-sec-filings/content/0001193125-26-335022/0001193125-26-335022.pdf",
+     ""
+    ],
+    [
+     "T11",
+     "Perma-Fix Environmental Services",
+     "",
+     "",
+     "https://ir.perma-fix.com/all-sec-filings/content/0001493152-26-028365/formars.pdf",
+     ""
+    ],
+    [
+     "T15",
+     "Quest Resource Holding Corporation",
+     "",
+     "",
+     "https://s29.q4cdn.com/924252060/files/doc_financials/2026/q1/FINAL-QRHC-1Q26-Earnings-Release-5-7-26.pdf",
+     ""
+    ],
+    [
+     "T20",
+     "AVR",
+     "",
+     "",
+     "avr-annual-report-2024-resolve-web-1.pdf, p. 69",
+     ""
+    ],
+    [
+     "T16",
+     "Indaver",
+     "",
+     "",
+     "indaver_dzr_2025_en.pdf, p. 5",
+     ""
+    ],
+    [
+     "F798",
+     "Indaver : EBITDA",
+     "FY2025",
+     "188 M€",
+     "indaver_dzr_2025_en.pdf, p. 5",
+     ""
+    ],
+    [
+     "F796",
+     "Indaver : chiffre d'affaires (imprimé en milliards d'euros à virgule décimale, valeur lue en M€)",
+     "FY2025",
+     "1 043 M€",
+     "indaver_dzr_2025_en.pdf, p. 5",
      ""
     ],
     [
@@ -2589,6 +3009,22 @@
     ],
     [
      "calcul",
+     "Clean Earth en 2026 (mois consolidés)",
+     "",
+     "99 M€",
+     "Scénario central, onglet Trajectoire du classeur du groupe",
+     ""
+    ],
+    [
+     "calcul",
+     "Mois de Clean Earth consolidés en 2026",
+     "",
+     "7 mois",
+     "Hypothèse du groupe, valeur centrale, onglet Hypothèses du classeur (sources : F40)",
+     ""
+    ],
+    [
+     "calcul",
      "Synergies Clean Earth réalisées",
      "",
      "26 M€",
@@ -2609,6 +3045,38 @@
      "",
      "240 M€",
      "Colonne « syn haut » : cette hypothèse à sa borne, les autres au centre, onglet Trajectoire du classeur du groupe",
+     ""
+    ],
+    [
+     "calcul",
+     "Multiple VE / EBITDA des actifs cédés",
+     "",
+     "8,0x",
+     "Hypothèse du groupe, borne basse, onglet Hypothèses du classeur (sources : F737)",
+     ""
+    ],
+    [
+     "calcul",
+     "Multiple VE / EBITDA des actifs cédés",
+     "",
+     "12,0x",
+     "Hypothèse du groupe, borne haute, onglet Hypothèses du classeur (sources : F737)",
+     ""
+    ],
+    [
+     "calcul",
+     "Marge de manœuvre fin 2027 (plafond × EBITDA − DFN)",
+     "",
+     "54 M€",
+     "Colonne « mDisp bas » : cette hypothèse à sa borne, les autres au centre, onglet Trajectoire du classeur du groupe",
+     ""
+    ],
+    [
+     "calcul",
+     "Marge de manœuvre fin 2027 (plafond × EBITDA − DFN)",
+     "",
+     "206 M€",
+     "Colonne « mDisp haut » : cette hypothèse à sa borne, les autres au centre, onglet Trajectoire du classeur du groupe",
      ""
     ],
     [
@@ -2652,6 +3120,22 @@
      ""
     ],
     [
+     "F759",
+     "Gains d'efficacité opérationnelle bruts, neuf mois",
+     "9M 2026",
+     "294 M€",
+     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 5",
+     ""
+    ],
+    [
+     "F756",
+     "Pont d'EBITDA 9M 2026 : croissance et performance (prix, productivité, efficacité, volumes, synergies)",
+     "9M 2026",
+     "+303 M€",
+     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 16",
+     ""
+    ],
+    [
      "calcul",
      "EBITDA 2027",
      "",
@@ -2666,6 +3150,14 @@
      "8 Md€",
      "en_master_greenup_strategy-day_v270324.pdf, p. 9",
      ""
+    ],
+    [
+     "F803",
+     "Déchets dangereux Veolia : capacité mondiale de traitement annuelle",
+     "06/2025",
+     "8,7 Mt",
+     "pr-hazardous-waste-treatment-veolia.pdf, p. 3",
+     ""
     ]
    ]
   },
@@ -2673,47 +3165,54 @@
    "n": 5,
    "name": "Le coût ESG",
    "brief": "Les passifs environnementaux d'une acquisition fixent le coût de la diligence, pas la capacité d'achat",
-   "answer": "Les provisions de fermeture et post-fermeture de Veolia, 1 290 M€, valent 0,18x son EBITDA 2025 de 7 050 M€. Ce stock date du 30 juin 2026. Les pairs donnent un ordre de grandeur. Clean Harbors porte 230 697 k$ de passifs environnementaux actualisés, soit 3,8 % de son chiffre d'affaires de 6 030,8 M$. Appliqué au chiffre d'affaires 2025 de Clean Earth, 973,9 M$, le ratio de 230 697 k$ pour 6 030,8 M$ donne 37,3 M$. Notre lecture tient en trois points. Pour une cible comme Clean Earth, un passif repris se chiffre en dizaines de millions. La dette financière nette de Veolia ne le compte pas. Aucune ligne du pont de dette de Moody's ne vise ce type de passif. Il ne déplace donc pas la capacité d'achat calculée à la partie 3. Il fixe en revanche le coût de la diligence. L'exposition hors bilan, faite de contentieux et de PFAS, reste à chiffrer. L'annexe I donne la source de chaque chiffre cité.",
+   "answer": "Les provisions de fermeture et post-fermeture de Veolia, 1 290 M€, valent 0,18x son EBITDA 2025 de 7 050 M€. Ce stock date du 30 juin 2026. Il couvre la réhabilitation de sites et le démantèlement d'installations. Il n'entre pas dans la dette financière nette, donc pas dans le levier. Clean Earth est entré dans les comptes le 1er juin 2026. Ses passifs n'y sont pas encore évalués à leur juste valeur. Son goodwill préliminaire de 2 066 M€ représente 81,3 % du prix de 2 542 M€. Veolia doit affecter le prix au plus tard début juin 2027. Ce sera après la remise de ce rapport. Veolia annonce déjà qu'elle traitera cette affectation en élément non courant. Les pairs donnent un ordre de grandeur. Clean Harbors porte 230 697 k$ de passifs environnementaux actualisés, soit 3,8 % de son chiffre d'affaires de 6 030,8 M$. Appliqué au chiffre d'affaires 2025 de Clean Earth, 973,9 M$, le ratio de 230 697 k$ pour 6 030,8 M$ donne 37,3 M$. Enviri, le vendeur, publie les passifs environnementaux de tout son groupe. Ils comptent 12 736 k$ courants et 38 256 k$ non courants, soit 50 992 k$. Ces montants ne sont pas actualisés. Notre lecture tient en trois points. Pour une cible comme Clean Earth, un passif repris se chiffre en dizaines de millions. La dette financière nette de Veolia ne le compte pas. Aucune ligne du pont de dette de Moody's ne vise ce type de passif. Il ne déplace donc pas la capacité d'achat calculée à la partie 3. Il fixe en revanche le coût de la diligence. Celle-ci couvre l'audit des sites, les garanties de passif et le prix. L'exposition hors bilan, faite de contentieux et de PFAS, reste à chiffrer. L'annexe I donne la source de chaque chiffre cité.",
    "reasoning": [
-    "Un passif repris se compte en dizaines de millions et reste hors de la dette financière nette — Les provisions de fermeture et post-fermeture de Veolia, 1 290 M€, valent 0,18x son EBITDA 2025 de 7 050 M€. Ce stock date du 30 juin 2026.",
-    "Les provisions de fermeture de Veolia sont stables, sauf au semestre de Clean Earth — Le stock a peu bougé en 2025. Il passe de 1 220 M€ fin 2024 à 1 214 M€ fin 2025. Fin 2025, la réhabilitation de sites en porte l'essentiel, avec 1 106 M€.",
-    "Clean Earth est entré dans les comptes avant que ses passifs soient évalués à leur juste valeur — Veolia a acquis Clean Earth le 1er juin 2026 pour 2 989 M$, soit 2 542 M€. Fin septembre 2026, l'effet sur la dette atteint 2 804 M€. Il comprend pour l'essentiel le prix et la dette de loyers IFRS 16 reprise, 226 M€.",
-    "Les pairs donnent un ordre de grandeur, pas une mesure du passif de Clean Earth — Clean Harbors, comparable américain coté, publie ses passifs environnementaux au 31 décembre 2025. Rapportés à l'EBITDA ajusté de 1 169 939 k$, les 230 697 k$ valent 0,20x. Veolia est à 0,18x, avec 1 290 M€ pour 7 050 M€. Les normes ne sont pas les mêmes : américaines pour Clean Harbors, IFRS pour Veolia. Les deux groupes actualisent en revanche ces passifs.",
-    "L'exposition hors bilan tient aux contentieux, aux PFAS et aux limites de l'assurance — En 2022, l'État de Washington a sanctionné Clean Earth pour une fuite de déchets corrosifs. En 2025, Enviri a transigé avec l'EPA pour le site de Clean Earth à Calvert City.",
-    "La taxonomie classe une part du capex déchets dangereux comme verte, sans mesurer le passif — La taxonomie européenne mesure la part verte des investissements et du chiffre d'affaires. En 2025, Veolia déclare 4,5 Md€ de capex, dont 3,0 Md€ éligibles et 2,1 Md€ éligibles et alignés, soit 47,2 %. Les déchets dangereux apparaissent sur deux lignes. La première couvre les déchets pour l'économie circulaire, déchets dangereux compris. Elle compte 0,4 Md€ de capex éligible, dont 0,4 Md€ aligné. La seconde vise la collecte et le traitement des déchets dangereux pour prévenir la pollution. Son capex éligible atteint 0,4 Md€, dont 0,3 Md€ aligné.",
-    "Les provisions restent hors du levier de Veolia et Moody's ne leur consacre aucune ligne — Le levier de Veolia rapporte la dette financière nette à l'EBITDA. Le rapport du troisième trimestre en donne la définition. Les provisions n'en font pas partie. Au 30 septembre 2026, la dette financière nette atteint 25 423 M€. Elle contient la dette de loyers reprise avec Clean Earth, pas ses passifs environnementaux."
+    "Un passif repris se compte en dizaines de millions et reste hors de la dette financière nette — Les provisions de fermeture et post-fermeture de Veolia, 1 290 M€, valent 0,18x son EBITDA 2025 de 7 050 M€. Ce stock date du 30 juin 2026. Il couvre la réhabilitation de sites et le démantèlement d'installations. Il n'entre pas dans la dette financière nette, donc pas dans le levier.",
+    "Les provisions de fermeture de Veolia sont stables, sauf au semestre de Clean Earth — Le stock a peu bougé en 2025. Il passe de 1 220 M€ fin 2024 à 1 214 M€ fin 2025, puis à 1 290 M€ au 30 juin 2026. Fin 2025, la réhabilitation de sites en porte l'essentiel, avec 1 106 M€. Les risques environnementaux pèsent 53 M€ et le démantèlement d'installations 55 M€. La somme de 1 106 M€, 53 M€ et 55 M€ redonne exactement 1 214 M€.",
+    "Clean Earth est entré dans les comptes avant que ses passifs soient évalués à leur juste valeur — Veolia a acquis Clean Earth le 1er juin 2026 pour 2 989 M$, soit 2 542 M€. La présentation de l'opération, en novembre 2025, indique une valeur d'entreprise de 3,0 Md$. Nous retenons le prix pour les multiples et l'effet sur la dette pour le levier.",
+    "Les pairs donnent un ordre de grandeur, pas une mesure du passif de Clean Earth — Clean Harbors, comparable américain coté, publie ses passifs environnementaux au 31 décembre 2025. Les passifs de fermeture et post-fermeture atteignent 135 328 k$. Les passifs de dépollution ajoutent 95 369 k$, pour un total de 230 697 k$. Les 230 697 k$ représentent 3,8 % du chiffre d'affaires de 6 030,8 M$. Rapportés à l'EBITDA ajusté de 1 169 939 k$, les 230 697 k$ valent 0,20x. Veolia est à 0,18x, avec 1 290 M€ pour 7 050 M€. Les normes ne sont pas les mêmes : américaines pour Clean Harbors, IFRS pour Veolia. Les deux groupes actualisent en revanche ces passifs.",
+    "L'exposition hors bilan tient aux contentieux, aux PFAS et aux limites de l'assurance — Veolia nomme elle-même ce risque. Sa présentation des neuf mois 2026 se clôt par un avertissement. Il cite le risque d'une responsabilité environnementale née de ses activités passées, présentes et futures. Il cite aussi le risque que les acquisitions n'apportent pas les bénéfices attendus.",
+    "La taxonomie classe une part du capex déchets dangereux comme verte, sans mesurer le passif — La taxonomie européenne mesure la part verte des investissements et du chiffre d'affaires. En 2025, Veolia déclare 4,5 Md€ de capex, dont 3,0 Md€ éligibles et 2,1 Md€ éligibles et alignés, soit 47,2 %. La part alignée du chiffre d'affaires atteint 45,7 %, soit 20,3 Md€.",
+    "Les indicateurs ESG de GreenUp bougent peu avec une acquisition de déchets dangereux — Le sujet demande ce que l'ESG coûte ou rapporte à une acquisition. Veolia a précisé aux groupes, le 21 novembre 2026, comment Clean Earth entre dans ses indicateurs. La réponse vaut pour tout achat dans les déchets dangereux, Chauny compris.",
+    "Les provisions restent hors du levier de Veolia et Moody's ne leur consacre aucune ligne — Le levier de Veolia rapporte la dette financière nette à l'EBITDA. Le rapport du troisième trimestre en donne la définition. Ce sont les dettes financières brutes, dette de loyers IFRS 16 comprise. On en retire la trésorerie et les actifs liquides. Les provisions n'en font pas partie. Au 30 septembre 2026, la dette financière nette atteint 25 423 M€. Elle contient la dette de loyers reprise avec Clean Earth, pas ses passifs environnementaux."
    ],
    "open": [
-    "La part de Clean Earth dans les 1 290 M€ de provisions et dans la hausse du semestre.",
+    "La part de Clean Earth dans les 1 290 M€ de provisions et dans la hausse du semestre. Le tableau des mouvements du premier semestre 2026 n'est pas publié.",
     "La juste valeur des actifs et des passifs de Clean Earth. Elle peut apparaître dès les comptes de l'exercice 2026, après la remise de ce rapport.",
-    "Les passifs environnementaux propres à Clean Earth. Le rapport d'Enviri du deuxième trimestre 2026 manque à nos sources.",
-    "Le contrat de cession : garanties de passif, indemnités environnementales.",
-    "L'exposition de Clean Earth aux PFAS : sites, volumes traités, position des assureurs."
+    "Les passifs environnementaux propres à Clean Earth. Nous n'avons trouvé dans le 10-K d'Enviri que le total du groupe. Le rapport d'Enviri du deuxième trimestre 2026 manque à nos sources.",
+    "Le contrat de cession : garanties de passif, indemnités environnementales, origine des garanties reçues de 75 M€.",
+    "Les montants des sanctions et des transactions, que nous n'avons pas relevés.",
+    "L'exposition de Clean Earth aux PFAS : sites, volumes traités, position des assureurs.",
+    "Le bilan, les provisions, le goodwill et le levier au 30 septembre 2026. Le rapport du troisième trimestre ne les publie pas."
    ],
    "qa": [
     [
      "Sur quoi vous appuyez-vous pour dire : « Les provisions de fermeture de Veolia sont stables, sauf au semestre de Clean Earth » ?",
-     "Le stock a peu bougé en 2025. Il passe de 1 220 M€ fin 2024 à 1 214 M€ fin 2025. Fin 2025, la réhabilitation de sites en porte l'essentiel, avec 1 106 M€."
+     "Le stock a peu bougé en 2025. Il passe de 1 220 M€ fin 2024 à 1 214 M€ fin 2025, puis à 1 290 M€ au 30 juin 2026. Fin 2025, la réhabilitation de sites en porte l'essentiel, avec 1 106 M€. Les risques environnementaux pèsent 53 M€ et le démantèlement d'installations 55 M€. La somme de 1 106 M€, 53 M€ et 55 M€ redonne exactement 1 214 M€."
     ],
     [
      "Sur quoi vous appuyez-vous pour dire : « Clean Earth est entré dans les comptes avant que ses passifs soient évalués à leur juste valeur » ?",
-     "Veolia a acquis Clean Earth le 1er juin 2026 pour 2 989 M$, soit 2 542 M€. Fin septembre 2026, l'effet sur la dette atteint 2 804 M€. Il comprend pour l'essentiel le prix et la dette de loyers IFRS 16 reprise, 226 M€."
+     "Veolia a acquis Clean Earth le 1er juin 2026 pour 2 989 M$, soit 2 542 M€. La présentation de l'opération, en novembre 2025, indique une valeur d'entreprise de 3,0 Md$. Nous retenons le prix pour les multiples et l'effet sur la dette pour le levier."
     ],
     [
      "Sur quoi vous appuyez-vous pour dire : « Les pairs donnent un ordre de grandeur, pas une mesure du passif de Clean Earth » ?",
-     "Clean Harbors, comparable américain coté, publie ses passifs environnementaux au 31 décembre 2025. Rapportés à l'EBITDA ajusté de 1 169 939 k$, les 230 697 k$ valent 0,20x. Veolia est à 0,18x, avec 1 290 M€ pour 7 050 M€. Les normes ne sont pas les mêmes : américaines pour Clean Harbors, IFRS pour Veolia. Les deux groupes actualisent en revanche ces passifs."
+     "Clean Harbors, comparable américain coté, publie ses passifs environnementaux au 31 décembre 2025. Les passifs de fermeture et post-fermeture atteignent 135 328 k$. Les passifs de dépollution ajoutent 95 369 k$, pour un total de 230 697 k$. Les 230 697 k$ représentent 3,8 % du chiffre d'affaires de 6 030,8 M$. Rapportés à l'EBITDA ajusté de 1 169 939 k$, les 230 697 k$ valent 0,20x. Veolia est à 0,18x, avec 1 290 M€ pour 7 050 M€. Les normes ne sont pas les mêmes : américaines pour Clean Harbors, IFRS pour Veolia. Les deux groupes actualisent en revanche ces passifs."
     ],
     [
      "Sur quoi vous appuyez-vous pour dire : « L'exposition hors bilan tient aux contentieux, aux PFAS et aux limites de l'assurance » ?",
-     "En 2022, l'État de Washington a sanctionné Clean Earth pour une fuite de déchets corrosifs. En 2025, Enviri a transigé avec l'EPA pour le site de Clean Earth à Calvert City."
+     "Veolia nomme elle-même ce risque. Sa présentation des neuf mois 2026 se clôt par un avertissement. Il cite le risque d'une responsabilité environnementale née de ses activités passées, présentes et futures. Il cite aussi le risque que les acquisitions n'apportent pas les bénéfices attendus."
     ],
     [
      "Sur quoi vous appuyez-vous pour dire : « La taxonomie classe une part du capex déchets dangereux comme verte, sans mesurer le passif » ?",
-     "La taxonomie européenne mesure la part verte des investissements et du chiffre d'affaires. En 2025, Veolia déclare 4,5 Md€ de capex, dont 3,0 Md€ éligibles et 2,1 Md€ éligibles et alignés, soit 47,2 %. Les déchets dangereux apparaissent sur deux lignes. La première couvre les déchets pour l'économie circulaire, déchets dangereux compris. Elle compte 0,4 Md€ de capex éligible, dont 0,4 Md€ aligné. La seconde vise la collecte et le traitement des déchets dangereux pour prévenir la pollution. Son capex éligible atteint 0,4 Md€, dont 0,3 Md€ aligné."
+     "La taxonomie européenne mesure la part verte des investissements et du chiffre d'affaires. En 2025, Veolia déclare 4,5 Md€ de capex, dont 3,0 Md€ éligibles et 2,1 Md€ éligibles et alignés, soit 47,2 %. La part alignée du chiffre d'affaires atteint 45,7 %, soit 20,3 Md€."
+    ],
+    [
+     "Sur quoi vous appuyez-vous pour dire : « Les indicateurs ESG de GreenUp bougent peu avec une acquisition de déchets dangereux » ?",
+     "Le sujet demande ce que l'ESG coûte ou rapporte à une acquisition. Veolia a précisé aux groupes, le 21 novembre 2026, comment Clean Earth entre dans ses indicateurs. La réponse vaut pour tout achat dans les déchets dangereux, Chauny compris."
     ],
     [
      "Sur quoi vous appuyez-vous pour dire : « Les provisions restent hors du levier de Veolia et Moody's ne leur consacre aucune ligne » ?",
-     "Le levier de Veolia rapporte la dette financière nette à l'EBITDA. Le rapport du troisième trimestre en donne la définition. Les provisions n'en font pas partie. Au 30 septembre 2026, la dette financière nette atteint 25 423 M€. Elle contient la dette de loyers reprise avec Clean Earth, pas ses passifs environnementaux."
+     "Le levier de Veolia rapporte la dette financière nette à l'EBITDA. Le rapport du troisième trimestre en donne la définition. Ce sont les dettes financières brutes, dette de loyers IFRS 16 comprise. On en retire la trésorerie et les actifs liquides. Les provisions n'en font pas partie. Au 30 septembre 2026, la dette financière nette atteint 25 423 M€. Elle contient la dette de loyers reprise avec Clean Earth, pas ses passifs environnementaux."
     ]
    ],
    "tabs": "ESG",
@@ -2732,6 +3231,22 @@
      "FY2025",
      "7 050 M€",
      "annual-resultats-2025.pdf, p. 1",
+     ""
+    ],
+    [
+     "F98",
+     "Clean Earth : goodwill préliminaire (affectation du prix non réalisée au 30/06/2026)",
+     "30/06/2026",
+     "2 066 M€",
+     "veolia_finance_amendment_urd_2025.pdf, p. 53",
+     ""
+    ],
+    [
+     "F41",
+     "Clean Earth : prix d'acquisition",
+     "01/06/2026",
+     "2 542 M€",
+     "veolia-amendement-deu-2025-s1-2026.pdf, p. 46",
      ""
     ],
     [
@@ -2759,6 +3274,22 @@
      ""
     ],
     [
+     "F218",
+     "Enviri : passifs environnementaux, part courante",
+     "31/12/2025",
+     "12 736 k$",
+     "enviri-10-k-2025.pdf, p. 251",
+     ""
+    ],
+    [
+     "F219",
+     "Enviri : passifs environnementaux, part non courante",
+     "31/12/2025",
+     "38 256 k$",
+     "enviri-10-k-2025.pdf, p. 251",
+     ""
+    ],
+    [
      "F99",
      "Provisions de fermeture et post-fermeture (total)",
      "31/12/2024",
@@ -2783,6 +3314,30 @@
      ""
     ],
     [
+     "F43",
+     "Provisions pour risques environnementaux",
+     "31/12/2025",
+     "53 M€",
+     "finance_veolia_urd_2025_en.pdf, p. 432",
+     ""
+    ],
+    [
+     "F106",
+     "Provisions pour démantèlement d'installations",
+     "31/12/2025",
+     "55 M€",
+     "finance_veolia_urd_2025_en.pdf, p. 432",
+     ""
+    ],
+    [
+     "F107",
+     "Désactualisation des provisions de fermeture et post-fermeture",
+     "FY2025",
+     "72 M€",
+     "finance_veolia_urd_2025_en.pdf, p. 432",
+     ""
+    ],
+    [
      "F101",
      "Provisions de fermeture, dont Amériques, Asie-Pacifique, Afrique Moyen-Orient",
      "31/12/2025",
@@ -2799,11 +3354,51 @@
      ""
     ],
     [
-     "F107",
-     "Désactualisation des provisions de fermeture et post-fermeture",
-     "FY2025",
-     "72 M€",
+     "F103",
+     "Provisions de fermeture, dont France et Déchets dangereux Europe",
+     "31/12/2025",
+     "454 M€",
      "finance_veolia_urd_2025_en.pdf, p. 432",
+     ""
+    ],
+    [
+     "F45",
+     "dont segment France et Déchets dangereux Europe",
+     "30/06/2026",
+     "461 M€",
+     "veolia_finance_amendment_urd_2025.pdf, p. 65",
+     ""
+    ],
+    [
+     "F104",
+     "Provisions de fermeture, dont Europe",
+     "31/12/2025",
+     "315 M€",
+     "finance_veolia_urd_2025_en.pdf, p. 432",
+     ""
+    ],
+    [
+     "F105",
+     "Provisions de fermeture, dont Europe",
+     "30/06/2026",
+     "328 M€",
+     "veolia_finance_amendment_urd_2025.pdf, p. 65",
+     ""
+    ],
+    [
+     "F823",
+     "Goodwill (groupe) : effet de change total sur le semestre",
+     "S1 2026",
+     "256 M€",
+     "veolia_finance_amendment_urd_2025.pdf, p. 53",
+     ""
+    ],
+    [
+     "F821",
+     "Goodwill (groupe) : part du dollar américain dans l'effet de change",
+     "S1 2026",
+     "171 M€",
+     "veolia_finance_amendment_urd_2025.pdf, p. 53",
      ""
     ],
     [
@@ -2815,11 +3410,11 @@
      ""
     ],
     [
-     "F41",
-     "Clean Earth : prix d'acquisition",
-     "01/06/2026",
-     "2 542 M€",
-     "veolia-amendement-deu-2025-s1-2026.pdf, p. 46",
+     "T1",
+     "Clean Earth",
+     "",
+     "3,0 Md$",
+     "veolia_clean_earth_investor_presentation.pdf, p. 3",
      ""
     ],
     [
@@ -2839,11 +3434,43 @@
      ""
     ],
     [
-     "F98",
-     "Clean Earth : goodwill préliminaire (affectation du prix non réalisée au 30/06/2026)",
-     "30/06/2026",
-     "2 066 M€",
-     "veolia_finance_amendment_urd_2025.pdf, p. 53",
+     "F804",
+     "Clean Earth : entrée de périmètre en autres immobilisations incorporelles",
+     "S1 2026",
+     "213 M€",
+     "veolia_finance_amendment_urd_2025.pdf, p. 54",
+     ""
+    ],
+    [
+     "F799",
+     "Clean Earth : entrée de périmètre en droits d'usage (IFRS 16)",
+     "S1 2026",
+     "226 M€",
+     "veolia_finance_amendment_urd_2025.pdf, p. 56",
+     ""
+    ],
+    [
+     "F794",
+     "Immobilisations corporelles (groupe) : variations de périmètre du semestre, principalement Clean Earth",
+     "S1 2026",
+     "260 M€",
+     "veolia_finance_amendment_urd_2025.pdf, p. 55",
+     ""
+    ],
+    [
+     "F789",
+     "PPA Suez : amortissement des actifs réévalués, exclu de l'EBIT courant",
+     "9M 2026",
+     "120 M€",
+     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 11",
+     ""
+    ],
+    [
+     "F845",
+     "PPA Suez : amortissement des actifs réévalués, exclu de l'EBIT courant",
+     "9M 2025",
+     "125 M€",
+     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 11",
      ""
     ],
     [
@@ -2871,35 +3498,27 @@
      ""
     ],
     [
-     "F225",
-     "Clean Harbors : EBITDA ajusté total",
-     "FY2025",
-     "1 169 939 k$",
-     "clean-harbors-10-k-2025.pdf, p. 38",
+     "F108",
+     "Engagements reçus liés au périmètre (garanties liées à des acquisitions)",
+     "31/12/2025",
+     "45 M€",
+     "veolia-amendement-deu-2025-s1-2026.pdf, p. 46",
      ""
     ],
     [
-     "F218",
-     "Enviri : passifs environnementaux, part courante",
-     "31/12/2025",
-     "12 736 k$",
-     "enviri-10-k-2025.pdf, p. 251",
+     "F109",
+     "Engagements reçus liés au périmètre (garanties liées à des acquisitions)",
+     "30/06/2026",
+     "75 M€",
+     "veolia-amendement-deu-2025-s1-2026.pdf, p. 46",
      ""
     ],
     [
-     "F219",
-     "Enviri : passifs environnementaux, part non courante",
+     "F237",
+     "Clean Harbors : passifs de fermeture et post-fermeture",
      "31/12/2025",
-     "38 256 k$",
-     "enviri-10-k-2025.pdf, p. 251",
-     ""
-    ],
-    [
-     "F817",
-     "Clean Harbors : montant non actualisé des passifs de dépollution (remedial)",
-     "31/12/2025",
-     "130 449 k$",
-     "clean-harbors-10-k-2025.pdf, p. 77",
+     "135 328 k$",
+     "clean-harbors-10-k-2025.pdf, p. 43",
      ""
     ],
     [
@@ -2911,11 +3530,83 @@
      ""
     ],
     [
+     "F225",
+     "Clean Harbors : EBITDA ajusté total",
+     "FY2025",
+     "1 169 939 k$",
+     "clean-harbors-10-k-2025.pdf, p. 38",
+     ""
+    ],
+    [
+     "F478",
+     "HEPACO (Clean Harbors) : prix d'acquisition",
+     "03/2024",
+     "400 M$",
+     "clean-harbors-hepaco-2024-03-25.html, p. 1",
+     ""
+    ],
+    [
+     "F601",
+     "EnviroServe (Clean Harbors) : prix d'acquisition",
+     "08/2026",
+     "470 M$",
+     "clean-harbors-enviroserve-2026-08-12.html, p. 1",
+     ""
+    ],
+    [
+     "F210",
+     "Enviri : chiffre d'affaires du segment Clean Earth",
+     "FY2024",
+     "940,3 M$",
+     "enviri-10-k-2025.pdf, p. 69",
+     ""
+    ],
+    [
+     "F52",
+     "Clean Earth : chiffre d'affaires",
+     "2026E",
+     "1 030 M$",
+     "veolia_clean_earth_investor_presentation.pdf, p. 6",
+     ""
+    ],
+    [
+     "F817",
+     "Clean Harbors : montant non actualisé des passifs de dépollution (remedial)",
+     "31/12/2025",
+     "130 449 k$",
+     "clean-harbors-10-k-2025.pdf, p. 77",
+     ""
+    ],
+    [
+     "F791",
+     "Clean Harbors : montant non actualisé des passifs de fermeture et post-fermeture (airspace non encore consommé compris)",
+     "31/12/2025",
+     "349 186 k$",
+     "clean-harbors-10-k-2025.pdf, p. 76",
+     ""
+    ],
+    [
+     "F645",
+     "Chiffre d'affaires PFAS",
+     "FY2024",
+     "205 M€",
+     "finance_2024_full_year_results_presentation.pdf, p. 8",
+     ""
+    ],
+    [
      "F772",
      "Ambition de chiffre d'affaires dans le traitement des PFAS et des micropolluants",
      "2030",
      "1 Md€",
      "finance_veolia_operating_financial_review_q3_2026.pdf, p. 7",
+     ""
+    ],
+    [
+     "F800",
+     "Assurance responsabilité civile générale (programme international) : couverture initiale par sinistre, hors États-Unis et Canada",
+     "2025",
+     "75 M€",
+     "finance_veolia_urd_2025_en.pdf, p. 75",
      ""
     ],
     [
@@ -2951,6 +3642,22 @@
      ""
     ],
     [
+     "F500",
+     "Taxonomie 2025 : part du chiffre d'affaires éligible et aligné",
+     "FY2025",
+     "45,7 %",
+     "finance_veolia_urd_2025_en.pdf, p. 250",
+     ""
+    ],
+    [
+     "F490",
+     "Taxonomie 2025 : chiffre d'affaires éligible et aligné",
+     "FY2025",
+     "20,3 Md€",
+     "finance_veolia_urd_2025_en.pdf, p. 250",
+     ""
+    ],
+    [
      "F507",
      "Taxonomie 2025, collecte et traitement des déchets pour l'économie circulaire (déchets dangereux compris) : capex éligible",
      "FY2025",
@@ -2963,6 +3670,22 @@
      "Taxonomie 2025, collecte et traitement des déchets pour l'économie circulaire (déchets dangereux compris) : capex éligible et aligné",
      "FY2025",
      "0,4 Md€",
+     "finance_veolia_urd_2025_en.pdf, p. 250",
+     ""
+    ],
+    [
+     "F509",
+     "Taxonomie 2025, collecte et traitement des déchets dangereux, prévention de la pollution (PPC 2.1, 2.2) : chiffre d'affaires éligible",
+     "FY2025",
+     "2,3 Md€",
+     "finance_veolia_urd_2025_en.pdf, p. 250",
+     ""
+    ],
+    [
+     "F510",
+     "Taxonomie 2025, collecte et traitement des déchets dangereux, prévention de la pollution (PPC 2.1, 2.2) : chiffre d'affaires éligible et aligné",
+     "FY2025",
+     "1,5 Md€",
      "finance_veolia_urd_2025_en.pdf, p. 250",
      ""
     ],
@@ -2983,11 +3706,43 @@
      ""
     ],
     [
+     "F762",
+     "Investissements dans les projets de traitement de déchets dangereux (compris dans les investissements industriels nets)",
+     "9M 2026",
+     "192 M€",
+     "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19",
+     ""
+    ],
+    [
+     "F571",
+     "Hybride mai 2025 (hybride vert) : nominal",
+     "31/12/2025",
+     "500 M€",
+     "finance_veolia_urd_2025_en.pdf, p. 429",
+     ""
+    ],
+    [
+     "F204",
+     "KPI GreenUp : émissions de GES évitées, objectif",
+     "2027",
+     "18 Mt CO2e",
+     "finance_veolia_urd_2025_en.pdf, p. 191",
+     ""
+    ],
+    [
      "F721",
      "Endettement financier net (groupe), après Clean Earth",
      "30/09/2026",
      "25 423 M€",
      "finance_veolia_operating_financial_review_q3_2026.pdf, p. 19",
+     ""
+    ],
+    [
+     "F251",
+     "Moody's : ajustement titres hybrides (50 % en dette)",
+     "FY2025",
+     "2 050,0 M€",
+     "credit_opinion-veolia-environnement-sa-04may2026.pdf, p. 11",
      ""
     ],
     [
@@ -3007,6 +3762,14 @@
      ""
     ],
     [
+     "F56",
+     "Engagement de levier du groupe : ≤",
+     "2027",
+     "3x",
+     "veolia_clean_earth_investor_presentation.pdf, p. 16",
+     ""
+    ],
+    [
      "calcul",
      "Levier fin 2027",
      "",
@@ -3020,14 +3783,6 @@
      "",
      "159 M€",
      "Scénario central, onglet Trajectoire du classeur du groupe",
-     ""
-    ],
-    [
-     "F56",
-     "Engagement de levier du groupe : ≤",
-     "2027",
-     "3x",
-     "veolia_clean_earth_investor_presentation.pdf, p. 16",
      ""
     ]
    ]
@@ -3046,7 +3801,7 @@
     "Le précédent de Suez fixe les règles et laisse une ouverture — Veolia connaît ces règles pour les avoir subies. Pour racheter Suez, elle a dû s'engager à céder toute l'incinération de déchets dangereux de Suez en France. Elle a revendu ces actifs au nouveau Suez pour 439 M€ en 2022, puis les dernières activités pour 49 M€ en 2023. Suez chiffre l'ensemble repris à 690 M€ de valeur d'entreprise. Veolia a aussi cédé à Séché des sites d'assainissement d'Île-de-France, pour 32 M€.",
     "D'autres acheteurs existent et Veolia perd à les laisser faire — Veolia ne serait pas seule candidate. Un entrant français peut se présenter : l'Autorité a autorisé en mars 2026 le projet d'Ortec et de Paprec de convertir une cimenterie en incinérateur. Un industriel étranger déjà implanté dans la région le peut aussi, comme Remondis, présent dans l'Oise.",
     "Nos hypothèses prêtent à Chauny environ 2 M€ d'excédent brut et un prix d'une vingtaine de millions — Aucun compte de Chauny n'est public. Nous ne connaissons ni son tonnage, ni son chiffre d'affaires, ni son effectif. Nous l'estimons donc en quatre pas. Chaque pas est une hypothèse du groupe, posée sur un chiffre publié.",
-    "Au multiple des tuck-ins de 2025, les critères de Veolia ne sont tenus qu'avec des synergies — Nous appliquons à Chauny les trois critères publiés.",
+    "Calculés comme Veolia les calcule, les critères déplacent le test vers le ROCE et la relution — Nous appliquons à Chauny les critères publiés. Veolia en a précisé le calcul aux groupes le 21 novembre 2026. Ces précisions changent notre lecture.",
     "Veolia apporterait au four ce qui lui manque pour tenir les critères — Le prix plafond suppose un site laissé tel quel. Veolia peut faire mieux, par quatre leviers que ses publications documentent.",
     "Appliqué aux rachats récents de Veolia, le payback montre que notre plafond est prudent — Nous avons appliqué la même mesure aux opérations récentes. Un tableau en annexe les compare.",
     "Deux autres objections : la priorité donnée au reste du monde et le passif du site — L'Europe n'est pas la priorité publiée. Environ 80 % des acquisitions de Veolia se font hors d'Europe. Une part reste donc ouverte à l'Europe. Chauny appartient au booster des déchets dangereux et son prix est petit.",
@@ -3089,8 +3844,8 @@
      "Aucun compte de Chauny n'est public. Nous ne connaissons ni son tonnage, ni son chiffre d'affaires, ni son effectif. Nous l'estimons donc en quatre pas. Chaque pas est une hypothèse du groupe, posée sur un chiffre publié."
     ],
     [
-     "Sur quoi vous appuyez-vous pour dire : « Au multiple des tuck-ins de 2025, les critères de Veolia ne sont tenus qu'avec des synergies » ?",
-     "Nous appliquons à Chauny les trois critères publiés."
+     "Sur quoi vous appuyez-vous pour dire : « Calculés comme Veolia les calcule, les critères déplacent le test vers le ROCE et la relution » ?",
+     "Nous appliquons à Chauny les critères publiés. Veolia en a précisé le calcul aux groupes le 21 novembre 2026. Ces précisions changent notre lecture."
     ],
     [
      "Sur quoi vous appuyez-vous pour dire : « Veolia apporterait au four ce qui lui manque pour tenir les critères » ?",
@@ -3485,6 +4240,22 @@
      "FY2024",
      "16 %",
      "veolia_finance_deep_dive_waste_to_value_06-25-2025_en.pdf, p. 27",
+     ""
+    ],
+    [
+     "F53",
+     "Clean Earth : conversion FCF / EBITDA, plus de",
+     "2026E",
+     "60 %",
+     "veolia_clean_earth_investor_presentation.pdf, p. 6",
+     ""
+    ],
+    [
+     "F776",
+     "Taux de financement du groupe (coût de la dette)",
+     "30/09/2026",
+     "3,82 %",
+     "finance_veolia_9m_2026_key_figures_presentation.pdf, p. 26",
      ""
     ],
     [

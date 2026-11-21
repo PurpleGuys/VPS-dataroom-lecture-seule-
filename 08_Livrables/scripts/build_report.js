@@ -922,32 +922,34 @@ function biblioRuns(entry) {
     new TextRun({ text: comma + consulted.replace(/ /g, NBSP), ...bodyFont }),
   ];
 }
-body.push(heading(T("Bibliographie"), 1, { newPage: true }));
+// Après le texte : bibliographie, glossaire puis table des annexes ouvrent la partie paginée en chiffres romains.
+const back = [];
+back.push(heading(T("Bibliographie"), 1, { annex: true, label: "", toc: false }));
 const biblio = DATA.bibliography || [];
 if (biblio.length) {
-  body.push(p(T("Les documents cités dans ce rapport, classés par type de source puis par ordre alphabétique d'auteur. Chaque référence donne la date de consultation ; les pages citées figurent dans les notes de bas de page et à l'annexe I.")));
+  back.push(p(T("Les documents cités dans ce rapport, classés par type de source puis par ordre alphabétique d'auteur. Chaque référence donne la date de consultation ; les pages citées figurent dans les notes de bas de page et à l'annexe I.")));
   for (const group of biblio) {
     // la rubrique, liée à sa première référence ; le retour qui la précède est un espace avant, qui tombe en haut de page
-    body.push(runs([{ text: group.category, bold: true }], { spacing: { before: RETURN, after: 0, line: LINE } }));
+    back.push(runs([{ text: group.category, bold: true }], { spacing: { before: RETURN, after: 0, line: LINE } }));
     for (const entry of group.entries) {
-      body.push(new Paragraph({ keepLines: true, spacing: { after: 0, line: LINE }, alignment: AlignmentType.LEFT, indent: { left: 567, hanging: 567 },
+      back.push(new Paragraph({ keepLines: true, spacing: { after: 0, line: LINE }, alignment: AlignmentType.LEFT, indent: { left: 567, hanging: 567 },
         children: biblioRuns(entry) }));
     }
   }
 } else if (!FINAL) {
-  body.push(placeholder("La bibliographie se remplit d'elle-même : chaque document dont une ligne du registre est citée par jeton y prend sa place, par type de source puis par auteur."));
+  back.push(placeholder("La bibliographie se remplit d'elle-même : chaque document dont une ligne du registre est citée par jeton y prend sa place, par type de source puis par auteur."));
 }
 
 // ---- glossaire (§ 4.7) : les termes techniques et sigles, en italique dans le texte, définis ici par ordre alphabétique
-body.push(heading(T("Glossaire"), 1, { newPage: true }));
+back.push(heading(T("Glossaire"), 1, { annex: true, label: "", toc: false, newPage: true }));
 if (GLOSSARY.length) {
-  body.push(p(T("Les termes techniques, expressions étrangères et sigles employés dans le rapport ; ils apparaissent en italique dans le texte.")), blank());
+  back.push(p(T("Les termes techniques, expressions étrangères et sigles employés dans le rapport ; ils apparaissent en italique dans le texte.")), blank());
   for (const { term, definition } of GLOSSARY) {
-    body.push(new Paragraph({ spacing: { after: 0, line: LINE }, alignment: ALIGN, indent: { left: 567, hanging: 567 },
+    back.push(new Paragraph({ spacing: { after: 0, line: LINE }, alignment: ALIGN, indent: { left: 567, hanging: 567 },
       children: [new TextRun({ text: term, ...bodyFont, bold: true }), new TextRun({ text: `${SEP}${definition}`, ...bodyFont })] }));
   }
 } else if (!FINAL) {
-  body.push(placeholder("Le glossaire se remplit d'elle-même des termes définis dans report.py (GLOSSARY) que le texte emploie."));
+  back.push(placeholder("Le glossaire se remplit d'elle-même des termes définis dans report.py (GLOSSARY) que le texte emploie."));
 }
 
 // =================================================================== III. Les annexes, paginées à part en chiffres romains (§ 5.8)
@@ -958,7 +960,7 @@ let annexNo = 0;
 function annex(title, children, legend) {
   const label = `${T("Annexe")} ${ROMAN[annexNo++] || annexNo}`;
   const text = `${label}${SEP}${T(title)}`;
-  annexes.push(heading(text, 1, { annex: true, label, newPage: annexes.length > 0 }));
+  annexes.push(heading(text, 1, { annex: true, label, newPage: true }));
   annexes.push(caption(T(legend)));
   annexes.push(...children);
 }
@@ -1037,13 +1039,17 @@ if (ANNEX_TABLES.length) {
   if (ROMAN[annexNo] !== TABLES_ANNEX) throw new Error(`annexe des tableaux : ${ROMAN[annexNo]} au lieu de ${TABLES_ANNEX}`);
   annex("Tableaux du rapport", kids, "Les tableaux que le texte appelle, dans l'ordre de leur renvoi. Chacun porte le titre de la sous-partie qui le commente.");
 }
-// ---- la table des annexes (§ 5.8), dernière page numérotée du corps
-body.push(heading(T("Table des annexes"), 1, { newPage: true }));
-for (const h of HEADINGS.filter((x) => x.annex)) body.push(tocLine(h.text, ANNEX_PAGES.get(h.text) || "", 1));
+// ---- la table des annexes (§ 5.8) : après le glossaire, juste avant les annexes qu'elle liste
+back.push(heading(T("Table des annexes"), 1, { annex: true, label: "", toc: false, newPage: true }));
+for (const h of HEADINGS.filter((x) => x.annex && x.label)) back.push(tocLine(h.text, ANNEX_PAGES.get(h.text) || "", 1));
 
 // ---- le sommaire, maintenant que tous les titres sont connus : parties et sous-parties, puis les annexes en un mot
 const tocEntries = HEADINGS.filter((h) => h.toc && !h.annex && h.level <= 2).map((h) => tocLine(h.text, TOC_PAGES.get(h.text) || "", h.level));
-const firstAnnex = HEADINGS.find((h) => h.annex);
+for (const name of ["Bibliographie", "Glossaire"]) {
+  const t = T(name);
+  if (HEADINGS.some((h) => h.text === t)) tocEntries.push(tocLine(t, ANNEX_PAGES.get(t) || "", 1));
+}
+const firstAnnex = HEADINGS.find((h) => h.annex && h.label);
 if (firstAnnex) tocEntries.push(tocLine(T("Annexes (paginées à part, en chiffres romains)"), ANNEX_PAGES.get(firstAnnex.text) || "", 1));
 body.splice(tocMarker + 1, 0, ...tocEntries);
 
@@ -1105,7 +1111,7 @@ const headingStyle = (id, name, level) => ({
 const sections = [
   { properties: pageProps(null), footers: { default: textFooter("") }, children: settle(front) },
   { properties: pageProps({ start: 1, formatType: NumberFormat.DECIMAL }), footers: { default: numberFooter() }, children: settle(body) },
-  { properties: pageProps({ start: 1, formatType: NumberFormat.UPPER_ROMAN }), footers: { default: numberFooter() }, children: settle(annexes) },
+  { properties: pageProps({ start: 1, formatType: NumberFormat.UPPER_ROMAN }), footers: { default: numberFooter() }, children: settle([...back, ...annexes]) },
 ];
 if (controls.length && !VEOLIA) sections.push({ properties: pageProps(null), footers: { default: textFooter("Contrôle, hors version finale") }, children: settle(controls) });
 

@@ -17,7 +17,7 @@ Sept constats portent cette lecture.
 - La marge vient de la croissance de l'EBITDA et des cessions, dont le calendrier pèse le plus.
 - Le booster déchets dangereux achète sa croissance plus qu'il ne la génère. Son ROCE, [F894] en 2024, reste proche du coût du capital, [F891].
 - Les passifs environnementaux d'une cible fixent le coût de la diligence, pas la capacité d'achat.
-- Les critères publiés par Veolia, dont un payback inférieur à [F889], plafonnent le prix d'un tuck-in à sept fois son excédent brut, hors synergies.
+- Les critères de Veolia plafonnent le prix d'un petit actif : payback inférieur à [F889], ROCE calculé goodwill compris, relution dès la première année. Nous retenons sept fois l'excédent brut, hors synergies.
 - Veolia confirme sa trajectoire GreenUp. Notre modèle place pourtant l'EBITDA 2027 à [M:EB27], sous l'objectif d'au moins [F12].
 
 ## Une offre plafonnée sur Chauny, des tuck-ins et aucune opération de la taille de Clean Earth

@@ -259,77 +259,112 @@
   "role": 0
  },
  {
-  "text": "4.2 In value terms, organic growth slows and acquisitions take over",
+  "text": "4.2 The volume target has been reduced in line with the scope of operations, and Veolia is already exceeding it",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "4.2.1 In 2024 and 2025, the business grew organically",
-  "level": 3,
-  "annex": false,
-  "label": "",
-  "role": 0
- },
- {
-  "text": "4.2.2 In 2026, acquisitions account for most of the growth",
-  "level": 3,
-  "annex": false,
-  "label": "",
-  "role": 0
- },
- {
-  "text": "4.2.3 Organic investment accounts for only a small proportion compared with acquisitions",
-  "level": 3,
-  "annex": false,
-  "label": "",
-  "role": 0
- },
- {
-  "text": "4.3 From the seller’s perspective, Clean Earth’s EBITDA is lower than Veolia’s budget",
+  "text": "4.3 In value terms, organic growth slows and acquisitions take over",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "4.3.1 Enviri’s financial statements show lower EBITDA and slow growth",
+  "text": "4.3.1 In 2024 and 2025, the business grew organically",
   "level": 3,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "4.3.2 The first few months’ consolidated results are consistent with the budget, though this does not prove it",
+  "text": "4.3.2 In 2026, acquisitions account for most of the growth",
   "level": 3,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "4.4 Clean Harbors, the only direct comparable, commands prices on a par with Veolia’s",
+  "text": "4.3.3 Organic investment accounts for only a small proportion compared with acquisitions",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.4 From the seller’s perspective, Clean Earth’s EBITDA is lower than Veolia’s budget",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "4.4.1 Before synergies, Clean Earth is valued on a par with its US peers",
+  "text": "4.4.1 The multiple published by Veolia is based on high synergies",
   "level": 3,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "4.5 Peer group analysis validates the model’s central assumptions, but not its lower bound for Clean Earth",
+  "text": "4.4.2 Enviri’s financial statements show lower EBITDA and slow growth",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.4.3 The first few months’ consolidated results are consistent with the budget, though this does not prove it",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.5 Clean Earth’s multiple ranges from 9 to 19 times, depending on the EBITDA figure used",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "4.6 What we could not establish",
+  "text": "4.6 Clean Harbors, the only direct comparable, commands prices on a par with Veolia’s",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.6.1 Clean Harbors combines a high headroom with low leverage",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.6.2 Before synergies, Clean Earth is valued on a par with its US peers",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.6.3 The other companies are not comparable or have yet to be valued",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.7 Peer group analysis validates the model’s central assumptions, but not its lower bound for Clean Earth",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.8 What we could not establish",
   "level": 2,
   "annex": false,
   "label": "",
@@ -357,6 +392,20 @@
   "role": 0
  },
  {
+  "text": "5.2.1 A balance dominated by site remediation",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.2.2 An increase in the first half of 2026 which Veolia does not attribute to",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
   "text": "5.3 Clean Earth was recognised in the accounts before its liabilities were measured at fair value",
   "level": 2,
   "annex": false,
@@ -371,7 +420,14 @@
   "role": 0
  },
  {
-  "text": "5.3.2 Authorised sites and financial guarantees to be monitored",
+  "text": "5.3.2 What the allocation of the purchase price will change",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.3.3 Authorised sites and financial guarantees to be monitored",
   "level": 3,
   "annex": false,
   "label": "",
@@ -406,21 +462,28 @@
   "role": 0
  },
  {
-  "text": "5.5.1 Penalties at sites, a past that may resurface",
+  "text": "5.5.1 Veolia and the rating agencies identify the risk",
   "level": 3,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "5.5.2 PFAS represent a market for Veolia and a potential liability for a treatment centre",
+  "text": "5.5.2 Penalties at sites, a past that may resurface",
   "level": 3,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "5.5.3 Insurance does not cover everything",
+  "text": "5.5.3 PFAS represent a market for Veolia and a potential liability for a treatment centre",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.5.4 Insurance does not cover everything",
   "level": 3,
   "annex": false,
   "label": "",
@@ -434,14 +497,21 @@
   "role": 0
  },
  {
-  "text": "5.7 Provisions remain excluded from Veolia’s leverage ratio, and Moody’s does not include them in any line item",
+  "text": "5.7 GreenUp’s ESG indicators show little change following an acquisition in the hazardous waste sector",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "5.8 What we could not establish",
+  "text": "5.8 Provisions remain excluded from Veolia’s leverage ratio, and Moody’s does not include them in any line item",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.9 What we could not establish",
   "level": 2,
   "annex": false,
   "label": "",
@@ -511,7 +581,7 @@
   "role": 0
  },
  {
-  "text": "6.9 At the 2025 tuck-in multiple, Veolia’s criteria are met only with synergies",
+  "text": "6.9 Calculated as Veolia calculates them, the criteria shift the focus of the test towards ROCE and earnings accretion",
   "level": 2,
   "annex": false,
   "label": "",
@@ -646,14 +716,14 @@
  {
   "text": "Bibliography",
   "level": 1,
-  "annex": false,
+  "annex": true,
   "label": "",
   "role": 0
  },
  {
   "text": "Glossary",
   "level": 1,
-  "annex": false,
+  "annex": true,
   "label": "",
   "role": 0
  },
@@ -695,7 +765,7 @@
  {
   "text": "Table of appendices",
   "level": 1,
-  "annex": false,
+  "annex": true,
   "label": "",
   "role": 0
  }

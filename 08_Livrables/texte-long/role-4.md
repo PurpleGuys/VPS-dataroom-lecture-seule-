@@ -20,7 +20,7 @@ Une note du DEU 2025 attribue ce chiffre à l'effet de périmètre de la cession
 
 Le libellé a aussi changé. L'objectif révisé ne compte plus les polluants. Le communiqué de Veolia du 25 juin 2025 parle pourtant encore de polluants traités. Nous laissons ce point ouvert.
 
-Les tonnages traités sont stables. Ils passent de [F33] en 2024 à [F34] en 2025, soit 15 kt de moins. L'objectif révisé est donc dépassé de 181 kt dès 2025, [F34] contre [F35]. Le volume ne dit rien de la croissance en valeur. Il stagne quand l'EBITDA progresse.
+Les tonnages traités sont stables. Ils passent de [F33] en 2024 à [F34] en 2025, soit 15 kt de moins. L'objectif révisé est donc dépassé de 181 kt dès 2025, [F34] contre [F35]. Veolia a précisé aux groupes, le 21 novembre 2026, que Clean Earth y compte pour environ 500 kt. Le volume ne dit rien de la croissance en valeur. Il stagne quand l'EBITDA progresse.
 
 ## En valeur, l'organique ralentit et le périmètre prend le relais
 
@@ -61,6 +61,25 @@ Une partie de l'écart tient aux normes comptables. Enviri publie en normes amé
 ### Les premiers mois consolidés sont cohérents avec le budget, sans le prouver
 
 Sur neuf mois, l'effet de périmètre ajoute [F754] au chiffre d'affaires du groupe. Il ajoute [F755] à son EBITDA. La marge de ce périmètre ressort à 19,1 %, [F755] sur [F754]. Elle est proche des 19,4 % du budget de Clean Earth, [F51] sur [F52]. Trois limites s'imposent toutefois. Veolia attribue cet effet principalement à Clean Earth et à Enviropacific. Clean Earth n'y figure que pour [F787]. Enviropacific y figure depuis son rachat, finalisé au premier trimestre. Enfin, quelques mois ne s'annualisent pas. La direction annonce un démarrage conforme au plan et des premières synergies en 2027.
+
+## Le multiple de Clean Earth va de 9 à 19 fois selon l'EBITDA retenu
+
+Veolia annonce un multiple de [F48] sans publier l'EBITDA qui le fonde. Interrogée par les groupes, elle a confirmé le 21 novembre 2026 qu'elle ne le donnait pas. Nous avons donc construit nos propres bases. Un tableau en annexe les réunit.
+
+| Base d'EBITDA | EBITDA | Prix rapporté à l'EBITDA |
+|---|---|---|
+| 2025, comptes du vendeur | 155,1 M$ ([F211], [F213] et [F214]) | 19,3 fois |
+| 2026, budget de Veolia | [F51] | 14,9 fois |
+| 2026, budget et synergies de régime de croisière | 320 M$ ([F51] et [F49]) | 9,3 fois |
+| Implicite dans le multiple annoncé | 305 M$ ([F40] / 9,8) | [F48] |
+
+*Sources : calculs du groupe sur le prix de [F40].*
+
+Le multiple double selon la base. Sur les comptes du vendeur, Veolia a payé 19,3 fois l'EBITDA de 2025 (2 989 / 155,1). Sur son propre budget, elle a payé 14,9 fois (2 989 / 200). Le multiple annoncé suppose un EBITDA d'environ 305 M$ (2 989 / 9,8). Il n'est atteint qu'avec la quasi-totalité des [F49] de synergies, attendues en année 4.
+
+Notre conclusion y est peu sensible. Sous un plafond de [F726], un euro de marge de dette porte 1,44 euro de prix à 9,8 fois (1 / (1 − 3 / 9,8)). Il n'en porte plus que 1,25 à 14,9 fois et 1,18 à 19,3 fois. L'acquisition maximale baisse donc de 13 % à 18 % (1,25 / 1,44 et 1,18 / 1,44). La marge, elle, ne change pas : c'est elle qui borne Veolia, pas le multiple.
+
+Veolia a aussi précisé la composition de ces synergies. Les flux réinternalisés en pèsent 20 à 25 %, les achats autant et les frais de personnel autant. Les volumes que Clean Earth envoyait déjà dans les installations de Veolia en sont exclus : seuls des flux nouveaux comptent. La même règle vaudra pour Chauny, en partie 6.
 
 ## Clean Harbors, seul comparable direct, paie des prix du même ordre que Veolia
 
@@ -111,11 +130,8 @@ Les gains d'efficacité ne relèvent pas de cette partie. Sur neuf mois, Veolia 
 
 ## Ce que nous n'avons pas pu établir
 
-- L'EBITDA du métier au 30 septembre 2026. Veolia ne le publie pas. Au premier semestre, elle annonce une forte hausse sans en donner le montant. Le montant de 2026 ne sera connu qu'avec les comptes annuels.
+- L'EBITDA du métier au 30 septembre 2026, que Veolia ne publie pas.
 - La contribution propre de Clean Earth à l'EBITDA. L'effet de périmètre agrège Clean Earth et Enviropacific.
 - Le passage de l'EBITDA d'Enviri à celui de Veolia. Les normes, les retraitements et les coûts centraux jouent en sens contraires, sans ventilation publiée.
 - La définition des tonnages traités. Le communiqué du 25 juin 2025 donne une capacité mondiale de traitement de [F803]. Elle est inférieure aux tonnages déclarés traités en 2024.
 - Les comptes récents du vendeur et du comparable. Le rapport d'Enviri sur le deuxième trimestre 2026 manque à nos sources. Les résultats de Clean Harbors au troisième trimestre 2026 aussi.
-- Une comparaison des multiples avec Indaver et la valeur de marché des pairs cotés.
-- Le multiple exact de Terra Nova Solutions, faute de communiqué de l'acheteur dans nos sources. La presse en donne un multiple implicite de [F807] après synergies.
-- La valeur et le multiple de chaque cession signée. Seule la cession de Rookery est chiffrée, à [F739].

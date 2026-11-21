@@ -8,7 +8,7 @@ relu_par:
 
 Notre recommandation tient en trois décisions.
 
-D'abord, préparer une offre sur le four de Chauny. Si l'Autorité de la concurrence conditionne le rachat de Flamme par Séché à une cession, Veolia se porte candidate à l'activité d'incinération de Chauny. Le prix plafond est de sept fois l'excédent brut constaté en diligence, soit 14 M€ sur notre hypothèse de 2 M€ (7 × 2). C'est la limite que fixe le payback publié par Veolia, [F889]. Au-delà, chaque million en plus doit être couvert par une synergie chiffrée. L'offre reste soumise à un audit des sols et à une garantie du vendeur sur la pollution historique.
+D'abord, préparer une offre sur le four de Chauny. Si l'Autorité de la concurrence conditionne le rachat de Flamme par Séché à une cession, Veolia se porte candidate à l'activité d'incinération de Chauny. Le prix plafond est de sept fois l'excédent brut constaté en diligence, soit 14 M€ sur notre hypothèse de 2 M€ (7 × 2). C'est notre garde-fou : la lecture la plus simple du payback de [F889] que publie Veolia. Au-delà, chaque million en plus doit être couvert par une synergie chiffrée et l'achat doit rester relutif dès la première année. L'offre reste soumise à un audit des sols et à une garantie du vendeur sur la pollution historique.
 
 Ensuite, poursuivre les tuck-ins du type de ceux de 2025, au bas de la fourchette de GreenUp. Cette fourchette va de [F5] à [F21].
 

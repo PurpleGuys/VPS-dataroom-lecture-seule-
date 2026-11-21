@@ -5,11 +5,11 @@
 | role-1.md | 9 | 2819 | — |
 | role-2.md | 9 | 3294 | — |
 | role-3.md | 9 | 2718 | — |
-| role-4.md | 10 | 2907 | — |
-| role-5.md | 10 | 2945 | — |
-| role-6.md | 9 | 2926 | — |
-| corps, du sommaire à la première annexe | 77 | 19743 | — (édition de référence) |
-| document entier, annexes et contrôle compris | 113 | | — |
+| role-4.md | 10 | 3155 | — |
+| role-5.md | 10 | 3163 | — |
+| role-6.md | 10 | 3279 | — |
+| corps, du sommaire à la première annexe | 68 | 20583 | — (édition de référence) |
+| document entier, annexes et contrôle compris | 114 | | — |
 
 ## Jetons inconnus (0)
 - aucun
@@ -29,17 +29,17 @@
 - rôle 6 (Cibles, puis synthèse) : 123 — F46, F47, F49, F50, F76, F77, F209, F210, F211, F212, F213, F214, F215, F216, F443, F444, F445, F473, F474, F475 …
 
 ## Ce que la méthode du rapport mesure
-- corps du rapport : 117 332 caractères, espaces compris, pour 50 000 demandés
+- corps du rapport : 121 940 caractères, espaces compris, pour 50 000 demandés
 - role-1.md : 76 phrase(s) sur 239 au-delà de 12 mots
 - role-2.md : 112 phrase(s) sur 259 au-delà de 12 mots
 - role-3.md : 77 phrase(s) sur 224 au-delà de 12 mots
-- role-4.md : 74 phrase(s) sur 247 au-delà de 12 mots
-- role-5.md : 86 phrase(s) sur 241 au-delà de 12 mots
-- role-6.md : 94 phrase(s) sur 212 au-delà de 12 mots
-- recommandation.md : 24 phrase(s) sur 61 au-delà de 12 mots
+- role-4.md : 84 phrase(s) sur 259 au-delà de 12 mots
+- role-5.md : 90 phrase(s) sur 259 au-delà de 12 mots
+- role-6.md : 104 phrase(s) sur 236 au-delà de 12 mots
+- recommandation.md : 26 phrase(s) sur 61 au-delà de 12 mots
 - remerciements.md : 2 phrase(s) sur 6 au-delà de 12 mots
 - introduction.md : 25 phrase(s) sur 44 au-delà de 12 mots
-- conclusion.md : 19 phrase(s) sur 36 au-delà de 12 mots
+- conclusion.md : 19 phrase(s) sur 37 au-delà de 12 mots
 
 ## Années des références (57)
 Ces documents cités n'ont pas de date de publication dans leur note (`date_published`) : l'année de leur référence est devinée. Lire la date sur le document et l'écrire dans la note.

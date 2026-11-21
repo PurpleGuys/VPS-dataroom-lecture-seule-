@@ -84,19 +84,21 @@ Enfin, le prix. Trois multiples publiés encadrent ce que paierait un acheteur.
 - À [F472], la moyenne des tuck-ins de 2025, environ 18 M€ (2 × 9).
 - À 15 fois, le multiple payé par Séché pour Flamme, environ 30 M€ (2 × 15).
 
-Notre fourchette va donc de 12 à 30 M€, pour une valeur centrale de 18 M€. Ce prix tient dans les [M:H.tuck] de tuck-ins que notre scénario central compte déjà en 2027. Chauny ne demanderait donc pas de marge supplémentaire : il prendrait la place d'un autre tuck-in. Rapporté aux [F471] de 2025, il en représenterait environ 5 % (18 / 370).
+Notre fourchette va donc de 12 à 30 M€, pour une valeur centrale de 18 M€. Ce prix tient dans les [M:H.tuck] de tuck-ins que notre scénario central compte déjà en 2027. Chauny ne demanderait donc pas de marge supplémentaire : il prendrait la place d'un autre tuck-in. Rapporté aux [F471] de 2025, il en représenterait environ 5 % (18 / 370). Sous le plafond de [F726], il consommerait 12 M€ de marge de dette : son prix de 18 M€, moins trois fois son excédent brut de 2 M€ (18 − 3 × 2).
 
-## Au multiple des tuck-ins de 2025, les critères de Veolia ne sont tenus qu'avec des synergies
+## Calculés comme Veolia les calcule, les critères déplacent le test vers le ROCE et la relution
 
-Nous appliquons à Chauny les trois critères publiés.
+Nous appliquons à Chauny les critères publiés. Veolia en a précisé le calcul aux groupes le 21 novembre 2026. Ces précisions changent notre lecture.
 
-Le payback d'abord. Nous le mesurons au plus simple : le prix divisé par l'excédent brut annuel. À 18 M€ pour 2 M€, il atteint 9 ans (18 / 2), au-delà de la limite de [F889]. Pour la tenir, le prix ne doit pas dépasser 14 M€ (7 × 2). À 18 M€, il faudrait porter l'excédent brut à 2,6 M€ (18 / 7).
+Le payback d'abord. Veolia le calcule sur le cash-flow libre, synergies comprises. Pour une acquisition, elle y compte la valeur terminale. La mesure la plus simple, le prix divisé par l'excédent brut, est donc plus sévère que la sienne. À 18 M€ pour 2 M€, elle donne 9 ans (18 / 2), au-delà de la limite de [F889]. Sur le cash-flow libre seul, le délai s'allonge encore. Clean Earth convertit plus de [F53] de son EBITDA en cash-flow libre. À ce taux, Chauny dégagerait 1,2 M€ par an (2 × 60 %) et rembourserait 18 M€ en 15 ans (18 / 1,2). Aucune acquisition payée 9 fois son EBITDA ne tient donc ce délai sans valeur terminale. Le critère de Veolia se lit ainsi : les flux et la valeur de l'actif à l'horizon doivent couvrir le prix. Nous ne pouvons pas le reproduire, faute de connaître la valeur terminale que Veolia retient. Nous gardons donc la mesure simple comme garde-fou. Un prix de 14 M€ au plus (7 × 2) ne dépend d'aucune hypothèse de sortie.
 
-Le ROCE ensuite. Au bout de [F882], le résultat d'exploitation après impôt doit atteindre [F891] du prix payé. Pour 18 M€, cela fait environ 1 M€ par an (5,7 % × 18). Le site devrait donc convertir la moitié de son excédent brut de 2 M€ en résultat, après amortissements et impôt. Nous ne connaissons pas ses amortissements.
+Le ROCE ensuite. Veolia compte le goodwill payé dans les capitaux employés. Le dénominateur est donc le prix entier. Au bout de [F882], le résultat d'exploitation après impôt doit atteindre [F891] du prix. Pour 18 M€, cela fait environ 1 M€ par an (5,7 % × 18). Pour 14 M€, 0,8 M€ (5,7 % × 14). Le site devrait donc convertir près de la moitié de son excédent brut de 2 M€ en résultat, après amortissements et impôt. Nous ne connaissons pas ses amortissements.
 
-Le taux de rendement interne enfin. Il doit atteindre 9,7 % (5,7 + 4). Nous ne le calculons pas : il faudrait les flux du site année par année.
+La relution enfin, que nous n'avions pas testée. Veolia exige qu'une acquisition accroisse le résultat net courant dès la première année et non à terme. Ce résultat supporte l'amortissement des actifs réévalués à l'achat. Le test est exigeant pour un petit actif. Au coût de la dette de Veolia, [F776], un prix de 18 M€ coûte 0,7 M€ d'intérêts par an (18 × 3,82 %). Il reste 1,3 M€ d'excédent brut (2 − 0,7) pour couvrir les amortissements du site et ceux de la réévaluation. Au-delà, Chauny diluerait le résultat net courant la première année. À 14 M€, les intérêts tombent à 0,5 M€ (14 × 3,82 %) et ce reste monte à 1,5 M€ (2 − 0,5).
 
-Ces critères disent la même chose. Sans synergie, Veolia ne peut pas payer Chauny plus de sept fois son excédent brut. Au-delà, l'écart doit venir de l'acheteur : un four mieux rempli, des flux de Veolia traités sur place, la vapeur mieux vendue.
+Le taux de rendement interne, lui, doit atteindre 9,7 % (5,7 + 4). Nous ne le calculons pas : il faudrait les flux du site année par année.
+
+Ces critères convergent. Le payback de Veolia ne plafonne pas le prix à lui seul. Le ROCE et la relution le font : ils demandent un excédent brut qui résiste aux amortissements et aux intérêts dès la première année. Notre plafond de sept fois l'excédent brut reste la borne prudente. Au-delà, l'écart doit venir de l'acheteur : un four mieux rempli, des flux de Veolia traités sur place, la vapeur mieux vendue.
 
 Notre hypothèse peut aussi être trop haute. Sur la part horaire de 16 %, le chiffre d'affaires de Chauny tomberait à 8 M€ (16 % × 49). Au taux de marge de [F895], l'excédent brut serait de 1,3 M€ (8 × 16 %). Un tableau en annexe donne le prix selon l'excédent brut constaté et le multiple retenu. Chaque case multiplie l'un par l'autre.
 
@@ -114,7 +116,7 @@ Notre hypothèse peut aussi être trop haute. Sur la part horaire de 16 %, le ch
 Le prix plafond suppose un site laissé tel quel. Veolia peut faire mieux, par quatre leviers que ses publications documentent.
 
 - Le remplissage. Veolia vise un taux d'utilisation de ses actifs supérieur à [F907]. Elle annonce pour ses fours européens une disponibilité de [F909] à [F910]. Nous ne connaissons pas le taux de Chauny.
-- Les flux. En Europe, Veolia traite elle-même la plus grande part des déchets qu'elle collecte. Les liquides collectés dans le Nord trouveraient à Chauny un exutoire interne.
+- Les flux. En Europe, Veolia traite elle-même la plus grande part des déchets qu'elle collecte. Les liquides collectés dans le Nord trouveraient à Chauny un exutoire interne. Veolia ne compte toutefois comme synergie que des flux nouveaux : ceux qu'un site recevait déjà d'elle sont exclus.
 - Les coûts. Le personnel pèse [F911] de la base de coûts d'un incinérateur de Veolia. Un site isolé partage mal ses fonctions de sécurité, de maintenance et d'achat. Un réseau de [F906] les met en commun.
 - Les prix. Veolia a relevé ses prix de [F912] en Europe en 2024.
 
@@ -132,7 +134,7 @@ Nous avons appliqué la même mesure aux opérations récentes. Un tableau en an
 | Clean Earth, avant synergies | environ 15 fois ([F40] pour [F51]) | non |
 | Groupe Flamme, par Séché | 15 fois ([F874] pour [F876]) | non |
 
-Seule Enviropacific tient le critère sur l'EBITDA acquis. Veolia mesure sans doute son payback sur des flux qui croissent, synergies comprises. Notre mesure est donc la plus sévère. Elle a un mérite : un prix qui la respecte ne dépend d'aucune promesse.
+Seule Enviropacific tient le critère sur l'EBITDA acquis. Veolia, elle, mesure son payback sur le cash-flow libre, synergies et valeur terminale comprises. Notre mesure est donc la plus sévère. Elle a un mérite : un prix qui la respecte ne dépend d'aucune promesse.
 
 ## Deux autres objections : la priorité donnée au reste du monde et le passif du site
 

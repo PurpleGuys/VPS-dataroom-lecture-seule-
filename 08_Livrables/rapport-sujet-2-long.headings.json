@@ -378,42 +378,49 @@
   "role": 0
  },
  {
-  "text": "4.5 Clean Harbors, seul comparable direct, paie des prix du même ordre que Veolia",
+  "text": "4.5 Le multiple de Clean Earth va de 9 à 19 fois selon l'EBITDA retenu",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "4.5.1 Clean Harbors allie une marge élevée à un levier faible",
-  "level": 3,
-  "annex": false,
-  "label": "",
-  "role": 0
- },
- {
-  "text": "4.5.2 Avant synergies, Clean Earth se paie au niveau de ses pairs américains",
-  "level": 3,
-  "annex": false,
-  "label": "",
-  "role": 0
- },
- {
-  "text": "4.5.3 Les autres noms ne sont pas comparables ou restent à chiffrer",
-  "level": 3,
-  "annex": false,
-  "label": "",
-  "role": 0
- },
- {
-  "text": "4.6 Les comparables valident les hypothèses centrales du modèle, pas sa borne basse sur Clean Earth",
+  "text": "4.6 Clean Harbors, seul comparable direct, paie des prix du même ordre que Veolia",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "4.7 Ce que nous n'avons pas pu établir",
+  "text": "4.6.1 Clean Harbors allie une marge élevée à un levier faible",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.6.2 Avant synergies, Clean Earth se paie au niveau de ses pairs américains",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.6.3 Les autres noms ne sont pas comparables ou restent à chiffrer",
+  "level": 3,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.7 Les comparables valident les hypothèses centrales du modèle, pas sa borne basse sur Clean Earth",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "4.8 Ce que nous n'avons pas pu établir",
   "level": 2,
   "annex": false,
   "label": "",
@@ -546,14 +553,21 @@
   "role": 0
  },
  {
-  "text": "5.7 Les provisions restent hors du levier de Veolia et Moody's ne leur consacre aucune ligne",
+  "text": "5.7 Les indicateurs ESG de GreenUp bougent peu avec une acquisition de déchets dangereux",
   "level": 2,
   "annex": false,
   "label": "",
   "role": 0
  },
  {
-  "text": "5.8 Ce que nous n'avons pas pu établir",
+  "text": "5.8 Les provisions restent hors du levier de Veolia et Moody's ne leur consacre aucune ligne",
+  "level": 2,
+  "annex": false,
+  "label": "",
+  "role": 0
+ },
+ {
+  "text": "5.9 Ce que nous n'avons pas pu établir",
   "level": 2,
   "annex": false,
   "label": "",
@@ -623,7 +637,7 @@
   "role": 0
  },
  {
-  "text": "6.9 Au multiple des tuck-ins de 2025, les critères de Veolia ne sont tenus qu'avec des synergies",
+  "text": "6.9 Calculés comme Veolia les calcule, les critères déplacent le test vers le ROCE et la relution",
   "level": 2,
   "annex": false,
   "label": "",
@@ -758,14 +772,14 @@
  {
   "text": "Bibliographie",
   "level": 1,
-  "annex": false,
+  "annex": true,
   "label": "",
   "role": 0
  },
  {
   "text": "Glossaire",
   "level": 1,
-  "annex": false,
+  "annex": true,
   "label": "",
   "role": 0
  },
@@ -807,7 +821,7 @@
  {
   "text": "Table des annexes",
   "level": 1,
-  "annex": false,
+  "annex": true,
   "label": "",
   "role": 0
  },

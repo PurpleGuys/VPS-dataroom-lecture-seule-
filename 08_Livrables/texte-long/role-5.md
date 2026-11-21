@@ -121,6 +121,19 @@ Le financement vert suit la même logique. Prenons l'hybride vert de mai 2025, d
 
 Clean Earth entrera dans la taxonomie de l'exercice 2026. Sa part éligible et alignée n'est pas encore connue. Surtout, la taxonomie ne mesure pas les passifs. Une installation alignée peut porter une obligation de fermeture. Le coût ESG d'une acquisition se lit donc ailleurs. Il est dans les provisions, l'affectation du prix et le hors bilan.
 
+## Les indicateurs ESG de GreenUp bougent peu avec une acquisition de déchets dangereux
+
+Le sujet demande ce que l'ESG coûte ou rapporte à une acquisition. Veolia a précisé aux groupes, le 21 novembre 2026, comment Clean Earth entre dans ses indicateurs. La réponse vaut pour tout achat dans les déchets dangereux, Chauny compris.
+
+- Le climat. Les émissions de Clean Earth restent sous 100 kt. Veolia ne la tient donc pas pour une acquisition significative et ne retraite pas sa base de 2021.
+- Les émissions évitées. Le traitement de déchets dangereux n'en génère pas. Une acquisition dans ce métier n'ajoute rien à cet indicateur, que GreenUp veut porter à [F204].
+- La biodiversité. L'indicateur porte sur 154 sites sensibles. Les sites de Clean Earth n'ont pas encore été évalués et n'y entrent pas.
+- Les volumes. L'indicateur de déchets dangereux traités compte environ 500 kt pour Clean Earth.
+
+Nous en tirons deux conséquences. D'abord, l'ESG ne départage pas les cibles de ce métier : aucune n'améliore les indicateurs climat du plan. Ensuite, le seul indicateur qu'un four fait bouger est le tonnage traité. Avec une capacité que nous estimons en partie 6 à 52 500 t par an, Chauny ajouterait au plus un dixième de ce qu'apporte Clean Earth (52 500 / 500 000).
+
+Veolia a enfin tracé une frontière entre les périmètres des groupes. Le traitement des PFAS dans l'eau potable relève des métiers de l'eau. La destruction des milieux chargés en PFAS et des mousses anti-incendie relève des déchets dangereux, comme la dépollution des sols. Chaque périmètre ne compte que son côté. Un même EBITDA ne doit pas entrer deux fois sous notre fourchette de capacité.
+
 ## Les provisions restent hors du levier de Veolia et Moody's ne leur consacre aucune ligne
 
 Le levier de Veolia rapporte la dette financière nette à l'EBITDA. Le rapport du troisième trimestre en donne la définition. Ce sont les dettes financières brutes, dette de loyers IFRS 16 comprise. On en retire la trésorerie et les actifs liquides. Les provisions n'en font pas partie. Au 30 septembre 2026, la dette financière nette atteint [F721]. Elle contient la dette de loyers reprise avec Clean Earth, pas ses passifs environnementaux.
@@ -137,9 +150,6 @@ La capacité d'achat se mesure donc sans ces passifs. La partie 3 situe la marge
 - La juste valeur des actifs et des passifs de Clean Earth. Elle peut apparaître dès les comptes de l'exercice 2026, après la remise de ce rapport.
 - Les passifs environnementaux propres à Clean Earth. Nous n'avons trouvé dans le 10-K d'Enviri que le total du groupe. Le rapport d'Enviri du deuxième trimestre 2026 manque à nos sources.
 - Le contrat de cession : garanties de passif, indemnités environnementales, origine des garanties reçues de [F109].
-- Les garanties financières de fermeture exigées par les autorisations RCRA de Clean Earth.
-- Le traitement des provisions par S&P, que ses publications disponibles ne détaillent pas.
-- Les montants des sanctions et des transactions. Ils apparaissent dans nos documents, mais nous ne les avons pas encore relevés ni relus. Nous ne les chiffrons donc pas.
+- Les montants des sanctions et des transactions, que nous n'avons pas relevés.
 - L'exposition de Clean Earth aux PFAS : sites, volumes traités, position des assureurs.
-- La couverture de la pollution graduelle et les limites du programme d'assurance nord-américain de Veolia.
 - Le bilan, les provisions, le goodwill et le levier au 30 septembre 2026. Le rapport du troisième trimestre ne les publie pas.
