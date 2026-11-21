@@ -805,7 +805,8 @@ if (!FINAL) {
 }
 // ---- la page blanche qui suit la couverture (§ 5.3) : un paragraphe vide qui ouvre sa page ; les remerciements,
 // la suivante. Chaque saut de page est porté par ce qui ouvre la page, jamais par un paragraphe de saut.
-front.push(new Paragraph({ pageBreakBefore: true, spacing: { after: 0, line: LINE }, children: [] }));
+// (pas dans l'édition mise en forme, remise en fichier : une page blanche y compterait pour rien dans la longueur)
+if (!VEOLIA) front.push(new Paragraph({ pageBreakBefore: true, spacing: { after: 0, line: LINE }, children: [] }));
 // ---- remerciements (§ 5.3) : sobres, écrits par le groupe
 front.push(heading(T("Remerciements"), 1, { toc: false, newPage: true }));
 const thanks = prose("remerciements");
