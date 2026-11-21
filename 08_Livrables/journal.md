@@ -1,7 +1,11 @@
 # Journal du groupe
 
-16 jour(s) d'activité, 8 membre(s) identifié(s) ; le compte partagé n'est attribuable à personne.
+17 jour(s) d'activité, 8 membre(s) identifié(s) ; le compte partagé n'est attribuable à personne.
 Généré depuis le journal des requêtes du serveur et les registres ; rien n'est saisi à la main.
+
+## 2026-11-21
+
+- **compte partagé (dataroom-bearer)** : 4 recherche(s), 0 page(s) lue(s).
 
 ## 2026-11-17
 
