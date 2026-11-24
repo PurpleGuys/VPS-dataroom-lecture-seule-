@@ -900,6 +900,42 @@ else if (!FINAL) {
   body.push(runs([{ text: "Ce qu'il reste à faire avant la remise", bold: true }]), ...bullets(DATA.todo));
 }
 
+// ---- les signatures des auteurs, à la fin du texte : une image par auteur (scripts/signatures/<prénom>.png, encre
+// noire sur fond transparent), son nom dessous. Sans image, le nom garde son filet : la place de la signature.
+{
+  const SIGN_DIR = path.join(__dirname, "signatures");
+  const slug = (name) => String(name || "").trim().split(/\s+/)[0].normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  const signers = (COVER.auteurs || []).map((name) => {
+    const file = path.join(SIGN_DIR, slug(name) + ".png");
+    return { name, data: fs.existsSync(file) ? fs.readFileSync(file) : null };
+  });
+  if (signers.some((x) => x.data)) {
+    const PER_ROW = 3, colW = Math.floor(TEXT_WIDTH / PER_ROW), widths = [colW, colW, TEXT_WIDTH - 2 * colW];
+    const none = { top: NO_LINE, bottom: NO_LINE, left: NO_LINE, right: NO_LINE };
+    const image = (data) => {   // la taille se lit dans l'en-tête du PNG ; au plus 4 cm sur 1,7 cm
+      const w = data.readUInt32BE(16), h = data.readUInt32BE(20), k = Math.min(150 / w, 64 / h);
+      return new ImageRun({ type: "png", data, transformation: { width: Math.round(w * k), height: Math.round(h * k) } });
+    };
+    const cellOf = (x, width) => new TableCell({ width: { size: width, type: WidthType.DXA }, borders: none, verticalAlign: VerticalAlign.BOTTOM,
+      margins: { top: 80, bottom: 80, left: 0, right: 220 },
+      children: [
+        new Paragraph({ spacing: { after: 30 }, keepNext: true, children: x && x.data ? [image(x.data)] : [] }),
+        new Paragraph({ spacing: { after: 0, line: 240 },
+          ...(x ? { border: { top: { style: BorderStyle.SINGLE, size: 4, color: VEOLIA ? RULE : "000000", space: 3 } } } : {}),
+          children: x ? [new TextRun({ text: x.name, ...smallFont })] : [] }),
+      ] });
+    const rows = [];
+    for (let i = 0; i < signers.length; i += PER_ROW) {
+      const group = signers.slice(i, i + PER_ROW);
+      rows.push(new TableRow({ cantSplit: true, height: { value: 1300, rule: HeightRule.ATLEAST }, children: widths.map((w, j) => cellOf(group[j] || null, w)) }));
+    }
+    body.push(new Paragraph({ spacing: { before: 400, after: 60, line: LINE }, keepNext: true, keepLines: true,
+      children: [new TextRun({ text: EN ? "The authors" : "Les auteurs", ...bodyFont, bold: true })] }));
+    body.push(new Table({ width: { size: TEXT_WIDTH, type: WidthType.DXA }, columnWidths: widths,
+      borders: { ...none, insideHorizontal: NO_LINE, insideVertical: NO_LINE }, rows }));
+  }
+}
+
 // ---- bibliographie raisonnée (§ 4.6, § 5.7.3) : les documents cités, par type de source, puis par auteur
 // Une référence : « Auteur (année), « Titre », site, adresse, consulté le J mois AAAA. » L'adresse est un lien, imprimé
 // comme le texte ; elle peut se couper après / _ ? & = # et, après un trait d'union, devant un chiffre (une espace sans

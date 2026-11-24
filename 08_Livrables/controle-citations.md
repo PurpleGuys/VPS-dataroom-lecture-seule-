@@ -8,8 +8,8 @@
 | role-4.md | 10 | 3155 | 6-9 |
 | role-5.md | 10 | 3163 | 6-9 |
 | role-6.md | 10 | 3279 | 6-9 |
-| corps, du sommaire à la première annexe | 58 | 16732 | 50-60 |
-| document entier, annexes et contrôle compris | 101 | | — |
+| corps, du sommaire à la première annexe | 59 | 16732 | 50-60 |
+| document entier, annexes et contrôle compris | 102 | | — |
 
 ## Jetons inconnus (0)
 - aucun
@@ -101,4 +101,4 @@ Ces documents cités n'ont pas de date de publication dans leur note (`date_publ
 
 ## Mise en page
 - polices du PDF : LiberationSerif, LiberationSerif-Bold, LiberationSerif-Italic ; numéro de page : 10 pt
-- rien à reprendre
+- fin de partie — page 59 (PDF p. 62) : « Conclusion » finit par 3 lignes sur sa dernière page
