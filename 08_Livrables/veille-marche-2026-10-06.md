@@ -33,6 +33,6 @@ légèrement supérieur à 3x fin 2026 » (CP S1 2026, p. 3, F57) — c'est elle
 
 ## Comment obtenir la page Perplexity
 
-Deux voies : l'extension « Claude in Chrome » connectée au même compte, et je lis la page dans votre
+Deux voies : une extension de navigateur connectée au même compte, qui lit la page dans votre
 navigateur ; ou l'enregistrer en PDF depuis Chrome et la déposer dans l'éditeur web — elle arrive dans
 `00_Inbox/`, et je la classe en « veille » sans l'indexer comme source.

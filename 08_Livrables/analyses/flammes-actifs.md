@@ -1,4 +1,4 @@
-> Écrit par l'API Claude (claude-opus-5-5) le 11/10/2026 20:52, 0.46 $, à partir des fiches de pages et du registre. À relire, contredire et réécrire par le membre qui mène la branche : rien ici n'est signé.
+> Analyse automatique du 11/10/2026 20:52, à partir des fiches de pages et du registre. À relire, contredire et réécrire par le membre qui mène la branche : rien ici n'est signé.
 
 # Actifs cessibles — Séché × Flamme, vu de Remondis
 

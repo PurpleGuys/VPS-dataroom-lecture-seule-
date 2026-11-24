@@ -1,4 +1,4 @@
-> Écrit par l'API Claude (claude-opus-5-5) le 10/10/2026 19:11, 0.49 $, à partir des fiches de pages et du registre. À relire, contredire et réécrire par le membre qui défend le rôle : rien ici n'est signé.
+> Analyse automatique du 10/10/2026 19:11, à partir des fiches de pages et du registre. À relire, contredire et réécrire par le membre qui défend le rôle : rien ici n'est signé.
 
 # Questions pour Veolia : préparation de la séance du 16 octobre
 
