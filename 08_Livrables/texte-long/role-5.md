@@ -1,5 +1,5 @@
 ---
-signe_par:
+signe_par: Ethan PETROVIC
 relu_par:
 ---
 # Rôle 5 — Les passifs environnementaux d'une acquisition fixent le coût de la diligence, pas la capacité d'achat

@@ -1,5 +1,5 @@
 ---
-signe_par:
+signe_par: Benjamin ROLLAND
 relu_par:
 ---
 # Viser le four de Chauny sous un prix plafond, poursuivre les tuck-ins et attendre les cessions pour une plateforme

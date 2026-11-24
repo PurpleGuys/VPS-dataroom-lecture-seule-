@@ -101,4 +101,6 @@ Ces documents cités n'ont pas de date de publication dans leur note (`date_publ
 
 ## Mise en page
 - polices du PDF : LiberationSerif, LiberationSerif-Bold, LiberationSerif-Italic ; numéro de page : 10 pt
+- ouvre une page (LibreOffice le laissait seul en bas de la précédente) : « 3.2 Le cash-flow libre net ne couvre pas l'ensemble des dividendes »
+- fin de partie — page 52 (PDF p. 55) : « 6. Si Séché doit céder un four pour … » finit par 7 lignes sur sa dernière page
 - fin de partie — page 59 (PDF p. 62) : « Conclusion » finit par 3 lignes sur sa dernière page

@@ -1,6 +1,6 @@
 # Annexe — sources et chiffres cités
 
-Généré le 2026-11-24 depuis la dataroom : 912 chiffres, 61 opérations, 368 documents citables.
+Généré le 2026-11-25 depuis la dataroom : 912 chiffres, 61 opérations, 368 documents citables.
 Chaque ligne renvoie à un fichier joint, sa page, son URL d'origine et sa date de consultation.
 
 ## 1. Chiffres, par rôle

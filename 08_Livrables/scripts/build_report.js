@@ -703,11 +703,30 @@ function prose(key) {
   const t = TEXTS[key];
   return t && t.has_prose ? t : null;
 }
-function signature(key) {
+// La signature d'une partie (le cours : « one section per role, signed by its author ») : à la fin de la partie, à
+// droite, le nom de son signataire (frontmatter signe_par) et l'image de sa signature (scripts/signatures/<prénom>.png).
+// Elle dit qui répond de la partie.
+const PART_SIGN_DIR = path.join(__dirname, "signatures");
+// Un cran de resserrement demandé à la main : dans l'édition anglaise, la signature fait déborder la partie 1 d'une
+// dizaine de lignes sur une page de plus, trop pour que le contrôle de mise en page la resserre de lui-même.
+const TIGHT_BY_HAND = EN ? { 1: 1 } : {};
+function signedBy(key) {
   const meta = TEXTS[key] && TEXTS[key].meta ? TEXTS[key].meta : {};
-  const signed = (meta.signe_par || "").trim(), read = (meta.relu_par || "").trim();
-  if (!signed) return null;
-  return `Partie rédigée par ${signed}.`;
+  return (meta.signe_par || "").trim();
+}
+function signatureBlock(key) {
+  const name = signedBy(key);
+  if (!name) return [];
+  const slug = name.split(/\s+/)[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  const file = path.join(PART_SIGN_DIR, slug + ".png");
+  const runsOf = [new TextRun({ text: (EN ? "Section signed by " : "Partie signée par ") + name, ...bodyFont, italics: true })];   // au corps du texte : le contrôle de mise en page la compte comme une ligne
+  if (fs.existsSync(file)) {
+    const data = fs.readFileSync(file);
+    const w = data.readUInt32BE(16), h = data.readUInt32BE(20), k = Math.min(96 / w, 28 / h);
+    runsOf.push(new TextRun({ text: "\u00a0\u00a0\u00a0", ...bodyFont }));
+    runsOf.push(new ImageRun({ type: "png", data, transformation: { width: Math.round(w * k), height: Math.round(h * k) } }));
+  }
+  return [new Paragraph({ alignment: AlignmentType.RIGHT, keepLines: true, spacing: { before: 40, after: 0 }, children: runsOf })];
 }
 // Une entrée du sommaire ou de la table des annexes : le titre, des points de conduite, la page. Le titre s'arrête
 // à 1 cm de la marge (retrait à droite) et la tabulation va jusqu'à elle : la dernière ligne garde toujours des
@@ -856,14 +875,12 @@ for (const role of DATA.roles) {
   const text = prose(key);
   const title = (TEXTS[key] && TEXTS[key].title) || role.name;
   body.push(heading(`${part}. ${title}`, 1, { role: role.n , newPage: true }));
-  const signed = signature(key);
-  if (signed) body.push(p(signed, { run: { italics: true } }), blank());
-  else if (!FINAL && !VEOLIA) body.push(placeholder(`[Partie rédigée par : ______ ; frontmatter signe_par de texte/${key}.md] ${role.tabs ? "Dans le classeur : " + role.tabs : ""}`));
+  if (!signedBy(key) && !FINAL && !VEOLIA) body.push(placeholder(`[Partie rédigée par : ______ ; frontmatter signe_par de texte/${key}.md] ${role.tabs ? "Dans le classeur : " + role.tabs : ""}`));
   // Une partie rédigée se lit seule : les aides générées (consigne, chiffres du rôle, questions du jury)
   // ne s'impriment qu'à côté d'une partie encore vide.
   if (!FINAL && !text) body.push(p(role.brief, { run: { italics: true, color: "555555" } }), blank());
   if (text) {
-    body.push(...renderBlocks(text.blocks, { part, tight: tightFor(`${part}. ${title}`) }));
+    body.push(...renderBlocks(text.blocks, { part, tight: Math.max(tightFor(`${part}. ${title}`), TIGHT_BY_HAND[part] || 0) }), ...signatureBlock(key));
   } else if (!FINAL) {
     body.push(placeholder(`[À rédiger] 08_Livrables/texte/${key}.md : 6 à 9 pages, chaque chiffre cité par son jeton [F…] du registre ; des titres habillés (ce que la partie démontre), jamais « analyse » ou « résultats ».`));
     body.push(runs([{ text: "Réponse générée depuis le classeur, à réécrire", bold: true }]), p(role.answer), blank());
@@ -884,9 +901,7 @@ part += 1;
 const reco = prose("recommandation");
 const recoTitle = (TEXTS.recommandation && TEXTS.recommandation.title) || "Ce que nous recommandons";
 body.push(heading(`${part}. ${recoTitle}`, 1, { newPage: true }));
-const recoSigned = signature("recommandation");
-if (recoSigned) body.push(p(recoSigned, { run: { italics: true } }), blank());
-if (reco) body.push(...renderBlocks(reco.blocks, { part, tight: tightFor(`${part}. ${recoTitle}`) }));
+if (reco) body.push(...renderBlocks(reco.blocks, { part, tight: tightFor(`${part}. ${recoTitle}`) }), ...signatureBlock("recommandation"));
 else if (!FINAL) body.push(placeholder("[À rédiger] 08_Livrables/texte/recommandation.md : ce que nous recommandons, ce que cela coûte et à qui, ce qui nous ferait changer d'avis. Chiffres par jeton."));
 body.push(captionAbove(T(`Tableau ${part}.1 : Les indicateurs de la réponse, calculés dans le classeur du groupe à partir des chiffres du registre (${DATA.n_figures} lignes sourcées).`)));
 body.push(table(["Indicateur", "Valeur", "Ce qu'il faut en lire"].map(T), DATA.tiles.map((t) => [t[0], t[1], t[2]]), [3200, 1600, 4272], [1]));

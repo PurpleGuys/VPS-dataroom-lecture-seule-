@@ -1,5 +1,5 @@
 ---
-signe_par:
+signe_par: Ethan PETROVIC
 relu_par:
 ---
 # Rôle 6 — Si Séché doit céder un four pour racheter Flamme, Chauny est le tuck-in que Veolia peut viser

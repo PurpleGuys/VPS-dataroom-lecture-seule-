@@ -1,5 +1,5 @@
 ---
-signe_par:
+signe_par: Noa ROSZAK
 relu_par:
 ---
 # Rôle 1 — GreenUp annonce des enveloppes nettes, qui ne plafonnent pas les acquisitions

@@ -1,5 +1,5 @@
 ---
-signe_par:
+signe_par: Kevin TU
 relu_par:
 ---
 # Rôle 4 — Le booster déchets dangereux achète sa croissance plus qu'il ne la génère

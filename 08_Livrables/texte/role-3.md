@@ -1,5 +1,5 @@
 ---
-signe_par:
+signe_par: Armand MARIN
 relu_par:
 ---
 # Rôle 3 — Une marge mince fin 2027, portée par l'EBITDA et les cessions plutôt que par le cash-flow libre net

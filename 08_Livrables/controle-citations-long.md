@@ -3,13 +3,13 @@
 | Section | Pages | Mots | Cible |
 |---|---|---|---|
 | role-1.md | 9 | 2819 | — |
-| role-2.md | 9 | 3294 | — |
+| role-2.md | 10 | 3294 | — |
 | role-3.md | 9 | 2718 | — |
 | role-4.md | 10 | 3155 | — |
 | role-5.md | 10 | 3163 | — |
 | role-6.md | 10 | 3279 | — |
-| corps, du sommaire à la première annexe | 69 | 20592 | — (édition de référence) |
-| document entier, annexes et contrôle compris | 117 | | — |
+| corps, du sommaire à la première annexe | 70 | 20592 | — (édition de référence) |
+| document entier, annexes et contrôle compris | 118 | | — |
 
 ## Jetons inconnus (0)
 - aucun
@@ -103,4 +103,6 @@ Ces documents cités n'ont pas de date de publication dans leur note (`date_publ
 
 ## Mise en page
 - polices du PDF : LiberationSerif, LiberationSerif-Bold, LiberationSerif-Italic ; numéro de page : 10 pt
-- fin de partie — page 69 (PDF p. 72) : « Conclusion » finit par 3 lignes sur sa dernière page
+- fin de partie — page 24 (PDF p. 27) : « 2. Le plafond de levier que s'impose Veolia … » finit par 1 ligne sur sa dernière page
+- fin de partie — page 63 (PDF p. 66) : « 6. Si Séché doit céder un four pour … » finit par 7 lignes sur sa dernière page
+- fin de partie — page 70 (PDF p. 73) : « Conclusion » finit par 3 lignes sur sa dernière page

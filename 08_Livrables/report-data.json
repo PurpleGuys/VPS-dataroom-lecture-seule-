@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-24",
+ "generated": "2026-11-25",
  "checks": "OK",
  "n_figures": 912,
  "title": "Dans quelle mesure l'engagement de levier de GreenUp borne-t-il la capacité d'acquisition de Veolia d'ici fin 2027 ?",
@@ -4477,9 +4477,7 @@
    ]
   }
  ],
- "todo": [
-  "Signer (frontmatter signe_par du texte) : rôle 1 (Périmètre et sources), rôle 2 (La contrainte), rôle 3 (Capacité et sensibilité), rôle 4 (L'écart et les comparables), rôle 5 (Le coût ESG), rôle 6 (Cibles, puis synthèse), synthèse (Recommandation)."
- ],
+ "todo": [],
  "register": [
   [
    "F1",
