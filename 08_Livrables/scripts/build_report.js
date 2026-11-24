@@ -1000,10 +1000,18 @@ const amountCell = (shown, value, currency) => {
   const text = String((shown !== undefined && shown !== null ? shown : [value, currency].filter(Boolean).join(" ")) || "-");
   return /\d/.test(text) ? text : text.replace(/ /g, NBSP);
 };
+// La période d'une ligne : le registre l'écrit en français, l'édition anglaise la lit en anglais.
+const enPeriod = (s) => (!EN ? s : String(s == null ? "" : s)
+  .replace(/^inspection du /, "inspection of ").replace(/^annonce du /, "announced on ").replace(/^annonce /, "announced ")
+  .replace(/^présentation des neuf mois /, "nine-month presentation ").replace(/^présentation du /, "presentation of ")
+  .replace(/^exercice clos le /, "year ended ").replace(/^exercice /, "financial year ")
+  .replace(/^années /, "years ").replace(/^année /, "year ").replace(/^campagne de /, "campaign of ")
+  .replace(/^plan GreenUp, /, "GreenUp plan, ").replace(/^décision /, "decision ")
+  .replace(/^en construction$/, "under construction").replace(/^à (\d+) ans$/, "at $1 years"));
 annex("Registre des chiffres cités", [
   ...(citedRows.length
     ? [table(["ID", "Chiffre", "Valeur", "Période", "Source", "Rôle"].map(T),
-        citedRows.map((r) => [r[0], r[1], valueCell((DATA.displays || {})[r[0]] || r[2]), r[3], sourceCell(r[0], r[4]), r[5]]),
+        citedRows.map((r) => [r[0], r[1], valueCell((DATA.displays || {})[r[0]] || r[2]), enPeriod(r[3]), sourceCell(r[0], r[4]), r[5]]),
         [600, 3100, 1200, 1000, 2572, 600], [2])]
     : [FINAL ? p("Aucun chiffre cité.") : placeholder(`Aucun chiffre encore cité par jeton : l'annexe se remplira des lignes citées parmi les ${DATA.register.length} du registre.`)]),
 ], `${citedRows.length} chiffres cités dans le texte, sur ${DATA.register.length} au registre du groupe. Chaque source renvoie à la bibliographie, qui donne le titre, l'adresse et la date de consultation ; le registre garde le fichier joint.`);
@@ -1039,6 +1047,46 @@ if (ANNEX_TABLES.length) {
   });
   if (ROMAN[annexNo] !== TABLES_ANNEX) throw new Error(`annexe des tableaux : ${ROMAN[annexNo]} au lieu de ${TABLES_ANNEX}`);
   annex("Tableaux du rapport", kids, "Les tableaux que le texte appelle, dans l'ordre de leur renvoi. Chacun porte le titre de la sous-partie qui le commente.");
+}
+// ---- la dataroom : le coffre, l'index, le registre, le classeur et les contrôles derrière chaque chiffre.
+// Écrite ici dans les deux langues (ni T() ni traduction) ; ses nombres sont comptés à la génération, sauf les
+// 1 000 futurs, que la partie 3 écrit déjà.
+{
+  const L = (fr, en) => (EN ? en : fr);
+  const count = (n) => String(n).replace(/\B(?=(\d{3})+$)/g, EN ? "," : NBSP);
+  const registers = 1 + ((DATA.cited_deals || []).length ? 1 : 0) + ((DATA.cited_targets || []).length ? 1 : 0);
+  const APP = T("Annexe");
+  const filled = registers > 1 ? L(`les annexes I à ${ROMAN[registers - 1]}`, `Appendices I to ${ROMAN[registers - 1]}`) : L("l'annexe I", `${APP} I`);
+  const range = L(`l'annexe ${ROMAN[registers]}`, `${APP} ${ROMAN[registers]}`);
+  const sections = [
+    [L("Un coffre de documents publics, indexé page par page", "A vault of public documents, indexed page by page"),
+      L("Les sources du rapport sont des documents publics : rapports annuels, communiqués, décisions d'autorités, articles de presse. Chacun entre dans un coffre partagé, un dépôt Git que le groupe lit avec Obsidian. Une fiche l'accompagne. Elle donne son éditeur, son adresse d'origine et sa date de consultation. Un document sans fiche est refusé. Un serveur relit le coffre toutes les cinq minutes. Il range chaque document, page par page, dans une base SQLite.",
+        "The sources of the report are public documents: annual reports, press releases, decisions of authorities, press articles. Each one enters a shared vault, a Git repository that the group reads with Obsidian. A note comes with it. It gives the publisher, the original address and the date consulted. A document without a note is refused. A server re-reads the vault every five minutes. It stores each document, page by page, in an SQLite database.")],
+    [L("Une recherche qui rend toujours la page", "A search that always returns the page"),
+      L("Le serveur répond aux membres sur une liaison chiffrée, chacun sous son accès personnel. Il cherche de deux façons : par mots exacts et par proximité de sens. Il fusionne ensuite les deux listes. Chaque passage rendu est le texte du document, tel qu'il est écrit. Il porte son fichier, sa page, son adresse et sa date de consultation.",
+        "The server answers members over an encrypted connection, each under a personal access. It searches in two ways: by exact words and by closeness of meaning. It then merges the two lists. Each passage returned is the text of the document, as written. It carries its file, its page, its address and the date consulted.")],
+    [L("Un registre où chaque chiffre tient à sa page", "A register in which every figure is tied to its page"),
+      L(`Un chiffre publié n'entre dans le rapport que par le registre. Chaque ligne donne une valeur, son unité, sa période, le fichier et la page où elle se lit. Le serveur vérifie que la valeur figure sur la page indexée. Il refuse d'enregistrer ou de corriger une ligne que sa page n'imprime pas. Le registre compte ${count(DATA.register.length)} chiffres. Deux registres voisins tiennent les opérations et les cibles. Ce sont des fichiers CSV, versionnés avec le coffre : chaque modification y laisse une trace datée.`,
+        `A published figure enters the report only through the register. Each line gives a value, its unit, its period, and the file and page where it can be read. The server checks that the value appears on the indexed page. It refuses to record or correct a line that its page does not print. The register holds ${count(DATA.register.length)} figures. Two sister registers hold the transactions and the targets. They are CSV files, versioned with the vault: every change leaves a dated trace.`)],
+    [L("Un classeur recalculé à partir du registre", "A workbook recalculated from the register"),
+      L(`Le modèle financier est un classeur Excel produit par un programme. Ses entrées sont des lignes du registre. Ses hypothèses sont nommées et tenues à part des données publiées. LibreOffice recalcule toutes ses formules à chaque génération. La fourchette de ${range} vient des 1 000 futurs tirés par ce modèle.`,
+        `The financial model is an Excel workbook produced by a program. Its inputs are lines of the register. Its assumptions are named and kept apart from published data. LibreOffice recalculates every formula at each generation. The range in ${range} comes from the 1,000 futures drawn by this model.`)],
+    [L("Un rapport où un chiffre du registre est une référence", "A report in which a figure from the register is a reference"),
+      L(`Dans le texte source, un chiffre du registre ne se recopie pas. Le rédacteur cite l'identifiant de sa ligne ou une sortie nommée du classeur. Le générateur imprime alors la valeur, pose la note de bas de page et remplit ${filled}. Un chiffre corrigé au registre se corrige ainsi partout à la génération suivante. Une référence inconnue est signalée avant la publication. Un défaut de mise en page l'est aussi. Les calculs du texte donnent leurs termes : le lecteur peut les refaire. Les éditions française et anglaise sortent du même texte. L'édition web ouvre, pour chaque chiffre, sa page source surlignée.`,
+        `In the source text, a figure from the register is never retyped. The writer cites the identifier of its line or a named output of the workbook. The generator then prints the value, sets the footnote and fills ${filled}. A figure corrected in the register is thus corrected everywhere at the next generation. An unknown reference is flagged before publication. So is a layout defect. The calculations in the text state their terms, so the reader can redo them. The French and English editions come from the same text. The web edition opens, for each figure, its source page with the value highlighted.`)],
+    [L("Ce que le dispositif ne fait pas", "What the set-up does not do"),
+      L("Il ne remplace ni la lecture des sources ni le jugement. Les hypothèses du groupe et ses arbitrages sont nommés comme tels dans le texte.",
+        "It replaces neither the reading of the sources nor judgement. The group’s assumptions and choices are named as such in the text.")],
+  ];
+  const label = `${APP} ${ROMAN[annexNo++] || annexNo}`;
+  annexes.push(heading(`${label}${SEP}${L("La dataroom du groupe, du document public au chiffre cité", "The group’s dataroom, from public document to cited figure")}`, 1, { annex: true, label, newPage: true }));
+  annexes.push(caption(L("Le dispositif sur lequel repose chaque chiffre du rapport. Il se consulte à l'adresse https://dataroom.is42.fr.",
+    "The set-up behind every figure in the report. It can be consulted at https://dataroom.is42.fr.")));
+  for (const [title, text] of sections) {
+    annexes.push(new Paragraph({ spacing: { after: 40, line: LINE }, keepNext: true, keepLines: true, alignment: AlignmentType.LEFT,
+      children: [new TextRun({ text: title, ...bodyFont, bold: true })] }));
+    annexes.push(new Paragraph({ spacing: { after: PARA_AFTER, line: LINE }, alignment: ALIGN, children: [new TextRun({ text, ...bodyFont })] }));
+  }
 }
 // ---- la table des annexes (§ 5.8) : après le glossaire, juste avant les annexes qu'elle liste
 back.push(heading(T("Table des annexes"), 1, { annex: true, label: "", toc: false, newPage: true }));

@@ -30,4 +30,4 @@ Cette thèse a une faiblesse, que nous traitons en partie 6 : l'Autorité doit a
 
 Le rapport suit sept parties. Les parties 1 à 3 établissent la capacité : les enveloppes de GreenUp, le plafond de levier, la marge de fin 2027. Les parties 4 et 5 décrivent le métier visé, les déchets dangereux, et les passifs d'un site acheté. La partie 6 désigne le tuck-in et le chiffre. La partie 7 porte notre recommandation.
 
-Cinq annexes complètent le rapport : les chiffres, les opérations et les cibles cités avec leur source, la fourchette de capacité (annexe IV) et les tableaux que le texte appelle (annexe V).
+Six annexes complètent le rapport : les chiffres, les opérations et les cibles cités avec leur source, la fourchette de capacité (annexe IV), les tableaux que le texte appelle (annexe V) et le fonctionnement de la dataroom du groupe (annexe VI).
